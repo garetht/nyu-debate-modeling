@@ -18,6 +18,8 @@ COPY pyproject.toml uv.lock ./
 
 RUN uv venv
 RUN uv sync
+RUN uv pip install torch --index-url https://download.pytorch.org/whl/cu121
+RUN uv pip install --force-reinstall --upgrade flash-attn --no-build-isolation;
 
 COPY . .
 
