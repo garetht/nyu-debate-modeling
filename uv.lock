@@ -651,6 +651,33 @@ http = [
 ]
 
 [[package]]
+name = "fuzzysearch"
+version = "0.8.0"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "attrs" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/e1/d0/a82bb8e4f35e585246e599129700060594da70f4f38e0b3933af03c4c960/fuzzysearch-0.8.0.tar.gz", hash = "sha256:27e13f7f1ec57c4c335752eb22c378254feb81eb67107ef5e3ab0fde0eba266e", size = 39210 }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/52/53/787e339680f78e037d76034f15d6733fcf15a197aff7849b1bf1505d5a8c/fuzzysearch-0.8.0-cp311-cp311-macosx_10_9_x86_64.whl", hash = "sha256:8fcce0480d1ebcb27d6d5b104901b7f1d478ead28fab8b4e11a5ab2e8c55b41e", size = 31603 },
+    { url = "https://files.pythonhosted.org/packages/fc/8e/2912a278e7f4d9f5f641c448658e7a76995c5f3397cf0be3e53e90622449/fuzzysearch-0.8.0-cp311-cp311-macosx_11_0_arm64.whl", hash = "sha256:98f16a1698321f8103c5889c97595071cb0e8669ccddbf5c6ee953b3e52b7c76", size = 32318 },
+    { url = "https://files.pythonhosted.org/packages/8e/57/2d88b22d197bf79c4543a8d709bfaf1c198c6a173a4fb1636b002e1ed3ab/fuzzysearch-0.8.0-cp311-cp311-manylinux_2_5_i686.manylinux1_i686.manylinux_2_17_i686.manylinux2014_i686.whl", hash = "sha256:af33b3dfe7347ac92f3a879681f0b91766461de7bd433153a4202120b0b35f74", size = 54391 },
+    { url = "https://files.pythonhosted.org/packages/28/0c/5e0ed8865640013e4d0bcdff40e56e0a416d2a3ac33898e6c08f11623729/fuzzysearch-0.8.0-cp311-cp311-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:f2ae1619a2e4369170e93d371834fb22c88a208368d29c6851cbc15b3f0e507b", size = 56065 },
+    { url = "https://files.pythonhosted.org/packages/3d/90/05e7ca469909bb16a09312cab3ce6a2b17994bd02a1944f4e7357d8f1749/fuzzysearch-0.8.0-cp311-cp311-musllinux_1_2_i686.whl", hash = "sha256:5e1d7e7ddf28cf6c6ac36946eaaa7e5d759dd2dfec0653ef9460d2d4ffbd1ad1", size = 55305 },
+    { url = "https://files.pythonhosted.org/packages/b9/7d/35d4bfbfe821780ba682a7e5ddbdd1f3d82c1cc9de553cb4052ebfba4a73/fuzzysearch-0.8.0-cp311-cp311-musllinux_1_2_x86_64.whl", hash = "sha256:f4c730bdf31675c05a0ce91bb2aa17e871bae1ba441747675f36ef34145bda64", size = 55451 },
+    { url = "https://files.pythonhosted.org/packages/1d/96/343adb1f2193a19c2e17b9228706ff7740dc7c555d05d1551f58b837b41c/fuzzysearch-0.8.0-cp311-cp311-win32.whl", hash = "sha256:c3a0551088b771fd5178128fccdf2ee4977060c7182a580d52375ef2c4724ea7", size = 34973 },
+    { url = "https://files.pythonhosted.org/packages/15/15/d7dfc9efed069dd6d2da2467f601dc8d60850937b05e6860d88e18302d54/fuzzysearch-0.8.0-cp311-cp311-win_amd64.whl", hash = "sha256:e0ae9f564206a948f2f787800d04842b7b1b35db4d7b9e0a29997976f940ddb3", size = 36631 },
+    { url = "https://files.pythonhosted.org/packages/51/a6/46db1a0776f18b6568bf3c410bf565204867883dec068c67640a9b1bea69/fuzzysearch-0.8.0-cp312-cp312-macosx_10_9_x86_64.whl", hash = "sha256:123bf07d08e3829ba6ebdea0a2dc013797f10ac0348fe94e8ad65789455716d1", size = 31611 },
+    { url = "https://files.pythonhosted.org/packages/0f/5a/11042e3f7be023e99d449591948c03611a2f4236001d7f8fa58770312a6c/fuzzysearch-0.8.0-cp312-cp312-macosx_11_0_arm64.whl", hash = "sha256:45d666f1a1a112f36b8ee8520ee0733267a5573d2ce7e96f944aa2c64b2bde11", size = 32288 },
+    { url = "https://files.pythonhosted.org/packages/4e/7f/f19be91f9dfe3cd1ff39cc7782efccee53370473c9346bbc6c53331690e8/fuzzysearch-0.8.0-cp312-cp312-manylinux_2_5_i686.manylinux1_i686.manylinux_2_17_i686.manylinux2014_i686.whl", hash = "sha256:84f18de10852914d57212c2d197d978b44f93b051bc83cd10fba08c4aaadced0", size = 55142 },
+    { url = "https://files.pythonhosted.org/packages/e1/da/de45043a2df875592f74975ab7fb98269854a71c8f9a98f2c86f4f3c8179/fuzzysearch-0.8.0-cp312-cp312-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:fb41f628730ef56de01509cadc1c97fac98c73eaa4298099e76522a3f75532a2", size = 56995 },
+    { url = "https://files.pythonhosted.org/packages/ae/7b/b6915fb35d51804698fb35adba86ab673e1c8890ba81655b7a7c8ea86a6d/fuzzysearch-0.8.0-cp312-cp312-musllinux_1_2_i686.whl", hash = "sha256:47b31621c8ebdb92b86d1398116f6bbbcde3863b08c62e69b4d519aa8927f5c5", size = 56069 },
+    { url = "https://files.pythonhosted.org/packages/41/bd/f6b80474e2cb1759d9bbb6c7acde77903e465422dcec252c692a1ccebdc0/fuzzysearch-0.8.0-cp312-cp312-musllinux_1_2_x86_64.whl", hash = "sha256:263130a42639d0b568a79a909a7ef114ac600c706d4a706b79fbac182dcec604", size = 56500 },
+    { url = "https://files.pythonhosted.org/packages/38/61/357862465d4273e545dc458e5e5553fa7e2d770dfcf54e7fc3e0ebb0a2ff/fuzzysearch-0.8.0-cp312-cp312-win32.whl", hash = "sha256:673b61bd19563f8d0998f00695bf14f4aefbef76715e20b1770ddc388b5ff989", size = 35000 },
+    { url = "https://files.pythonhosted.org/packages/b4/8b/ca2f7d6976c3e21deaf4272c2bf730ba83d0d87eadab98e4de7c9c0cba52/fuzzysearch-0.8.0-cp312-cp312-win_amd64.whl", hash = "sha256:7ed3a11c26aff3cee6b926a17151b437219f6a819c2aec9f44b8bb3d464d77e0", size = 36610 },
+]
+
+[[package]]
 name = "gitdb"
 version = "4.0.12"
 source = { registry = "https://pypi.org/simple" }
@@ -1304,8 +1331,8 @@ name = "nvidia-cublas-cu11"
 version = "11.10.3.66"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "setuptools" },
-    { name = "wheel" },
+    { name = "setuptools", marker = "sys_platform == 'linux'" },
+    { name = "wheel", marker = "sys_platform == 'linux'" },
 ]
 wheels = [
     { url = "https://files.pythonhosted.org/packages/ce/41/fdeb62b5437996e841d83d7d2714ca75b886547ee8017ee2fe6ea409d983/nvidia_cublas_cu11-11.10.3.66-py3-none-manylinux1_x86_64.whl", hash = "sha256:d32e4d75f94ddfb93ea0a5dda08389bcc65d8916a25cb9f37ac89edaeed3bded", size = 317097917 },
@@ -1316,8 +1343,8 @@ name = "nvidia-cuda-cupti-cu11"
 version = "11.7.101"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "setuptools" },
-    { name = "wheel" },
+    { name = "setuptools", marker = "sys_platform == 'linux'" },
+    { name = "wheel", marker = "sys_platform == 'linux'" },
 ]
 wheels = [
     { url = "https://files.pythonhosted.org/packages/e6/9d/dd0cdcd800e642e3c82ee3b5987c751afd4f3fb9cc2752517f42c3bc6e49/nvidia_cuda_cupti_cu11-11.7.101-py3-none-manylinux1_x86_64.whl", hash = "sha256:e0cfd9854e1f2edaa36ca20d21cd0bdd5dcfca4e3b9e130a082e05b33b6c5895", size = 11845698 },
@@ -1337,8 +1364,8 @@ name = "nvidia-cuda-runtime-cu11"
 version = "11.7.99"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "setuptools" },
-    { name = "wheel" },
+    { name = "setuptools", marker = "sys_platform == 'linux'" },
+    { name = "wheel", marker = "sys_platform == 'linux'" },
 ]
 wheels = [
     { url = "https://files.pythonhosted.org/packages/36/92/89cf558b514125d2ebd8344dd2f0533404b416486ff681d5434a5832a019/nvidia_cuda_runtime_cu11-11.7.99-py3-none-manylinux1_x86_64.whl", hash = "sha256:cc768314ae58d2641f07eac350f40f99dcb35719c4faff4bc458a7cd2b119e31", size = 849253 },
@@ -1349,7 +1376,7 @@ name = "nvidia-cudnn-cu11"
 version = "8.5.0.96"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "nvidia-cublas-cu11" },
+    { name = "nvidia-cublas-cu11", marker = "sys_platform == 'linux'" },
 ]
 wheels = [
     { url = "https://files.pythonhosted.org/packages/dc/30/66d4347d6e864334da5bb1c7571305e501dcb11b9155971421bb7bb5315f/nvidia_cudnn_cu11-8.5.0.96-2-py3-none-manylinux1_x86_64.whl", hash = "sha256:402f40adfc6f418f9dae9ab402e773cfed9beae52333f6d86ae3107a1b9527e7", size = 557141533 },
@@ -1370,8 +1397,8 @@ name = "nvidia-curand-cu11"
 version = "10.2.10.91"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "setuptools" },
-    { name = "wheel" },
+    { name = "setuptools", marker = "sys_platform == 'linux'" },
+    { name = "wheel", marker = "sys_platform == 'linux'" },
 ]
 wheels = [
     { url = "https://files.pythonhosted.org/packages/8f/11/af78d54b2420e64a4dd19e704f5bb69dcb5a6a3138b4465d6a48cdf59a21/nvidia_curand_cu11-10.2.10.91-py3-none-manylinux1_x86_64.whl", hash = "sha256:eecb269c970fa599a2660c9232fa46aaccbf90d9170b96c462e13bcb4d129e2c", size = 54628716 },
@@ -1382,7 +1409,7 @@ name = "nvidia-cusolver-cu11"
 version = "11.4.0.1"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "nvidia-cublas-cu11" },
+    { name = "nvidia-cublas-cu11", marker = "sys_platform == 'linux'" },
 ]
 wheels = [
     { url = "https://files.pythonhosted.org/packages/3e/77/66149e3153b19312fb782ea367f3f950123b93916a45538b573fe373570a/nvidia_cusolver_cu11-11.4.0.1-2-py3-none-manylinux1_x86_64.whl", hash = "sha256:72fa7261d755ed55c0074960df5904b65e2326f7adce364cbe4945063c1be412", size = 102594907 },
@@ -1394,8 +1421,8 @@ name = "nvidia-cusparse-cu11"
 version = "11.7.4.91"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "setuptools" },
-    { name = "wheel" },
+    { name = "setuptools", marker = "sys_platform == 'linux'" },
+    { name = "wheel", marker = "sys_platform == 'linux'" },
 ]
 wheels = [
     { url = "https://files.pythonhosted.org/packages/ea/6f/6d032cc1bb7db88a989ddce3f4968419a7edeafda362847f42f614b1f845/nvidia_cusparse_cu11-11.7.4.91-py3-none-manylinux1_x86_64.whl", hash = "sha256:a3389de714db63321aa11fbec3919271f415ef19fda58aed7f2ede488c32733d", size = 173182291 },
@@ -1414,8 +1441,8 @@ name = "nvidia-nvtx-cu11"
 version = "11.7.91"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "setuptools" },
-    { name = "wheel" },
+    { name = "setuptools", marker = "sys_platform == 'linux'" },
+    { name = "wheel", marker = "sys_platform == 'linux'" },
 ]
 wheels = [
     { url = "https://files.pythonhosted.org/packages/23/d5/09493ff0e64fd77523afbbb075108f27a13790479efe86b9ffb4587671b5/nvidia_nvtx_cu11-11.7.91-py3-none-manylinux1_x86_64.whl", hash = "sha256:b22c64eee426a62fc00952b507d6d29cf62b4c9df7a480fcc417e540e05fd5ac", size = 98579 },
@@ -1457,6 +1484,7 @@ dependencies = [
     { name = "fonttools" },
     { name = "frozenlist" },
     { name = "fsspec" },
+    { name = "fuzzysearch" },
     { name = "gitdb" },
     { name = "gitpython" },
     { name = "h11" },
@@ -1583,6 +1611,7 @@ requires-dist = [
     { name = "fonttools", specifier = "==4.58.5" },
     { name = "frozenlist", specifier = "==1.7.0" },
     { name = "fsspec", specifier = "==2025.3.0" },
+    { name = "fuzzysearch", specifier = ">=0.8.0" },
     { name = "gitdb", specifier = "==4.0.12" },
     { name = "gitpython", specifier = "==3.1.44" },
     { name = "h11", specifier = "==0.16.0" },
@@ -2723,10 +2752,10 @@ name = "triton"
 version = "2.0.0"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "cmake" },
-    { name = "filelock" },
-    { name = "lit" },
-    { name = "torch" },
+    { name = "cmake", marker = "sys_platform == 'linux'" },
+    { name = "filelock", marker = "sys_platform == 'linux'" },
+    { name = "lit", marker = "sys_platform == 'linux'" },
+    { name = "torch", marker = "sys_platform == 'linux'" },
 ]
 wheels = [
     { url = "https://files.pythonhosted.org/packages/b7/cd/4aa0179919306f9c2e3e5308f269d20c094b2a4e2963b656e9405172763f/triton-2.0.0-1-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.whl", hash = "sha256:226941c7b8595219ddef59a1fdb821e8c744289a132415ddd584facedeb475b1", size = 63278135 },
