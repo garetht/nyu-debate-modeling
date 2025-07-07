@@ -21,6 +21,7 @@ RUN uv sync
 
 COPY . .
 
+ENV PATH="/app/.venv/bin:$PATH"
 ENV SRC_ROOT=/app/
 ENV INPUT_ROOT=/app/data/
 
