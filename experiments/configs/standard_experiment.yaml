@@ -9,7 +9,7 @@ debater-untrained-judge-untrained:
     debaters:
       - model_settings:
           model_type: llama3
-          model_file_path: /app/downloaded-models/gradientai/Llama-3-8B-Instruct-262k
+          model_file_path: /home/ubuntu/mars-arnesen-reproduction/downloaded-models/gradientai/Llama-3-8B-Instruct-262k
           alias: "experiment debate - untrained"
           require_quote_validation: True
           generation_params:
