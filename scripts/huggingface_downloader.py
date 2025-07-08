@@ -6,20 +6,20 @@ This script downloads a Hugging Face repository (model, dataset, or space)
 to a local folder using the huggingface_hub library.
 """
 
-import os
-import sys
 import argparse
+import logging
+import sys
 from pathlib import Path
+
 from huggingface_hub import snapshot_download, hf_hub_download, login
 from huggingface_hub.utils import HfHubHTTPError, RepositoryNotFoundError
-import logging
 
 # Set up logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 logger = logging.getLogger(__name__)
 
 def download_repository(repo_id, local_dir, repo_type="model", token=None, revision="main",
-                        include_patterns=None, exclude_patterns=None, cache_dir=None):
+                        include_patterns=None, exclude_patterns=None, cache_dir=None, force=False):
     """
     Download a Hugging Face repository to a local directory.
     
@@ -32,17 +32,23 @@ def download_repository(repo_id, local_dir, repo_type="model", token=None, revis
         include_patterns (list): List of file patterns to include
         exclude_patterns (list): List of file patterns to exclude
         cache_dir (str): Directory to use for caching
+        force (bool): Force download even if directory exists
     
     Returns:
         str: Path to the downloaded repository
     """
     try:
+        local_dir_path = Path(local_dir)
+        if not force and local_dir_path.exists() and any(local_dir_path.iterdir()):
+            logger.info(f"Directory '{local_dir}' already exists and is not empty. Skipping download. Use --force to override.")
+            return str(local_dir_path)
+
         logger.info(f"Starting download of {repo_type} repository: {repo_id}")
         logger.info(f"Revision: {revision}")
         logger.info(f"Local directory: {local_dir}")
 
         # Create local directory if it doesn't exist
-        Path(local_dir).mkdir(parents=True, exist_ok=True)
+        local_dir_path.mkdir(parents=True, exist_ok=True)
 
         # Download the repository
         downloaded_path = snapshot_download(
@@ -73,7 +79,7 @@ def download_repository(repo_id, local_dir, repo_type="model", token=None, revis
         logger.error(f"An unexpected error occurred: {e}")
         return None
 
-def download_single_file(repo_id, filename, local_dir, repo_type="model", token=None, revision="main"):
+def download_single_file(repo_id, filename, local_dir, repo_type="model", token=None, revision="main", force=False):
     """
     Download a single file from a Hugging Face repository.
     
@@ -84,11 +90,17 @@ def download_single_file(repo_id, filename, local_dir, repo_type="model", token=
         repo_type (str): Type of repository ("model", "dataset", or "space")
         token (str): Hugging Face token for private repositories
         revision (str): Git revision (branch, tag, or commit hash)
+        force (bool): Force download even if file exists
     
     Returns:
         str: Path to the downloaded file
     """
     try:
+        target_file_path = Path(local_dir) / filename
+        if not force and target_file_path.exists():
+            logger.info(f"File '{target_file_path}' already exists. Skipping download. Use --force to override.")
+            return str(target_file_path)
+
         logger.info(f"Downloading file '{filename}' from {repo_id}")
 
         # Create local directory if it doesn't exist
@@ -132,6 +144,9 @@ Examples:
 
   # Download single file
   python huggingface_downloader.py microsoft/DialoGPT-medium ./models --file config.json
+  
+  # Force download even if destination exists
+  python huggingface_downloader.py microsoft/DialoGPT-medium ./models --force
         """
     )
 
@@ -150,6 +165,8 @@ Examples:
     parser.add_argument("--file", help="Download a single file instead of entire repository")
     parser.add_argument("--login", action="store_true",
                         help="Login to Hugging Face before downloading")
+    parser.add_argument("--force", action="store_true",
+                        help="Force download even if the destination already exists and is not empty.")
 
     args = parser.parse_args()
 
@@ -170,7 +187,8 @@ Examples:
             local_dir=args.local_dir,
             repo_type=args.repo_type,
             token=args.token,
-            revision=args.revision
+            revision=args.revision,
+            force=args.force
         )
     else:
         result = download_repository(
@@ -181,7 +199,8 @@ Examples:
             revision=args.revision,
             include_patterns=args.include,
             exclude_patterns=args.exclude,
-            cache_dir=args.cache_dir
+            cache_dir=args.cache_dir,
+            force=args.force
         )
 
     if result:

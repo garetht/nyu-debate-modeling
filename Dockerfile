@@ -1,5 +1,5 @@
 # Build stage
-FROM pytorch/pytorch:2.7.1-cuda12.8-cudnn9-devel
+FROM pytorch/pytorch:2.7.1-cuda12.6-cudnn9-devel
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
     build-essential \
@@ -15,9 +15,11 @@ WORKDIR /app
 COPY pyproject.toml uv.lock ./
 
 # Install dependencies
-
 RUN uv venv
+
+# install everything else
 RUN uv sync --no-group cuda
+#RUN uv pip install --force-reinstall --upgrade flash-attn==2.8.0.post2 --no-build-isolation
 
 COPY . .
 
@@ -28,4 +30,4 @@ ENV OPENAI_ORGANIZATION="org-vt1Xse3GWhm4hiaZutOuXVbn"
 # ENV OPENAI_API_KEY
 # ENV
 
-CMD ["/bin/bash"]
+ENTRYPOINT ["python"]
