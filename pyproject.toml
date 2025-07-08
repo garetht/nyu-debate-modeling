@@ -113,7 +113,6 @@ dependencies = [
     "thinc==8.3.4",
     "threadpoolctl==3.6.0",
     "tokenizers==0.19.1",
-    "torch==2.0.1",
     "tqdm==4.67.1",
     "traitlets==5.14.3",
     "transformers==4.41.2",
@@ -129,4 +128,9 @@ dependencies = [
     "wrapt==1.17.2",
     "xxhash==3.5.0",
     "yarl==1.20.1",
+]
+
+[dependency-groups]
+cuda = [
+    "torch==2.7.1",
 ]
