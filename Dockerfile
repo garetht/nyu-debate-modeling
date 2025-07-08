@@ -1,5 +1,5 @@
 # Build stage
-FROM python:3.11-slim
+FROM pytorch/pytorch:2.7.1-cuda12.8-cudnn9-devel
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
     build-essential \
@@ -17,9 +17,7 @@ COPY pyproject.toml uv.lock ./
 # Install dependencies
 
 RUN uv venv
-RUN uv sync
-# RUN uv pip install torch --index-url https://download.pytorch.org/whl/cu121
-# RUN uv pip install --force-reinstall --upgrade flash-attn --no-build-isolation;
+RUN uv sync --no-group cuda
 
 COPY . .
 

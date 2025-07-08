@@ -5,14 +5,27 @@ Note: Given the current state of this project, this README will just give an ove
 ## MARS-Specific Instructions
 
 `docker build -t nyu-debate-modeling:latest . && docker run -it --entrypoint bash nyu-debate-modeling`
+`sudo docker build -t nyu-debate-modeling:latest . && sudo docker run -it -v "$(pwd)/downloaded-models":/app/downloaded-models --entrypoint bash nyu-debate-modeling`
 
-`python3 ./scripts/run_debate.py --configuration='debater-untrained-judge-untrained'`
+`python ./scripts/run_debate.py --configuration='debater-untrained-judge-untrained'`
 
 `rsync --exclude='/.git' --filter="dir-merge,- .gitignore" -avz -e "ssh -i ~/.ssh/lambda-labs.pem" . ubuntu@129.213.118.172:/home/ubuntu/mars-arnesen-reproduction`
 
-
 `sudo docker run -it --entrypoint bash -v "$(pwd)/models":/home/ubuntu/mars-arnesen-reproduction/models nyu-debate-modeling`
 
+
+```
+distribution=$(. /etc/os-release;echo $ID$VERSION_ID)
+curl -s -L https://nvidia.github.io/nvidia-docker/gpgkey | sudo apt-key add -
+curl -s -L https://nvidia.github.io/nvidia-docker/$distribution/nvidia-docker.list | sudo tee /etc/apt/sources.list.d/nvidia-docker.list
+
+# Update package list and install
+sudo apt-get update
+sudo apt-get install -y nvidia-container-toolkit
+
+# Restart Docker daemon
+sudo systemctl restart docker
+```
 
 ## Setup
 
