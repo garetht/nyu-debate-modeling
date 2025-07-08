@@ -2,6 +2,18 @@
 
 Note: Given the current state of this project, this README will just give an overview of the code structure. It is not an introduction to the overall effort.
 
+## MARS-Specific Instructions
+
+`docker build -t nyu-debate-modeling:latest . && docker run -it --entrypoint bash nyu-debate-modeling`
+
+`python3 ./scripts/run_debate.py --configuration='debater-untrained-judge-untrained'`
+
+`rsync --exclude='/.git' --filter="dir-merge,- .gitignore" -avz -e "ssh -i ~/.ssh/lambda-labs.pem" . ubuntu@129.213.118.172:/home/ubuntu/mars-arnesen-reproduction`
+
+
+`sudo docker run -it --entrypoint bash -v "$(pwd)/models":/home/ubuntu/mars-arnesen-reproduction/models nyu-debate-modeling`
+
+
 ## Setup
 
 ### Basic Setup
