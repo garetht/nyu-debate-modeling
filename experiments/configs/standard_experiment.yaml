@@ -1,3 +1,27 @@
+debater-untrained-judge-untrained:
+  batch_size: 1
+  num_speeches: 2
+  flip: False
+  enable_self_debate: True
+  speech_structure: default_debate
+  alternate: False
+  agents:
+    debaters:
+      - model_settings:
+          model_type: llama3
+          model_file_path: /home/ubuntu/mars-arnesen-gh/downloaded-models/gradientai/Llama-3-8B-Instruct-262k
+          alias: "experiment debate - untrained"
+          require_quote_validation: True
+          generation_params:
+            temperature: 0.5
+    judge:
+      model_settings:
+        model_type: openai
+        alias: openai-judge
+        model_file_path: gpt-4.1-2025-04-14
+  dataset:
+    dataset_type: quality
+    split_type: val
 Data Generation - Llama3 - SingleRound - FullTrain - SFT:
   batch_size: 1
   num_speeches: 1
