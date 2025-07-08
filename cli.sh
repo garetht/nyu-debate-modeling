@@ -130,14 +130,100 @@ get_first_instance_id() {
     echo "$instance_id"
 }
 
+# Function to get cached instance info or fetch fresh
+get_cached_instance_info() {
+    local cache_file="./tmp/lambda_instance_cache.json"
+    local force_refresh="${1:-false}"
+
+    # Create tmp directory if it doesn't exist
+    mkdir -p ./tmp
+
+    # Check if cache exists and is valid (not force refresh)
+    if [[ "$force_refresh" == "false" && -f "$cache_file" ]]; then
+        # Check if cache is less than 1 hour old
+        local cache_age
+        cache_age=$(date -r "$cache_file" +%s 2>/dev/null || stat -c %Y "$cache_file" 2>/dev/null)
+        local current_time
+        current_time=$(date +%s)
+        local age_diff=$((current_time - cache_age))
+
+        if [[ $age_diff -lt 3600 ]]; then  # 1 hour = 3600 seconds
+            log_debug "Using cached instance info (age: ${age_diff}s)"
+            cat "$cache_file"
+            return 0
+        else
+            log_debug "Cache expired (age: ${age_diff}s), fetching fresh data"
+        fi
+    fi
+
+    # Fetch fresh instance info
+    log_debug "Fetching fresh instance info"
+    local instance_id
+    instance_id=$(get_first_instance_id)
+
+    local ip
+    ip=$(get_instance_ip "$instance_id")
+
+    # Create cache entry
+    local cache_data
+    cache_data=$(cat << EOF
+{
+    "instance_id": "$instance_id",
+    "ip": "$ip",
+    "timestamp": $(date +%s)
+}
+EOF
+)
+
+    # Save to cache
+    echo "$cache_data" > "$cache_file"
+    log_debug "Cached instance info: $instance_id -> $ip"
+
+    echo "$cache_data"
+}
+
+# Function to extract data from cache JSON
+extract_from_cache() {
+    local cache_data="$1"
+    local field="$2"
+
+    echo "$cache_data" | grep -o "\"$field\": \"[^\"]*" | cut -d'"' -f4
+}
+
+
+# Function to perform initial rsync to remote
+perform_initial_rsync() {
+    local local_path="."
+    local remote_path="/home/ubuntu/mars-arnesen-gh/"
+
+    log_info "Performing initial rsync to remote..."
+
+    # Call rsync-to-remote with default parameters
+    if cmd_rsync_to_remote_internal "$local_path" "$remote_path"; then
+        set_initial_rsync_flag
+        log_info "Initial rsync completed successfully"
+        return 0
+    else
+        log_error "Initial rsync failed"
+        return 1
+    fi
+}
+
 # SSH command implementation
 cmd_ssh() {
     local user="ubuntu"
     local port="22"
+    local remote_path="/home/ubuntu/mars-arnesen-gh"
+    local retry_count=0
+    local max_retries=1
 
     # Parse arguments
     while [[ $# -gt 0 ]]; do
         case $1 in
+            -r|--remote-path)
+                remote_path="$2"
+                shift 2
+                ;;
             -h|--help)
                 cat << EOF
 Usage: $SCRIPT_NAME ssh [OPTIONS]
@@ -145,6 +231,7 @@ Usage: $SCRIPT_NAME ssh [OPTIONS]
 Connect to the first Lambda Labs instance via SSH using ubuntu user on port 22.
 
 OPTIONS:
+    -r, --remote-path PATH  Remote directory to change to (default: /home/ubuntu/mars-arnesen-gh)
     -h, --help              Show this help message
 
 ENVIRONMENT VARIABLES:
@@ -153,6 +240,7 @@ ENVIRONMENT VARIABLES:
 
 EXAMPLES:
     $SCRIPT_NAME ssh
+    $SCRIPT_NAME ssh -r /home/ubuntu/project
 
 EOF
                 exit 0
@@ -171,18 +259,47 @@ EOF
     # Validate environment variables
     validate_env_vars
 
-    # Get first instance ID
-    local instance_id
-    instance_id=$(get_first_instance_id)
-    log_info "Using first instance: $instance_id"
+    perform_initial_rsync
 
-    # Get instance IP
-    local ip
-    ip=$(get_instance_ip "$instance_id")
-    log_info "Connecting to instance $instance_id at $ip"
+    while [[ $retry_count -le $max_retries ]]; do
+        # Get instance info (cached or fresh)
+        local force_refresh="false"
+        if [[ $retry_count -gt 0 ]]; then
+            force_refresh="true"
+            log_warn "SSH connection failed, refreshing cache and retrying in 10 seconds..."
+            sleep 10
+        fi
 
-    # Execute SSH command
-    ssh -i "$PEM_FILEPATH" -p "$port" "$user@$ip"
+        local cache_data
+        cache_data=$(get_cached_instance_info "$force_refresh")
+
+        local instance_id
+        instance_id=$(extract_from_cache "$cache_data" "instance_id")
+
+        local ip
+        ip=$(extract_from_cache "$cache_data" "ip")
+
+        log_info "Using instance: $instance_id at $ip"
+
+        # Execute SSH command
+        local ssh_exit_code
+        ssh -ti "$PEM_FILEPATH" -p "$port" "$user@$ip" "cd $remote_path ; ./host_setup.sh ; bash --login"
+        ssh_exit_code=$?
+
+        # Check exit code - 0 means success (including normal user exit)
+        # 130 is SIGINT (Ctrl+C) which is also normal user exit
+        if [[ $ssh_exit_code -eq 0 || $ssh_exit_code -eq 130 ]]; then
+            exit 0
+        else
+            # Other exit codes indicate connection/authentication failures
+            log_warn "SSH connection failed with exit code: $ssh_exit_code"
+            ((retry_count++))
+            if [[ $retry_count -gt $max_retries ]]; then
+                log_error "Failed to connect after $max_retries retries"
+                exit 1
+            fi
+        fi
+    done
 }
 
 # Rsync to remote command implementation
@@ -191,6 +308,8 @@ cmd_rsync_to_remote() {
     local remote_path="/home/ubuntu/mars-arnesen-gh/"
     local user="ubuntu"
     local port="22"
+    local retry_count=0
+    local max_retries=1
 
     # Parse arguments
     while [[ $# -gt 0 ]]; do
@@ -239,31 +358,75 @@ EOF
     # Validate environment variables
     validate_env_vars
 
-    # Get first instance ID
-    local instance_id
-    instance_id=$(get_first_instance_id)
-    log_info "Using first instance: $instance_id"
+    # Call internal function and set flag on success
+    if cmd_rsync_to_remote_internal "$local_path" "$remote_path"; then
+        set_initial_rsync_flag
+        exit 0
+    else
+        exit 1
+    fi
+}
 
-    # Get instance IP
-    local ip
-    ip=$(get_instance_ip "$instance_id")
-    log_info "Syncing from $local_path to $user@$ip:$remote_path"
+# Internal rsync to remote function (used by both cmd_rsync_to_remote and perform_initial_rsync)
+cmd_rsync_to_remote_internal() {
+    local local_path="$1"
+    local remote_path="$2"
+    local user="ubuntu"
+    local port="22"
+    local retry_count=0
+    local max_retries=1
 
-    # Build rsync command with hardcoded excludes and filters
-    local rsync_cmd=(
-        "rsync"
-        "-avz"
-        "--progress"
-        "--exclude=/.git"
-        "--filter=dir-merge,- .gitignore"
-        "-e" "ssh -i $PEM_FILEPATH -p $port -o StrictHostKeyChecking=no"
-        "$local_path"
-        "$user@$ip:$remote_path"
-    )
+    while [[ $retry_count -le $max_retries ]]; do
+        # Get instance info (cached or fresh)
+        local force_refresh="false"
+        if [[ $retry_count -gt 0 ]]; then
+            force_refresh="true"
+            log_warn "Rsync failed, refreshing cache and retrying in 10 seconds..."
+            sleep 10
+        fi
 
-    # Execute rsync command
-    log_debug "Executing: ${rsync_cmd[*]}"
-    "${rsync_cmd[@]}"
+        local cache_data
+        cache_data=$(get_cached_instance_info "$force_refresh")
+
+        local instance_id
+        instance_id=$(extract_from_cache "$cache_data" "instance_id")
+
+        local ip
+        ip=$(extract_from_cache "$cache_data" "ip")
+
+        log_info "Using instance: $instance_id at $ip"
+        log_info "Syncing from $local_path to $user@$ip:$remote_path"
+
+        # Build rsync command with hardcoded excludes and filters
+        local rsync_cmd=(
+            "rsync"
+            "-avz"
+            "--progress"
+            "--exclude=/.git"
+            "--filter=dir-merge,- .gitignore"
+            "-e" "ssh -i $PEM_FILEPATH -p $port -o StrictHostKeyChecking=no"
+            "$local_path"
+            "$user@$ip:$remote_path"
+        )
+
+        # Execute rsync command
+        log_debug "Executing: ${rsync_cmd[*]}"
+        local rsync_exit_code
+        "${rsync_cmd[@]}"
+        rsync_exit_code=$?
+
+        # Check exit code - 0 means success
+        if [[ $rsync_exit_code -eq 0 ]]; then
+            return 0
+        else
+            log_warn "Rsync command failed with exit code: $rsync_exit_code"
+            ((retry_count++))
+            if [[ $retry_count -gt $max_retries ]]; then
+                log_error "Failed to sync after $max_retries retries"
+                return 1
+            fi
+        fi
+    done
 }
 
 # Rsync to host command implementation
@@ -272,6 +435,8 @@ cmd_rsync_to_host() {
     local local_path="."
     local user="ubuntu"
     local port="22"
+    local retry_count=0
+    local max_retries=1
 
     # Parse arguments
     while [[ $# -gt 0 ]]; do
@@ -320,31 +485,57 @@ EOF
     # Validate environment variables
     validate_env_vars
 
-    # Get first instance ID
-    local instance_id
-    instance_id=$(get_first_instance_id)
-    log_info "Using first instance: $instance_id"
+    while [[ $retry_count -le $max_retries ]]; do
+        # Get instance info (cached or fresh)
+        local force_refresh="false"
+        if [[ $retry_count -gt 0 ]]; then
+            force_refresh="true"
+            log_warn "Rsync failed, refreshing cache and retrying in 10 seconds..."
+            sleep 10
+        fi
 
-    # Get instance IP
-    local ip
-    ip=$(get_instance_ip "$instance_id")
-    log_info "Syncing from $user@$ip:$remote_path to $local_path"
+        local cache_data
+        cache_data=$(get_cached_instance_info "$force_refresh")
 
-    # Build rsync command with hardcoded excludes and filters
-    local rsync_cmd=(
-        "rsync"
-        "-avz"
-        "--progress"
-        "--exclude=/.git"
-        "--filter=dir-merge,- .gitignore"
-        "-e" "ssh -i $PEM_FILEPATH -p $port -o StrictHostKeyChecking=no"
-        "$user@$ip:$remote_path"
-        "$local_path"
-    )
+        local instance_id
+        instance_id=$(extract_from_cache "$cache_data" "instance_id")
 
-    # Execute rsync command
-    log_debug "Executing: ${rsync_cmd[*]}"
-    "${rsync_cmd[@]}"
+        local ip
+        ip=$(extract_from_cache "$cache_data" "ip")
+
+        log_info "Using instance: $instance_id at $ip"
+        log_info "Syncing from $user@$ip:$remote_path to $local_path"
+
+        # Build rsync command with hardcoded excludes and filters
+        local rsync_cmd=(
+            "rsync"
+            "-avz"
+            "--progress"
+            "--exclude=/.git"
+            "--filter=dir-merge,- .gitignore"
+            "-e" "ssh -i $PEM_FILEPATH -p $port -o StrictHostKeyChecking=no"
+            "$user@$ip:$remote_path"
+            "$local_path"
+        )
+
+        # Execute rsync command
+        log_debug "Executing: ${rsync_cmd[*]}"
+        local rsync_exit_code
+        "${rsync_cmd[@]}"
+        rsync_exit_code=$?
+
+        # Check exit code - 0 means success
+        if [[ $rsync_exit_code -eq 0 ]]; then
+            exit 0
+        else
+            log_warn "Rsync command failed with exit code: $rsync_exit_code"
+            ((retry_count++))
+            if [[ $retry_count -gt $max_retries ]]; then
+                log_error "Failed to sync after $max_retries retries"
+                exit 1
+            fi
+        fi
+    done
 }
 
 # Main help function
@@ -374,6 +565,9 @@ ENVIRONMENT VARIABLES:
 EXAMPLES:
     # SSH into the first instance
     $SCRIPT_NAME ssh
+
+    # SSH into the first instance and change to a specific directory
+    $SCRIPT_NAME ssh -r /home/ubuntu/project
 
     # Sync current directory to first instance
     $SCRIPT_NAME rsync-to-remote
