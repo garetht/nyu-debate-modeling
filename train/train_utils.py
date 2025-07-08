@@ -6,7 +6,7 @@ import utils.constants as constants
 
 from peft import LoraConfig, PeftConfig, PeftModel, PeftType, PromptTuningInit, PromptTuningConfig, TaskType
 from pydantic import BaseModel, ConfigDict, model_validator, field_validator
-from transformers import AutoModelForCausalLM, AutoTokenizer, BitsAndBytesConfig
+from transformers import AutoModelForCausalLM, AutoTokenizer
 from trl import AutoModelForCausalLMWithValueHead
 import torch
 import yaml
