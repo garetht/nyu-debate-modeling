@@ -289,6 +289,7 @@ cmd_bg_task() {
     local bg_command=""
     local task_name=""
     local parsing_command=false
+    local timeout_ms=4000  # Default 4 seconds in milliseconds
 
     # Parse arguments
     while [[ $# -gt 0 ]]; do
@@ -301,6 +302,15 @@ cmd_bg_task() {
                 task_name="$2"
                 shift 2
                 ;;
+            -t|--timeout)
+                timeout_ms="$2"
+                # Validate timeout is a positive integer
+                if ! [[ "$timeout_ms" =~ ^[0-9]+$ ]] || [[ "$timeout_ms" -lt 1 ]]; then
+                    log_error "Timeout must be a positive integer in milliseconds"
+                    exit 1
+                fi
+                shift 2
+                ;;
             -h|--help)
                 cat << EOF
 Usage: $SCRIPT_NAME bg-task [OPTIONS] -- COMMAND
@@ -310,6 +320,7 @@ Launch a background task on the first Lambda Labs instance with nohup.
 OPTIONS:
     -r, --remote-path PATH  Remote directory to run command from (default: $REMOTE_HOME_DIR)
     -n, --name NAME         Task name for log file (default: auto-generated from timestamp)
+    -t, --timeout MS        Timeout in milliseconds to wait for task startup (default: 5000)
     -h, --help              Show this help message
 
 ARGUMENTS:
@@ -325,9 +336,12 @@ EXAMPLES:
     $SCRIPT_NAME bg-task -- python ./run-debate --configuration="config.json"
     $SCRIPT_NAME bg-task -n "training-job" -- python train.py --epochs 100
     $SCRIPT_NAME bg-task -r /home/ubuntu/project -- ./run_experiment.sh
+    $SCRIPT_NAME bg-task -t 10000 -- python slow_startup.py
 
 The task will be run with nohup and output will be logged to:
     $REMOTE_LOGS_DIR/\$TASK_NAME.log
+
+The command will wait up to the specified timeout to detect immediate startup failures.
 
 EOF
                 exit 0
@@ -393,12 +407,43 @@ EOF
         log_info "Using instance: $instance_id at $ip"
         log_info "Starting background task: $bg_command"
         log_info "Task name: $task_name"
+        log_info "Startup failure timeout: ${timeout_ms}ms"
         log_info "Logs will be written to: $REMOTE_LOGS_DIR/$task_name.log"
 
-        # Build the remote command
+        # Convert timeout from milliseconds to seconds for sleep
+        local timeout_seconds
+        timeout_seconds=$(echo "scale=3; $timeout_ms / 1000" | bc -l 2>/dev/null || echo "$(($timeout_ms / 1000))")
+
+        # Build the remote command with process monitoring
         local ssh_env_setup
         ssh_env_setup=$(get_ssh_env_setup "$remote_path")
-        local remote_command="$ssh_env_setup && mkdir -p $REMOTE_LOGS_DIR && nohup $bg_command > $REMOTE_LOGS_DIR/$task_name.log 2>&1 &"
+
+        # Create a comprehensive remote command that:
+        # 1. Sets up environment and creates log directory
+        # 2. Starts the command in background with nohup
+        # 3. Captures the PID
+        # 4. Waits for the specified timeout
+        # 5. Checks if process is still running
+        # 6. Returns appropriate exit code
+        local remote_command="$ssh_env_setup && mkdir -p $REMOTE_LOGS_DIR && {
+            source .venv/bin/activate
+            nohup $bg_command > $REMOTE_LOGS_DIR/$task_name.log 2>&1 &
+            bg_pid=\$!
+            sleep $timeout_seconds
+            if kill -0 \$bg_pid 2>/dev/null; then
+                echo \"Task started successfully with PID \$bg_pid\"
+                exit 0
+            else
+                echo \"Task failed during startup. Check logs at $REMOTE_LOGS_DIR/$task_name.log\"
+                echo \"Error output:\"
+                if [ -f \"$REMOTE_LOGS_DIR/$task_name.log\" ]; then
+                    tail -20 \"$REMOTE_LOGS_DIR/$task_name.log\"
+                else
+                    echo \"No log file found - task may have failed before logging started\"
+                fi
+                wait \$bg_pid 2>/dev/null || exit 1
+            fi
+        }"
 
         # Execute SSH command
         local ssh_exit_code
@@ -408,14 +453,149 @@ EOF
         # Check exit code - 0 means success
         if [[ $ssh_exit_code -eq 0 ]]; then
             log_info "Background task started successfully"
-            log_info "To view logs, run: $SCRIPT_NAME ssh -- tail -f $REMOTE_LOGS_DIR/$task_name.log"
+            log_info "To view logs, run: $SCRIPT_NAME logs $task_name"
             exit 0
         else
-            # Other exit codes indicate connection/authentication failures
+            # Task failed during startup - error details already shown by remote command
+            log_error "Background task failed to start"
+            ((retry_count++))
+            if [[ $retry_count -gt $max_retries ]]; then
+                log_error "Failed to start task after $max_retries retries"
+                exit 1
+            fi
+        fi
+    done
+}
+
+# Logs command implementation
+cmd_logs() {
+    local user="ubuntu"
+    local port="22"
+    local retry_count=0
+    local max_retries=1
+    local log_file=""
+    local lines=50
+    local follow=false
+
+    # Parse arguments
+    while [[ $# -gt 0 ]]; do
+        case $1 in
+            -n|--lines)
+                lines="$2"
+                # Validate lines is a positive integer
+                if ! [[ "$lines" =~ ^[0-9]+$ ]] || [[ "$lines" -lt 1 ]]; then
+                    log_error "Lines must be a positive integer"
+                    exit 1
+                fi
+                shift 2
+                ;;
+            -f|--follow)
+                follow=true
+                shift
+                ;;
+            -h|--help)
+                cat << EOF
+Usage: $SCRIPT_NAME logs [OPTIONS] LOG_FILE
+
+View logs from background tasks on the first Lambda Labs instance.
+
+OPTIONS:
+    -n, --lines NUMBER      Number of lines to show (default: 50)
+    -f, --follow            Follow log file (like tail -f)
+    -h, --help              Show this help message
+
+ARGUMENTS:
+    LOG_FILE               Name of the log file (without .log extension)
+                          Use the task name from bg-task command
+
+ENVIRONMENT VARIABLES:
+    PEM_FILEPATH           Path to the Lambda Labs pem file
+    LAMBDA_LABS_API_KEY    Lambda Labs API Key
+
+EXAMPLES:
+    $SCRIPT_NAME logs task-20240101-123456
+    $SCRIPT_NAME logs -n 100 training-job
+    $SCRIPT_NAME logs -f task-20240101-123456
+    $SCRIPT_NAME logs -f -n 20 training-job
+
+The logs command will look for files at:
+    $REMOTE_LOGS_DIR/\$LOG_FILE.log
+
+EOF
+                exit 0
+                ;;
+            -*)
+                log_error "Unknown option: $1"
+                exit 1
+                ;;
+            *)
+                if [[ -z "$log_file" ]]; then
+                    log_file="$1"
+                else
+                    log_error "Multiple log files specified. Only one is allowed."
+                    exit 1
+                fi
+                shift
+                ;;
+        esac
+    done
+
+    # Check if log file is provided
+    if [[ -z "$log_file" ]]; then
+        log_error "No log file specified"
+        echo "Example: $SCRIPT_NAME logs task-20240101-123456"
+        exit 1
+    fi
+
+    # Validate environment variables
+    validate_env_vars
+
+    while [[ $retry_count -le $max_retries ]]; do
+        # Get instance info (cached or fresh)
+        local force_refresh="false"
+        if [[ $retry_count -gt 0 ]]; then
+            force_refresh="true"
+            log_warn "SSH connection failed, refreshing cache and retrying in 10 seconds..."
+            sleep 10
+        fi
+
+        local cache_data
+        cache_data=$(get_cached_instance_info "$force_refresh")
+
+        local instance_id
+        instance_id=$(extract_from_cache "$cache_data" "instance_id")
+
+        local ip
+        ip=$(extract_from_cache "$cache_data" "ip")
+
+        log_info "Using instance: $instance_id at $ip"
+        log_info "Viewing logs from: $REMOTE_LOGS_DIR/$log_file.log"
+
+        # Build the remote command based on follow flag
+        local remote_command
+        if [[ "$follow" == true ]]; then
+            # Show last N lines and then follow
+            remote_command="if [ -f \"$REMOTE_LOGS_DIR/$log_file.log\" ]; then tail -n $lines -f \"$REMOTE_LOGS_DIR/$log_file.log\"; else echo \"Log file not found: $REMOTE_LOGS_DIR/$log_file.log\"; exit 1; fi"
+        else
+            # Just show last N lines
+            remote_command="if [ -f \"$REMOTE_LOGS_DIR/$log_file.log\" ]; then tail -n $lines \"$REMOTE_LOGS_DIR/$log_file.log\"; else echo \"Log file not found: $REMOTE_LOGS_DIR/$log_file.log\"; exit 1; fi"
+        fi
+
+        # Execute SSH command
+        local ssh_exit_code
+        ssh -ti "$PEM_FILEPATH" -p "$port" "$user@$ip" "$remote_command"
+        ssh_exit_code=$?
+
+        # Check exit code - 0 means success
+        # 130 is SIGINT (Ctrl+C) which is also normal for -f mode
+        if [[ $ssh_exit_code -eq 0 || $ssh_exit_code -eq 130 ]]; then
+            exit 0
+        else
+            # Other exit codes indicate connection/authentication failures or file not found
             log_warn "SSH connection failed with exit code: $ssh_exit_code"
             ((retry_count++))
             if [[ $retry_count -gt $max_retries ]]; then
-                log_error "Failed to connect after $max_retries retries"
+                log_error "Failed to view logs after $max_retries retries"
                 exit 1
             fi
         fi
@@ -673,6 +853,7 @@ GLOBAL OPTIONS:
 COMMANDS:
     ssh                     Connect to the first Lambda Labs instance via SSH
     bg-task                 Launch a background task on the first Lambda Labs instance
+    logs                    View logs from background tasks
     rsync-to-remote         Synchronize files from local to remote instance
     rsync-to-host           Synchronize files from remote instance to local
 
@@ -682,6 +863,9 @@ ENVIRONMENT VARIABLES:
 
     LAMBDA_LABS_API_KEY    Lambda Labs API Key
                           Create here: https://cloud.lambda.ai/api-keys/cloud-api
+
+    OPENAI_API_KEY         OpenAI API Key
+                          Create here: https://platform.openai.com/api-keys
 
 EXAMPLES:
     # SSH into the first instance
@@ -695,6 +879,9 @@ EXAMPLES:
 
     # Launch a named background task
     $SCRIPT_NAME bg-task -n "training-job" -- python train.py --epochs 100
+
+    # Launch with custom timeout (10 seconds)
+    $SCRIPT_NAME bg-task -t 10000 -- python slow_startup.py
 
     # Sync current directory to first instance
     $SCRIPT_NAME rsync-to-remote
@@ -740,6 +927,11 @@ main() {
                 cmd_bg_task "$@"
                 exit $?
                 ;;
+            logs)
+                shift
+                cmd_logs "$@"
+                exit $?
+                ;;
             rsync-to-remote)
                 shift
                 cmd_rsync_to_remote "$@"
@@ -765,7 +957,7 @@ main() {
 
     # No command provided
     log_error "No command provided"
-    echo "Use --help for usage information"
+    show_help
     exit 1
 }
 
