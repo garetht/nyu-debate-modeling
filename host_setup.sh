@@ -35,6 +35,9 @@ setup_direnv() {
     if command -v direnv >/dev/null 2>&1; then
         log_info "Installation verified: $(direnv version)"
 
+        # Setup bash hook
+        setup_direnv_hook
+
         # Force allow any .envrc in current directory
         if [ -f ".envrc" ]; then
             log_info "Found .envrc file, allowing it automatically..."
@@ -47,6 +50,29 @@ setup_direnv() {
         log_error "Installation failed - direnv command not found"
         return 1
     fi
+}
+
+# Function to setup direnv bash hook
+setup_direnv_hook() {
+    log_info "Setting up direnv bash hook..."
+
+    local hook_line='eval "$(direnv hook bash)"'
+    local bashrc_file="$HOME/.bashrc"
+
+    # Check if hook is already in .bashrc
+    if grep -Fxq "$hook_line" "$bashrc_file" 2>/dev/null; then
+        log_info "direnv hook already configured in .bashrc"
+    else
+        log_info "Adding direnv hook to .bashrc..."
+        echo "" >> "$bashrc_file"
+        echo "# direnv hook" >> "$bashrc_file"
+        echo "$hook_line" >> "$bashrc_file"
+        log_info "direnv hook added to .bashrc"
+    fi
+
+    # Also set it up for the current session
+    log_info "Setting up direnv hook for current session..."
+    eval "$(direnv hook bash)"
 }
 
 # Function to setup Python environment
