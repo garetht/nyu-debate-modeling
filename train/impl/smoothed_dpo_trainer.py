@@ -42,23 +42,25 @@ from transformers import (
     PreTrainedTokenizerBase,
     Trainer,
     TrainingArguments,
+    is_wandb_available
 )
 from transformers.trainer_callback import TrainerCallback
 from transformers.trainer_utils import EvalLoopOutput
 
-from trl.import_utils import is_peft_available, is_wandb_available
+#from trl.import_utils import is_peft_available, is_wandb_available
+from transformers.utils.import_utils import is_peft_available
 from trl.models import PreTrainedModelWrapper, create_reference_model
 from trl.trainer.utils import (
     DPODataCollatorWithPadding,
     disable_dropout_in_model,
     pad_to_length,
-    peft_module_casting_to_bf16,
-    trl_sanitze_kwargs_for_tagging,
+    peft_module_casting_to_bf16
 )
 
 
 if is_peft_available():
     from peft import PeftModel, get_peft_model, prepare_model_for_kbit_training
+
 
 
 if is_wandb_available():
