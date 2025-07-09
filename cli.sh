@@ -453,7 +453,7 @@ EOF
         # Check exit code - 0 means success
         if [[ $ssh_exit_code -eq 0 ]]; then
             log_info "Background task started successfully"
-            log_info "To view logs, run: $SCRIPT_NAME bg-task logs $task_name"
+            log_info "To view logs, run: ./$SCRIPT_NAME bg-task logs -f $task_name"
             exit 0
         else
             # Task failed during startup - error details already shown by remote command
