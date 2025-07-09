@@ -4,27 +4,50 @@ Note: Given the current state of this project, this README will just give an ove
 
 ## MARS-Specific Instructions
 
-`docker build -t nyu-debate-modeling:latest . && docker run -it --entrypoint bash nyu-debate-modeling`
-`sudo docker build -t nyu-debate-modeling:latest . && sudo docker run -it -v "$(pwd)/downloaded-models":/app/downloaded-models --entrypoint bash nyu-debate-modeling`
-
-`python ./scripts/run_debate.py --configuration='debater-untrained-judge-untrained'`
-
-`rsync --exclude='/.git' --filter="dir-merge,- .gitignore" -avz -e "ssh -i ~/.ssh/lambda-labs.pem" . ubuntu@129.213.118.172:/home/ubuntu/mars-arnesen-reproduction`
-
-`sudo docker run -it --entrypoint bash -v "$(pwd)/models":/home/ubuntu/mars-arnesen-reproduction/models nyu-debate-modeling`
+We have a command-line interface that helps us with running the replication! This depends on setting up three environment variables so that you do not have to keep entering them.
 
 
+- `PEM_FILEPATH`: create a PEM file at https://cloud.lambda.ai/ssh-keys and put it in ~/.ssh/
+- `LAMBDA_LABS_API_KEY`: create one at https://cloud.lambda.ai/api-keys/cloud-api
+- `OPENAI_API_KEY`: create one at "https://platform.openai.com/api-keys
+
+Then, in your terminal or in your `.bashrc` / `.bash_profile`, set:
 ```
-distribution=$(. /etc/os-release;echo $ID$VERSION_ID)
-curl -s -L https://nvidia.github.io/nvidia-docker/gpgkey | sudo apt-key add -
-curl -s -L https://nvidia.github.io/nvidia-docker/$distribution/nvidia-docker.list | sudo tee /etc/apt/sources.list.d/nvidia-docker.list
+export LAMBDA_LABS_API_KEY=...
+export PEM_FILEPATH=~/.ssh/lambda-labs.pem
+export OPENAI_API_KEY
+```
 
-# Update package list and install
-sudo apt-get update
-sudo apt-get install -y nvidia-container-toolkit
+Once this is done, you can run the commands below. If this is not done, you will be prompted to provide each of these before the CLI can run.
 
-# Restart Docker daemon
-sudo systemctl restart docker
+### Connect to the Lambda Labs instance
+
+If this fails, this may be because we have shut the instances down to save money. You can start a GH-200 instance at https://cloud.lambda.ai/instances.
+
+```bash
+./cli.sh ssh
+```
+
+### Run a long-running background task
+
+This command allows a background task to be run without needing your terminal to be open. The configurations are listed in `standard_experiment.yaml` – customize this with the command you want to run.
+
+```bash
+./cli.sh bg-task -- python scripts/run_debate.py --configuration="debater-untrained-judge-untrained"
+```
+
+### Viewing logs
+
+```bash
+./cli.sh logs -f task-20250709-112351
+```
+
+### Retrieve generated files from the instance
+
+This syncs the file state on the machine to your local machine. For maximum safety, this does not overwrite any existing files on your machine. This 
+
+```bash
+./cli.sh rsync-to-host
 ```
 
 ## Setup

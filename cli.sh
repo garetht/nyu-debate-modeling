@@ -813,6 +813,7 @@ EOF
             "--progress"
             "--exclude=/.git"
             "--filter=dir-merge,- .gitignore"
+            "--ignore-existing"
             "-e" "ssh -i $PEM_FILEPATH -p $port -o StrictHostKeyChecking=no"
             "$user@$ip:$remote_path"
             "$local_path"
