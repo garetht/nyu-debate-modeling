@@ -19,7 +19,10 @@ RUN uv venv
 
 # install everything else
 RUN uv sync --no-group cuda
-#RUN uv pip install --force-reinstall --upgrade flash-attn==2.8.0.post2 --no-build-isolation
+
+ENV MAX_JOBS=14
+
+RUN uv pip install --force-reinstall --upgrade flash-attn==2.8.0.post2 --no-build-isolation
 
 COPY . .
 
