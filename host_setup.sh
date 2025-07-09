@@ -77,6 +77,7 @@ setup_direnv_hook() {
 
 # Function to setup Python environment
 setup_python_env() {
+    export CUDA_HOME=/usr/local/cuda
     log_info "Setting up Python environment..."
 
     # Set UV cache directory
@@ -116,7 +117,7 @@ setup_python_env() {
 
     # Install PyTorch with CUDA support
     log_info "Installing PyTorch with CUDA 12.8 support..."
-    uv pip install torch==2.7.1 --index-url https://download.pytorch.org/whl/cu128
+    CUDA_HOME=/usr/local/cuda uv pip install --force-reinstall torch==2.7.1 --index-url https://download.pytorch.org/whl/cu128
 
     # Install flash-attn with specific build configuration
     log_info "Installing flash-attn (this may take a while)..."
@@ -149,7 +150,7 @@ main() {
     # Check flag file for Python setup
     local python_flag_file="/tmp/$REMOTE_HOME_DIR/python_setup_complete"
     mkdir -p "/tmp/$REMOTE_HOME_DIR/"
-    
+
     if [ -f "$python_flag_file" ]; then
         log_info "Python setup already completed (flag file exists)"
     else
