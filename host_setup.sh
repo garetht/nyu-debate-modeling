@@ -147,8 +147,9 @@ main() {
     mkdir -p ./tmp
 
     # Check flag file for Python setup
-    local python_flag_file="/tmp/python_setup_complete"
-
+    local python_flag_file="/tmp/$REMOTE_HOME_DIR/python_setup_complete"
+    mkdir -p "/tmp/$REMOTE_HOME_DIR/"
+    
     if [ -f "$python_flag_file" ]; then
         log_info "Python setup already completed (flag file exists)"
     else
