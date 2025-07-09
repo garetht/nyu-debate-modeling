@@ -37,6 +37,7 @@ prompt_env_var() {
 validate_env_vars() {
     prompt_env_var "PEM_FILEPATH" "Path to the Lambda Labs pem file" "https://cloud.lambda.ai/ssh-keys"
     prompt_env_var "LAMBDA_LABS_API_KEY" "Lambda Labs API Key" "https://cloud.lambda.ai/api-keys/cloud-api"
+    prompt_env_var "OPENAI_API_KEY" "OpenAI API Key" "https://platform.openai.com/api-keys"
 
     # Validate PEM file exists
     if [[ ! -f "$PEM_FILEPATH" ]]; then
@@ -251,7 +252,7 @@ EOF
 
         # Execute SSH command
         local ssh_exit_code
-        ssh -ti "$PEM_FILEPATH" -p "$port" "$user@$ip" "cd $remote_path ; ./host_setup.sh ; bash --login"
+        ssh -ti "$PEM_FILEPATH" -p "$port" "$user@$ip" "cd $remote_path ; ./host_setup.sh ; export OPENAI_API_KEY=$OPENAI_API_KEY; export INPUT_ROOT=$REMOTE_HOME_DIR/data/; export SRC_ROOT=$REMOTE_HOME_DIR/ ; bash --login"
         ssh_exit_code=$?
 
         # Check exit code - 0 means success (including normal user exit)

@@ -99,7 +99,15 @@ setup_python_env() {
 
     # Download model
     log_info "Downloading Llama model..."
-    python scripts/huggingface_downloader.py gradientai/Llama-3-8B-Instruct-262k ./downloaded-models/gradientai/Llama-3-8B-Instruct-262k
+    source .venv/bin/activate
+
+    DIR=./downloaded-models/gradientai/Llama-3-8B-Instruct-262k
+    if [ -d "$DIR" ] && [ -z "$(ls -A "$DIR")" ]; then
+      log_info "Directory is empty. Downloading model..."
+      python scripts/huggingface_downloader.py gradientai/Llama-3-8B-Instruct-262k "$DIR"
+    else
+      echo "Directory is not empty. Skipping model download."
+    fi
 
     log_info "Python environment setup complete!"
     return 0
