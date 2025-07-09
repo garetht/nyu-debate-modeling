@@ -252,7 +252,15 @@ EOF
 
         # Execute SSH command
         local ssh_exit_code
-        ssh -ti "$PEM_FILEPATH" -p "$port" "$user@$ip" "cd $remote_path ; ./host_setup.sh ; export OPENAI_API_KEY=$OPENAI_API_KEY; export INPUT_ROOT=$REMOTE_HOME_DIR/data/; export SRC_ROOT=$REMOTE_HOME_DIR/ ; bash --login"
+        ssh -ti "$PEM_FILEPATH" -p "$port" "$user@$ip" "
+            cd $remote_path
+            ./host_setup.sh
+            export OPENAI_API_KEY=$OPENAI_API_KEY
+            export INPUT_ROOT=$REMOTE_HOME_DIR/data/
+            export SRC_ROOT=$REMOTE_HOME_DIR/
+            mkdir -p $REMOTE_HOME_DIR/outputs/transcripts
+            bash --login
+        "
         ssh_exit_code=$?
 
         # Check exit code - 0 means success (including normal user exit)
