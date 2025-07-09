@@ -1,138 +1,32 @@
 #!/bin/bash
 
-# direnv Setup Script
-# This script checks if direnv is installed and installs it if not present
+# Combined Setup Script
+# This script sets up direnv and Python environment with flag file for Python setup only
 
 set -e  # Exit on any error
 
-# Colors for output
-RED='\033[0;31m'
-GREEN='\033[0;32m'
-YELLOW='\033[1;33m'
-NC='\033[0m' # No Color
+source "$(dirname "$0")/bash_scripts/colors.sh"
 
-# Function to print colored output
-print_status() {
-    echo -e "${GREEN}[INFO]${NC} $1"
-}
-
-print_warning() {
-    echo -e "${YELLOW}[WARNING]${NC} $1"
-}
-
-print_error() {
-    echo -e "${RED}[ERROR]${NC} $1"
-}
-
-# Function to install direnv using apt
-install_direnv_apt() {
-    print_status "Installing direnv using apt..."
-    sudo apt update
-    sudo apt install -y direnv
-}
-
-# Function to install direnv from binary release
-install_direnv_binary() {
-    print_status "Installing direnv from binary release..."
-
-    # Detect architecture
-    local arch=$(uname -m)
-    case $arch in
-        x86_64)
-            arch="amd64"
-            ;;
-        aarch64)
-            arch="arm64"
-            ;;
-        armv7l)
-            arch="arm"
-            ;;
-        *)
-            print_error "Unsupported architecture: $arch"
-            return 1
-            ;;
-    esac
-
-    # Get latest release URL
-    local os="linux"
-    local url="https://github.com/direnv/direnv/releases/latest/download/direnv.${os}-${arch}"
-
-    print_status "Downloading direnv for ${os}-${arch}..."
-
-    # Create temporary directory
-    local temp_dir=$(mktemp -d)
-    cd "$temp_dir"
-
-    # Download binary
-    if command -v curl >/dev/null 2>&1; then
-        curl -fsSL "$url" -o direnv
-    elif command -v wget >/dev/null 2>&1; then
-        wget -q "$url" -O direnv
-    else
-        print_error "Neither curl nor wget found. Please install one of them."
-        return 1
-    fi
-
-    # Make executable and install
-    chmod +x direnv
-
-    # Install to /usr/local/bin (requires sudo) or ~/.local/bin (user-local)
-    if [ -w /usr/local/bin ]; then
-        mv direnv /usr/local/bin/
-        print_status "Installed direnv to /usr/local/bin/"
-    elif [ "$EUID" -eq 0 ]; then
-        mv direnv /usr/local/bin/
-        print_status "Installed direnv to /usr/local/bin/"
-    else
-        mkdir -p ~/.local/bin
-        mv direnv ~/.local/bin/
-        print_status "Installed direnv to ~/.local/bin/"
-        print_warning "Make sure ~/.local/bin is in your PATH"
-    fi
-
-    # Clean up
-    cd - > /dev/null
-    rm -rf "$temp_dir"
-}
-
-# Function to setup bash shell hook for direnv
-setup_bash_hook() {
-    local rc_file="$HOME/.bashrc"
-
-    if [ -f "$rc_file" ]; then
-        # Check if hook already exists
-        if grep -q "direnv hook" "$rc_file"; then
-            print_status "direnv hook already exists in $rc_file"
-        else
-            print_status "Adding direnv hook to $rc_file"
-            echo 'eval "$(direnv hook bash)"' >> "$rc_file"
-            print_status "Hook added. Please restart your shell or run: source $rc_file"
-        fi
-    else
-        print_warning "$rc_file not found. Please manually add: eval \"\$(direnv hook bash)\""
-    fi
-}
-
-# Main function
-main() {
+# Unified direnv Setup Function
+setup_direnv() {
+    # Function to install direnv using apt
+    install_via_apt() {
+        print_status "Installing direnv using apt..."
+        sudo apt update && sudo apt install -y direnv
+    }
 
     # Check if direnv is already installed
     if command -v direnv >/dev/null 2>&1; then
-        return 0
-    fi
-
-    print_status "direnv not found. Installing..."
-
-    # Install using apt
-    if install_direnv_apt; then
-        print_status "direnv installed successfully via apt"
+        print_status "direnv is already installed: $(direnv version)"
     else
-        print_warning "apt installation failed. Trying binary installation..."
-        if install_direnv_binary; then
-            print_status "direnv installed successfully via binary"
+        print_status "direnv not found. Installing via apt..."
+
+        # Try apt installation only
+        if install_via_apt; then
+            print_status "direnv installed successfully via apt"
         else
-            print_error "Failed to install direnv"
-            exit 1
+            log_error "Failed to install direnv via apt"
+            return 1
         fi
     fi
 
@@ -140,22 +34,108 @@ main() {
     if command -v direnv >/dev/null 2>&1; then
         print_status "Installation verified: $(direnv version)"
 
-        # Setup bash hook
-        setup_bash_hook
-
         # Force allow any .envrc in current directory
         if [ -f ".envrc" ]; then
             print_status "Found .envrc file, allowing it automatically..."
             direnv allow
         fi
 
-        print_status "Setup complete!"
-        print_status "You can now use direnv in your projects by creating .envrc files"
+        print_status "direnv setup complete!"
+        return 0
     else
-        print_error "Installation failed - direnv command not found"
-        exit 1
+        log_error "Installation failed - direnv command not found"
+        return 1
     fi
 }
 
-# Run main function
-main "$@"
+# Function to setup Python environment
+setup_python_env() {
+    print_status "Setting up Python environment..."
+
+    # Set UV cache directory
+    export UV_CACHE_DIR="/home/ubuntu/mars-arnesen-gh/cache"
+    print_status "Using UV cache directory: $UV_CACHE_DIR"
+
+    # Create cache directory if it doesn't exist
+    mkdir -p "$UV_CACHE_DIR"
+
+    # Install uv with specific version
+    print_status "Installing uv==0.7.19..."
+    pip install uv==0.7.19
+
+    # Add ~/.local/bin to PATH if it exists and isn't already there
+    if [ -d "$HOME/.local/bin" ] && [[ ":$PATH:" != *":$HOME/.local/bin:"* ]]; then
+        export PATH="$HOME/.local/bin:$PATH"
+        print_status "Added ~/.local/bin to PATH"
+    fi
+
+    # Verify uv is accessible
+    if ! command -v uv >/dev/null 2>&1; then
+        log_error "uv command not found after installation. Please ensure ~/.local/bin is in your PATH"
+        return 1
+    fi
+
+    print_status "uv version: $(uv --version)"
+
+    uv venv --allow-existing
+
+    # Sync dependencies (excluding cuda group)
+    print_status "Syncing dependencies with uv..."
+    uv sync --no-group cuda
+
+    # Install bitsandbytes
+    print_status "Installing bitsandbytes..."
+    uv pip install bitsandbytes==0.46.1
+
+    # Install PyTorch with CUDA support
+    print_status "Installing PyTorch with CUDA 12.8 support..."
+    uv pip install torch==2.7.1 --index-url https://download.pytorch.org/whl/cu128
+
+    # Install flash-attn with specific build configuration
+    print_status "Installing flash-attn (this may take a while)..."
+    log_warn "Using MAX_JOBS=24 to prevent OOM errors during compilation"
+    CUDA_HOME=/usr/local/cuda MAX_JOBS=24 uv pip install -v --upgrade flash-attn==2.8.0.post2 --no-build-isolation
+
+    # Download model
+    print_status "Downloading Llama model..."
+    python scripts/huggingface_downloader.py gradientai/Llama-3-8B-Instruct-262k ./downloaded-models/gradientai/Llama-3-8B-Instruct-262k
+
+    print_status "Python environment setup complete!"
+    return 0
+}
+
+# Main entrypoint
+main() {
+    print_status "Starting combined setup..."
+
+    # Create tmp directory if it doesn't exist
+    mkdir -p ./tmp
+
+    # Check flag file for Python setup
+    local python_flag_file="./tmp/python_setup_complete"
+
+    if [ -f "$python_flag_file" ]; then
+        print_status "Python setup already completed (flag file exists)"
+    else
+        print_status "Running Python setup..."
+        if setup_python_env; then
+            # Create flag file to indicate successful completion
+            touch "$python_flag_file"
+            print_status "Created flag file: $python_flag_file"
+        else
+            log_error "Python setup failed"
+            return 1
+        fi
+    fi
+
+    # Always run direnv setup (no flag file)
+    print_status "Setting up direnv..."
+    setup_direnv
+
+    print_status "Combined setup complete!"
+}
+
+# Run main function if script is executed directly
+if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
+    main "$@"
+fi

@@ -10,31 +10,7 @@ set -euo pipefail
 SCRIPT_NAME="$(basename "$0")"
 VERSION="1.0.0"
 
-# Colors for output
-RED='\033[0;31m'
-GREEN='\033[0;32m'
-YELLOW='\033[1;33m'
-BLUE='\033[0;34m'
-NC='\033[0m' # No Color
-
-# Logging functions
-log_info() {
-    echo -e "${GREEN}[INFO]${NC} $1" >&2
-}
-
-log_warn() {
-    echo -e "${YELLOW}[WARN]${NC} $1" >&2
-}
-
-log_error() {
-    echo -e "${RED}[ERROR]${NC} $1" >&2
-}
-
-log_debug() {
-    if [[ "${DEBUG:-0}" == "1" ]]; then
-        echo -e "${BLUE}[DEBUG]${NC} $1" >&2
-    fi
-}
+source "$(dirname "$0")/bash_scripts/colors.sh"
 
 # Function to prompt for environment variable if not set
 prompt_env_var() {
@@ -190,23 +166,14 @@ extract_from_cache() {
     echo "$cache_data" | grep -o "\"$field\": \"[^\"]*" | cut -d'"' -f4
 }
 
-
 # Function to perform initial rsync to remote
 perform_initial_rsync() {
     local local_path="."
     local remote_path="/home/ubuntu/mars-arnesen-gh/"
-
     log_info "Performing initial rsync to remote..."
 
     # Call rsync-to-remote with default parameters
-    if cmd_rsync_to_remote_internal "$local_path" "$remote_path"; then
-        set_initial_rsync_flag
-        log_info "Initial rsync completed successfully"
-        return 0
-    else
-        log_error "Initial rsync failed"
-        return 1
-    fi
+    cmd_rsync_to_remote_internal "$local_path" "$remote_path";
 }
 
 # SSH command implementation
