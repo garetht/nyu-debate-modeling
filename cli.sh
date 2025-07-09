@@ -279,8 +279,8 @@ EOF
     done
 }
 
-# Background task command implementation
-cmd_bg_task() {
+# Background task start command implementation
+cmd_bg_task_start() {
     local user="ubuntu"
     local port="22"
     local remote_path="$REMOTE_HOME_DIR"
@@ -313,7 +313,7 @@ cmd_bg_task() {
                 ;;
             -h|--help)
                 cat << EOF
-Usage: $SCRIPT_NAME bg-task [OPTIONS] -- COMMAND
+Usage: $SCRIPT_NAME bg-task start [OPTIONS] -- COMMAND
 
 Launch a background task on the first Lambda Labs instance with nohup.
 
@@ -333,10 +333,10 @@ ENVIRONMENT VARIABLES:
     OPENAI_API_KEY         OpenAI API Key
 
 EXAMPLES:
-    $SCRIPT_NAME bg-task -- python ./run-debate --configuration="config.json"
-    $SCRIPT_NAME bg-task -n "training-job" -- python train.py --epochs 100
-    $SCRIPT_NAME bg-task -r /home/ubuntu/project -- ./run_experiment.sh
-    $SCRIPT_NAME bg-task -t 10000 -- python slow_startup.py
+    $SCRIPT_NAME bg-task start -- python ./run-debate --configuration="config.json"
+    $SCRIPT_NAME bg-task start -n "training-job" -- python train.py --epochs 100
+    $SCRIPT_NAME bg-task start -r /home/ubuntu/project -- ./run_experiment.sh
+    $SCRIPT_NAME bg-task start -t 10000 -- python slow_startup.py
 
 The task will be run with nohup and output will be logged to:
     $REMOTE_LOGS_DIR/\$TASK_NAME.log
@@ -369,7 +369,7 @@ EOF
     # Check if we have a command to run
     if [[ $# -eq 0 ]]; then
         log_error "No command provided. Use -- to separate the command to run."
-        echo "Example: $SCRIPT_NAME bg-task -- python script.py"
+        echo "Example: $SCRIPT_NAME bg-task start -- python script.py"
         exit 1
     fi
 
@@ -453,7 +453,7 @@ EOF
         # Check exit code - 0 means success
         if [[ $ssh_exit_code -eq 0 ]]; then
             log_info "Background task started successfully"
-            log_info "To view logs, run: $SCRIPT_NAME logs $task_name"
+            log_info "To view logs, run: $SCRIPT_NAME bg-task logs $task_name"
             exit 0
         else
             # Task failed during startup - error details already shown by remote command
@@ -468,7 +468,7 @@ EOF
 }
 
 # Logs command implementation
-cmd_logs() {
+cmd_bg_task_logs() {
     local user="ubuntu"
     local port="22"
     local retry_count=0
@@ -495,7 +495,7 @@ cmd_logs() {
                 ;;
             -h|--help)
                 cat << EOF
-Usage: $SCRIPT_NAME logs [OPTIONS] LOG_FILE
+Usage: $SCRIPT_NAME bg-task logs [OPTIONS] LOG_FILE
 
 View logs from background tasks on the first Lambda Labs instance.
 
@@ -513,10 +513,10 @@ ENVIRONMENT VARIABLES:
     LAMBDA_LABS_API_KEY    Lambda Labs API Key
 
 EXAMPLES:
-    $SCRIPT_NAME logs task-20240101-123456
-    $SCRIPT_NAME logs -n 100 training-job
-    $SCRIPT_NAME logs -f task-20240101-123456
-    $SCRIPT_NAME logs -f -n 20 training-job
+    $SCRIPT_NAME bg-task logs task-20240101-123456
+    $SCRIPT_NAME bg-task logs -n 100 training-job
+    $SCRIPT_NAME bg-task logs -f task-20240101-123456
+    $SCRIPT_NAME bg-task logs -f -n 20 training-job
 
 The logs command will look for files at:
     $REMOTE_LOGS_DIR/\$LOG_FILE.log
@@ -543,7 +543,7 @@ EOF
     # Check if log file is provided
     if [[ -z "$log_file" ]]; then
         log_error "No log file specified"
-        echo "Example: $SCRIPT_NAME logs task-20240101-123456"
+        echo "Example: $SCRIPT_NAME bg-task logs task-20240101-123456"
         exit 1
     fi
 
@@ -602,6 +602,82 @@ EOF
     done
 }
 
+# Background task list command implementation
+cmd_bg_task_list() {
+    local user="ubuntu"
+    local port="22"
+
+    validate_env_vars
+
+    local cache_data
+    cache_data=$(get_cached_instance_info "false")
+    local ip
+    ip=$(extract_from_cache "$cache_data" "ip")
+
+    log_info "Listing Python background tasks on instance $ip"
+
+    local remote_command="ps aux | grep 'python' | grep -v grep"
+    ssh -ti "$PEM_FILEPATH" -p "$port" "$user@$ip" "$remote_command"
+}
+
+# Background task stop command implementation
+cmd_bg_task_stop() {
+    local user="ubuntu"
+    local port="22"
+    local pid=""
+
+    if [[ $# -eq 0 ]]; then
+        log_error "No PID provided for stop command"
+        echo "Usage: $SCRIPT_NAME bg-task stop <PID>"
+        exit 1
+    fi
+    pid="$1"
+
+    validate_env_vars
+
+    local cache_data
+    cache_data=$(get_cached_instance_info "false")
+    local ip
+    ip=$(extract_from_cache "$cache_data" "ip")
+
+    log_info "Stopping process with PID $pid on instance $ip"
+
+    local remote_command="kill $pid"
+    ssh -ti "$PEM_FILEPATH" -p "$port" "$user@$ip" "$remote_command"
+}
+
+# Background task command implementation
+cmd_bg_task() {
+    if [[ $# -eq 0 ]]; then
+        log_error "No subcommand provided for bg-task"
+        echo "Usage: $SCRIPT_NAME bg-task [start|logs|list|stop] ..."
+        exit 1
+    fi
+
+    local subcommand="$1"
+    shift
+
+    case "$subcommand" in
+        start)
+            cmd_bg_task_start "$@"
+            ;;
+        logs)
+            cmd_bg_task_logs "$@"
+            ;;
+        list)
+            cmd_bg_task_list "$@"
+            ;;
+        stop)
+            cmd_bg_task_stop "$@"
+            ;;
+        *)
+            log_error "Unknown subcommand for bg-task: $subcommand"
+            echo "Usage: $SCRIPT_NAME bg-task [start|logs|list|stop] ..."
+            exit 1
+            ;;
+    esac
+}
+
 # Rsync to remote command implementation
 cmd_rsync_to_remote() {
     local local_path="."
@@ -629,7 +705,7 @@ Usage: $SCRIPT_NAME rsync-to-remote [OPTIONS]
 Synchronize files from local machine to the first Lambda Labs instance.
 
 OPTIONS:
-    -l, --local-path PATH   Local path to sync from (default: .)
+    -l, --local-path PATH   Local path to sync from (default: .) 
     -r, --remote-path PATH  Remote path to sync to (default: $REMOTE_HOME_DIR/)
     -h, --help              Show this help message
 
@@ -757,7 +833,7 @@ Synchronize files from the first Lambda Labs instance to local machine.
 
 OPTIONS:
     -r, --remote-path PATH  Remote path to sync from (default: $REMOTE_HOME_DIR/)
-    -l, --local-path PATH   Local path to sync to (default: .)
+    -l, --local-path PATH   Local path to sync to (default: .) 
     -h, --help              Show this help message
 
 ENVIRONMENT VARIABLES:
@@ -853,8 +929,7 @@ GLOBAL OPTIONS:
 
 COMMANDS:
     ssh                     Connect to the first Lambda Labs instance via SSH
-    bg-task                 Launch a background task on the first Lambda Labs instance
-    logs                    View logs from background tasks
+    bg-task                 Launch and manage background tasks on the first Lambda Labs instance
     rsync-to-remote         Synchronize files from local to remote instance
     rsync-to-host           Synchronize files from remote instance to local
 
@@ -876,13 +951,16 @@ EXAMPLES:
     $SCRIPT_NAME ssh -r /home/ubuntu/project
 
     # Launch a background task
-    $SCRIPT_NAME bg-task -- python ./run-debate --configuration="config.json"
+    $SCRIPT_NAME bg-task start -- python ./run-debate --configuration="config.json"
 
-    # Launch a named background task
-    $SCRIPT_NAME bg-task -n "training-job" -- python train.py --epochs 100
+    # View logs of a background task
+    $SCRIPT_NAME bg-task logs <task_name>
 
-    # Launch with custom timeout (10 seconds)
-    $SCRIPT_NAME bg-task -t 10000 -- python slow_startup.py
+    # List running background tasks
+    $SCRIPT_NAME bg-task list
+
+    # Stop a background task
+    $SCRIPT_NAME bg-task stop <PID>
 
     # Sync current directory to first instance
     $SCRIPT_NAME rsync-to-remote
@@ -926,11 +1004,6 @@ main() {
             bg-task)
                 shift
                 cmd_bg_task "$@"
-                exit $?
-                ;;
-            logs)
-                shift
-                cmd_logs "$@"
                 exit $?
                 ;;
             rsync-to-remote)
