@@ -9,6 +9,7 @@ set -euo pipefail
 # Global variables
 SCRIPT_NAME="$(basename "$0")"
 VERSION="1.0.0"
+REMOTE_HOME_DIR="/home/ubuntu/mars-arnesen-gh"
 
 source "$(dirname "$0")/bash_scripts/colors.sh"
 
@@ -169,7 +170,7 @@ extract_from_cache() {
 # Function to perform initial rsync to remote
 perform_initial_rsync() {
     local local_path="."
-    local remote_path="/home/ubuntu/mars-arnesen-gh/"
+    local remote_path="$REMOTE_HOME_DIR/"
     log_info "Performing initial rsync to remote..."
 
     # Call rsync-to-remote with default parameters
@@ -180,7 +181,7 @@ perform_initial_rsync() {
 cmd_ssh() {
     local user="ubuntu"
     local port="22"
-    local remote_path="/home/ubuntu/mars-arnesen-gh"
+    local remote_path="$REMOTE_HOME_DIR"
     local retry_count=0
     local max_retries=1
 
@@ -198,7 +199,7 @@ Usage: $SCRIPT_NAME ssh [OPTIONS]
 Connect to the first Lambda Labs instance via SSH using ubuntu user on port 22.
 
 OPTIONS:
-    -r, --remote-path PATH  Remote directory to change to (default: /home/ubuntu/mars-arnesen-gh)
+    -r, --remote-path PATH  Remote directory to change to (default: $REMOTE_HOME_DIR)
     -h, --help              Show this help message
 
 ENVIRONMENT VARIABLES:
@@ -272,7 +273,7 @@ EOF
 # Rsync to remote command implementation
 cmd_rsync_to_remote() {
     local local_path="."
-    local remote_path="/home/ubuntu/mars-arnesen-gh/"
+    local remote_path="$REMOTE_HOME_DIR/"
     local user="ubuntu"
     local port="22"
     local retry_count=0
@@ -297,7 +298,7 @@ Synchronize files from local machine to the first Lambda Labs instance.
 
 OPTIONS:
     -l, --local-path PATH   Local path to sync from (default: .)
-    -r, --remote-path PATH  Remote path to sync to (default: /home/ubuntu/mars-arnesen-gh/)
+    -r, --remote-path PATH  Remote path to sync to (default: $REMOTE_HOME_DIR/)
     -h, --help              Show this help message
 
 ENVIRONMENT VARIABLES:
@@ -398,7 +399,7 @@ cmd_rsync_to_remote_internal() {
 
 # Rsync to host command implementation
 cmd_rsync_to_host() {
-    local remote_path="/home/ubuntu/mars-arnesen-gh/"
+    local remote_path="$REMOTE_HOME_DIR/"
     local local_path="."
     local user="ubuntu"
     local port="22"
@@ -423,7 +424,7 @@ Usage: $SCRIPT_NAME rsync-to-host [OPTIONS]
 Synchronize files from the first Lambda Labs instance to local machine.
 
 OPTIONS:
-    -r, --remote-path PATH  Remote path to sync from (default: /home/ubuntu/mars-arnesen-gh/)
+    -r, --remote-path PATH  Remote path to sync from (default: $REMOTE_HOME_DIR/)
     -l, --local-path PATH   Local path to sync to (default: .)
     -h, --help              Show this help message
 
