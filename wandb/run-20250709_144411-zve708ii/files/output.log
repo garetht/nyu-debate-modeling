@@ -1,0 +1,33 @@
+  0%|                                                                                                                                | 0/222 [00:00<?, ?it/s]The attention layers in this model are transitioning from computing the RoPE embeddings internally through `position_ids` (2D tensor with the indexes of the tokens), to using externally computed `position_embeddings` (Tuple of tensors, containing cos and sin). In v4.46 `position_ids` will be removed and `position_embeddings` will be mandatory.
+  5%|█████▎                                                                                                                 | 10/222 [01:39<34:41,  9.82s/it]2025-07-09 14:45:53,736 - utils.logger_utils - WARNING - {'loss': 1.5051, 'grad_norm': 0.1650390625, 'learning_rate': 0.0002, 'epoch': 0.09009009009009009}
+  9%|██████████▋                                                                                                            | 20/222 [03:13<31:42,  9.42s/it]2025-07-09 14:47:27,643 - utils.logger_utils - WARNING - {'loss': 1.3066, 'grad_norm': 0.2109375, 'learning_rate': 0.0002, 'epoch': 0.18018018018018017}
+{'loss': 1.5051, 'grad_norm': 0.1650390625, 'learning_rate': 0.0002, 'epoch': 0.09}
+ 14%|████████████████                                                                                                       | 30/222 [04:41<25:25,  7.94s/it]2025-07-09 14:48:55,148 - utils.logger_utils - WARNING - {'loss': 1.3247, 'grad_norm': 0.275390625, 'learning_rate': 0.0002, 'epoch': 0.2702702702702703}
+{'loss': 1.3066, 'grad_norm': 0.2109375, 'learning_rate': 0.0002, 'epoch': 0.18}
+ 18%|█████████████████████▍                                                                                                 | 40/222 [06:15<32:14, 10.63s/it]2025-07-09 14:50:29,616 - utils.logger_utils - WARNING - {'loss': 1.3514, 'grad_norm': 0.263671875, 'learning_rate': 0.0002, 'epoch': 0.36036036036036034}
+{'loss': 1.3247, 'grad_norm': 0.275390625, 'learning_rate': 0.0002, 'epoch': 0.27}
+ 18%|█████████████████████▍                                                                                                 | 40/222 [06:15<32:14, 10.63s/it]Traceback (most recent call last):
+{'loss': 1.3514, 'grad_norm': 0.263671875, 'learning_rate': 0.0002, 'epoch': 0.36}
+  File "/lambda/nfs/mars-arnesen-gh/./scripts/run_sft.py", line 15, in <module>
+    trainer.train()
+  File "/lambda/nfs/mars-arnesen-gh/.venv/lib/python3.11/site-packages/trl/trainer/sft_trainer.py", line 450, in train
+    output = super().train(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lambda/nfs/mars-arnesen-gh/.venv/lib/python3.11/site-packages/transformers/trainer.py", line 2122, in train
+    return inner_training_loop(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/lambda/nfs/mars-arnesen-gh/.venv/lib/python3.11/site-packages/transformers/trainer.py", line 2474, in _inner_training_loop
+    tr_loss_step = self.training_step(model, inputs, num_items_in_batch)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lambda/nfs/mars-arnesen-gh/.venv/lib/python3.11/site-packages/transformers/trainer.py", line 3606, in training_step
+    self.accelerator.backward(loss, **kwargs)
+  File "/lambda/nfs/mars-arnesen-gh/.venv/lib/python3.11/site-packages/accelerate/accelerator.py", line 2553, in backward
+    loss.backward(**kwargs)
+  File "/lambda/nfs/mars-arnesen-gh/.venv/lib/python3.11/site-packages/torch/_tensor.py", line 648, in backward
+    torch.autograd.backward(
+  File "/lambda/nfs/mars-arnesen-gh/.venv/lib/python3.11/site-packages/torch/autograd/__init__.py", line 353, in backward
+    _engine_run_backward(
+  File "/lambda/nfs/mars-arnesen-gh/.venv/lib/python3.11/site-packages/torch/autograd/graph.py", line 824, in _engine_run_backward
+    return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt

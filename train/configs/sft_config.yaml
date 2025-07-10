@@ -157,7 +157,7 @@ Train - Llama3 - Human and GPT:
         merge_output_dir: /home/ubuntu/mars-arnesen-gh/models/trained_models/llama-3-mega-merged
     dataset:
         - dataset_type: quality_debates
-          full_dataset_file_path: /home/ubuntu/mars-arnesen-gh/sft_data/debater/debater_combined.jsonl
+          full_dataset_file_path: /home/ubuntu/mars-arnesen-gareth/sft_data/debater/debater_combined_filled.jsonl
         - dataset_type: external_huggingface
           full_dataset_file_path: yahma/alpaca-cleaned
 Train - Llama3 - Human and GPT - Passage - 2:
