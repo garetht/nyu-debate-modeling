@@ -17,7 +17,7 @@ should_save_transcripts = not args.local or args.force_save_transcripts
 should_save_results = (not args.local) or args.force_save_results
 
 debate_rounds, experiment = ExperimentLoader.generate_debate_rounds(
-    experiment_file_path=config.experiment_file_path, name=config.experiment_name, count=args.num_iters
+    experiment_file_path=config.experiment_file_path, name=config.experiment_name, count=args.num_iters, starting_index=args.starting_index
 )
 
 results_collector = ResultsCollector(

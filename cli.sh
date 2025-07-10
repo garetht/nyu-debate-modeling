@@ -9,7 +9,7 @@ set -euo pipefail
 # Global variables
 SCRIPT_NAME="$(basename "$0")"
 VERSION="1.0.0"
-REMOTE_HOME_DIR="/home/ubuntu/mars-arnesen-gareth"
+REMOTE_HOME_DIR="/home/ubuntu/mars-arnesen-gh"
 REMOTE_LOGS_DIR="$REMOTE_HOME_DIR/logs"
 OVERRIDE_IP=""
 

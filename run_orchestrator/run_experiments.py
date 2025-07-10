@@ -10,7 +10,7 @@ from datetime import datetime
 
 def run_experiments(config_name):
     yaml_path = f"run_orchestrator/runs/{config_name}.yaml"
-    schema_path = f"run_orchestrator/{config_name}.schema.json"
+    schema_path = f"run_orchestrator/experiment_orchestrator.schema.json"
 
     # Check if files exist
     if not os.path.exists(yaml_path):
@@ -31,7 +31,7 @@ def run_experiments(config_name):
     # Validate the yaml against the schema
     validate(instance=data, schema=schema)
 
-    for config_group in data['configurations']:
+    for (index, config_group) in enumerate(data['configurations']):
         instance_ip = config_group['instance_ip']
         config = config_group['configurations']
         name = config['name']
@@ -46,12 +46,13 @@ def run_experiments(config_name):
                 'bg-task',
                 'start',
                 '-n',
-                name,
+                name.replace(" ", ""),
                 '--',
                 'python',
                 './scripts/run_debate.py',
-                f'--configuration={name}',
-                f'--num_iters={num_iters}'
+                f'--configuration=\"{name}\"',
+                f'--num_iters={num_iters}',
+                f'--starting_index={(i + count * index) * 157}',
             ]
 
             print(f"Running command: {' '.join(command)}")

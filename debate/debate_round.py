@@ -96,13 +96,17 @@ class DebateRound:
         next_speaker = self.judge.get_next_expected_speaker()
         while next_speaker:
             speaker = self.name_to_agent[next_speaker]
+            self.logger.info(f"It is {speaker.name}'s turn to speak.")
             try:
+                self.logger.info(f"Generating response for {speaker.name}...")
                 batch_response, model_output = speaker()
+                self.logger.info(f"Finished generating response for {speaker.name}.")
             except Exception as e:
                 self.logger.error("Received an error while trying to generate a speech %s", str(e), exc_info=True)
                 return None, None
 
             for idx, (response, output) in enumerate(zip(batch_response, model_output)):
+                self.logger.info(f"Processing batch item {idx} for speaker {speaker.name}.")
                 validated_response = str(response)
                 if speaker.quotes_require_validation:
                     validated_response = quote_utils.validate_and_replace_quotes(

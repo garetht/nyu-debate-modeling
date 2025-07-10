@@ -48,7 +48,7 @@ class QualityDataset(RawDataset):
             shuffle_deterministically: Whether to use a fixed random seed for shuffling the dataset
         """
         super().__init__(override_type or DatasetType.QUALITY)
-        if shuffle_deterministically:
+        if True:
             random.seed(a=123456789)
         self.allow_multiple_positions_per_question = allow_multiple_positions_per_question
         self.flip_sides = flip_sides

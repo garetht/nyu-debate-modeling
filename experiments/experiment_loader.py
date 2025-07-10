@@ -321,6 +321,7 @@ class ExperimentLoader:
             else:
                 count = len(dataset.get_data(experiment.dataset.split_type)) * abs(count)
 
+        logger.info(f"Running experiment {experiment}")
         logger.info(f"Creating {count} rounds between {first_alias} and {second_alias}")
 
         # create debate rounds
@@ -703,19 +704,25 @@ class ExperimentLoader:
         current_flipped_batch = []
         for i, debate_round in enumerate(rounds):
             if i % 2 == 0 or (not experiment.flip and not experiment.alternate):
+                logger.info(f"Adding item {i} to normal batch")
                 current_normal_batch.append(debate_round)
                 if len(current_normal_batch) == experiment.batch_size:
+                    logger.info(f"Creating normal batch of size {len(current_normal_batch)}")
                     batched_rounds.append(ExperimentLoader.merge_debate_rounds(current_normal_batch))
                     current_normal_batch = []
             else:
+                logger.info(f"Adding item {i} to flipped batch")
                 current_flipped_batch.append(debate_round)
                 if len(current_flipped_batch) == experiment.batch_size:
+                    logger.info(f"Creating flipped batch of size {len(current_flipped_batch)}")
                     batched_rounds.append(ExperimentLoader.merge_debate_rounds(current_flipped_batch))
                     current_flipped_batch = []
 
         if current_normal_batch:
+            logger.info(f"Creating final normal batch of size {len(current_normal_batch)}")
             batched_rounds.append(ExperimentLoader.merge_debate_rounds(current_normal_batch))
         if current_flipped_batch:
+            logger.info(f"Creating final flipped batch of size {len(current_flipped_batch)}")
             batched_rounds.append(ExperimentLoader.merge_debate_rounds(current_flipped_batch))
 
         return batched_rounds, model_cache, offline_model_helper_cache
@@ -834,7 +841,7 @@ class ExperimentLoader:
 
     @classmethod
     def generate_debate_rounds(
-        cls, experiment_file_path: str, name: str, count: int = 1
+        cls, experiment_file_path: str, name: str, count: int = 1, starting_index: Optional[int] = None
     ) -> tuple[list[DebateRound], ExperimentConfig]:
         """
         Generates a list of debate rounds with the given configuration
@@ -864,13 +871,15 @@ class ExperimentLoader:
         for combination, (start_idx, count_to_use) in ExperimentLoader.get_debater_combinations(
             experiment=experiment, count=count, dataset=dataset
         ):
+            logger = logger_utils.get_default_logger(__name__)
+            logger.info(f"generating for starting index: {starting_index}, with start idx: {start_idx}")
             rounds, model_cache, offline_model_helper_cache = ExperimentLoader.create_debate_rounds_for_combination(
                 experiment=experiment,
                 dataset=dataset,
                 split_type=experiment.dataset.split_type,
                 debater_idxs=combination,
                 count=count_to_use,
-                start_idx=start_idx,
+                start_idx=start_idx if starting_index is None else starting_index,
                 model_cache=model_cache,
                 offline_model_helper_cache=offline_model_helper_cache,
             )

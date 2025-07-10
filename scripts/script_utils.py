@@ -43,6 +43,7 @@ class ScriptUtils:
         parser = argparse.ArgumentParser()
         parser.add_argument("--local", action="store_true", default=False)
         parser.add_argument("--num_iters", type=int, default=1_000)
+        parser.add_argument("--starting_index", type=int, default=0)
         parser.add_argument("--log_level", type=str, default="INFO")
         parser.add_argument("--configuration", type=str, default="")
         parser.add_argument("--test", action="store_true", default=False)  # needed for local testing (optional otherwise)
