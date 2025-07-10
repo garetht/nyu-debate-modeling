@@ -4,7 +4,7 @@
 
 set -e  # Exit on any error
 
-REMOTE_HOME_DIR="/home/ubuntu/mars-arnesen-gh"
+REMOTE_HOME_DIR="/home/ubuntu/mars-arnesen-gareth"
 
 source "$(dirname "$0")/bash_scripts/colors.sh"
 

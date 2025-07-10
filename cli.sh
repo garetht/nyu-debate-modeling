@@ -9,8 +9,9 @@ set -euo pipefail
 # Global variables
 SCRIPT_NAME="$(basename "$0")"
 VERSION="1.0.0"
-REMOTE_HOME_DIR="/home/ubuntu/mars-arnesen-gh"
+REMOTE_HOME_DIR="/home/ubuntu/mars-arnesen-gareth"
 REMOTE_LOGS_DIR="$REMOTE_HOME_DIR/logs"
+OVERRIDE_IP=""
 
 source "$(dirname "$0")/bash_scripts/colors.sh"
 
@@ -111,6 +112,16 @@ get_first_instance_id() {
 
 # Function to get cached instance info or fetch fresh
 get_cached_instance_info() {
+    if [[ -n "$OVERRIDE_IP" ]]; then
+        cat << EOF
+{
+    "instance_id": "manual",
+    "ip": "$OVERRIDE_IP",
+    "timestamp": $(date +%s)
+}
+EOF
+        return 0
+    fi
     local cache_file="./tmp/lambda_instance_cache.json"
     local force_refresh="${1:-false}"
 
@@ -376,10 +387,13 @@ EOF
     # Build the command string
     bg_command="$*"
 
+    original_task_name=$task_name
     # Generate task name if not provided
     if [[ -z "$task_name" ]]; then
-        task_name="task-$(date +%Y%m%d-%H%M%S)"
+        task_name="task"
     fi
+
+    task_name="$task_name-$(date +%Y%m%d-%H%M%S)"
 
     # Validate environment variables
     validate_env_vars
@@ -425,7 +439,7 @@ EOF
         # 4. Waits for the specified timeout
         # 5. Checks if process is still running
         # 6. Returns appropriate exit code
-        local remote_command="$ssh_env_setup && mkdir -p $REMOTE_LOGS_DIR && {
+        local remote_command="$ssh_env_setup && export OUTPUT_ROOT=outputs/$original_task_name/ && mkdir -p outputs/$original_task_name/outputs/transcripts && mkdir -p $REMOTE_LOGS_DIR && {
             source .venv/bin/activate
             nohup $bg_command > $REMOTE_LOGS_DIR/$task_name.log 2>&1 &
             bg_pid=\$!
@@ -453,7 +467,7 @@ EOF
         # Check exit code - 0 means success
         if [[ $ssh_exit_code -eq 0 ]]; then
             log_info "Background task started successfully"
-            log_info "To view logs, run: ./$SCRIPT_NAME bg-task logs -f $task_name"
+            log_info "To view logs, run: ./$SCRIPT_NAME --ip $ip bg-task logs -f $task_name"
             exit 0
         else
             # Task failed during startup - error details already shown by remote command
@@ -779,6 +793,7 @@ cmd_rsync_to_remote_internal() {
             "-avz"
             "--progress"
             "--exclude=/.git"
+            "--exclude="
             "--filter=dir-merge,- .gitignore"
             "-e" "ssh -i $PEM_FILEPATH -p $port -o StrictHostKeyChecking=no"
             "$local_path"
@@ -926,6 +941,7 @@ GLOBAL OPTIONS:
     -h, --help              Show this help message
     -v, --version           Show version information
     --debug                 Enable debug output
+    --ip ADDRESS            Manually specify the IP address of the instance
 
 COMMANDS:
     ssh                     Connect to the first Lambda Labs instance via SSH
@@ -995,6 +1011,10 @@ main() {
             --debug)
                 export DEBUG=1
                 shift
+                ;;
+            --ip)
+                OVERRIDE_IP="$2"
+                shift 2
                 ;;
             ssh)
                 shift
