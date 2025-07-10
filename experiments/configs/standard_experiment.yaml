@@ -104,7 +104,7 @@ Data Generation - Llama3 - SingleRound - FullTrain - SFT:
     debaters:
       - model_settings:
           model_type: llama3
-          model_file_path: /vast/spa9663/models/trained_models/llama-3-mega-merged
+          model_file_path: /home/ubuntu/mars-arnesen-gh/models/trained_models/llama-3-mega-merged
           alias: "t1-sft"
           require_quote_validation: True
           generation_params:
@@ -113,7 +113,7 @@ Data Generation - Llama3 - SingleRound - FullTrain - SFT:
       model_settings:
         model_type: openai
         alias: openai-judge
-        model_file_path: ft:gpt-4-0613:nyu-arg::90NW3Tbx
+        model_file_path: ft:gpt-4.1-2025-04-14:modulo-research-ltd:michael-and-khan-data-judge:Brlimq17:ckpt-step-1290
   dataset:
     dataset_type: quality
     split_type: train

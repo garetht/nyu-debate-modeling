@@ -5,12 +5,11 @@ import json
 from jsonschema import validate
 import os
 import glob
-from .graph_generator import graph_results
-import re
+from graph_generator import graph_results
 from datetime import datetime
 
 def run_experiments(config_name):
-    yaml_path = f"run_orchestrator/{config_name}.yaml"
+    yaml_path = f"run_orchestrator/runs/{config_name}.yaml"
     schema_path = f"run_orchestrator/{config_name}.schema.json"
 
     # Check if files exist
@@ -64,7 +63,7 @@ def run_experiments(config_name):
                     print(line, end='')
 
 def download_results(config_name):
-    yaml_path = f"run_orchestrator/{config_name}.yaml"
+    yaml_path = f"run_orchestrator/runs/{config_name}.yaml"
     
     if not os.path.exists(yaml_path):
         print(f"Error: {yaml_path} not found.")
