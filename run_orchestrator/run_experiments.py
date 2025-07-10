@@ -5,6 +5,9 @@ import json
 from jsonschema import validate
 import os
 import glob
+from .graph_generator import graph_results
+import re
+from datetime import datetime
 
 def run_experiments(config_name):
     yaml_path = f"run_orchestrator/{config_name}.yaml"
@@ -122,9 +125,8 @@ def merge_data():
 
     recalculate_recursively(merged_data)
 
-    file_names = [os.path.basename(p).replace('.json', '') for p in file_paths]
-    merged_name = "--".join(file_names)
-    merged_filename = os.path.join(stats_dir, f"merge-{merged_name}.json")
+    timestamp = datetime.now().strftime('%Y-%m-%d_%H:%M:%S.%f')
+    merged_filename = os.path.join(stats_dir, f"merge-{timestamp}.json")
 
     with open(merged_filename, 'w') as f:
         json.dump(merged_data, f, indent=2)
@@ -168,7 +170,7 @@ def recalculate_recursively(data):
 
 def main():
     if len(sys.argv) < 2:
-        print("Usage: python run_orchestrator/run_experiments.py <run|download|merge-data> [config_name]")
+        print("Usage: python run_orchestrator/run_experiments.py <run|download|merge-data|graph> [args]")
         sys.exit(1)
 
     subcommand = sys.argv[1]
@@ -187,9 +189,15 @@ def main():
         download_results(config_name)
     elif subcommand == 'merge-data':
         merge_data()
+    elif subcommand == 'graph':
+        if len(sys.argv) < 3:
+            print("Usage: python run_orchestrator/run_experiments.py graph <file_path>")
+            sys.exit(1)
+        file_path = sys.argv[2]
+        graph_results(file_path)
     else:
         print(f"Unknown subcommand: {subcommand}")
-        print("Usage: python run_orchestrator/run_experiments.py <run|download|merge-data> [config_name]")
+        print("Usage: python run_orchestrator/run_experiments.py <run|download|merge-data|graph> [args]")
         sys.exit(1)
 
 if __name__ == "__main__":
