@@ -126,6 +126,7 @@ class SupervisedTrainer:
                     )
 
         df = pd.DataFrame(data=llm_inputs)
+        df.to_csv('/home/ubuntu/mars-arnesen-gh/sft_data/training_dataset_from_hf.csv')
         dataset = datasets.Dataset.from_pandas(df).shuffle()
         return dataset
 
