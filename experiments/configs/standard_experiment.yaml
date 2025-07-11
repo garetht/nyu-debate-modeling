@@ -42,7 +42,7 @@ debater-untrained-judge-trained:
       model_settings:
         model_type: openai
         alias: openai-41-judge
-        model_file_path: ft:gpt-4.1-2025-04-14:modulo-research-ltd:michael-and-khan-data-judge:Br2DCPKx
+        model_file_path: ft:gpt-4.1-2025-04-14:modulo-research-ltd:michael-and-khan-data-judge:Brlimq17:ckpt-step-1290
   dataset:
     dataset_type: quality
     split_type: val
@@ -89,8 +89,8 @@ debater-trained-judge-trained:
     judge:
       model_settings:
         model_type: openai
-        alias: openai-41-judge
-        model_file_path: ft:gpt-4.1-2025-04-14:modulo-research-ltd:michael-and-khan-data-judge:Br2DCPKx
+        alias: openai-ckpt-1290-judge
+        model_file_path: ft:gpt-4.1-2025-04-14:modulo-research-ltd:michael-and-khan-data-judge:Brlimq17:ckpt-step-1290
   dataset:
     dataset_type: quality
     split_type: val

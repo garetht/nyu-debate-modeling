@@ -170,7 +170,7 @@ def recalculate_recursively(data):
 
 def main():
     if len(sys.argv) < 2:
-        print("Usage: python run_orchestrator/run_experiments.py <start|download|merge-data|graph> [args]")
+        print("Usage: python run_orchestrator/run_experiments.py <start|merge-data|graph> [args]")
         sys.exit(1)
 
     subcommand = sys.argv[1]
@@ -181,12 +181,6 @@ def main():
             sys.exit(1)
         config_name = sys.argv[2]
         run_experiments(config_name)
-    elif subcommand == 'download':
-        if len(sys.argv) < 3:
-            print("Usage: python run_orchestrator/run_experiments.py download <config_name>")
-            sys.exit(1)
-        config_name = sys.argv[2]
-        download_results(config_name)
     elif subcommand == 'merge-data':
         merge_data()
     elif subcommand == 'graph':
@@ -197,7 +191,7 @@ def main():
         graph_results(file_path)
     else:
         print(f"Unknown subcommand: {subcommand}")
-        print("Usage: python run_orchestrator/run_experiments.py <start|download|merge-data|graph> [args]")
+        print("Usage: python run_orchestrator/run_experiments.py <start|merge-data|graph> [args]")
         sys.exit(1)
 
 if __name__ == "__main__":

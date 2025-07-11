@@ -9,7 +9,7 @@ set -euo pipefail
 # Global variables
 SCRIPT_NAME="$(basename "$0")"
 VERSION="1.0.0"
-REMOTE_HOME_DIR="/home/ubuntu/mars-arnesen-gh"
+REMOTE_HOME_DIR="/home/ubuntu/mars-arnesen-gh/$(whoami)"
 REMOTE_LOGS_DIR="$REMOTE_HOME_DIR/logs"
 OVERRIDE_IP=""
 
@@ -218,7 +218,7 @@ perform_initial_rsync() {
 
 # Function to get the standard SSH environment setup command
 get_ssh_env_setup() {
-    echo "cd $1 && ./host_setup.sh && export OPENAI_API_KEY=$OPENAI_API_KEY && export INPUT_ROOT=$REMOTE_HOME_DIR/data/ && export SRC_ROOT=$REMOTE_HOME_DIR/"
+    echo "cd $1 && ./host_setup.sh && export OPENAI_API_KEY=$OPENAI_API_KEY && export REMOTE_HOME_DIR=$REMOTE_HOME_DIR && export INPUT_ROOT=$REMOTE_HOME_DIR/data/ && export SRC_ROOT=$REMOTE_HOME_DIR/"
 }
 
 # SSH command implementation
