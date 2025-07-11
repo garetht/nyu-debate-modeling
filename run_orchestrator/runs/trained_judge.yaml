@@ -1,13 +1,13 @@
 configurations:
+#  - instance_ip: 192.222.50.9
+#    home_dir: /home/ubuntu/mars-arnesen-gh
+#    configurations:
+#      name: debater-trained-judge-trained
+#      num_iters: 75
+#      count: 2
   - instance_ip: 192.222.51.244
     home_dir: /home/ubuntu/mars-arnesen-gh
     configurations:
       name: debater-trained-judge-trained
-      num_iters: 150
-      count: 4
-  - instance_ip: 192.222.58.228
-    home_dir: /home/ubuntu/mars-arnesen-gh
-    configurations:
-      name: debater-untrained-judge-trained
       num_iters: 100
-      count: 2
+      count: 4

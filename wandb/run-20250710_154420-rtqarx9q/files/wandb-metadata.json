@@ -1,0 +1,39 @@
+{
+  "os": "Linux-6.8.0-1013-nvidia-64k-aarch64-with-glibc2.35",
+  "python": "CPython 3.11.13",
+  "startedAt": "2025-07-10T15:44:20.364387Z",
+  "args": [
+    "--configuration=Iterative - Round1"
+  ],
+  "program": "/lambda/nfs/mars-arnesen-gh/./scripts/run_iterative_dpo.py",
+  "codePath": "scripts/run_iterative_dpo.py",
+  "codePathLocal": "scripts/run_iterative_dpo.py",
+  "email": "leonidtsyplenkov@gmail.com",
+  "root": "/lambda/nfs/mars-arnesen-gh",
+  "host": "192-222-50-9",
+  "executable": "/lambda/nfs/mars-arnesen-gh/.venv/bin/python",
+  "cpu_count": 64,
+  "cpu_count_logical": 64,
+  "gpu": "NVIDIA GH200 480GB",
+  "gpu_count": 1,
+  "disk": {
+    "/": {
+      "total": "4261618229248",
+      "used": "37827891200"
+    }
+  },
+  "memory": {
+    "total": "564443283456"
+  },
+  "gpu_nvidia": [
+    {
+      "name": "NVIDIA GH200 480GB",
+      "memoryTotal": "102625181696",
+      "cudaCores": 16896,
+      "architecture": "Hopper",
+      "uuid": "GPU-07847008-234b-a7c1-e4de-465743b1b725"
+    }
+  ],
+  "cudaVersion": "12.8",
+  "writerId": "afqzo1wv2b3ct5ur2e9f2nbuvhtzcr7x"
+}

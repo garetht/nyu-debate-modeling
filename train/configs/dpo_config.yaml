@@ -124,7 +124,7 @@ Mixtral - Consultant:
         dataset_type: judge_preferences
         full_dataset_file_path: 2024-03-15_16:08:55.960902
 Iterative - Experiment - 0:
-    model_name: /vast/spa9663/models/trained_models/llama-3-mega-merged
+    model_name: /home/ubuntu/mars-arnesen-gh/models/trained_models/llama-3-mega-merged
     target: debater
     llm_type: llama3
     opening_speeches_only: True
@@ -2371,8 +2371,9 @@ Iterative - ConsultancyFullTrainR2BigBatch - 75:
           full_dataset_file_path: /vast/spa9663/outputs/transcripts/2024-08-06_10:22:01.958734
         - dataset_type: judge_preferences
           full_dataset_file_path: /vast/spa9663/outputs/transcripts/2024-08-09_19:53:24.862884
-Iterative - FullTrainDebateR2Only - 76:
-    model_name:  /vast/spa9663/models/trained_models/llama-3-mega-merged
+#Iterative - FullTrainDebateR2Only - 76:
+Iterative - Round1:
+    model_name:  /home/ubuntu/mars-arnesen-gh/models/trained_models/llama-3-mega-merged
     target: debater
     llm_type: llama3
     opening_speeches_only: True
@@ -2398,11 +2399,11 @@ Iterative - FullTrainDebateR2Only - 76:
             multiplier: 7
     logging_and_saving_config:
         logging_steps: 1
-        output_dir: /vast/spa9663/models/trained_models/llama-3-DPO-811-FullTrainDebateR2Only-test
+        output_dir: /home/ubuntu/mars-arnesen-gh/models/trained_models/llama-3-drpo-round1
     dataset:
         dataset_type: judge_preferences
-        full_dataset_file_path: /vast/spa9663/outputs/transcripts/2024-08-06_00:57:26.964112
-Iterative - FullTrainDebateLowLR - 77:
+        full_dataset_file_path: /home/ubuntu/mars-arnesen-gh/outputs/DataGeneration-Llama3-SingleRound-FullTrain-SFT/outputs/transcripts/2025-07-10_15:22:59.854598
+FullTrainDebateLowLR - 77:
     model_name:  /vast/spa9663/models/trained_models/llama-3-mega-merged
     target: debater
     llm_type: llama3

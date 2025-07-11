@@ -153,8 +153,8 @@ Train - Llama3 - Human and GPT:
         peft_type: lora
     logging_and_saving_config:
         logging_steps: 10
-        output_dir: /home/ubuntu/mars-arnesen-gh/models/trained_models/llama-3-mega
-        merge_output_dir: /home/ubuntu/mars-arnesen-gh/models/trained_models/llama-3-mega-merged
+        output_dir: /home/ubuntu/mars-arnesen-gh/models/trained_models/llama-3-mega-11.07
+        merge_output_dir: /home/ubuntu/mars-arnesen-gh/models/trained_models/llama-3-mega-merged-11.07
     dataset:
         - dataset_type: quality_debates
           full_dataset_file_path: /home/ubuntu/mars-arnesen-gareth/sft_data/debater/debater_combined_filled.jsonl
