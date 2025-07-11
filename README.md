@@ -22,7 +22,7 @@ Once this is done, you can run the commands below. If this is not done, you will
 
 ### Connect to the Lambda Labs instance
 
-If this fails, this may be because we have shut the instances down to save money. You can start a GH-200 instance at https://cloud.lambda.ai/instances.
+If this fails, this may be because we have shut the instances down to save money. You can start an instance at https://cloud.lambda.ai/instances.
 
 ```bash
 ./cli.sh ssh
@@ -44,11 +44,27 @@ This command allows a background task to be run without needing your terminal to
 
 ### Retrieve generated files from the instance
 
-This syncs the file state on the machine to your local machine. For maximum safety, this does not overwrite any existing files on your machine. This 
+This syncs the file state on the machine to your local machine. For maximum safety, this does not overwrite any existing files on your machine.
 
 ```bash
 ./cli.sh rsync-to-host
 ```
+
+### Monitor all instances
+
+This allows s
+
+```bash
+./cli.sh monitor -- nvidia-smi
+```
+
+## Run Orchestration
+
+We have a tool that allows debate experiments in `standard_experiments.yml` to be run declaratively across our fleet of instances. To do this, create a new configuration file in `run_orchestrator/runs`. The schema for such a configuration file is given by `run_orchestrator/experiment_orchestrator.schema.json`. The output data is saved into a namespaced folder in `outputs` based on the `name` in the configuration (not the filename!). For example, a configuration named `debater-trained` will save its outputs into `outputs/debater-trained`. This allows parallel processes across different instances to save their outputs into the same directory across machines, which makes it possible for us to merge them using the `merge-data` subcommand. 
+
+To start the command-line tool, run `python run_orchestrator/run_experiments.py`, which allows running the configuration files with `start`, retrieving the results with `download`, merge data collected on multiple instances with `merge-data`, and plot an unsatisfying graph using `graph`.
+
+# Arnesen's Original Readme
 
 ## Setup
 

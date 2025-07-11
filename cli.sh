@@ -927,8 +927,9 @@ EOF
             "rsync"
             "-avz"
             "--progress"
-            "--exclude=/.git"
-            "--filter=dir-merge,- .gitignore"
+            "--include=outputs/***"
+            "--include=models/trained_models/***"
+            "--exclude=*"
             "--ignore-existing"
             "-e" "ssh -i $PEM_FILEPATH -p $port -o StrictHostKeyChecking=no"
             "$user@$ip:$remote_path"
@@ -1048,8 +1049,8 @@ COMMANDS:
     ssh                     Connect to the first Lambda Labs instance via SSH
     bg-task                 Launch and manage background tasks on the first Lambda Labs instance
     rsync-to-remote         Synchronize files from local to remote instance
-    rsync-to-host           Synchronize files from remote instance to local
-    monitor                 Run a command on all instances
+    rsync-to-host           Synchronize output and trained model files from remote instance to local
+    monitor                 Run a command on all Lambda Labs instances
 
 ENVIRONMENT VARIABLES:
     PEM_FILEPATH           Path to the Lambda Labs pem file
