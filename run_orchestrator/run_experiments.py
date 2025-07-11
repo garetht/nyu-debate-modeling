@@ -50,9 +50,9 @@ def run_experiments(config_name):
                 '--',
                 'python',
                 './scripts/run_debate.py',
-                f'--configuration=\"{name}\"',
+                f'--configuration={name}',
                 f'--num_iters={num_iters}',
-                f'--starting_index={(i + count * index) * 157}',
+                # f'--starting_index={(i + count * index) * 157}',
             ]
 
             print(f"Running command: {' '.join(command)}")
@@ -170,14 +170,14 @@ def recalculate_recursively(data):
 
 def main():
     if len(sys.argv) < 2:
-        print("Usage: python run_orchestrator/run_experiments.py <run|download|merge-data|graph> [args]")
+        print("Usage: python run_orchestrator/run_experiments.py <start|download|merge-data|graph> [args]")
         sys.exit(1)
 
     subcommand = sys.argv[1]
 
-    if subcommand == 'run':
+    if subcommand == 'start':
         if len(sys.argv) < 3:
-            print("Usage: python run_orchestrator/run_experiments.py run <config_name>")
+            print("Usage: python run_orchestrator/run_experiments.py start <config_name>")
             sys.exit(1)
         config_name = sys.argv[2]
         run_experiments(config_name)
@@ -197,7 +197,7 @@ def main():
         graph_results(file_path)
     else:
         print(f"Unknown subcommand: {subcommand}")
-        print("Usage: python run_orchestrator/run_experiments.py <run|download|merge-data|graph> [args]")
+        print("Usage: python run_orchestrator/run_experiments.py <start|download|merge-data|graph> [args]")
         sys.exit(1)
 
 if __name__ == "__main__":

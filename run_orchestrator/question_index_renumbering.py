@@ -183,7 +183,7 @@ def transcript_to_dict(x: Transcript) -> Any:
 
 def renumber_question_indices(transcripts: list[Transcript]) -> list[Transcript]:
     grouped_metadata: dict[str, list[Metadatum]] = {}
-    print(f"{len(transcripts)=}")
+
     for transcript in transcripts:
         for metadatum in transcript.metadata:
             if metadatum.debate_identifier not in grouped_metadata:
@@ -198,7 +198,7 @@ def renumber_question_indices(transcripts: list[Transcript]) -> list[Transcript]
 
 def read_jsons() -> list[tuple[Transcript, Path]]:
     # Replace 'data.json' with your actual file path
-    directory_path = '../outputs/DataGeneration-Llama3-SingleRound-FullTrain-SFT/outputs/transcripts'
+    directory_path = 'outputs/DataGeneration-Llama3-SingleRound-FullTrain-SFT/outputs/transcripts'
     directory = Path(directory_path)
 
     if not directory.exists():
@@ -233,7 +233,6 @@ def main():
     # Re-associate renumbered transcripts with their original paths
     renumbered_jsons_with_paths = [(t, p) for t, p in
                                    zip(renumbered_transcripts, [path for _, path in jsons_with_paths])]
-    print([r[1] for r in renumbered_jsons_with_paths])
     write_transcripts(renumbered_jsons_with_paths)
 
 

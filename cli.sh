@@ -85,6 +85,32 @@ get_instance_ip() {
     echo "$ip"
 }
 
+# Function to get all instance IPs
+get_all_instance_ips() {
+    log_debug "Fetching all instance IPs"
+
+    local response
+    response=$(curl -s -H "Authorization: Bearer $LAMBDA_LABS_API_KEY" \
+        "https://cloud.lambda.ai/api/v1/instances")
+
+    if [[ $? -ne 0 ]]; then
+        log_error "Failed to fetch instances from Lambda Labs API"
+        exit 1
+    fi
+
+    # Extract all IP addresses from JSON response
+    local ips
+    ips=$(echo "$response" | grep -o '"ip": "[^"]*' | cut -d'"' -f4)
+
+    if [[ -z "$ips" ]]; then
+        log_error "No instances found or could not extract IPs from API response"
+        log_debug "API Response: $response"
+        exit 1
+    fi
+
+    echo "$ips"
+}
+
 # Function to get first instance ID
 get_first_instance_id() {
     log_debug "Fetching first instance ID"
@@ -385,7 +411,7 @@ EOF
     fi
 
     # Build the command string
-    bg_command="$*"
+    bg_command=$(printf '%q ' "$@")
 
     original_task_name=$task_name
     # Generate task name if not provided
@@ -750,7 +776,6 @@ EOF
 
     # Call internal function and set flag on success
     if cmd_rsync_to_remote_internal "$local_path" "$remote_path"; then
-        set_initial_rsync_flag
         exit 0
     else
         exit 1
@@ -930,6 +955,82 @@ EOF
     done
 }
 
+# Monitor command implementation
+cmd_monitor() {
+    local user="ubuntu"
+    local port="22"
+    local remote_command=""
+    local parsing_command=false
+
+    # Parse arguments
+    while [[ $# -gt 0 ]]; do
+        case $1 in
+            -h|--help)
+                cat << EOF
+Usage: $SCRIPT_NAME monitor [OPTIONS] -- COMMAND
+
+Run a command on all Lambda Labs instances.
+
+OPTIONS:
+    -h, --help              Show this help message
+
+ARGUMENTS:
+    --                      Separator before the command to run
+    COMMAND                 Command to run on all instances
+
+ENVIRONMENT VARIABLES:
+    PEM_FILEPATH           Path to the Lambda Labs pem file
+    LAMBDA_LABS_API_KEY    Lambda Labs API Key
+
+EXAMPLES:
+    $SCRIPT_NAME monitor -- nvidia-smi
+    $SCRIPT_NAME monitor -- ps aux | grep python
+
+EOF
+                exit 0
+                ;;
+            --)
+                parsing_command=true
+                shift
+                break
+                ;;
+            -*)
+                log_error "Unknown option: $1"
+                exit 1
+                ;;
+            *)
+                if [[ "$parsing_command" == true ]]; then
+                    break
+                else
+                    log_error "Unknown argument: $1. Use -- to separate command."
+                    exit 1
+                fi
+                ;;
+        esac
+    done
+
+    # Check if we have a command to run
+    if [[ $# -eq 0 ]]; then
+        log_error "No command provided. Use -- to separate the command to run."
+        echo "Example: $SCRIPT_NAME monitor -- nvidia-smi"
+        exit 1
+    fi
+
+    # Build the command string
+    remote_command=$(printf '%q ' "$@")
+
+    # Validate environment variables
+    validate_env_vars
+
+    local ips
+    ips=$(get_all_instance_ips)
+
+    for ip in $ips; do
+        log_info "Running command on instance $ip"
+        ssh -ti "$PEM_FILEPATH" -p "$port" "$user@$ip" "$remote_command"
+    done
+}
+
 # Main help function
 show_help() {
     cat << EOF
@@ -948,6 +1049,7 @@ COMMANDS:
     bg-task                 Launch and manage background tasks on the first Lambda Labs instance
     rsync-to-remote         Synchronize files from local to remote instance
     rsync-to-host           Synchronize files from remote instance to local
+    monitor                 Run a command on all instances
 
 ENVIRONMENT VARIABLES:
     PEM_FILEPATH           Path to the Lambda Labs pem file
@@ -1034,6 +1136,11 @@ main() {
             rsync-to-host)
                 shift
                 cmd_rsync_to_host "$@"
+                exit $?
+                ;;
+            monitor)
+                shift
+                cmd_monitor "$@"
                 exit $?
                 ;;
             -*)
