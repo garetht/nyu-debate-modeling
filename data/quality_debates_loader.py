@@ -216,7 +216,12 @@ class QualityTranscriptsLoader:
             rows = []
             with open(file_path) as f:
                 for line in f.readlines():
-                    rows.append(json.loads(line))
+                    #rows.append(json.loads(line))
+                    try:
+                        obj = json.loads(line)
+                        rows.append(obj)
+                    except json.JSONDecodeError:
+                        print(f"Bad JSON line: {repr(line)}")
             return [row for row in filter(should_keep, rows)]
 
         def __create_splits(filtered_rows: list[dict], combine_train_and_val: bool = False):
