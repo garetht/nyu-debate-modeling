@@ -99,14 +99,13 @@ def download_results(config_name):
             for line in process.stderr:
                 print(line, end='')
 
-def merge_data():
-    stats_dir = "outputs/stats"
+def merge_data(stats_dir="outputs/stats"):
     file_paths = glob.glob(os.path.join(stats_dir, "*.json"))
     # Exclude already merged files
     file_paths = [p for p in file_paths if not os.path.basename(p).startswith("merge-")]
 
     if not file_paths:
-        print("No stats files found to merge.")
+        print(f"No stats files found to merge in {stats_dir}.")
         return
 
     merged_data = []
@@ -182,7 +181,10 @@ def main():
         config_name = sys.argv[2]
         run_experiments(config_name)
     elif subcommand == 'merge-data':
-        merge_data()
+        stats_dir = "outputs/stats"
+        if len(sys.argv) > 2:
+            stats_dir = os.path.join(sys.argv[2], "outputs/stats")
+        merge_data(stats_dir)
     elif subcommand == 'graph':
         if len(sys.argv) < 3:
             print("Usage: python run_orchestrator/run_experiments.py graph <file_path>")

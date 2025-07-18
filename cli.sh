@@ -326,7 +326,7 @@ cmd_bg_task_start() {
     local bg_command=""
     local task_name=""
     local parsing_command=false
-    local timeout_ms=4000  # Default 4 seconds in milliseconds
+    local timeout_ms=15000  # Default 4 seconds in milliseconds
 
     # Parse arguments
     while [[ $# -gt 0 ]]; do
