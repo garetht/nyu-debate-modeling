@@ -1,0 +1,141 @@
+from openai import OpenAI
+import openai
+from dotenv import load_dotenv
+import os
+import csv
+import json
+import re
+from tqdm import tqdm
+from openai import AsyncClient
+import asyncio
+import pandas as pd
+import backoff
+
+def csv_converter(csv_file, jsonl_file):
+    with open(csv_file, 'r', encoding='utf-8') as csv_file:
+        csv_reader = csv.DictReader(csv_file)
+
+        with open(jsonl_file, 'w', encoding='utf-8') as jsonl_file:
+            for row in csv_reader:
+                json_line = json.dumps(row, ensure_ascii=False)
+                jsonl_file.write(json_line + '\n')
+
+@backoff.on_exception(backoff.expo, (openai.RateLimitError, openai.APITimeoutError), max_tries=5)
+async def generate_response_cot(messages, data_json):
+    response = await openai_client.chat.completions.create(
+    model= "o3-2025-04-16",
+    messages = messages,
+    response_format= {"type": "json_object"},
+    )
+
+    # try:
+    parsed_response_content = json.loads(response.choices[0].message.content)
+    # except TypeError as e:
+    #     return False, None, None
+    output_value = parsed_response_content.get("answer")
+    cot_ans = parsed_response_content.get("cot")
+    
+    if (output_value == data_json["original_key"]) and (output_value == data_json["validator_answer"]):
+        return True, output_value, cot_ans
+    else:
+        return False, output_value, cot_ans
+
+
+async def check_answer_cot(background_info):
+    out_answer = []
+    cot_answers = []
+    binary_answer = []
+    choice_a = ""
+    choice_b = ""
+    tasks = []
+    # Hardcoded path for testing purposes
+    # with open(r"C:\Users\tolly\Desktop\MARS\nyu-debate-modeling\task_relevant\converted_data", "r", encoding="utf-8") as f:
+    dir_path = os.path.dirname(os.path.realpath(__file__))
+    with open(os.path.join(dir_path, "converted_data"), "r", encoding="utf-8") as f:
+        for line in tqdm(f, desc="Processing"):
+            data_json = json.loads(line.strip())
+
+            choice_a = data_json.get("choice_a")
+            choice_b = data_json.get("choice_b")
+            sentence = data_json.get("sentence")
+
+            prompt = f"""
+            Consider the English sentence "{sentence}" 
+            Which of the following is a better translation of this sentence into standard Lojban? 
+            {choice_a}  
+            {choice_b} 
+            Exactly one of the answers above is correct. Please provide your response in JSON format, including an 'answer' (A or B) field for the final result and a 'cot' (chain of thought) field explaining your reasoning.
+
+            Example JSON format:
+            {{
+                "answer": "Your final answer here",
+                "cot": "Your step-by-step reasoning process here."
+            }}
+            """
+
+            prompt_1 = f"""
+            Consider the English sentence "{sentence}" 
+            Which of the following is a better translation of this sentence into standard Lojban? 
+            {choice_a}  
+            {choice_b} 
+            Exactly one of the answers above is correct. Please provide your response in JSON format, including an 'answer' (A or B) field for the final result and a 'cot' (chain of thought) field explaining your reasoning.
+
+            Example JSON format:
+            {{
+                "answer": "Your final answer here",
+                "cot": "Your step-by-step reasoning process here."
+            }}
+
+            Please use the background information provided below to help you answer given question:
+            {background_info}
+            """
+            # Change prompt to prompt_1 if you want to use the background information
+            messages=[
+                {"role": "system", "content": "You are an expert Lojban speaker"},
+                {"role": "user", "content": f"{prompt}"},
+            ]
+
+            tasks.append(generate_response_cot(messages, data_json))
+        
+            # b_ans, output_model, cot_model = generate_response_cot(messages, data_json)
+            # print(generate_response_cot(messages, data_json))
+
+    results = await asyncio.gather(*tasks)
+
+    for b_ans, out_ans, cot_ans in results:
+        binary_answer.append(b_ans)
+        out_answer.append(out_ans)
+        cot_answers.append(cot_ans)
+
+    return binary_answer, out_answer, cot_answers
+
+
+if __name__ == "__main__":
+
+    load_dotenv()
+    assert os.getenv("OPENAI_API_KEY") 
+    openai_client = AsyncClient()
+    csv_converter("data.csv", "converted_data")
+    with open("background_test.txt", "r", encoding="utf-8") as f:
+        background_content = f.read()
+
+    final_binary, final_out, final_cot = asyncio.run(check_answer_cot(background_content))
+
+    df = pd.DataFrame({
+        "Binary Answers": final_binary,
+        "Final Answers": final_out,
+        "CoT Answers": final_cot
+    })
+
+    for val, indx in zip((df[df["Binary Answers"] == False]["CoT Answers"].to_list()), (df.index[df["Binary Answers"] == False].to_list())):
+        print(f"\nCoT Answer for jbo_{indx + 1}:")
+        print(val)
+
+    print("Final Binary: ", final_binary)
+
+    print("Final Outputs: ", final_out)
+
+    print(sum(final_binary) / len(final_binary))
+
+    print(len(final_binary))
+
