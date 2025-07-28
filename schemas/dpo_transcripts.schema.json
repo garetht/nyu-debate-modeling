@@ -1,0 +1,152 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "$ref": "#/definitions/TrainingLine",
+  "definitions": {
+    "TrainingLine": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "metadata": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Metadatum"
+          }
+        },
+        "speeches": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Speech"
+          }
+        }
+      },
+      "required": [
+        "metadata",
+        "speeches"
+      ],
+      "title": "TrainingLine"
+    },
+    "Metadatum": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "first_debater_correct": {
+          "type": "boolean"
+        },
+        "question_idx": {
+          "type": "integer"
+        },
+        "background_text": {
+          "type": "string"
+        },
+        "question": {
+          "type": "string"
+        },
+        "first_debater_answer": {
+          "type": "string"
+        },
+        "second_debater_answer": {
+          "type": "string"
+        },
+        "debate_identifier": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "background_text",
+        "debate_identifier",
+        "first_debater_answer",
+        "first_debater_correct",
+        "question",
+        "question_idx",
+        "second_debater_answer"
+      ],
+      "title": "Metadatum"
+    },
+    "Speech": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "speaker": {
+          "type": "string"
+        },
+        "content": {
+          "type": "string"
+        },
+        "supplemental": {
+          "$ref": "#/definitions/Supplemental"
+        }
+      },
+      "required": [
+        "content",
+        "speaker",
+        "supplemental"
+      ],
+      "title": "Speech"
+    },
+    "Supplemental": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "speech": {
+          "type": "string"
+        },
+        "decision": {
+          "type": "string"
+        },
+        "probabilistic_decision": {
+          "type": "null"
+        },
+        "preference": {
+          "description": "How much the judge prefers this response.",
+          "type": "number"
+        },
+        "rejected_responses": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Supplemental"
+          }
+        },
+        "bon_opposing_model_responses": {
+          "type": "array",
+          "items": {}
+        },
+        "bon_probabilistic_preferences": {
+          "type": "array",
+          "items": {}
+        },
+        "internal_representations": {
+          "type": "string"
+        },
+        "response_tokens": {
+          "type": "array",
+          "items": {}
+        },
+        "prompt_tokens": {
+          "type": "array",
+          "items": {}
+        },
+        "prompt": {
+          "type": "string"
+        },
+        "failed": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "bon_opposing_model_responses",
+        "bon_probabilistic_preferences",
+        "decision",
+        "failed",
+        "internal_representations",
+        "preference",
+        "probabilistic_decision",
+        "prompt",
+        "prompt_tokens",
+        "rejected_responses",
+        "response_tokens",
+        "speech"
+      ],
+      "title": "Supplemental"
+    }
+  }
+}
