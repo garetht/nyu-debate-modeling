@@ -47,6 +47,7 @@
           "$ref": "#/definitions/TournamentConfig"
         },
         "speech_structure": {
+          "description": "A preset that determines the Speech Format Type of the debaters and the judge, the default prompt name, the number of participants, and whether the position order should be flipped.",
           "type": "string",
           "enum": ["default_debate", "default_consultancy", "open_debate"]
         },
