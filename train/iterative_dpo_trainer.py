@@ -47,7 +47,7 @@ class IterativeDirectPreferenceTrainer:
             load_as_peft_model=bool(config.training_hyperparameters.supplemental.get("force_sft_as_reference", False)),
         )
 
-        if FLASH_ATTENTION_AVAILABLE:
+        if False:
             self.model = upcast_layer_for_flash_attention(self.model, torch.bfloat16)
 
         self.peft_config = TrainUtils.get_peft_config(config=config)
@@ -169,6 +169,7 @@ class IterativeDirectPreferenceTrainer:
         for i in range(epoch_size):
             new_samples = self.generate_one_round_samples(idx=start_idx + i)
             samples.extend(new_samples)
+            print(new_samples)
 
         return self.convert_dataset([JudgePreferencesDataset(train_data=samples, val_data=[], test_data=[])])
 
