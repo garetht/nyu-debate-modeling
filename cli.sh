@@ -40,6 +40,7 @@ validate_env_vars() {
     prompt_env_var "PEM_FILEPATH" "Path to the Lambda Labs pem file" "https://cloud.lambda.ai/ssh-keys"
     prompt_env_var "LAMBDA_LABS_API_KEY" "Lambda Labs API Key" "https://cloud.lambda.ai/api-keys/cloud-api"
     prompt_env_var "OPENAI_API_KEY" "OpenAI API Key" "https://platform.openai.com/api-keys"
+    prompt_env_var "WANDB_API_KEY" "Weights and Biases API Key" "https://wandb.ai/authorize"
 
     # Validate PEM file exists
     if [[ ! -f "$PEM_FILEPATH" ]]; then
@@ -218,7 +219,7 @@ perform_initial_rsync() {
 
 # Function to get the standard SSH environment setup command
 get_ssh_env_setup() {
-    echo "cd $1 && ./host_setup.sh && export OPENAI_API_KEY=$OPENAI_API_KEY && export REMOTE_HOME_DIR=$REMOTE_HOME_DIR && export INPUT_ROOT=$REMOTE_HOME_DIR/data/ && export SRC_ROOT=$REMOTE_HOME_DIR/"
+    echo "cd $1 && ./host_setup.sh && export OPENAI_API_KEY=$OPENAI_API_KEY && export REMOTE_HOME_DIR=$REMOTE_HOME_DIR && export INPUT_ROOT=$REMOTE_HOME_DIR/data/ && export SRC_ROOT=$REMOTE_HOME_DIR/ && export WANDB_API_KEY=$WANDB_API_KEY"
 }
 
 # SSH command implementation
