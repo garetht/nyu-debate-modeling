@@ -46,7 +46,7 @@ debater-untrained-judge-trained:
   dataset:
     dataset_type: quality
     split_type: val
-debater-trained-judge-untrained:
+debater-sft-trained-0731-judge-untrained:
   batch_size: 1
   num_speeches: 2
   flip: False
@@ -57,8 +57,8 @@ debater-trained-judge-untrained:
     debaters:
       - model_settings:
           model_type: llama3
-          model_file_path: /home/ubuntu/mars-arnesen-gh/garethtan/models/trained_models/llama-3-mega-merged
-          alias: "leo-sft-model"
+          model_file_path: /home/ubuntu/mars-arnesen-gh/leonidtsyplenkov/models/trained_models/llama-3-mega-merged-no-judge-speeches-31.07
+          alias: "sft-0731-model"
           require_quote_validation: True
           generation_params:
             temperature: 0.5
@@ -82,7 +82,7 @@ debater-rl-trained-0711-judge-untrained:
       - model_settings:
           model_type: llama3
           model_file_path: /home/ubuntu/mars-arnesen-gh/garethtan/models/trained_models/llama-3-drpo-round1
-          alias: "dpo-rl-0711-model"
+          alias: "sft-rl-0711-model"
           require_quote_validation: True
           generation_params:
             temperature: 0.5
@@ -94,7 +94,7 @@ debater-rl-trained-0711-judge-untrained:
   dataset:
     dataset_type: quality
     split_type: val
-debater-rl-trained-0731-judge-trained-0731:
+debater-sft-trained-0731-judge-trained-0731:
   batch_size: 1
   num_speeches: 2
   flip: False
@@ -226,8 +226,8 @@ DataGenerationLlama3MultiRoundHalfBranchedFullTrainDPO:
     debaters:
       - model_settings:
           model_type: llama3
-          model_file_path: /home/ubuntu/mars-arnesen-gh/garethtan/models/trained_models/llama-3-mega-merged
-          alias: "r1-dpo"
+          model_file_path: /home/ubuntu/mars-arnesen-gh/leonidtsyplenkov/models/trained_models/llama-3-mega-merged-no-judge-speeches-31.07
+          alias: "sft-0731"
           require_quote_validation: True
           generation_params:
             temperature: 0.5
@@ -236,7 +236,7 @@ DataGenerationLlama3MultiRoundHalfBranchedFullTrainDPO:
       model_settings:
         model_type: openai
         alias: openai-judge
-        model_file_path: ft:gpt-4.1-2025-04-14:modulo-research-ltd:michael-and-khan-data-judge:Brlimq17:ckpt-step-1290
+        model_file_path: ft:gpt-4.1-2025-04-14:modulo-research-ltd:michael-and-khan-data-judge-31-07:BzYGc8SU
   dataset:
     dataset_type: quality
     split_type: train
