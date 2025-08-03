@@ -1,0 +1,115 @@
+Chapter 14. If Wishes Were Horses: The Lojban Connective System  
+---  
+Prev: Section 14.4 |  Next: Section 14.6  
+---|---  
+Table of Contents
+Book Info Page
+* * *
+## 14.5. Forethought bridi connection
+Many concepts in Lojban are expressible in two different ways, generally referred to as “afterthought” and “forethought”. Section 14.4 discussed what is called “afterthought bridi logical connection”. The word “afterthought” is used because the connective cmavo and the second bridi were added, as it were, afterwards and without changing the form of the first bridi. This form might be used by someone who makes a statement and then wishes to add or qualify that statement after it has been completed. Thus,
+**Example 14.14. **
+la djan. nanmu
+  
+
+is a complete bridi, and adding an afterthought connection to make
+**Example 14.15. **
+la | djan. | nanmu | .ija | la | djeimyz. | ninmu  
+---|---|---|---|---|---|---  
+John is a man or James is a woman (or both)  
+---  
+  
+
+provides additional information without requiring any change in the form of what has come before; changes which may not be possible or practical, especially in speaking. (The meaning, however, may be changed by the use of a negating connective.) Afterthought connectives make it possible to construct all the important truth-functional relationships in a variety of ways.
+In forethought style the speaker decides in advance, before expressing the first bridi, that a logical connection will be expressed. Forethought and afterthought connectives are expressed with separate selma'o. The forethought logical connectives corresponding to afterthought ijeks are geks:
+**Example 14.16. **
+ga | la | djan. | nanmu | gi | la | djeimyz. | ninmu  
+---|---|---|---|---|---|---|---  
+Either John is a man or James is a woman (or both).  
+---  
+  
+
+__ga__ is the cmavo which represents the A truth function in selma'o GA. The word __gi__ does not belong to GA at all, but constitutes its own selma'o: it serves only to separate the two bridi without having any content of its own. The English translation of __ga__ … __gi__ is “either ... or”, but in the English form the truth function is specified both by the word “either” and by the word “or”: not so in Lojban.
+Even though two bridi are being connected, geks and giks do not have any __i__ in them. The forethought construct binds up the two bridi into a single sentence as far as the grammar is concerned.
+Some more examples of forethought bridi connection are:
+**Example 14.17. **
+ge | la | djan. | nanmu | gi | la | djeimyz. | ninmu  
+---|---|---|---|---|---|---|---  
+(It is true that) both John is a man and James is a woman.  
+---  
+  
+
+**Example 14.18. **
+gu | la | djan. | nanmu | gi | la | djeimyz. | ninmu  
+---|---|---|---|---|---|---|---  
+It is true that John is a man, whether or not James is a woman.  
+---  
+  
+
+It is worth emphasizing that Example 14.18 does not assert that James is (or is not) a woman. The __gu__ which indicates that _la djeimyz. ninmu_ may be true or false is unfortunately rather remote from the bridi thus affected.
+Perhaps the most important of the truth functions commonly expressed in forethought is TFTT, which can be paraphrased as “if ... then ...”:
+**Example 14.19. **
+ganai | la | djan. | nanmu | gi | la | djeimyz. | ninmu  
+---|---|---|---|---|---|---|---  
+Either | that-named | John | is-not-a-man, | or | that-named | James | is-a-woman.  
+If John is a man, then James is a woman.  
+---  
+  
+
+Note the placement of the __nai__ in Example 14.19. When added to afterthought selma'o such as JA, a following __nai__ negates the second bridi, to which it is adjacent. Since GA cmavo precede the first bridi, a following __nai__ negates the first bridi instead.
+Why does English insist on forethought in the translation of Example 14.19? Possibly because it would be confusing to seemingly assert a sentence and then make it conditional (which, as the Lojban form shows, involves a negation). Truth functions which involve negating the first sentence may be confusing, even to the Lojbanic understanding, when expressed using afterthought.
+It must be reiterated here that not every use of English “if ... then” is properly translated by __.i__ __na__ __ja__ or __ganai__ … __gi__ ; anything with implications of time needs a somewhat different Lojban translation, which will be discussed in Section 14.18. Causal sentences like “If you feed the pig, then it will grow” are not logical connectives of any type, but rather need a translation using __rinka__ as the selbri joining two event abstractions, thus:
+**Example 14.20. **
+le | nu | do | cidja | dunda | fi | le | xarju  
+---|---|---|---|---|---|---|---  
+The | event-of | (you | food | give | to | the | pig)  
+cu | rinka | le | nu | ri | ba | banro  
+---|---|---|---|---|---|---  
+| causes | the | event-of | (it | will | grow).  
+  
+
+Causality is discussed in far more detail in Section 9.7.
+Example 14.21 and Example 14.22 illustrates a truth function, FTTF, which needs to negate either the first or the second bridi. We already understand how to negate the first bridi:
+**Example 14.21. **
+gonai | la | djan. | nanmu | gi | la | djeimyz. | ninmu  
+---|---|---|---|---|---|---|---  
+John is not a man if and only if James is a woman.  
+---  
+Either John is a man or James is a woman but not both.  
+  
+
+How can the second bridi be negated? By adding _-nai_ to the __gi__.
+**Example 14.22. **
+go | la | djan. | nanmu | ginai | la | djeimyz. | ninmu  
+---|---|---|---|---|---|---|---  
+John is a man if and only if James is not a woman.  
+---  
+Either John is a man or James is a woman but not both.  
+  
+
+A compound cmavo based on __gi__ is called a gik; the only giks are __gi__ itself and __gi__ __nai__.
+Further examples:
+**Example 14.23. **
+ge | la | djan. | nanmu | ginai | la | djeimyz. | ninmu  
+---|---|---|---|---|---|---|---  
+John is a man and James is not a woman.  
+---  
+  
+
+**Example 14.24. **
+ganai | la | djan. | nanmu | ginai | la | djeimyz. | ninmu  
+---|---|---|---|---|---|---|---  
+John is not a man or James is not a woman.  
+---  
+  
+
+The syntax of geks is:
+> [se] GA [nai] 
+and of giks (which are not themselves connectives, but part of the machinery of forethought connection) is:
+> __gi__ [nai] 
+* * *
+Chapter 14. If Wishes Were Horses: The Lojban Connective System  
+---  
+Prev: Section 14.4 |  Next: Section 14.6  
+---|---  
+Table of Contents
+Book Info Page

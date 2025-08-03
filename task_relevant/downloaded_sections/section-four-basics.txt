@@ -1,0 +1,44 @@
+Chapter 14. If Wishes Were Horses: The Lojban Connective System  
+---  
+Prev: Chapter 14 |  Next: Section 14.3  
+---|---  
+Table of Contents
+Book Info Page
+* * *
+## 14.2. The Four basic vowels
+Lojban regards four of these 16 truth functions as fundamental, and assigns them the four vowels A, E, O, and U. These letters do not represent actual cmavo or selma'o, but rather a component vowel from which actual logical-connective cmavo are built up, as explained in the next section. Here are the four vowels, their truth tables, and rough English equivalents: 
+A | TTTF | or, and/or  
+---|---|---  
+E | TFFF | and  
+O | TFFT | if and only if  
+U | TTFF | whether or not  
+More precisely:
+A is true if either or both sentences are true  
+---  
+E is true if both sentences are true, but not otherwise  
+O is true if the sentences are both true or both false  
+U is true if the first sentence is true, regardless of the truth value of the second sentence  
+With the four vowels, the ability to negate either sentence, and the ability to exchange the sentences, as if their order had been reversed, we can create all of the 16 possible truth functions except TTTT and FFFF, which are fairly useless anyway. The following table illustrates how to create each of the 14 remaining truth functions:
+TTTF |  A  
+---|---  
+TTFT | A with second sentence negated  
+TTFF |  U  
+TFTT | A with first sentence negated  
+TFTF | U with sentences exchanged  
+TFFT |  O  
+TFFF |  E  
+FTTT | A with both sentences negated  
+FTTF | O with either first or second negated (not both)  
+FTFT | U with sentences exchanged and then second negated  
+FTFF | E with second sentence negated  
+FFTT | U with first sentence negated  
+FFTF | E with first sentence negated  
+FFFT | E with both sentences negated  
+Note that exchanging the sentences is only necessary with U. The three other basic truth functions are commutative; that is, they mean the same thing regardless of the order of the component sentences. There are other ways of getting some of these truth tables; these just happen to be the methods usually employed.
+* * *
+Chapter 14. If Wishes Were Horses: The Lojban Connective System  
+---  
+Prev: Chapter 14 |  Next: Section 14.3  
+---|---  
+Table of Contents
+Book Info Page

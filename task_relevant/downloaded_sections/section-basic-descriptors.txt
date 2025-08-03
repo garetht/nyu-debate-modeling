@@ -1,0 +1,134 @@
+Chapter 6. To Speak Of Many Things: The Lojban sumti  
+---  
+Prev: Chapter 6 |  Next: Section 6.3  
+---|---  
+Table of Contents
+Book Info Page
+* * *
+## 6.2. The three basic description types
+The following cmavo are discussed in this section:
+le |  LE |  the, the one(s) described as  
+---|---|---  
+lo |  LE |  some, some of those which really are  
+la |  LA |  the one(s) named  
+ku |  KU |  elidable terminator for LE, LA  
+The syntax of descriptions is fairly complex, and not all of it can be explained within the confines of this chapter: relative clauses, in particular, are discussed in Chapter 8. However, most descriptions have just two components: a descriptor belonging to selma'o LE or LA, and a selbri. (The difference between selma'o LE and selma'o LA is not important until Section 6.12.) Furthermore, the selbri is often just a single brivla. Here is an elementary example:
+**Example 6.5. **
+le | zarci  
+---|---  
+one-or-more-specific-things-each-of-which-I-describe-as | being-a-market  
+the market  
+---  
+  
+
+The long gloss for __le__ is of course far too long to use most of the time, and in fact __le__ is quite close in meaning to English “the”. It has particular implications, however, which “the” does not have.
+The general purpose of all descriptors is to create a sumti which might occur in the x1 place of the selbri belonging to the description. Thus _le zarci_ conveys something which might be found in the x1 place of __zarci__ , namely a market.
+The specific purpose of __le__ is twofold. First, it indicates that the speaker has one or more specific markets in mind (whether or not the listener knows which ones they are). Second, it also indicates that the speaker is merely describing the things he or she has in mind as markets, without being committed to the truth of that description.
+**Example 6.6. **
+le | zarci | cu | barda  
+---|---|---|---  
+One-or-more-specific-things-which-I-describe-as |  “markets” |  | is/are-big.  
+The market is big.  
+---  
+The markets are big.  
+  
+
+Note that English-speakers must state whether a reference to markets is to just one (“the market”) or to more than one (“the markets”). Lojban requires no such forced choice, so both colloquial translations of Example 6.6 are valid. Only the context can specify which is meant. (This rule does not mean that Lojban has no way of specifying the number of markets in such a case: that mechanism is explained in Section 6.7.)
+Now consider the following strange-looking example:
+**Example 6.7. **
+le | nanmu | cu | ninmu  
+---|---|---|---  
+One-or-more-specific-things-which-I-describe-as |  “men” |  | is/are-women.  
+The man is a woman.  
+---  
+The men are women.  
+  
+
+Example 6.7 is not self-contradictory in Lojban, because _le nanmu_ merely means something or other which, for my present purposes, I choose to describe as a man, whether or not it really is a man. A plausible instance would be: someone we had assumed to be a man at a distance turned out to be actually a woman on closer observation. Example 6.7 is what I would say to point out my observation to you.
+In all descriptions with __le__ , the listener is presumed to either know what I have in mind or else not to be concerned at present (perhaps I will give more identifying details later). In particular, I might be pointing at the supposed man or men: Example 6.7 would then be perfectly intelligible, since _le nanmu_ merely clarifies that I am pointing at the supposed man, not at a landscape, or a nose, which happens to lie in the same direction.
+The second descriptor dealt with in this section is __lo__. Unlike __le__ , __lo__ is nonspecific:
+**Example 6.8. **
+lo | zarci  
+---|---  
+one-or-more-of-all-the-things-which-really | are-markets  
+a market  
+---  
+some markets  
+  
+
+Again, there are two colloquial English translations. The effect of using __lo__ in Example 6.8 is to refer generally to one or more markets, without being specific about which. Unlike _le zarci_ , _lo zarci_ must refer to something which actually is a market (that is, which can appear in the x1 place of a truthful bridi whose selbri is __zarci__). Thus
+**Example 6.9. **
+lo | nanmu | cu | ninmu  
+---|---|---|---  
+That-which-really-is | a-man |  | is-a-woman.  
+Some man is a woman.  
+---  
+Some men are women.  
+  
+
+must be false in Lojban, given that there are no objects in the real world which are both men and women. Pointing at some specific men or women would not make Example 6.9 true, because those specific individuals are no more both-men-and-women than any others. In general, __lo__ refers to whatever individuals meet its description.
+The last descriptor of this section is __la__ , which indicates that the selbri which follows it has been dissociated from its normal meaning and is being used as a name. Like __le__ descriptions, __la__ descriptions are implicitly restricted to those I have in mind. (Do not confuse this use of __la__ with its use before regular Lojbanized names, which is discussed in Section 6.12.) For example:
+**Example 6.10. **
+la | cribe | pu | finti | le | lisri  
+---|---|---|---|---|---  
+That-named |  “bear” | [past] | creates | the | story.  
+Bear wrote the story.  
+---  
+  
+
+In Example 6.10, _la cribe_ refers to someone whose naming predicate is __cribe__ , i.e. “Bear”. In English, most names don't mean anything, or at least not anything obvious. The name “Frank” coincides with the English word “frank”, meaning “honest”, and so one way of translating “Frank ate some cheese” into Lojban would be:
+**Example 6.11. **
+la | stace | pu | citka | lo | cirla  
+---|---|---|---|---|---  
+That-named |  “Honest/Frank” | [past] | eats | some | cheese.  
+  
+
+English-speakers typically would not do this, as we tend to be more attached to the sound of our names than their meaning, even if the meaning (etymological or current) is known. Speakers of other languages may feel differently. (In point of fact, “Frank” originally meant “the free one” rather than “the honest one”.)
+It is important to note the differences between Example 6.10 and the following:
+**Example 6.12. **
+le | cribe | pu | finti | le | lisri  
+---|---|---|---|---|---  
+One-or-more-specific-things-which-I-describe-as | bears | [past] | creates | the | story.  
+The bear(s) wrote the story.  
+---  
+  
+
+**Example 6.13. **
+lo | cribe | pu | finti | le | lisri  
+---|---|---|---|---|---  
+One-or-more-of-the-things-which-really | are-bears | [past] | creates | the | story.  
+A bear wrote the story.  
+---  
+Some bears wrote the story.  
+  
+
+Example 6.12 is about a specific bear or bearlike thing(s), or thing(s) which the speaker (perhaps whimsically or metaphorically) describes as a bear (or more than one); Example 6.13 is about one or more of the really existing, objectively defined bears. In either case, though, each of them must have contributed to the writing of the story, if more than one bear (or “bear”) is meant.
+(The notion of a “really existing, objectively defined bear” raises certain difficulties. Is a panda bear a “real bear”? How about a teddy bear? In general, the answer is “yes”. Lojban gismu are defined as broadly as possible, allowing tanru and lujvo to narrow down the definition. There probably are no necessary and sufficient conditions for defining what is and what is not a bear that can be pinned down with complete precision: the real world is fuzzy. In borderline cases, __le__ may communicate better than __lo__.)
+So while Example 6.10 could easily be true (there is a real writer named “Greg Bear”), and Example 6.12 could be true if the speaker is sufficiently peculiar in what he or she describes as a bear, Example 6.13 is certainly false.
+Similarly, compare the following two examples, which are analogous to Example 6.12 and Example 6.13 respectively:
+**Example 6.14. **
+le | remna | pu | finti | le | lisri  
+---|---|---|---|---|---  
+Those-described-as | a-human | [past] | writes | that-described-as | a-story.  
+The human being(s) wrote the story.  
+---  
+  
+
+**Example 6.15. **
+lo | remna | pu | finti | le | lisri  
+---|---|---|---|---|---  
+That-which-really-is | a-human | [past] | writes | that-described-as | a-story.  
+A human being wrote the story.  
+---  
+Some human beings wrote the story.  
+  
+
+Example 6.14 says who the author of the story is: one or more particular human beings that the speaker has in mind. If the topic of conversation is the story, then Example 6.14 identifies the author as someone who can be pointed out or who has been previously mentioned; whereas if the topic is a person, then _le remna_ is in effect a shorthand reference to that person. Example 6.15 merely says that the author is human.
+The elidable terminator for all descriptions is __ku__. It can almost always be omitted with no danger of ambiguity. The main exceptions are in certain uses of relative clauses, which are discussed in Section 8.6, and in the case of a description immediately preceding the selbri. In this latter case, using an explicit __cu__ before the selbri makes the __ku__ unnecessary. There are also a few other uses of __ku__ : in the compound negator _naku_ (discussed in Chapter 16) and to terminate place-structure, tense, and modal tags that do not have associated sumti (discussed in Chapter 9 and Chapter 10).
+* * *
+Chapter 6. To Speak Of Many Things: The Lojban sumti  
+---  
+Prev: Chapter 6 |  Next: Section 6.3  
+---|---  
+Table of Contents
+Book Info Page

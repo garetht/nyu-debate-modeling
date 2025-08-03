@@ -1,0 +1,164 @@
+Chapter 14. If Wishes Were Horses: The Lojban Connective System  
+---  
+Prev: Section 14.12 |  Next: Section 14.14  
+---|---  
+Table of Contents
+Book Info Page
+* * *
+## 14.13. Truth questions and connective questions
+So far we have addressed only sentences which are statements. Lojban, like all human languages, needs also to deal with sentences which are questions. There are many ways of asking questions in Lojban, but some of these (like questions about quantity, tense, and emotion) are discussed in other chapters.
+The simplest kind of question is of the type “Is it true that ...” where some statement follows. This type is called a “truth question”, and can be represented in English by Example 14.92:
+**Example 14.92. **
+Is it true that Fido is a dog?
+Is Fido a dog?
+  
+
+Note the two formulations. English truth questions can always be formed by prefixing “Is is true that” to the beginning of a statement; there is also usually a more idiomatic way involving putting the verb before its subject. “Is Fido a dog?” is the truth question corresponding to “Fido is a dog”. In Lojban, the equivalent mechanism is to prefix the cmavo __xu__ (of selma'o UI) to the statement:
+**Example 14.93. **
+xu | la | faidon. | gerku  
+---|---|---|---  
+Is-it-true-that | that-named | Fido | is-a-dog?  
+  
+
+Example 14.92 and Example 14.93 are equivalent in meaning.
+A truth question can be answered “yes” or “no”, depending on the truth or falsity, respectively, of the underlying statement. The standard way of saying “yes” in Lojban is __go'i__ and of saying “no” is __na__ __go'i__. (The reasons for this rule are explained in Section 7.6.) In answer to Example 14.93, the possible answers are:
+**Example 14.94. **
+go'i  
+---  
+Fido is a dog.  
+---  
+  
+
+and
+**Example 14.95. **
+nago'i  
+---  
+Fido is not a dog.  
+---  
+  
+
+Some English questions seemingly have the same form as the truth questions so far discussed. Consider
+**Example 14.96. **
+Is Fido a dog or a cat?
+  
+
+Superficially, Example 14.96 seems like a truth question with the underlying statement:
+**Example 14.97. **
+Fido is a dog or a cat.
+  
+
+By translating Example 14.97 into Lojban and prefixing __xu__ to signal a truth question, we get:
+**Example 14.98. **
+xu | la | faidon. | gerku | gi'onai | mlatu  
+---|---|---|---|---|---  
+Is-it-true-that | that-named | Fido | is-a-dog | or | is-a-cat | (but not both)?  
+  
+
+Given that Fido really is either a dog or a cat, the appropriate answer would be __go'i__ ; if Fido were a fish, the appropriate answer would be __na__ __go'i__.
+But that is not what an English-speaker who utters Example 14.96 is asking! The true significance of Example 14.96 is that the speaker desires to know the truth value of either of the two underlying bridi (it is presupposed that only one is true).
+Lojban has an elegant mechanism for rendering this kind of question which is very unlike that used in English. Instead of asking about the truth value of the connected bridi, Lojban users ask about the truth function which connects them. This is done by using a special question cmavo: there is one of these for each of the logical connective selma'o, as shown by the following table:
+ge'i |  GA |  forethought connective question  
+---|---|---  
+gi'i |  GIhA |  bridi-tail connective question  
+gu'i |  GUhA |  tanru forethought connective question  
+je'i |  JA |  tanru connective question  
+ji |  A |  sumti connective question  
+(This list unfortunately departs from the pretty regularity of the other cmavo for logical connection. The two-syllable selma'o, GIhA and GUhA, make use of the cmavo ending in “-i” which is not used for a truth function, but __gi__ and __i__ were not available, and different cmavo had to be chosen. This table must simply be memorized, like most other non-connective cmavo assignments.)
+One correct translation of Example 14.96 employs a question gihek:
+**Example 14.99. **
+la | .alis. | gerku | gi'i | mlatu  
+---|---|---|---|---  
+That-named | Alice | is-a-dog | [truth-function?] | is-a-cat?  
+  
+
+Here are some plausible answers:
+**Example 14.100. **
+nagi'e  
+---  
+Alice is not a dog and is a cat.  
+---  
+  
+
+**Example 14.101. **
+gi'enai  
+---  
+Alice is a dog and is not a cat.  
+---  
+  
+
+**Example 14.102. **
+nagi'enai  
+---  
+Alice is not a dog and is not a cat.  
+---  
+  
+
+**Example 14.103. **
+nagi'o  
+---  
+gi'onai  
+Alice is a dog or is a cat but not both (I'm not saying which).  
+---  
+  
+
+Example 14.103 is correct but uncooperative.
+As usual, Lojban questions are answered by filling in the blank left by the question. Here the blank is a logical connective, and therefore it is grammatical in Lojban to utter a bare logical connective without anything for it to connect.
+The answer __gi'e__ , meaning that Alice is a dog and is a cat, is impossible in the real world, but for:
+**Example 14.104. **
+do | djica | tu'a | loi | ckafi  
+---|---|---|---|---  
+You | desire | something-about | a-mass-of | coffee  
+ji | loi | tcati  
+---|---|---  
+[truth-function?] | a-mass-of | tea?  
+Do you want coffee or tea?  
+---  
+  
+
+the answer __e__ , meaning that I want both, is perfectly plausible, if not necessarily polite.
+The forethought questions __ge'i__ and __gu'i__ are used like the others, but ambiguity forbids the use of isolated forethought connectives as answers – they sound like the start of forethought-connected bridi. So although Example 14.105 is the forethought version of Example 14.104:
+**Example 14.105. **
+do | djica | tu'a | ge'i | loi | ckafi  
+---|---|---|---|---|---  
+You | desire | something-about | [truth-function?] | a-mass-of | coffee  
+gi | loi | tcati  
+---|---|---  
+[or] | a-mass-of | tea?  
+  
+
+the answer must be in afterthought form.
+There are natural languages, notably Chinese, which employ the Lojbanic form of connective question. The Chinese sentence
+**Example 14.106. **
+_ni 3 zou3 hai2shi pao3_  
+---  
+You walk [or?] run?  
+  
+
+means “Do you walk or run?”, and is exactly parallel to the Lojban:
+**Example 14.107. **
+do | cadzu | gi'i | bajra  
+---|---|---|---  
+You | walk | [or?] | run?  
+  
+
+However, Chinese does not use logical connectives in the reply to such a question, so the resemblance, though striking, is superficial.
+Truth questions may be used in bridi connection. This form of sentence is perfectly legitimate, and can be interpreted by using the convention that a truth question is true if the answer is “yes” and false if the answer is __no__. Analogously, an imperative sentence (involving the special pro-sumti __ko__ , which means “you” but marks the sentence as a command) is true if the command is obeyed, and false otherwise. A request of Abraham Lincoln's may be translated thus:
+**Example 14.108. **
+ganai | ti | ckafi | gi | ko | bevri | loi | tcati | mi  
+---|---|---|---|---|---|---|---|---  
+If | this | is-coffee | then | [you!] | bring | a-mass-of | tea | to-me,  
+.ije | ganai | ti | tcati | gi | ko | bevri | loi | ckafi | mi  
+---|---|---|---|---|---|---|---|---|---  
+and | if | this | is-tea | then | [you!] | bring | a-mass-of | coffee | to-me.  
+If this is coffee, bring me tea; but if this is tea, bring me coffee.  
+---  
+  
+
+In logical terms, however, “but” is the same as “and”; the difference is that the sentence after a “but” is felt to be in tension or opposition to the sentence before it. Lojban represents this distinction by adding the discursive cmavo __ku'i__ (of selma'o UI), which is explained in Section 13.12, to the logical __.i__ __je__.)
+* * *
+Chapter 14. If Wishes Were Horses: The Lojban Connective System  
+---  
+Prev: Section 14.12 |  Next: Section 14.14  
+---|---  
+Table of Contents
+Book Info Page

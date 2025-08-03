@@ -1,0 +1,176 @@
+Chapter 14. If Wishes Were Horses: The Lojban Connective System  
+---  
+Prev: Section 14.13 |  Next: Section 14.15  
+---|---  
+Table of Contents
+Book Info Page
+* * *
+## 14.14. Non-logical connectives
+Way back in Section 14.1, the point was made that not every use of English “and”, “if ... then”, and so on represents a Lojban logical connective. In particular, consider the “and” of:
+**Example 14.109. **
+John and Alice carried the piano.
+  
+
+Given the nature of pianos, this probably means that John carried one end and Alice the other. So it is not true that:
+**Example 14.110. **
+John carried the piano, and Alice carried the piano.
+  
+
+which would mean that each of them carried the piano by himself/herself. Lojban deals with this particular linguistic phenomenon as a “mass”. John and Alice are joined together into a mass, John-and-Alice, and it is this mass which carried the piano, not either of them separately. The cmavo __joi__ (of selma'o JOI) is used to join two or more components into a mass:
+**Example 14.111. **
+la | djan. | joi | la | .alis. | cu | bevri | le | pipno  
+---|---|---|---|---|---|---|---|---  
+That-named | John | massed-with | that-named | Alice |  | carry | the | piano.  
+  
+
+Example 14.111 covers the case mentioned, where John and Alice divide the labor; it also could mean that John did all the hauling and Alice did the supervising. This possibility arises because the properties of a mass are the properties of its components, which can lead to apparent contradictions: if John is small and Alice is large, then John-and-Alice is both small and large. Masses are also discussed in Section 6.3.
+Grammatically, __joi__ can appear between two sumti (like an ek) or between two tanru components (like a jek). This flexibility must be paid for in the form of occasional terminators that cannot be elided:
+**Example 14.112. **
+le | nanmu | ku | joi | le | ninmu | [ku] | cu | klama | le | zarci  
+---|---|---|---|---|---|---|---|---|---|---  
+The | man |  | massed-with | the | woman |  |  | go-to | the | market.  
+  
+
+The cmavo __ku__ is the elidable terminator for __le__ , which can almost always be elided, but not in this case. If the first __ku__ were elided here, Lojban's parsing rules would see _le nanmu joi_ and assume that another tanru component is to follow; since the second __le__ cannot be part of a tanru, a parsing error results. No such problem can occur with logical connectives, because an ek signals a following sumti and a jek a following tanru component unambiguously.
+Single or compound cmavo involving members of selma'o JOI are called joiks, by analogy with the names for logical connectives. It is not grammatical to use joiks to connect bridi-tails.
+In tanru, __joi__ has the connotation “mixed with”, as in the following example:
+**Example 14.113. **
+ti | blanu | joi | xunre | bolci  
+---|---|---|---|---  
+This | is-a-(blue | mixed-with | red) | ball.  
+This is a blue and red ball.  
+---  
+  
+
+Here the ball is neither wholly blue nor wholly red, but partly blue and partly red. Its blue/redness is a mass property. (Just how blue something has to be to count as “wholly blue” is an unsettled question, though. A _blanu zdani_ may be so even though not every part of it is blue.)
+There are several other cmavo in selma'o JOI which can be used in the same grammatical constructions. Not all of them are well-defined as yet in all contexts. All have clear definitions as sumti connectives; those definitions are shown in the following table:
+A __joi__ B | the mass with components A and B  
+---|---  
+A __ce__ B | the set with elements A and B  
+A __ce'o__ B | the sequence with elements A and B in order  
+A __se__ __ce'o__ B | the sequence with elements B and A in order  
+A __jo'u__ B | A and B considered jointly  
+A __fa'u__ B | A and B respectively  
+A __se__ __fa'u__ B | B and A respectively  
+A __jo'e__ B | the union of sets A and B  
+A __ku'a__ B | the intersection of sets A and B  
+A __pi'u__ B | the cross product of sets A and B  
+A __se__ __pi'u__ B | the cross product of sets B and A  
+The cmavo __se__ is grammatical before any JOI cmavo, but only useful with those that have inherent order. Here are some examples of joiks:
+**Example 14.114. **
+mi | cuxna | la | .alis. | la | frank.  
+---|---|---|---|---|---  
+I | choose | that-named | Alice | from-that-named | Frank  
+ce | la | .alis. | ce | la | djeimyz.  
+---|---|---|---|---|---  
+and-member | that-named | Alice | and-member | that-named | James.  
+I choose Alice from among Frank, Alice, and James.  
+---  
+  
+
+The x3 place of __cuxna__ is a set from which the choice is being made. A set is an abstract object which is determined by specifying its members. Unlike those of a mass, the properties of a set are unrelated to its members' properties: the set of all rats is large (since many rats exist), but the rats themselves are small. This chapter does not attempt to explain set theory (the mathematical study of sets) in detail: explaining propositional logic is quite enough for one chapter!
+In Example 14.114 we specify that set by listing the members with __ce__ joining them.
+**Example 14.115. **
+ti | liste | mi | ce'o | do | ce'o | la | djan.  
+---|---|---|---|---|---|---|---  
+This | is-a-list-of | me | and-sequence | you | and-sequence | that-named | John.  
+This is a list of you, me, and John.  
+---  
+  
+
+The x2 place of __liste__ is a sequence of the things which are mentioned in the list. (It is worth pointing out that _lo liste_ means a physical object such as a grocery list: a purely abstract list is _lo porsi_ , a sequence.) Here the three sumti connected by __ce'o__ are in a definite order, not just lumped together in a set or a mass.
+So __joi__ , __ce__ , and __ce'o__ are parallel, in that the sumti connected are taken to be individuals, and the result is something else: a mass, a set, or a sequence respectively. The cmavo __jo'u__ serves as a fourth element in this pattern: the sumti connected are individuals, and the result is still individuals – but inseparably so. The normal Lojban way of saying that James and George are brothers is:
+**Example 14.116. **
+la | djeimyz. | bruna | la | djordj.  
+---|---|---|---|---  
+That-named | James | is-the-brother-of | that-named | George.  
+  
+
+possibly adding a discursive element meaning “and vice versa”. However, “James and George are brothers” cannot be correctly translated as:
+**Example 14.117. **
+la | djeimyz. | .e | la | djordj. | bruna  
+---|---|---|---|---|---  
+That-named | James | and | that-named | George | is-a-brother.  
+  
+
+since that expands to two bridi and means that James is a brother and so is George, but not necessarily of each other. If the __e__ is changed to __jo'u__ , however, the meaning of Example 14.116 is preserved:
+**Example 14.118. **
+la | djeimyz. | jo'u  
+---|---|---  
+That-named | James | in-common-with | that-named  
+la | djordj. | cu | remei | bruna  
+---|---|---|---|---  
+George |  | are-a-twosome | type-of-brothers.  
+  
+
+The tanru _remei bruna_ is not strictly necessary in this sentence, but is used to make clear that we are not saying that James and George are both brothers of some third person not specified. Alternatively, we could turn the tanru around: the x1 place of __re__ __mei__ is a mass with two components, leading to:
+**Example 14.119. **
+la | djeimyz. | joi  
+---|---|---  
+That-named | James | massed-with  
+la | djordj. | cu | bruna | remei  
+---|---|---|---|---  
+that-named | George |  | are-a-brother | type-of-twosome.  
+  
+
+where __joi__ is used to create the necessary mass.
+Likewise, __fa'u__ can be used to put two individuals together where order matters. Typically, there will be another __fa'u__ somewhere else in the same bridi:
+**Example 14.120. **
+la | djeimyz. | fa'u | la | djordj.  
+---|---|---|---|---  
+That-named | James | jointly-in-order-with | that-named | George  
+prami | la | meris. | fa'u | la | martas.  
+---|---|---|---|---|---  
+loves | that-named | Mary | jointly-in-order-with | that-named | Martha.  
+James and George love Mary and Martha, respectively.  
+---  
+  
+
+Here the information carried by the English adverb “respectively”, namely that James loves Mary and George loves Martha, is divided between the two occurrences of __fa'u__. If both uses of __fa'u__ were to be changed to __e__ , we would get:
+**Example 14.121. **
+la | djeimyz. | .e | la | djordj. | prami  
+---|---|---|---|---|---  
+That-named | James | and | that-named | George | love  
+la | meris. | .e | la | martas.  
+---|---|---|---|---  
+that-named | Mary | and | that-named | Martha.  
+  
+
+which can be transformed to four bridi:
+**Example 14.122. **
+la | djeimyz. | prami | la | meris. | .ije | la | djordj. | prami  
+---|---|---|---|---|---|---|---|---  
+That-named | James | loves | that-named | Mary, | and | that-named | George | loves  
+la | meris. | .ije | la | djeimyz. | prami | la | martas.  
+---|---|---|---|---|---|---|---  
+that-named | Mary, | and | that-named | James | loves | that-named | Martha,  
+.ije | la | djordj. | prami | la | martas.  
+---|---|---|---|---|---  
+and | that-named | George | loves | that-named | Martha.  
+  
+
+which represents quite a different state of affairs from Example 14.120. The meaning of Example 14.120 can also be conveyed by a termset:
+**Example 14.123. **
+la | djeimyz. | ce'e | la | meris. | pe'e  
+---|---|---|---|---|---  
+That-named | James | [plus] | that-named | Mary | [joint]  
+.e | la | djordj. | ce'e | la | martas. | prami  
+---|---|---|---|---|---|---  
+and | that-named | George | [plus] | that-named | Martha | loves.  
+  
+
+at the expense of re-ordering the list of names so as to make the pairs explicit. This option is not available when one of the lists is only described rather than enumerated:
+**Example 14.124. **
+la | djeimyz. | fa'u | la | djordj. | prami | re | mensi  
+---|---|---|---|---|---|---|---  
+That-named | James | and-respectively | that-named | George | love | two | sisters.  
+  
+
+which conveys that James loves one sister and George the other, though we are not able to tell which of the sisters is which.
+* * *
+Chapter 14. If Wishes Were Horses: The Lojban Connective System  
+---  
+Prev: Section 14.13 |  Next: Section 14.15  
+---|---  
+Table of Contents
+Book Info Page

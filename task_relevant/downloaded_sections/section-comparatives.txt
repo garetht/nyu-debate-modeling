@@ -1,0 +1,117 @@
+Chapter 12. Dog House And White House: Determining lujvo Place Structures  
+---  
+Prev: Section 12.14 |  Next: Section 12.16  
+---|---  
+Table of Contents
+Book Info Page
+* * *
+## 12.15. Comparatives and superlatives
+English has the concepts of “comparative adjectives” and “superlative adjectives” which can be formed from other adjectives, either by adding the suffixes “-er” and “-est” or by using the words “more” and “most”, respectively. The Lojbanic equivalents, which can be made from any brivla, are lujvo with the tertau __zmadu__ , __mleca__ , __zenba__ , __jdika__ , and __traji__. In order to make these lujvo regular and easy to make, certain special guidelines are imposed.
+We will begin with lujvo based on __zmadu__ and __mleca__ , whose place structures are:
+**Example 12.86. **
+__zmadu__ : z1 is more than z2 in property z3 in quantity z4
+__mleca__ : m1 is less than m2 in property m3 in quantity m4
+  
+
+For example, the concept “young” is expressed by the gismu __citno__ , with place structure
+**Example 12.87. **
+__citno__ : c1 is young
+  
+
+The comparative concept “younger” can be expressed by the lujvo __citmau__ (based on the veljvo _citno zmadu_ , meaning “young more-than”).
+**Example 12.88. **
+mi | citmau | do | lo | nanca | be | li | xa  
+---|---|---|---|---|---|---|---  
+I | am-younger-than | you | by | one-year | multiplied-by | the-number | six.  
+I am six years younger than you.  
+---  
+  
+
+The place structure for __citmau__ is
+**Example 12.89. **
+> z1=c1 is younger than z2=c1 by amount z4
+  
+
+Similarly, in Lojban you can say:
+**Example 12.90. **
+do | citme'a | mi | lo | nanca | be | li | xa  
+---|---|---|---|---|---|---|---  
+You | are-less-young-than | me | by | one-year | multiplied-by | the-number | six.  
+You are six years less young than me.  
+---  
+  
+
+In English, “more” comparatives are easier to make and use than “less” comparatives, but in Lojban the two forms are equally easy.
+Because of their much simpler place structure, lujvo ending in _-mau_ and _-me'a_ are in fact used much more frequently than __zmadu__ and __mleca__ themselves as selbri. It is highly unlikely for such lujvo to be construed as anything other than implicit-abstraction lujvo. But there is another type of ambiguity relevant to these lujvo, and which has to do with what is being compared.
+For example, does _nelcymau_ mean “X likes Y more than X likes Z”, or “X likes Y more than Z likes Y”? Does _klamau_ mean: “X goes to Y more than to Z”, “X goes to Y more than Z does”, “X goes to Y from Z more than from W”, or what?
+We answer this concern by putting regularity above any considerations of concept usefulness: by convention, the two things being compared always fit into the first place of the seltau. In that way, each of the different possible interpretations can be expressed by SE-converting the seltau, and making the required place the new first place. As a result, we get the following comparative lujvo place structures:
+**Example 12.91. **
+_nelcymau_ : z1, more than z2, likes n2 by amount z4
+_selnelcymau_ : z1, more than z2, is liked by n1 in amount z4
+_klamau_ : z1, more than z2, goes to k2 from k3 via k4 by means of k5
+_selklamau_ : z1, more than z2, is gone to by k1 from k3 via k4 by means of k5
+_terklamau_ : z1, more than z2, is an origin point from destination k2 for k1's going via k4 by means of k5
+  
+
+(See Chapter 11 for the way in which this problem is resolved when lujvo aren't used.)
+The ordering rule places the things being compared first, and the other seltau places following. Unfortunately the z4 place, which expresses by how much one entity exceeds the other, is displaced into a lujvo place whose number is different for each lujvo. For example, while _nelcymau_ has z4 as its fourth place, _klamau_ has it as its sixth place. In any sentence where a difficulty arises, this amount-place can be redundantly tagged with __vemau__ (for __zmadu__) or __veme'a__ (for __mleca__) to help make the speaker's intention clear.
+It is important to realize that such comparative lujvo do not presuppose their seltau. Just as in English, saying someone is younger than someone else doesn't imply that they're young in the first place: an octogenarian, after all, is still younger than a nonagenarian. Rather, the 80-year-old has a greater _ni citno_ than the 90-year-old. Similarly, a 5-year-old is older than a 1-year-old, but is not considered “old” by most standards.
+There are some comparative concepts which are in which the _se zmadu_ is difficult to specify. Typically, these involve comparisons implicitly made with a former state of affairs, where stating a z2 place explicitly would be problematic.
+In such cases, it is best not to use __zmadu__ and leave the comparison hanging, but to use instead the gismu __zenba__ , meaning “increase” (and __jdika__ , meaning “decrease”, in place of __mleca__). The gismu __zenba__ was included in the language precisely in order to capture those notions of increase which __zmadu__ can't quite cope with; in addition, we don't have to waste a place in lujvo or tanru on something that we'd never fill in with a value anyway. So we can translate “I'm stronger now” not as
+**Example 12.92. **
+mi | ca | tsamau  
+---|---|---  
+I | now | am-stronger.  
+  
+
+which implies that I'm currently stronger than somebody else (the elided occupant of the second or z2 place), but as
+**Example 12.93. **
+mi | ca | tsaze'a  
+---|---|---  
+I increase in strength.  
+---  
+  
+
+Finally, lujvo with a tertau of __traji__ are used to build superlatives. The place structure of __traji__ is
+**Example 12.94. **
+> t1 is superlative in property t2, being the t3 extremum (largest by default) of set t4
+  
+
+Consider the gismu __xamgu__ , whose place structure is:
+**Example 12.95. **
+> xa1 is good for xa2 by standard xa3
+  
+
+The comparative form is __xagmau__ , corresponding to English “better”, with a place structure (by the rules given above) of
+**Example 12.96. **
+> z1 is better than z2 for xa2 by standard xa3 in amount z4
+  
+
+We would expect the place structure of __xagrai__ , the superlative form, to somehow mirror that, given that comparatives and superlatives are comparable concepts, resulting in:
+**Example 12.97. **
+> xa1=t1 is the best of the set t4 for xa2 by standard xa3.
+  
+
+The t2 place in __traji__ , normally filled by a property abstraction, is replaced by the seltau places, and the t3 place specifying the extremum of __traji__ (whether the most or the least, that is) is presumed by default to be “the most”.
+But the set against which the t1 place of __traji__ is compared is not the t2 place (which would make the place structure of __traji__ fully parallel to that of __zmadu__), but rather the t4 place. Nevertheless, by a special exception to the rules of place ordering, the t4 place of __traji__ -based lujvo becomes the second place of the lujvo. Some examples:
+**Example 12.98. **
+la | djudis. | cu | citrai | lo'i | lobypli  
+---|---|---|---|---|---  
+Judy is the youngest of all Lojbanists.  
+---  
+  
+
+**Example 12.99. **
+la | .ainctain. | cu | balrai | lo'i | skegunka  
+---|---|---|---|---|---  
+Einstein was the greatest of all scientists.  
+---  
+  
+
+* * *
+Chapter 12. Dog House And White House: Determining lujvo Place Structures  
+---  
+Prev: Section 12.14 |  Next: Section 12.16  
+---|---  
+Table of Contents
+Book Info Page

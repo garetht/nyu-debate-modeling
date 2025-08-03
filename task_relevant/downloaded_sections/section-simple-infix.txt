@@ -1,0 +1,124 @@
+Chapter 18. lojbau mekso: Mathematical Expressions in Lojban  
+---  
+Prev: Section 18.4 |  Next: Section 18.6  
+---|---  
+Table of Contents
+Book Info Page
+* * *
+## 18.5. Simple infix expressions and equations
+The following cmavo are discussed in this section:
+du |  GOhA |  equals  
+---|---|---  
+su'i |  VUhU |  plus  
+vu'u |  VUhU |  minus  
+pi'i |  VUhU |  times  
+te'a |  VUhU |  raised to the power  
+ny. |  BY |  letter “n”  
+vei |  VEI |  left parenthesis  
+ve'o |  VEhO |  right parenthesis  
+Let us begin at the beginning: one plus one equals two. In Lojban, that sentence translates to:
+**Example 18.22. **
+li | pa | su'i | pa | du | li | re  
+---|---|---|---|---|---|---  
+The-number | one | plus | one | equals | the-number | two.  
+1 + 1 = 2  
+  
+
+Example 18.22, a mekso sentence, is a regular Lojban bridi that exploits mekso features. __du__ is the predicate meaning “x1 is mathematically equal to x2”. It is a cmavo for conciseness, but it has the same grammatical uses as any brivla. Outside mathematical contexts, __du__ means “x1 is identical with x2” or “x1 is the same object as x2”.
+The cmavo __li__ is the number article. It is required whenever a sentence talks about numbers as numbers, as opposed to using numbers to quantify things. For example:
+**Example 18.23. **
+le | ci | prenu  
+---|---|---  
+the three persons  
+---  
+  
+
+requires no __li__ article, because the __ci__ is being used to specify the number of __prenu__. However, the sentence
+**Example 18.24. **
+levi | sfani | cu | grake | li | ci  
+---|---|---|---|---|---  
+This | fly |  | masses-in-grams | the-number | three.  
+This fly has a mass of 3 grams.  
+---  
+  
+
+requires __li__ because __ci__ is being used as a sumti. Note that this is the way in which measurements are stated in Lojban: all the predicates for units of length, mass, temperature, and so on have the measured object as the first place and a number as the second place. Using __li__ for __le__ in Example 18.23 would produce
+**Example 18.25. **
+li | ci | prenu  
+---|---|---  
+The-number | 3 | is-a-person.  
+  
+
+which is grammatical but nonsensical: numbers are not persons.
+The cmavo __su'i__ belongs to selma'o VUhU, which is composed of mathematical operators, and means “addition”. As mentioned before, it is distinct from __ma'u__ which means the positive sign as an indication of a positive number:
+**Example 18.26. **
+li | ma'u | pa | su'i  
+---|---|---|---  
+The-number | positive-sign | one | plus  
+ni'u | pa | du | li | no  
+---|---|---|---|---  
+negative-sign | one | equals | the-number | zero.  
++1 + -1 = 0  
+  
+
+Of course, it is legal to have complex mekso on both sides of __du__ :
+**Example 18.27. **
+li | mu | su'i | pa | du | li | ci | su'i | ci  
+---|---|---|---|---|---|---|---|---  
+The-number | five | plus | one | equals | the-number | three | plus | three.  
+5 + 1 = 3 + 3  
+  
+
+Why don't we say _li mu su'i li pa_ rather than just _li mu su'i pa_? The answer is that VUhU operators connect mekso operands (numbers, in Example 18.27), not general sumti. __li__ is used to make the entire mekso into a sumti, which then plays the roles applicable to other sumti: in Example 18.27, filling the places of a bridi
+By default, Lojban mathematics is like simple calculator mathematics: there is no notion of “operator precedence”. Consider the following example, where __pi'i__ means “times”, the multiplication operator:
+**Example 18.28. **
+li | ci | su'i | vo | pi'i | mu | du | li | reci  
+---|---|---|---|---|---|---|---|---  
+The-number | three | plus | four | times | five | equals | the-number | two-three.  
+3 + 4 × 5 = 23  
+  
+
+Is the Lojban version of Example 18.28 true? No! “3 + 4 × 5” is indeed 23, because the usual conventions of mathematics state that multiplication takes precedence over addition; that is, the multiplication “4 × 5” is done first, giving 20, and only then the addition “3 + 20”. But VUhU operators by default are done left to right, like other Lojban grouping, and so a truthful bridi would be:
+**Example 18.29. **
+li | ci | su'i | vo | pi'i | mu | du | li | cimu  
+---|---|---|---|---|---|---|---|---  
+The-number | three | plus | four | times | five | equals | the-number | three-five.  
+3 + 4 × 5 = 35  
+  
+
+Here we calculate 3 + 4 first, giving 7, and then calculate 7 × 5 second, leading to the result 35. While possessing the advantage of simplicity, this result violates the design goal of matching the standards of mathematics. What can be done?
+There are three solutions, all of which will probably be used to some degree. The first solution is to ignore the problem. People will say _li ci su'i vo pi'i mu_ and mean 23 by it, because the notion that multiplication takes precedence over addition is too deeply ingrained to be eradicated by Lojban parsing, which totally ignores semantics. This convention essentially allows semantics to dominate syntax in this one area.
+(Why not hard-wire the precedences into the grammar, as is done in computer programming languages? Essentially because there are too many operators, known and unknown, with levels of precedence that vary according to usage. The programming language 'C' has 13 levels of precedence, and its list of operators is not even extensible. For Lojban this approach is just not practical. In addition, hard-wired precedence could not be overridden in mathematical systems such as spreadsheets where the conventions are different.)
+The second solution is to use explicit means to specify the precedence of operators. This approach is fully general, but clumsy, and will be explained in Section 18.20.
+The third solution is simple but not very general. When an operator is prefixed with the cmavo __bi'e__ (of selma'o BIhE), it becomes automatically of higher precedence than other operators not so prefixed. Thus,
+**Example 18.30. **
+li | ci | su'i | vo | bi'e | pi'i | mu | du | li | reci  
+---|---|---|---|---|---|---|---|---|---  
+The-number | three | plus | four | times | five | equals | the-number | two-three.  
+3 + 4 × 5 = 23  
+  
+
+is a truthful Lojban bridi. If more than one operator has a __bi'e__ prefix, grouping is from the right; multiple __bi'e__ prefixes on a single operator are not allowed.
+In addition, of course, Lojban has the mathematical parentheses __vei__ and __ve'o__ , which can be used just like their written equivalents “(” and “)” to group expressions in any way desired:
+**Example 18.31. **
+li | vei | ny. | su'i | pa | ve'o | pi'i | vei | ny. | su'i | pa | [ve'o]  
+---|---|---|---|---|---|---|---|---|---|---|---  
+The-number | ( |  `n` | plus | one | ) | times | ( |  `n` | plus | one | )  
+du | li | ny. | [bi'e] | te'a | re  
+---|---|---|---|---|---  
+equals | the-number | n |  | to-the-power | two  
+su'i | re | bi'e | pi'i | ny. | su'i | pa  
+---|---|---|---|---|---|---  
+plus | two |  | times |  `n` | plus | 1.  
+(n+1)(n+1) = n2 \+ 2n + 1  
+  
+
+There are several new usages in Example 18.31: __te'a__ means “raised to the power”, and we also see the use of the lerfu word __ny__ , representing the letter “n”. In mekso, letters stand for just what they do in ordinary mathematics: variables. The parser will accept a string of lerfu words (called a “lerfu string”) as the equivalent of a single lerfu word, in agreement with computer-science conventions; “abc” is a single variable, not the equivalent of “a × b × c”. (Of course, a local convention could state that the value of a variable like “abc”, with a multi-lerfu name, was equal to the values of the variables “a”, “b”, and “c” multiplied together.)
+The explicit operator __pi'i__ is required in the Lojban verbal form whereas multiplication is implicit in the symbolic form. Note that __ve'o__ (the right parenthesis) is an elidable terminator: the first use of it in Example 18.31 is required, but the second use (marked by square brackets) could be elided. Additionally, the first __bi'e__ (also marked by square brackets) is not necessary to get the proper grouping, but it is included here for symmetry with the other one.
+* * *
+Chapter 18. lojbau mekso: Mathematical Expressions in Lojban  
+---  
+Prev: Section 18.4 |  Next: Section 18.6  
+---|---  
+Table of Contents
+Book Info Page

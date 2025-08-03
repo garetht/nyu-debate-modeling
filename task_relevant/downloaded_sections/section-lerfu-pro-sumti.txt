@@ -1,0 +1,81 @@
+Chapter 17. As Easy As A-B-C? The Lojban Letteral System And Its Uses  
+---  
+Prev: Section 17.8 |  Next: Section 17.10  
+---|---  
+Table of Contents
+Book Info Page
+* * *
+## 17.9. lerfu words as pro-sumti
+So far, lerfu words have only appeared in Lojban text when spelling out words. There are several other grammatical uses of lerfu words within Lojban. In each case, a single lerfu word or more than one may be used. Therefore, the term “lerfu string” is introduced: it is short for “sequence of one or more lerfu words”.
+A lerfu string may be used as a pro-sumti (a sumti which refers to some previous sumti), just like the pro-sumti __ko'a__ , __ko'e__ , and so on:
+**Example 17.21. **
+.abu prami by.  
+---  
+A loves B  
+---  
+  
+
+In Example 17.21, __.abu__ and __by.__ represent specific sumti, but which sumti they represent must be inferred from context.
+Alternatively, lerfu strings may be assigned by __goi__ , the regular pro-sumti assignment cmavo:
+**Example 17.22. **
+le gerku goi gy. cu xekri .i gy. klama le zdani  
+---  
+The dog, or G, is black. G goes to the house.  
+---  
+  
+
+There is a special rule that sometimes makes lerfu strings more advantageous than the regular pro-sumti cmavo. If no assignment can be found for a lerfu string (especially a single lerfu word), it can be assumed to refer to the most recent sumti whose name or description begins in Lojban with that lerfu. So Example 17.22 can be rephrased:
+**Example 17.23. **
+le gerku cu xekri. .i gy. klama le zdani  
+---  
+The dog is black. G goes to the house.  
+---  
+  
+
+(A less literal English translation would use “D” for “dog” instead.)
+Here is an example using two names and longer lerfu strings:
+**Example 17.24. **
+la | stivn. | mark. | djonz. | merko  
+---|---|---|---|---  
+| Steven | Mark | Jones | is-American.  
+.i | la | .aleksandr. | paliitc. | kuzNIETsyf. | rusko  
+---|---|---|---|---|---  
+|  | Alexander | Pavlovitch | Kuznetsov | is-Russian.  
+.i | symyjy. | tavla | .abupyky. | bau | la | lojban.  
+---|---|---|---|---|---|---  
+| SMJ | talks-to | APK | in |  | Lojban.  
+  
+
+Perhaps Alexander's name should be given as _ru'o.abupyky_ instead.
+What about
+**Example 17.25. **
+.abu | dunda | by. | cy.  
+---|---|---|---  
+A | gives | B | C  
+  
+
+Does this mean that A gives B to C? No. _by. cy._ is a single lerfu string, although written as two words, and represents a single pro-sumti. The true interpretation is that A gives BC to someone unspecified. To solve this problem, we need to introduce the elidable terminator __boi__ (of selma'o BOI). This cmavo is used to terminate lerfu strings and also strings of numerals; it is required when two of these appear in a row, as here. (The other reason to use __boi__ is to attach a free modifier – subscript, parenthesis, or what have you – to a lerfu string.) The correct version is:
+**Example 17.26. **
+.abu [boi] dunda by. boi cy. [boi]  
+---  
+A gives B to C  
+---  
+  
+
+where the two occurrences of __boi__ in brackets are elidable, but the remaining occurrence is not. Likewise:
+**Example 17.27. **
+xy. | boi | ro | [boi] | prenu | cu | prami  
+---|---|---|---|---|---|---  
+X |  | all |  | persons |  | loves.  
+X loves everybody.  
+---  
+  
+
+requires the first __boi__ to separate the lerfu string __xy.__ from the digit string __ro__.
+* * *
+Chapter 17. As Easy As A-B-C? The Lojban Letteral System And Its Uses  
+---  
+Prev: Section 17.8 |  Next: Section 17.10  
+---|---  
+Table of Contents
+Book Info Page

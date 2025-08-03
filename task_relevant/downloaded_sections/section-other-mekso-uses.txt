@@ -1,0 +1,121 @@
+Chapter 18. lojbau mekso: Mathematical Expressions in Lojban  
+---  
+Prev: Section 18.18 |  Next: Section 18.20  
+---|---  
+Table of Contents
+Book Info Page
+* * *
+## 18.19. Other uses of mekso
+The following cmavo are discussed in this section:
+me'o |  LI |  the mekso  
+---|---|---  
+nu'a |  NUhA |  operator to selbri  
+mai |  MAI |  utterance ordinal  
+mo'o |  MAI |  higher order utterance ordinal  
+roi |  ROI |  quantified tense  
+So far we have seen mekso used as sumti (with __li__), as quantifiers (often parenthesized), and in MOI and ME-MOI selbri. There are a few other minor uses of mekso within Lojban.
+The cmavo __me'o__ has the same grammatical use as __li__ but slightly different semantics. __li__ means “the number which is the value of the mekso ...”, whereas __me'o__ just means “the mekso ...” So it is true that:
+**Example 18.128. **
+li | re | su'i | re | du | li | vo  
+---|---|---|---|---|---|---  
+The-number | two | plus | two | equals | the-number | four.  
+2 + 2 = 4  
+  
+
+but false that:
+**Example 18.129. **
+me'o | re | su'i | re | du | me'o | vo  
+---|---|---|---|---|---|---  
+The-mekso | two | plus | two | equals | the-mekso | four.  
+“2 + 2”=“4”  
+---  
+  
+
+since the expressions “2 + 2” and “4” are not the same. The relationship between __li__ and __me'o__ is related to that between _la djan._ , the person named John, and _zo .djan._ , the name “John”
+The cmavo __nu'a__ is the inverse of __na'u__ , and allows a mekso operator to be used as a normal selbri, with the place structure:
+> x1 is the result of applying (operator) to x2, x3, ...
+for as many places as may be required. For example:
+**Example 18.130. **
+li | ni'umu | cu | nu'a | va'a | li | ma'umu  
+---|---|---|---|---|---|---  
+The-number | -5 |  | is-the-operator | negation-of | the-number | +5.  
+  
+
+uses __nu'a__ to make the operator __va'a__ into a two-place bridi
+Used together, __nu'a__ and __na'u__ make it possible to ask questions about mekso operators, even though there is no specific cmavo for an operator question, nor is it grammatical to utter an operator in isolation. Consider Example 18.131, to which Example 18.132 is one correct answer:
+**Example 18.131. **
+li | re | na'u  
+---|---|---  
+The-number | two | applied-to-selbri  
+mo | re | du | li | vo  
+---|---|---|---|---  
+which-selbri? | two | equals | the-number | four.  
+2 ? 2 = 4  
+  
+
+**Example 18.132. **
+nu'a | su'i  
+---|---  
+plus  
+---  
+  
+
+In Example 18.131, _na'u mo_ is an operator question, because __mo__ is the selbri question cmavo and __na'u__ makes the selbri into an operator. Example 18.132 makes the true answer __su'i__ into a selbri (which is a legal utterance) with the inverse cmavo __nu'a__. Mechanically speaking, inserting Example 18.132 into Example 18.131 produces:
+**Example 18.133. **
+li | re | na'u | nu'a  
+---|---|---|---  
+The-number | two | (the-operator | the-selbri  
+su'i | re | du | li | vo  
+---|---|---|---|---  
+plus) | two | equals | the-number | four.  
+  
+
+where the _na'u nu'a_ cancels out, leaving a truthful bridi
+Numerical free modifiers, corresponding to English “firstly”, “secondly”, and so on, can be created by suffixing a member of selma'o MAI to a digit string or a lerfu string. (Digit strings are compound cmavo beginning with a cmavo of selma'o PA, and containing only cmavo of PA or BY; lerfu strings begin with a cmavo of selma'o BY, and likewise contain only PA or BY cmavo.) Here are some examples:
+**Example 18.134. **
+pamai  
+---  
+firstly  
+---  
+  
+
+**Example 18.135. **
+remai  
+---  
+secondly  
+---  
+  
+
+**Example 18.136. **
+romai  
+---  
+all-ly  
+lastly  
+---  
+  
+
+**Example 18.137. **
+ny.mai  
+---  
+nth-ly  
+---  
+  
+
+**Example 18.138. **
+pasomo'o  
+---  
+nineteenthly (higher order)  
+---  
+Section 19  
+  
+
+The difference between __mai__ and __mo'o__ is that __mo'o__ enumerates larger subdivisions of a text. Each __mo'o__ subdivision can then be divided into pieces and internally numbered with __mai__. If this chapter were translated into Lojban, each section would be numbered with __mo'o__. (See Section 19.7 for more on these words.)
+A numerical tense can be created by suffixing a digit string with __roi__. This usage generates tenses corresponding to English “once”, “twice”, and so on. This topic belongs to a detailed discussion of Lojban tenses, and is explained further in Section 10.9.
+Note: the elidable terminator __boi__ is not used between a number and a member of MAI or ROI.
+* * *
+Chapter 18. lojbau mekso: Mathematical Expressions in Lojban  
+---  
+Prev: Section 18.18 |  Next: Section 18.20  
+---|---  
+Table of Contents
+Book Info Page

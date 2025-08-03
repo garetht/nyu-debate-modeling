@@ -1,0 +1,71 @@
+Chapter 18. lojbau mekso: Mathematical Expressions in Lojban  
+---  
+Prev: Section 18.17 |  Next: Section 18.19  
+---|---  
+Table of Contents
+Book Info Page
+* * *
+## 18.18. Using Lojban resources within mekso
+The following cmavo are discussed in this section:
+na'u |  NAhU |  selbri to operator  
+---|---|---  
+ni'e |  NIhE |  selbri to operand  
+mo'e |  MOhE |  sumti to operand  
+te'u |  TEhU |  terminator for all three  
+One of the mekso design goals requires the ability to make use of Lojban's vocabulary resources within mekso to extend the built-in cmavo for operands and operators. There are three relevant constructs: all three share the elidable terminator __te'u__ (which is also used to terminate vectors marked with __jo'i__)
+The cmavo __na'u__ makes a selbri into an operator. In general, the first place of the selbri specifies the result of the operator, and the other unfilled places specify the operands:
+**Example 18.124. **
+li | na'u | tanjo | te'u  
+---|---|---|---  
+The-number | the-operator | tangent | [end-operator]  
+vei | pai | fe'i | re | [ve'o] | du | li | ci'i  
+---|---|---|---|---|---|---|---  
+( | π | / | 2 | ) | = | the-number | infinity.  
+tan(π/2) = ∞  
+  
+
+__tanjo__ is the gismu for “x1 is the tangent of x2”, and the __na'u__ here makes it into an operator which is then used in forethought
+The cmavo __ni'e__ makes a selbri into an operand. The x1 place of the selbri generally represents a number, and therefore is often a __ni__ abstraction, since __ni__ abstractions represent numbers. The __ni'e__ makes that number available as a mekso operand. A common application is to make equations relating pure dimensions:
+**Example 18.125. **
+li | ni'e | ni | clani | [te'u]  
+---|---|---|---|---  
+The-number |  | quantity-of | length |   
+pi'i | ni'e | ni | ganra | [te'u]  
+---|---|---|---|---  
+times |  | quantity-of | width |   
+pi'i | ni'e | ni | condi | te'u  
+---|---|---|---|---  
+times |  | quantity-of | depth |   
+du | li | ni'e | ni | canlu  
+---|---|---|---|---  
+equals | the-number |  | quantity-of | volume.  
+Length × Width × Depth = Volume  
+  
+
+The cmavo __mo'e__ operates similarly to __ni'e__ , but makes a sumti (rather than a selbri) into an operand. This construction is useful in stating equations involving dimensioned numbers:
+**Example 18.126. **
+li | mo'e | re | ratcu | su'i | mo'e | re | ractu  
+---|---|---|---|---|---|---|---  
+The-number |  | two | rats | plus |  | two | rabbits  
+du | li | mo'e | vo | danlu  
+---|---|---|---|---  
+equals | the-number |  | four | animals.  
+2 rats + 2 rabbits = 4 animals.  
+  
+
+Another use is in constructing Lojbanic versions of so-called “folk quantifiers”, such as “a pride of lions”:
+**Example 18.127. **
+mi | viska | vei | mo'e | lo'e | lanzu | ve'o | cinfo  
+---|---|---|---|---|---|---|---  
+I | see | ( |  | the-typical | family | )-number-of | lions.  
+I see a pride of lions.  
+---  
+  
+
+* * *
+Chapter 18. lojbau mekso: Mathematical Expressions in Lojban  
+---  
+Prev: Section 18.17 |  Next: Section 18.19  
+---|---  
+Table of Contents
+Book Info Page

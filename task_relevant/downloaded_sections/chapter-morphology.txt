@@ -1,0 +1,48 @@
+The Complete Lojban Language  
+---  
+Prev: Section 3.12 |  Next: Section 4.2  
+---|---  
+Table of Contents
+Book Info Page
+* * *
+# Chapter 4. The Shape Of Words To Come: Lojban Morphology
+## 4.1. Introductory
+Morphology is the part of grammar that deals with the form of words. Lojban's morphology is fairly simple compared to that of many languages, because Lojban words don't change form depending on how they are used. English has only a small number of such changes compared to languages like Russian, but it does have changes like “boys” as the plural of “boy”, or “walked” as the past-tense form of “walk”. To make plurals or past tenses in Lojban, you add separate words to the sentence that express the number of boys, or the time when the walking was going on.
+However, Lojban does have what is called “derivational morphology”: the capability of building new words from old words. In addition, the form of words tells us something about their grammatical uses, and sometimes about the means by which they entered the language. Lojban has very orderly rules for the formation of words of various types, both the words that already exist and new words yet to be created by speakers and writers.
+A stream of Lojban sounds can be uniquely broken up into its component words according to specific rules. These so-called “morphology rules” are summarized in this chapter. (However, a detailed algorithm for breaking sounds into words has not yet been fully debugged, and so is not presented in this book.) First, here are some conventions used to talk about groups of Lojban letters, including vowels and consonants.
+  1. V represents any single Lojban vowel except _y_ ; that is, it represents _a_ , _e_ , _i_ , _o_ , or _u_.
+  2. VV represents either a diphthong, one of the following: 
+_ai_ |  _ei_ |  _oi_ |  _au_  
+---|---|---|---  
+or a two-syllable vowel pair with an apostrophe separating the vowels, one of the following: 
+_a'a_ |  _a'e_ |  _a'i_ |  _a'o_ |  _a'u_  
+---|---|---|---|---  
+_e'a_ |  _e'e_ |  _e'i_ |  _e'o_ |  _e'u_  
+_i'a_ |  _i'e_ |  _i'i_ |  _i'o_ |  _i'u_  
+_o'a_ |  _o'e_ |  _o'i_ |  _o'o_ |  _o'u_  
+_u'a_ |  _u'e_ |  _u'i_ |  _u'o_ |  _u'u_  
+  3. C represents a single Lojban consonant, not including the apostrophe, one of _b_ , _c_ , _d_ , _f_ , _g_ , _j_ , _k_ , _l_ , _m_ , _n_ , _p_ , _r_ , _s_ , _t_ , _v_ , _x_ , or _z_ . Syllabic _l_ , _m_ , _n_ , and _r_ always count as consonants for the purposes of this chapter. 
+  4. CC represents two adjacent consonants of type C which constitute one of the 48 permissible initial consonant pairs: 
+_pl_ |  _pr_ |  |  |  |  |  |  |  |  |  _fl_ |  _fr_  
+---|---|---|---|---|---|---|---|---|---|---|---  
+_bl_ |  _br_ |  |  |  |  |  |  |  |  |  _vl_ |  _vr_  
+_cp_ |  _cf_ |  |  |  _ct_ |  _ck_ |  _cm_ |  _cn_ |  |  |  _cl_ |  _cr_  
+_jb_ |  _jv_ |  |  |  _jd_ |  _jg_ |  _jm_  
+_sp_ |  _sf_ |  |  |  _st_ |  _sk_ |  _sm_ |  _sn_ |  |  |  _sl_ |  _sr_  
+_zb_ |  _zv_ |  |  |  _zd_ |  _zg_ |  _zm_  
+_tc_ |  _tr_ |  |  |  _ts_ |  |  |  |  |  |  _kl_ |  _kr_  
+_dj_ |  _dr_ |  |  |  _dz_ |  |  |  |  |  |  _gl_ |  _gr_  
+_ml_ |  _mr_ |  |  |  |  |  |  |  |  |  _xl_ |  _xr_  
+  5. C/C represents two adjacent consonants which constitute one of the permissible consonant pairs (not necessarily a permissible initial consonant pair). The permissible consonant pairs are explained in Section 3.6. In brief, any consonant pair is permissible unless it: contains two identical letters, contains both a voiced (excluding _r_ , _l_ , _m_ , _n_) and an unvoiced consonant, or is one of certain specified forbidden pairs. 
+  6. C/CC represents a consonant triple. The first two consonants must constitute a permissible consonant pair; the last two consonants must constitute a permissible initial consonant pair.
+
+
+Lojban has three basic word classes – parts of speech – in contrast to the eight that are traditional in English. These three classes are called cmavo, brivla, and cmene. Each of these classes has uniquely identifying properties – an arrangement of letters that allows the word to be uniquely and unambiguously recognized as a separate word in a string of Lojban, upon either reading or hearing, and as belonging to a specific word-class.
+They are also functionally different: cmavo are the structure words, corresponding to English words like “and”, “if”, “the” and “to”; brivla are the content words, corresponding to English words like “come”, “red”, “doctor”, and “freely”; cmene are proper names, corresponding to English “James”, “Afghanistan”, and “Pope John Paul II”.
+* * *
+The Complete Lojban Language  
+---  
+Prev: Section 3.12 |  Next: Section 4.2  
+---|---  
+Table of Contents
+Book Info Page
