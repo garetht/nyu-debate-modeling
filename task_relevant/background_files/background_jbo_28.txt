@@ -1,0 +1,889 @@
+
+The following definitions pulled from the above background may be particularly useful:
+{'Lojban': 'co', 'Formal Language': 'CO', 'English': 'tanru inversion', 'Definition': 'tanru inversion operator; "... of type ..."; allows modifier trailing sumti without sumti links', 'Confer': None, 'Type': 'cmavo'}
+{'Lojban': 'ko', 'Formal Language': 'KOhA3', 'English': 'imperative', 'Definition': 'pro-sumti: you (imperative); make it true for you, the listener', 'Confer': None, 'Type': 'cmavo'}
+{'Lojban': 'lo', 'Formal Language': 'LE', 'English': 'the really is', 'Definition': 'veridical descriptor: the one(s) that really is(are) ...', 'Confer': None, 'Type': 'cmavo'}
+{'Lojban': 'guzme', 'Lojban definition': 'x_{1} is a melon/squash [fruit/plant] of species/strain x_{2}.', 'English': '- melon', 'Type': 'gismu'}
+{'Lojban': 'troci', 'Lojban definition': 'x_{1} tries/attempts/makes an effort to do/attain x_{2} (event/state/property) by actions/method x_{3}.', 'English': '- attempt; to try<br>- try', 'Type': 'gismu'}
+{'Lojban': 'katna', 'Lojban definition': 'x_{1} (tool/blade/force) cuts [through]/splits/divides x_{2} (object) into pieces x_{3}.', 'English': '- cut', 'Type': 'gismu'}
+
+The following are the top TF-IDF files for the words in choice A and choice B from the The Complete Lojban Language Grammar Book:
+Word: co
+Filename: section-co-inversion.txt
+TF-IDF Score: 0.32075110991638495
+Content: Chapter 5. “Pretty Little Girls' School”: The Structure Of Lojban selbri  
+---  
+Prev: Section 5.7 |  Next: Section 5.9  
+---|---  
+Table of Contents
+Book Info Page
+* * *
+## 5.8. Inversion of tanru: _co_
+The following cmavo is discussed in this section:
+co |  CO |  tanru inversion marker  
+---|---|---  
+The standard order of Lojban tanru, whereby the modifier precedes what it modifies, is very natural to English-speakers: we talk of “blue houses”, not of “houses blue”. In other languages, however, such matters are differently arranged, and Lojban supports this reverse order (tertau before seltau) by inserting the particle __co__. Example 5.76 and Example 5.77 mean exactly the same thing:
+**Example 5.76. **
+ta | blanu | zdani  
+---|---|---  
+That | is-a-blue | type-of-house.  
+That is a blue house.  
+---  
+  
+
+**Example 5.77. **
+ta | zdani | co | blanu  
+---|---|---|---  
+That | is-a-house | of-type | blue.  
+That is a blue house.  
+---  
+  
+
+This change is called “tanru inversion”. In tanru inversion, the element before __co__ (__zdani__ in Example 5.77) is the tertau, and the element following __co__ (__blanu__) in Example 5.77) is the seltau.
+The meaning, and more specifically, the place structure, of a tanru is not affected by inversion: the place structure of _zdani co blanu_ is still that of __zdani__. However, the existence of inversion in a selbri has a very special effect on any sumti which follow that selbri. Instead of being interpreted as filling places of the selbri, they actually fill the places (starting with x2) of the seltau. In Section 5.7, we saw how to fill interior places with __be__ … __bei__ … __be'o__ , and in fact Example 5.78 and Example 5.79 have the same meaning:
+**Example 5.78. **
+mi | klama | be | le | zarci | bei | le | zdani | be'o | troci  
+---|---|---|---|---|---|---|---|---|---  
+I | am-a-(goer | to | the | market | from | the | house | ) | type-of-trier.  
+I try to go to the market from the house.  
+---  
+  
+
+**Example 5.79. **
+mi | troci | co | klama | le | zarci | le | zdani  
+---|---|---|---|---|---|---|---  
+I | am-a-trier | of-type | (goer | to-the | market | from-the | house).  
+I try to go to the market from the house.  
+---  
+  
+
+Example 5.79 is a less deeply nested construction, requiring fewer cmavo. As a result it is probably easier to understand.
+Note that in Lojban “trying to go” is expressed using __troci__ as the tertau. The reason is that “trying to go” is a “going type of trying”, not a “trying type of going”. The trying is more fundamental than the going – if the trying fails, we may not have a going at all.
+Any sumti which precede a selbri with an inverted tanru fill the places of the selbri (i.e., the places of the tertau) in the ordinary way. In Example 5.79, __mi__ fills the x1 place of _troci co klama_ , which is the x1 place of __troci__. The other places of the selbri remain unfilled. The trailing sumti _le zarci_ and _le zdani_ do not occupy selbri places, despite appearances.
+As a result, the regular mechanisms (involving selma'o VOhA and GOhI, explained in Chapter 7) for referring to individual sumti of a bridi cannot refer to any of the trailing places of Example 5.79, because they are not really “sumti of the bridi” at all.
+When inverting a more complex tanru, it is possible to invert it only at the most general modifier-modified pair. The only possible inversion of Example 5.19, for instance, is:
+**Example 5.80. **
+ta | nixli | [bo] | ckule | co | cmalu  
+---|---|---|---|---|---  
+That | (is-a-girl | type-of | school) | of-type | little.  
+That's a girls' school which is small.  
+---  
+  
+
+Note that the __bo__ of Example 5.19 is optional in Example 5.80, because __co__ groups more loosely than any other cmavo used in tanru, including none at all. Not even __ke__ … __ke'e__ parentheses can encompass a __co__ :
+**Example 5.81. **
+ta | cmalu |  | ke | nixli |  | ckule | [ke'e] | co | melbi  
+---|---|---|---|---|---|---|---|---|---  
+That | is-a-(little | type-of | ( | girl | type-of | school | )) | of-type | pretty.  
+That's a small school for girls which is beautiful.  
+---  
+  
+
+In Example 5.81, the __ke'e__ is automatically inserted before the __co__ rather than at its usual place at the end of the selbri. As a result, there is a simple and mechanical rule for removing __co__ from any selbri: change “A co B” to “ke B ke'e A”. (At the same time, any sumti following the selbri must be transformed into __be__ … __bei__ … __be'o__ form and attached following B.) Therefore,
+**Example 5.82. **
+ckule | co | melbi | nixli  
+---|---|---|---  
+school | of-type | pretty | girl  
+school for beautiful girls  
+---  
+  
+
+means the same as:
+**Example 5.83. **
+ke | melbi | nixli | ke'e | ckule  
+---|---|---|---|---  
+( | pretty | girl | ) | school  
+  
+
+Multiple __co__ cmavo can appear within a selbri, indicating multiple inversions: a right-grouping rule is employed, as for __bo__. The above rule can be applied to interpret such selbri, but all __co__ cmavo must be removed simultaneously:
+**Example 5.84. **
+ckule | co | nixli | co | cmalu  
+---|---|---|---|---  
+school | of-type | (girl | of-type | little)  
+  
+
+becomes formally
+**Example 5.85. **
+ke | ke | cmalu | ke'e | nixli | ke'e | ckule  
+---|---|---|---|---|---|---  
+( | ( | little | ) | girl | ) | school  
+  
+
+which by the left-grouping rule is simply
+**Example 5.86. **
+cmalu | nixli | ckule  
+---|---|---  
+little | girl | school  
+school for little girls  
+---  
+  
+
+As stated above, the selbri places, other than the first, of
+**Example 5.87. **
+mi | klama | co | sutra  
+---|---|---|---  
+I | am-a-goer | of-type | quick  
+I go quickly  
+---  
+  
+
+cannot be filled by placing sumti after the selbri, because any sumti in that position fill the places of __sutra__ , the seltau. However, the tertau places (which means in effect the selbri places) can be filled with __be__ :
+**Example 5.88. **
+mi | klama | be | le | zarci | be'o | co | sutra  
+---|---|---|---|---|---|---|---  
+I | am-a-goer | ( | to-the | store | ) | of-type | quick.  
+I go to the store quickly.  
+---  
+  
+
+* * *
+Chapter 5. “Pretty Little Girls' School”: The Structure Of Lojban selbri  
+---  
+Prev: Section 5.7 |  Next: Section 5.9  
+---|---  
+Table of Contents
+Book Info Page
+
+
+Word: co
+Filename: section-bridi-negation.txt
+TF-IDF Score: 0.05344886437565523
+Content: Chapter 15. “No” Problems: On Lojban Negation  
+---  
+Prev: Chapter 15 |  Next: Section 15.3  
+---|---  
+Table of Contents
+Book Info Page
+* * *
+## 15.2. bridi negation
+In discussing Lojban negation, we will call the form of logical negation that simply denies the truth of a statement “bridi negation”. Using bridi negation, we can say the equivalent of “I haven't stopped beating my wife” without implying that I ever started, nor even that I have a wife, meaning simply “It isn't true that I have stopped beating my wife.” Since Lojban uses bridi as smaller components of complex sentences, bridi negation is permitted in these components as well at the sentence level.
+For the bridi negation of a sentence to be true, the sentence being negated must be false. A major use of bridi negation is in making a negative response to a yes/no question; such responses are usually contradictory, denying the truth of the entire sentence. A negative answer to
+**Example 15.11. **
+Did you go to the store?
+  
+
+is taken as a negation of the entire sentence, equivalent to
+**Example 15.12. **
+No, I didn't go to the store.
+  
+
+The most important rule about bridi negation is that if a bridi is true, its negation is false, and vice versa.
+The simplest way to express a bridi negation is to use the cmavo __na__ of selma'o NA before the selbri of the affirmative form of the bridi (but after the __cu__ , if there is one):
+**Example 15.13. **
+mi | klama | le | zarci  
+---|---|---|---  
+I | go-to | the | store.  
+  
+
+when negated becomes:
+**Example 15.14. **
+mi | na | klama | le | zarci  
+---|---|---|---|---  
+I | [false] | go-to | the | store.  
+  
+
+Note that we have used a special convention to show in the English that a bridi negation is present. We would like to use the word “not”, because this highlights the naturalness of putting the negation marker just before the selbri, and makes the form easier to learn. But there is a major difference between Lojban's bridi negation with __na__ and natural language negation with “not”. In English, the word “not” can apply to a single word, to a phrase, to an English predicate, or to the entire sentence. In addition, “not” may indicate either contradictory negation or another form of negation, depending on the sentence. Lojban's internal bridi negation, on the other hand, always applies to an entire bridi, and is always a contradictory negation; that is, it contradicts the claim of the whole bridi.
+Because of the ambiguity of English “not”, we will use “[false]” in the translation of Lojban examples to remind the reader that we are expressing a contradictory negation. Here are more examples of bridi negation:
+**Example 15.15. **
+mi | [cu] | na | ca | klama | le | zarci  
+---|---|---|---|---|---|---  
+I |  | [false] | now | am-a-go-er-to | the | market.  
+I am not going to the market now.  
+---  
+  
+
+**Example 15.16. **
+lo | ca | nolraitru | be  
+---|---|---|---  
+The-actual | present | noblest-governor | of  
+le | fasygu'e | cu | na | krecau  
+---|---|---|---|---  
+the | French-country |  | [false] | is-hair-without.  
+The current king of France isn't bald.  
+---  
+  
+
+**Example 15.17. **
+ti | na | barda | prenu | co | melbi | mi  
+---|---|---|---|---|---|---  
+This | [false] | is-a-big | person | of-type | (beautiful-to | me).  
+This isn't a big person who is beautiful to me.  
+---  
+  
+
+Although there is this fundamental difference between Lojban's internal bridi negation and English negation, we note that in many cases, especially when there are no existential or quantified variables (the cmavo __da__ , __de__ , and __di__ of selma'o KOhA, explained in Chapter 16) in the bridi, you can indeed translate Lojban __na__ as “not” (or “isn't” or “doesn't”, as appropriate).
+The most important rule about bridi negation is that if a bridi is true, its negation is false, and vice versa.
+In Lojban, there are several structures that implicitly contain bridi, so that Lojban sentences may contain more than one occurrence of __na__. For example:
+**Example 15.18. **
+mi | na | gleki | le | nu  
+---|---|---|---|---  
+I | [false] | am-happy-about | the | event-of  
+na | klama | le | nu | dansu  
+---|---|---|---|---  
+([false] | going-to | the | event-of | dancing).  
+It is not the case that I am happy about it not being the case that I am going to the dance.  
+---  
+I am not happy about not going to the dance.  
+  
+
+In the previous example, we used internal negations in abstraction bridi; bridi negation may also be found in descriptions within sumti. For example:
+**Example 15.19. **
+mi | nelci | le | na | melbi  
+---|---|---|---|---  
+I | am-fond-of | the-one-described-as | ([false] | beautiful).  
+I am fond of the one who isn't beautiful.  
+---  
+  
+
+A more extreme (and more indefinite) example is:
+**Example 15.20. **
+mi | nelci | lo | na  
+---|---|---|---  
+I | am-fond-of | one-who-is | ([false]  
+ca | nolraitru | be | le | frasygu'e  
+---|---|---|---|---  
+the-current | king | of | the | French-country).  
+I am fond of one who isn't the current king of France.  
+---  
+  
+
+The claim of Example 15.20 could apply to anyone except a person who is fond of no one at all, since the relation within the description is false for everyone. You cannot readily express these situations in colloquial English.
+Negation with __na__ applies to an entire bridi, and not to just part of a selbri. Therefore, you won't likely have reason to put __na__ inside a tanru. In fact, the grammar currently does not allow you to do so (except in a lujvo and in elaborate constructs involving GUhA, the forethought connector for selbri). Any situation where you might want to do so can be expressed in a less-compressed non-tanru form. This grammatical restriction helps ensure that bridi negation is kept separate from other forms of negation.
+The grammar of __na__ allows multiple adjacent negations, which cancel out, as in normal logic:
+**Example 15.21. **
+ti | na | na | barda | prenu | co | melbi | mi  
+---|---|---|---|---|---|---|---  
+This | [false] | [false] | is-a-big | person | that | is-(beautiful-to | me).  
+  
+
+which is the same as:
+**Example 15.22. **
+ti | barda | prenu | co | melbi | mi  
+---|---|---|---|---|---  
+This | is-a-big | person | that | is-(beautiful-to | me).  
+  
+
+When a selbri is tagged with a tense or a modal, negation with __na__ is permitted in two positions: before or after the tag. No semantic difference between these forms has yet been defined, but this is not finally determined, since the interactions between tenses/modals and bridi negation have not been fully explored. In particular, it remains to be seen whether sentences using less familiar tenses, such as:
+**Example 15.23. **
+mi | [cu] | ta'e | klama | le | zarci  
+---|---|---|---|---|---  
+I |  | habitually | go-to | the | market.  
+  
+
+mean the same thing with __na__ before the __ta'e__ , as when the negation occurs afterwards; we'll let future, Lojban-speaking, logicians decide on how they relate to each other.
+A final caution on translating English negations into Lojban: if you translate the English literally, you'll get the wrong one. With English causal statements, and other statements with auxiliary clauses, this problem is more likely.
+Thus, if you translate the English:
+**Example 15.24. **
+I do not go to the market because the car is broken.
+  
+
+as:
+**Example 15.25. **
+mi | na | klama | le | zarci | ki'u  
+---|---|---|---|---|---  
+I | [false] | go-to | the | market | because-of  
+lenu | le | karce | cu | spofu  
+---|---|---|---|---  
+the-event-of | the | car |  | is-broken.  
+It is false that: I go to the market because the car is broken.  
+---  
+  
+
+you end up negating too much.
+Such mistranslations result from the ambiguity of English compounded by the messiness of natural language negation. A correct translation of the normal interpretation of Example 15.24 is:
+**Example 15.26. **
+le | nu | mi | na | klama | le | zarci | cu | se | krinu  
+---|---|---|---|---|---|---|---|---|---  
+The | event-of | (my | [false] | going-to | the | market) |  |  | is-justified-by  
+le | nu | le | karce | cu | spofu  
+---|---|---|---|---|---  
+the | event-of | (the | car |  | being-broken).  
+My not going to the market is because the car is broken.  
+---  
+  
+
+In Example 15.26, the negation is clearly confined to the event abstraction in the x1 sumti, and does not extend to the whole sentence. The English could also have been expressed by two separate sentences joined by a causal connective (which we'll not go into here).
+The problem is not confined to obvious causals. In the English:
+**Example 15.27. **
+I was not conscripted into the Army with the help of my uncle the Senator.
+  
+
+we do not intend the uncle's help to be part of the negation. We must thus move the negation into an event clause or use two separate sentences. The event-clause version would look like:
+**Example 15.28. **
+The event-of (my [false] being-conscripted-into the Army) was aided by my uncle the Senator.
+  
+
+It is possible that someone will want to incorporate bridi negations into lujvo. For this reason, the rafsi _-nar-_ has been reserved for __na__. However, before using this rafsi, make sure that you intend the contradictory bridi negation, and not the scalar negation described in Section 15.3, which will be much more common in tanru and lujvo.
+* * *
+Chapter 15. “No” Problems: On Lojban Negation  
+---  
+Prev: Chapter 15 |  Next: Section 15.3  
+---|---  
+Table of Contents
+Book Info Page
+
+
+Word: ko
+Filename: section-vocatives-and-commands.txt
+TF-IDF Score: 0.31009783600267976
+Content: Chapter 2. A Quick Tour of Lojban Grammar, With Diagrams  
+---  
+Prev: Section 2.13 |  Next: Section 2.15  
+---|---  
+Table of Contents
+Book Info Page
+* * *
+## 2.14. Vocatives and commands
+You may call someone's attention to the fact that you are addressing them by using __doi__ followed by their name. The sentence
+**Example 2.55. **
+doi djan.
+  
+
+means “Oh, John, I'm talking to you”. It also has the effect of setting the value of __do__ ; __do__ now refers to “John” until it is changed in some way in the conversation. Note that Example 2.55 is not a bridi, but it is a legitimate Lojban sentence nevertheless; it is known as a “vocative phrase”.
+Other cmavo can be used instead of __doi__ in a vocative phrase, with a different significance. For example, the cmavo __coi__ means “hello” and __co'o__ means “good-bye”. Either word may stand alone, they may follow one another, or either may be followed by a pause and a name. (Vocative phrases with __doi__ do not need a pause before the name.)
+**Example 2.56. **
+coi. | djan.  
+---|---  
+Hello, | John.  
+  
+
+**Example 2.57. **
+co'o. | djan.  
+---|---  
+Good-bye, | John.  
+  
+
+Commands are expressed in Lojban by a simple variation of the main bridi structure. If you say
+**Example 2.58. **
+do |  tavla  
+---|---  
+You |  are-talking.  
+  
+
+you are simply making a statement of fact. In order to issue a command in Lojban, substitute the word __ko__ for __do__. The bridi
+**Example 2.59. **
+ko |  tavla  
+---|---  
+  
+
+instructs the listener to do whatever is necessary to make Example 2.58 true; it means “Talk!” Other examples:
+**Example 2.60. **
+ko |  sutra  
+---|---  
+Be fast!  
+---  
+  
+
+The __ko__ need not be in the x1 place, but rather can occur anywhere a sumti is allowed, leading to possible Lojban commands that are very unlike English commands:
+**Example 2.61. **
+mi |  tavla |  ko  
+---|---|---  
+Be talked to by me.  
+---  
+Let me talk to you.  
+  
+
+The cmavo __ko__ can fill any appropriate sumti place, and can be used as often as is appropriate for the selbri:
+**Example 2.62. **
+ko |  kurji |  ko  
+---|---|---  
+  
+
+and
+**Example 2.63. **
+ko |  ko |  kurji  
+---|---|---  
+  
+
+both mean “You take care of you” and “Be taken care of by you”, or to put it colloquially, “Take care of yourself”.
+* * *
+Chapter 2. A Quick Tour of Lojban Grammar, With Diagrams  
+---  
+Prev: Section 2.13 |  Next: Section 2.15  
+---|---  
+Table of Contents
+Book Info Page
+
+
+Word: ko
+Filename: section-mi-series.txt
+TF-IDF Score: 0.10654244777294489
+Content: Chapter 7. Brevity Is The Soul Of Language: Pro-sumti And Pro-bridi  
+---  
+Prev: Chapter 7 |  Next: Section 7.3  
+---|---  
+Table of Contents
+Book Info Page
+* * *
+## 7.2. Personal pro-sumti: the mi-series
+The following cmavo are discussed in this section:
+mi |  KOhA |  mi-series |  I, me   
+---|---|---|---  
+do |  KOhA |  mi-series |  you  
+mi'o |  KOhA |  mi-series |  you and I  
+mi'a |  KOhA |  mi-series |  I and others, we but not you  
+ma'a |  KOhA |  mi-series |  you and I and others  
+do'o |  KOhA |  mi-series |  you and others  
+ko |  KOhA |  mi-series |  you-imperative  
+The mi-series of pro-sumti refer to the speaker, the listener, and others in various combinations. __mi__ refers to the speaker and perhaps others for whom the speaker speaks; it may be a Lojbanic mass. __do__ refers to the listener or listeners. Neither __mi__ nor __do__ is specific about the number of persons referred to; for example, the foreman of a jury may refer to the members of the jury as __mi__ , since in speaking officially he represents all of them.
+The referents of __mi__ and __do__ are usually obvious from the context, but may be assigned by the vocative words of selma'o COI, explained in Section 13.14. The vocative __mi'e__ assigns __mi__ , whereas all of the other vocatives assign __do__.
+**Example 7.5. **
+mi'e | .djan. | doi | frank. | mi | cusku | lu | mi | bajra | li'u |  | do  
+---|---|---|---|---|---|---|---|---|---|---|---  
+I-am | John, | O | Frank, | I | express | [quote] | I | run | [unquote] | to | you  
+I am John, Frank; I tell you “I run”.  
+---  
+  
+
+The cmavo __mi'o__ , __mi'a__ , __ma'a__ , and __do'o__ express various combinations of the speaker and/or the listener and/or other people:
+  * __mi'o__ includes only the speaker and the listener but no one else;
+  * __mi'a__ includes the speaker and others but excludes the listener;
+  * __do'o__ includes the listener and others but excludes the speaker;
+  * __ma'a__ includes all three: speaker, listener, others.
+
+
+All of these pro-sumti represent masses. For example, __mi'o__ is the same as _mi joi do_ , the mass of me and you considered jointly.
+In English, “we” can mean __mi__ or __mi'o__ or __mi'a__ or even __ma'a__ , and English-speakers often suffer because they cannot easily distinguish __mi'o__ from __mi'a__ :
+**Example 7.6. **
+We're going to the store.
+  
+
+Does this include the listener or not? There's no way to be sure.
+Finally, the cmavo __ko__ is logically equivalent to __do__ ; its referent is the listener. However, its use alters an assertion about the listener into a command to the listener to make the assertion true:
+**Example 7.7. **
+do | klama | le | zarci  
+---|---|---|---  
+You | go-to | the | store.  
+  
+
+becomes:
+**Example 7.8. **
+ko | klama | le | zarci  
+---|---|---|---  
+You [imperative] | go-to | the | store.  
+Make “you go to the store” true!  
+---  
+Go to the store!  
+  
+
+In English, the subject of a command is omitted, but in Lojban, the word __ko__ must be used. However, __ko__ does not have to appear in the x1 place:
+**Example 7.9. **
+mi | viska | ko  
+---|---|---  
+I | see | you-[imperative]  
+Make “I see you” true!  
+---  
+Be seen by me!  
+  
+
+In Example 7.9, it is necessary to make the verb passive in English in order to convey the effect of __ko__ in the x2 place. Indeed, __ko__ does not even have to be a sumti of the main bridi:
+**Example 7.10. **
+mi | viska | le | prenu | poi | prami | ko  
+---|---|---|---|---|---|---  
+I | see | the | person | that | loves | you-[imperative]  
+Make “I see the person that loves you” true!  
+---  
+Be such that the person who loves you is seen by me!  
+Show me the person who loves you!  
+  
+
+As mentioned in Section 7.1, some pro-sumti series have corresponding pro-bridi series. However, there is no equivalent of the mi-series among pro-bridi, since a person isn't a relationship.
+* * *
+Chapter 7. Brevity Is The Soul Of Language: Pro-sumti And Pro-bridi  
+---  
+Prev: Chapter 7 |  Next: Section 7.3  
+---|---  
+Table of Contents
+Book Info Page
+
+
+Word: lo
+Filename: section-keha.txt
+TF-IDF Score: 0.08139590689754461
+Content: Chapter 7. Brevity Is The Soul Of Language: Pro-sumti And Pro-bridi  
+---  
+Prev: Section 7.9 |  Next: Section 7.11  
+---|---  
+Table of Contents
+Book Info Page
+* * *
+## 7.10. Relativized pro-sumti: _ke'a_
+The following cmavo are discussed in this section:
+ke'a |  KOhA |  relativized sumti  
+---|---|---  
+This pro-sumti is used in relative clauses (explained in Chapter 8) to indicate how the sumti being relativized fits within the clause. For example:
+**Example 7.69. **
+mi | catlu | lo | mlatu | poi | [zo'e]  
+---|---|---|---|---|---  
+I | see | a | cat | such-that | something-unspecified  
+zbasu | ke'a |  | lei | slasi  
+---|---|---|---|---  
+makes | the-thing-being-relativized-[the-cat] | from | some-mass-of | plastic.  
+I see a cat made of plastic.  
+---  
+  
+
+If __ke'a__ were omitted from Example 7.69, it might be confused with:
+**Example 7.70. **
+mi | catlu | lo | mlatu | poi  
+---|---|---|---|---  
+I | see | a | cat | such-that  
+[ke'a] | zbasu | lei | slasi  
+---|---|---|---  
+the-thing-being-relativized-[the-cat] | makes | a-mass-of | plastic  
+I see a cat that makes plastic.  
+---  
+  
+
+The anaphora cmavo __ri__ cannot be used in place of __ke'a__ in Example 7.69 and Example 7.70, because the relativized sumti is not yet complete when the __ke'a__ appears.
+Note that __ke'a__ is used only with relative clauses, and not with other embedded bridi such as abstract descriptions. In the case of relative clauses within relative clauses, __ke'a__ may be subscripted to make the difference clear (see Section 8.10).
+* * *
+Chapter 7. Brevity Is The Soul Of Language: Pro-sumti And Pro-bridi  
+---  
+Prev: Section 7.9 |  Next: Section 7.11  
+---|---  
+Table of Contents
+Book Info Page
+
+
+Word: lo
+Filename: section-multiple-compound-bridi.txt
+TF-IDF Score: 0.07964835163215547
+Content: Chapter 14. If Wishes Were Horses: The Lojban Connective System  
+---  
+Prev: Section 14.9 |  Next: Section 14.11  
+---|---  
+Table of Contents
+Book Info Page
+* * *
+## 14.10. Multiple compound bridi
+Giheks can be combined with __bo__ in the same way as eks:
+**Example 14.60. **
+mi | nelci | la | djan. | gi'e | nelci | la | martas. | gi'abo | nelci | la | meris.  
+---|---|---|---|---|---|---|---|---|---|---|---  
+I like John and ( like Martha or like Mary ).  
+---  
+  
+
+is equivalent in meaning to Example 14.39 and Example 14.40. Likewise, __ke__ … __ke'e__ grouping can be used after giheks:
+**Example 14.61. **
+mi | dzukla | le | zarci  
+---|---|---|---  
+I | walk-to | the | market  
+gi'e | dzukla | le | zdani  
+---|---|---|---  
+and | walk-to | the | house,  
+gi'a | ke | dzukla | le | ckule  
+---|---|---|---|---  
+or | ( | walk-to | the | school  
+gi'e | dzukla | le | briju | [ke'e]  
+---|---|---|---|---  
+and | walk-to | the | office. | )  
+  
+
+is the gihek version of Example 14.47. The same rule about using __ke__ … __ke'e__ bracketing only just after a connective applies to bridi-tails as to sumti, so the first two bridi-tails in Example 14.61 cannot be explicitly grouped; implicit left-grouping suffices to associate them.
+Each of the pairs of bridi-tails joined by multiple giheks can have its own set of tail-terms:
+**Example 14.62. **
+| mi | dejni | lo | rupnu | la | djan.  
+---|---|---|---|---|---|---  
+[If] | I | owe | some | currency-units | to-that-named | John,  
+.inaja | mi | dunda | le | cukta | la | djan.  
+---|---|---|---|---|---|---  
+then | I | give | the | book | to-that-named | John  
+.ijabo | mi | lebna | le | cukta | la | djan.  
+---|---|---|---|---|---|---  
+or | I | take | the | book | from-that-named | John.  
+  
+
+is equivalent in meaning to:
+**Example 14.63. **
+| mi | dejni | lo | rupnu | nagi'a | dunda  
+---|---|---|---|---|---|---  
+[If] | I | owe | some | currency-units | then | (give  
+gi'abo | lebna | vau | le | cukta | vau | la | djan.  
+---|---|---|---|---|---|---|---  
+or | take) |  | a | book |  | to/from-that-named | John.  
+  
+
+The literal English translation in Example 14.63 is almost unintelligible, but the Lojban is perfectly grammatical. __mi__ fills the x1 place of all three selbri; _lo rupnu_ is the x2 of __dejni__ , whereas _le cukta_ is a tail-term shared between __dunda__ and __lebna__ ; _la djan._ is a tail-term shared by __dejni__ and by _dunda gi'abo lebna_. In this case, greater clarity is probably achieved by moving _la djan._ to the beginning of the sentence, as in Example 14.53:
+**Example 14.64. **
+fi | la | djan. |  | fa | mi | dejni | lo | rupnu  
+---|---|---|---|---|---|---|---|---  
+To/from | that-named | John, | [if] |  | I | owe | some | currency-units  
+nagi'a |  | dunda | gi'abo | lebna | vau | le | cukta  
+---|---|---|---|---|---|---|---  
+then | [I] | give | or | take |  | the | book.  
+  
+
+Finally, what about forethought logical connection of bridi-tails? There is no direct mechanism for the purpose. Instead, Lojban grammar allows a pair of forethought-connected sentences to function as a single bridi-tail, and of course the sentences need not have terms before their selbri. For example:
+**Example 14.65. **
+mi | ge | klama | le | zarci | gi | nelci | la | djan.  
+---|---|---|---|---|---|---|---|---  
+I | both | go-to | the | market | and | like | that-named | John.  
+  
+
+is equivalent in meaning to Example 14.50.
+Of course, either of the connected sentences may contain giheks:
+**Example 14.66. **
+mi | ge | klama | le | zarci | gi'e | dzukla | le | zdani  
+---|---|---|---|---|---|---|---|---  
+I | both | (go | to-the | market | and | walk | to-the | house)  
+gi | nelci | la | djan.  
+---|---|---|---  
+and | like | that-named | John.  
+  
+
+The entire gek-connected sentence pair may be negated as a whole by prefixing __na__ :
+**Example 14.67. **
+| mi | na | ge | klama | le | zarci | gi | dzukla | le | zdani  
+---|---|---|---|---|---|---|---|---|---|---  
+[False!] | I |  | both | go-to | the | market | and | walk-to | the | house.  
+  
+
+Since a pair of sentences joined by geks is the equivalent of a bridi-tail, it may be followed by tail terms. The forethought equivalent of Example 14.54 is:
+**Example 14.68. **
+mi | ge | dunda | le | cukta  
+---|---|---|---|---  
+I | both | (give | the | book)  
+gi | lebna | lo | rupnu | vau | do  
+---|---|---|---|---|---  
+and | (take | some | currency-units | ) | to/from-you.  
+  
+
+Here is a pair of gek-connected observatives, a forethought equivalent of Example 14.57:
+**Example 14.69. **
+ge | klama | le | zarci | gi | dzukla | le | briju  
+---|---|---|---|---|---|---|---  
+Both | a-goer | to-the | market | and | a-walker | to-the | office.  
+  
+
+Finally, here is an example of gek-connected sentences with both shared and unshared terms before their selbri:
+**Example 14.70. **
+mi | gonai | le | zarci | cu | klama | gi | le | bisli | cu | dansu  
+---|---|---|---|---|---|---|---|---|---|---  
+I | either-but-not-both | to-the | office |  | go | or | on-the | ice |  | dance.  
+I either go to the office or dance on the ice (but not both).  
+---  
+  
+
+* * *
+Chapter 14. If Wishes Were Horses: The Lojban Connective System  
+---  
+Prev: Section 14.9 |  Next: Section 14.11  
+---|---  
+Table of Contents
+Book Info Page
+
+
+Word: troci
+Filename: section-cmavo-selbri.txt
+TF-IDF Score: 0.07590135255585487
+Content: Chapter 5. “Pretty Little Girls' School”: The Structure Of Lojban selbri  
+---  
+Prev: Section 5.8 |  Next: Section 5.10  
+---|---  
+Table of Contents
+Book Info Page
+* * *
+## 5.9. Other kinds of simple selbri
+The following cmavo are discussed in this section:
+go'i |  GOhA |  repeats the previous bridi  
+---|---|---  
+du |  GOhA |  equality  
+nu'a |  NUhA |  math operator to selbri  
+moi |  MOI |  changes number to ordinal selbri  
+mei |  MOI |  changes number to cardinal selbri  
+nu |  NU |  event abstraction  
+kei |  KEI |  terminator for NU  
+So far we have only discussed brivla and tanru built up from brivla as possible selbri. In fact, there are a few other constructions in Lojban which are grammatically equivalent to brivla: they can be used either directly as selbri, or as components in tanru. Some of these types of simple selbri are discussed at length in Chapter 7, Chapter 11, and Chapter 18; but for completeness these types are mentioned here with a brief explanation and an example of their use in selbri.
+The cmavo of selma'o GOhA (with one exception) serve as pro-bridi, providing a reference to the content of other bridi; none of them has a fixed meaning. The most commonly used member of GOhA is probably __go'i__ , which amounts to a repetition of the previous bridi, or part of it. If I say:
+**Example 5.89. **
+la | djan. | klama | le | zarci  
+---|---|---|---|---  
+That-named | John | goes-to | the | market.  
+  
+
+you may retort:
+**Example 5.90. **
+la | djan. | go'i | troci  
+---|---|---|---  
+That-named | John | [repeat-last] | are-a-trier.  
+John tries to.  
+---  
+  
+
+Example 5.90 is short for:
+**Example 5.91. **
+la | djan. | klama | be | le | zarci | be'o |  | troci  
+---|---|---|---|---|---|---|---|---  
+That-named | John | is-a-goer | ( | to-the | market | ) | type-of | trier.  
+  
+
+because the whole bridi of Example 5.89 has been packaged up into the single word __go'i__ and inserted into Example 5.90.
+The exceptional member of GOhA is __du__ , which represents the relation of identity. Its place structure is:
+> x1 is identical with x2, x3, ...
+for as many places as are given. More information on selma'o GOhA is available in Chapter 7.
+Lojban mathematical expressions (mekso) can be incorporated into selbri in two different ways. Mathematical operators such as __su'i__ , meaning “plus”, can be transformed into selbri by prefixing them with __nu'a__ (of selma'o NUhA). The resulting place structure is:
+> x1 is the result of applying (the operator) to arguments x2, x3, etc.
+for as many arguments as are required. (The result goes in the x1 place because the number of following places may be indefinite.) For example:
+**Example 5.92. **
+li | vo | nu'a su'i | li | re | li | re  
+---|---|---|---|---|---|---  
+The-number | 4 | is-the-sum-of | the-number | 2 | and-the-number | 2.  
+  
+
+A possible tanru example might be:
+**Example 5.93. **
+mi | jimpe | tu'a | loi | nu'a su'i | nabmi  
+---|---|---|---|---|---  
+I | understand | something-about | the-mass-of | is-the-sum-of | problems.  
+I understand addition problems.  
+---  
+  
+
+More usefully, it is possible to combine a mathematical expression with a cmavo of selma'o MOI to create one of various numerical selbri. Details are available in Section 18.11. Here are a few tanru:
+**Example 5.94. **
+la | prim. | palvr. | pamoi | cusku  
+---|---|---|---|---  
+That-named | Preem | Palver | is-the-1-th | speaker.  
+Preem Palver is the first speaker.  
+---  
+  
+
+**Example 5.95. **
+la | an,iis. | joi | la | .asun.  
+---|---|---|---|---  
+That-named | Anyi | massed-with | that-named | Asun  
+bruna | remei  
+---|---  
+are-a-brother | type-of-twosome.  
+Anyi and Asun are two brothers.  
+---  
+  
+
+Finally, an important type of simple selbri which is not a brivla is the abstraction. Grammatically, abstractions are simple: a cmavo of selma'o NU, followed by a bridi, followed by the elidable terminator __kei__ of selma'o KEI. Semantically, abstractions are an extremely subtle and powerful feature of Lojban whose full ramifications are documented in Chapter 11. A few examples:
+**Example 5.96. **
+ti | nu | zdile | kei | kumfa  
+---|---|---|---|---  
+This | is-an-event-of | amusement |  | room.  
+This is an amusement room.  
+---  
+  
+
+Example 5.96 is quite distinct in meaning from:
+**Example 5.97. **
+ti | zdile | kumfa  
+---|---|---  
+This | is-an-amuser | room.  
+  
+
+which suggests the meaning “a room that amuses someone”.
+* * *
+Chapter 5. “Pretty Little Girls' School”: The Structure Of Lojban selbri  
+---  
+Prev: Section 5.8 |  Next: Section 5.10  
+---|---  
+Table of Contents
+Book Info Page
+
+
+Word: troci
+Filename: section-sumti-raising.txt
+TF-IDF Score: 0.058119938329675595
+Content: Chapter 11. Events, Qualities, Quantities, And Other Vague Words: On Lojban Abstraction  
+---  
+Prev: Section 11.9 |  Next: Section 11.11  
+---|---  
+Table of Contents
+Book Info Page
+* * *
+## 11.10. Lojban sumti raising
+The following cmavo are discussed in this section:
+tu'a |  LAhE |  an abstraction involving  
+---|---|---  
+jai |  JAI |  abstraction conversion  
+It is sometimes inconvenient, in a situation where an abstract description is logically required, to express the abstraction. In English we can say:
+**Example 11.64. **
+I try to open the door.
+  
+
+which in Lojban is:
+**Example 11.65. **
+mi | troci | le | nu | [mi] | gasnu  
+---|---|---|---|---|---  
+I | try | the | event-of | (I | am-agent-in  
+le | nu | le | vorme | cu | karbi'o  
+---|---|---|---|---|---  
+the | event-of | (the | door |  | open-becomes)).  
+  
+
+which has an abstract description within an abstract description, quite a complex structure. In English (but not in all other languages), we may also say:
+**Example 11.66. **
+I try the door.
+  
+
+where it is understood that what I try is actually not the door itself, but the act of opening it. The same simplification can be done in Lojban, but it must be marked explicitly using a cmavo. The relevant cmavo is __tu'a__ , which belongs to selma'o LAhE. The Lojban equivalent of Example 11.66 is:
+**Example 11.67. **
+mi | troci | tu'a | le | vorme  
+---|---|---|---|---  
+I | try | some-action-to-do-with | the | door.  
+  
+
+The term “sumti-raising”, as in the title of this section, signifies that a sumti which logically belongs within an abstraction (or even within an abstraction which is itself inside an intermediate abstraction) is “raised” to the main bridi level. This transformation from Example 11.65 to Example 11.67 loses information: nothing except convention tells us what the abstraction was.
+Using __tu'a__ is a kind of laziness: it makes speaking easier at the possible expense of clarity for the listener. The speaker must be prepared for the listener to respond something like:
+**Example 11.68. **
+tu'a | le | vorme | lu'u | ki'a  
+---|---|---|---|---  
+something-to-do-with | the | door | [terminator] | [confusion!]  
+  
+
+which indicates that _tu'a le vorme_ cannot be understood. (The terminator for __tu'a__ is __lu'u__ , and is used in Example 11.68 to make clear just what is being questioned: the sumti-raising, rather than the word __vorme__ as such.) An example of a confusing raised sumti might be:
+**Example 11.69. **
+tu'a | la | djan. | cu | cafne  
+---|---|---|---|---  
+something-to-do-with | that-named | John |  | frequently-occurs  
+  
+
+This must mean that something which John does, or which happens to John, occurs frequently: but without more context there is no way to figure out what. Note that without the __tu'a__ , Example 11.69 would mean that John considered as an event frequently occurs – in other words, that John has some sort of on-and-off existence! Normally we do not think of people as events in English, but the x1 place of __cafne__ is an event, and if something that does not seem to be an event is put there, the Lojbanic listener will attempt to construe it as one. (Of course, this analysis assumes that _djan._ is the name of a person, and not the name of some event.)
+Logically, a counterpart of some sort is needed to __tu'a__ which transposes an abstract sumti into a concrete one. This is achieved at the selbri level by the cmavo __jai__ (of selma'o JAI). This cmavo has more than one function, discussed in Section 9.12 and Section 10.22; for the purposes of this chapter, it operates as a conversion of selbri, similarly to the cmavo of selma'o SE. This conversion changes
+**Example 11.70. **
+tu'a | mi | rinka | le | nu | do | morsi  
+---|---|---|---|---|---|---  
+something-to-do-with | me | causes | the | event-of | you | are-dead  
+My action causes your death.  
+---  
+  
+
+into
+**Example 11.71. **
+mi | jai | rinka | le | nu | do | morsi  
+---|---|---|---|---|---|---  
+I | am-associated-with | causing | the | event-of | your | death.  
+I cause your death.  
+---  
+  
+
+In English, the subject of “cause” can either be the actual cause (an event), or else the agent of the cause (a person, typically); not so in Lojban, where the x1 of __rinka__ is always an event. Example 11.70 and Example 11.71 look equally convenient (or inconvenient), but in making descriptions, Example 11.71 can be altered to:
+**Example 11.72. **
+le | jai | rinka | be | le | nu | do | morsi  
+---|---|---|---|---|---|---|---  
+that-which-is | associated-with | causing | ( | the | event-of | your | death | )  
+the one who caused your death  
+---  
+  
+
+because __jai__ modifies the selbri and can be incorporated into the description – not so for __tu'a__.
+The weakness of __jai__ used in descriptions in this way is that it does not specify which argument of the implicit abstraction is being raised into the x1 place of the description selbri. One can be more specific by using the modal form of __jai__ explained in Section 9.12:
+**Example 11.73. **
+le | jai gau | rinka | be | le | nu | do | morsi  
+---|---|---|---|---|---|---|---  
+that-which-is | agent-in | causing | ( | the | event-of | your | death | )  
+  
+
+* * *
+Chapter 11. Events, Qualities, Quantities, And Other Vague Words: On Lojban Abstraction  
+---  
+Prev: Section 11.9 |  Next: Section 11.11  
+---|---  
+Table of Contents
+Book Info Page

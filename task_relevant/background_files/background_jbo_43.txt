@@ -1,0 +1,1859 @@
+
+The following definitions pulled from the above background may be particularly useful:
+{'Lojban': 'djacu', 'Lojban definition': 'x_{1} is made of/contains/is a quantity/expanse of water; (adjective:) x_{1} is aqueous/[aquatic].', 'English': '- water', 'Type': 'gismu'}
+{'Lojban': 'lo', 'Formal Language': 'LE', 'English': 'the really is', 'Definition': 'veridical descriptor: the one(s) that really is(are) ...', 'Confer': None, 'Type': 'cmavo'}
+{'Lojban': 'nu', 'Formal Language': 'NU', 'English': 'event abstract', 'Definition': 'abstractor: generalized event abstractor; x1 is state/process/achievement/activity of [bridi]', 'Confer': None, 'Type': 'cmavo'}
+{'Lojban': 'xaskoi', 'Lojban Composition': 'xamsi+korbi', 'English': 'beach, coast', 'Type': 'lujvo', 'Arguments': '$korbi1 $korbi2 $=xamsi1 $korbi3'}
+{'Lojban': 'darca', 'Lojban definition': 'x1 arrives at x2 via route x3', 'English': 'arrives', 'Type': 'gismu'}
+{'Lojban': 'ba', 'Formal Language': 'PU', 'English': 'after', 'Definition': 'time tense relation/direction: will [selbri]; after [sumti]; default future tense', 'Confer': None, 'Type': 'cmavo'}
+{'Lojban': 'cu', 'Formal Language': 'CU', 'English': 'selbri separator', 'Definition': 'elidable marker: separates selbri from preceding sumti, allows preceding terminator elision', 'Confer': None, 'Type': 'cmavo'}
+{'Lojban': 'ki', 'Formal Language': 'KI', 'English': 'tense default', 'Definition': 'tense/modal: set/use tense default; establishes new open scope space/time/modal reference base', 'Confer': None, 'Type': 'cmavo'}
+{'Lojban': 'zi', 'Formal Language': 'ZI', 'English': 'short time', 'Definition': 'time tense distance: instantaneous-to-short distance in time', 'Confer': None, 'Type': 'cmavo'}
+{'Lojban': 'plipe', 'Lojban definition': 'x_{1} (agent/object) leaps/jumps/springs/bounds to x_{2} from x_{3} reaching height x_{4} propelled by x_{5}.', 'English': '- jump; to spring clear of the ground or other support<br>- leap', 'Type': 'gismu'}
+{'Lojban': 'ra', 'Formal Language': 'KOhA5', 'English': 'recent sumti', 'Definition': 'pro-sumti: a recent sumti before the last one, as determined by back-counting rules', 'Confer': None, 'Type': 'cmavo'}
+
+The following are the top TF-IDF files for the words in choice A and choice B from the The Complete Lojban Language Grammar Book:
+Word: cu
+Filename: section-attitudinals.txt
+TF-IDF Score: 0.22788147621681745
+Content: Chapter 2. A Quick Tour of Lojban Grammar, With Diagrams  
+---  
+Prev: Section 2.15 |  Next: Section 2.17  
+---|---  
+Table of Contents
+Book Info Page
+* * *
+## 2.16. Indicators
+Different cultures express emotions and attitudes with a variety of intonations and gestures that are not usually included in written language. Some of these are available in some languages as interjections (i.e. “Aha!”, “Oh no!”, “Ouch!”, “Aahh!”, etc.), but they vary greatly from culture to culture.
+Lojban has a group of cmavo known as “attitudinal indicators” which specifically covers this type of commentary on spoken statements. They are both written and spoken, but require no specific intonation or gestures. Grammatically they are very simple: one or more attitudinals at the beginning of a bridi apply to the entire bridi; anywhere else in the bridi they apply to the word immediately to the left. For example:
+**Example 2.79. **
+.ie |  mi |  [cu] |  klama  
+---|---|---|---  
+Agreement! |  I |  - |  go.  
+Yep! I'll go.  
+---  
+  
+
+**Example 2.80. **
+.ei |  mi |  [cu] |  klama  
+---|---|---|---  
+Obligation! |  I |  - |  go.  
+I should go.  
+---  
+  
+
+**Example 2.81. **
+mi |  [cu] |  klama |  le melbi  
+---|---|---|---  
+I |  - |  go |  to-the beautiful-thing  
+.ui |  [ku]  
+---|---  
+and I am happy because it is the beautiful thing I'm going to |  -  
+  
+
+Not all indicators indicate attitudes. Discursives, another group of cmavo with the same grammatical rules as attitudinal indicators, allow free expression of certain kinds of commentary about the main utterances. Using discursives allows a clear separation of these so-called “metalinguistic” features from the underlying statements and logical structure. By comparison, the English words “but” and “also”, which discursively indicate contrast or an added weight of example, are logically equivalent to “and”, which does not have a discursive content. The average English-speaker does not think about, and may not even realize, the paradoxical idea that “but” basically means “and”.
+**Example 2.82. **
+mi |  [cu] |  klama |  .i |  do |  [cu] |  stali  
+---|---|---|---|---|---|---  
+I |  - |  go. |  |  You |  - |  stay.  
+  
+
+**Example 2.83. **
+mi |  [cu] |  klama |  .i |  ji'a |  do |  [cu] |  stali  
+---|---|---|---|---|---|---|---  
+I |  - |  go. |  |  In addition, |  you |  - |  stay. |  added weight  
+  
+
+**Example 2.84. **
+mi |  [cu] |  klama |  .i |  ku'i |  do |  [cu] |  stali  
+---|---|---|---|---|---|---|---  
+I |  - |  go. |  |  However, |  you |  - |  stay. |  contrast  
+  
+
+Another group of indicators are called “evidentials”. Evidentials show the speaker's relationship to the statement, specifically how the speaker came to make the statement. These include __za'a__ (I directly observe the relationship), __pe'i__ (I believe that the relationship holds), __ru'a__ (I postulate the relationship), and others. Many American Indian languages use this kind of words.
+**Example 2.85. **
+pe'i |  do |  [cu] |  melbi  
+---|---|---|---  
+I opine! |  You |  - |  are beautiful.  
+  
+
+**Example 2.86. **
+za'a |  do |  [cu] |  melbi  
+---|---|---|---  
+I directly observe! |  You |  - |  are beautiful.  
+  
+
+* * *
+Chapter 2. A Quick Tour of Lojban Grammar, With Diagrams  
+---  
+Prev: Section 2.15 |  Next: Section 2.17  
+---|---  
+Table of Contents
+Book Info Page
+
+
+Word: cu
+Filename: section-some-brivla.txt
+TF-IDF Score: 0.15225388318577596
+Content: Chapter 2. A Quick Tour of Lojban Grammar, With Diagrams  
+---  
+Prev: Section 2.10 |  Next: Section 2.12  
+---|---  
+Table of Contents
+Book Info Page
+* * *
+## 2.11. Examples of brivla
+The simplest form of selbri is an individual word. A word which may by itself express a selbri relation is called a __brivla__. The three types of brivla are gismu (root words), lujvo (compounds), and fu'ivla (borrowings from other languages). All have identical grammatical uses. So far, most of our selbri have been gismu or tanru built from gismu.
+gismu:
+**Example 2.46. **
+mi |  [cu] |  klama |  ti |  zo'e |  zo'e |  ta  
+---|---|---|---|---|---|---  
+Go-er |  - |  goes |  destination |  origin |  route |  means.  
+I go here (to this) using that means (from somewhere via some route).  
+---  
+  
+
+lujvo:
+**Example 2.47. **
+ta |  [cu] |  blari'o  
+---|---|---  
+That |  - |  is-blue-green.  
+  
+
+fu'ivla:
+**Example 2.48. **
+ti |  [cu] |  djarspageti  
+---|---|---  
+This |  - |  is-spaghetti.  
+  
+
+Some cmavo may also serve as selbri, acting as variables that stand for another selbri. The most commonly used of these is __go'i__ , which represents the main bridi of the previous Lojban sentence, with any new sumti or other sentence features being expressed replacing the previously expressed ones. Thus, in this context:
+**Example 2.49. **
+ta |  [cu] |  go'i  
+---|---|---  
+That |  - |  too/same-as-last selbri.  
+That (is spaghetti), too.  
+---  
+  
+
+* * *
+Chapter 2. A Quick Tour of Lojban Grammar, With Diagrams  
+---  
+Prev: Section 2.10 |  Next: Section 2.12  
+---|---  
+Table of Contents
+Book Info Page
+
+
+Word: djacu
+Filename: section-causals.txt
+TF-IDF Score: 0.12005117932887881
+Content: Chapter 9. To Boston Via The Road Go I, With An Excursion Into The Land Of Modals  
+---  
+Prev: Section 9.6 |  Next: Section 9.8  
+---|---  
+Table of Contents
+Book Info Page
+* * *
+## 9.7. Modal sentence connection: the causals
+The following cmavo are discussed in this section:
+ri'a |  BAI |  rinka modal: physical cause  
+---|---|---  
+ki'u |  BAI |  krinu modal: justification  
+mu'i |  BAI |  mukti modal: motivation  
+ni'i |  BAI |  nibli modal: logical entailment  
+This section has two purposes. On the one hand, it explains the grammatical construct called “modal sentence connection”. On the other, it exemplifies some of the more useful BAI cmavo: the causals. (There are other BAI cmavo which have causal implications: __ja'e__ means “with result”, and so __seja'e__ means “with cause of unspecified nature”; likewise, __gau__ means “with agent” and __tezu'e__ means “with purpose”. These other modal cmavo will not be further discussed here, as my purpose is to explain modal sentence connection rather than Lojbanic views of causation.)
+There are four causal gismu in Lojban, distinguishing different versions of the relationships lumped in English as “causal”:
+_ _rinka_ _ |  event x1 physically causes event x2  
+---|---  
+_ _krinu_ _ |  event x1 is the justification for event x2  
+_ _mukti_ _ |  event x1 is the (human) motive for event x2  
+_ _nibli_ _ |  event x1 logically entails event x2  
+Each of these gismu has a related modal: __ri'a__ , __ki'u__ , __mu'i__ , and __ni'i__ respectively. Using these gismu and these modals, we can create various causal sentences with different implications:
+**Example 9.35. **
+le | spati | cu | banro | ri'a | le | nu  
+---|---|---|---|---|---|---  
+The | plant |  | grows | with-physical-cause | the | event-of  
+do | djacu | dunda | fi | le | spati  
+---|---|---|---|---|---  
+you | water | give | to | the | plant.  
+The plant grows because you water it.  
+---  
+  
+
+**Example 9.36. **
+la | djan. | cpacu | le | pamoi | se jinga  
+---|---|---|---|---|---  
+| John | gets | the | first | prize  
+ki'u | le | nu | la | djan. | jinga  
+---|---|---|---|---|---  
+with-justification | the | event-of | that-named | John | wins.  
+John got the first prize because he won.  
+---  
+  
+
+**Example 9.37. **
+mi | lebna | le | cukta | mu'i  
+---|---|---|---|---  
+I | took | the | book | with-motivation  
+le | nu | mi | viska | le | cukta  
+---|---|---|---|---|---  
+the | event-of | I | saw | the | book.  
+I took the book because I saw it.  
+---  
+  
+
+**Example 9.38. **
+la | sokrates. | morsi | binxo | ni'i  
+---|---|---|---|---  
+| Socrates | dead | became | with-logical-justification  
+le | nu | la | sokrates. | remna  
+---|---|---|---|---  
+the | event-of | that-named | Socrates | is-human.  
+Socrates died because Socrates is human.  
+---  
+  
+
+In Example 9.35 through Example 9.38, the same English word “because” is used to translate all four modals, but the types of cause being expressed are quite different. Let us now focus on Example 9.35, and explore some variations on it.
+As written, Example 9.35 claims that the plant grows, but only refers to the event of watering it in an abstraction bridi (abstractions are explained in Chapter 11) without actually making a claim. If I express Example 9.35, I have said that the plant in fact grows, but I have not said that you actually water it, merely that there is a causal relationship between watering and growing. This is semantically asymmetrical. Suppose I wanted to claim that the plant was being watered, and only mention its growth as ancillary information? Then we could reverse the main bridi and the abstraction bridi, saying:
+**Example 9.39. **
+do | djacu | dunda | fi | le | spati  
+---|---|---|---|---|---  
+You | water | give | to | the | plant  
+seri'a | le | nu | ri | banro  
+---|---|---|---|---  
+with-physical-effect | the | event-of | it | grows.  
+You water the plant; therefore, it grows.  
+---  
+  
+
+with the __ri'a__ changed to __seri'a__. In addition, there are also symmetrical forms:
+**Example 9.40. **
+le | nu | do | djacu | dunda | fi | le | spati | cu  
+---|---|---|---|---|---|---|---|---  
+The | event-of | (you | water | give | to | the | plant) |   
+rinka | le | nu | le | spati | cu | banro  
+---|---|---|---|---|---|---  
+causes | the | event-of | (the | plant |  | grows).  
+Your watering the plant causes its growth.  
+---  
+If you water the plant, then it grows.  
+  
+
+does not claim either event, but asserts only the causal relationship between them. So in Example 9.40, I am not saying that the plant grows nor that you have in fact watered it. The second colloquial translation shows a form of “if-then” in English quite distinct from the logical connective “if-then” explained in Chapter 14.
+Suppose we wish to claim both events as well as their causal relationship? We can use one of two methods:
+**Example 9.41. **
+le | spati | cu | banro | .iri'abo | do  
+---|---|---|---|---|---  
+The | plant |  | grows. | Because | you  
+djacu | dunda | fi | le | spati  
+---|---|---|---|---  
+water | give | to | the | plant.  
+The plant grows because you water it.  
+---  
+  
+
+**Example 9.42. **
+do | djacu | dunda | fi | le | spati  
+---|---|---|---|---|---  
+You | water | give | to | the | plant.  
+.iseri'abo | le | spati | cu | banro  
+---|---|---|---|---  
+Therefore | the | plant |  | grows.  
+You water the plant; therefore, it grows.  
+---  
+  
+
+The compound cmavo _.iri'abo_ and _.iseri'abo_ serve to connect two bridi, as the initial __i__ indicates. The final __bo__ is necessary to prevent the modal from “taking over” the following sumti. If the __bo__ were omitted from Example 9.41 we would have:
+**Example 9.43. **
+le | spati | cu | banro | .i | ri'a | do  
+---|---|---|---|---|---|---  
+The | plant |  | grows. |  | Because-of | you,  
+| djacu | dunda | fi | le | spati  
+---|---|---|---|---|---  
+[something] | water | gives | to | the | plant.  
+The plant grows. Because of you, water is given to the plant.  
+---  
+  
+
+Because _ri'a do_ is a modal sumti in Example 9.43, there is no longer an explicit sumti in the x1 place of _djacu dunda_ , and the translation must be changed.
+The effect of sentences like Example 9.41 and Example 9.42 is that the modal, __ri'a__ in this example, no longer modifies an explicit sumti. Instead, the sumti is implicit, the event given by a full bridi. Furthermore, there is a second implication: that the first bridi fills the x2 place of the gismu __rinka__ ; it specifies an event which is the effect. I am therefore claiming three things: that the plant grows, that you have watered it, and that there is a cause-and-effect relationship between the two.
+In principle, any modal tag can appear in a sentence connective of the type exemplified by Example 9.41 and Example 9.42. However, it makes little sense to use any modals which do not expect events or other abstractions to fill the places of the corresponding gismu. The sentence connective _.ibaubo_ is perfectly grammatical, but it is hard to imagine any two sentences which could be connected by an “in-language” modal. This is because a sentence describes an event, and an event can be a cause or an effect, but not a language.
+* * *
+Chapter 9. To Boston Via The Road Go I, With An Excursion Into The Land Of Modals  
+---  
+Prev: Section 9.6 |  Next: Section 9.8  
+---|---  
+Table of Contents
+Book Info Page
+
+
+Word: djacu
+Filename: section-modal-connectives.txt
+TF-IDF Score: 0.1007708586119557
+Content: Chapter 9. To Boston Via The Road Go I, With An Excursion Into The Land Of Modals  
+---  
+Prev: Section 9.7 |  Next: Section 9.9  
+---|---  
+Table of Contents
+Book Info Page
+* * *
+## 9.8. Other modal connections
+Like many Lojban grammatical constructions, sentence modal connection has both forethought and afterthought forms. (See Chapter 14 for a more detailed discussion of Lojban connectives.) Section 9.7 exemplifies only afterthought modal connection, illustrated here by:
+**Example 9.44. **
+mi | jgari | lei | djacu  
+---|---|---|---  
+I | grasp | the-mass-of | water  
+.iri'abo | mi | jgari | le | kabri  
+---|---|---|---|---  
+with-physical-cause | I | grasp | the | cup.  
+Causing the mass of water to be grasped by me, I grasped the cup.  
+---  
+I grasp the water because I grasp the cup.  
+  
+
+An afterthought connection is one that is signaled only by a cmavo (or a compound cmavo, in this case) between the two constructs being connected. Forethought connection uses a signal both before the first construct and between the two: the use of “both” and “and” in the first half of this sentence represents a forethought connection (though not a modal one).
+To make forethought modal sentence connections in Lojban, place the modal plus __gi__ before the first bridi, and __gi__ between the two. No __i__ is used within the construct. The forethought equivalent of Example 9.44 is:
+**Example 9.45. **
+ri'agi | mi | jgari | le | kabri | gi  
+---|---|---|---|---|---  
+With-physical-cause | I | grasp | the | cup | ,  
+mi | jgari | lei | djacu  
+---|---|---|---  
+I | grasp | the-mass-of | water.  
+Because I grasp the cup, I grasp the water.  
+---  
+  
+
+Note that the cause, the x1 of __rinka__ is now placed first. To keep the two bridi in the original order of Example 9.44, we could say:
+**Example 9.46. **
+seri'agi | mi | jgari | lei | djacu | gi  
+---|---|---|---|---|---  
+With-physical-effect | I | grasp | the-mass-of | water | ,  
+mi | jgari | le | kabri  
+---|---|---|---  
+I | grasp | the | cup.  
+  
+
+In English, the sentence “Therefore I grasp the water, I grasp the cup” is ungrammatical, because “therefore” is not grammatically equivalent to “because”. In Lojban, _seri'agi_ can be used just like _ri'agi_.
+When the two bridi joined by a modal connection have one or more elements (selbri or sumti or both) in common, there are various condensed forms that can be used in place of full modal sentence connection with both bridi completely stated.
+When the bridi are the same except for a single sumti, as in Example 9.44 through Example 9.46, then a sumti modal connection may be employed:
+**Example 9.47. **
+mi | jgari | ri'agi | le | kabri | gi | lei | djacu  
+---|---|---|---|---|---|---|---  
+I | grasp | because | the | cup | , | the-mass-of | water.  
+  
+
+Example 9.47 means exactly the same as Example 9.44 through Example 9.46, but there is no idiomatic English translation that will distinguish it from them.
+If the two connected bridi are different in more than one sumti, then a termset may be employed. Termsets are explained more fully in Section 14.11, but are essentially a mechanism for creating connections between multiple sumti simultaneously.
+**Example 9.48. **
+mi | dunda | le | cukta | la | djan.  
+---|---|---|---|---|---  
+I | gave | the | book | to-that-named | John.  
+.imu'ibo | la | djan. | dunda | lei | jdini | mi  
+---|---|---|---|---|---|---  
+Motivated-by | that-named | John | gave | the-mass-of | money | to-me.  
+I gave the book to John, because John gave money to me.  
+---  
+  
+
+means the same as:
+**Example 9.49. **
+nu'i | mu'igi | la | djan. | lei | jdini | mi | gi  
+---|---|---|---|---|---|---|---  
+[start] | because | that-named | John, | the-mass-of | money, | me | ;  
+mi | le | cukta | la | djan. | nu'u | dunda  
+---|---|---|---|---|---|---  
+I, | the | book, | that-named | John | [end] | gives.  
+  
+
+Here there are three sumti in each half of the termset, because the two bridi share only their selbri.
+There is no modal connection between selbri as such: bridi which differ only in the selbri can be modally connected using bridi-tail modal connection. The bridi-tail construct is more fully explained in Section 14.9, but essentially it consists of a selbri with optional sumti following it. Example 9.37 is suitable for bridi-tail connection, and could be shortened to:
+**Example 9.50. **
+mi | mu'igi | viska | le | cukta | gi | lebna | le | cukta  
+---|---|---|---|---|---|---|---|---  
+I, | because | saw | the | book, |  | took | the | book.  
+  
+
+Again, no straightforward English translation exists. It is even possible to shorten Example 9.50 further to:
+**Example 9.51. **
+mi | mu'igi | viska | gi | lebna | vau | le | cukta  
+---|---|---|---|---|---|---|---  
+I | because | saw, | therefore | took, |  | the | book.  
+  
+
+where _le cukta_ is set off by the non-elidable __vau__ and is made to belong to both bridi-tails – see Section 14.9 for more explanations.
+Since this is a chapter on rearranging sumti, it is worth pointing out that Example 9.51 can be further rearranged to:
+**Example 9.52. **
+mi | le | cukta | mu'igi | viska | gi | lebna  
+---|---|---|---|---|---|---  
+I, | the | book, | because | saw, | therefore | took.  
+  
+
+which doesn't require the extra __vau__ ; all sumti before a conjunction of bridi-tails are shared.
+Finally, mathematical operands can be modally connected.
+**Example 9.53. **
+li | ny. | du | li | vo  
+---|---|---|---|---  
+the-number | n | = | the-number | 4.  
+.ini'ibo | li | ny. | du | li | re | su'i | re  
+---|---|---|---|---|---|---|---  
+Entailed-by | the-number | n | = | the-number | 2 | + | 2.  
+n = 4 because n = 2 + 2.  
+---  
+  
+
+can be reduced to:
+**Example 9.54. **
+li | ny. | du | li  
+---|---|---|---  
+the-number | n | = | the-number  
+ni'igi | vei | re | su'i | re | [ve'o] | gi | vo  
+---|---|---|---|---|---|---|---  
+because | ( | 2 | + | 2 | ) | therefore | 4.  
+n is 2 + 2, and is thus 4.  
+---  
+  
+
+The cmavo __vei__ and __ve'o__ represent mathematical parentheses, and are required so that _ni'igi_ affects more than just the immediately following operand, namely the first __re__. (The right parenthesis, __ve'o__ , is an elidable terminator.) As usual, no English translation does Example 9.54 justice.
+Note: Due to restrictions on the Lojban parsing algorithm, it is not possible to form modal connectives using the _fi'o-_ plus-selbri form of modal. Only the predefined modals of selma'o BAI can be compounded as shown in Section 9.7 and Section 9.8.
+* * *
+Chapter 9. To Boston Via The Road Go I, With An Excursion Into The Land Of Modals  
+---  
+Prev: Section 9.7 |  Next: Section 9.9  
+---|---  
+Table of Contents
+Book Info Page
+
+
+Word: lo
+Filename: section-keha.txt
+TF-IDF Score: 0.08139590689754461
+Content: Chapter 7. Brevity Is The Soul Of Language: Pro-sumti And Pro-bridi  
+---  
+Prev: Section 7.9 |  Next: Section 7.11  
+---|---  
+Table of Contents
+Book Info Page
+* * *
+## 7.10. Relativized pro-sumti: _ke'a_
+The following cmavo are discussed in this section:
+ke'a |  KOhA |  relativized sumti  
+---|---|---  
+This pro-sumti is used in relative clauses (explained in Chapter 8) to indicate how the sumti being relativized fits within the clause. For example:
+**Example 7.69. **
+mi | catlu | lo | mlatu | poi | [zo'e]  
+---|---|---|---|---|---  
+I | see | a | cat | such-that | something-unspecified  
+zbasu | ke'a |  | lei | slasi  
+---|---|---|---|---  
+makes | the-thing-being-relativized-[the-cat] | from | some-mass-of | plastic.  
+I see a cat made of plastic.  
+---  
+  
+
+If __ke'a__ were omitted from Example 7.69, it might be confused with:
+**Example 7.70. **
+mi | catlu | lo | mlatu | poi  
+---|---|---|---|---  
+I | see | a | cat | such-that  
+[ke'a] | zbasu | lei | slasi  
+---|---|---|---  
+the-thing-being-relativized-[the-cat] | makes | a-mass-of | plastic  
+I see a cat that makes plastic.  
+---  
+  
+
+The anaphora cmavo __ri__ cannot be used in place of __ke'a__ in Example 7.69 and Example 7.70, because the relativized sumti is not yet complete when the __ke'a__ appears.
+Note that __ke'a__ is used only with relative clauses, and not with other embedded bridi such as abstract descriptions. In the case of relative clauses within relative clauses, __ke'a__ may be subscripted to make the difference clear (see Section 8.10).
+* * *
+Chapter 7. Brevity Is The Soul Of Language: Pro-sumti And Pro-bridi  
+---  
+Prev: Section 7.9 |  Next: Section 7.11  
+---|---  
+Table of Contents
+Book Info Page
+
+
+Word: lo
+Filename: section-multiple-compound-bridi.txt
+TF-IDF Score: 0.07964835163215547
+Content: Chapter 14. If Wishes Were Horses: The Lojban Connective System  
+---  
+Prev: Section 14.9 |  Next: Section 14.11  
+---|---  
+Table of Contents
+Book Info Page
+* * *
+## 14.10. Multiple compound bridi
+Giheks can be combined with __bo__ in the same way as eks:
+**Example 14.60. **
+mi | nelci | la | djan. | gi'e | nelci | la | martas. | gi'abo | nelci | la | meris.  
+---|---|---|---|---|---|---|---|---|---|---|---  
+I like John and ( like Martha or like Mary ).  
+---  
+  
+
+is equivalent in meaning to Example 14.39 and Example 14.40. Likewise, __ke__ … __ke'e__ grouping can be used after giheks:
+**Example 14.61. **
+mi | dzukla | le | zarci  
+---|---|---|---  
+I | walk-to | the | market  
+gi'e | dzukla | le | zdani  
+---|---|---|---  
+and | walk-to | the | house,  
+gi'a | ke | dzukla | le | ckule  
+---|---|---|---|---  
+or | ( | walk-to | the | school  
+gi'e | dzukla | le | briju | [ke'e]  
+---|---|---|---|---  
+and | walk-to | the | office. | )  
+  
+
+is the gihek version of Example 14.47. The same rule about using __ke__ … __ke'e__ bracketing only just after a connective applies to bridi-tails as to sumti, so the first two bridi-tails in Example 14.61 cannot be explicitly grouped; implicit left-grouping suffices to associate them.
+Each of the pairs of bridi-tails joined by multiple giheks can have its own set of tail-terms:
+**Example 14.62. **
+| mi | dejni | lo | rupnu | la | djan.  
+---|---|---|---|---|---|---  
+[If] | I | owe | some | currency-units | to-that-named | John,  
+.inaja | mi | dunda | le | cukta | la | djan.  
+---|---|---|---|---|---|---  
+then | I | give | the | book | to-that-named | John  
+.ijabo | mi | lebna | le | cukta | la | djan.  
+---|---|---|---|---|---|---  
+or | I | take | the | book | from-that-named | John.  
+  
+
+is equivalent in meaning to:
+**Example 14.63. **
+| mi | dejni | lo | rupnu | nagi'a | dunda  
+---|---|---|---|---|---|---  
+[If] | I | owe | some | currency-units | then | (give  
+gi'abo | lebna | vau | le | cukta | vau | la | djan.  
+---|---|---|---|---|---|---|---  
+or | take) |  | a | book |  | to/from-that-named | John.  
+  
+
+The literal English translation in Example 14.63 is almost unintelligible, but the Lojban is perfectly grammatical. __mi__ fills the x1 place of all three selbri; _lo rupnu_ is the x2 of __dejni__ , whereas _le cukta_ is a tail-term shared between __dunda__ and __lebna__ ; _la djan._ is a tail-term shared by __dejni__ and by _dunda gi'abo lebna_. In this case, greater clarity is probably achieved by moving _la djan._ to the beginning of the sentence, as in Example 14.53:
+**Example 14.64. **
+fi | la | djan. |  | fa | mi | dejni | lo | rupnu  
+---|---|---|---|---|---|---|---|---  
+To/from | that-named | John, | [if] |  | I | owe | some | currency-units  
+nagi'a |  | dunda | gi'abo | lebna | vau | le | cukta  
+---|---|---|---|---|---|---|---  
+then | [I] | give | or | take |  | the | book.  
+  
+
+Finally, what about forethought logical connection of bridi-tails? There is no direct mechanism for the purpose. Instead, Lojban grammar allows a pair of forethought-connected sentences to function as a single bridi-tail, and of course the sentences need not have terms before their selbri. For example:
+**Example 14.65. **
+mi | ge | klama | le | zarci | gi | nelci | la | djan.  
+---|---|---|---|---|---|---|---|---  
+I | both | go-to | the | market | and | like | that-named | John.  
+  
+
+is equivalent in meaning to Example 14.50.
+Of course, either of the connected sentences may contain giheks:
+**Example 14.66. **
+mi | ge | klama | le | zarci | gi'e | dzukla | le | zdani  
+---|---|---|---|---|---|---|---|---  
+I | both | (go | to-the | market | and | walk | to-the | house)  
+gi | nelci | la | djan.  
+---|---|---|---  
+and | like | that-named | John.  
+  
+
+The entire gek-connected sentence pair may be negated as a whole by prefixing __na__ :
+**Example 14.67. **
+| mi | na | ge | klama | le | zarci | gi | dzukla | le | zdani  
+---|---|---|---|---|---|---|---|---|---|---  
+[False!] | I |  | both | go-to | the | market | and | walk-to | the | house.  
+  
+
+Since a pair of sentences joined by geks is the equivalent of a bridi-tail, it may be followed by tail terms. The forethought equivalent of Example 14.54 is:
+**Example 14.68. **
+mi | ge | dunda | le | cukta  
+---|---|---|---|---  
+I | both | (give | the | book)  
+gi | lebna | lo | rupnu | vau | do  
+---|---|---|---|---|---  
+and | (take | some | currency-units | ) | to/from-you.  
+  
+
+Here is a pair of gek-connected observatives, a forethought equivalent of Example 14.57:
+**Example 14.69. **
+ge | klama | le | zarci | gi | dzukla | le | briju  
+---|---|---|---|---|---|---|---  
+Both | a-goer | to-the | market | and | a-walker | to-the | office.  
+  
+
+Finally, here is an example of gek-connected sentences with both shared and unshared terms before their selbri:
+**Example 14.70. **
+mi | gonai | le | zarci | cu | klama | gi | le | bisli | cu | dansu  
+---|---|---|---|---|---|---|---|---|---|---  
+I | either-but-not-both | to-the | office |  | go | or | on-the | ice |  | dance.  
+I either go to the office or dance on the ice (but not both).  
+---  
+  
+
+* * *
+Chapter 14. If Wishes Were Horses: The Lojban Connective System  
+---  
+Prev: Section 14.9 |  Next: Section 14.11  
+---|---  
+Table of Contents
+Book Info Page
+
+
+Word: ki
+Filename: section-sticky-modals.txt
+TF-IDF Score: 0.2756066131601888
+Content: Chapter 9. To Boston Via The Road Go I, With An Excursion Into The Land Of Modals  
+---  
+Prev: Section 9.13 |  Next: Section 9.15  
+---|---  
+Table of Contents
+Book Info Page
+* * *
+## 9.14. Sticky modals
+The following cmavo is discussed in this section:
+ki |  KI |  stickiness flag  
+---|---|---  
+Like tenses, modals can be made persistent from the bridi in which they appear to all following bridi. The effect of this “stickiness” is to make the modal, along with its following sumti, act as if it appeared in every successive bridi. Stickiness is put into effect by following the modal (but not any following sumti) with the cmavo __ki__ of selma'o KI. For example,
+**Example 9.88. **
+mi | tavla | bau | la | lojban. | bai  
+---|---|---|---|---|---  
+I | speak | in-language | that-named | Lojban | compelled-by  
+ki | tu'a | la | frank.  
+---|---|---|---  
+| some-property-of | that-named | Frank.  
+.ibabo | mi | tavla | bau | la | gliban.  
+---|---|---|---|---|---  
+Afterward, | I | speak | in-language | that-named | English.  
+  
+
+means the same as:
+**Example 9.89. **
+mi | tavla | bau | la | lojban. | bai  
+---|---|---|---|---|---  
+I | speak | in-language | that-named | Lojban | compelled-by  
+tu'a | la | frank.  
+---|---|---  
+some-property-of | that-named | Frank.  
+.ibabo | mi | tavla | bau | la | gliban. | bai  
+---|---|---|---|---|---|---  
+Afterward, | I | speak | in-language | that-named | English | compelled-by  
+tu'a | la | frank.  
+---|---|---  
+some-property-of | that-named | Frank.  
+  
+
+In Example 9.88, __bai__ is made sticky, and so Frank's compelling is made applicable to every following bridi. __bau__ is not sticky, and so the language may vary from bridi to bridi, and if not specified in a particular bridi, no assumption can safely be made about its value.
+To cancel stickiness, use the form _BAI ki ku_ , which stops any modal value for the specified BAI from being passed to the next bridi. To cancel stickiness for all modals simultaneously, and also for any sticky tenses that exist (__ki__ is used for both modals and tenses), use __ki__ by itself, either before the selbri or (in the form _ki ku_) anywhere in the bridi:
+**Example 9.90. **
+mi | ki | tavla  
+---|---|---  
+I speak (no implication about language or compulsion).  
+---  
+  
+
+Note: Modals made with __fi'o__ -plus-selbri cannot be made sticky. This is an unfortunate, but unavoidable, restriction.
+* * *
+Chapter 9. To Boston Via The Road Go I, With An Excursion Into The Land Of Modals  
+---  
+Prev: Section 9.13 |  Next: Section 9.15  
+---|---  
+Table of Contents
+Book Info Page
+
+
+Word: ki
+Filename: section-sticky-tenses.txt
+TF-IDF Score: 0.10644961793485636
+Content: Chapter 10. Imaginary Journeys: The Lojban Space/Time Tense System  
+---  
+Prev: Section 10.12 |  Next: Section 10.14  
+---|---  
+Table of Contents
+Book Info Page
+* * *
+## 10.13. Sticky and multiple tenses: KI
+The following cmavo is discussed in this section:
+ki |  KI |  sticky tense set/reset  
+---|---|---  
+So far we have only considered tenses in isolated bridi. Lojban provides several ways for a tense to continue in effect over more than a single bridi. This property is known as “stickiness”: the tense gets “stuck” and remains in effect until explicitly “unstuck”. In the metaphor of the imaginary journey, the place and time set by a sticky tense may be thought of as a campsite or way-station: it provides a permanent origin with respect to which other tenses are understood. Later imaginary journeys start from that point rather than from the speaker.
+To make a tense sticky, suffix __ki__ to it:
+**Example 10.82. **
+mi | puki | klama | le | zarci  
+---|---|---|---|---  
+I | [past-sticky] | go-to | the | market.  
+.i | le | nanmu | cu | batci | le | gerku  
+---|---|---|---|---|---|---  
+| The | man |  | bites | the | dog.  
+I went to the market. The man bit the dog.  
+---  
+  
+
+Here the use of _puki_ rather than just __pu__ ensures that the tense will affect the next sentence as well. Otherwise, since the second sentence is tenseless, there would be no way of determining its tense; the event of the second sentence might happen before, after, or simultaneously with that of the first sentence.
+(The last statement does not apply when the two sentences form part of a narrative. See Section 10.14 for an explanation of “story time”, which employs a different set of conventions.)
+What if the second sentence has a tense anyway?
+**Example 10.83. **
+mi | puki | klama | le | zarci  
+---|---|---|---|---  
+I | [past-sticky] | go-to | the | market.  
+.i | le | nanmu | pu | batci | le | gerku  
+---|---|---|---|---|---|---  
+| The | man | [past] | bites | the | dog.  
+  
+
+Here the second __pu__ does not replace the sticky tense, but adds to it, in the sense that the starting point of its imaginary journey is taken to be the previously set sticky time. So the translation of Example 10.83 is:
+**Example 10.84. **
+I went to the market. The man had earlier bitten the dog.
+  
+
+and it is equivalent in meaning (when considered in isolation from any other sentences) to:
+**Example 10.85. **
+mi | pu | klama | le | zarci  
+---|---|---|---|---  
+I | [past] | go-to | the | market.  
+.i | le | nanmu | pupu | batci | le | gerku  
+---|---|---|---|---|---|---  
+| The | man | [past-past] | bites | the | dog.  
+  
+
+The point has not been discussed so far, but it is perfectly grammatical to have more than one tense construct in a sentence:
+**Example 10.86. **
+puku | mi | ba | klama | le | zarci  
+---|---|---|---|---|---  
+[past] | I | [future] | go-to | the | market.  
+Earlier, I was going to go to the market.  
+---  
+  
+
+Here there are two tenses in the same bridi, the first floating free and specified by _puku_ , the second in the usual place and specified by __ba__. They are considered cumulative in the same way as the two tenses in separate sentences of Example 10.85. Example 10.86 is therefore equivalent in meaning, except for emphasis, to:
+**Example 10.87. **
+mi | puba | klama | le | zarci  
+---|---|---|---|---  
+I | [past-future] | go-to | the | market.  
+I was going to go to the market.  
+---  
+  
+
+Compare Example 10.88 and Example 10.89, which have a different meaning from Example 10.86 and Example 10.87:
+**Example 10.88. **
+mi | ba | klama | le | zarci | puku  
+---|---|---|---|---|---  
+I | [future] | go-to | the | market | [past].  
+I will have gone to the market earlier.  
+---  
+  
+
+**Example 10.89. **
+mi | bapu | klama | le | zarci  
+---|---|---|---|---  
+I | [future-past] | go-to | the | market.  
+I will have gone to the market.  
+---  
+  
+
+So when multiple tense constructs in a single bridi are involved, order counts – the tenses cannot be shifted around as freely as if there were only one tense to worry about.
+But why bother to allow multiple tense constructs at all? They specify separate portions of the imaginary journey, and can be useful in order to make part of a tense sticky. Consider Example 10.90, which adds a second bridi and a __ki__ to Example 10.86:
+**Example 10.90. **
+pu | ki | ku | mi | ba | klama | le | zarci  
+---|---|---|---|---|---|---|---  
+[past] | [sticky] |  | I | [future] | go-to | the | market.  
+.i | le | nanmu | cu | batci | le | gerku  
+---|---|---|---|---|---|---  
+| The | man |  | bites | the | dog.  
+  
+
+What is the implied tense of the second sentence? Not __puba__ , but only __pu__ , since only __pu__ was made sticky with __ki__. So the translation is:
+> I was going to go to the market. The man bit the dog.
+Lojban has several ways of embedding a bridi within another bridi: descriptions, abstractors, relative clauses. (Technically, descriptions contain selbri rather than bridi.) Any of the selbri of these subordinate bridi may have tenses attached. These tenses are interpreted relative to the tense of the main bridi:
+**Example 10.91. **
+mi | pu | klama | le | ba'o | zarci  
+---|---|---|---|---|---  
+I | [past] | go-to | the | [perfective] | market  
+I went to the former market.  
+---  
+  
+
+The significance of the __ba'o__ in Example 10.91 is that the speaker's destination is described as being “in the aftermath of being a market”; that is, it is a market no longer. In particular, the time at which it was no longer a market is in the speaker's past, because the __ba'o__ is interpreted relative to the __pu__ tense of the main bridi.
+Here is an example involving an abstraction bridi:
+**Example 10.92. **
+mi | ca | jinvi | le | du'u | mi | ba | morsi  
+---|---|---|---|---|---|---|---  
+I | now | opine | the | fact-that | I | will-be | dead.  
+I now believe that I will be dead.  
+---  
+  
+
+Here the event of being dead is said to be in the future with respect to the opinion, which is in the present.
+__ki__ may also be used as a tense by itself. This cancels all stickiness and returns the bridi and all following bridi to the speaker's location in both space and time.
+In complex descriptions, multiple tenses may be saved and then used by adding a subscript to __ki__. A time made sticky with _kixipa_ (ki-sub-1) can be returned to by specifying _kixipa_ as a tense by itself. In the case of written expression, the writer's here-and-now is often different from the reader's, and a pair of subscripted __ki__ tenses could be used to distinguish the two.
+* * *
+Chapter 10. Imaginary Journeys: The Lojban Space/Time Tense System  
+---  
+Prev: Section 10.12 |  Next: Section 10.14  
+---|---  
+Table of Contents
+Book Info Page
+
+
+Word: zi
+Filename: section-temporal-tenses.txt
+TF-IDF Score: 0.16577844328379485
+Content: Chapter 10. Imaginary Journeys: The Lojban Space/Time Tense System  
+---  
+Prev: Section 10.3 |  Next: Section 10.5  
+---|---  
+Table of Contents
+Book Info Page
+* * *
+## 10.4. Temporal tenses: PU and ZI
+The following cmavo are discussed in this section:
+pu |  PU |  past  
+---|---|---  
+ca |  PU |  present  
+ba |  PU |  future  
+zi |  ZI |  short time distance  
+za |  ZI |  medium time distance  
+zu |  ZI |  long time distance  
+Now that the reader understands spatial tenses, there are only two main facts to understand about temporal tenses: they work exactly like the spatial tenses, with selma'o PU and ZI standing in for FAhA and VA; and when both spatial and temporal tense cmavo are given in a single tense construct, the temporal tense is expressed first. (If space could be expressed before or after time at will, then certain constructions would be ambiguous.)
+**Example 10.15. **
+le | nanmu | pu | batci | le | gerku  
+---|---|---|---|---|---  
+The | man | [past] | bites | the | dog.  
+The man bit the dog.  
+---  
+  
+
+means that to reach the dog-biting, you must take an imaginary journey through time, moving towards the past an unspecified distance. (Of course, this journey is even more imaginary than the ones talked about in the previous sections, since time-travel is not an available option.)
+Lojban recognizes three temporal directions: __pu__ for the past, __ca__ for the present, and __ba__ for the future. (Etymologically, these derive from the corresponding gismu __purci__ , __cabna__ , and __balvi__. See Section 10.23 for an explanation of the exact relationship between the cmavo and the gismu.) There are many more spatial directions, since there are FAhA cmavo for both absolute and relative directions as well as “direction-like relationships” like “surrounding”, “within”, “touching”, etc. (See Section 10.27 for a complete list.) But there are really only two directions in time: forward and backward, toward the future and toward the past. Why, then, are there three cmavo of selma'o PU?
+The reason is that tense is subjective: human beings perceive space and time in a way that does not necessarily agree with objective measurements. We have a sense of “now” which includes part of the objective past and part of the objective future, and so we naturally segment the time line into three parts. The Lojban design recognizes this human reality by providing a separate time-direction cmavo for the “zero direction”, Similarly, there is a FAhA cmavo for the zero space direction: __bu'u__ , which means something like “coinciding”.
+(Technical note for readers conversant with relativity theory: The Lojban time tenses reflect time as seen by the speaker, who is assumed to be a “point-like observer” in the relativistic sense: they do not say anything about physical relationships of relativistic interval, still less about implicit causality. The nature of tense is not only subjective but also observer-based.)
+Here are some examples of temporal tenses:
+**Example 10.16. **
+le | nanmu | puzi | batci | le | gerku  
+---|---|---|---|---|---  
+The | man | [past-short-distance] | bites | the | dog.  
+A short time ago, the man bit the dog.  
+---  
+  
+
+**Example 10.17. **
+le | nanmu | pu | pu | batci | le | gerku  
+---|---|---|---|---|---|---  
+The | man | [past] | [past] | bites | the | dog.  
+Earlier than an earlier time than now, the man bit the dog.  
+---  
+The man had bitten the dog.  
+The man had been biting the dog.  
+  
+
+**Example 10.18. **
+le | nanmu | ba | puzi | batci | le | gerku  
+---|---|---|---|---|---|---  
+The | man | [future] | [past-short] | bites | the | dog.  
+Shortly earlier than some time later than now, the man will bite the dog.  
+---  
+Soon before then, the man will have bitten the dog.  
+The man will have just bitten the dog.  
+The man will just have been biting the dog.  
+  
+
+What about the analogue of an initial VA without a direction? Lojban does allow an initial ZI with or without following PUs:
+**Example 10.19. **
+le | nanmu | zi | pu | batci | le | gerku  
+---|---|---|---|---|---|---  
+The | man | [short] | [past] | bites | the | dog.  
+Before a short time from or before now, the man bit or will bite the dog.  
+---  
+  
+
+**Example 10.20. **
+le | nanmu | zu | batci | le | gerku  
+---|---|---|---|---|---  
+The | man | [long] | bites | the | dog.  
+A long time from or before now, the man will bite or bit the dog.  
+---  
+  
+
+Example 10.19 and Example 10.20 are perfectly legitimate, but may not be very much used: __zi__ by itself signals an event that happens at a time close to the present, but without saying whether it is in the past or the future. A rough translation might be “about now, but not exactly now”.
+Because we can move in any direction in space, we are comfortable with the idea of events happening in an unspecified space direction (“nearby” or “far away”), but we live only from past to future, and the idea of an event which happens “nearby in time” is a peculiar one. Lojban provides lots of such possibilities that don't seem all that useful to English-speakers, even though you can put them together productively; this fact may be a limitation of English.
+Finally, here are examples which combine temporal and spatial tense:
+**Example 10.21. **
+le | nanmu | puzu | vu | batci | le | gerku  
+---|---|---|---|---|---|---  
+The | man | [past-long-time] | [long-space] | bites | the | dog.  
+Long ago and far away, the man bit the dog.  
+---  
+  
+
+Alternatively,
+**Example 10.22. **
+le | nanmu | cu | batci | le | gerku | puzuvuku  
+---|---|---|---|---|---|---  
+The | man |  | bites | the | dog | [past-long-time-long-space].  
+The man bit the dog long ago and far away.  
+---  
+  
+
+* * *
+Chapter 10. Imaginary Journeys: The Lojban Space/Time Tense System  
+---  
+Prev: Section 10.3 |  Next: Section 10.5  
+---|---  
+Table of Contents
+Book Info Page
+
+
+Word: zi
+Filename: section-tense-selmaho-summary.txt
+TF-IDF Score: 0.10540627759305017
+Content: Chapter 10. Imaginary Journeys: The Lojban Space/Time Tense System  
+---  
+Prev: Section 10.26 |  Next: Section 10.28  
+---|---  
+Table of Contents
+Book Info Page
+* * *
+## 10.27. Summary of tense selma'o
+PU
+    
+temporal direction
+pu |  past  
+---|---  
+ca |  present  
+ba |  future  
+ZI
+    
+temporal distance
+zi |  short  
+---|---  
+za |  medium  
+zu |  long  
+ZEhA
+    
+temporal interval
+ze'i |  short  
+---|---  
+ze'a |  medium  
+ze'u |  long  
+ze'e |  infinite  
+ROI
+    
+objective quantified tense flag
+noroi |  never  
+---|---  
+paroi |  once  
+[N]roi |  [N] times  
+roroi |  always  
+pare'u |  the first time  
+rere'u |  the second time  
+[N]re'u |  the [N]th time  
+TAhE
+    
+subjective quantified tense
+di'i |  regularly  
+---|---  
+na'o |  typically  
+ru'i |  continuously  
+ta'e |  habitually  
+ZAhO
+    
+event contours
+see Section 10.10
+FAhA
+    
+spatial direction
+see Section 10.28
+VA
+    
+spatial distance
+vi |  short  
+---|---  
+va |  medium  
+vu |  long  
+VEhA
+    
+spatial interval
+ve'i |  short  
+---|---  
+ve'a |  medium  
+ve'u |  long  
+ve'e |  infinite  
+VIhA
+    
+spatial dimensionality
+vi'i |  line  
+---|---  
+vi'a |  plane  
+vi'u |  space  
+vi'e |  space-time  
+FEhE
+    
+spatial interval modifier flag
+fe'enoroi |  nowhere  
+---|---  
+fe'eroroi |  everywhere  
+fe'eba'o |  beyond  
+etc.
+MOhI
+    
+spatial movement flag
+mo'i |  motion  
+---|---  
+see Section 10.28
+KI
+    
+set or reset sticky tense
+tense+__ki__ |  set  
+---|---  
+__ki__ alone |  reset  
+CUhE
+    
+tense question, reference point
+cu'e |  asks for a tense or aspect  
+---|---  
+nau |  use speaker's reference point  
+JAI
+    
+tense conversion
+jaica |  the time of  
+---|---  
+jaivi |  the place of  
+etc.
+* * *
+Chapter 10. Imaginary Journeys: The Lojban Space/Time Tense System  
+---  
+Prev: Section 10.26 |  Next: Section 10.28  
+---|---  
+Table of Contents
+Book Info Page
+
+
+Word: nu
+Filename: section-events.txt
+TF-IDF Score: 0.19206408820392873
+Content: Chapter 11. Events, Qualities, Quantities, And Other Vague Words: On Lojban Abstraction  
+---  
+Prev: Chapter 11 |  Next: Section 11.3  
+---|---  
+Table of Contents
+Book Info Page
+* * *
+## 11.2. Event abstraction
+The following cmavo is discussed in this section:
+nu |  NU |  event abstractor  
+---|---|---  
+The examples in Section 11.1 made use of __nu__ as the abstractor, and it is certainly the most common abstractor in Lojban text. Its purpose is to capture the event or state of the bridi considered as a whole. Do not confuse the __le__ description built on a __nu__ abstraction with ordinary descriptions based on __le__ alone. The following sumti are quite distinct:
+**Example 11.5. **
+le | klama  
+---|---  
+the comer, that which comes  
+---  
+  
+
+**Example 11.6. **
+le | se | klama  
+---|---|---  
+the destination  
+---  
+  
+
+**Example 11.7. **
+le | te | klama  
+---|---|---  
+the origin  
+---  
+  
+
+**Example 11.8. **
+le | ve | klama  
+---|---|---  
+the route  
+---  
+  
+
+**Example 11.9. **
+le | xe | klama  
+---|---|---  
+the means of transportation  
+---  
+  
+
+**Example 11.10. **
+le | nu | klama  
+---|---|---  
+the event of someone coming to somewhere from somewhere by some route using some means  
+---  
+  
+
+Example 11.5 through Example 11.9 are descriptions that isolate the five individual sumti places of the selbri __klama__. Example 11.10 describes something associated with the bridi as a whole: the event of it.
+In Lojban, the term “event” is divorced from its ordinary English sense of something that happens over a short period of time. The description:
+**Example 11.11. **
+le | nu | mi | vasxu  
+---|---|---|---  
+the | event-of | my | breathing  
+  
+
+is an event which lasts for the whole of my life (under normal circumstances). On the other hand,
+**Example 11.12. **
+le | nu | la | djan. | cinba | la | djein.  
+---|---|---|---|---|---|---  
+the | event-of | that-named | John | kissing | that-named | Jane  
+  
+
+is relatively brief by comparison (again, under normal circumstances).
+We can see from Example 11.10 through Example 11.12 that ellipsis of sumti is valid in the bridi of abstraction selbri, just as in the main bridi of a sentence. Any sumti may be ellipsized if the listener will be able to figure out from context what the proper value of it is, or else to recognize that the proper value is unimportant. It is extremely common for __nu__ abstractions in descriptions to have the x1 place ellipsized:
+**Example 11.13. **
+mi | nelci | le | nu | limna  
+---|---|---|---|---  
+I | like | the | event-of | swimming.  
+I like swimming.  
+---  
+  
+
+is elliptical, and most probably means:
+**Example 11.14. **
+mi | nelci | le | nu | mi | limna  
+---|---|---|---|---|---  
+I | like | the | event-of | I | swim.  
+  
+
+In the proper context, of course, Example 11.13 could refer to the event of somebody else swimming. Its English equivalent, “I like swimming”, can't be interpreted as “I like Frank's swimming”; this is a fundamental distinction between English and Lojban. In Lojban, an omitted sumti can mean whatever the context indicates that it should mean.
+Note that the lack of an explicit NU cmavo in a sumti can sometimes hide an implicit abstraction. In the context of Example 11.14, the appearance of _le se nelci_ (“that which is liked”) is in effect an abstraction:
+**Example 11.15. **
+le | se nelci | cu | cafne  
+---|---|---|---  
+The | liked-thing |  | is-frequent.  
+The thing which I like happens often.  
+---  
+  
+
+which in this context means
+> My swimming happens often.
+Event descriptions with _le nu_ are commonly used to fill the “under conditions...” places, among others, of gismu and lujvo place structures:
+**Example 11.16. **
+la | lojban. | cu | frili |  | mi  
+---|---|---|---|---|---  
+That-named | Lojban |  | is-easy-for | me  
+| le | nu | mi | tadni | [kei]  
+---|---|---|---|---|---  
+under-conditions | the | event-of | I | study  
+Lojban is easy for me when I study.  
+---  
+  
+
+(The “when” of the English would also be appropriate for a construction involving a Lojban tense, but the Lojban sentence says more than that the studying is concurrent with the ease.)
+The place structure of a __nu__ abstraction selbri is simply:
+> x1 is an event of (the bridi)
+* * *
+Chapter 11. Events, Qualities, Quantities, And Other Vague Words: On Lojban Abstraction  
+---  
+Prev: Chapter 11 |  Next: Section 11.3  
+---|---  
+Table of Contents
+Book Info Page
+
+
+Word: nu
+Filename: section-tenses-vs-modals.txt
+TF-IDF Score: 0.13109164758122716
+Content: Chapter 10. Imaginary Journeys: The Lojban Space/Time Tense System  
+---  
+Prev: Section 10.22 |  Next: Section 10.24  
+---|---  
+Table of Contents
+Book Info Page
+* * *
+## 10.23. Tenses versus modals
+Grammatically, every use of tenses seen so far is exactly paralleled by some use of modals as explained in Chapter 9. Modals and tenses alike can be followed by sumti, can appear before the selbri, can be used in pure and mixed connections, can participate in JAI conversions. The parallelism is perfect. However, there is a deep difference in the semantics of tense constructs and modal constructs, grounded in historical differences between the two forms. Originally, modals and tenses were utterly different things in earlier versions of Loglan; only in Lojban have they become grammatically interchangeable. And even now, differences in semantics continue to be maintained.
+The core distinction is that whereas the modal bridi
+**Example 10.171. **
+mi | nelci | do | mu'i | le | nu | do | nelci | mi  
+---|---|---|---|---|---|---|---|---  
+I | like | you | with-motivation | the | event-of | you | like | me.  
+I like you because you like me.  
+---  
+  
+
+places the _le nu_ sumti in the x1 place of the gismu __mukti__ (which underlies the modal __mu'i__), namely the motivating event, the tensed bridi
+**Example 10.172. **
+mi | nelci | do | ba | le | nu | do | nelci | mi  
+---|---|---|---|---|---|---|---|---  
+I | like | you | after | the | event-of | you | like | me.  
+I like you after you like me.  
+---  
+  
+
+places the _le nu_ sumti in the x2 place of the gismu __balvi__ (which underlies the tense __ba__), namely the point of reference for the future tense. Paraphrases of Example 10.171 and Example 10.172, employing the brivla __mukti__ and __balvi__ explicitly, would be:
+**Example 10.173. **
+le | nu | do | nelci | mi | cu | mukti | le | nu  
+---|---|---|---|---|---|---|---|---  
+The | event-of | you | like | me |  | motivates | the | event-of  
+mi | nelci | do  
+---|---|---  
+I | like | you.  
+Your liking me is the motive for my liking you.  
+---  
+  
+
+and
+**Example 10.174. **
+le | nu | mi | nelci | do | cu | balvi | le | nu  
+---|---|---|---|---|---|---|---|---  
+The | event-of | I | like | you |  | is-after | the | event-of  
+do | nelci | mi  
+---|---|---  
+you | like | me.  
+My liking you follows (in time) your liking me.  
+---  
+  
+
+(Note that the paraphrase is not perfect due to the difference in what is claimed; Example 10.173 and Example 10.174 claim only the causal and temporal relationships between the events, not the existence of the events themselves.)
+As a result, the afterthought sentence-connective forms of Example 10.171 and Example 10.172 are, respectively:
+**Example 10.175. **
+mi | nelci | do | .imu'ibo | do | nelci | mi  
+---|---|---|---|---|---|---  
+I | like | you. | [That-is] Because | you | like | me.  
+  
+
+**Example 10.176. **
+do | nelci | mi | .ibabo | mi | nelci | do  
+---|---|---|---|---|---|---  
+You | like | me. | Afterward, | I | like | you.  
+  
+
+In Example 10.175, the order of the two bridi _mi nelci do_ and _do nelci mi_ is the same as in Example 10.171. In Example 10.176, however, the order is reversed: the origin point _do nelci mi_ physically appears before the future-time event _mi nelci do_. In both cases, the bridi characterizing the event in the x2 place appears before the bridi characterizing the event in the x1 place of __mukti__ or __balvi__.
+In forethought connections, however, the asymmetry between modals and tenses is not found. The forethought equivalents of Example 10.175 and Example 10.176 are
+**Example 10.177. **
+mu'igi | do | nelci | mi | gi | mi | nelci | do  
+---|---|---|---|---|---|---|---  
+Because | you | like | me | , | I | like | you.  
+  
+
+and
+**Example 10.178. **
+bagi | do | nelci | mi | gi | mi | nelci | do  
+---|---|---|---|---|---|---|---  
+After | you | like | me | , | I | like | you.  
+  
+
+respectively.
+The following modal sentence schemata (where X and Y represent sentences) all have the same meaning:
+X .i BAI bo Y   
+---  
+BAI gi Y gi X   
+X BAI le nu Y   
+whereas the following tensed sentence schemata also have the same meaning:
+X .i TENSE bo Y   
+---  
+TENSE gi X gi Y   
+Y TENSE le nu X   
+neglecting the question of what is claimed. In the modal sentence schemata, the modal tag is always followed by Y, the sentence representing the event in the x1 place of the gismu that underlies the BAI. In the tensed sentences, no such simple rule exists.
+* * *
+Chapter 10. Imaginary Journeys: The Lojban Space/Time Tense System  
+---  
+Prev: Section 10.22 |  Next: Section 10.24  
+---|---  
+Table of Contents
+Book Info Page
+
+
+Word: plipe
+Filename: section-event-types.txt
+TF-IDF Score: 0.042484546467851235
+Content: Chapter 11. Events, Qualities, Quantities, And Other Vague Words: On Lojban Abstraction  
+---  
+Prev: Section 11.2 |  Next: Section 11.4  
+---|---  
+Table of Contents
+Book Info Page
+* * *
+## 11.3. Types of event abstractions
+The following cmavo are discussed in this section:
+mu'e |  NU |  point-event abstractor  
+---|---|---  
+pu'u |  NU |  process abstractor  
+zu'o |  NU |  activity abstractor  
+za'i |  NU |  state abstractor  
+Event abstractions with __nu__ suffice to express all kinds of events, whether long, short, unique, repetitive, or whatever. Lojban also has more finely discriminating machinery for talking about events, however. There are four other abstractors of selma'o NU for talking about four specific types of events, or four ways of looking at the same event.
+An event considered as a point in time is called a “point-event”, or sometimes an “achievement”. (This latter word should be divorced, in this context, from all connotations of success or triumph.) A point-event can be extended in duration, but it is still a point-event if it is thought of as unitary, having no internal structure. The abstractor __mu'e__ means “point-event-of”:
+**Example 11.17. **
+le | mu'e | la | djan. | catra | la | djim. | cu | zekri  
+---|---|---|---|---|---|---|---|---  
+The | point-event-of | (that-named | John | kills | that-named | Jim) |  | is-a-crime.  
+John's killing Jim (considered as a point in time) is a crime.  
+---  
+  
+
+An event considered as extended in time, and structured with a beginning, a middle containing one or more stages, and an end, is called a “process”. The abstractor __pu'u__ means “process-of”:
+**Example 11.18. **
+ca'o | le | pu'u | le | latmo | balje'a | cu | porpi | kei  
+---|---|---|---|---|---|---|---|---  
+[continuitive] | the | process-of( | the | Latin | great-state |  | breaking-up | )  
+so'i | je'atru | cu | selcatra  
+---|---|---|---  
+many | state-rulers |  | were-killed  
+During the fall of the Roman Empire, many Emperors were killed.  
+---  
+  
+
+An event considered as extended in time and cyclic or repetitive is called an “activity”. The abstractor __zu'o__ means “activity-of”:
+**Example 11.19. **
+mi | tatpi | ri'a | le | zu'o | mi | plipe  
+---|---|---|---|---|---|---  
+I | am-tired | because-of | the | activity-of | (I | jump).  
+I am tired because I jump.  
+---  
+  
+
+An event considered as something that is either happening or not happening, with sharp boundaries, is called a “state”. The abstractor __za'i__ means “state-of”:
+**Example 11.20. **
+le | za'i | mi | jmive | cu | ckape | do  
+---|---|---|---|---|---|---  
+The | state-of | (I | am-alive) |  | is-dangerous-to | you.  
+My being alive is dangerous to you.  
+---  
+  
+
+The abstractors in Example 11.17 through Example 11.20 could all have been replaced by __nu__ , with some loss of precision. Note that Lojban allows every sort of event to be viewed in any of these four ways:
+  * the “state of running” begins when the runner starts and ends when the runner stops;
+  * the “activity of running” consists of the cycle “lift leg, step forward, drop leg, lift other leg...” (each such cycle is a process, but the activity consists in the repetition of the cycle);
+  * the “process of running” puts emphasis on the initial sprint, the steady speed, and the final slowdown;
+  * the “achievement of running” is most alien to English, but sees the event of running as a single indivisible thing, like “Pheidippides' run from Marathon to Athens” (the original marathon).
+
+
+Further information on types of events can be found in Section 11.12.
+The four event type abstractors have the following place structures:
+> __mu'e__ : x1 is a point event of (the bridi)
+> __pu'u__ : x1 is a process of (the bridi) with stages x2
+> __za'i__ : x1 is a continuous state of (the bridi) being true
+> __zu'o__ : x1 is an activity of (the bridi) consisting of repeated actions x2
+* * *
+Chapter 11. Events, Qualities, Quantities, And Other Vague Words: On Lojban Abstraction  
+---  
+Prev: Section 11.2 |  Next: Section 11.4  
+---|---  
+Table of Contents
+Book Info Page
+
+
+Word: ra
+Filename: section-koha-summary.txt
+TF-IDF Score: 0.04779255709033334
+Content: Chapter 7. Brevity Is The Soul Of Language: Pro-sumti And Pro-bridi  
+---  
+Prev: Section 7.15 |  Next: Section 7.17  
+---|---  
+Table of Contents
+Book Info Page
+* * *
+## 7.16. KOhA cmavo by series
+mi-series
+mi |  I (rafsi: _mib_)  
+---|---  
+do |  you (rafsi: _don_ and __doi__)  
+mi'o |  you and I  
+mi'a |  I and others, we but not you  
+ma'a |  you and I and others  
+do'o |  you and others  
+ko |  you-imperative  
+ti-series
+ti |  this here; something nearby (rafsi: _tif_)  
+---|---  
+ta |  that there; something distant (rafsi: _taz_)  
+tu |  that yonder; something far distant (rafsi: _tuf_)  
+di'u-series
+di'u |  the previous utterance  
+---|---  
+de'u |  an earlier utterance  
+da'u |  a much earlier utterance  
+di'e |  the next utterance  
+de'e |  a later utterance  
+da'e |  a much later utterance  
+dei |  this very utterance  
+do'i |  some utterance  
+ko'a-series
+ko'a |  it-1; 1st assignable pro-sumti  
+---|---  
+ko'e |  it-2; 2nd assignable pro-sumti  
+ko'i |  it-3; 3rd assignable pro-sumti  
+ko'o |  it-4; 4th assignable pro-sumti  
+ko'u |  it-5; 5th assignable pro-sumti  
+fo'a |  it-6; 6th assignable pro-sumti (rafsi: __fo'a__)  
+fo'e |  it-7; 7th assignable pro-sumti (rafsi: __fo'e__)  
+fo'i |  it-8; 8th assignable pro-sumti (rafsi: __fo'i__)  
+fo'o |  it-9; 9th assignable pro-sumti  
+fo'u |  it-10; 10th assignable pro-sumti  
+ri-series
+ri |  (repeats the last sumti)  
+---|---  
+ra |  (repeats a previous sumti)  
+ru |  (repeats a long-ago sumti)  
+zo'e-series
+zo'e |  the obvious value  
+---|---  
+zu'i |  the typical value  
+zi'o |  the nonexistent value (rafsi: _zil_)  
+vo'a-series
+vo'a |  x1 of this bridi  
+---|---  
+vo'e |  x2 of this bridi  
+vo'i |  x3 of this bridi  
+vo'o |  x4 of this bridi  
+vo'u |  x5 of this bridi  
+da-series
+da |  something-1 (rafsi: _dav_ /_dza_)  
+---|---  
+de |  something-2  
+di |  something-3  
+others:
+ke'a |  relativized sumti  
+---|---  
+ma |  sumti question  
+ce'u |  abstraction focus  
+* * *
+Chapter 7. Brevity Is The Soul Of Language: Pro-sumti And Pro-bridi  
+---  
+Prev: Section 7.15 |  Next: Section 7.17  
+---|---  
+Table of Contents
+Book Info Page
+
+
+Word: ra
+Filename: section-ri-gohi-series.txt
+TF-IDF Score: 0.027111531855451586
+Content: Chapter 7. Brevity Is The Soul Of Language: Pro-sumti And Pro-bridi  
+---  
+Prev: Section 7.5 |  Next: Section 7.7  
+---|---  
+Table of Contents
+Book Info Page
+* * *
+## 7.6. Anaphoric pro-sumti and pro-bridi: the ri-series and the go'i-series
+The following cmavo are discussed in this section:
+ri |  KOhA |  ri-series |  (repeats last sumti)   
+---|---|---|---  
+ra |  KOhA |  ri-series |  (repeats previous sumti)  
+ru |  KOhA |  ri-series |  (repeats long-ago sumti)  
+go'i |  GOhA |  go'i-series |  (repeats last bridi)  
+go'a |  GOhA |  go'i-series |  (repeats previous bridi)  
+go'u |  GOhA |  go'i-series |  (repeats long-ago bridi)  
+go'e |  GOhA |  go'i-series |  (repeats last-but-one bridi)  
+go'o |  GOhA |  go'i-series |  (repeats future bridi)  
+nei |  GOhA |  go'i-series |  (repeats current bridi)  
+no'a |  GOhA |  go'i-series |  (repeats outer bridi)  
+ra'o |  RAhO |  |  pro-cmavo update  
+The term “anaphora” literally means “repetition”, but is used in linguistics to refer to pronouns whose significance is the repetition of earlier words, namely their antecedents. Lojban provides three pro-sumti anaphora, __ri__ , __ra__ , and __ru__ ; and three corresponding pro-bridi anaphora, __go'i__ , __go'a__ , and __go'u__. These cmavo reveal the same vowel pattern as the ti-series, but the “distances” referred to are not physical distances, but distances from the anaphoric cmavo to its antecedent.
+The cmavo __ri__ is the simplest of these; it has the same referent as the last complete sumti appearing before the __ri__ :
+**Example 7.30. **
+la | .alis. | sipna | ne'i | le |  | ri | kumfa  
+---|---|---|---|---|---|---|---  
+That-named | Alice | sleeps | in | the | of- | [repeat-last-sumti] | room.  
+Alice sleeps in her room.  
+---  
+  
+
+The __ri__ in Example 7.30 is equivalent to repeating the last sumti, which is _la .alis._ , so Example 7.30 is equivalent to:
+**Example 7.31. **
+la | .alis. | sipna | ne'i | le |  | la | .alis. | kumfa  
+---|---|---|---|---|---|---|---|---  
+That-named | Alice | sleeps | in | the | of- | that-named | Alice | room.  
+Alice sleeps in Alice's room.  
+---  
+  
+
+Note that __ri__ does not repeat _le ri kumfa_ , because that sumti is not yet complete when __ri__ appears. This prevents __ri__ from getting entangled in paradoxes of self-reference. (There are plenty of other ways to do that!) Note also that sumti within other sumti, as in quotations, abstractions, and the like, are counted in the order of their beginnings; thus a lower level sumti like _la alis._ in Example 7.31 is considered to be more recent than a higher level sumti that contains it.
+Certain sumti are ignored by __ri__ ; specifically, most of the other cmavo of KOhA, and the almost-grammatically-equivalent lerfu words of selma'o BY. It is simpler just to repeat these directly:
+**Example 7.32. **
+mi | prami | mi  
+---|---|---  
+I | love | me.  
+I love myself.  
+---  
+  
+
+However, the cmavo of the ti-series can be picked up by __ri__ , because you might have changed what you are pointing at, so repeating __ti__ may not be effective. Likewise, __ri__ itself (or rather its antecedent) can be repeated by a later __ri__ ; in fact, a string of __ri__ cmavo with no other intervening sumti always all repeat the same sumti:
+**Example 7.33. **
+la | djan. | viska | le | tricu | .i  
+---|---|---|---|---|---  
+That-named | John | sees | the | tree. |   
+ri | se jadni | le |  | ri | jimca  
+---|---|---|---|---|---  
+[repeat-last] | is-adorned-by | the | of- | [repeat-last] | branch.  
+John sees the tree. It is adorned by its branches.  
+---  
+  
+
+Here the second __ri__ has as antecedent the first __ri__ , which has as antecedent _le tricu_. All three refer to the same thing: a tree.
+To refer to the next-to-last sumti, the third-from-last sumti, and so on, __ri__ may be subscripted (subscripts are explained in Section 19.6):
+**Example 7.34. **
+lo | smuci | .i | lo | forca | .i | la | rik. | pilno | rixire  
+---|---|---|---|---|---|---|---|---|---  
+A | spoon. |  | A | fork. |  | That-named | Rick | uses | [repeat-next-to-last].  
+.i | la | .alis. | pilno | riximu  
+---|---|---|---|---  
+| That-named | Alice | uses | [repeat-fifth-from-last].  
+  
+
+Here _rixire_ , or “ri-sub-2”, skips _la rik._ to reach _lo forca_. In the same way, _riximu_ , or “ri-sub-5”, skips _la .alis._ , _rixire_ , _la rik._ , and _lo forca_ to reach _lo smuci_. As can clearly be seen, this procedure is barely practicable in writing, and would break down totally in speech.
+Therefore, the vaguer __ra__ and __ru__ are also provided. The cmavo __ra__ repeats a recently used sumti, and __ru__ one that was further back in the speech or text. The use of __ra__ and __ru__ forces the listener to guess at the referent, but makes life easier for the speaker. Can __ra__ refer to the last sumti, like __ri__? The answer is no if __ri__ has also been used. If __ri__ has not been used, then __ra__ might be the last sumti. Likewise, if __ra__ has been used, then any use of __ru__ would repeat a sumti earlier than the one __ra__ is repeating. A more reasonable version of Example 7.34, but one that depends more on context, is:
+**Example 7.35. **
+lo | smuci | .i | lo | forca | .i | la | rik. | pilno | ra  
+---|---|---|---|---|---|---|---|---|---  
+A | spoon. |  | A | fork. |  | That-named | Rick | uses | [some-previous-thing].  
+.i | la | .alis. | pilno | ru  
+---|---|---|---|---  
+| That-named | Alice | uses | [some-more-remote-thing].  
+  
+
+In Example 7.35, the use of __ra__ tells us that something other than _la rik._ is the antecedent; _lo forca_ is the nearest sumti, so it is probably the antecedent. Similarly, the antecedent of __ru__ must be something even further back in the utterance than _lo forca_ , and _lo smuci_ is the obvious candidate.
+The meaning of __ri__ must be determined every time it is used. Since __ra__ and __ru__ are more vaguely defined, they may well retain the same meaning for a while, but the listener cannot count on this behavior. To make a permanent reference to something repeated by __ri__ , __ra__ , or __ru__ , use __goi__ and a ko'a-series cmavo:
+**Example 7.36. **
+la | .alis. | klama | le | zarci  
+---|---|---|---|---  
+That-named | Alice | goes-to | the | store  
+.i | ri | goi | ko'a | blanu  
+---|---|---|---|---  
+. | It-last-mentioned | also-known-as | it-1 | is-blue.  
+  
+
+allows the store to be referred to henceforth as __ko'a__ without ambiguity. Example 7.36 is equivalent to Example 7.21 and eliminates any possibility of __ko'a__ being interpreted by the listener as referring to Alice.
+The cmavo __go'i__ , __go'a__ , and __go'u__ follow exactly the same rules as __ri__ , __ra__ , and __ru__ , except that they are pro-bridi, and therefore repeat bridi, not sumti – specifically, main sentence bridi. Any bridi that are embedded within other bridi, such as relative clauses or abstractions, are not counted. Like the cmavo of the broda-series, the cmavo of the go'i-series copy all sumti with them. This makes __go'i__ by itself convenient for answering a question affirmatively, or for repeating the last bridi, possibly with new sumti:
+**Example 7.37. **
+xu | zo | .djan. | cmene | do | .i | go'i  
+---|---|---|---|---|---|---  
+[True-false?] | The-word |  “John” | is-the-name-of | you? |  | [repeat last bridi].  
+Is John your name? Yes.  
+---  
+  
+
+**Example 7.38. **
+mi | klama | le | zarci | .i | do | go'i  
+---|---|---|---|---|---|---  
+I | go-to | the | store | . | You | [repeat last bridi].  
+I go to the store . You, too.  
+---  
+  
+
+Note that Example 7.38 means the same as Example 7.26, but without the bother of assigning an actual broda-series word to the first bridi. For long-term reference, use _go'i cei broda_ or the like, analogously to _ri goi ko'a_ in Example 7.36.
+The remaining four cmavo of the go'i-series are provided for convenience or for achieving special effects. The cmavo __go'e__ means the same as _go'ixire_ : it repeats the last bridi but one. This is useful in conversation:
+**Example 7.39. **
+A: | mi | ba | klama | le | zarci  
+---|---|---|---|---|---  
+A: | I | [future] | go-to | the | store.  
+A: I am going to the store.  
+---  
+B: | mi | nelci | le | si'o | mi | go'i  
+---|---|---|---|---|---|---  
+B: | I | like | the | concept-of | I | [repeat-last-bridi].  
+B: I like the idea of my going.  
+---  
+A: | do | go'e  
+---|---|---  
+A: | You | [repeat-last-bridi-but-one].  
+A: You'll go, too.  
+---  
+  
+
+Here B's sentence repeats A's within an abstraction (explained in Chapter 11): _le si'o mi go'i_ means _le si'o mi klama le zarci_. Why must B use the word __mi__ explicitly to replace the x1 of _mi klama le zarci_ , even though it looks like __mi__ is replacing __mi__? Because B's __mi__ refers to B, whereas A's __mi__ refers to A. If B said:
+**Example 7.40. **
+mi nelci le si'o go'i
+  
+
+that would mean:
+> I like the idea of your going to the store.
+The repetition signalled by __go'i__ is not literally of words, but of concepts. Finally, A repeats her own sentence, but with the x1 changed to __do__ , meaning B. Note that in Example 7.39, the tense __ba__ (future time) is carried along by both __go'i__ and __go'e__.
+Descriptions based on go'i-series cmavo can be very useful for repeating specific sumti of previous bridi:
+**Example 7.41. **
+le | xekri | mlatu | cu | klama | le | zarci | .i | le  
+---|---|---|---|---|---|---|---|---  
+The | black | cat |  | goes-to | the | store. |  | That-described-as-the-x1-place-of  
+go'i | cu | cadzu | le | bisli  
+---|---|---|---|---  
+[repeat-last-bridi] |  | walks-on | the | ice.  
+The black cat goes to the store. It walks on the ice.  
+---  
+  
+
+Here the __go'i__ repeats _le xekri mlatu cu klama le zarci_ , and since __le__ makes the x1 place into a description, and the x1 place of this bridi is _le xekri mlatu_ , _le go'i_ means _le xekri mlatu_.
+The cmavo __go'o__ , __nei__ , and __no'a__ have been little used so far. They repeat respectively some future bridi, the current bridi, and the bridi that encloses the current bridi (__no'a__ , unlike the other members of the go'i- series, can repeat non-sentence bridi). Here are a few examples:
+**Example 7.42. **
+mi | nupre | le | nu | mi | go'o  
+---|---|---|---|---|---  
+I | promise | the | event-of | I | [repeat-future-bridi].  
+.i | ba | dunda | le | djini |  | le | bersa  
+---|---|---|---|---|---|---|---  
+| [Future] | give | the | money | to | the | son  
+.i | ba | dunda | le | zdani |  | le | tixnu  
+---|---|---|---|---|---|---|---  
+| [Future] | give | the | house | to | the | daughter  
+I promise to do the following: Give the money to my son. Give the house to my daughter.  
+---  
+  
+
+(Note: The Lojban does not contain an equivalent of the __my__ in the colloquial English; it leaves the fact that it is the speaker's son and daughter that are referred to implicit. To make the fact explicit, use _le bersa_ /_tixnu be mi_.)
+For good examples of __nei__ and __no'a__ , we need nested bridi contexts:
+**Example 7.43. **
+mi | se | pluka | le | nu | do | pensi | le | nu  
+---|---|---|---|---|---|---|---|---  
+I |  | am-pleased-by | the | event-of | (you | think-about | the | (event-of  
+nei | kei | pu | le | nu | do | zukte  
+---|---|---|---|---|---|---  
+[main-bridi] | ) | before | the | (event-of | your | acting).  
+I am pleased that you thought about whether I would be pleased (about ...) before you acted.  
+---  
+  
+
+**Example 7.44. **
+mi | ba | klama | ca | le | nu | do | no'a  
+---|---|---|---|---|---|---|---  
+I | [future] | go | [present] | the | event-of | you | [repeats outer bridi]  
+I will go when you do.  
+---  
+  
+
+Finally, __ra'o__ is a cmavo that can be appended to any go'i-series cmavo, or indeed any cmavo of selma'o GOhA, to signal that pro-sumti or pro-bridi cmavo in the antecedent are to be repeated literally and reinterpreted in their new context. Normally, any pro-sumti used within the antecedent of the pro-bridi keep their meanings intact. In the presence of __ra'o__ , however, their meanings must be reinterpreted with reference to the new environment. If someone says to you:
+**Example 7.45. **
+mi ba lumci le mi karce  
+---  
+I will wash my car.  
+---  
+  
+
+you might reply either:
+**Example 7.46. **
+mi go'i  
+---  
+I will wash your car.  
+---  
+  
+
+or:
+**Example 7.47. **
+mi go'i ra'o  
+---  
+I will wash my car.  
+---  
+  
+
+The __ra'o__ forces the second __mi__ from the original bridi to mean the new speaker rather than the former speaker. This means that _go'e ra'o_ would be an acceptable alternative to _do go'e_ in B's statement in Example 7.39.
+The anaphoric pro-sumti of this section can be used in quotations, but never refer to any of the supporting text outside the quotation, since speakers presumably do not know that they may be quoted by someone else.
+However, a _ri-_ series or _go'a-_ series reference within a quotation can refer to something mentioned in an earlier quotation if the two quotations are closely related in time and context. This allows a quotation to be broken up by narrative material without interfering with the pro-sumti within it. Here's an example:
+**Example 7.48. **
+la | djan. | cusku | lu | mi | klama | le | zarci | li'u  
+---|---|---|---|---|---|---|---|---  
+That-named | John | says | [quote] | I | go-to | the | store | [unquote].  
+.i | la | .alis. | cusku | lu | mi | go'i | li'u  
+---|---|---|---|---|---|---|---  
+| That-named | Alice | says | [quote] | I | [repeat] | [unquote].  
+John says, “I am going to the store.” Alice says, “Me too.”  
+---  
+  
+
+Of course, there is no problem with narrative material referring to something within a quotation: people who quote, unlike people who are quoted, are aware of what they are doing.
+* * *
+Chapter 7. Brevity Is The Soul Of Language: Pro-sumti And Pro-bridi  
+---  
+Prev: Section 7.5 |  Next: Section 7.7  
+---|---  
+Table of Contents
+Book Info Page
+
+
+Word: ba
+Filename: section-connected-tenses.txt
+TF-IDF Score: 0.12315602548533364
+Content: Chapter 10. Imaginary Journeys: The Lojban Space/Time Tense System  
+---  
+Prev: Section 10.19 |  Next: Section 10.21  
+---|---  
+Table of Contents
+Book Info Page
+* * *
+## 10.20. Logical and non-logical connections between tenses
+Like many things in Lojban, tenses may be logically connected; logical connection is explained in more detail in Chapter 14. Some of the terminology in this section will be clear only if you already understand logical connectives.
+The appropriate logical connectives belong to selma'o JA. A logical connective between tenses can always be expanded to one between sentences:
+**Example 10.152. **
+mi | pu | je | ba | klama | le | zarci  
+---|---|---|---|---|---|---  
+I | [past] | and | [future] | go-to | the | market.  
+I went and will go to the market.  
+---  
+  
+
+means the same as:
+**Example 10.153. **
+mi | pu | klama | le | zarci  
+---|---|---|---|---  
+I | [past] | go-to | the | market.  
+.ije | mi | ba | klama | le | zarci  
+---|---|---|---|---|---  
+And | I | [future] | go-to | the | market.  
+I went to the market, and I will go to the market.  
+---  
+  
+
+Tense connection and tense negation are combined in:
+**Example 10.154. **
+mi | punai | je | canai | je | ba | klama | le | zarci  
+---|---|---|---|---|---|---|---|---  
+I | [past-not] | and | [present-not] | and | [future] | go-to | the | market.  
+I haven't yet gone to the market, but I will in future.  
+---  
+  
+
+Example 10.154 is far more specific than
+**Example 10.155. **
+mi | ba | klama | le | zarci  
+---|---|---|---|---  
+I | [future] | go-to | the | market.  
+  
+
+which only says that I will go, without claiming anything about my past or present. __ba__ does not imply _punai_ or _canai_ ; to compel that interpretation, either a logical connection or a ZAhO is needed.
+Tense negation can often be removed in favor of negation in the logical connective itself. The following examples are equivalent in meaning:
+**Example 10.156. **
+mi | mo'izu'anai | je | mo'iri'u | cadzu  
+---|---|---|---|---  
+I | [motion-left-not] | and | [motion-right] | walk.  
+I walk not leftward but rightward.  
+---  
+  
+
+**Example 10.157. **
+mi | mo'izu'a | naje | mo'iri'u | cadzu  
+---|---|---|---|---  
+I | [motion-left] | not-and | [motion-right] | walk.  
+I walk not leftward but rightward.  
+---  
+  
+
+There are no forethought logical connections between tenses allowed by the grammar, to keep tenses simpler. Nor is there any way to override simple left-grouping of the connectives, the Lojban default.
+The non-logical connectives of selma'o JOI, BIhI, and GAhO are also permitted between tenses. One application is to specify intervals not by size, but by their end-points (__bi'o__ belongs to selma'o BIhI, and connects the end-points of an ordered interval, like English “from ... to”):
+**Example 10.158. **
+mi | puza | bi'o | bazu | vasxu  
+---|---|---|---|---  
+I | [past-medium] | from…to | [future-long] | breathe.  
+I breathe from a medium time ago till a long time to come.  
+---  
+  
+
+(It is to be hoped that I have a long life ahead of me.)
+One additional use of non-logical connectives within tenses is discussed in Section 10.21. Other uses will probably be identified in future.
+* * *
+Chapter 10. Imaginary Journeys: The Lojban Space/Time Tense System  
+---  
+Prev: Section 10.19 |  Next: Section 10.21  
+---|---  
+Table of Contents
+Book Info Page
+
+
+Word: ba
+Filename: section-truth-questions.txt
+TF-IDF Score: 0.10503965624697556
+Content: Chapter 15. “No” Problems: On Lojban Negation  
+---  
+Prev: Section 15.7 |  Next: Section 15.9  
+---|---  
+Table of Contents
+Book Info Page
+* * *
+## 15.8. Truth questions
+One application of negation is in answer to truth questions (those which expect the answers “Yes” or “No”). The truth question cmavo __xu__ is in selma'o UI; placed at the beginning of a sentence, it asks whether the sentence as a whole is true or false.
+**Example 15.80. **
+xu | la | djan. | pu | klama  
+---|---|---|---|---  
+Is-it-true-that: | (that-named | John | previously | went-to  
+la | paris. | .e | la | rom.  
+---|---|---|---|---  
+that-named | Paris | and | that-named | Rome.)  
+  
+
+You can now use each of the several kinds of negation we've discussed in answer to this (presuming the same question and context for each answer).
+The straightforward negative answer is grammatically equivalent to the expanded sentence with the __na__ immediately after the __cu__ (and before any tense/modal):
+**Example 15.81. **
+na | go'i  
+---|---  
+[false] | [repeat-previous]  
+No.  
+---  
+  
+
+which means
+**Example 15.82. **
+la | djan. | [cu] | na | pu | klama  
+---|---|---|---|---|---  
+That-named | John | [false] | previously | went-to  
+la | paris. | .e | la | rom.  
+---|---|---|---|---  
+that-named | Paris | and | that-named | Rome.  
+It's not true that John went to Paris and Rome.  
+---  
+  
+
+The respondent can change the tense, putting the __na__ in either before or after the new tense:
+**Example 15.83. **
+na | ba | go'i  
+---|---|---  
+[false] | [future] | [repeat-previous]  
+  
+
+meaning
+**Example 15.84. **
+la | djan. | [cu] | na | ba | klama  
+---|---|---|---|---|---  
+That-named | John |  | [false] | later | will-go-to  
+la | paris. | .e | la | rom.  
+---|---|---|---|---  
+that-named | Paris | and | that-named | Rome.  
+It is false that John will go to Paris and Rome.  
+---  
+  
+
+or alternatively
+**Example 15.85. **
+ba | na | go'i  
+---|---|---  
+[future] | [false] | [repeat-previous]  
+  
+
+meaning
+**Example 15.86. **
+la | djan. | [cu] | ba | na  
+---|---|---|---|---  
+that-named | John |  | later-will | [false]  
+klama | la | paris. | .e | la | rom.  
+---|---|---|---|---|---  
+go-to | that-named | Paris | and | that-named | Rome.  
+  
+
+We stated in Section 15.3 that sentences like Example 15.84 and Example 15.86 appear to be semantically identical, but that subtle semantic distinctions may eventually be found.
+You can also use a scalar negation with __na'e__ , in which case, it is equivalent to putting a _na'eke_ immediately after any tense:
+**Example 15.87. **
+na'e | go'i  
+---|---  
+other-than | [repeat-previous]  
+  
+
+which means
+**Example 15.88. **
+la | djan. | [cu] | pu | na'eke | klama | [ke'e]  
+---|---|---|---|---|---|---  
+that-named | John |  | previously | other-than( | went-to | )  
+la | paris. | .e | la | rom.  
+---|---|---|---|---  
+that-named | Paris | and | that-named | Rome.  
+  
+
+He might have telephoned the two cities instead of going there. The unnecessary __ke__ and __ke'e__ would have been essential if the selbri had been a tanru.
+* * *
+Chapter 15. “No” Problems: On Lojban Negation  
+---  
+Prev: Section 15.7 |  Next: Section 15.9  
+---|---  
+Table of Contents
+Book Info Page

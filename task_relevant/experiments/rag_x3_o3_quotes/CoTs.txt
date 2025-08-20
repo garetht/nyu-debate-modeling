@@ -1,0 +1,285 @@
+
+CoT Answer for jbo_6:
+We need to express “She gave a copy to everyone that came by.”  The selbri dunda has place structure
+<quote>x₁ [donor] gives/donates gift/present x₂ to recipient/beneficiary x₃ [without payment/exchange].</quote>
+Thus x₁ = ra (she), x₂ must be a copy (su’o fukpi), and x₃ must be “everyone that came by.”  The quantifier + predicate ro lamgre means “each passer-by.”  In Lojban, untagged sumti after the selbri fill x₂ then x₃ in order, so
+  ra dunda su’o fukpi ro lamgre
+correctly puts su’o fukpi in x₂ and ro lamgre in x₃.  By contrast,
+  ra dunda fi ro lamgre fe su’o fukpi
+uses FA tags to swap the two sumti.  As noted,
+<quote>In Example 9.8, the tags are overkill; they serve only to make Example 9.1 even longer than it is.</quote>
+Here likewise the tags are unnecessary given the default x₂,x₃ order.  Therefore translation B is better.
+
+
+CoT Answer for jbo_9:
+We want a yes–no question (“Do you know…?”) about the price of the bread.  In Lojban, yes–no questions are marked with xu: <quote>The cmavo __xu__ asks whether that bridi is true as stated.</quote>  The word for “know” is djuno, defined as <quote>x₁ knows fact(s) x₂ (du'u) about subject x₃ by epistemology x₄.</quote>  We do not need an indirect‐question construction here, because we are not asking “what is the price?”, but simply “Do you know the price?”.  The price‐of‐X is expressed by jdima with a descriptor: <quote>x₁ is the price of x₂ to purchaser/consumer x₃ set by vendor x₄.</quote>  We turn jdima into a noun by using lo: <quote>lo is the veridical descriptor: the one(s) that really is(are)…</quote>  and attach it to nanba (bread).  Thus the simplest correct rendering is
+
+  xu do djuno lo jdima be lo nanba?
+
+By contrast, option B attempts to use an indirect question marker kau (<quote>marks word serving as focus of indirect question: "I know WHO went to the store"</quote>) inside a du'u abstraction, which is both unnecessary for a yes–no question and ungrammatical as written (it should be le du'u, not lo du'u).  Therefore A is the correct translation.
+
+
+CoT Answer for jbo_10:
+Step 1: Identify the two candidate Lojban sentences: 
+A: carvi jai cumki fa lo bavlamdei
+B: jai cumki carvi fa lo bavlamdei
+
+Step 2: Recall the definition of cumki:
+<quote>x_{1} (event/state/property) is possible under conditions x_{2}; x_{1} may/might occur; x_{1} is a maybe.</quote>
+Thus cumki is a modal predicate whose second place (x2) is the condition (“tomorrow”).
+
+Step 3: In Lojban modal conversion (selma’o JAI), a modal place of a selbri is brought into the x1 place by prefixing jai + the modal cmavo before the selbri, while the old x1 moves to fai (the unnumbered place):
+<quote>To exchange these two, we use a modal conversion operator consisting of __jai__ (of selma'o JAI) followed by the modal cmavo.</quote>
+Example: la lojban jai bau cusku fai mi (the language-of-expression becomes x1).
+
+Step 4: By strict analogy, to express “It might rain tomorrow,” we must convert the modal place cumki of carvi into x1. That means we prefix jai cumki before the selbri carvi, and then tag the new x1 (the condition) with fa lo bavlamdei (“fa the-event-tomorrow”):
+
+— “jai cumki carvi fa lo bavlamdei” places lo bavlamdei into the x1 (condition) of cumki • carvi after conversion.
+
+Step 5: Candidate A is wrong because it puts jai cumki after carvi, violating the rule that __jai__ must precede the selbri to perform modal conversion. Only B adheres to standard Lojban grammar for selma’o JAI.
+
+Therefore the correct translation is choice B.
+
+
+CoT Answer for jbo_11:
+The gismu mansa has the place structure “x₁ satisfies evaluator x₂ in property/state x₃.” <quote>x_{1} satisfies evaluator x_{2} in property (ka)/state x_{3}.</quote> Here “how hot it is” must be rendered as an indirect question, which in Lojban is marked by kau: <quote>discursive: marks word serving as focus of indirect question: "I know WHO went to the store"</quote>. The alternative kai is the BAI for characterizing: <quote>ckaji modal, 1st place</quote>, not for indirect questions. Only candidate A uses kau, so it is the correct translation.
+
+
+CoT Answer for jbo_12:
+We need to express that the tomato underwent the process of turning red, and that this whole process took one day. The cmavo <quote>co’a</quote> only marks the start of an event (“initiative”), not the event as a whole, so <quote>… nu lo tamca co’a xunre</quote> in choice A would mean simply “at the point where the tomato begins to become red.” In contrast, the gismu <quote>carna</quote> is exactly “to turn” in the sense of becoming a new state (<quote>x₁ turns …</quote>), so combining it with <quote>xunre</quote> yields “to turn red.” Choice B uses <quote>lo nu lo tamca cu xunre carna</quote> to package up the entire event of “the tomato turning red,” and then tags that event with <quote>djedi li pa fa …</quote> to say it lasts one day. Therefore, the correct translation is the second option.
+
+
+CoT Answer for jbo_15:
+We wish to express “He needs two kilograms of flour.”  In Lojban the mass-“kilogram” predicate is the lujvo <quote>ki’ogra</quote>, which has the structure “x1 measures in mass x2 kilograms by standard x3.”  To specify 2 kg of flour exactly, one says “re ki’ogra be lo grupu’o” (literally, “two kilograms of flour”).  This uses the selbri-linker <quote>be</quote> to attach lo grupu’o (flour) to the mass measure.  Choice A, <quote>ra nitcu tu’a re ki’ogra be lo grupu’o</quote>, at least correctly builds the sumti “two kilograms of flour,” whereas choice B tries to say “some flour which is 2 kg” with <quote>su’o grupu’o poi ki’ogra li re</quote> (misusing <quote>su’o</quote> which means “at least one,” not “exactly two kilograms”).  Hence A is the better translation.
+
+
+CoT Answer for jbo_21:
+We need to conjoin two sumti (“the largest elm” and “the oak”) with the sumti‐and connective .e, so each sumti must be properly terminated.  The first sumti is a description sumti “lo bardyrai be lo .ulmu”, which must end with ku (the description terminator), <quote>ku = elidable terminator: end description, modal, or negator sumti</quote>.  Only after that ku may we write .e lo cindu for “and the oak”.  Option A correctly does this: “lo bardyrai be lo .ulmu ku .e lo cindu”.  In contrast, Option B uses be’o (which <quote>be’o = ends binding to selbri</quote>) to close the linked‐sumti but omits ku, so .e would still be inside the description sumti and not join two top‐level sumti.  Therefore A is the correct translation.
+
+
+CoT Answer for jbo_22:
+To express “only one thing, namely that I love you,” we must identify that one thing, not merely add it incidentally.  In Lojban, restrictive relative clauses use poi, while incidental clauses use noi.  As given:
+
+<quote>**noi** = begin non-restrictive relative clause (can only attach to sumti)     **poi** = begin restrictive relative clause (can only attach to sumti)     **ku'o** = end relative clause</quote>
+
+Here we want “one thing which is …” (restrictive), so we use poi.  Thus the correct translation is:
+
+mi birti pa da poi du'u mi do prami ku'o
+
+and not the version with noi.
+
+
+CoT Answer for jbo_33:
+We need to quantify universally over the set “children of the many cooks.” In Lojban, universal claims use ro + variable, and we restrict that variable with poi. For example, <quote>ro da poi gerku zo'u da vasxu  — Every dog breathes.</quote> shows the pattern “ro da poi gerku zo'u …”.  
+
+Here “children of the many cooks” is lo panzi be ro lo so'i jukpa se jibri.  Applying ro … zo'u and then the main bridi “later began to be cooks (themselves)” yields:  
+
+ro lo panzi be ro lo so'i jukpa se jibri ba co'a se jibri lo ka jukpa ku vau si'a  
+
+Sentence B instead quantifies over cooks, not over their children, giving the wrong scope.  Thus choice A correctly renders “All of the children of the many cooks later became cooks themselves.”
+
+
+CoT Answer for jbo_40:
+We need to express “Please pee in the toilet, not on the floor.” in Lojban.  
+
+First, we must use the verb for excretion, not “fall”:  
+<quote>x_{1} [body] excretes waste x_{2} from source x_{3} via means/route x_{4}.</quote> (vikmi) is correct; farlu (<quote>x_{1} falls/drops to x_{2} from x_{3} in gravity well/frame of reference x_{4}.</quote>) is not.  
+
+Second, to say “in the toilet” we use ne’i (within), not a loose nominal like lo nenri be lo vimstizu:  
+<quote>location tense relation/direction; within/inside of/into ...</quote>  
+and to forbid “on the floor” we want “not adjacent to the floor”, using re’o (adjacent to) with nai:  
+<quote>location tense relation/direction; adjacent to/touching/contacting ...</quote>  
+
+Choice B writes:  
+.e’o do vikmi lo pinca ne’i lo vimstizu pe’e je nai re’o lo loldi  
+“Please you excrete the pee in the toilet and not adjacent to the floor.”  
+
+This correctly uses vikmi, ne’i, and re’o with nai, and pe’e je to join the termset. Choice A misuses farlu and lo nenri. Thus B is the better translation.
+
+
+CoT Answer for jbo_41:
+We need “I hope you get better” to be a bridi modified by the attitudinal “hope”.  In Lojban, attitudinals that apply to a whole bridi must appear at the start of that bridi, not its end.  As the background states, <quote>If an attitudinal is placed at the beginning of the bridi, it is understood to apply to an explicit or implicit .i, thus applying to the entire bridi.</quote>  And “.a’o” is the attitudinal for hope: <quote>**a'o** = _attitudinal: simple propositional emotion: Hope - despair_</quote>.  Thus the correct structure is “co'o la .patrik.” (vocative) followed by “.a'o do kanryze'a” (hope applied to the entire bridi “do kanryze'a”).  Option A is correct.
+
+
+CoT Answer for jbo_42:
+To render “When it snows, I want to dance” in Lojban, we need a time tag “when it snows” followed by a ‘desire a dancing‐event’ bridi.  
+
+1. The time tag can be expressed with “ca lo nu snimycarvi kei” since <quote>{"Lojban": "ca", "Formal Language": "PU", "English": "during", "Definition": "time tense relation/direction: is [selbri]; during/simultaneous with [sumti]; present tense"}</quote> and <quote>„lo nu snimycarvi kei“</quote> abstracts the event “it snows.”
+
+2. The main bridi must fit the place structure of djica (desire), which is x1 desires x2.  We want x1=mi and x2=dansu (to dance).  Hence “mi djica dansu.”  Indeed, <quote>{"Lojban": "djica", "English": "- desire", "Type": "gismu", "Def": "x1 desires/wants/wishes x2 (event/state) for purpose x3."}</quote>
+
+3. Option A’s “mi dansu djica” would form a tanru “dansu djica” where “dansu” (dance) modifies “djica” (desire), not the other way around.  As the glossary warns, <quote>“tanru is formed when a selbri is put in front of another selbri… The place structure of a tanru is always that of the rightmost selbri.”</quote>  That reverses the intended argument order.
+
+Therefore B, “ca lo nu snimycarvi kei mi djica dansu,” correctly means “When it snows, I want to dance.”
+
+
+CoT Answer for jbo_43:
+We need the temporal adverbial “soon after” to modify the subordinate event “he reaches the coast,” not the main event “he jumps into the water.”  In Lojban, “soon after” is expressed by the future‐direction BA plus short‐distance ZI placed before a nu-abstraction.  Choice A correctly does this:  
+
+ra ba zi lo nu ra darca lo xaskoi cu plipe lo djacu
+
+Here BA ZI precedes <quote>lo nu ra darca lo xaskoi</quote>, rendering “soon after the event of his reaching the coast.”  Choice B instead attaches BA ZI to the main selbri <quote>plipe</quote>, so it means “he will soon jump into the water,” and that fails to capture “soon after reaching the coast.”  Furthermore, B’s use of <quote>ki</quote> (the sticky-tense/reset cmavo) is unnecessary and misplaces the temporal scope.  Thus A is the correct translation.
+
+
+CoT Answer for jbo_48:
+la cmavo “coi” cu <quote>vocative: greetings/hello</quote> .i la cmavo “mi” cu <quote>pro-sumti: me/we the speaker(s)/author(s)</quote> .i la gismu “cnino” cu <quote>x_{1} is new/unfamiliar/novel to observer x_{2} in feature x_{3} by standard x_{4}; x_{1} is a novelty.</quote> .i lo cmavo COI ca’o stagi lo bridi .i ni’a la vokativu cu purdi pri lo bridi .i ri’a “coi mi cnino” cu melbi fa’o la Englis jufra “Hi, I’m new.”
+
+
+CoT Answer for jbo_49:
+We need to render “my two blue shirts” as a descriptor with an inner quantifier of two applied to the selbri “blanu creka” and owned by me.  In Lojban, when a number appears immediately after the descriptor (lo or le) it is an inner quantifier – it tells how many objects the selbri characterizes.  As the grammar says:  <quote>If a quantifier appears between the descriptor and the selbri ... it is called an 'inner quantifier', and its meaning ... tells the listener how many objects the description selbri characterizes.</quote> (Section 6.7).  For example, “le re do cu nanmu” means “the two of you are men” <quote>Example 6.47.</quote>  By exact analogy, “lo re mi blanu creka” denotes “two of the things that really are blue shirts of mine.”  Option B, “lo mi re blanu creka,” misplaces the number after the sumti and does not produce the required inner‐quantifier reading.  Hence A is the correct translation.
+
+
+CoT Answer for jbo_56:
+The English sentence “At least 100 students gathered in front of the building” requires the quantifier “at least” (su'o) directly in front of the counted sumti.  Choice B does exactly that: 
+
+• su'o 100 tadni cu jmaji lo crane be lo dinju
+
+Here “su'o 100 tadni” means “at least 100 students,” matching <quote>The cmavo __su'o__ expresses “at least (one of)”</quote>.  Then “cu jmaji lo crane be lo dinju” means “gathered at the front of the building,” using the gismu jmaji as in <quote>{"Lojban": "jmaji", "Lojban definition": "x1 gathers/collects at location x2 from locations x3", "English": "- gather", "Type": "gismu"}</quote> and the location lo crane be lo dinju (“the front of the building”) built with crane: <quote>{"Lojban": "crane", "Lojban definition": "x1 is anterior/ahead/forward/(in/on) the front of x2 which faces/in-frame-of-reference x3.", "English": "- front; anterior", "Type": "gismu"}</quote>.
+
+By contrast, choice A misuses the MOI cmavo mei (<quote>"mei": "convert number to cardinality selbri; x1 is the mass formed from set x2 whose n member(s) are x3"</quote>) and the fu'ivla kancusu'oi to try to combine abstract properties, which does not yield the intended plain proposition about a simple gathering.  Therefore B is the correct translation.
+
+
+CoT Answer for jbo_59:
+We need to express “this is a bottle without a lid” in Lojban.  First, the gismu “botpi” has the place structure “x₁ is a bottle … with lid x₄.”  In the provided background we have: <quote>x_{1} is a bottle/jar/urn/flask/closable container for x_{2}, made of material x_{3} with lid x_{4}.</quote>  To indicate that the lid (the x₄ place) is absent, we must tag that place with the cmavo “fo” and fill it with “zi'o”.  By definition, <quote>sumti place tag: tag 4th sumti place</quote> and <quote>pro-sumti: fills a sumti place, deleting it from selbri place structure;changes selbri semantics</quote>.  This yields the sentence “ti botpi fo zi'o”.  The other option adds “.e no da” (using <quote>logical connective: sumti afterthought and</quote>, <quote>digit/number: 0 (digit) [zero]</quote>, and <quote>logically quantified existential pro-sumti: there exists something 1 (usually restricted)</quote>), which does not correspond to “without a lid”.  Therefore A is the correct translation.
+
+
+CoT Answer for jbo_60:
+We need a compound bridi sharing the subject “ra” for both predicates. From the Compound Bridi section, we learn that <quote>giheks are used in afterthought to create compound bridi; __gi'e__ is the gihek corresponding to “and”.</quote>  Thus a pure conjunction would be:
+  ra terpa lo'e nu cladu gi'e se tolzdi lo'e nu smaji
+To express “but” (contrast) rather than plain “and”, we place the discursive __ku'i__ before the second bridi-tail. From the Discursives section, <quote>the first, __ku'i__, makes an exception to the previous argument.</quote>  Hence we insert __ku'i__ after the gihek, yielding:
+  ra terpa lo'e nu cladu gi'e ku'i se tolzdi lo'e nu smaji
+This matches choice B. Choice A incorrectly inserts an extra terminator __ku__ before __gi'e__, which is neither required nor grammatical.
+
+
+CoT Answer for jbo_61:
+We have two bridi connected by “and”:
+1) “This paint doesn’t match the wall.” requires the bridi negator <quote>na</quote> before the selbri, as per <quote>“bridi contradictory negator; scope is an entire bridi”</quote>.
+2) “and neither is the wall dirty.” is a second bridi joined by “and”, not “or”.  For bridi-internal logical “and” we use <quote>je</quote> (JA), the “tanru-internal afterthought and”.  Using <quote>ja</quote> would give “or” rather than “and”.
+Therefore the better translation is A, which correctly uses <quote>je</quote> rather than <quote>ja</quote>.
+
+
+CoT Answer for jbo_62:
+First, we want “The tree is across the fence” to mean that the tree lies on the other side of the fence.  The predicate zvati indicates mere location: <quote>x₁ (object/event) is at/attending/present at x₂ (event/location).</quote>  We need a word that expresses “across, on the other side of…” relative to a boundary.  The gismu ragve means <quote>x₁ is located across/on the other side of gap/boundary x₂ from x₃; x₁ is opposite (fi) x₃.</quote>  But ragve requires two arguments (the boundary and the reference point), so using ragve alone in A leaves the reference point unspecified and is ungrammatical.  By contrast, the cmavo ze’o carries the sense of “outward (from) / beyond” (the fence) as a location relation: <quote>location tense relation/direction; beyond/outward/receding from ...</quote>  Thus
+“lo tricu cu zvati ze’o lo garbi’u”
+means “The tree is located outward from the fence,” i.e. on the other side of it, making B the correct translation.
+
+
+CoT Answer for jbo_64:
+We want to say “for every X, X is sick at this place.”  “ro da” gives “for‐every X” as needed: <quote>digit/number: each, all</quote>.  “bu'u ti” is the spatial tense “here,” placed after the sumti and before the selbri: <quote>location tense relation/direction; coincident with/at the same place as; space equivalent of ca</quote>.  Finally “bilma” is “is sick.”  Hence the bridi should be ro da bu'u ti bilma.  Using “pe bu'u ti” would treat “here” as a restrictive association, which is unnecessary and unidiomatic in this case.
+
+
+CoT Answer for jbo_65:
+We need “because” to introduce the clause “we didn’t take them in before it started to rain.”  In Lojban the proper causal modal is <quote>Each of these gismu has a related modal: __ri’a__, __ki’u__, __mu’i__, and __ni’i__ respectively.</quote>  Having chosen __ki’u__ (“justification”), we then need to express the negative takings-in with __mi’a na nergau__ (“we didn’t put them in”).  Finally, the timing “before it started to rain” is handled by <quote>The cmavo __co’a__ marks the boundary between the __pu’o__ and __ca’o__ parts of an event</quote> plus past tense “__pu__” and the short-scope joiner <quote>The cmavo __bo__ (of selma’o BO) may be placed between the two brivla which are most closely associated.</quote>  Option A correctly orders “we didn’t take them in” before “it started to rain”; option B flips them, rendering “we didn’t take them in after it started to rain,” which contradicts the English. Thus A is the better translation.
+
+
+CoT Answer for jbo_69:
+We want to negate the entire “seem” predicate, not introduce a scalar negation on “healthy” itself.  In Lojban, “seem” is simlu, and “very healthy” can be rendered as the abstraction lo ka kanro mutce.  The bridi negation cmavo na, placed before the selbri, contradicts the whole bridi.  Thus we get:  do na simlu lo ka kanro mutce
+
+Supporting evidence:
+<quote>{"Lojban": "simlu", "English": "- seem", "Type": "gismu", "Def": "x_{1} seems/appears to have property(ies) x_{2} to observer x_{3} under conditions x_{4}."}</quote>
+<quote>“Similarly, a bridi may have the particle __na__ (of selma'o NA) attached to the beginning of the selbri to negate the bridi. A negated bridi expresses what is false without saying anything about what is true.” (Example 5.128)</quote>
+<quote>{"Lojban": "mutce", "Lojban definition": "x_{1} is much/extreme in property x_{2} ...; x_{1} is, in x_{2}, very x_{3}.", "English": "very; to a great extent"}</quote>
+
+By contrast, “do simlu lo ka na'e kanro” would mean “you seem to have the property other-than-healthy” (i.e. you seem unhealthy), and it also omits the intensifier “very.” Therefore (A) is the correct translation.
+
+
+CoT Answer for jbo_70:
+We need a quantified-tense expression for “again” (= “more than once”).  In Lojban, general quantified tenses use “roi”:
+<quote>A numerical tense can be created by suffixing a digit string with __roi__. This usage generates tenses corresponding to English “once”, “twice”, and so on.</quote>
+Putting “za'u” (the PA cmavo “more than”) before “roi” yields “more-than-once”:
+<quote>The four cmavo __su'e__, __su'o__, __me'i__, and __za'u__, also of selma'o PA, express inexact numbers with upper or lower bounds:</quote>
+Hence “za'u roi sanga” means “sing more than once” (i.e. sing again).  By contrast, “re'u” is the ordinal-time cmavo requiring a numeral (the “nth time” marker):
+<quote>Finally, since an activity is cyclical, an individual cycle can be referred to using a number followed by __re'u__, which is the other cmavo of selma'o ROI.</quote>
+Using “re'u” without a preceding number is ungrammatical for expressing “again”.  Therefore option B is the correct translation.
+
+
+CoT Answer for jbo_74:
+The entity “the Board” is not a proper name but a common noun, so using la (which <quote>**la** is a bit eccentric, since it _always_ marks the beginning of a name.</quote>) would wrongly treat it as a name. Instead we use lo as a veridical descriptor to mean “the board” in its real sense (<quote>'lo': veridical descriptor: the one(s) that really is(are) ...</quote>). The verb “decided” is best rendered with zu'ejdi (<quote>Lojban: "zu'ejdi", English: 'x₁ decides to do x₂ (ka)'</quote>), operating on the abstract property of dismissing the proposal, which is fitytoltu'i (<quote>Lojban: "fitytoltu'i", English: 'x₁ rejects x₂ (offer, suggestion, proposal) from x₃.'</quote>) using se stidi for “the proposal.” Therefore the correct translation is with lo tanbo (choice A).
+
+
+CoT Answer for jbo_75:
+We need to translate “The trumpet is tired” so that the sumti refers to the trumpet itself, not the playing.  The gismu tatpi has place structure “x1 is tired by x2”.  To make x1 be the trumpet, tagged explicitly, we write:  
+<quote>fa = Tags the following sumti as filling x1 place</quote>
+so we use “tatpi fa <sumti>”.  Next, we must make that sumti denote the trumpet.  The phrase “lo zgipli be lo tabra” means “the playing of the trumpet”, not the trumpet.  Instead we convert zgipli so that its x2 place (instrument) becomes x1:
+<quote>se = 2nd place conversion; a converted selbri swaps x1 and x2</quote>
+Thus “lo se zgipli be lo tabra” = “the thing that is the trumpet in a playing-event”, i.e. the trumpet itself.  Therefore the correct first clause is “tatpi fa lo se zgipli be lo tabra”.  Option A omits se and wrongly picks the playing.  Hence the better translation is Option B.
+
+
+CoT Answer for jbo_78:
+In Lojban, negating a sumti can be done by quantifying it with zero – “no” – which gives a contradictory negation (nothing). <quote>There are two ways of negating sumti in Lojban. We have the choice of quantifying the sumti with zero … a zero quantification serves for contradictory negation.</quote>  
+
+Option A, “mi no da no de pu dunda,” assigns “no” to both x2 (da: things) and x3 (de: people), yielding “I gave zero things to zero people,” i.e. “I didn’t give anything to anyone.”  
+
+Option B, “mi no da su'o de pu dunda,” uses “su'o de” (at least one person), which would mean “I gave zero things to at least one person” – “I gave nothing to someone,” rather than to nobody. Therefore A correctly captures “I didn’t give anything to anyone.”
+
+
+CoT Answer for jbo_91:
+We need to follow the place structure of punji: <quote>x₁ (agent) puts/places/sets x₂ on/at surface/locus x₃.</quote> In our sentence, x₁ is lo ctuca “the teacher”, x₂ is su’o pinsi “a pencil”, and x₃ is ro ci’ajbu “every desk”. According to FA place tags, <quote>fe tags x₂ place and fi tags x₃ place</quote>. Option A writes “punji fe su’o pinsi fi ro ci’ajbu”, correctly assigning x₂=su’o pinsi and x₃=ro ci’ajbu. Option B reverses them (“punji fi ro ci’ajbu fe su’o pinsi”), meaning “put every desk on a pencil”. Therefore A is the correct translation.
+
+
+CoT Answer for jbo_100:
+We must express “You exceed the others in the property of being fast.” The gismu zmadu has place structure “x1 exceeds x2 in property/quantity x3 …” so we fill x1=do, x2=lo drata, x3=sutra, yielding <quote>x1 exceeds/is more than x2 in property/quantity x3 (ka/ni) by amount/excess x4.</quote> Hence “do zmadu sutra lo drata.” By contrast, “do sutra zmadu lo drata” groups sutra zmadu as a tanru: “sutra” modifying “zmadu,” meaning “fast-exceed,” because <quote>a tanru is formed when a selbri is put in front of another selbri, modifying its meaning. The place structure of a tanru is always that of the rightmost selbri.</quote> This would mean “you quickly exceed the others,” not “you exceed them in speed.” Therefore B is the correct translation.
+
+
+CoT Answer for jbo_102:
+We need to express “I drank exactly one liter of water.” In Lojban, the selbri for volume in liters is litce, whose place structure is “x1 is x2 liter(s) in volume by standard x3.” <quote>{"Lojban": "litce", "English": "- liter", "Definition": "x_{1} is x_{2} liter(s) [metric unit] in volume (default is 1) by standard x_{3}."}</quote> The number “one” is pa, not su'o (which means “at least”). <quote>{"Lojban": "pa", "English": "1", "Definition": "digit/number: 1 (digit) [one]"}</quote> <quote>{"Lojban": "su'o", "English": "at least", "Definition": "digit/number: at least (some); no less than"}</quote> To link the standard (water) into the selbri, we use be. <quote>{"Lojban": "be", "English": "link sumti", "Definition": "sumti link to attach sumti (default x2) to a selbri; used in descriptions"}</quote> The bridi order is (x1 sumti) selbri (x2 sumti) … <quote>To say a bridi, you simply say the x1 sumti first, then the selbri, then any other sumti.</quote> Hence “one liter of water” is pa litce be lo'e djacu, and the full sentence is mi pinxe pa litce be lo'e djacu. Candidate A’s use of su'o would mean “at least one” liter, which mistranslates “exactly one.” Therefore the correct choice is B.
+
+
+CoT Answer for jbo_104:
+We need to express “the door is easy, but the window isn’t” by saying “easy” of the raised‐sumti for the door, then negating “window” and marking the contrast with ku'i. Choice B does this with the afterthought sumti connector .e and the negator nai, whereas A misuses the forethought connectives ge/gi nai inside the selbri. In choice B, “fa tu'a lo vorme” correctly tags the door as the x1 place of frili by using **tu'a**:<quote>**tu'a** = _convert sumti to vague abstraction involving the sumti. Equivalent to le su'u SUMTI co'e kei ku_</quote> It then uses .e to connect the next sumti:<quote>{"Lojban": ".e", "Definition": "logical connective: sumti afterthought and"}</quote> and applies nai to negate “lo canko”:<quote>{"Lojban": "nai", "English": "negate last word"}</quote> Finally, ku ends the sumti and ku'i marks the “but” contrast. Thus choice B is the standard Lojban rendering.
+
+
+CoT Answer for jbo_106:
+We need to express two claims: first, “The beetles haven’t yet matured” → using nu’o makcu for unrealized potential of maturation on lo cakcinki. Second, “the reason being that I haven’t separated them from each other” → using the causal cmavo ki’u, which takes an event‐abstract as its first place. Thus we must supply an abstraction using nu to package the bridi “ri nu’o gau mi sepsi’u” into a noun sumti. Option B writes:
+
+  lo cakcinki nu’o makcu ki’u lo nu ri nu’o gau mi sepsi’u
+
+This correctly gives ki’u lo nu… as “because of the event that I haven’t separated them”. By contrast, Option A uses ki’u bo ri…, misusing bo, which (as the sumti‐cita binding rule explains) would attach the modal to the following bridi without creating the needed abstraction sumti. Therefore B is the only standard Lojban rendering.
+
+Supporting quotes:
+<quote>nu is an event abstractor: x1 is a state/process/achievement/activity of [bridi]</quote>
+<quote>ki’u is the krinu modal, 1st place (justified by), English ‘because of reason’</quote>
+<quote>An abstraction selbri is formed by taking a full bridi and preceding it by any cmavo of selma’o NU. The bridi is closed by the elidable terminator KEI.</quote>
+
+
+CoT Answer for jbo_107:
+We want to express “what was easiest for me,” i.e. “that which is easiest for me.”  In Lojban, a description of “the thing which is P for me” normally uses __lo se P be fi mi__.  As the grammar text explains, <quote>se swaps x1 and x2 places of a selbri</quote> so that x1 of _se P_ is originally the x2 slot (the person/agent/item referenced by P).  Thus:
+  • lo se frilyrai be fi mi  = “that which is superlatively easy for me.”
+  • lo frilyrai be fi mi      = “that which is superlatively easy” (without swapping), so its x1 would still be the thing being easiest, but x2 would not be our me.
+Hence we must use __se__ to make the easiness apply “for me.”  Therefore Option A is correct.
+
+
+CoT Answer for jbo_108:
+To say “It’s common to fight with one’s parents,” we want to abstract over the person (X) who fights with X’s parents.  The place structure of damba is:
+
+  _ _damba_ _ x1 fights x2 over issue x3_
+
+so we need ka to form a property abstraction, with x1 filling the fighter and x2 the opponent “one’s parents.”  The cmavo ce’u must mark the abstracted place (the fighter) inside the ka-bridi, and must also be used again to refer to that same variable when filling the x2 place.  In contrast, ri is only anaphoric (“repeats the last sumti”), not a focus for abstraction.  As the grammar explains:
+
+<quote>The cmavo __ce'u__ is used within abstraction bridi, particularly property abstractions introduced by the cmavo __ka__.</quote>
+
+and further:
+
+<quote>When an explicit sumti is wanted [inside an abstraction], the cmavo __ce'u__ of selma'o KOhA is employed.</quote>
+
+Thus the correct translation is:
+
+  zilfadni fa lo ka ce'u damba lo rirni be ce'u
+
+i.e. it is common (“zilfadni”) that the property of X’s fighting with X’s parents holds (“fa lo ka ce'u damba lo rirni be ce'u”).  Using ri in place of the second ce’u would be relying on anaphora rather than the required abstraction focus.
+
+
+CoT Answer for jbo_113:
+We need to say “one of the couples is from Morocco.”  To express “is from,” we use <quote>se</quote> + <quote>krasi</quote>, since <quote>se</quote> is “2nd conversion; switch 1st/2nd places” and <quote>krasi</quote> is “x1 (site/event) is a source/start/beginning/origin of x2 (object/event/process).”  Thus “X cu se krasi Y” means “X is from Y.”  Next, we need “one of the couples.”  The numeral <quote>pa</quote> (“1”) must quantify a descriptor over the set of couples (<quote>spenysi'u</quote>).  We want one individual couple, so we must use the generic descriptor <quote>lo</quote> (“generic, converts selbri to sumti”), not the mass descriptor <quote>loi</quote> (“generic, mass of individuals”).  Using <quote>loi spenysi'u</quote> would mean “the mass of couples,” which is not what we want.  Instead, <quote>pa lo spenysi'u</quote> correctly means “one of the couples.”  Putting it all together gives “pa lo spenysi'u cu se krasi lo morkygu'e.”
+
+
+CoT Answer for jbo_114:
+In Lojban you express “around noon” by prefixing the short–distance tense cmavo ZI to the sumti naming noon, not by using KI.  ZI is defined as “short time distance”: <quote>zi | ZI | short time distance</quote>.  The word co'a marks the beginning (“started to”) of the digging: <quote>co'a | initiative</quote>.  kakpa is the gismu “to dig” whose x1 is the agent: <quote>x₁ (agent) digs x₂ ...</quote>.  Since our first sumti is the time marker “lo dormidju”, we must tag the squirrel as the x1 place of kakpa with FA: <quote>fa | sumti place tag: tag 1st sumti place</quote>.  The cmavo KI is only used to set or reset sticky tenses (<quote>ki | tense default: set/use tense default; establishes new open scope space/time/modal reference base</quote>) and is not needed here.  Thus the natural bridi is
+
+zi lo dormidju co'a kakpa fa lo ricyratcu
+
+which corresponds to option B.
+
+
+CoT Answer for jbo_115:
+1. The word pe'u is a vocative meaning “please” that must precede what it addresses.  In the background we read <quote>“Vocatives” are words used to address someone directly; they precede and mark a name used in direct address</quote>.  2. From the definitions: <quote>'pe'u', 'Definition': 'vocative: please'</quote>.  3. The demonstrative ti means “this here”: <quote>'ti', 'Definition': 'pro-sumti: this here; immediate demonstrative it; indicated thing/place near speaker'</quote>.  4. The gismu vajni means “is important”: <quote>'vajni', 'Lojban definition': 'x_{1} (object/event) is important/significant to x_{2} (person/event) in aspect/for reason x_{3} (nu/ka).'</quote>.  5. Therefore the correct order is the vocative pe'u first, then the sumti ti, then the selbri vajni, yielding pe'u ti vajni.

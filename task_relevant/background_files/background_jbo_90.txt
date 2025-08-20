@@ -1,0 +1,1917 @@
+
+The following definitions pulled from the above background may be particularly useful:
+{'Lojban': 'lo', 'Formal Language': 'LE', 'English': 'the really is', 'Definition': 'veridical descriptor: the one(s) that really is(are) ...', 'Confer': None, 'Type': 'cmavo'}
+{'Lojban': 'mudri', 'Lojban definition': 'x_{1} is a quantity of/is made of/contains wood/lumber from tree(s) of type/species x_{2}.', 'English': '- wood; the material', 'Type': 'gismu'}
+{'Lojban': 'marji', 'Lojban definition': 'x_{1} is material/stuff/matter of type/composition including x_{2} in shape/form x_{3}.', 'English': '- material<br>- matter; material', 'Type': 'gismu'}
+{'Lojban': 'me', 'Formal Language': 'ME', 'English': 'sumti to selbri', 'Definition': 'convert sumti to selbri/tanru element; x1 is specific to [sumti] in aspect x2', 'Confer': None, 'Type': 'cmavo'}
+{'Lojban': 'ckana', 'Lojban definition': 'x_{1} is a bed/pallet of material x_{2} for holding/supporting x_{3} (person/object/event).', 'English': '- bed', 'Type': 'gismu'}
+{'Lojban': 'cu', 'Formal Language': 'CU', 'English': 'selbri separator', 'Definition': 'elidable marker: separates selbri from preceding sumti, allows preceding terminator elision', 'Confer': None, 'Type': 'cmavo'}
+{'Lojban': '.e', 'Formal Language': 'A', 'English': 'sumti and', 'Definition': 'logical connective: sumti afterthought and', 'Confer': None, 'Type': 'cmavo'}
+{'Lojban': "lo'e", 'Formal Language': 'LE', 'English': 'the typical', 'Definition': 'veridical descriptor: the typical one(s) who really is(are) ...', 'Confer': None, 'Type': 'cmavo'}
+{'Lojban': 'slasi', 'Lojban definition': 'x_{1} is a quantity of/is made of/contains plastic/polymer of type/component unit(s) x_{2}.', 'English': '- plastic', 'Type': 'gismu'}
+{'Lojban': 'ti', 'Formal Language': 'KOhA6', 'English': 'this here', 'Definition': 'pro-sumti: this here; immediate demonstrative it; indicated thing/place near speaker', 'Confer': None, 'Type': 'cmavo'}
+{'Lojban': 'je', 'Formal Language': 'JA', 'English': 'tanru and', 'Definition': 'logical connective: tanru-internal afterthought and', 'Confer': None, 'Type': 'cmavo'}
+
+The following are the top TF-IDF files for the words in choice A and choice B from the The Complete Lojban Language Grammar Book:
+Word: cu
+Filename: section-attitudinals.txt
+TF-IDF Score: 0.22788147621681745
+Content: Chapter 2. A Quick Tour of Lojban Grammar, With Diagrams  
+---  
+Prev: Section 2.15 |  Next: Section 2.17  
+---|---  
+Table of Contents
+Book Info Page
+* * *
+## 2.16. Indicators
+Different cultures express emotions and attitudes with a variety of intonations and gestures that are not usually included in written language. Some of these are available in some languages as interjections (i.e. “Aha!”, “Oh no!”, “Ouch!”, “Aahh!”, etc.), but they vary greatly from culture to culture.
+Lojban has a group of cmavo known as “attitudinal indicators” which specifically covers this type of commentary on spoken statements. They are both written and spoken, but require no specific intonation or gestures. Grammatically they are very simple: one or more attitudinals at the beginning of a bridi apply to the entire bridi; anywhere else in the bridi they apply to the word immediately to the left. For example:
+**Example 2.79. **
+.ie |  mi |  [cu] |  klama  
+---|---|---|---  
+Agreement! |  I |  - |  go.  
+Yep! I'll go.  
+---  
+  
+
+**Example 2.80. **
+.ei |  mi |  [cu] |  klama  
+---|---|---|---  
+Obligation! |  I |  - |  go.  
+I should go.  
+---  
+  
+
+**Example 2.81. **
+mi |  [cu] |  klama |  le melbi  
+---|---|---|---  
+I |  - |  go |  to-the beautiful-thing  
+.ui |  [ku]  
+---|---  
+and I am happy because it is the beautiful thing I'm going to |  -  
+  
+
+Not all indicators indicate attitudes. Discursives, another group of cmavo with the same grammatical rules as attitudinal indicators, allow free expression of certain kinds of commentary about the main utterances. Using discursives allows a clear separation of these so-called “metalinguistic” features from the underlying statements and logical structure. By comparison, the English words “but” and “also”, which discursively indicate contrast or an added weight of example, are logically equivalent to “and”, which does not have a discursive content. The average English-speaker does not think about, and may not even realize, the paradoxical idea that “but” basically means “and”.
+**Example 2.82. **
+mi |  [cu] |  klama |  .i |  do |  [cu] |  stali  
+---|---|---|---|---|---|---  
+I |  - |  go. |  |  You |  - |  stay.  
+  
+
+**Example 2.83. **
+mi |  [cu] |  klama |  .i |  ji'a |  do |  [cu] |  stali  
+---|---|---|---|---|---|---|---  
+I |  - |  go. |  |  In addition, |  you |  - |  stay. |  added weight  
+  
+
+**Example 2.84. **
+mi |  [cu] |  klama |  .i |  ku'i |  do |  [cu] |  stali  
+---|---|---|---|---|---|---|---  
+I |  - |  go. |  |  However, |  you |  - |  stay. |  contrast  
+  
+
+Another group of indicators are called “evidentials”. Evidentials show the speaker's relationship to the statement, specifically how the speaker came to make the statement. These include __za'a__ (I directly observe the relationship), __pe'i__ (I believe that the relationship holds), __ru'a__ (I postulate the relationship), and others. Many American Indian languages use this kind of words.
+**Example 2.85. **
+pe'i |  do |  [cu] |  melbi  
+---|---|---|---  
+I opine! |  You |  - |  are beautiful.  
+  
+
+**Example 2.86. **
+za'a |  do |  [cu] |  melbi  
+---|---|---|---  
+I directly observe! |  You |  - |  are beautiful.  
+  
+
+* * *
+Chapter 2. A Quick Tour of Lojban Grammar, With Diagrams  
+---  
+Prev: Section 2.15 |  Next: Section 2.17  
+---|---  
+Table of Contents
+Book Info Page
+
+
+Word: cu
+Filename: section-some-brivla.txt
+TF-IDF Score: 0.15225388318577596
+Content: Chapter 2. A Quick Tour of Lojban Grammar, With Diagrams  
+---  
+Prev: Section 2.10 |  Next: Section 2.12  
+---|---  
+Table of Contents
+Book Info Page
+* * *
+## 2.11. Examples of brivla
+The simplest form of selbri is an individual word. A word which may by itself express a selbri relation is called a __brivla__. The three types of brivla are gismu (root words), lujvo (compounds), and fu'ivla (borrowings from other languages). All have identical grammatical uses. So far, most of our selbri have been gismu or tanru built from gismu.
+gismu:
+**Example 2.46. **
+mi |  [cu] |  klama |  ti |  zo'e |  zo'e |  ta  
+---|---|---|---|---|---|---  
+Go-er |  - |  goes |  destination |  origin |  route |  means.  
+I go here (to this) using that means (from somewhere via some route).  
+---  
+  
+
+lujvo:
+**Example 2.47. **
+ta |  [cu] |  blari'o  
+---|---|---  
+That |  - |  is-blue-green.  
+  
+
+fu'ivla:
+**Example 2.48. **
+ti |  [cu] |  djarspageti  
+---|---|---  
+This |  - |  is-spaghetti.  
+  
+
+Some cmavo may also serve as selbri, acting as variables that stand for another selbri. The most commonly used of these is __go'i__ , which represents the main bridi of the previous Lojban sentence, with any new sumti or other sentence features being expressed replacing the previously expressed ones. Thus, in this context:
+**Example 2.49. **
+ta |  [cu] |  go'i  
+---|---|---  
+That |  - |  too/same-as-last selbri.  
+That (is spaghetti), too.  
+---  
+  
+
+* * *
+Chapter 2. A Quick Tour of Lojban Grammar, With Diagrams  
+---  
+Prev: Section 2.10 |  Next: Section 2.12  
+---|---  
+Table of Contents
+Book Info Page
+
+
+Word: lo'e
+Filename: section-typicals.txt
+TF-IDF Score: 0.11146381138441432
+Content: Chapter 6. To Speak Of Many Things: The Lojban sumti  
+---  
+Prev: Section 6.4 |  Next: Section 6.6  
+---|---  
+Table of Contents
+Book Info Page
+* * *
+## 6.5. Descriptors for typical objects
+The following cmavo are discussed in this section:
+lo'e |  LE |  the typical  
+---|---|---  
+le'e |  LE |  the stereotypical  
+As promised in Section 6.3, Lojban has a method for discriminating between “the lion” who lives in Africa and “the Englishman” who, generally speaking, doesn't live in Africa even though some Englishmen do. The descriptor __lo'e__ means “the typical”, as in
+**Example 6.26. **
+lo'e | cinfo | cu | xabju | le | fi'ortu'a  
+---|---|---|---|---|---  
+The-typical | lion |  | dwells-in | the | African-land.  
+The lion dwells in Africa.  
+---  
+  
+
+What is this “typical lion”? Surely it is not any particular lion, because no lion has all of the “typical” characteristics, and (worse yet) some characteristics that all real lions have can't be viewed as typical. For example, all real lions are either male or female, but it would be bizarre to suppose that the typical lion is either one. So the typical lion has no particular sex, but does have a color (golden brown), a residence (Africa), a diet (game), and so on. Likewise we can say that
+**Example 6.27. **
+lo'e | glipre | cu | xabju  
+---|---|---|---  
+The-typical | English-person |  | dwells-in  
+le | fi'ortu'a | na.e | le | gligugde  
+---|---|---|---|---  
+the | African-land | (Not!) and | the | English-country.  
+The typical English person dwells not in Africa but in England.  
+---  
+  
+
+The relationship between _lo'e cinfo_ and _lo'i cinfo_ may be explained thus: the typical lion is an imaginary lion-abstraction which best exemplifies the set of lions. There is a similar relationship between __le'e__ and __le'i__ :
+**Example 6.28. **
+le'e | xelso | merko | cu | gusta | ponse  
+---|---|---|---|---|---  
+The-stereotypical | Greek-type-of | American |  | is-a-restaurant-type-of | owner.  
+Lots of Greek-Americans own restaurants.  
+---  
+  
+
+Here we are concerned not with the actual set of Greek-Americans, but with the set of those the speaker has in mind, which is typified by one (real or imaginary) who owns a restaurant. The word “stereotypical” is often derogatory in English, but __le'e__ need not be derogatory in Lojban: it simply suggests that the example is typical in the speaker's imagination rather than in some objectively agreed-upon way. Of course, different speakers may disagree about what the features of “the typical lion” are (some would include having a short intestine, whereas others would know nothing of lions' intestines), so the distinction between _lo'e cinfo_ and _le'e cinfo_ may be very fine.
+Furthermore,
+**Example 6.29. **
+le'e | skina | cu | se finti | ne'i | la | xali,uyd.  
+---|---|---|---|---|---|---  
+The-stereotypical | movie |  | is-invented | in | that-named | Hollywood.  
+  
+
+is probably true to an American, but might be false (not the stereotype) to someone living in India or Russia.
+Note that there is no naming equivalent of __lo'e__ and __le'e__ , because there is no need, as a rule, for a “typical George” or a “typical Smith”. People or things who share a common name do not, in general, have any other common attributes worth mentioning.
+* * *
+Chapter 6. To Speak Of Many Things: The Lojban sumti  
+---  
+Prev: Section 6.4 |  Next: Section 6.6  
+---|---  
+Table of Contents
+Book Info Page
+
+
+Word: lo'e
+Filename: section-lojban-within-mekso.txt
+TF-IDF Score: 0.04633159444393956
+Content: Chapter 18. lojbau mekso: Mathematical Expressions in Lojban  
+---  
+Prev: Section 18.17 |  Next: Section 18.19  
+---|---  
+Table of Contents
+Book Info Page
+* * *
+## 18.18. Using Lojban resources within mekso
+The following cmavo are discussed in this section:
+na'u |  NAhU |  selbri to operator  
+---|---|---  
+ni'e |  NIhE |  selbri to operand  
+mo'e |  MOhE |  sumti to operand  
+te'u |  TEhU |  terminator for all three  
+One of the mekso design goals requires the ability to make use of Lojban's vocabulary resources within mekso to extend the built-in cmavo for operands and operators. There are three relevant constructs: all three share the elidable terminator __te'u__ (which is also used to terminate vectors marked with __jo'i__)
+The cmavo __na'u__ makes a selbri into an operator. In general, the first place of the selbri specifies the result of the operator, and the other unfilled places specify the operands:
+**Example 18.124. **
+li | na'u | tanjo | te'u  
+---|---|---|---  
+The-number | the-operator | tangent | [end-operator]  
+vei | pai | fe'i | re | [ve'o] | du | li | ci'i  
+---|---|---|---|---|---|---|---  
+( | π | / | 2 | ) | = | the-number | infinity.  
+tan(π/2) = ∞  
+  
+
+__tanjo__ is the gismu for “x1 is the tangent of x2”, and the __na'u__ here makes it into an operator which is then used in forethought
+The cmavo __ni'e__ makes a selbri into an operand. The x1 place of the selbri generally represents a number, and therefore is often a __ni__ abstraction, since __ni__ abstractions represent numbers. The __ni'e__ makes that number available as a mekso operand. A common application is to make equations relating pure dimensions:
+**Example 18.125. **
+li | ni'e | ni | clani | [te'u]  
+---|---|---|---|---  
+The-number |  | quantity-of | length |   
+pi'i | ni'e | ni | ganra | [te'u]  
+---|---|---|---|---  
+times |  | quantity-of | width |   
+pi'i | ni'e | ni | condi | te'u  
+---|---|---|---|---  
+times |  | quantity-of | depth |   
+du | li | ni'e | ni | canlu  
+---|---|---|---|---  
+equals | the-number |  | quantity-of | volume.  
+Length × Width × Depth = Volume  
+  
+
+The cmavo __mo'e__ operates similarly to __ni'e__ , but makes a sumti (rather than a selbri) into an operand. This construction is useful in stating equations involving dimensioned numbers:
+**Example 18.126. **
+li | mo'e | re | ratcu | su'i | mo'e | re | ractu  
+---|---|---|---|---|---|---|---  
+The-number |  | two | rats | plus |  | two | rabbits  
+du | li | mo'e | vo | danlu  
+---|---|---|---|---  
+equals | the-number |  | four | animals.  
+2 rats + 2 rabbits = 4 animals.  
+  
+
+Another use is in constructing Lojbanic versions of so-called “folk quantifiers”, such as “a pride of lions”:
+**Example 18.127. **
+mi | viska | vei | mo'e | lo'e | lanzu | ve'o | cinfo  
+---|---|---|---|---|---|---|---  
+I | see | ( |  | the-typical | family | )-number-of | lions.  
+I see a pride of lions.  
+---  
+  
+
+* * *
+Chapter 18. lojbau mekso: Mathematical Expressions in Lojban  
+---  
+Prev: Section 18.17 |  Next: Section 18.19  
+---|---  
+Table of Contents
+Book Info Page
+
+
+Word: slasi
+Filename: section-keha.txt
+TF-IDF Score: 0.12957059547887576
+Content: Chapter 7. Brevity Is The Soul Of Language: Pro-sumti And Pro-bridi  
+---  
+Prev: Section 7.9 |  Next: Section 7.11  
+---|---  
+Table of Contents
+Book Info Page
+* * *
+## 7.10. Relativized pro-sumti: _ke'a_
+The following cmavo are discussed in this section:
+ke'a |  KOhA |  relativized sumti  
+---|---|---  
+This pro-sumti is used in relative clauses (explained in Chapter 8) to indicate how the sumti being relativized fits within the clause. For example:
+**Example 7.69. **
+mi | catlu | lo | mlatu | poi | [zo'e]  
+---|---|---|---|---|---  
+I | see | a | cat | such-that | something-unspecified  
+zbasu | ke'a |  | lei | slasi  
+---|---|---|---|---  
+makes | the-thing-being-relativized-[the-cat] | from | some-mass-of | plastic.  
+I see a cat made of plastic.  
+---  
+  
+
+If __ke'a__ were omitted from Example 7.69, it might be confused with:
+**Example 7.70. **
+mi | catlu | lo | mlatu | poi  
+---|---|---|---|---  
+I | see | a | cat | such-that  
+[ke'a] | zbasu | lei | slasi  
+---|---|---|---  
+the-thing-being-relativized-[the-cat] | makes | a-mass-of | plastic  
+I see a cat that makes plastic.  
+---  
+  
+
+The anaphora cmavo __ri__ cannot be used in place of __ke'a__ in Example 7.69 and Example 7.70, because the relativized sumti is not yet complete when the __ke'a__ appears.
+Note that __ke'a__ is used only with relative clauses, and not with other embedded bridi such as abstract descriptions. In the case of relative clauses within relative clauses, __ke'a__ may be subscripted to make the difference clear (see Section 8.10).
+* * *
+Chapter 7. Brevity Is The Soul Of Language: Pro-sumti And Pro-bridi  
+---  
+Prev: Section 7.9 |  Next: Section 7.11  
+---|---  
+Table of Contents
+Book Info Page
+
+
+Word: slasi
+Filename: section-pro-sumti.txt
+TF-IDF Score: 0.028805571754496065
+Content: Chapter 6. To Speak Of Many Things: The Lojban sumti  
+---  
+Prev: Section 6.12 |  Next: Section 6.14  
+---|---  
+Table of Contents
+Book Info Page
+* * *
+## 6.13. Pro-sumti summary
+The Lojban pro-sumti are the cmavo of selma'o KOhA. They fall into several classes: personal, definable, quantificational, reflexive, back-counting, indefinite, demonstrative, metalinguistic, relative, question. More details are given in Chapter 7; this section mostly duplicates information found there, but adds material on the implicit quantifier of each pro-sumti.
+The following examples illustrate each of the classes. Unless otherwise noted below, the implicit quantification for pro-sumti is __ro__ (all). In the case of pro-sumti which refer to other sumti, the __ro__ signifies “all of those referred to by the other sumti”: thus it is possible to restrict, but not to extend, the quantification of the other sumti.
+Personal pro-sumti (__mi__ , __do__ , __mi'o__ , __mi'a__ , __ma'a__ , __do'o__ , __ko__) refer to the speaker or the listener or both, with or without third parties:
+**Example 6.81. **
+mi | prami | do  
+---|---|---  
+I | love | you.  
+  
+
+The personal pro-sumti may be interpreted in context as either representing individuals or masses, so the implicit quantifier may be __pisu'o__ rather than __ro__ : in particular, __mi'o__ , __mi'a__ , __ma'a__ , and __do'o__ specifically represent mass combinations of the individuals (you and I, I and others, you and I and others, you and others) that make them up.
+Definable pro-sumti (__ko'a__ , __ko'e__ , __ko'i__ , __ko'o__ , __ko'u__ , __fo'a__ , __fo'e__ , __fo'i__ , __fo'o__ , __fo'u__) refer to whatever the speaker has explicitly made them refer to. This reference is accomplished with __goi__ (of selma'o GOI), which means “defined-as”.
+**Example 6.82. **
+le | cribe | goi | ko'a | cu | xekri | .i | ko'a | citka | le | smacu  
+---|---|---|---|---|---|---|---|---|---|---  
+The | bear | defined-as | it-1 |  | is-black. |  | It-1 | eats | the | mouse.  
+  
+
+Quantificational pro-sumti (__da__ , __de__ , __di__) are used as variables in bridi involving predicate logic:
+**Example 6.83. **
+ro | da | poi | prenu  
+---|---|---|---  
+All | somethings-1 | which | are-persons  
+cu | prami | pa | de | poi | finpe  
+---|---|---|---|---|---  
+| love | one | something-2 | which | is-a-fish.  
+All persons love a fish (each his/her own).  
+---  
+  
+
+(This is not the same as “All persons love a certain fish”; the difference between the two is one of quantifier order.) The implicit quantification rules for quantificational pro-sumti are particular to them, and are discussed in detail in Chapter 16. Roughly speaking, the quantifier is __su'o__ (at least one) when the pro-sumti is first used, and __ro__ (all) thereafter.
+Reflexive pro-sumti (__vo'a__ , __vo'e__ , __vo'i__ , __vo'o__ , __vo'u__) refer to the same referents as sumti filling other places in the same bridi, with the effect that the same thing is referred to twice:
+**Example 6.84. **
+le | cribe | cu | batci | vo'a  
+---|---|---|---|---  
+The | bear |  | bites | what-is-in-the-x1-place.  
+The bear bites itself.  
+---  
+  
+
+Back-counting pro-sumti (__ri__ , __ra__ , __ru__) refer to the referents of previous sumti counted backwards from the pro-sumti:
+**Example 6.85. **
+mi | klama | la | frankfurt. | ri  
+---|---|---|---|---  
+I | go-to | that-named | Frankfurt | from-the-referent-of-the-last-sumti  
+I go from Frankfurt to Frankfurt (by some unstated route).  
+---  
+  
+
+Indefinite pro-sumti (__zo'e__ , __zu'i__ , __zi'o__) refer to something which is unspecified:
+**Example 6.86. **
+mi | klama | la | frankfurt.  
+---|---|---|---  
+I | go-to | that-named | Frankfurt  
+zo'e | zo'e | zo'e  
+---|---|---  
+from-unspecified | via-unspecified | by-means-unspecified.  
+  
+
+The implicit quantifier for indefinite pro-sumti is, well, indefinite. It might be __ro__ (all) or __su'o__ (at least one) or conceivably even __no__ (none), though __no__ would require a very odd context indeed.
+Demonstrative pro-sumti (__ti__ , __ta__ , __tu__) refer to things pointed at by the speaker, or when pointing is not possible, to things near or far from the speaker:
+**Example 6.87. **
+ko | muvgau  
+---|---  
+You [imperative] | move  
+ti | ta | tu  
+---|---|---  
+this-thing | from-that-nearby-place | to-that-further-away-place.  
+Move this from there to over there!  
+---  
+  
+
+Metalinguistic pro-sumti (__di'u__ , __de'u__ , __da'u__ , __di'e__ , __de'e__ , __da'e__ , __dei__ , __do'i__) refer to spoken or written utterances, either preceding, following, or the same as the current utterance.
+**Example 6.88. **
+li | re | su'i | re | du | li | vo  
+---|---|---|---|---|---|---  
+The-number | two | plus | two | equals | the-number | four.  
+.i | la'e | di'u | jetnu  
+---|---|---|---  
+| The-referent-of | the-previous-utterance | is-true.  
+  
+
+The implicit quantifier for metalinguistic pro-sumti is __su'o__ (at least one), because they are considered analogous to __lo__ descriptions: they refer to things which really are previous, current, or following utterances.
+The relative pro-sumti (__ke'a__) is used within relative clauses (see Chapter 8 for a discussion of relative clauses) to refer to whatever sumti the relative clause is attached to.
+**Example 6.89. **
+mi | viska | le | mlatu | ku | poi | zo'e  
+---|---|---|---|---|---|---  
+I | see | the | cat(s) |  | such-that | something-unspecified  
+zbasu | ke'a | loi | slasi  
+---|---|---|---  
+makes | it/them-(the-cats) | from-a-mass-of | plastic.  
+I see the cat(s) made of plastic.  
+---  
+  
+
+The question pro-sumti (__ma__) is used to ask questions which request the listener to supply a sumti which will make the question into a truth:
+**Example 6.90. **
+do | klama | ma  
+---|---|---  
+You | go-to | what-sumti?  
+Where are you going?  
+---  
+  
+
+The implicit quantifier for the question pro-sumti is __su'o__ (at least one), because the listener is only being asked to supply a single answer, not all correct answers.
+In addition, sequences of lerfu words (of selma'o BY and related selma'o) can also be used as definable pro-sumti.
+* * *
+Chapter 6. To Speak Of Many Things: The Lojban sumti  
+---  
+Prev: Section 6.12 |  Next: Section 6.14  
+---|---  
+Table of Contents
+Book Info Page
+
+
+Word: ti
+Filename: section-ti-series.txt
+TF-IDF Score: 0.3108108008572423
+Content: Chapter 7. Brevity Is The Soul Of Language: Pro-sumti And Pro-bridi  
+---  
+Prev: Section 7.2 |  Next: Section 7.4  
+---|---  
+Table of Contents
+Book Info Page
+* * *
+## 7.3. Demonstrative pro-sumti: the ti-series
+The following cmavo are discussed in this section:
+ti |  KOhA |  ti-series |  this here, a nearby object   
+---|---|---|---  
+ta |  KOhA |  ti-series |  that there, a medium-distant object  
+tu |  KOhA |  ti-series |  that yonder, a far-distant object  
+It is often useful to refer to things by pointing to them or by some related non-linguistic mechanism. In English, the words “this” and “that” serve this function among others: “this” refers to something pointed at that is near the speaker, and “that” refers to something further away. The Lojban pro-sumti of the ti-series serve the same functions, but more narrowly. The cmavo __ti__ , __ta__ , and __tu__ provide only the pointing function of “this” and “that”; they are not used to refer to things that cannot be pointed at.
+There are three pro-sumti of the ti-series rather than just two because it is often useful to distinguish between objects that are at more than two different distances. Japanese, among other languages, regularly does this. Until the 16th century, English did too; the pronoun “that” referred to something at a medium distance from the speaker, and the now-archaic pronoun “yon” to something far away.
+In conversation, there is a special rule about __ta__ and __tu__ that is often helpful in interpreting them. When used contrastingly, __ta__ refers to something that is near the listener, whereas __tu__ refers to something far from both speaker and listener. This makes for a parallelism between __ti__ and __mi__ , and __ta__ and __do__ , that is convenient when pointing is not possible; for example, when talking by telephone. In written text, on the other hand, the meaning of the ti-series is inherently vague; is the writer to be taken as pointing to something, and if so, to what? In all cases, what counts as “near” and “far away” is relative to the current situation.
+It is important to distinguish between the English pronoun “this” and the English adjective “this” as in “this boat”. The latter is not represented in Lojban by __ti__ :
+**Example 7.11. **
+le | ti | bloti  
+---|---|---  
+the | this | boat  
+  
+
+does not mean “this boat” but rather “this one's boat”, “the boat associated with this thing”, as explained in Section 8.7. A correct Lojban translation of Example 7.11 is
+**Example 7.12. **
+le | vi | bloti  
+---|---|---  
+the | here | boat  
+the nearby boat  
+---  
+  
+
+using a spatial tense before the selbri __bloti__ to express that the boat is near the speaker. (Tenses are explained in full in Chapter 10.) Another correct translation would be:
+**Example 7.13. **
+ti | noi | bloti  
+---|---|---  
+this-thing | which-incidentally | is-a-boat  
+  
+
+There are no demonstrative pro-bridi to correspond to the ti-series: you can't point to a relationship.
+* * *
+Chapter 7. Brevity Is The Soul Of Language: Pro-sumti And Pro-bridi  
+---  
+Prev: Section 7.2 |  Next: Section 7.4  
+---|---  
+Table of Contents
+Book Info Page
+
+
+Word: ti
+Filename: section-order-of-sumti.txt
+TF-IDF Score: 0.17106812303476623
+Content: Chapter 2. A Quick Tour of Lojban Grammar, With Diagrams  
+---  
+Prev: Section 2.6 |  Next: Section 2.8  
+---|---  
+Table of Contents
+Book Info Page
+* * *
+## 2.7. Varying the order of sumti
+For one reason or another you may want to change the order, placing one particular sumti at the front of the bridi. The cmavo __se__ , when placed before the last word of the selbri, will switch the meanings of the first and second sumti places. So
+**Example 2.21. **
+mi |  tavla |  do |  ti  
+---|---|---|---  
+I talk to you about this.  
+---  
+  
+
+has the same meaning as
+**Example 2.22. **
+do |  se tavla |  mi |  ti  
+---|---|---|---  
+You are talked to by me about this.  
+---  
+  
+
+The cmavo __te__ , when used in the same location, switches the meanings of the first and the third sumti places.
+**Example 2.23. **
+mi |  tavla |  do |  ti  
+---|---|---|---  
+I talk to you about this.  
+---  
+  
+
+has the same meaning as
+**Example 2.24. **
+ti |  te tavla |  do |  mi  
+---|---|---|---  
+This is talked about to you by me.  
+---  
+  
+
+Note that only the first and third sumti have switched places; the second sumti has remained in the second place.
+The cmavo __ve__ and __xe__ switch the first and fourth sumti places, and the first and fifth sumti places, respectively. These changes in the order of places are known as “conversions”, and the __se__ , __te__ , __ve__ , and __xe__ cmavo are said to convert the selbri.
+More than one of these operators may be used on a given selbri at one time, and in such a case they are evaluated from left to right. However, in practice they are used one at a time, as there are better tools for complex manipulation of the sumti places. See Section 9.4 for details.
+The effect is similar to what in English is called the “passive voice”. In Lojban, the converted selbri has a new place structure that is renumbered to reflect the place reversal, thus having effects when such a conversion is used in combination with other constructs such as _le selbri [ku]_ (see Section 2.10).
+* * *
+Chapter 2. A Quick Tour of Lojban Grammar, With Diagrams  
+---  
+Prev: Section 2.6 |  Next: Section 2.8  
+---|---  
+Table of Contents
+Book Info Page
+
+
+Word: lo
+Filename: section-keha.txt
+TF-IDF Score: 0.08139590689754461
+Content: Chapter 7. Brevity Is The Soul Of Language: Pro-sumti And Pro-bridi  
+---  
+Prev: Section 7.9 |  Next: Section 7.11  
+---|---  
+Table of Contents
+Book Info Page
+* * *
+## 7.10. Relativized pro-sumti: _ke'a_
+The following cmavo are discussed in this section:
+ke'a |  KOhA |  relativized sumti  
+---|---|---  
+This pro-sumti is used in relative clauses (explained in Chapter 8) to indicate how the sumti being relativized fits within the clause. For example:
+**Example 7.69. **
+mi | catlu | lo | mlatu | poi | [zo'e]  
+---|---|---|---|---|---  
+I | see | a | cat | such-that | something-unspecified  
+zbasu | ke'a |  | lei | slasi  
+---|---|---|---|---  
+makes | the-thing-being-relativized-[the-cat] | from | some-mass-of | plastic.  
+I see a cat made of plastic.  
+---  
+  
+
+If __ke'a__ were omitted from Example 7.69, it might be confused with:
+**Example 7.70. **
+mi | catlu | lo | mlatu | poi  
+---|---|---|---|---  
+I | see | a | cat | such-that  
+[ke'a] | zbasu | lei | slasi  
+---|---|---|---  
+the-thing-being-relativized-[the-cat] | makes | a-mass-of | plastic  
+I see a cat that makes plastic.  
+---  
+  
+
+The anaphora cmavo __ri__ cannot be used in place of __ke'a__ in Example 7.69 and Example 7.70, because the relativized sumti is not yet complete when the __ke'a__ appears.
+Note that __ke'a__ is used only with relative clauses, and not with other embedded bridi such as abstract descriptions. In the case of relative clauses within relative clauses, __ke'a__ may be subscripted to make the difference clear (see Section 8.10).
+* * *
+Chapter 7. Brevity Is The Soul Of Language: Pro-sumti And Pro-bridi  
+---  
+Prev: Section 7.9 |  Next: Section 7.11  
+---|---  
+Table of Contents
+Book Info Page
+
+
+Word: lo
+Filename: section-multiple-compound-bridi.txt
+TF-IDF Score: 0.07964835163215547
+Content: Chapter 14. If Wishes Were Horses: The Lojban Connective System  
+---  
+Prev: Section 14.9 |  Next: Section 14.11  
+---|---  
+Table of Contents
+Book Info Page
+* * *
+## 14.10. Multiple compound bridi
+Giheks can be combined with __bo__ in the same way as eks:
+**Example 14.60. **
+mi | nelci | la | djan. | gi'e | nelci | la | martas. | gi'abo | nelci | la | meris.  
+---|---|---|---|---|---|---|---|---|---|---|---  
+I like John and ( like Martha or like Mary ).  
+---  
+  
+
+is equivalent in meaning to Example 14.39 and Example 14.40. Likewise, __ke__ … __ke'e__ grouping can be used after giheks:
+**Example 14.61. **
+mi | dzukla | le | zarci  
+---|---|---|---  
+I | walk-to | the | market  
+gi'e | dzukla | le | zdani  
+---|---|---|---  
+and | walk-to | the | house,  
+gi'a | ke | dzukla | le | ckule  
+---|---|---|---|---  
+or | ( | walk-to | the | school  
+gi'e | dzukla | le | briju | [ke'e]  
+---|---|---|---|---  
+and | walk-to | the | office. | )  
+  
+
+is the gihek version of Example 14.47. The same rule about using __ke__ … __ke'e__ bracketing only just after a connective applies to bridi-tails as to sumti, so the first two bridi-tails in Example 14.61 cannot be explicitly grouped; implicit left-grouping suffices to associate them.
+Each of the pairs of bridi-tails joined by multiple giheks can have its own set of tail-terms:
+**Example 14.62. **
+| mi | dejni | lo | rupnu | la | djan.  
+---|---|---|---|---|---|---  
+[If] | I | owe | some | currency-units | to-that-named | John,  
+.inaja | mi | dunda | le | cukta | la | djan.  
+---|---|---|---|---|---|---  
+then | I | give | the | book | to-that-named | John  
+.ijabo | mi | lebna | le | cukta | la | djan.  
+---|---|---|---|---|---|---  
+or | I | take | the | book | from-that-named | John.  
+  
+
+is equivalent in meaning to:
+**Example 14.63. **
+| mi | dejni | lo | rupnu | nagi'a | dunda  
+---|---|---|---|---|---|---  
+[If] | I | owe | some | currency-units | then | (give  
+gi'abo | lebna | vau | le | cukta | vau | la | djan.  
+---|---|---|---|---|---|---|---  
+or | take) |  | a | book |  | to/from-that-named | John.  
+  
+
+The literal English translation in Example 14.63 is almost unintelligible, but the Lojban is perfectly grammatical. __mi__ fills the x1 place of all three selbri; _lo rupnu_ is the x2 of __dejni__ , whereas _le cukta_ is a tail-term shared between __dunda__ and __lebna__ ; _la djan._ is a tail-term shared by __dejni__ and by _dunda gi'abo lebna_. In this case, greater clarity is probably achieved by moving _la djan._ to the beginning of the sentence, as in Example 14.53:
+**Example 14.64. **
+fi | la | djan. |  | fa | mi | dejni | lo | rupnu  
+---|---|---|---|---|---|---|---|---  
+To/from | that-named | John, | [if] |  | I | owe | some | currency-units  
+nagi'a |  | dunda | gi'abo | lebna | vau | le | cukta  
+---|---|---|---|---|---|---|---  
+then | [I] | give | or | take |  | the | book.  
+  
+
+Finally, what about forethought logical connection of bridi-tails? There is no direct mechanism for the purpose. Instead, Lojban grammar allows a pair of forethought-connected sentences to function as a single bridi-tail, and of course the sentences need not have terms before their selbri. For example:
+**Example 14.65. **
+mi | ge | klama | le | zarci | gi | nelci | la | djan.  
+---|---|---|---|---|---|---|---|---  
+I | both | go-to | the | market | and | like | that-named | John.  
+  
+
+is equivalent in meaning to Example 14.50.
+Of course, either of the connected sentences may contain giheks:
+**Example 14.66. **
+mi | ge | klama | le | zarci | gi'e | dzukla | le | zdani  
+---|---|---|---|---|---|---|---|---  
+I | both | (go | to-the | market | and | walk | to-the | house)  
+gi | nelci | la | djan.  
+---|---|---|---  
+and | like | that-named | John.  
+  
+
+The entire gek-connected sentence pair may be negated as a whole by prefixing __na__ :
+**Example 14.67. **
+| mi | na | ge | klama | le | zarci | gi | dzukla | le | zdani  
+---|---|---|---|---|---|---|---|---|---|---  
+[False!] | I |  | both | go-to | the | market | and | walk-to | the | house.  
+  
+
+Since a pair of sentences joined by geks is the equivalent of a bridi-tail, it may be followed by tail terms. The forethought equivalent of Example 14.54 is:
+**Example 14.68. **
+mi | ge | dunda | le | cukta  
+---|---|---|---|---  
+I | both | (give | the | book)  
+gi | lebna | lo | rupnu | vau | do  
+---|---|---|---|---|---  
+and | (take | some | currency-units | ) | to/from-you.  
+  
+
+Here is a pair of gek-connected observatives, a forethought equivalent of Example 14.57:
+**Example 14.69. **
+ge | klama | le | zarci | gi | dzukla | le | briju  
+---|---|---|---|---|---|---|---  
+Both | a-goer | to-the | market | and | a-walker | to-the | office.  
+  
+
+Finally, here is an example of gek-connected sentences with both shared and unshared terms before their selbri:
+**Example 14.70. **
+mi | gonai | le | zarci | cu | klama | gi | le | bisli | cu | dansu  
+---|---|---|---|---|---|---|---|---|---|---  
+I | either-but-not-both | to-the | office |  | go | or | on-the | ice |  | dance.  
+I either go to the office or dance on the ice (but not both).  
+---  
+  
+
+* * *
+Chapter 14. If Wishes Were Horses: The Lojban Connective System  
+---  
+Prev: Section 14.9 |  Next: Section 14.11  
+---|---  
+Table of Contents
+Book Info Page
+
+
+Word: mudri
+Filename: section-zohe-cohe-series.txt
+TF-IDF Score: 0.10064338360673507
+Content: Chapter 7. Brevity Is The Soul Of Language: Pro-sumti And Pro-bridi  
+---  
+Prev: Section 7.6 |  Next: Section 7.8  
+---|---  
+Table of Contents
+Book Info Page
+* * *
+## 7.7. Indefinite pro-sumti and pro-bridi: the zo'e-series and the co'e-series
+The following cmavo are discussed in this section:
+zo'e |  KOhA |  zo'e-series |  the obvious value  
+---|---|---|---  
+zu'i |  KOhA |  zo'e-series |  the typical value  
+zi'o |  KOhA |  zo'e-series |  the nonexistent value  
+co'e |  GOhA |  co'e-series |  has the obvious relationship  
+The cmavo of the zo'e-series represent indefinite, unspecified sumti. The cmavo __zo'e__ represents an elliptical value for this sumti place; it is the optional spoken place holder when a sumti is skipped without being specified. Note that the elliptical value is not always the typical value. The properties of ellipsis lead to an elliptical sumti being defined as “whatever I want it to mean but haven't bothered to figure out, or figure out how to express”.
+The cmavo __zu'i__ , on the other hand, represents the typical value for this place of this bridi:
+**Example 7.49. **
+mi | klama | le | bartu | be | le | zdani  
+---|---|---|---|---|---|---  
+I | go-to | the | outside | of | the | house | from  
+le | nenri | be | le | zdani | zu'i | zu'i  
+---|---|---|---|---|---|---  
+the | inside | of | the | house | [by-typical-route] | [by-typical-means]  
+  
+
+In Example 7.49, the first __zu'i__ probably means something like “by the door”, and the second __zu'i__ probably means something like “on foot”, those being the typical route and means for leaving a house. On the other hand, if you are at the top of a high rise during a fire, neither __zu'i__ is appropriate. It's also common to use __zu'i__ in “by standard” places.
+Finally, the cmavo __zi'o__ represents a value which does not even exist. When a bridi fills one of its places with __zi'o__ , what is really meant is that the selbri has a place which is irrelevant to the true relationship the speaker wishes to express. For example, the place structure of __zbasu__ is:
+> actor x1 makes x2 from materials x3
+Consider the sentence
+> Living things are made from cells.
+This cannot be correctly expressed as:
+**Example 7.50. **
+loi | jmive | cu | se zbasu | [zo'e] | fi | loi | selci  
+---|---|---|---|---|---|---|---  
+The-mass-of | living-things |  | is-made | [by-something] | from | the-mass-of | cells  
+  
+
+because the __zo'e__ , expressed or understood, in Example 7.50 indicates that there is still a “maker” in this relationship. We do not generally suppose, however, that someone “makes” living things from cells. The best answer is probably to find a different selbri, one which does not imply a “maker”: however, an alternative strategy is to use __zi'o__ to eliminate the maker place:
+**Example 7.51. **
+loi | jmive | cu  
+---|---|---  
+The-mass-of | living-things |   
+se zbasu | zi'o |  | loi | selci  
+---|---|---|---|---  
+is-made | [without-maker] | from | the-mass-of | cells.  
+  
+
+Note: The use of __zi'o__ to block up, as it were, one place of a selbri actually creates a new selbri with a different place structure. Consider the following examples:
+**Example 7.52. **
+mi | zbasu | le | dinju |  | loi | mudri  
+---|---|---|---|---|---|---  
+I | make | the | building | from | some-of-the-mass-of | wood.  
+I make the building out of wood.  
+---  
+  
+
+**Example 7.53. **
+zi'o | zbasu | le | dinju |  | loi | mudri  
+---|---|---|---|---|---|---  
+[without-maker] | makes | the | building | from | some-of-the-mass-of | wood.  
+The building is made out of wood.  
+---  
+  
+
+**Example 7.54. **
+mi | zbasu | zi'o |  | loi | mudri  
+---|---|---|---|---|---  
+I | make | [without-thing-made] | from | some-of-the-mass-of | wood.  
+I build using wood.  
+---  
+  
+
+**Example 7.55. **
+mi | zbasu | le | dinju | zi'o  
+---|---|---|---|---  
+I | make | the | building | [without-material].  
+I make the building.  
+---  
+  
+
+If Example 7.52 is true, then Example 7.53 through Example 7.55 must be true also. However, Example 7.51 does not correspond to any sentence with three regular (non- __zi'o__) sumti.
+The pro-bridi __co'e__ (which by itself constitutes the co'e-series of selma'o GOhA) represents the elliptical selbri. Lojban grammar does not allow the speaker to merely omit a selbri from a bridi, although any or all sumti may be freely omitted. Being vague about a relationship requires the use of __co'e__ as a selbri place-holder:
+**Example 7.56. **
+mi | troci | le | nu | mi | co'e | le | vorme  
+---|---|---|---|---|---|---|---  
+I | try | the | event-of | my | [doing-the-obvious-action] | to-the | door.  
+I try the door.  
+---  
+  
+
+The English version means, and the Lojban version probably means, that I try to open the door, but the relationship of opening is not actually specified; the Lojbanic listener must guess it from context. Lojban, unlike English, makes it clear that there is an implicit action that is not being expressed.
+The form of __co'e__ was chosen to resemble __zo'e__ ; the cmavo __do'e__ of selma'o BAI (see Section 9.6) also belongs to the same group of cmavo.
+Note that __do'i__ , of the di'u-series, is also a kind of indefinite pro-sumti: it is indefinite in referent, but is restricted to referring only to an utterance.
+* * *
+Chapter 7. Brevity Is The Soul Of Language: Pro-sumti And Pro-bridi  
+---  
+Prev: Section 7.6 |  Next: Section 7.8  
+---|---  
+Table of Contents
+Book Info Page
+
+
+Word: marji
+Filename: section-irregular-BAI.txt
+TF-IDF Score: 0.053461153224021174
+Content: Chapter 9. To Boston Via The Road Go I, With An Excursion Into The Land Of Modals  
+---  
+Prev: Section 9.15 |  Next: Section 9.17  
+---|---  
+Table of Contents
+Book Info Page
+* * *
+## 9.16. CV'V cmavo of selma'o BAI with irregular forms
+There are 65 cmavo of selma'o BAI, of which all but one (__do'e__ , discussed in Section 9.6), are derived directly from selected gismu. Of these 64 cmavo, 36 are entirely regular and have the form CV'V, where C is the first consonant of the corresponding gismu, and the Vs are the two vowels of the gismu. The remaining BAI cmavo, which are irregular in one way or another, are listed in the table below. The table is divided into sub-tables according to the nature of the exception; some cmavo appear in more than one sub-table, and are so noted.
+**Table 9.1. Monosyllables of the form CVV**
+cmavo | gismu | comments  
+---|---|---  
+bai |  bapli |   
+bau |  bangu |   
+cau |  claxu |   
+fau |  fasnu |   
+gau |  gasnu |   
+kai |  ckaji |  uses 2nd consonant of gismu  
+mau |  zmadu |  uses 2nd consonant of gismu  
+koi |  korbi |   
+rai |  traji |  uses 2nd consonant of gismu  
+sau |  sarcu |   
+tai |  tamsmi |  based on lujvo, not gismu  
+zau |  zanru |   
+  
+
+**Table 9.2. Second consonant of the gismu as the C: (the gismu is always of the form CCVCV)**
+ga'a |  zgana |   
+---|---|---  
+kai |  ckaji |  has CVV form (monosyllable)  
+ki'i |  ckini |   
+la'u |  klani |  has irregular 2nd V  
+le'a |  klesi |  has irregular 2nd V  
+mau |  zmadu |  has CVV form (monosyllable)  
+me'e |  cmene |   
+ra'a |  srana |   
+ra'i |  krasi |   
+rai |  traji |  has CVV form (monosyllable)  
+ti'i |  stidi |   
+tu'i |  stuzi |   
+  
+
+**Table 9.3. Irregular 2nd V**
+fi'e |  finti |   
+---|---|---  
+la'u |  klani |  uses 2nd consonant of gismu  
+le'a |  klesi |  uses 2nd consonant of gismu  
+ma'e |  marji |   
+mu'u |  mupli |   
+ti'u |  tcika |   
+va'o |  vanbi |   
+  
+
+**Table 9.4. Special cases**
+ri'i |  lifri |  uses 3rd consonant of gismu  
+---|---|---  
+tai |  tamsmi |  based on lujvo, not gismu  
+va'u |  xamgu |  CV'V cmavo can't begin with _x_  
+  
+
+* * *
+Chapter 9. To Boston Via The Road Go I, With An Excursion Into The Land Of Modals  
+---  
+Prev: Section 9.15 |  Next: Section 9.17  
+---|---  
+Table of Contents
+Book Info Page
+
+
+Word: marji
+Filename: section-all-BAI.txt
+TF-IDF Score: 0.0391274013119912
+Content: Chapter 9. To Boston Via The Road Go I, With An Excursion Into The Land Of Modals  
+---  
+Prev: Section 9.16 |  Next: Chapter 10  
+---|---  
+Table of Contents
+Book Info Page
+* * *
+## 9.17. Complete table of BAI cmavo with rough English equivalents
+The following table shows all the cmavo belonging to selma'o BAI, and has five columns. The first column is the cmavo itself; the second column is the gismu linked to it. The third column gives an English phrase which indicates the meaning of the cmavo; and the fourth column indicates its meaning when preceded by __se__.
+For those cmavo with meaningful __te__ , __ve__ , and even __xe__ conversions (depending on the number of places of the underlying gismu), the meanings of these are shown on one or two extra rows following the primary row for that cmavo.
+It should be emphasized that the place structures of the gismu control the meanings of the BAI cmavo. The English phrases shown here are only suggestive, and are often too broad or too narrow to correctly specify what the acceptable range of uses for the modal tag are.
+ba'i |  basti |  replaced by |  instead of |  |  |   
+---|---|---|---|---|---|---  
+bai |  bapli |  compelled by |  compelling |  |  |   
+bau |  bangu |  in language |  in language of |  |  |   
+be'i |  benji |  sent by |  transmitting |  sent to |  with transmit origin |  transmitted via  
+ca'i |  catni |  by authority of |  with authority over |  |  |   
+cau |  claxu |  lacked by |  without |  |  |   
+ci'e |  ciste |  in system |  with system function |  of system components |  |   
+ci'o |  cinmo |  felt by |  feeling emotion |  |  |   
+ci'u |  ckilu |  on the scale |  on scale measuring |  |  |   
+cu'u |  cusku |  as said by |  expressing |  as told to |  expressed in medium |   
+de'i |  detri |  dated |  on the same date as |  |  |   
+di'o |  diklo |  at the locus of |  at specific locus |  |  |   
+_ _do'e_ _ |  \----- |  vaguely related to |  |  |  |   
+du'i |  dunli |  as much as |  equal to |  |  |   
+du'o |  djuno |  according to |  knowing facts |  knowing about |  under epistemology |   
+fa'e |  fatne |  reverse of |  in reversal of |  |  |   
+_ _fau_ _ |  _ _fasnu_ _ |  in the event of |  |  |  |   
+fi'e |  finti |  created by |  creating work |  created for purpose |  |   
+ga'a |  zgana |  to observer |  observing |  observed by means |  observed under conditions |   
+gau |  gasnu |  with agent |  as agent in doing |  |  |   
+ja'e |  jalge |  resulting in |  results because of |  |  |   
+ja'i |  javni |  by rule |  by rule prescribing |  |  |   
+ji'e |  jimte |  up to limit |  as a limit of |  |  |   
+ji'o |  jitro |  under direction |  controlling |  |  |   
+ji'u |  jicmu |  based on |  supporting |  |  |   
+ka'a |  klama |  gone to by |  with destination |  with origin |  via route |  by transport mode  
+ka'i |  krati |  represented by |  on behalf of |  |  |   
+kai |  ckaji |  characterizing |  with property |  |  |   
+ki'i |  ckini |  as relation of |  related to |  with relation |  |   
+ki'u |  krinu |  justified by |  with justified result |  |  |   
+koi |  korbi |  bounded by |  as boundary of |  bordering |  |   
+ku'u |  kulnu |  in culture |  in culture of |  |  |   
+la'u |  klani |  as quantity of |  in quantity |  |  |   
+le'a |  klesi |  in category |  as category of |  defined by quality |  |   
+li'e |  lidne |  led by |  leading |  |  |   
+ma'e |  marji |  of material |  made from material |  in material form of |  |   
+ma'i |  manri |  in reference frame |  as a standard of |  |  |   
+mau |  zmadu |  exceeded by |  more than |  |  |   
+me'a |  mleca |  undercut by |  less than |  |  |   
+me'e |  cmene |  with name |  as a name for |  |  |   
+mu'i |  mukti |  motivated by |  motive therefore |  |  |   
+mu'u |  mupli |  exemplified by |  as an example of |  |  |   
+ni'i |  nibli |  entailed by |  entails |  |  |   
+pa'a |  panra |  in addition to |  similar to |  similar in pattern |  similar by standard |   
+pa'u |  pagbu |  with component |  as a part of |  |  |   
+pi'o |  pilno |  used by |  using tool |  |  |   
+po'i |  porsi |  in the sequence |  sequenced by rule |  |  |   
+pu'a |  pluka |  pleased by |  in order to please |  |  |   
+pu'e |  pruce |  by process |  processing from |  processing into |  passing through stages |   
+_ _ra'a_ _ |  _ _srana_ _ |  pertained to by |  concerning |  |  |   
+_ _ra'i_ _ |  _ _krasi_ _ |  from source |  as an origin of |  |  |   
+rai |  traji |  with superlative |  superlative in |  at extreme |  superlative among |   
+ri'a |  rinka |  caused by |  causing |  |  |   
+ri'i |  lifri |  experienced by |  experiencing |  |  |   
+sau |  sarcu |  requiring |  necessarily for |  necessarily under conditions |  |   
+si'u |  sidju |  aided by |  assisting in |  |  |   
+ta'i |  tadji |  by method |  as a method for |  |  |   
+tai |  tamsmi |  as a form of |  in form |  in form similar to |  |   
+ti'i |  stidi |  suggested by |  suggesting |  suggested to |  |   
+ti'u |  tcika |  with time |  at the time of |  |  |   
+tu'i |  stuzi |  with site |  as location of |  |  |   
+va'o |  vanbi |  under conditions |  as conditions for |  |  |   
+va'u |  xamgu |  benefiting from |  with beneficiary |  |  |   
+zau |  zanru |  approved by |  approving |  |  |   
+zu'e |  zukte |  with actor |  with means to goal |  with goal |  |   
+The lujvo __tamsmi__ on which __tai__ is based is derived from the tanru _tarmi simsa_ and has the place structure:
+> _ _tamsmi_ _ x1 has form x2, similar in form to x3 in property/quality x4
+This lujvo is employed because __tarmi__ does not have a place structure useful for the modal's purpose.
+* * *
+Chapter 9. To Boston Via The Road Go I, With An Excursion Into The Land Of Modals  
+---  
+Prev: Section 9.16 |  Next: Chapter 10  
+---|---  
+Table of Contents
+Book Info Page
+
+
+Word: je
+Filename: section-pretty-school-groupings.txt
+TF-IDF Score: 0.27884221776571455
+Content: Chapter 5. “Pretty Little Girls' School”: The Structure Of Lojban selbri  
+---  
+Prev: Section 5.15 |  Next: Chapter 6  
+---|---  
+Table of Contents
+Book Info Page
+* * *
+## 5.16. “Pretty little girls' school”: forty ways to say it
+The following examples show every possible grouping arrangement of _melbi cmalu nixli ckule_ using __bo__ or __ke__ … __ke'e__ for grouping and __je__ or __je__ __bo__ for logical connection. Most of these are definitely not plausible interpretations of the English phrase “pretty little girls' school”, especially those which describe something which is both a girl and a school.
+Example 5.26, Example 5.27, Example 5.28, Example 5.29, and Example 5.36 are repeated here as Example 5.132, Example 5.140, Example 5.148, Example 5.156, and Example 5.164 respectively. The seven examples following each of these share the same grouping pattern, but differ in the presence or absence of __je__ at each possible site. Some of the examples have more than one Lojban version. In that case, they differ only in grouping mechanism, and are always equivalent in meaning.
+The logical connective __je__ is associative: that is, “A and (B and C)” is the same as “(A and B) and C”. Therefore, some of the examples have the same meaning as others. In particular, Example 5.139, Example 5.147, Example 5.155, Example 5.163, and Example 5.171 all have the same meaning because all four brivla are logically connected and the grouping is simply irrelevant. Other equivalent forms are noted in the examples themselves. However, if __je__ were replaced by __naja__ or __jo__ or most of the other logical connectives, the meanings would become distinct.
+It must be emphasized that, because of the ambiguity of all tanru, the English translations are by no means definitive – they represent only one possible interpretation of the corresponding Lojban sentence.
+**Example 5.132. **
+melbi |  | cmalu |  | nixli |  | ckule  
+---|---|---|---|---|---|---  
+((pretty | type-of | little) | type-of | girl) | type-of | school  
+school for girls who are beautifully small  
+---  
+  
+
+**Example 5.133. **
+melbi | je | cmalu |  | nixli |  | ckule  
+---|---|---|---|---|---|---  
+((pretty | and | little) | type-of | girl) | type-of | school  
+school for girls who are beautiful and small  
+---  
+  
+
+**Example 5.134. **
+melbi | bo | cmalu | je | nixli |  | ckule  
+---|---|---|---|---|---|---  
+((pretty | type-of | little) | and | girl) | type-of | school  
+school for girls and for beautifully small things  
+---  
+  
+
+**Example 5.135. **
+ke | melbi |  | cmalu |  | nixli | ke'e | je | ckule  
+---|---|---|---|---|---|---|---|---  
+(( | pretty | type-of | little) | type-of | girl | ) | and | school  
+thing which is a school and a beautifully small girl  
+---  
+  
+
+**Example 5.136. **
+melbi | je | cmalu | je | nixli |  | ckule  
+---|---|---|---|---|---|---  
+((pretty | and | little) | and | girl) | type-of | school  
+school for things which are beautiful, small, and girls  
+---  
+Note: same as Example 5.152  
+  
+
+**Example 5.137. **
+melbi | bo | cmalu | je | nixli | je | ckule  
+---|---|---|---|---|---|---  
+((pretty | type-of | little) | and | girl) | and | school  
+thing which is beautifully small, a school, and a girl  
+---  
+Note: same as Example 5.145  
+  
+
+**Example 5.138. **
+ke | melbi | je | cmalu |  | nixli | ke'e | je | ckule  
+---|---|---|---|---|---|---|---|---  
+(( | pretty | and | little) | type-of | girl | ) | and | school  
+thing which is a school and a girl who is both beautiful and small  
+---  
+  
+
+**Example 5.139. **
+melbi | je | cmalu | je | nixli | je | ckule  
+---|---|---|---|---|---|---  
+((pretty | and | little) | and | girl) | and | school  
+thing which is beautiful, small, a girl, and a school  
+---  
+  
+
+**Example 5.140. **
+melbi |  | cmalu |  | nixli | bo | ckule  
+---|---|---|---|---|---|---  
+(pretty | type-of | little) | type-of | (girl | type-of | school)  
+girls' school which is beautifully small  
+---  
+  
+
+**Example 5.141. **
+melbi | je | cmalu |  | nixli | bo | ckule  
+---|---|---|---|---|---|---  
+(pretty | and | little) | type-of | (girl | type-of | school)  
+girls' school which is beautiful and small  
+---  
+  
+
+**Example 5.142. **
+melbi |  | cmalu |  | nixli | je | ckule  
+---|---|---|---|---|---|---  
+(pretty | type-of | little) | type-of | (girl | and | school)  
+something which is a girl and a school which is beautifully small  
+---  
+  
+
+**Example 5.143. **
+melbi | bo | cmalu | je | nixli | bo | ckule  
+---|---|---|---|---|---|---  
+(pretty | type-of | little) | and | (girl | type-of | school)  
+something which is beautifully small and a girls' school  
+---  
+  
+
+**Example 5.144. **
+melbi | je | cmalu |  | nixli | je | ckule  
+---|---|---|---|---|---|---  
+(pretty | and | little) | type-of | (girl | and | school)  
+a pretty and little type of thing which is both a girl and a school  
+---  
+  
+
+**Example 5.145. **
+melbi | bo | cmalu | je | nixli | jebo | ckule  
+---|---|---|---|---|---|---  
+(pretty | type-of | little) | and | (girl | and | school)  
+thing which is beautifully small, a school, and a girl  
+---  
+  
+
+Note: same as Example 5.137
+**Example 5.146. **
+melbi | jebo | cmalu | je | nixli | bo | ckule  
+---|---|---|---|---|---|---  
+(pretty | and | little) | and | (girl | type-of | school)  
+thing which is beautiful and small and a girl's school  
+---  
+  
+
+Note: same as Example 5.161
+**Example 5.147. **
+melbi | jebo | cmalu | je | nixli | jebo | ckule  
+---|---|---|---|---|---|---  
+(pretty | and | little) | and | (girl | and | school)  
+thing which is beautiful, small, a girl, and a school  
+---  
+  
+
+**Example 5.148. **
+melbi |  | cmalu | bo | nixli |  | ckule  
+---|---|---|---|---|---|---  
+(pretty | type-of | (little | type-of | girl)) | type-of | school  
+school for beautiful girls who are small  
+---  
+  
+
+**Example 5.149. **
+melbi |  | cmalu | je | nixli |  | ckule  
+---|---|---|---|---|---|---  
+(pretty | type-of | (little | and | girl)) | type-of | school  
+school for beautiful things which are small and are girls  
+---  
+  
+
+**Example 5.150. **
+melbi | je | cmalu | bo | nixli |  | ckule  
+---|---|---|---|---|---|---  
+(pretty | and | (little | type-of | girl)) | type-of | school  
+school for things which are beautiful and are small girls  
+---  
+  
+
+**Example 5.151. **
+ke | melbi |  | cmalu | bo | nixli | ke'e | je | ckule  
+---|---|---|---|---|---|---|---|---  
+| melbi | bo | cmalu | bo | nixli |  | je | ckule  
+( | pretty | type-of | (little | type-of | girl | )) | and | school  
+thing which is a school and a small girl who is beautiful  
+---  
+  
+
+**Example 5.152. **
+melbi | je | cmalu | jebo | nixli |  | ckule  
+---|---|---|---|---|---|---  
+(pretty | and | (little | and | girl)) | type-of | school  
+school for things which are beautiful, small, and girls  
+---  
+  
+
+Note: same as Example 5.136
+**Example 5.153. **
+melbi | je | cmalu | bo | nixli | je | ckule  
+---|---|---|---|---|---|---  
+(pretty | and | (little | type-of | girl)) | and | school  
+thing which is beautiful, a small girl, and a school  
+---  
+  
+
+Note: same as Example 5.169
+**Example 5.154. **
+ke | melbi |  | cmalu | je | nixli | ke'e | je | ckule  
+---|---|---|---|---|---|---|---|---  
+( | pretty | type-of | (little | and | girl | )) | and | school  
+thing which is beautifully small, a beautiful girl, and a school  
+---  
+  
+
+**Example 5.155. **
+melbi | je | cmalu | jebo | nixli | je | ckule  
+---|---|---|---|---|---|---  
+(pretty | and | (little | and | girl)) | and | school  
+thing which is beautiful, small, a girl, and a school  
+---  
+  
+
+**Example 5.156. **
+melbi |  | cmalu | bo | nixli | bo | ckule |  |   
+---|---|---|---|---|---|---|---|---  
+melbi | ke | cmalu | ke | nixli |  | ckule | [ke'e] | [ke'e]  
+pretty | type-of | (little | type-of | (girl | type-of | school | ) | )  
+small school for girls which is beautiful  
+---  
+  
+
+**Example 5.157. **
+melbi | ke | cmalu |  | nixli | je | ckule | [ke'e]  
+---|---|---|---|---|---|---|---  
+pretty | type-of | (little | type-of | (girl | and | school | ))  
+small thing, both a girl and a school, which is beautiful  
+---  
+  
+
+**Example 5.158. **
+melbi |  | cmalu | je | nixli | bo | ckule  
+---|---|---|---|---|---|---  
+pretty | type-of | (little | and | (girl | type-of | school))  
+thing which is beautifully small and a girls' school that is beautiful  
+---  
+  
+
+**Example 5.159. **
+melbi | je |  | cmalu | bo | nixli | bo | ckule |  |   
+---|---|---|---|---|---|---|---|---|---  
+melbi | je | ke | cmalu |  | nixli | bo | ckule | [ke'e] |   
+melbi | je | ke | cmalu | ke | nixli |  | ckule | [ke'e] | [ke'e]  
+pretty | and | ( | little | type-of | (girl | type-of | school | ) | )  
+thing which is beautiful and a small type of girls' school  
+---  
+  
+
+**Example 5.160. **
+melbi |  | cmalu | je |  | nixli | jebo | ckule |   
+---|---|---|---|---|---|---|---|---  
+melbi |  | cmalu | je | ke | nixli | je | ckule | [ke'e]  
+pretty | type-of | (little | and | ( | girl | and | school | ))  
+thing which is beautifully small, a beautiful girl, and a beautiful school  
+---  
+  
+
+Note: same as Example 5.168
+**Example 5.161. **
+melbi | je |  | cmalu | jebo | nixli | bo | ckule |   
+---|---|---|---|---|---|---|---|---  
+melbi | je | ke | cmalu | je | nixli | bo | ckule | [ke'e]  
+pretty | and | ( | little | and | (girl | type-of | school | ))  
+thing which is beautiful, small and a girls' school  
+---  
+  
+
+Note: same as Example 5.146
+**Example 5.162. **
+melbi | je | ke | cmalu |  | nixli | je | ckule | [ke'e]  
+---|---|---|---|---|---|---|---|---  
+pretty | and | ( | little | type-of | (girl | and | school | ))  
+beautiful thing which is a small girl and a small school  
+---  
+  
+
+**Example 5.163. **
+melbi | jebo | cmalu | jebo | nixli | jebo | ckule  
+---|---|---|---|---|---|---  
+pretty | and | (little | and | (girl | and | school))  
+thing which is beautiful, small, a girl, and a school  
+---  
+  
+
+**Example 5.164. **
+melbi | ke | cmalu |  | nixli |  | ckule | [ke'e]  
+---|---|---|---|---|---|---|---  
+pretty | type-of | ((little | type-of | girl) | type-of | school | )  
+beautiful school for small girls  
+---  
+  
+
+**Example 5.165. **
+melbi | ke | cmalu | je | nixli |  | ckule | [ke'e]  
+---|---|---|---|---|---|---|---  
+pretty | type-of | ((little | and | girl) | type-of | school |   
+beautiful school for things which are small and are girls  
+---  
+  
+
+**Example 5.166. **
+melbi | ke | cmalu | bo | nixli | je | ckule | [ke'e]  
+---|---|---|---|---|---|---|---  
+pretty | type-of | ((little | type-of | girl) | and | school | )  
+beautiful thing which is a small girl and a school  
+---  
+  
+
+**Example 5.167. **
+melbi | je | ke | cmalu |  | nixli | ckule | [ke'e]  
+---|---|---|---|---|---|---|---  
+pretty | and | (( | little | type-of | girl) | type-of | school | )  
+thing which is beautiful and a school for small girls  
+---  
+  
+
+**Example 5.168. **
+melbi |  | cmalu | je | nixli | je | ckule  
+---|---|---|---|---|---|---  
+pretty | type-of | ((little | and | girl) | and | school)  
+thing which is beautifully small, a beautiful girl, and a beautiful school  
+---  
+  
+
+Note: same as Example 5.160
+**Example 5.169. **
+melbi | je | ke | cmalu | bo | nixli | je | ckule | [ke'e]  
+---|---|---|---|---|---|---|---|---  
+pretty | and | (( | little | type-of | girl) | and | school | )  
+thing which is beautiful, a small girl and a school  
+---  
+  
+
+Note: same as Example 5.153
+**Example 5.170. **
+melbi | je | ke | cmalu | je | nixli |  | ckule | [ke'e]  
+---|---|---|---|---|---|---|---|---  
+pretty | and | (( | little | and | girl) | type-of | school | )  
+thing which is beautiful and is a small school and a girls' school  
+---  
+  
+
+**Example 5.171. **
+melbi | je | ke | cmalu | je | nixli | je | ckule | [ke'e]  
+---|---|---|---|---|---|---|---|---  
+pretty | and | (( | little | and | girl) | and | school | )  
+thing which is beautiful, small, a girl, and a school  
+---  
+  
+
+* * *
+Chapter 5. “Pretty Little Girls' School”: The Structure Of Lojban selbri  
+---  
+Prev: Section 5.15 |  Next: Chapter 6  
+---|---  
+Table of Contents
+Book Info Page
+
+
+Word: je
+Filename: section-logical-connection.txt
+TF-IDF Score: 0.19885061773476667
+Content: Chapter 5. “Pretty Little Girls' School”: The Structure Of Lojban selbri  
+---  
+Prev: Section 5.5 |  Next: Section 5.7  
+---|---  
+Table of Contents
+Book Info Page
+* * *
+## 5.6. Logical connection within tanru
+The following cmavo are discussed in this section:
+je |  JA |  tanru logical “and”  
+---|---|---  
+ja |  JA |  tanru logical “or”  
+joi |  JOI |  mixed mass “and”  
+gu'e |  GUhA |  tanru forethought logical “and”  
+gi |  GI |  forethought connection separator  
+Consider the English phrase “big red dog”. How shall this be rendered as a Lojban tanru? The naive attempt:
+**Example 5.39. **
+barda |  | xunre |  | gerku  
+---|---|---|---|---  
+(big | type-of | red) | type-of | dog  
+  
+
+will not do, as it means a dog whose redness is big, in whatever way redness might be described as “big”. Nor is
+**Example 5.40. **
+barda |  | xunre | bo | gerku  
+---|---|---|---|---  
+big | type-of | (red | type-of | dog)  
+  
+
+much better. After all, the straightforward understanding of the English phrase is that the dog is big as compared with other dogs, not merely as compared with other red dogs. In fact, the bigness and redness are independent properties of the dog, and only obscure rules of English adjective ordering prevent us from saying “red big dog”.
+The Lojban approach to this problem is to introduce the cmavo __je__ , which is one of the many equivalents of English “and”. A big red dog is one that is both big and red, and we can say:
+**Example 5.41. **
+barda | je | xunre |  | gerku  
+---|---|---|---|---  
+(big | and | red) | type-of | dog  
+  
+
+Of course,
+**Example 5.42. **
+xunre | je | barda |  | gerku  
+---|---|---|---|---  
+(red | and | big) | type-of | dog  
+  
+
+is equally satisfactory and means the same thing. As these examples indicate, joining two brivla with __je__ makes them a unit for tanru purposes. However, explicit grouping with __bo__ or __ke__ … __ke'e__ associates brivla more closely than __je__ does:
+**Example 5.43. **
+barda | je | pelxu | bo | xunre | gerku  
+---|---|---|---|---|---  
+(big | and | (yellow | type-of | red)) | dog  
+barda | je | ke | pelxu |  | xunre | ke'e | gerku  
+---|---|---|---|---|---|---|---  
+(big | and | ( | yellow | type-of | red) | ) | dog  
+big yellowish-red dog  
+---  
+  
+
+With no grouping indicators, we get:
+**Example 5.44. **
+barda | je | pelxu |  | xunre |  | gerku  
+---|---|---|---|---|---|---  
+((big | and | yellow) | type-of | red) | type-of | dog  
+biggish- and yellowish-red dog  
+---  
+  
+
+which again raises the question of Example 5.39: what does “biggish-red” mean?
+Unlike __bo__ and __ke__ … __ke'e__ , __je__ is useful as well as merely legal within simple tanru. It may be used to partly resolve the ambiguity of simple tanru:
+**Example 5.45. **
+ta | blanu | je | zdani  
+---|---|---|---  
+that | is-blue | and | is-a-house  
+  
+
+definitely refers to something which is both blue and is a house, and not to any of the other possible interpretations of simple _blanu zdani_. Furthermore, _blanu zdani_ refers to something which is blue in the way that houses are blue; _blanu je zdani_ has no such implication – the blueness of a _blanu je zdani_ is independent of its houseness.
+With the addition of __je__ , many more versions of “pretty little girls' school” are made possible: see Section 5.16 for a complete list.
+A subtle point in the semantics of tanru like Example 5.41 needs special elucidation. There are at least two possible interpretations of:
+**Example 5.46. **
+ta | melbi | je | nixli |  | ckule  
+---|---|---|---|---|---  
+That | is-a-(beautiful | and | girl) | type-of | school.  
+  
+
+It can be understood as:
+**Example 5.47. **
+That is a girls' school and a beautiful school.
+  
+
+or as:
+**Example 5.48. **
+That is a school for things which are both girls and beautiful.
+  
+
+The interpretation specified by Example 5.47 treats the tanru as a sort of abbreviation for:
+**Example 5.49. **
+ta | ke | melbi |  | ckule | ke'e | je | ke | nixli |  | ckule | [ke'e]  
+---|---|---|---|---|---|---|---|---|---|---|---  
+That | is-a-( | beautiful | type-of | school | ) | and | ( | girl | type-of | school | )  
+  
+
+whereas the interpretation specified by Example 5.48 does not. This is a kind of semantic ambiguity for which Lojban does not compel a firm resolution. The way in which the school is said to be of type “beautiful and girl” may entail that it is separately a beautiful school and a girls' school; but the alternative interpretation, that the members of the school are beautiful and girls, is also possible. Still another interpretation is:
+**Example 5.50. **
+That is a school for beautiful things and also for girls.
+  
+
+so while the logical connectives help to resolve the meaning of tanru, they by no means compel a single meaning in and of themselves.
+In general, logical connectives within tanru cannot undergo the formal manipulations that are possible with the related logical connectives that exist outside tanru; see Section 14.12 for further details.
+The logical connective __je__ is only one of the fourteen logical connectives that Lojban provides. Here are a few examples of some of the others:
+**Example 5.51. **
+le | bajra | cu | jinga | ja | te | jinga  
+---|---|---|---|---|---|---  
+the runner(s) is/are winner(s) or loser(s).  
+---  
+  
+
+**Example 5.52. **
+blanu | naja | lenku | skapi  
+---|---|---|---  
+(blue | only-if | cold) | skin  
+skin which is blue only if it is cold  
+---  
+  
+
+**Example 5.53. **
+xamgu | jo | tordu | nuntavla  
+---|---|---|---  
+(good | if-and-only-if | short) | speech  
+speech which is good if (and only if) it is short  
+---  
+  
+
+**Example 5.54. **
+vajni | ju | pluka | nuntavla  
+---|---|---|---  
+(important | whether-or-not | pleasing) | event-of-talking  
+speech which is important, whether or not it is pleasing  
+---  
+  
+
+In Example 5.51, __ja__ is grammatically equivalent to __je__ but means “or” (more precisely, “and/or”). Likewise, __naja__ means “only if” in Example 5.52, __jo__ means “if and only if” in Example 5.53, and __ju__ means “whether or not” in Example 5.54.
+Now consider the following example:
+**Example 5.55. **
+ricfu | je | blanu | jabo | crino  
+---|---|---|---|---  
+rich | and | (blue | or | green)  
+  
+
+which illustrates a new grammatical feature: the use of both __ja__ and __bo__ between tanru components. The two cmavo combine to form a compound whose meaning is that of __ja__ but which groups more closely; __ja__ __bo__ is to __ja__ as plain __bo__ is to no cmavo at all. However, both __ja__ and __ja__ __bo__ group less closely than __bo__ does:
+**Example 5.56. **
+ricfu | je | blanu | jabo | crino | bo | blanu  
+---|---|---|---|---|---|---  
+rich | and | (blue | or | green | - | blue)  
+rich and (blue or greenish-blue)  
+---  
+  
+
+An alternative form of Example 5.55 is:
+**Example 5.57. **
+ricfu | je | ke | blanu | ja | crino | [ke'e]  
+---|---|---|---|---|---|---  
+rich | and | ( | blue | or | green | )  
+  
+
+In addition to the logical connectives, there are also a variety of non-logical connectives, grammatically equivalent to the logical ones. The only one with a well-understood meaning in tanru contexts is __joi__ , which is the kind of “and” that denotes a mixture:
+**Example 5.58. **
+ti | blanu | joi | xunre | bolci  
+---|---|---|---|---  
+This | is-a-(blue | and | red) | ball.  
+  
+
+The ball described is neither solely red nor solely blue, but probably striped or in some other way exhibiting a combination of the two colors. Example 5.58 is distinct from:
+**Example 5.59. **
+ti | blanu | xunre | bolci  
+---|---|---|---  
+This is a bluish-red ball  
+---  
+  
+
+which would be a ball whose color is some sort of purple tending toward red, since __xunre__ is the more important of the two components. On the other hand,
+**Example 5.60. **
+ti | blanu | je | xunre | bolci  
+---|---|---|---|---  
+This | is-a-(blue | and | red) | ball  
+  
+
+is probably self-contradictory, seeming to claim that the ball is independently both blue and red at the same time, although some sensible interpretation may exist.
+Finally, just as English “and” has the variant form “both ... and”, so __je__ between tanru components has the variant form __gu'e__ … __gi__ , where __gu'e__ is placed before the components and __gi__ between them:
+**Example 5.61. **
+gu'e | barda | gi | xunre |  | gerku  
+---|---|---|---|---|---  
+(both | big | and | red) | type-of | dog  
+  
+
+is equivalent in meaning to Example 5.41. For each logical connective related to __je__ , there is a corresponding connective related to __gu'e__ … __gi__ in a systematic way.
+The portion of a __gu'e__ … __gi__ construction before the __gi__ is a full selbri, and may use any of the selbri resources including __je__ logical connections. After the __gi__ , logical connections are taken to be wider in scope than the __gu'e__ … __gi__ , which has in effect the same scope as __bo__ :
+**Example 5.62. **
+gu'e | barda | je | xunre | gi | gerku | ja | mlatu  
+---|---|---|---|---|---|---|---  
+(both | (big | and | red) | and | dog) | or | cat  
+something which is either big, red, and a dog, or else a cat  
+---  
+  
+
+leaves __mlatu__ outside the __gu'e__ … __gi__ construction. The scope of the __gi__ arm extends only to a single brivla or to two or more brivla connected with __bo__ or __ke__ … __ke'e__.
+* * *
+Chapter 5. “Pretty Little Girls' School”: The Structure Of Lojban selbri  
+---  
+Prev: Section 5.5 |  Next: Section 5.7  
+---|---  
+Table of Contents
+Book Info Page
+
+
+Word: me
+Filename: section-dihu-and-lahe-dihu.txt
+TF-IDF Score: 0.20821706189940964
+Content: Chapter 2. A Quick Tour of Lojban Grammar, With Diagrams  
+---  
+Prev: Section 2.11 |  Next: Section 2.13  
+---|---  
+Table of Contents
+Book Info Page
+* * *
+## 2.12. The sumti _di'u_ and _la'e di'u_
+In English, I might say “The dog is beautiful”, and you might reply “This pleases me.” How do you know what “this” refers to? Lojban uses different expressions to convey the possible meanings of the English:
+**Example 2.50. **
+le gerku |  [ku] |  cu |  melbi  
+---|---|---|---  
+The dog is beautiful.  
+---  
+  
+
+The following three sentences all might translate as “This pleases me.”
+**Example 2.51. **
+ti |  [cu] |  pluka |  mi  
+---|---|---|---  
+This (the dog) pleases me.  
+---  
+  
+
+**Example 2.52. **
+di'u |  [cu] |  pluka |  mi  
+---|---|---|---  
+This (the last sentence) pleases me (perhaps because it is grammatical or sounds nice).  
+---  
+  
+
+**Example 2.53. **
+la'e di'u |  [cu] |  pluka |  mi  
+---|---|---|---  
+This (the meaning of the last sentence; i.e. that the dog is beautiful) pleases me.  
+---  
+  
+
+Example 2.53 uses one sumti to point to or refer to another by inference. It is common to write __la'edi'u__ as a single word; it is used more often than __di'u__ by itself.
+* * *
+Chapter 2. A Quick Tour of Lojban Grammar, With Diagrams  
+---  
+Prev: Section 2.11 |  Next: Section 2.13  
+---|---  
+Table of Contents
+Book Info Page
+
+
+Word: me
+Filename: section-quantified-variables.txt
+TF-IDF Score: 0.197465055113318
+Content: Chapter 16. “Who Did You Pass On The Road? Nobody”: Lojban And Logic  
+---  
+Prev: Section 16.5 |  Next: Section 16.7  
+---|---  
+Table of Contents
+Book Info Page
+* * *
+## 16.6. Variables with generalized quantifiers
+So far, we have seen variables with either nothing in front, or with the cmavo __ro__ in front. Now __ro__ is a Lojban number, and means “all”; thus _ro prenu_ means “all persons”, just as _re prenu_ means “two persons”. In fact, unadorned __da__ is also taken to have an implicit number in front of it, namely __su'o__ , which means “at least one”. Why is this? Consider Example 16.9 again, this time with an explicit __su'o__ :
+**Example 16.33. **
+su'o | da | zo'u | da | viska | mi  
+---|---|---|---|---|---  
+For-at-least-one | X | : | X | sees | me.  
+Something sees me.  
+---  
+  
+
+From this version of Example 16.9, we understand the speaker's claim to be that of all the things that there are, at least one of them sees him or her. The corresponding universal claim, Example 16.16, says that of all the things that exist, every one of them can see the speaker.
+Any other number can be used instead of __ro__ or __su'o__ to precede a variable. Then we get claims like:
+**Example 16.34. **
+re | da | zo'u | da | viska | mi  
+---|---|---|---|---|---  
+For-two | Xes | : | X | sees | me.  
+Two things see me.  
+---  
+  
+
+This means that exactly two things, no more or less, saw the speaker on the relevant occasion. In English, we might take “Two things see me” to mean that at least two things see the speaker, but there might be more; in Lojban, though, that claim would have to be made as:
+**Example 16.35. **
+su'ore | da | zo'u | da | viska | mi  
+---|---|---|---|---|---  
+For-at-least-two | Xes | : | X | sees | me.  
+  
+
+which would be false if nothing, or only one thing, saw the speaker, but not otherwise. We note the __su'o__ here meaning “at least”; __su'o__ by itself is short for _su'opa_ where __pa__ means “one”, as is explained in Section 18.9.
+The prenex may be removed from Example 16.34 and Example 16.35 as from the others, leading to:
+**Example 16.36. **
+re | da | viska | mi  
+---|---|---|---  
+Two | Xes | see | me.  
+  
+
+and
+**Example 16.37. **
+su'ore | da | viska | mi  
+---|---|---|---  
+At-least-two | Xes | see | me.  
+  
+
+respectively, subject to the rules prescribed in Section 16.5.
+Now we can explain the constructions _ro prenu_ for “all persons” and _re prenu_ for “two persons” which were casually mentioned at the beginning of this Section. In fact, _ro prenu_ , a so-called “indefinite description”, is shorthand for _ro DA poi prenu_ , where “DA” represents a fictitious variable that hasn't been used yet and will not be used in future. (Even if all three of __da__ , __de__ , and __di__ have been used up, it does not matter, for there are ways of getting more variables, discussed in Section 16.14.) So in fact
+**Example 16.38. **
+re | prenu | cu | viska | mi  
+---|---|---|---|---  
+Two | persons |  | see | me.  
+  
+
+is short for
+**Example 16.39. **
+re | da | poi | prenu | cu | viska | mi  
+---|---|---|---|---|---|---  
+Two | Xes | which | are-persons |  | see | me.  
+  
+
+which in turn is short for:
+**Example 16.40. **
+re | da | poi | prenu | zo'u | da | viska | mi  
+---|---|---|---|---|---|---|---  
+For-two | Xes | which | are-persons | : | X | sees | me.  
+  
+
+Note that when we move more than one variable to the prenex (along with its attached relative clause), we must make sure that the variables are in the same order in the prenex as in the bridi proper.
+* * *
+Chapter 16. “Who Did You Pass On The Road? Nobody”: Lojban And Logic  
+---  
+Prev: Section 16.5 |  Next: Section 16.7  
+---|---  
+Table of Contents
+Book Info Page
+
+
+Word: ckana
+Filename: section-propositional-emotions.txt
+TF-IDF Score: 0.026482175805929962
+Content: Chapter 13. Oooh! Arrgh! Ugh! Yecch! Attitudinal and Emotional Indicators  
+---  
+Prev: Section 13.2 |  Next: Section 13.4  
+---|---  
+Table of Contents
+Book Info Page
+* * *
+## 13.3. Propositional attitude indicators
+As mentioned at the beginning of Section 13.2, attitudinals may be divided into two groups, the pure emotion indicators explained in that section, and a contrasting group which may be called the “propositional attitude indicators”. These indicators establish an internal, hypothetical world which the speaker is reacting to, distinct from the world as it really is. Thus we may be expressing our attitude towards “what the world would be like if ...”, or more directly stating our attitude towards making the potential world a reality.
+In general, the bridi paraphrases of pure emotions look (in English) something like “I'm going to the market, and I'm happy about it”. The emotion is present with the subject of the primary claim, but is logically independent of it. Propositional attitudes, though, look more like “I intend to go to the market”, where the main claim is logically subordinate to the intention: I am not claiming that I am actually going to the market, but merely that I intend to.
+There is no sharp distinction between attitudinals beginning with _a_ and those beginning with _e_ ; however, the original intent (not entirely realized due to the need to cram too many attitudes into too little space) was to make the members of the _a_ -series the purer, more attitudinal realizers of a potential world, while the members of the _e_ -series were more ambivalent or complex about the speaker's intention with regard to the predication. The relationship between the _a_ -series and the _e_ -series is similar to that between the _u_ -series and the _o_ -series, respectively. A few propositional attitude indicators overflowed into the _i_ -series as well.
+In fact, the entire distinction between pure emotions and propositional attitudes is itself a bit shaky: __u'u__ can be seen as a propositional attitude indicator meaning “I regret that ...”, and __a'e__ (discussed below) can be seen as a pure emotion meaning “I'm awake/aware”. The division of the attitudinals into pure-emotion and propositional-attitude classes in this chapter is mostly by way of explanation; it is not intended to permit firm rulings on specific points. Attitudinals are the part of Lojban most distant from the “logical language” aspect.
+Here is the list of propositional attitude indicators grouped by initial letter, starting with those beginning with _a_ :
+.a'a |  attentive |  inattentive |  avoiding  
+---|---|---|---  
+.a'e |  alertness |  |  exhaustion  
+.ai |  intent |  indecision |  refusal  
+.a'i |  effort |  no real effort |  repose  
+.a'o |  hope |  |  despair  
+.au |  desire |  indifference |  reluctance  
+.a'u |  interest |  no interest |  repulsion  
+Some examples (of a parental kind):
+**Example 13.25. **
+.a'a | do | zgana | le | veltivni  
+---|---|---|---|---  
+[attentive] | you | observe | the | television-receiver.  
+I'm noticing that you are watching the TV.  
+---  
+  
+
+**Example 13.26. **
+.a'enai | do | ranji | bacru  
+---|---|---|---  
+[exhaustion] | you | continuously | utter.  
+I'm worn out by your continuous talking.  
+---  
+  
+
+**Example 13.27. **
+.ai | mi | benji | do | le | ckana  
+---|---|---|---|---|---  
+[intent] | I | transfer | you | to-the | bed.  
+I'm putting you to bed.  
+---  
+  
+
+**Example 13.28. **
+.a'i | mi | ba | gasnu | le | nu | do | cikna | binxo  
+---|---|---|---|---|---|---|---|---  
+[effort] | I | [future] | am-the-actor-in | the | event-of | you | awake-ly | become.  
+It'll be hard for me to wake you up.  
+---  
+  
+
+**Example 13.29. **
+.a'o | mi | kanryze'a | ca | le | bavlamdei  
+---|---|---|---|---|---  
+[hope] | I | am-health-increased | at-time | the | future-adjacent-day.  
+I hope I feel better tomorrow!  
+---  
+  
+
+**Example 13.30. **
+.au | mi | sipna  
+---|---|---  
+[desire] | I | sleep.  
+I want to sleep.  
+---  
+  
+
+**Example 13.31. **
+.a'ucu'i | do | pante  
+---|---|---  
+[no-interest] | you | complain.  
+I have no interest in your complaints.  
+---  
+  
+
+(In a real-life situation, Example 13.25 through Example 13.31 would also be decorated by various pure emotion indicators, certainly including _.oicai_ , but probably also _.iucai_.)
+Splitting off the attitude into an indicator allows the regular bridi grammar to do what it does best: express the relationships between concepts that are intended, desired, hoped for, or whatever. Rephrasing these examples to express the attitude as the main selbri would make for unacceptably heavyweight grammar.
+Here are the propositional attitude indicators beginning with _e_ , which stand roughly in the relation to those beginning with _a_ as the pure-emotion indicators beginning with _o_ do to those beginning with _u_ \- they are more complex or difficult:
+.e'a |  permission |  |  prohibition  
+---|---|---|---  
+.e'e |  competence |  |  incompetence  
+.ei |  obligation |  |  freedom  
+.e'i |  constraint |  independence |  resistance to constraint  
+.e'o |  request |  |  negative request  
+.e'u |  suggestion |  no suggestion |  warning  
+More examples (after a good night's sleep):
+**Example 13.32. **
+.e'a | do | sazri | le | karce  
+---|---|---|---|---  
+[permission] | you | drive | the | car.  
+Sure, you can drive the car.  
+---  
+  
+
+**Example 13.33. **
+.e'e | mi | lifri | tu'a | do  
+---|---|---|---|---  
+[competence] | I | experience | something-related-to | you.  
+I feel up to dealing with you.  
+---  
+  
+
+**Example 13.34. **
+.ei | mi | tisygau | le | karce | ctilyvau  
+---|---|---|---|---|---  
+[obligation] | I | fill | the | car-type-of | petroleum-container.  
+I should fill the car's gas tank.  
+---  
+  
+
+**Example 13.35. **
+.e'o | ko | ko | kurji  
+---|---|---|---  
+[request] | you-imperative | of-you-imperative | take-care.  
+Please take care of yourself!  
+---  
+  
+
+**Example 13.36. **
+.e'u | do | klama | le | panka  
+---|---|---|---|---  
+[suggestion] | you | go | to-the | park.  
+I suggest going to the park.  
+---  
+  
+
+Finally, the propositional attitude indicators beginning with _i_ , which are the overflow from the other sets:
+.ia |  belief |  skepticism |  disbelief  
+---|---|---|---  
+.i'a |  acceptance |  |  blame  
+.ie |  agreement |  |  disagreement  
+.i'e |  approval |  non-approval |  disapproval  
+Still more examples (much, much later):
+**Example 13.37. **
+.ianai | do | pu | pensi | le | nu | tcica | mi  
+---|---|---|---|---|---|---|---  
+[disbelief] | you | [past] | think | the | event-of | deceiving | me.  
+I can't believe you thought you could fool me.  
+---  
+  
+
+**Example 13.38. **
+do | .i'anai | na | xruti | do | le | zdani  
+---|---|---|---|---|---|---  
+You | [blame] | did-not | return | you | to-the | house.  
+I blame you for not coming home.  
+---  
+  
+
+**Example 13.39. **
+.ie | mi | na | cusku | lu'e  
+---|---|---|---|---  
+[agreement] | I | did-not | express | a-symbol-for  
+le | tcika | be | le | nu | xruti  
+---|---|---|---|---|---  
+the | time-of-day | of | the | event-of | return.  
+It's true I didn't tell you when to come back.  
+---  
+  
+
+**Example 13.40. **
+.i'enai | do | .i'e | zukte  
+---|---|---|---  
+[disapproval] | you | [approval] | act.  
+I don't approve of what you did, but I approve of you.  
+---  
+  
+
+Example 13.40 illustrates the use of a propositional attitude indicator, __i'e__ , in both the usual sense (at the beginning of the bridi) and as a pure emotion (attached to __do__). The event expressed by the main bridi is disapproved of by the speaker, but the referent of the sumti in the x1 place (namely the listener) is approved of.
+To indicate that an attitudinal discussed in this section is not meant to indicate a propositional attitude, the simplest expedient is to split the attitudinal off into a separate sentence. Thus, a version of Example 13.32 which actually claimed that the listener was or would be driving the car might be:
+**Example 13.41. **
+do | sazri | le | karce | .i | .e'a  
+---|---|---|---|---|---  
+You | drive | the | car. |  | [Permission].  
+You're driving (or will drive) the car, and that's fine.  
+---  
+  
+
+* * *
+Chapter 13. Oooh! Arrgh! Ugh! Yecch! Attitudinal and Emotional Indicators  
+---  
+Prev: Section 13.2 |  Next: Section 13.4  
+---|---  
+Table of Contents
+Book Info Page

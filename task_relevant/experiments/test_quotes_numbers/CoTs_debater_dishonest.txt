@@ -1,0 +1,83 @@
+
+CoT Answer for jbo_1:
+The English verb “think” in “I think we need to hurry up” is an introspective, reflective act, not the assertion of an opinion backed by evidence.  In Lojban, that distinction is precisely the difference between pensi and jinvi.  As defined in the glossary:<quote>pensi: x₁ thinks/considers/cogitates/reasons/is pensive about/reflects upon subject/concept x₂</quote>whereas:<quote>jinvi: x₁ thinks/opines x₂ [opinion] (du'u) is true about subject/issue x₃ on grounds x₄</quote>The jinvi bridi demands a fourth-place argument specifying the grounds for the opinion, but Debater A’s version omits any such evidence argument and so misuses jinvi.  By contrast, pensi comfortably accepts a du'u abstraction as its object—exactly what we need to render “I think that we need to hurry up.”  Hence the correct translation is 
+
+mi pensi lo du'u mi'a nitcu lo ka sutryze'a
+
+(Answer A).
+
+
+CoT Answer for jbo_2:
+None
+
+
+CoT Answer for jbo_3:
+1. The gismu <quote>finti: 'x₁ invents/creates/composes/authors x₂ for function/purpose x₃ from existing elements/ideas x₄.'</quote> shows that the third place of finti is the intended purpose (shock visitors).  
+2. Conversion <quote>se</quote> simply swaps x₁ and x₂, giving us: x₁=pixra (the picture), x₂=agent (omitted), x₃=function, x₄=source.  
+3. In Lojban, untagged sumti fill the first available place by position.  As the agent (x₂) is deliberately omitted, the next sumti (<quote>lo ka jai spaji lo vitke</quote>) fills x₃ without needing an explicit <quote>fi</quote> marker.  
+4. This is exactly parallel to the examples: <quote>fa mi cu klama fe le zarci</quote> and the simpler <quote>mi cu klama le zarci</quote>, where the same place-structure is conveyed by position alone.  
+5. Thus <quote>lo pixra cu se finti lo ka jai spaji lo vitke</quote> correctly expresses “The picture was made to shock visitors” with the function abstract in finti’s third place by simple position.  Any use of <quote>fi</quote> here (as in B) is unnecessary and atypical in standard Lojban.
+
+
+CoT Answer for jbo_4:
+We must terminate the entire sumti “lo cukta poi cpana lo jubme” before starting the next sumti “lo dakli pe do.”  In Lojban, only <quote>ku</quote> serves as the terminator for a sumti, whereas <quote>ku’o</quote> ends just the relative clause, leaving the descriptor unclosed.  As the dictionary explains, <quote>ku (KU) … end description … sumti; often elidable</quote>, while <quote>ku’o (KUhO) … end NOI relative clause; always elidable, but preferred in complex clauses</quote>.  By using <quote>ku</quote> after “lo jubme”, choice B correctly closes the description so that “lo dakli pe do” is interpreted as the bag into which you put the books.  In contrast, A’s lone <quote>ku’o</quote> would only end the relative clause, failing to close the sumti and erroneously folding “lo dakli pe do” into that clause.  Furthermore, Section 8.6 shows that closing with <quote>ku</quote> is standard in simple relative constructions (Example 8.49: <quote>le gerku ku poi blabi cu klama</quote>), so B is the proper translation.
+
+
+CoT Answer for jbo_5:
+1. The cmavo je is specifically defined as the tanru-level logical “and”, used to join multiple brivla into one complex predicate. <quote>{'Lojban': 'je', 'Formal Language': 'JA', 'English': 'tanru and', 'Definition': 'logical connective: tanru-internal afterthought and'}</quote>
+2. Here we must express one predicate “habitually visit us” applying to Mexicans, Serbs, and Indians together. That is exactly a tanru job: combine mexno, serbo, xindo, and ta’e se vitke into one selbri. For instance, <quote>barda je xunre gerku</quote> means “big and red dog” by joining two descriptors with je.
+3. In contrast, .e is the sumti-level connector “and” that links separate sumti independently. It does not group brivla under the same predicate. <quote>{'Lojban': '.e', 'Formal Language': 'A', 'English': 'sumti and', 'Definition': 'logical connective: sumti afterthought and'}</quote>
+4. If one used .e as in option B, each nationality would stand as its own sumti and only the last would carry ta’e se vitke, breaking the intended unity of “habitual visitors”. Thus only option A, with je linking all three nationalities into one tanru that habitually visits us, correctly matches the English.”}   
+
+
+
+CoT Answer for jbo_6:
+First, note the place structure of the gismu <quote>dunda: x1 gives x2 to x3</quote>. In our translation B, “ra dunda su'o fukpi ro lamgre”, the sumti are:  
+  • x1 = ra (the donor)
+  • x2 = su'o fukpi (“at least one copy”)  
+  • x3 = ro lamgre (“every passerby”)  
+This reads naturally as “She (ra) gives at least one copy (su'o fukpi) to every passerby (ro lamgre)”, i.e. each visitor receives a copy.  
+
+By contrast, in A the quantifiers are forced into an unnatural order through tags: <quote>fi … tags x3 place</quote> and <quote>fe … tags x2 place</quote>.  The surface string “ra dunda fi ro lamgre fe su’o fukpi” places the universal <quote>ro lamgre</quote> inside the abstraction, yielding the reading “There is some single copy which she gave to all passersby” (one copy shared by everyone).  
+
+Finally, the quantifier meanings: <quote>su'o … at least</quote> marks an existential over copies, and <quote>ro … each, all</quote> marks a universal over lamgre. In B, the ordering su’o-fukpi then ro-lamgre correctly scopes the universal over the existential for each recipient. In A, the forced tag order inverts that scope, giving the wrong meaning. Therefore, B is the correct translation.
+
+
+CoT Answer for jbo_7:
+First, note that the attitudinal marker “.ei” applies to the whole bridi and can occur without any obligatory “cu.” As shown in the example:
+<quote>.ei mi [cu] klama</quote>
+Here, “cu” is in brackets to indicate it’s optional after the attitudinal. Second, the cmavo “cu” is defined simply as a selbri separator and is “<quote>never strictly necessary</quote>” to form a valid bridi. Therefore “lo grasu gacri lo palne” already parses correctly as “the oil covers the pan” under obligation, with “lo grasu” as x1, “gacri” as selbri, and “lo palne” as x2. Inserting “cu” only adds an unnecessary filler, violating Lojban’s principle of brevity. Thus the better translation is choice A: “.ei lo grasu gacri lo palne.”
+
+
+CoT Answer for jbo_8:
+In Lojban the gismu nupre takes three places in simple left-to-right order: x1 is the promiser, x2 is the beneficiary (the person promised to), and x3 is the event or state promised. No place tags are needed when sumti follow the default order.  
+
+First, note the place structure given in the dictionary:  <quote>x1 (agent) promises/commits/assures/threatens x2 (event/state) to x3 [beneficiary/victim].</quote>  Although this English gloss uses the word “to” before the beneficiary, in Lojban the beneficiary is filled by the second sumti in untagged nupre.  
+
+Therefore in "mi do nupre lo ka citka no lo rectu":  
+• mi fills x1 (I am the promiser)  
+• do fills x2 (you are the promisee)  
+• lo ka citka no lo rectu fills x3 (the property/state of not eating any meat is what I promise)  
+
+This corresponds exactly to “I promise you that I won’t eat any of the meat.”  
+
+Debater A’s version, <quote>mi fi do nupre fe lo ka citka no lo rectu</quote>, explicitly tags do into the third place (x3) and the event into x2, swapping beneficiary and event.  That violates the natural left-to-right assignment and misplaces who is being promised.  Tags like fi/fe are only required when sumti must be deliberately scrambled, not here.  
+
+Finally, leaving out unnecessary tags makes the sentence both simpler and idiomatic.  Hence the correct translation is B: "mi do nupre lo ka citka no lo rectu."
+
+
+CoT Answer for jbo_9:
+1. The predicate djuno expects a sumti for the fact known (its x2 place).  As defined, <quote>djuno: x1 knows fact(s) x2 (du'u) about subject x3 by epistemology x4.</quote>  Therefore to ask “Do you know the price…?”, we supply the fact-sumti directly.
+
+2. We form that sumti with the gismu jdima (price) and link it to the object bread with be:  <quote>jdima: x1 [amount] is the price of x2 to purchaser/consumer x3 set by vendor x4.</quote>  and  <quote>be: sumti link to attach sumti (default x2) to a selbri.</quote>  Thus “the price of the bread” is correctly given by lo jdima be lo nanba.
+
+3. Putting it together, the direct question is simply xu do djuno lo jdima be lo nanba (A), literally “True-false? you know the price of the bread?”
+
+4. By contrast, choice B uses an indirect-question construction with ma kau and du'u, which is only needed when embedding a “what” question inside a propositional attitude, as shown in the definitions: <quote>ma: pro-sumti: sumti question</quote>  and  <quote>kau: indirect question marker</quote>.  That yields “Do you know of 'What is the price…?'” rather than directly asking if the price is known.
+
+5. Hence A is the correct and more idiomatic Lojban translation of “Do you know the price of the bread?”.
+
+
+CoT Answer for jbo_10:
+The correct translation must use the JAI‐modal conversion pattern from Section 9.12, which “converts a selbri in such a way that ... a modal place is made into a numbered place.”  In particular, Example 9.83 shows how to raise a modal into x1 and demote the original x1 into the fai position: <quote>**Example 9.83.**
+la lojban. jai bau cusku fai mi</quote> Here ‘jai bau cusku’ makes the modal ‘bau’ the first place of the new selbri, and ‘mi’ moves to ‘fai’.  By direct analogy, the Lojban for “It might rain tomorrow.” must be <quote>jai cumki carvi fai lo bavlamdei</quote> (choice B), where ‘cumki’ (possible) is raised to x1 of the new selbri ‘jai cumki carvi’, and ‘lo bavlamdei’ (tomorrow) occupies the indefinite place ‘fai’.  In contrast, choice A, <quote>carvi jai cumki fa lo bavlamdei</quote>, misplaces the JAI operator after the main predicate ‘carvi’ and fails to follow the modal‐conversion structure demonstrated in Example 9.83, making it ungrammatical for expressing a possibility modal.

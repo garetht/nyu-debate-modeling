@@ -1,0 +1,556 @@
+
+The following definitions pulled from the above background may be particularly useful:
+{'Lojban': 'mi', 'Formal Language': 'KOhA3', 'English': 'me', 'Definition': 'pro-sumti: me/we the speaker(s)/author(s); identified by self-vocative', 'Confer': None, 'Type': 'cmavo'}
+{'Lojban': 'coi', 'Formal Language': 'COI', 'English': 'greetings', 'Definition': 'vocative: greetings/hello', 'Confer': None, 'Type': 'cmavo'}
+{'Lojban': 'cnino', 'Lojban definition': 'x_{1} is new/unfamiliar/novel to observer x_{2} in feature x_{3} (ka) by standard x_{4}; x_{1} is a novelty.', 'English': '- new', 'Type': 'gismu'}
+
+The following are the top TF-IDF files for the words in choice A and choice B from the The Complete Lojban Language Grammar Book:
+Word: mi
+Filename: section-more-propositions.txt
+TF-IDF Score: 0.2373682389679831
+Content: Chapter 14. If Wishes Were Horses: The Lojban Connective System  
+---  
+Prev: Section 14.6 |  Next: Section 14.8  
+---|---  
+Table of Contents
+Book Info Page
+* * *
+## 14.7. More than two propositions
+So far we have seen logical connectives used to connect exactly two sentences. How about connecting three or more? Is this possible in Lojban? The answer is yes, subject to some warnings and some restrictions.
+Of the four primitive truth functions A, E, O, and U, all but O have the same truth values no matter how their component sentences are associated in pairs. Therefore,
+**Example 14.31. **
+mi | dotco | .ije | mi | ricfu | .ije | mi | nanmu  
+---|---|---|---|---|---|---|---  
+I | am-German. | And | I | am-rich. | And | I | am-a-man.  
+  
+
+means that all three component sentences are true. Likewise,
+**Example 14.32. **
+mi | dotco | .ija | mi | ricfu | .ija | mi | nanmu  
+---|---|---|---|---|---|---|---  
+I | am-German. | Or | I | am-rich. | Or | I | am-a-man.  
+  
+
+means that one or more of the component sentences is true.
+O, however, is different. Working out the truth table for
+**Example 14.33. **
+mi | dotco | .ijo | mi | ricfu | .ijo | mi | nanmu  
+---|---|---|---|---|---|---|---  
+I | am-German. | If-and-only-if | I | am-rich. | If-and-only-if | I | am-a-man.  
+  
+
+shows that Example 14.33 does not mean that either I am all three of these things or none of them; instead, an accurate translation would be:
+> Of the three properties – German-ness, wealth, and manhood – I possess either exactly one or else all three.
+Because of the counterintuitiveness of this outcome, it is safest to avoid O with more than two sentences. Likewise, the connectives which involve negation also have unexpected truth values when used with more than two sentences.
+In fact, no combination of logical connectives can produce the “all or none” interpretation intended (but not achieved) by Example 14.33 without repeating one of the bridi. See Example 14.48.
+There is an additional difficulty with the use of more than two sentences. What is the meaning of: 
+**Example 14.34. **
+mi | nelci | la | djan. | .ije | mi | nelci | la | martas.  
+---|---|---|---|---|---|---|---|---  
+I | like | that-named | John. | And | I | like | that-named | Martha.  
+.ija | mi | nelci | la | meris.  
+---|---|---|---|---  
+Or | I | like | that-named | Mary.  
+  
+
+Does this mean:
+**Example 14.35. **
+I like John, and I like either Martha or Mary or both.
+  
+
+Or is the correct translation:
+**Example 14.36. **
+Either I like John and I like Martha, or I like Mary, or both.
+  
+
+Example 14.36 is the correct translation of Example 14.34. The reason is that Lojban logical connectives pair off from the left, like many constructs in the language. This rule, called the left-grouping rule, is easy to forget, especially when intuition pulls the other way. Forethought connectives are not subject to this problem:
+**Example 14.37. **
+ga | ge | mi | nelci | la | djan.  
+---|---|---|---|---|---  
+Either | (Both | I | like | that-named | John  
+gi | mi | nelci | la | martas.  
+---|---|---|---|---  
+and | I | like | that-named | Martha)  
+gi | mi | nelci | la | meris.  
+---|---|---|---|---  
+or | I | like | that-named | Mary.  
+  
+
+is equivalent in meaning to Example 14.34, whereas
+**Example 14.38. **
+ge | mi | nelci | la | djan.  
+---|---|---|---|---  
+Both | I | like | that-named | John  
+gi | ga | mi | nelci | la | martas.  
+---|---|---|---|---|---  
+and | (Either | I | like | that-named | Martha  
+gi | mi | nelci | la | meris.  
+---|---|---|---|---  
+or | I | like | that-named | Mary).  
+  
+
+is not equivalent to Example 14.34, but is instead a valid translation into Lojban, using forethought, of Example 14.35.
+* * *
+Chapter 14. If Wishes Were Horses: The Lojban Connective System  
+---  
+Prev: Section 14.6 |  Next: Section 14.8  
+---|---  
+Table of Contents
+Book Info Page
+
+
+Word: mi
+Filename: section-afterthought-connectives-grouping.txt
+TF-IDF Score: 0.1908154732649159
+Content: Chapter 14. If Wishes Were Horses: The Lojban Connective System  
+---  
+Prev: Section 14.7 |  Next: Section 14.9  
+---|---  
+Table of Contents
+Book Info Page
+* * *
+## 14.8. Grouping of afterthought connectives
+There are several ways in Lojban to render Example 14.35 using afterthought only. The simplest method is to make use of the cmavo __bo__ (of selma'o BO). This cmavo has several functions in Lojban, but is always associated with high precedence and short scope. In particular, if __bo__ is placed after an ijek, the result is a grammatically distinct kind of ijek which overrides the regular left-grouping rule. Connections marked with __bo__ are interpreted before connections not so marked. Example 14.39 is equivalent in meaning to Example 14.38:
+**Example 14.39. **
+mi | nelci | la | djan. | .ije | mi | nelci | la | martas.  
+---|---|---|---|---|---|---|---|---  
+I | like | that-named | John, | and | I | like | that-named | Martha  
+.ijabo | mi | nelci | la | meris.  
+---|---|---|---|---  
+or | I | like | that-named | Mary.  
+  
+
+The English translation feebly indicates with a comma what the Lojban marks far more clearly: the “I like Martha” and “I like Mary” sentences are joined by __.i__ __ja__ first, before the result is joined to “I like John” by __.i__ __je__.
+Eks can have __bo__ attached in exactly the same way, so that Example 14.40 is equivalent in meaning to Example 14.39:
+**Example 14.40. **
+mi nelci la djan. .e la martas. .abo la meris.
+  
+
+Forethought connectives, however, never can be suffixed with __bo__ , for every use of forethought connectives clearly indicates the intended pattern of grouping.
+What happens if __bo__ is used on both connectives, giving them the same high precedence, as in Example 14.41?
+**Example 14.41. **
+mi nelci la djan. .ebo la martas. .abo la meris.
+  
+
+Does this wind up meaning the same as Example 14.34 and Example 14.36? Not at all. A second rule relating to __bo__ is that where several __bo__ -marked connectives are used in succession, the normal Lojban left-grouping rule is replaced by a right-grouping rule. As a result, Example 14.41 in fact means the same as Example 14.39 and Example 14.40. This rule may be occasionally exploited for special effects, but is tricky to keep straight; in writing intended to be easy to understand, multiple consecutive connectives marked with __bo__ should be avoided.
+The use of __bo__ , therefore, gets tricky in complex connections of more than three sentences. Looking back at the English translations of Example 14.37 and Example 14.38, parentheses were used to clarify the grouping. These parentheses have their Lojban equivalents, two sets of them actually. __tu'e__ and __tu'u__ are used with ijeks, and __ke__ and __ke'e__ with eks and other connectives to be discussed later. (__ke__ and __ke'e__ are also used in other roles in the language, but always as grouping markers). Consider the English sentence:
+**Example 14.42. **
+I kiss you and you kiss me, if I love you and you love me.
+  
+
+where the semantics tells us that the instances of “and” are meant to have higher precedence than that of “if”. If we wish to express Example 14.42 in afterthought, we can say:
+**Example 14.43. **
+mi | cinba | do | .ije[bo] | do | cinba | mi  
+---|---|---|---|---|---|---  
+I | kiss | you | and | you | kiss | me,  
+.ijanai | mi | prami | do | .ijebo | do | prami | mi  
+---|---|---|---|---|---|---|---  
+if | I | love | you | and | you | love | me.  
+  
+
+marking two of the ijeks with __bo__ for high precedence. (The first __bo__ is not strictly necessary, because of the left-grouping rule, and is shown here in brackets.)
+But it may be clearer to use explicit parenthesis words and say:
+**Example 14.44. **
+tu'e | mi | cinba | do | .ije | do | cinba | mi | tu'u  
+---|---|---|---|---|---|---|---|---  
+( | I | kiss | you | and | you | kiss | me | )  
+.ijanai | tu'e | mi | prami | do | .ije | do | prami | mi | [tu'u]  
+---|---|---|---|---|---|---|---|---|---  
+if | ( | I | love | you | and | you | love | me | ).  
+  
+
+where the __tu'e__ … __tu'u__ pairs set off the structure. The cmavo __tu'u__ is an elidable terminator, and its second occurrence in Example 14.44 is bracketed, because all terminators may be elided at the end of a text.
+In addition, parentheses are a general solution: multiple parentheses may be nested inside one another, and additional afterthought material may be added without upsetting the existing structure. Neither of these two advantages apply to __bo__ grouping. In general, afterthought constructions trade generality for simplicity.
+Because of the left-grouping rule, the first set of __tu'e__ … __tu'u__ parentheses may actually be left off altogether, producing:
+**Example 14.45. **
+mi | cinba | do | .ije | do | cinba | mi  
+---|---|---|---|---|---|---  
+I | kiss | you | and | you | kiss | me  
+.ijanai | tu'e | mi | prami | do | .ije | do | prami | mi | [tu'u]  
+---|---|---|---|---|---|---|---|---|---  
+if | ( | I | love | you | and | you | love | me | ).  
+  
+
+What about parenthesized sumti connection? Consider
+**Example 14.46. **
+I walk to either the market and the house, or the school and the office.
+  
+
+Two pairs of parentheses, analogous to Example 14.44, would seem to be the right approach. However, it is a rule of Lojban grammar that a sumti may not begin with __ke__ , so the first set of parentheses must be omitted, producing Example 14.47, which is instead parallel to Example 14.45:
+**Example 14.47. **
+mi | dzukla | le | zarci | .e | le | zdani  
+---|---|---|---|---|---|---  
+I | walk-to | the | market | and | the | house  
+.a | ke | le | ckule | .e | le | briju | [ke'e]  
+---|---|---|---|---|---|---|---  
+or | ( | the | school | and | the | office | ).  
+  
+
+If sumti were allowed to begin with __ke__ , unavoidable ambiguities would result, so __ke__ grouping of sumti is allowed only just after a logical connective. This rule does not apply to __tu'e__ grouping of bridi, as Example 14.44 shows.
+Now we have enough facilities to handle the problem of Example 14.33: “I am German, rich, and a man – or else none of these.” The following paraphrase has the correct meaning:
+**Example 14.48. **
+[tu'e] | mi | dotco | .ijo | mi | ricfu | [tu'u]  
+---|---|---|---|---|---|---  
+( | I | am-German | if-and-only-if | I | am-rich | )  
+.ije | tu'e | mi | dotco | .ijo | mi | nanmu | [tu'u]  
+---|---|---|---|---|---|---|---  
+and | ( | I | am-German | if-and-only-if | I | am-a-man | ).  
+  
+
+The truth table, when worked out, produces T if and only if all three component sentences are true or all three are false.
+* * *
+Chapter 14. If Wishes Were Horses: The Lojban Connective System  
+---  
+Prev: Section 14.7 |  Next: Section 14.9  
+---|---  
+Table of Contents
+Book Info Page
+
+
+Word: coi
+Filename: section-vocative-syntax.txt
+TF-IDF Score: 0.2406207323630043
+Content: Chapter 6. To Speak Of Many Things: The Lojban sumti  
+---  
+Prev: Section 6.10 |  Next: Section 6.12  
+---|---  
+Table of Contents
+Book Info Page
+* * *
+## 6.11. The syntax of vocative phrases
+Vocative phrases are not sumti, but are explained in this chapter because their syntax is very similar to that of sumti. Grammatically, a vocative phrase is one of the so-called “free modifiers” of Lojban, along with subscripts, parentheses, and various other constructs explained in Chapter 19. They can be placed after many, but not all, constructions of the grammar: in general, after any elidable terminator (which, however, must not then be elided!), at the beginnings and ends of sentences, and in many other places.
+The purpose of a vocative phrase is to indicate who is being addressed, or to indicate to that person that he or she ought to be listening. A vocative phrase begins with a cmavo of selma'o COI or DOI, all of which are explained in more detail in Section 13.14. Sometimes that is all there is to the phrase:
+**Example 6.62. **
+coi  
+---  
+[greetings]  
+Hello.  
+---  
+  
+
+**Example 6.63. **
+je'e  
+---  
+[acknowledgement]  
+Uh-huh.  
+---  
+Roger!  
+  
+
+In these cases, the person being addressed is obvious from the context. However, a vocative word (more precisely, one or more cmavo of COI, possibly followed by __doi__ , or else just __doi__ by itself) can be followed by one of several kinds of phrases, all of which are intended to indicate the addressee. The most common case is a name:
+**Example 6.64. **
+coi. | djan.  
+---|---  
+[greetings] | John.  
+Hello, John.  
+---  
+  
+
+A pause is required (for morphological reasons) between a member of COI and a name. You can use __doi__ instead of a pause:
+**Example 6.65. **
+coi | doi | djan.  
+---|---|---  
+[greetings] | O | John.  
+Hello, John.  
+---  
+  
+
+means exactly the same thing and does not require a pause. Using __doi__ by itself is like just saying someone's name to attract his or her attention:
+**Example 6.66. **
+doi | djan.  
+---|---  
+O | John.  
+John!  
+---  
+  
+
+In place of a name, a description may appear, lacking its descriptor, which is understood to be __le__ :
+**Example 6.67. **
+coi | xunre | pastu | nixli  
+---|---|---|---  
+Hello, | (red-type-of | dress)-type-of | girl.  
+Hello, girl with the red dress!  
+---  
+  
+
+The listener need not really be a _xunre pastu nixli_ , as long as she understands herself correctly from the description. (Actually, only a bare selbri can appear; explicit quantifiers are forbidden in this form of vocative, so the implicit quantifiers _su'o le ro_ are in effect.)
+Finally, a complete sumti may be used, the most general case.
+**Example 6.68. **
+co'o | la | bab. | .e | la | noras.  
+---|---|---|---|---|---  
+[partings] | that-named | Bob | and | that-named | Nora.  
+Goodbye, Bob and Nora.  
+---  
+  
+
+Example 6.67 is thus the same as:
+**Example 6.69. **
+coi | le | xunre | pastu | nixli  
+---|---|---|---|---  
+Hello, | the-one-described-as | (red-type-of | dress)-type-of | girl!  
+  
+
+and Example 6.66 is the same as:
+**Example 6.70. **
+doi | la | djan.  
+---|---|---  
+O | that-named | John!  
+  
+
+Finally, the elidable terminator for vocative phrases is __do'u__ (of selma'o DOhU), which is rarely needed except when a simple vocative word is being placed somewhere within a bridi. It may also be required when a vocative is placed between a sumti and its relative clause, or when there are a sequence of so-called “free modifiers” (vocatives, subscripts, utterance ordinals – see Chapter 18 – metalinguistic comments – see Section 19.12 – or reciprocals – see Chapter 19) which must be properly separated.
+The meaning of a vocative phrase that is within a sentence is not affected by its position in the sentence: thus Example 6.70 and Example 6.71 mean the same thing:
+**Example 6.71. **
+doi | djan. | ko | klama | mi  
+---|---|---|---|---  
+O | John | you [imperative] | go-to | me.  
+John, come to me!  
+---  
+  
+
+**Example 6.72. **
+ko | klama | mi | doi | djan.  
+---|---|---|---|---  
+You [imperative] | go-to | me | O | John.  
+Come to me, John!  
+---  
+  
+
+As usual for this chapter, the full syntax of vocative phrases has not been explained: relative clauses, discussed in Chapter 8, make for more possibilities.
+* * *
+Chapter 6. To Speak Of Many Things: The Lojban sumti  
+---  
+Prev: Section 6.10 |  Next: Section 6.12  
+---|---  
+Table of Contents
+Book Info Page
+
+
+Word: coi
+Filename: section-relative-clauses-and-vocatives.txt
+TF-IDF Score: 0.13649441725577477
+Content: Chapter 8. Relative Clauses, Which Make sumti Even More Complicated  
+---  
+Prev: Section 8.8 |  Next: Section 8.10  
+---|---  
+Table of Contents
+Book Info Page
+* * *
+## 8.9. Relative clauses in vocative phrases
+Vocative phrases are explained in more detail in Section 6.11. Briefly, they are a method of indicating who a sentence or discourse is addressed to: of identifying the intended listener. They take three general forms, all beginning with cmavo from selma'o COI or DOI (called “vocative words”; there can be one or many), followed by either a name, a selbri, or a sumti. Here are three examples:
+**Example 8.74. **
+coi. frank.  
+---  
+Hello, Frank.  
+---  
+  
+
+**Example 8.75. **
+co'o xirma  
+---  
+Goodbye, horse.  
+---  
+  
+
+**Example 8.76. **
+fi'i la frank. .e la djordj.  
+---  
+Welcome, Frank and George!  
+---  
+  
+
+Note that Example 8.75 says farewell to something which doesn't really have to be a horse, something that the speaker simply thinks of as being a horse, or even might be something (a person, for example) who is named “Horse”. In a sense, Example 8.75 is ambiguous between _co'o le xirma_ and _co'o la xirma_ , a relatively safe semantic ambiguity, since names are ambiguous in general: saying “George” doesn't distinguish between the possible Georges.
+Similarly, Example 8.74 can be thought of as an abbreviation of:
+**Example 8.77. **
+coi | la | frank.  
+---|---|---  
+Hello, | the-one-named |  “Frank” | .  
+  
+
+Syntactically, vocative phrases are a kind of free modifier, and can appear in many places in Lojban text, generally at the beginning or end of some complete construct; or, as in Example 8.74 to Example 8.76, as sentences by themselves.
+As can be seen, the form of vocative phrases is similar to that of sumti, and as you might expect, vocative phrases allow relative clauses in various places. In vocative phrases which are simple names (after the vocative words), any relative clauses must come just after the names:
+**Example 8.78. **
+coi. | frank. | poi | xunre | se bende  
+---|---|---|---|---  
+Hello, | Frank | who | is-a-red | team-member  
+Hello, Frank from the Red Team!  
+---  
+  
+
+The restrictive relative clause in Example 8.78 suggests that there is some other Frank (perhaps on the Green Team) from whom this Frank, the one the speaker is greeting, must be distinguished.
+A vocative phrase containing a selbri can have relative clauses either before or after the selbri; both forms have the same meaning. Here are some examples:
+**Example 8.79. **
+co'o | poi | mi | zvati | ke'a | ku'o | xirma  
+---|---|---|---|---|---|---  
+Goodbye, | such-that-( | I | am-at | IT | ) | horse  
+Goodbye, horse where I am!  
+---  
+  
+
+**Example 8.80. **
+co'o | xirma | poi | mi | zvati  
+---|---|---|---|---  
+Goodbye, | horse | such-that-( | I | am-at-it).  
+  
+
+Example 8.79 and Example 8.80 mean the same thing. In fact, relative clauses can appear in both places.
+* * *
+Chapter 8. Relative Clauses, Which Make sumti Even More Complicated  
+---  
+Prev: Section 8.8 |  Next: Section 8.10  
+---|---  
+Table of Contents
+Book Info Page
+
+
+Word: cnino
+Filename: section-properties.txt
+TF-IDF Score: 0.05981022687091913
+Content: Chapter 11. Events, Qualities, Quantities, And Other Vague Words: On Lojban Abstraction  
+---  
+Prev: Section 11.3 |  Next: Section 11.5  
+---|---  
+Table of Contents
+Book Info Page
+* * *
+## 11.4. Property abstractions
+The following cmavo are discussed in this section:
+ka |  NU |  property abstractor  
+---|---|---  
+ce'u |  KOhA |  abstraction focus  
+The things described by _le nu_ descriptions (or, to put it another way, the things of which __nu__ selbri may correctly be predicated) are only moderately “abstract”. They are still closely tied to happenings in space and time. Properties, however, are much more ethereal. What is “the property of being blue”, or “the property of being a go-er”? They are what logicians call “intensions”. If John has a heart, then “the property of having a heart” is an abstract object which, when applied to John, is true. In fact,
+**Example 11.21. **
+la | djan. | cu | se risna | zo'e  
+---|---|---|---|---  
+That-named | John |  | has-as-heart | something-unspecified.  
+John has a heart.  
+---  
+  
+
+has the same truth conditions as
+**Example 11.22. **
+la | djan. | cu | ckaji  
+---|---|---|---  
+That-named | John |  | has-the-property  
+le | ka | se risna | [zo'e] | [kei]  
+---|---|---|---|---  
+the | property-of | having-as-heart | something.  
+John has the property of having a heart.  
+---  
+  
+
+(The English word “have” frequently appears in any discussion of Lojban properties: things are said to “have” properties, but this is not the same sense of “have” as in “I have money”, which is possession.)
+Property descriptions, like event descriptions, are often wanted to fill places in brivla place structures:
+**Example 11.23. **
+do | cnino | mi | le | ka | xunre | [kei]  
+---|---|---|---|---|---|---  
+You | are-new | to-me | in-the-quality-of-the | property-of | being-red.  
+You are new to me in redness.  
+---  
+  
+
+(The English suffix “-ness” often signals a property abstraction, as does the suffix “-ity”.)
+We can also move the property description to the x1 place of Example 11.23, producing:
+**Example 11.24. **
+le | ka | do | xunre | [kei] | cu | cnino | mi  
+---|---|---|---|---|---|---|---  
+The | property-of | your | being-red |  |  | is-new | to me.  
+Your redness is new to me.  
+---  
+  
+
+It would be suitable to use Example 11.23 and Example 11.24 to someone who has returned from the beach with a sunburn.
+There are several different properties that can be extracted from a bridi, depending on which place of the bridi is “understood” as being specified externally. Thus:
+**Example 11.25. **
+ka | mi | prami | [zo'e] | [kei]  
+---|---|---|---|---  
+a-property-of | me | loving | something-unspecified  
+  
+
+is quite different from
+**Example 11.26. **
+ka | [zo'e] | prami | mi | [kei]  
+---|---|---|---|---  
+a-property-of | something-unspecified | loving | me  
+  
+
+In particular, sentences like Example 11.27 and Example 11.28 are quite different in meaning:
+**Example 11.27. **
+la | djan. | cu | zmadu | la | djordj.  
+---|---|---|---|---|---  
+That-named | John |  | exceeds | that-named | George  
+le | ka | mi | prami  
+---|---|---|---  
+in-the | property-of | (I | love | X)  
+I love John more than I love George.  
+---  
+  
+
+**Example 11.28. **
+la | djan. | cu | zmadu | la | djordj.  
+---|---|---|---|---|---  
+That-named | John |  | exceeds | that-named | George  
+le | ka |  | prami | mi  
+---|---|---|---|---  
+in-the | property of | (X | loves | me).  
+John loves me more than George loves me.  
+---  
+  
+
+The “X” used in the glosses of Example 11.27 through Example 11.28 as a place-holder cannot be represented only by ellipsis in Lojban, because ellipsis means that there must be a specific value that can fill the ellipsis, as mentioned in Section 11.2. Instead, the cmavo __ce'u__ of selma'o KOhA is employed when an explicit sumti is wanted. (The form “X” will be used in literal translations.)
+Therefore, an explicit equivalent of Example 11.27, with no ellipsis, is:
+**Example 11.29. **
+la | djan. | cu | zmadu | la | djordj.  
+---|---|---|---|---|---  
+That-named | John |  | exceeds | that-named | George  
+le | ka | mi | prami | ce'u  
+---|---|---|---|---  
+in-the | property-of | (I | love | X).  
+  
+
+and of Example 11.28 is:
+**Example 11.30. **
+la | djan. | cu | zmadu | la | djordj.  
+---|---|---|---|---|---  
+That-named | John |  | exceeds | that-named | George  
+le | ka | ce'u | prami | mi  
+---|---|---|---|---  
+in-the | property-of | (X | loves | me).  
+  
+
+This convention allows disambiguation of cases like:
+**Example 11.31. **
+le | ka | [zo'e] | dunda | le | xirma | [zo'e] | [kei]  
+---|---|---|---|---|---|---|---  
+the | property-of |  | giving | the | horse  
+  
+
+into
+**Example 11.32. **
+le | ka | ce'u | dunda | le | xirma |  | [zo'e] | [kei]  
+---|---|---|---|---|---|---|---|---  
+the | property-of | (X | is-a-giver-of | the | horse | to | someone-unspecified | )  
+the property of being a giver of the horse  
+---  
+  
+
+which is the most natural interpretation of Example 11.31, versus
+**Example 11.33. **
+le | ka | [zo'e] | dunda | le | xirma |  | ce'u | [kei]  
+---|---|---|---|---|---|---|---|---  
+the | property-of | (someone-unspecified | is-a-giver-of | the | horse | to | X | )  
+the property of being one to whom the horse is given  
+---  
+  
+
+which is also a possible interpretation.
+It is also possible to have more than one __ce'u__ in a __ka__ abstraction, which transforms it from a property abstraction into a relationship abstraction. Relationship abstractions “package up” a complex relationship for future use; such an abstraction can be translated back into a selbri by placing it in the x2 place of the selbri __bridi__ , whose place structure is:
+> _ _bridi_ _ x1 is a predicate relationship with relation x2 (abstraction) among arguments (sequence/set) x3
+The place structure of __ka__ abstraction selbri is simply:
+> _ _ka_ _ x1 is a property of (the bridi)
+* * *
+Chapter 11. Events, Qualities, Quantities, And Other Vague Words: On Lojban Abstraction  
+---  
+Prev: Section 11.3 |  Next: Section 11.5  
+---|---  
+Table of Contents
+Book Info Page

@@ -1,0 +1,1005 @@
+
+The following definitions pulled from the above background may be particularly useful:
+{'Lojban': 'xu', 'Formal Language': 'UI6', 'English': 'true-false ?', 'Definition': 'discursive: true-false question', 'Confer': None, 'Type': 'cmavo'}
+{'Lojban': 'gugde', 'Lojban definition': 'x_{1} is the country of peoples x_{2} with land/territory x_{3}; (people/territory relationship).', 'English': '- country', 'Type': 'gismu'}
+{'Lojban': "stuvi'e", 'Lojban Composition': 'stuzi+vitke', 'English': 'x_{1} visits place x_{2}', 'Type': 'lujvo', 'Arguments': nan}
+{'Lojban': "pu'i", 'Formal Language': 'CAhA', 'English': 'can and has', 'Definition': 'modal aspect: can and has; demonstrated potential', 'Confer': None, 'Type': 'cmavo'}
+{'Lojban': 'ro', 'Formal Language': 'PA4', 'English': 'each', 'Definition': 'digit/number: each, all', 'Confer': None, 'Type': 'cmavo'}
+{'Lojban': "su'o", 'Formal Language': 'PA4', 'English': 'at least', 'Definition': 'digit/number: at least (some); no less than', 'Confer': None, 'Type': 'cmavo'}
+{'Lojban': 'da', 'Formal Language': 'KOhA1', 'English': 'something 1', 'Definition': 'logically quantified existential pro-sumti: there exists something 1 (usually restricted)', 'Confer': None, 'Type': 'cmavo'}
+{'Lojban': 'se', 'Formal Language': 'SE', 'English': '2nd conversion', 'Definition': '2nd conversion; switch 1st/2nd places', 'Confer': None, 'Type': 'cmavo'}
+
+The following are the top TF-IDF files for the words in choice A and choice B from the The Complete Lojban Language Grammar Book:
+Word: xu
+Filename: section-affirmations.txt
+TF-IDF Score: 0.07937648438047532
+Content: Chapter 15. “No” Problems: On Lojban Negation  
+---  
+Prev: Section 15.8 |  Next: Section 15.10  
+---|---  
+Table of Contents
+Book Info Page
+* * *
+## 15.9. Affirmations
+There is an explicit positive form for both selma'o NA (__ja'a__) and selma'o NAhE (__je'a__), each of which would supplant the corresponding negator in the grammatical position used, allowing one to assert the positive in response to a negative question or statement without confusion. Assuming the same context as in Section 15.8:
+**Example 15.89. **
+xu | na | go'i  
+---|---|---  
+Is-it-true-that | [false] | [repeat-previous]?  
+  
+
+or equivalently
+**Example 15.90. **
+xu | la | djan. | [cu] | na | pu  
+---|---|---|---|---|---  
+Is-it-true-that: | that-named | John |  | [false] | previously  
+klama | la | paris. | .e | la | rom.  
+---|---|---|---|---|---  
+went-to | that-name | Paris | and | that-named | Rome.  
+  
+
+The obvious, but incorrect, positive response to this negative question is:
+**Example 15.91. **
+go'i  
+---  
+[repeat-previous]  
+---  
+  
+
+A plain __go'i__ does not mean “Yes it is”; it merely abbreviates repeating the previous statement unmodified, including any negators present; and Example 15.91 actually states that it is false that John went to both Paris and Rome.
+When considering:
+**Example 15.92. **
+na | go'i  
+---|---  
+[false] | [repeat-previous]  
+  
+
+as a response to a negative question like Example 15.90, Lojban designers had to choose between two equally plausible interpretations with opposite effects. Does Example 15.92 create a double negative in the sentence by adding a new __na__ to the one already there (forming a double negative and hence a positive statement), or does the __na__ replace the previous one, leaving the sentence unchanged?
+It was decided that substitution, the latter alternative, is the preferable choice, since it is then clear whether we intend a positive or a negative sentence without performing any manipulations. This is the way English usually works, but not all languages work this way – Russian, Japanese, and Navajo all interpret a negative reply to a negative question as positive.
+The positive assertion cmavo of selma'o NA, which is "ja'a", can also replace the __na__ in the context, giving:
+**Example 15.93. **
+ja'a | go'i  
+---|---  
+[true] | [repeat-previous]  
+John did go to Paris and Rome.  
+---  
+  
+
+__ja'a__ can replace __na__ in a similar manner wherever the latter is used:
+**Example 15.94. **
+mi | ja'a | klama | le | zarci  
+---|---|---|---|---  
+I | [true] | go-to | the | store  
+I indeed go to the store.  
+---  
+  
+
+__je'a__ can replace __na'e__ in exactly the same way, stating that scalar negation does not apply, and that the relation indeed holds as stated. In the absence of a negation context, it emphasizes the positive:
+**Example 15.95. **
+ta | je'a | melbi  
+---|---|---  
+that | is-indeed | beautiful.  
+  
+
+* * *
+Chapter 15. “No” Problems: On Lojban Negation  
+---  
+Prev: Section 15.8 |  Next: Section 15.10  
+---|---  
+Table of Contents
+Book Info Page
+
+
+Word: xu
+Filename: section-noi.txt
+TF-IDF Score: 0.07089615980115095
+Content: Chapter 8. Relative Clauses, Which Make sumti Even More Complicated  
+---  
+Prev: Chapter 8 |  Next: Section 8.3  
+---|---  
+Table of Contents
+Book Info Page
+* * *
+## 8.2. Incidental relative clauses
+The following cmavo is discussed in this section:
+noi |  NOI |  incidental relative clause introducer  
+---|---|---  
+There are two basic kinds of relative clauses: restrictive relative clauses introduced by __poi__ , and incidental (sometimes called simply “non-restrictive”) relative clauses introduced by __noi__. The difference between restrictive and incidental relative clauses is that restrictive clauses provide information that is essential to identifying the referent of the sumti to which they are attached, whereas incidental relative clauses provide additional information which is helpful to the listener but is not essential for identifying the referent of the sumti. All of the examples in Section 8.1 are restrictive relative clauses: the information in the relative clause is essential to identification. (The title of this chapter, though, uses an incidental relative clause.)
+Consider the following examples:
+**Example 8.12. **
+le | gerku | poi | blanu | cu | barda  
+---|---|---|---|---|---  
+The | dog | which | is-blue |  | is-large.  
+The dog which is blue is large.  
+---  
+  
+
+**Example 8.13. **
+le | gerku | noi | blanu | cu | barda  
+---|---|---|---|---|---  
+The | dog | incidentally-which | is-blue |  | is-large.  
+The dog, which is blue, is large.  
+---  
+  
+
+In Example 8.12, the information conveyed by _poi blanu_ is essential to identifying the dog in question: it restricts the possible referents from dogs in general to dogs that are blue. This is why __poi__ relative clauses are called restrictive. In Example 8.13, on the other hand, the dog which is referred to has presumably already been identified clearly, and the relative clause _noi blanu_ just provides additional information about it. (If in fact the dog hasn't been identified clearly, then the relative clause does not help identify it further.)
+In English, the distinction between restrictive and incidental relative clauses is expressed in writing by surrounding incidental, but not restrictive, clauses with commas. These commas are functioning as parentheses, because incidental relative clauses are essentially parenthetical. This distinction in punctuation is represented in speech by a difference in tone of voice. In addition, English restrictive relative clauses can be introduced by “that” as well as “which” and “who”, whereas incidental relative clauses cannot begin with “that”. Lojban, however, always uses the cmavo __poi__ and __noi__ rather than punctuation or intonation to make the distinction.
+Here are more examples of incidental relative clauses:
+**Example 8.14. **
+mi | noi | pajni | cu | zvati  
+---|---|---|---|---  
+I | who-incidentally | am-a-judge |  | am-at | [some-place].  
+I, a judge, am present.  
+---  
+  
+
+In this example, __mi__ is already sufficiently restricted, and the additional information that I am a judge is being provided solely for the listener's edification.
+**Example 8.15. **
+xu | do | viska | le | mi | karce | noi | blabi  
+---|---|---|---|---|---|---|---  
+[True?] | You | see |  | my | car | incidentally-which | is-white.  
+Do you see my car, which is white?  
+---  
+  
+
+In Example 8.15, the speaker is presumed to have only one car, and is providing incidental information that it is white. (Alternatively, he or she might have more than one car, since _le karce_ can be plural, in which case the incidental information is that each of them is white.) Contrast Example 8.16 with a restrictive relative clause:
+**Example 8.16. **
+xu | do | viska | le | mi | karce | poi | blabi  
+---|---|---|---|---|---|---|---  
+[True?] | You | see |  | my | car | which | is-white.  
+Do you see my car that is white?  
+---  
+Do you see my white car?  
+  
+
+Here the speaker probably has several cars, and is restricting the referent of the sumti _le mi karce_ (and thereby the listener's attention) to the white one only. Example 8.16 means much the same as Example 8.17, which does not use a relative clause:
+**Example 8.17. **
+xu | do | viska | le | mi | blabi | karce  
+---|---|---|---|---|---|---  
+[True?] | You | see |  | my | white | car.  
+Do you see my car, the white one?  
+---  
+  
+
+So a restrictive relative clause attached to a description can often mean the same as a description involving a tanru. However, _blabi karce_ , like all tanru, is somewhat vague: in principle, it might refer to a car which carries white things, or even express some more complicated concept involving whiteness and car-ness; the restrictive relative clause of Example 8.16 can only refer to a car which is white, not to any more complex or extended concept.
+* * *
+Chapter 8. Relative Clauses, Which Make sumti Even More Complicated  
+---  
+Prev: Chapter 8 |  Next: Section 8.3  
+---|---  
+Table of Contents
+Book Info Page
+
+
+Word: pu'i
+Filename: section-caha.txt
+TF-IDF Score: 0.05304026737616437
+Content: Chapter 10. Imaginary Journeys: The Lojban Space/Time Tense System  
+---  
+Prev: Section 10.18 |  Next: Section 10.20  
+---|---  
+Table of Contents
+Book Info Page
+* * *
+## 10.19. Actuality, potentiality, capability: CAhA
+The following cmavo are discussed in this section:
+ca'a |  CAhA |  actually is  
+---|---|---  
+ka'e |  CAhA |  is innately capable of  
+nu'o |  CAhA |  can but has not  
+pu'i |  CAhA |  can and has  
+Lojban bridi without tense markers may not necessarily refer to actual events: they may also refer to capabilities or potential events. For example:
+**Example 10.138. **
+ro | datka | cu | flulimna  
+---|---|---|---  
+All | ducks |  | are-float-swimmers.  
+All ducks swim by floating.  
+---  
+  
+
+is a Lojban truth, even though the colloquial English translation is false or at best ambiguous. This is because the tenseless Lojban bridi doesn't necessarily claim that every duck is swimming or floating now or even at a specific time or place. Even if we add a tense marker to Example 10.138,
+**Example 10.139. **
+ro | datka | ca | flulimna  
+---|---|---|---  
+All | ducks | [present] | are-float-swimmers.  
+All ducks are now swimming by floating.  
+---  
+  
+
+the resulting Example 10.139 might still be considered a truth, even though the colloquial English seems even more likely to be false. All ducks have the potential of swimming even if they are not exercising that potential at present. To get the full flavor of “All ducks are now swimming”, we must append a marker from selma'o CAhA to the tense, and say:
+**Example 10.140. **
+ro | datka | ca | ca'a | flulimna  
+---|---|---|---|---  
+All | ducks | [present] | [actual] | are-float-swimmers.  
+All ducks are now actually swimming by floating.  
+---  
+  
+
+A CAhA cmavo is always placed after any other tense cmavo, whether for time or for space. However, a CAhA cmavo comes before __ki__ , so that a CAhA condition can be made sticky.
+Example 10.140 is false in both Lojban and English, since it claims that the swimming is an actual, present fact, true of every duck that exists, whereas in fact there is at least one duck that is not swimming now.
+Furthermore, some ducks are dead (and therefore sink); some ducks have just hatched (and do not know how to swim yet), and some ducks have been eaten by predators (and have ceased to exist as separate objects at all). Nevertheless, all these ducks have the innate capability of swimming – it is part of the nature of duckhood. The cmavo __ka'e__ expresses this notion of innate capability:
+**Example 10.141. **
+ro | datka | ka'e | flulimna  
+---|---|---|---  
+All | ducks | [capable] | are-float-swimmers.  
+All ducks are innately capable of swimming.  
+---  
+  
+
+Under some epistemologies, innate capability can be extended in order to apply the innate properties of a mass to which certain individuals belong to the individuals themselves, even if those individuals are themselves not capable of fulfilling the claim of the bridi. For example:
+**Example 10.142. **
+la | djan. | ka'e | viska  
+---|---|---|---  
+That-named | John | [capable] | sees.  
+John is innately capable of seeing.  
+---  
+John can see.  
+  
+
+might be true about a human being named John, even though he has been blind since birth, because the ability to see is innately built into his nature as a human being. It is theoretically possible that conditions might occur that would enable John to see (a great medical discovery, for example). On the other hand,
+**Example 10.143. **
+le | cukta | ka'e | viska  
+---|---|---|---  
+The | book | [capable] | sees.  
+The book can see.  
+---  
+  
+
+is not true in most epistemologies, since the ability to see is not part of the innate nature of a book.
+Consider once again the newly hatched ducks mentioned earlier. They have the potential of swimming, but have not yet demonstrated that potential. This may be expressed using __nu'o__ , the cmavo of CAhA for undemonstrated potential:
+**Example 10.144. **
+ro | cifydatka | nu'o | flulimna  
+---|---|---|---  
+All | infant-ducks | [can-but-has-not] | are-float-swimmers.  
+All infant ducks have an undemonstrated potential for swimming by floating.  
+---  
+Baby ducks can swim but haven't yet.  
+  
+
+Contrariwise, if Frank is not blind from birth, then __pu'i__ is appropriate:
+**Example 10.145. **
+la | frank. | pu'i | viska  
+---|---|---|---  
+That-named | Frank | [can-and-has] | sees.  
+Frank has demonstrated a potential for seeing.  
+---  
+Frank can see and has seen.  
+  
+
+Note that the glosses given at the beginning of this section for __ca'a__ , __nu'o__ , and __pu'i__ incorporate __ca__ into their meaning, and are really correct for _ca ca'a_ , _ca nu'o_ , and _ca pu'i_. However, the CAhA cmavo are perfectly meaningful with other tenses than the present:
+**Example 10.146. **
+mi | pu | ca'a | klama | le | zarci  
+---|---|---|---|---|---  
+I | [past] | [actual] | go-to | the | store.  
+I actually went to the store.  
+---  
+  
+
+**Example 10.147. **
+la | frank. | ba | nu'o | klama | le | zdani  
+---|---|---|---|---|---|---  
+That-named | Frank | [future] | [can-but-has-not] | goes-to | the | store.  
+Frank could have, but will not have, gone to the store (at some understood moment in the future).  
+---  
+  
+
+As always in Lojban tenses, a missing CAhA can have an indeterminate meaning, or the context can be enough to disambiguate it. Saying
+**Example 10.148. **
+ta | jelca  
+---|---  
+That | burns/is-burning/might-burn/will-burn.  
+  
+
+with no CAhA specified can translate the two very different English sentences “That is on fire” and “That is inflammable.” The first demands immediate action (usually), whereas the second merely demands caution. The two cases can be disambiguated with:
+**Example 10.149. **
+ta | ca | ca'a | jelca  
+---|---|---|---  
+That | [present] | [actual] | burns.  
+That is on fire.  
+---  
+  
+
+and
+**Example 10.150. **
+ta | ka'e | jelca  
+---|---|---  
+That | [capable] | burns.  
+That is capable of burning.  
+---  
+That is inflammable.  
+  
+
+When no indication is given, as in the simple observative
+**Example 10.151. **
+jelca  
+---  
+It burns!  
+---  
+  
+
+the prudent Lojbanist will assume the meaning “Fire!”
+* * *
+Chapter 10. Imaginary Journeys: The Lojban Space/Time Tense System  
+---  
+Prev: Section 10.18 |  Next: Section 10.20  
+---|---  
+Table of Contents
+Book Info Page
+
+
+Word: ro
+Filename: section-universal-claims.txt
+TF-IDF Score: 0.14803100481938844
+Content: Chapter 16. “Who Did You Pass On The Road? Nobody”: Lojban And Logic  
+---  
+Prev: Section 16.2 |  Next: Section 16.4  
+---|---  
+Table of Contents
+Book Info Page
+* * *
+## 16.3. Universal claims
+What happens if we substitute “everything” for “something” in Example 16.7? We get:
+**Example 16.15. **
+Everything sees me.
+  
+
+Of course, this example is false, because there are many things which do not see the speaker. It is not easy to find simple truthful examples of so-called universal claims (those which are about everything), so bear with us for a while. (Indeed, some Lojbanists tend to avoid universal claims even in other languages, since they are so rarely true in Lojban.)
+The Lojban translation of Example 16.15 is
+**Example 16.16. **
+ro | da | zo'u | da | viska | mi  
+---|---|---|---|---|---  
+For-every | X | : | X | sees | me.  
+  
+
+When the variable cmavo __da__ is preceded by __ro__ , the combination means “For every X” rather than “There is an X”. Superficially, these English formulations look totally unrelated: Section 16.6 will bring them within a common viewpoint. For the moment, accept the use of _ro da_ for “everything” on faith.
+Here is a universal claim with two variables:
+**Example 16.17. **
+ro | da | ro | de | zo'u | da | prami | de  
+---|---|---|---|---|---|---|---  
+For-every | X, | for-every | Y | : | X | loves | Y.  
+Everything loves everything.  
+---  
+  
+
+Again, X and Y can represent the same thing, so Example 16.17 does not mean “Everything loves everything else.” Furthermore, because the claim is universal, it is about every thing, not merely every person, so we cannot use “everyone” or “everybody” in the translation.
+Note that __ro__ appears before both __da__ and __de__. If __ro__ is omitted before either variable, we get a mixed claim, partly existential like those of Section 16.2, partly universal.
+**Example 16.18. **
+ro | da | de | zo'u | da | viska | de  
+---|---|---|---|---|---|---  
+For-every | X, | there-is-a-Y | : | X | sees | Y.  
+Everything sees something.  
+---  
+  
+
+**Example 16.19. **
+da | ro | de | zo'u | da | viska | de  
+---|---|---|---|---|---|---  
+There-is-an-X | such-that-for-every | Y | : | X | sees | Y.  
+Something sees everything.  
+---  
+  
+
+Example 16.18 and Example 16.19 mean completely different things. Example 16.18 says that for everything, there is something which it sees, not necessarily the same thing seen for every seer. Example 16.19, on the other hand, says that there is a particular thing which can see everything that there is (including itself). Both of these are fairly silly, but they are different kinds of silliness.
+There are various possible translations of universal claims in English: sometimes we use “anybody/anything” rather than “everybody/everything”. Often it makes no difference which of these is used: when it does make a difference, it is a rather subtle one which is explained in Section 16.8.
+* * *
+Chapter 16. “Who Did You Pass On The Road? Nobody”: Lojban And Logic  
+---  
+Prev: Section 16.2 |  Next: Section 16.4  
+---|---  
+Table of Contents
+Book Info Page
+
+
+Word: ro
+Filename: section-prenex-elision.txt
+TF-IDF Score: 0.09061134302184871
+Content: Chapter 16. “Who Did You Pass On The Road? Nobody”: Lojban And Logic  
+---  
+Prev: Section 16.4 |  Next: Section 16.6  
+---|---  
+Table of Contents
+Book Info Page
+* * *
+## 16.5. Dropping the prenex
+It isn't really necessary for every Lojban bridi involving variables to have a prenex on the front. In fact, none of the examples we've seen so far required prenexes at all! The rule for dropping the prenex is simple: if the variables appear in the same order within the bridi as they did in the prenex, then the prenex is superfluous. However, any __ro__ or __poi__ appearing in the prenex must be transferred to the first occurrence of the variable in the main part of the bridi. Thus, Example 16.9 becomes just:
+**Example 16.25. **
+da | viska | mi  
+---|---|---  
+There-is-an-X-which | sees | me.  
+Something sees me.  
+---  
+  
+
+and Example 16.23 becomes:
+**Example 16.26. **
+ro | da | poi | gerku | cu | vasxu  
+---|---|---|---|---|---  
+For-every | X | which | is-a-dog, |  | it-breathes.  
+Every dog breathes.  
+---  
+  
+
+You might well suppose, then, that the purpose of the prenex is to allow the variables in it to appear in a different order than the bridi order, and that would be correct. Consider
+**Example 16.27. **
+ro | da | poi | prenu | ku'o | de  
+---|---|---|---|---|---  
+For-every | X | which | is-a-person, |  | there-is-a-Y  
+poi | gerku | ku'o | zo'u | de | batci | da  
+---|---|---|---|---|---|---  
+which | is-a-dog |  | : | Y | bites | X.  
+  
+
+The prenex of Example 16.27 is like that of Example 16.18 (but with relative clauses): it notes that the following bridi is true of every person with respect to some dog, not necessarily the same dog for each. But in the main bridi part, the __de__ appears before the __da__. Therefore, the true translation is
+**Example 16.28. **
+Every person is bitten by some dog (or other).
+  
+
+If we tried to omit the prenex and move the __ro__ and the relative clauses into the main bridi, we would get:
+**Example 16.29. **
+de | poi | gerku | cu | batci | ro | da | poi | prenu  
+---|---|---|---|---|---|---|---|---  
+There-is-a-Y | which | is-a-dog |  | which-bites | every | X | which | is-a-person  
+Some dog bites everyone.  
+---  
+  
+
+which has the structure of Example 16.19: it says that there is a dog (call him Fido) who bites, has bitten, or will bite every person that has ever existed! We can safely rule out Fido's existence, and say that Example 16.29 is false, while agreeing to Example 16.27.
+Even so, Example 16.27 is most probably false, since some people never experience dogbite. Examples like Example 16.27 and Example 16.23 (might there be some dogs which never have breathed, because they died as embryos?) indicate the danger in Lojban of universal claims even when restricted. In English we are prone to say that “Everyone says” or that “Everybody does” or that “Everything is” when in fact there are obvious counterexamples which we are ignoring for the sake of making a rhetorical point. Such statements are plain falsehoods in Lojban, unless saved by a context (such as tense) which implicitly restricts them.
+How can we express Example 16.27 in Lojban without a prenex? Since it is the order in which variables appear that matters, we can say:
+**Example 16.30. **
+ro | da | poi | prenu | cu | se | batci | de | poi | gerku  
+---|---|---|---|---|---|---|---|---|---  
+Every | X | which | is-a-person |  |  | is-bitten-by | some-Y | which | is-a-dog.  
+  
+
+using the conversion operator __se__ (explained in Section 5.11) to change the selbri __batci__ (“bites”) into _se batci_ (“is bitten by”). The translation given in Example 16.28 uses the corresponding strategy in English, since English does not have prenexes (except in strained “logician's English”). This implies that a sentence with both a universal and an existential variable can't be freely converted with __se__ ; one must be careful to preserve the order of the variables.
+If a variable occurs more than once, then any __ro__ or __poi__ decorations are moved only to the first occurrence of the variable when the prenex is dropped. For example,
+**Example 16.31. **
+di | poi | prenu | zo'u  
+---|---|---|---  
+There-is-a-Z | which | is-a-person | :  
+ti | xarci | di | di  
+---|---|---|---  
+this-thing | is-a-weapon | for-use-against-Z | by-Z  
+This is a weapon for someone to use against himself/herself.  
+---  
+  
+
+(in which __di__ is used rather than __da__ just for variety) loses its prenex as follows:
+**Example 16.32. **
+ti | xarci | di | poi | prenu | ku'o | di  
+---|---|---|---|---|---|---  
+This-thing | is-a-weapon-for-use-against | some-Z | which | is-a-person |  | by-Z.  
+  
+
+As the examples in this section show, dropping the prenex makes for terseness of expression often even greater than that of English (Lojban is meant to be an unambiguous language, not necessarily a terse or verbose one), provided the rules are observed.
+* * *
+Chapter 16. “Who Did You Pass On The Road? Nobody”: Lojban And Logic  
+---  
+Prev: Section 16.4 |  Next: Section 16.6  
+---|---  
+Table of Contents
+Book Info Page
+
+
+Word: su'o
+Filename: section-approximation.txt
+TF-IDF Score: 0.09627333273241233
+Content: Chapter 18. lojbau mekso: Mathematical Expressions in Lojban  
+---  
+Prev: Section 18.8 |  Next: Section 18.10  
+---|---  
+Table of Contents
+Book Info Page
+* * *
+## 18.9. Approximation and inexact numbers
+The following cmavo are discussed in this section:
+ji'i |  PA |  approximately  
+---|---|---  
+su'e |  PA |  at most  
+su'o |  PA |  at least  
+me'i |  PA |  less than  
+za'u |  PA |  more than  
+The cmavo __ji'i__ (of selma'o PA) is used in several ways to indicate approximate or rounded numbers. If it appears at the beginning of a number, the whole number is approximate:
+**Example 18.60. **
+ji'i | vo | no  
+---|---|---  
+approximation | four | zero  
+approximately 40  
+---  
+  
+
+If __ji'i__ appears in the middle of a number, all the digits following it are approximate:
+**Example 18.61. **
+vo | no | ji'i | mu | no  
+---|---|---|---|---  
+four | zero | approximation | five | zero  
+roughly 4050 (where the “four thousand” is exact, but the “fifty” is approximate)  
+---  
+  
+
+If __ji'i__ appears at the end of a number, it indicates that the number has been rounded. In addition, it can then be followed by a sign cmavo (__ma'u__ or __ni'u__), which indicate truncation towards positive or negative infinity respectively.
+**Example 18.62. **
+re | pi | ze | re | ji'i  
+---|---|---|---|---  
+two | point | seven | two | approximation  
+2.72 (rounded)  
+---  
+  
+
+**Example 18.63. **
+re | pi | ze | re | ji'i | ma'u  
+---|---|---|---|---|---  
+two | point | seven | two | approximation | positive-sign  
+2.72 (rounded up)  
+---  
+  
+
+**Example 18.64. **
+re | pi | ze | pa | ji'i | ni'u  
+---|---|---|---|---|---  
+two | point | seven | one | approximation | negative-sign  
+2.71 (rounded down)  
+---  
+  
+
+Example 18.62 through Example 18.64 are all approximations to __te'o__ (exponential e). __ji'i__ can also appear by itself, in which case it means “approximately the typical value in this context”.
+The four cmavo __su'e__ , __su'o__ , __me'i__ , and __za'u__ , also of selma'o PA, express inexact numbers with upper or lower bounds:
+**Example 18.65. **
+mi | catlu | su'e | re | prenu  
+---|---|---|---|---  
+I | look-at | at-most | two | persons  
+  
+
+**Example 18.66. **
+mi | catlu | su'o | re | prenu  
+---|---|---|---|---  
+I | look-at | at-least | two | persons  
+  
+
+**Example 18.67. **
+mi | catlu | me'i | re | prenu  
+---|---|---|---|---  
+I | look-at | less-than | two | persons  
+  
+
+**Example 18.68. **
+mi | catlu | za'u | re | prenu  
+---|---|---|---|---  
+I | look-at | more-than | two | persons  
+  
+
+Each of these is a subtly different claim: Example 18.66 is true of two or any greater number, whereas Example 18.68 requires three persons or more. Likewise, Example 18.65 refers to zero, one, or two; Example 18.67 to zero or one. (Of course, when the context allows numbers other than non-negative integers, _me'i re_ can be any number less than 2, and likewise with the other cases.) The exact quantifier, “exactly 2, neither more nor less” is just __re__. Note that _su'ore_ is the exact Lojban equivalent of English plurals.
+If no number follows one of these cmavo, __pa__ is understood: therefore,
+**Example 18.69. **
+mi | catlu | su'o | prenu  
+---|---|---|---  
+I | look-at | at-least-[one] | person  
+  
+
+is a meaningful claim.
+Like the numbers in Section 18.8, all of these cmavo may be preceded by __pi__ to make the corresponding quantifiers for part of a whole. For example, __pisu'o__ means “at least some part of”. The quantifiers __ro__ , __su'o__ , __piro__ , and __pisu'o__ are particularly important in Lojban, as they are implicitly used in the descriptions introduced by the cmavo of selma'o LA and LE, as explained in Section 6.7. Descriptions in general are outside the scope of this chapter.
+* * *
+Chapter 18. lojbau mekso: Mathematical Expressions in Lojban  
+---  
+Prev: Section 18.8 |  Next: Section 18.10  
+---|---  
+Table of Contents
+Book Info Page
+
+
+Word: su'o
+Filename: section-quantified-sumti.txt
+TF-IDF Score: 0.0765157685103415
+Content: Chapter 6. To Speak Of Many Things: The Lojban sumti  
+---  
+Prev: Section 6.5 |  Next: Section 6.7  
+---|---  
+Table of Contents
+Book Info Page
+* * *
+## 6.6. Quantified sumti
+The following cmavo are discussed in this section:
+ro |  PA |  all of/each of  
+---|---|---  
+su'o |  PA |  at least (one of)  
+Quantifiers tell us how many: in the case of quantifiers with sumti, how many things we are talking about. In Lojban, quantifiers are expressed by numbers and mathematical expressions: a large topic discussed in some detail in Chapter 18. For the purposes of this chapter, a simplified treatment will suffice. Our examples will employ either the simple Lojban numbers __pa__ , __re__ , __ci__ , __vo__ , and __mu__ , meaning “one”, “two”, “three”, “four”, “five” respectively, or else one of four special quantifiers, two of which are discussed in this section and listed above. These four quantifiers are important because every Lojban sumti has either one or two of them implicitly present in it – which one or two depends on the particular kind of sumti. There is more explanation of implicit quantifiers later in this section. (The other two quantifiers, __piro__ and __pisu'o__ , are explained in Section 6.7.)
+Every Lojban sumti may optionally be preceded by an explicit quantifier. The purpose of this quantifier is to specify how many of the things referred to by the sumti are being talked about. Here are some simple examples contrasting sumti with and without explicit quantifiers:
+**Example 6.30. **
+do | cadzu | le | bisli  
+---|---|---|---  
+You | walk-on | the | ice.  
+  
+
+**Example 6.31. **
+re | do | cadzu | le | bisli  
+---|---|---|---|---  
+Two-of | you | walk-on | the | ice.  
+  
+
+The difference between Example 6.30 and Example 6.31 is the presence of the explicit quantifier __re__ in the latter example. Although __re__ by itself means “two”, when used as a quantifier it means “two-of”. Out of the group of listeners (the number of which isn't stated), two (we are not told which ones) are asserted to be “walkers on the ice”. Implicitly, the others (if any) are not walkers on the ice. In Lojban, you cannot say “I own three shoes” if in fact you own four shoes. Numbers need never be specified, but if they are specified they must be correct.
+(This rule does not mean that there is no way to specify a number which is vague. The sentence
+**Example 6.32. **
+mi | ponse | su'o | ci | cutci  
+---|---|---|---|---  
+I | possess | at-least | three | shoes.  
+  
+
+is true if you own three shoes, or four, or indeed any larger number. More details on vague numbers appear in the discussion of mathematical expressions in Chapter 18.)
+Now consider Example 6.30 again. How many of the listeners are claimed to walk on the ice? The answer turns out to be: all of them, however many that is. So Example 6.30 and Example 6.33:
+**Example 6.33. **
+ro | do | cadzu | le | bisli  
+---|---|---|---|---  
+All-of | you | walk-on | the | ice.  
+  
+
+turn out to mean exactly the same thing. This is a safe strategy, because if one of my listeners doesn't turn out to be walking on the ice, I can safely claim that I didn't intend that person to be a listener! And in fact, all of the personal pro-sumti such as __mi__ and __mi'o__ and __ko__ obey the same rule. We say that personal pro-sumti have a so-called “implicit quantifier” of __ro__ (all). This just means that if no quantifier is given explicitly, the meaning is the same as if the implicit quantifier had been used.
+Not all sumti have __ro__ as the implicit quantifier, however. Consider the quotation in:
+**Example 6.34. **
+mi | cusku | lu | do | cadzu | le | bisli | li'u  
+---|---|---|---|---|---|---|---  
+I | express | [quote] | you | walk-on | the | ice | [unquote].  
+I say, “You walk on the ice.”  
+---  
+  
+
+What is the implicit quantifier of the quotation _lu do cadzu le bisli li'u_? Surely not __ro__. If __ro__ were supplied explicitly, thus:
+**Example 6.35. **
+mi | cusku | ro | lu | do | cadzu | le | bisli | li'u  
+---|---|---|---|---|---|---|---|---  
+I | express | all-of | [quote] | you | walk-on | the | ice | [unquote].  
+  
+
+the meaning would be something like “I say every occurrence of the sentence 'You walk on the ice'”. Of course I don't say every occurrence of it, only some occurrences. One might suppose that Example 6.34 means that I express exactly one occurrence, but it is more Lojbanic to leave the number unspecified, as with other sumti. We can say definitely, however, that I say it at least once.
+The Lojban cmavo meaning “at least” is __su'o__ , and if no ordinary number follows, __su'o__ means “at least once”. (See Example 6.32 for the use of __su'o__ with an ordinary number). Therefore, the explicitly quantified version of Example 6.34 is
+**Example 6.36. **
+mi | cusku | su'o | lu | do | cadzu | le | bisli | li'u  
+---|---|---|---|---|---|---|---|---  
+I | express | at-least-one-of | [quote] | you | walk-on | the | ice | [unquote].  
+I say one or more instances of “You walk on the ice”.  
+---  
+I say “You walk on the ice”.  
+  
+
+If an explicit ordinary number such as __re__ were to appear, it would have to convey an exact expression, so
+**Example 6.37. **
+mi | cusku | re | lu | do | cadzu | le | bisli | li'u  
+---|---|---|---|---|---|---|---|---  
+I | express | two-of | [quote] | you | walk-on | the | ice | [unquote].  
+  
+
+means that I say the sentence exactly twice, neither more nor less.
+* * *
+Chapter 6. To Speak Of Many Things: The Lojban sumti  
+---  
+Prev: Section 6.5 |  Next: Section 6.7  
+---|---  
+Table of Contents
+Book Info Page
+
+
+Word: da
+Filename: section-da-buha-series.txt
+TF-IDF Score: 0.37225678517660216
+Content: Chapter 7. Brevity Is The Soul Of Language: Pro-sumti And Pro-bridi  
+---  
+Prev: Section 7.11 |  Next: Section 7.13  
+---|---  
+Table of Contents
+Book Info Page
+* * *
+## 7.12. Bound variable pro-sumti and pro-bridi: the da-series and the bu'a-series
+The following cmavo are discussed in this section:
+da |  KOhA |  da-series |  something-1   
+---|---|---|---  
+de |  KOhA |  da-series |  something-2  
+di |  KOhA |  da-series |  something-3  
+bu'a |  GOhA |  bu'a-series |  some-predicate-1  
+bu'e |  GOhA |  bu'a-series |  some-predicate-2  
+bu'i |  GOhA |  bu'a-series |  some-predicate-3  
+Bound variables belong to the predicate-logic part of Lojban, and are listed here for completeness only. Their semantics is explained in Chapter 16. It is worth mentioning that the Lojban translation of Example 7.2 is:
+**Example 7.73. **
+la | djan. | cu | lafti | da | poi  
+---|---|---|---|---|---  
+That-named | John |  | raised | something-1 | which  
+grana | ku'o | gi'e | desygau | da  
+---|---|---|---|---  
+is-a-stick |  | and | shake-did | something-1.  
+John picked up a stick and shook it.  
+---  
+  
+
+* * *
+Chapter 7. Brevity Is The Soul Of Language: Pro-sumti And Pro-bridi  
+---  
+Prev: Section 7.11 |  Next: Section 7.13  
+---|---  
+Table of Contents
+Book Info Page
+
+
+Word: da
+Filename: section-quantified-variables.txt
+TF-IDF Score: 0.34455268276711926
+Content: Chapter 16. “Who Did You Pass On The Road? Nobody”: Lojban And Logic  
+---  
+Prev: Section 16.5 |  Next: Section 16.7  
+---|---  
+Table of Contents
+Book Info Page
+* * *
+## 16.6. Variables with generalized quantifiers
+So far, we have seen variables with either nothing in front, or with the cmavo __ro__ in front. Now __ro__ is a Lojban number, and means “all”; thus _ro prenu_ means “all persons”, just as _re prenu_ means “two persons”. In fact, unadorned __da__ is also taken to have an implicit number in front of it, namely __su'o__ , which means “at least one”. Why is this? Consider Example 16.9 again, this time with an explicit __su'o__ :
+**Example 16.33. **
+su'o | da | zo'u | da | viska | mi  
+---|---|---|---|---|---  
+For-at-least-one | X | : | X | sees | me.  
+Something sees me.  
+---  
+  
+
+From this version of Example 16.9, we understand the speaker's claim to be that of all the things that there are, at least one of them sees him or her. The corresponding universal claim, Example 16.16, says that of all the things that exist, every one of them can see the speaker.
+Any other number can be used instead of __ro__ or __su'o__ to precede a variable. Then we get claims like:
+**Example 16.34. **
+re | da | zo'u | da | viska | mi  
+---|---|---|---|---|---  
+For-two | Xes | : | X | sees | me.  
+Two things see me.  
+---  
+  
+
+This means that exactly two things, no more or less, saw the speaker on the relevant occasion. In English, we might take “Two things see me” to mean that at least two things see the speaker, but there might be more; in Lojban, though, that claim would have to be made as:
+**Example 16.35. **
+su'ore | da | zo'u | da | viska | mi  
+---|---|---|---|---|---  
+For-at-least-two | Xes | : | X | sees | me.  
+  
+
+which would be false if nothing, or only one thing, saw the speaker, but not otherwise. We note the __su'o__ here meaning “at least”; __su'o__ by itself is short for _su'opa_ where __pa__ means “one”, as is explained in Section 18.9.
+The prenex may be removed from Example 16.34 and Example 16.35 as from the others, leading to:
+**Example 16.36. **
+re | da | viska | mi  
+---|---|---|---  
+Two | Xes | see | me.  
+  
+
+and
+**Example 16.37. **
+su'ore | da | viska | mi  
+---|---|---|---  
+At-least-two | Xes | see | me.  
+  
+
+respectively, subject to the rules prescribed in Section 16.5.
+Now we can explain the constructions _ro prenu_ for “all persons” and _re prenu_ for “two persons” which were casually mentioned at the beginning of this Section. In fact, _ro prenu_ , a so-called “indefinite description”, is shorthand for _ro DA poi prenu_ , where “DA” represents a fictitious variable that hasn't been used yet and will not be used in future. (Even if all three of __da__ , __de__ , and __di__ have been used up, it does not matter, for there are ways of getting more variables, discussed in Section 16.14.) So in fact
+**Example 16.38. **
+re | prenu | cu | viska | mi  
+---|---|---|---|---  
+Two | persons |  | see | me.  
+  
+
+is short for
+**Example 16.39. **
+re | da | poi | prenu | cu | viska | mi  
+---|---|---|---|---|---|---  
+Two | Xes | which | are-persons |  | see | me.  
+  
+
+which in turn is short for:
+**Example 16.40. **
+re | da | poi | prenu | zo'u | da | viska | mi  
+---|---|---|---|---|---|---|---  
+For-two | Xes | which | are-persons | : | X | sees | me.  
+  
+
+Note that when we move more than one variable to the prenex (along with its attached relative clause), we must make sure that the variables are in the same order in the prenex as in the bridi proper.
+* * *
+Chapter 16. “Who Did You Pass On The Road? Nobody”: Lojban And Logic  
+---  
+Prev: Section 16.5 |  Next: Section 16.7  
+---|---  
+Table of Contents
+Book Info Page
+
+
+Word: se
+Filename: section-SE.txt
+TF-IDF Score: 0.1884784305132347
+Content: Chapter 9. To Boston Via The Road Go I, With An Excursion Into The Land Of Modals  
+---  
+Prev: Section 9.3 |  Next: Section 9.5  
+---|---  
+Table of Contents
+Book Info Page
+* * *
+## 9.4. Conversion: SE
+The following cmavo are discussed in this section:
+se |  SE |  2nd place conversion  
+---|---|---  
+te |  SE |  3rd place conversion  
+ve |  SE |  4th place conversion  
+xe |  SE |  5th place conversion  
+So far we have seen ways to move sumti around within a bridi, but the actual place structure of the selbri has always remained untouched. The conversion cmavo of selma'o SE are incorporated within the selbri itself, and produce a new selbri (called a converted selbri) with a different place structure. In particular, after the application of any SE cmavo, the number and purposes of the places remain the same, but two of them have been exchanged, the x1 place and another. Which place has been exchanged with x1 depends on the cmavo chosen. Thus, for example, when __se__ is used, the x1 place is swapped with the x2 place.
+Note that the cmavo of SE begin with consecutive consonants in alphabetical order. There is no “1st place conversion” cmavo, because exchanging the x1 place with itself is a pointless maneuver.
+Here are the place structures of _se klama_ :
+> x1 is the destination of x2's going from x3 via x4 using x5
+and _te klama_ :
+> x1 is the origin and x2 the destination of x3 going via x4 using x5
+and _ve klama_ :
+> x1 is the route to x2 from x3 used by x4 going via x5
+and _xe klama_ :
+> x1 is the means in going to x2 from x3 via x4 employed by x5
+Note that the place structure numbers in each case continue to be listed in the usual order, x1 to x5.
+Consider the following pair of examples:
+**Example 9.18. **
+la | bastn. | cu | se klama | mi  
+---|---|---|---|---  
+That-named | Boston |  | is-the-destination | of-me.  
+Boston is my destination.  
+---  
+Boston is gone to by me.  
+  
+
+**Example 9.19. **
+fe | la | bastn. | cu | klama | fa | mi  
+---|---|---|---|---|---|---  
+x2= | that-named | Boston |  | go | x1= | I.  
+To Boston go I.  
+---  
+  
+
+Example 9.18 and Example 9.19 mean the same thing, in the sense that there is a relationship of going with the speaker as the agent and Boston as the destination (and with unspecified origin, route, and means). Structurally, however, they are quite different. Example 9.18 has _la bastn._ in the x1 place and __mi__ in the x2 place of the selbri _se klama_ , and uses standard bridi order; Example 9.19 has __mi__ in the x1 place and _la bastn._ in the x2 place of the selbri __klama__ , and uses a non-standard order.
+The most important use of conversion is in the construction of descriptions. A description is a sumti which begins with a cmavo of selma'o LA or LE, called the descriptor, and contains (in the simplest case) a selbri. We have already seen the descriptions _le dargu_ and _le karce_. To this we could add:
+**Example 9.20. **
+le | klama  
+---|---  
+the go-er, the one who goes  
+---  
+  
+
+In every case, the description is about something which fits into the x1 place of the selbri. In order to get a description of a destination (that is, something fitting the x2 place of __klama__), we must convert the selbri to _se klama_ , whose x1 place is a destination. The result is
+**Example 9.21. **
+le | se | klama  
+---|---|---  
+the destination gone to by someone  
+---  
+  
+
+Likewise, we can create three more converted descriptions:
+**Example 9.22. **
+le | te | klama  
+---|---|---  
+the origin of someone's going  
+---  
+  
+
+**Example 9.23. **
+le | ve | klama  
+---|---|---  
+the route of someone's going  
+---  
+  
+
+**Example 9.24. **
+le | xe | klama  
+---|---|---  
+the means by which someone goes  
+---  
+  
+
+Example 9.23 does not mean “the route” plain and simple: that is _le pluta_ , using a different selbri. It means a route that is used by someone for an act of __klama__ ; that is, a journey with origin and destination. A “road” on Mars, on which no one has traveled or is ever likely to, may be called _le pluta_ , but it cannot be _le ve klama_ , since there exists no one for whom it is _le ve klama be fo da_ (the route taken in an actual journey by someone [da]).
+When converting selbri that are more complex than a single brivla, it is important to realize that the scope of a SE cmavo is only the following brivla (or equivalent unit). In order to convert an entire tanru, it is necessary to enclose the tanru in __ke__ … __ke'e__ brackets:
+**Example 9.25. **
+mi | se | ke | blanu | zdani | [ke'e] | ti  
+---|---|---|---|---|---|---  
+I | [2nd-conversion] | ( | blue | house | ) | this-thing  
+  
+
+The place structure of _blanu zdani_ (blue house) is the same as that of __zdani__ , by the rule given in Section 9.1. The place structure of __zdani__ is:
+> _ _zdani_ _ x1 is a house/nest/lair/den for inhabitant x2
+The place structure of _se ke blanu zdani [ke'e]_ is therefore:
+> x1 is the inhabitant of the blue house (etc.) x2
+Consequently, Example 9.25 means:
+> I am the inhabitant of the blue house which is this thing.
+Conversion applied to only part of a tanru has subtler effects which are explained in Section 5.11.
+It is grammatical to convert a selbri more than once with SE; later (inner) conversions are applied before earlier (outer) ones. For example, the place structure of _se te klama_ is achieved by exchanging the x1 and x2 place of _te klama_ , producing:
+> x1 is the destination and x2 is the origin of x3 going via x4 using x5
+On the other hand, _te se klama_ has a place structure derived from swapping the x1 and x3 places of _se klama_ :
+> x1 is the origin of x2's going to x3 via x4 using x5
+which is quite different. However, multiple conversions like this are never necessary. Arbitrary scrambling of places can be achieved more easily and far more intelligibly with FA tags, and only a single conversion is ever needed in a description.
+(Although no one has made any real use of it, it is perhaps worth noting that compound conversions of the form _setese_ , where the first and third cmavo are the same, effectively swap the two given places while leaving the others, including x1, alone: _setese_ (or equivalently _tesete_) swap the x2 and x3 places, whereas _texete_ (or _xetexe_) swap the x3 and x5 places.)
+* * *
+Chapter 9. To Boston Via The Road Go I, With An Excursion Into The Land Of Modals  
+---  
+Prev: Section 9.3 |  Next: Section 9.5  
+---|---  
+Table of Contents
+Book Info Page
+
+
+Word: se
+Filename: section-place-conversion.txt
+TF-IDF Score: 0.15530645972922563
+Content: Chapter 5. “Pretty Little Girls' School”: The Structure Of Lojban selbri  
+---  
+Prev: Section 5.10 |  Next: Section 5.12  
+---|---  
+Table of Contents
+Book Info Page
+* * *
+## 5.11. Conversion of simple selbri
+Conversion is the process of changing a selbri so that its places appear in a different order. This is not the same as labeling the sumti with the cmavo of FA, as mentioned in Section 5.7, and then rearranging the order in which the sumti are spoken or written. Conversion transforms the selbri into a distinct, though closely related, selbri with renumbered places.
+In Lojban, conversion is accomplished by placing a cmavo of selma'o SE before the selbri:
+**Example 5.109. **
+mi | prami | do  
+---|---|---  
+I love you.  
+---  
+  
+
+is equivalent in meaning to:
+**Example 5.110. **
+do | se | prami | mi  
+---|---|---|---  
+You | [swap x1 and x2] | love | me.  
+You are loved by me.  
+---  
+  
+
+Conversion is fully explained in Section 9.4. For the purposes of this chapter, the important point about conversion is that it applies only to the following simple selbri. When trying to convert a tanru, therefore, it is necessary to be careful! Consider Example 5.111:
+**Example 5.111. **
+la | .alis. | cu | cadzu | klama | le | zarci  
+---|---|---|---|---|---|---  
+That-named | Alice |  | is-a-walker | type-of-goer-to | the | market.  
+That-named | Alice |  | walkingly | goes-to | the | market.  
+Alice walks to the market.  
+---  
+  
+
+To convert this sentence so that _le zarci_ is in the x1 place, one correct way is:
+**Example 5.112. **
+le | zarci | cu | se  
+---|---|---|---  
+The | market |  | is-a-[swap x1/x2]  
+The | market |  |   
+ke | cadzu | klama | [ke'e] | la | .alis.  
+---|---|---|---|---|---  
+( | walker | type-of-goer-to | ) | that-named | Alice.  
+| is-walkingly | gone-to-by |  | that-named | Alice.  
+  
+
+The __ke__ … __ke'e__ brackets cause the entire tanru to be converted by the __se__ , which would otherwise convert only __cadzu__ , leading to:
+**Example 5.113. **
+le | zarci | cu | se | cadzu  
+---|---|---|---|---  
+The | market |  | (is-a-[swap x1/x2] | walker)  
+The | market |  |  | is-a-walking-surface  
+klama | la | .alis.  
+---|---|---  
+type-of-goer-to | that-named | Alice.  
+type-of-goer-to | that-named | Alice.  
+  
+
+whatever that might mean. An alternative approach, since the place structure of _cadzu klama_ is that of __klama__ alone, is to convert only the latter:
+**Example 5.114. **
+le | zarci | cu | cadzu | se klama | la | .alis.  
+---|---|---|---|---|---|---  
+The | market |  | walkingly | is-gone-to-by | that-named | Alice.  
+  
+
+But the tanru in Example 5.114 may or may not have the same meaning as that in Example 5.111; in particular, because __cadzu__ is not converted, there is a suggestion that although Alice is the goer, the market is the walker. With a different sumti as x1, this seemingly odd interpretation might make considerable sense:
+**Example 5.115. **
+la | djan. | cu | cadzu | se klama | la | .alis  
+---|---|---|---|---|---|---  
+That-named | John |  | walkingly | is-gone-to-by | that-named | Alice  
+  
+
+suggests that Alice is going to John, who is a moving target.
+There is an alternative type of conversion, using the cmavo __jai__ of selma'o JAI optionally followed by a modal or tense construction. Grammatically, such a combination behaves exactly like conversion using SE. More details can be found in Section 9.12.
+* * *
+Chapter 5. “Pretty Little Girls' School”: The Structure Of Lojban selbri  
+---  
+Prev: Section 5.10 |  Next: Section 5.12  
+---|---  
+Table of Contents
+Book Info Page

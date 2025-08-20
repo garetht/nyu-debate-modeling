@@ -1,0 +1,857 @@
+
+The following definitions pulled from the above background may be particularly useful:
+{'Lojban': 'cu', 'Formal Language': 'CU', 'English': 'selbri separator', 'Definition': 'elidable marker: separates selbri from preceding sumti, allows preceding terminator elision', 'Confer': None, 'Type': 'cmavo'}
+{'Lojban': 'la', 'Formal Language': 'LA', 'English': 'that named', 'Definition': 'name descriptor: the one(s) called ... ; takes name or selbri description', 'Confer': None, 'Type': 'cmavo'}
+{'Lojban': 'tcati', 'Lojban definition': 'x_{1} is made of/contains/is a quantity of tea brewed from leaves x_{2}.', 'English': '- tea', 'Type': 'gismu'}
+{'Lojban': "lo'e", 'Formal Language': 'LE', 'English': 'the typical', 'Definition': 'veridical descriptor: the typical one(s) who really is(are) ...', 'Confer': None, 'Type': 'cmavo'}
+{'Lojban': 'zmanei', 'Lojban Composition': 'zmadu+nelci', 'English': 'to prefer', 'Type': 'lujvo', 'Arguments': '$nelci1 $nelci2 $=zmadu1 $zmadu2 $zmadu4'}
+{'Lojban': 'nelmau', 'Lojban Composition': 'nelci+zmadu', 'English': 'No definition has been found', 'Type': 'lujvo', 'Arguments': nan}
+
+The following are the top TF-IDF files for the words in choice A and choice B from the The Complete Lojban Language Grammar Book:
+Word: cu
+Filename: section-attitudinals.txt
+TF-IDF Score: 0.22788147621681745
+Content: Chapter 2. A Quick Tour of Lojban Grammar, With Diagrams  
+---  
+Prev: Section 2.15 |  Next: Section 2.17  
+---|---  
+Table of Contents
+Book Info Page
+* * *
+## 2.16. Indicators
+Different cultures express emotions and attitudes with a variety of intonations and gestures that are not usually included in written language. Some of these are available in some languages as interjections (i.e. “Aha!”, “Oh no!”, “Ouch!”, “Aahh!”, etc.), but they vary greatly from culture to culture.
+Lojban has a group of cmavo known as “attitudinal indicators” which specifically covers this type of commentary on spoken statements. They are both written and spoken, but require no specific intonation or gestures. Grammatically they are very simple: one or more attitudinals at the beginning of a bridi apply to the entire bridi; anywhere else in the bridi they apply to the word immediately to the left. For example:
+**Example 2.79. **
+.ie |  mi |  [cu] |  klama  
+---|---|---|---  
+Agreement! |  I |  - |  go.  
+Yep! I'll go.  
+---  
+  
+
+**Example 2.80. **
+.ei |  mi |  [cu] |  klama  
+---|---|---|---  
+Obligation! |  I |  - |  go.  
+I should go.  
+---  
+  
+
+**Example 2.81. **
+mi |  [cu] |  klama |  le melbi  
+---|---|---|---  
+I |  - |  go |  to-the beautiful-thing  
+.ui |  [ku]  
+---|---  
+and I am happy because it is the beautiful thing I'm going to |  -  
+  
+
+Not all indicators indicate attitudes. Discursives, another group of cmavo with the same grammatical rules as attitudinal indicators, allow free expression of certain kinds of commentary about the main utterances. Using discursives allows a clear separation of these so-called “metalinguistic” features from the underlying statements and logical structure. By comparison, the English words “but” and “also”, which discursively indicate contrast or an added weight of example, are logically equivalent to “and”, which does not have a discursive content. The average English-speaker does not think about, and may not even realize, the paradoxical idea that “but” basically means “and”.
+**Example 2.82. **
+mi |  [cu] |  klama |  .i |  do |  [cu] |  stali  
+---|---|---|---|---|---|---  
+I |  - |  go. |  |  You |  - |  stay.  
+  
+
+**Example 2.83. **
+mi |  [cu] |  klama |  .i |  ji'a |  do |  [cu] |  stali  
+---|---|---|---|---|---|---|---  
+I |  - |  go. |  |  In addition, |  you |  - |  stay. |  added weight  
+  
+
+**Example 2.84. **
+mi |  [cu] |  klama |  .i |  ku'i |  do |  [cu] |  stali  
+---|---|---|---|---|---|---|---  
+I |  - |  go. |  |  However, |  you |  - |  stay. |  contrast  
+  
+
+Another group of indicators are called “evidentials”. Evidentials show the speaker's relationship to the statement, specifically how the speaker came to make the statement. These include __za'a__ (I directly observe the relationship), __pe'i__ (I believe that the relationship holds), __ru'a__ (I postulate the relationship), and others. Many American Indian languages use this kind of words.
+**Example 2.85. **
+pe'i |  do |  [cu] |  melbi  
+---|---|---|---  
+I opine! |  You |  - |  are beautiful.  
+  
+
+**Example 2.86. **
+za'a |  do |  [cu] |  melbi  
+---|---|---|---  
+I directly observe! |  You |  - |  are beautiful.  
+  
+
+* * *
+Chapter 2. A Quick Tour of Lojban Grammar, With Diagrams  
+---  
+Prev: Section 2.15 |  Next: Section 2.17  
+---|---  
+Table of Contents
+Book Info Page
+
+
+Word: cu
+Filename: section-some-brivla.txt
+TF-IDF Score: 0.15225388318577596
+Content: Chapter 2. A Quick Tour of Lojban Grammar, With Diagrams  
+---  
+Prev: Section 2.10 |  Next: Section 2.12  
+---|---  
+Table of Contents
+Book Info Page
+* * *
+## 2.11. Examples of brivla
+The simplest form of selbri is an individual word. A word which may by itself express a selbri relation is called a __brivla__. The three types of brivla are gismu (root words), lujvo (compounds), and fu'ivla (borrowings from other languages). All have identical grammatical uses. So far, most of our selbri have been gismu or tanru built from gismu.
+gismu:
+**Example 2.46. **
+mi |  [cu] |  klama |  ti |  zo'e |  zo'e |  ta  
+---|---|---|---|---|---|---  
+Go-er |  - |  goes |  destination |  origin |  route |  means.  
+I go here (to this) using that means (from somewhere via some route).  
+---  
+  
+
+lujvo:
+**Example 2.47. **
+ta |  [cu] |  blari'o  
+---|---|---  
+That |  - |  is-blue-green.  
+  
+
+fu'ivla:
+**Example 2.48. **
+ti |  [cu] |  djarspageti  
+---|---|---  
+This |  - |  is-spaghetti.  
+  
+
+Some cmavo may also serve as selbri, acting as variables that stand for another selbri. The most commonly used of these is __go'i__ , which represents the main bridi of the previous Lojban sentence, with any new sumti or other sentence features being expressed replacing the previously expressed ones. Thus, in this context:
+**Example 2.49. **
+ta |  [cu] |  go'i  
+---|---|---  
+That |  - |  too/same-as-last selbri.  
+That (is spaghetti), too.  
+---  
+  
+
+* * *
+Chapter 2. A Quick Tour of Lojban Grammar, With Diagrams  
+---  
+Prev: Section 2.10 |  Next: Section 2.12  
+---|---  
+Table of Contents
+Book Info Page
+
+
+Word: la
+Filename: section-acronyms.txt
+TF-IDF Score: 0.32369313839572034
+Content: Chapter 17. As Easy As A-B-C? The Lojban Letteral System And Its Uses  
+---  
+Prev: Section 17.11 |  Next: Section 17.13  
+---|---  
+Table of Contents
+Book Info Page
+* * *
+## 17.12. Acronyms
+An acronym is a name constructed of lerfu. English examples are “DNA”, “NATO”, “CIA”. In English, some of these are spelled out (like “DNA” and “CIA”) and others are pronounced more or less as if they were ordinary English words (like “NATO”). Some acronyms fluctuate between the two pronunciations: “SQL” may be “ess cue ell” or “sequel”.
+In Lojban, a name can be almost any sequence of sounds that ends in a consonant and is followed by a pause. The easiest way to Lojbanize acronym names is to glue the lerfu words together, using _'_ wherever two vowels would come together (pauses are illegal in names) and adding a final consonant:
+**Example 17.40. **
+la dyny'abub. .i la ny'abuty'obub. .i la cy'ibu'abub.  
+---  
+DNA. NATO. CIA.  
+---  
+… .i la sykybulyl. .i la .ibubymym. .i la ny'ybucyc.  
+---  
+… SQL. IBM. NYC.  
+---  
+  
+
+There is no fixed convention for assigning the final consonant. In Example 17.40, the last consonant of the lerfu string has been replicated into final position.
+Some compression can be done by leaving out __bu__ after vowel lerfu words (except for __.y.bu__ , wherein the __bu__ cannot be omitted without ambiguity). Compression is moderately important because it's hard to say long names without introducing an involuntary (and illegal) pause:
+**Example 17.41. **
+la dyny'am. .i la ny'aty'om. .i la cy'i'am.  
+---  
+DNA. NATO. CIA.  
+---  
+… .i la sykybulym. .i la .ibymym. .i la ny'ybucym.  
+---  
+… SQL. IBM. NYC.  
+---  
+  
+
+In Example 17.41, the final consonant _m_ stands for __merko__ , indicating the source culture of these acronyms.
+Another approach, which some may find easier to say and which is compatible with older versions of the language that did not have a _'_ character, is to use the consonant _z_ instead of _'_ :
+**Example 17.42. **
+la dynyzaz. .i la nyzatyzoz. .i la cyzizaz.  
+---  
+DNA. NATO. CIA.  
+---  
+… .i la sykybulyz. .i la .ibymyz. .i la nyzybucyz.  
+---  
+… SQL. IBM. NYC.  
+---  
+  
+
+One more alternative to these lengthy names is to use the lerfu string itself prefixed with __me__ , the cmavo that makes sumti into selbri:
+**Example 17.43. **
+la | me | dy | ny. | .abu  
+---|---|---|---|---  
+that-named | what-pertains-to |  “d” |  “n” |  “a”  
+  
+
+This works because __la__ , the cmavo that normally introduces names used as sumti, may also be used before a predicate to indicate that the predicate is a (meaningful) name:
+**Example 17.44. **
+la | cribe | cu | ciska  
+---|---|---|---  
+That-named |  “Bear” |  | writes.  
+Bear is a writer.  
+---  
+  
+
+Example 17.44 does not of course refer to a bear (_le cribe_ or _lo cribe_) but to something else, probably a person, named “Bear”. Similarly, _me dy ny. .abu_ is a predicate which can be used as a name, producing a kind of acronym which can have pauses between the individual lerfu words.
+* * *
+Chapter 17. As Easy As A-B-C? The Lojban Letteral System And Its Uses  
+---  
+Prev: Section 17.11 |  Next: Section 17.13  
+---|---  
+Table of Contents
+Book Info Page
+
+
+Word: la
+Filename: section-non-logical-connectives.txt
+TF-IDF Score: 0.2409591667326584
+Content: Chapter 14. If Wishes Were Horses: The Lojban Connective System  
+---  
+Prev: Section 14.13 |  Next: Section 14.15  
+---|---  
+Table of Contents
+Book Info Page
+* * *
+## 14.14. Non-logical connectives
+Way back in Section 14.1, the point was made that not every use of English “and”, “if ... then”, and so on represents a Lojban logical connective. In particular, consider the “and” of:
+**Example 14.109. **
+John and Alice carried the piano.
+  
+
+Given the nature of pianos, this probably means that John carried one end and Alice the other. So it is not true that:
+**Example 14.110. **
+John carried the piano, and Alice carried the piano.
+  
+
+which would mean that each of them carried the piano by himself/herself. Lojban deals with this particular linguistic phenomenon as a “mass”. John and Alice are joined together into a mass, John-and-Alice, and it is this mass which carried the piano, not either of them separately. The cmavo __joi__ (of selma'o JOI) is used to join two or more components into a mass:
+**Example 14.111. **
+la | djan. | joi | la | .alis. | cu | bevri | le | pipno  
+---|---|---|---|---|---|---|---|---  
+That-named | John | massed-with | that-named | Alice |  | carry | the | piano.  
+  
+
+Example 14.111 covers the case mentioned, where John and Alice divide the labor; it also could mean that John did all the hauling and Alice did the supervising. This possibility arises because the properties of a mass are the properties of its components, which can lead to apparent contradictions: if John is small and Alice is large, then John-and-Alice is both small and large. Masses are also discussed in Section 6.3.
+Grammatically, __joi__ can appear between two sumti (like an ek) or between two tanru components (like a jek). This flexibility must be paid for in the form of occasional terminators that cannot be elided:
+**Example 14.112. **
+le | nanmu | ku | joi | le | ninmu | [ku] | cu | klama | le | zarci  
+---|---|---|---|---|---|---|---|---|---|---  
+The | man |  | massed-with | the | woman |  |  | go-to | the | market.  
+  
+
+The cmavo __ku__ is the elidable terminator for __le__ , which can almost always be elided, but not in this case. If the first __ku__ were elided here, Lojban's parsing rules would see _le nanmu joi_ and assume that another tanru component is to follow; since the second __le__ cannot be part of a tanru, a parsing error results. No such problem can occur with logical connectives, because an ek signals a following sumti and a jek a following tanru component unambiguously.
+Single or compound cmavo involving members of selma'o JOI are called joiks, by analogy with the names for logical connectives. It is not grammatical to use joiks to connect bridi-tails.
+In tanru, __joi__ has the connotation “mixed with”, as in the following example:
+**Example 14.113. **
+ti | blanu | joi | xunre | bolci  
+---|---|---|---|---  
+This | is-a-(blue | mixed-with | red) | ball.  
+This is a blue and red ball.  
+---  
+  
+
+Here the ball is neither wholly blue nor wholly red, but partly blue and partly red. Its blue/redness is a mass property. (Just how blue something has to be to count as “wholly blue” is an unsettled question, though. A _blanu zdani_ may be so even though not every part of it is blue.)
+There are several other cmavo in selma'o JOI which can be used in the same grammatical constructions. Not all of them are well-defined as yet in all contexts. All have clear definitions as sumti connectives; those definitions are shown in the following table:
+A __joi__ B | the mass with components A and B  
+---|---  
+A __ce__ B | the set with elements A and B  
+A __ce'o__ B | the sequence with elements A and B in order  
+A __se__ __ce'o__ B | the sequence with elements B and A in order  
+A __jo'u__ B | A and B considered jointly  
+A __fa'u__ B | A and B respectively  
+A __se__ __fa'u__ B | B and A respectively  
+A __jo'e__ B | the union of sets A and B  
+A __ku'a__ B | the intersection of sets A and B  
+A __pi'u__ B | the cross product of sets A and B  
+A __se__ __pi'u__ B | the cross product of sets B and A  
+The cmavo __se__ is grammatical before any JOI cmavo, but only useful with those that have inherent order. Here are some examples of joiks:
+**Example 14.114. **
+mi | cuxna | la | .alis. | la | frank.  
+---|---|---|---|---|---  
+I | choose | that-named | Alice | from-that-named | Frank  
+ce | la | .alis. | ce | la | djeimyz.  
+---|---|---|---|---|---  
+and-member | that-named | Alice | and-member | that-named | James.  
+I choose Alice from among Frank, Alice, and James.  
+---  
+  
+
+The x3 place of __cuxna__ is a set from which the choice is being made. A set is an abstract object which is determined by specifying its members. Unlike those of a mass, the properties of a set are unrelated to its members' properties: the set of all rats is large (since many rats exist), but the rats themselves are small. This chapter does not attempt to explain set theory (the mathematical study of sets) in detail: explaining propositional logic is quite enough for one chapter!
+In Example 14.114 we specify that set by listing the members with __ce__ joining them.
+**Example 14.115. **
+ti | liste | mi | ce'o | do | ce'o | la | djan.  
+---|---|---|---|---|---|---|---  
+This | is-a-list-of | me | and-sequence | you | and-sequence | that-named | John.  
+This is a list of you, me, and John.  
+---  
+  
+
+The x2 place of __liste__ is a sequence of the things which are mentioned in the list. (It is worth pointing out that _lo liste_ means a physical object such as a grocery list: a purely abstract list is _lo porsi_ , a sequence.) Here the three sumti connected by __ce'o__ are in a definite order, not just lumped together in a set or a mass.
+So __joi__ , __ce__ , and __ce'o__ are parallel, in that the sumti connected are taken to be individuals, and the result is something else: a mass, a set, or a sequence respectively. The cmavo __jo'u__ serves as a fourth element in this pattern: the sumti connected are individuals, and the result is still individuals – but inseparably so. The normal Lojban way of saying that James and George are brothers is:
+**Example 14.116. **
+la | djeimyz. | bruna | la | djordj.  
+---|---|---|---|---  
+That-named | James | is-the-brother-of | that-named | George.  
+  
+
+possibly adding a discursive element meaning “and vice versa”. However, “James and George are brothers” cannot be correctly translated as:
+**Example 14.117. **
+la | djeimyz. | .e | la | djordj. | bruna  
+---|---|---|---|---|---  
+That-named | James | and | that-named | George | is-a-brother.  
+  
+
+since that expands to two bridi and means that James is a brother and so is George, but not necessarily of each other. If the __e__ is changed to __jo'u__ , however, the meaning of Example 14.116 is preserved:
+**Example 14.118. **
+la | djeimyz. | jo'u  
+---|---|---  
+That-named | James | in-common-with | that-named  
+la | djordj. | cu | remei | bruna  
+---|---|---|---|---  
+George |  | are-a-twosome | type-of-brothers.  
+  
+
+The tanru _remei bruna_ is not strictly necessary in this sentence, but is used to make clear that we are not saying that James and George are both brothers of some third person not specified. Alternatively, we could turn the tanru around: the x1 place of __re__ __mei__ is a mass with two components, leading to:
+**Example 14.119. **
+la | djeimyz. | joi  
+---|---|---  
+That-named | James | massed-with  
+la | djordj. | cu | bruna | remei  
+---|---|---|---|---  
+that-named | George |  | are-a-brother | type-of-twosome.  
+  
+
+where __joi__ is used to create the necessary mass.
+Likewise, __fa'u__ can be used to put two individuals together where order matters. Typically, there will be another __fa'u__ somewhere else in the same bridi:
+**Example 14.120. **
+la | djeimyz. | fa'u | la | djordj.  
+---|---|---|---|---  
+That-named | James | jointly-in-order-with | that-named | George  
+prami | la | meris. | fa'u | la | martas.  
+---|---|---|---|---|---  
+loves | that-named | Mary | jointly-in-order-with | that-named | Martha.  
+James and George love Mary and Martha, respectively.  
+---  
+  
+
+Here the information carried by the English adverb “respectively”, namely that James loves Mary and George loves Martha, is divided between the two occurrences of __fa'u__. If both uses of __fa'u__ were to be changed to __e__ , we would get:
+**Example 14.121. **
+la | djeimyz. | .e | la | djordj. | prami  
+---|---|---|---|---|---  
+That-named | James | and | that-named | George | love  
+la | meris. | .e | la | martas.  
+---|---|---|---|---  
+that-named | Mary | and | that-named | Martha.  
+  
+
+which can be transformed to four bridi:
+**Example 14.122. **
+la | djeimyz. | prami | la | meris. | .ije | la | djordj. | prami  
+---|---|---|---|---|---|---|---|---  
+That-named | James | loves | that-named | Mary, | and | that-named | George | loves  
+la | meris. | .ije | la | djeimyz. | prami | la | martas.  
+---|---|---|---|---|---|---|---  
+that-named | Mary, | and | that-named | James | loves | that-named | Martha,  
+.ije | la | djordj. | prami | la | martas.  
+---|---|---|---|---|---  
+and | that-named | George | loves | that-named | Martha.  
+  
+
+which represents quite a different state of affairs from Example 14.120. The meaning of Example 14.120 can also be conveyed by a termset:
+**Example 14.123. **
+la | djeimyz. | ce'e | la | meris. | pe'e  
+---|---|---|---|---|---  
+That-named | James | [plus] | that-named | Mary | [joint]  
+.e | la | djordj. | ce'e | la | martas. | prami  
+---|---|---|---|---|---|---  
+and | that-named | George | [plus] | that-named | Martha | loves.  
+  
+
+at the expense of re-ordering the list of names so as to make the pairs explicit. This option is not available when one of the lists is only described rather than enumerated:
+**Example 14.124. **
+la | djeimyz. | fa'u | la | djordj. | prami | re | mensi  
+---|---|---|---|---|---|---|---  
+That-named | James | and-respectively | that-named | George | love | two | sisters.  
+  
+
+which conveys that James loves one sister and George the other, though we are not able to tell which of the sisters is which.
+* * *
+Chapter 14. If Wishes Were Horses: The Lojban Connective System  
+---  
+Prev: Section 14.13 |  Next: Section 14.15  
+---|---  
+Table of Contents
+Book Info Page
+
+
+Word: tcati
+Filename: section-truth-and-connective-questions.txt
+TF-IDF Score: 0.0918887128822922
+Content: Chapter 14. If Wishes Were Horses: The Lojban Connective System  
+---  
+Prev: Section 14.12 |  Next: Section 14.14  
+---|---  
+Table of Contents
+Book Info Page
+* * *
+## 14.13. Truth questions and connective questions
+So far we have addressed only sentences which are statements. Lojban, like all human languages, needs also to deal with sentences which are questions. There are many ways of asking questions in Lojban, but some of these (like questions about quantity, tense, and emotion) are discussed in other chapters.
+The simplest kind of question is of the type “Is it true that ...” where some statement follows. This type is called a “truth question”, and can be represented in English by Example 14.92:
+**Example 14.92. **
+Is it true that Fido is a dog?
+Is Fido a dog?
+  
+
+Note the two formulations. English truth questions can always be formed by prefixing “Is is true that” to the beginning of a statement; there is also usually a more idiomatic way involving putting the verb before its subject. “Is Fido a dog?” is the truth question corresponding to “Fido is a dog”. In Lojban, the equivalent mechanism is to prefix the cmavo __xu__ (of selma'o UI) to the statement:
+**Example 14.93. **
+xu | la | faidon. | gerku  
+---|---|---|---  
+Is-it-true-that | that-named | Fido | is-a-dog?  
+  
+
+Example 14.92 and Example 14.93 are equivalent in meaning.
+A truth question can be answered “yes” or “no”, depending on the truth or falsity, respectively, of the underlying statement. The standard way of saying “yes” in Lojban is __go'i__ and of saying “no” is __na__ __go'i__. (The reasons for this rule are explained in Section 7.6.) In answer to Example 14.93, the possible answers are:
+**Example 14.94. **
+go'i  
+---  
+Fido is a dog.  
+---  
+  
+
+and
+**Example 14.95. **
+nago'i  
+---  
+Fido is not a dog.  
+---  
+  
+
+Some English questions seemingly have the same form as the truth questions so far discussed. Consider
+**Example 14.96. **
+Is Fido a dog or a cat?
+  
+
+Superficially, Example 14.96 seems like a truth question with the underlying statement:
+**Example 14.97. **
+Fido is a dog or a cat.
+  
+
+By translating Example 14.97 into Lojban and prefixing __xu__ to signal a truth question, we get:
+**Example 14.98. **
+xu | la | faidon. | gerku | gi'onai | mlatu  
+---|---|---|---|---|---  
+Is-it-true-that | that-named | Fido | is-a-dog | or | is-a-cat | (but not both)?  
+  
+
+Given that Fido really is either a dog or a cat, the appropriate answer would be __go'i__ ; if Fido were a fish, the appropriate answer would be __na__ __go'i__.
+But that is not what an English-speaker who utters Example 14.96 is asking! The true significance of Example 14.96 is that the speaker desires to know the truth value of either of the two underlying bridi (it is presupposed that only one is true).
+Lojban has an elegant mechanism for rendering this kind of question which is very unlike that used in English. Instead of asking about the truth value of the connected bridi, Lojban users ask about the truth function which connects them. This is done by using a special question cmavo: there is one of these for each of the logical connective selma'o, as shown by the following table:
+ge'i |  GA |  forethought connective question  
+---|---|---  
+gi'i |  GIhA |  bridi-tail connective question  
+gu'i |  GUhA |  tanru forethought connective question  
+je'i |  JA |  tanru connective question  
+ji |  A |  sumti connective question  
+(This list unfortunately departs from the pretty regularity of the other cmavo for logical connection. The two-syllable selma'o, GIhA and GUhA, make use of the cmavo ending in “-i” which is not used for a truth function, but __gi__ and __i__ were not available, and different cmavo had to be chosen. This table must simply be memorized, like most other non-connective cmavo assignments.)
+One correct translation of Example 14.96 employs a question gihek:
+**Example 14.99. **
+la | .alis. | gerku | gi'i | mlatu  
+---|---|---|---|---  
+That-named | Alice | is-a-dog | [truth-function?] | is-a-cat?  
+  
+
+Here are some plausible answers:
+**Example 14.100. **
+nagi'e  
+---  
+Alice is not a dog and is a cat.  
+---  
+  
+
+**Example 14.101. **
+gi'enai  
+---  
+Alice is a dog and is not a cat.  
+---  
+  
+
+**Example 14.102. **
+nagi'enai  
+---  
+Alice is not a dog and is not a cat.  
+---  
+  
+
+**Example 14.103. **
+nagi'o  
+---  
+gi'onai  
+Alice is a dog or is a cat but not both (I'm not saying which).  
+---  
+  
+
+Example 14.103 is correct but uncooperative.
+As usual, Lojban questions are answered by filling in the blank left by the question. Here the blank is a logical connective, and therefore it is grammatical in Lojban to utter a bare logical connective without anything for it to connect.
+The answer __gi'e__ , meaning that Alice is a dog and is a cat, is impossible in the real world, but for:
+**Example 14.104. **
+do | djica | tu'a | loi | ckafi  
+---|---|---|---|---  
+You | desire | something-about | a-mass-of | coffee  
+ji | loi | tcati  
+---|---|---  
+[truth-function?] | a-mass-of | tea?  
+Do you want coffee or tea?  
+---  
+  
+
+the answer __e__ , meaning that I want both, is perfectly plausible, if not necessarily polite.
+The forethought questions __ge'i__ and __gu'i__ are used like the others, but ambiguity forbids the use of isolated forethought connectives as answers – they sound like the start of forethought-connected bridi. So although Example 14.105 is the forethought version of Example 14.104:
+**Example 14.105. **
+do | djica | tu'a | ge'i | loi | ckafi  
+---|---|---|---|---|---  
+You | desire | something-about | [truth-function?] | a-mass-of | coffee  
+gi | loi | tcati  
+---|---|---  
+[or] | a-mass-of | tea?  
+  
+
+the answer must be in afterthought form.
+There are natural languages, notably Chinese, which employ the Lojbanic form of connective question. The Chinese sentence
+**Example 14.106. **
+_ni 3 zou3 hai2shi pao3_  
+---  
+You walk [or?] run?  
+  
+
+means “Do you walk or run?”, and is exactly parallel to the Lojban:
+**Example 14.107. **
+do | cadzu | gi'i | bajra  
+---|---|---|---  
+You | walk | [or?] | run?  
+  
+
+However, Chinese does not use logical connectives in the reply to such a question, so the resemblance, though striking, is superficial.
+Truth questions may be used in bridi connection. This form of sentence is perfectly legitimate, and can be interpreted by using the convention that a truth question is true if the answer is “yes” and false if the answer is __no__. Analogously, an imperative sentence (involving the special pro-sumti __ko__ , which means “you” but marks the sentence as a command) is true if the command is obeyed, and false otherwise. A request of Abraham Lincoln's may be translated thus:
+**Example 14.108. **
+ganai | ti | ckafi | gi | ko | bevri | loi | tcati | mi  
+---|---|---|---|---|---|---|---|---  
+If | this | is-coffee | then | [you!] | bring | a-mass-of | tea | to-me,  
+.ije | ganai | ti | tcati | gi | ko | bevri | loi | ckafi | mi  
+---|---|---|---|---|---|---|---|---|---  
+and | if | this | is-tea | then | [you!] | bring | a-mass-of | coffee | to-me.  
+If this is coffee, bring me tea; but if this is tea, bring me coffee.  
+---  
+  
+
+In logical terms, however, “but” is the same as “and”; the difference is that the sentence after a “but” is felt to be in tension or opposition to the sentence before it. Lojban represents this distinction by adding the discursive cmavo __ku'i__ (of selma'o UI), which is explained in Section 13.12, to the logical __.i__ __je__.)
+* * *
+Chapter 14. If Wishes Were Horses: The Lojban Connective System  
+---  
+Prev: Section 14.12 |  Next: Section 14.14  
+---|---  
+Table of Contents
+Book Info Page
+
+
+Word: tcati
+Filename: section-non-logical-continued.txt
+TF-IDF Score: 0.027217327173384123
+Content: Chapter 14. If Wishes Were Horses: The Lojban Connective System  
+---  
+Prev: Section 14.14 |  Next: Section 14.16  
+---|---  
+Table of Contents
+Book Info Page
+* * *
+## 14.15. More about non-logical connectives
+The final three JOI cmavo, __jo'e__ , __ku'a__ , and __pi'u__ , are probably only useful when talking explicitly about sets. They represent three standard set operators usually called “union”, “intersection”, and “cross product” (also known as “Cartesian product”). The union of two sets is a set containing all the members that are in either set; the intersection of two sets is a set containing all the members that are in both sets. The cross product of two sets is the set of all possible ordered pairs, where each ordered pair contains a single element from the first set followed by a single element from the second. This may seem very abstract; hopefully, the following examples will help:
+**Example 14.125. **
+lo'i | ricfu | ku | jo'e | lo'i | dotco | cu | barda  
+---|---|---|---|---|---|---|---  
+The-set-of | rich-things |  | union | the-set-of | German-things |  | is-large.  
+  
+
+**Example 14.126. **
+lo'i | ricfu | ku | ku'a | lo'i | dotco | cu | cmalu  
+---|---|---|---|---|---|---|---  
+The-set-of | rich-things |  | intersection | the-set-of | German-things |  | is-small.  
+  
+
+There is a parallelism between logic and set theory that makes Example 14.125 and Example 14.126 equivalent respectively to:
+**Example 14.127. **
+lo'i | ricfu | ja | dotco | cu | barda  
+---|---|---|---|---|---  
+The-set-of | (rich-things | or | German-things) |  | is-large.  
+  
+
+and
+**Example 14.128. **
+lo'i | ricfu | je | dotco | cu | cmalu  
+---|---|---|---|---|---  
+The-set-of | (rich-things | and | German-things) |  | is-small.  
+  
+
+The following example uses _se remei_ , which is a set (not a mass) of two elements:
+**Example 14.129. **
+la | djeimyz. | ce[bo] | la | djordj. | pi'u  
+---|---|---|---|---|---  
+That-named | James | and-set | that-named | George | cross-product  
+la | meris. | cebo | la | martas. | cu | prami | se | remei  
+---|---|---|---|---|---|---|---|---  
+that-named | Mary | and-set | that-named | Martha |  | are-lover |  | type-of-pairs.  
+  
+
+means that each of the pairs James/Mary, George/Mary, James/Martha, and George/Martha love each other. Therefore it is similar in meaning to Example 14.121; however, that example speaks only of the men loving the women, not vice versa.
+Joiks may be combined with __bo__ or with __ke__ in the same way as eks and jeks; this allows grouping of non-logical connections between sumti and tanru units, in complete parallelism with logical connections:
+**Example 14.130. **
+mi | joibo | do | ce | la | djan. | joibo | la | djein.  
+---|---|---|---|---|---|---|---|---  
+(I | massed-with | you) | and | (that-named | John | massed-with | that-named | Jane)  
+cu | gunma | se | remei  
+---|---|---|---  
+| are-a-mass |  | type-of-two-set  
+  
+
+asserts that there is a set of two items each of which is a mass.
+Non-logical connection is permitted at the joint of a termset; this is useful for associating more than one sumti or tagged sumti with each side of the non-logical connection. The place structure of __casnu__ is:
+> _ _casnu_ _ the mass x1 discusses/talks about x2
+so the x1 place must be occupied by a mass (for reasons not explained here); however, different components of the mass may discuss in different languages. To associate each participant with his or her language, we can say:
+**Example 14.131. **
+mi | ce'e | bau | la | lojban. | pe'e | joi  
+---|---|---|---|---|---|---  
+(I | [plus] | in-language | that-named | Lojban | [joint] | massed-with  
+do | ce'e | bau | la | gliban. | nu'u | casnu  
+---|---|---|---|---|---|---  
+you | [plus] | in-language | that-named | English | ) | discuss.  
+  
+
+Like all non-logical connectives, the usage shown in Example 14.131 cannot be mechanically converted into a non-logical connective placed at another location in the bridi. The forethought equivalent of Example 14.131 is:
+**Example 14.132. **
+nu'i joigi mi bau la lojban gi do bau la gliban. nu'u casnu
+  
+
+Non-logical forethought termsets are also useful when the things to be non-logically connected are sumti preceded with tense or modal (BAI) tags:
+**Example 14.133. **
+la | djan. | fa'u | la | frank. | cusku  
+---|---|---|---|---|---  
+That-named | John | respectively-with | that-named | Frank | express  
+nu'i | bau | la | lojban.  
+---|---|---|---  
+[start-termset] | in-language | that-named | Lojban  
+nu'u | fa'u | bai  
+---|---|---  
+[joint] | respectively-with | under-compulsion-by  
+tu'a | la | djordj. | [nu'u]  
+---|---|---|---  
+something-about | that-named | George. |   
+John and Frank speak in Lojban and under George's compulsion, respectively.  
+---  
+  
+
+Example 14.133 associates speaking in Lojban with John, and speaking under George's compulsion with Frank. We do not know what language Frank uses, or whether John speaks under anyone's compulsion.
+Joiks may be prefixed with __i__ to produce ijoiks, which serve to non-logically connect sentences. The ijoik __.i__ __ce'o__ indicates that the event of the second bridi follows that of the first bridi in some way other than a time relationship (which is handled with a tense):
+**Example 14.134. **
+mi | ba | gasnu | la'e | di'e | .i  
+---|---|---|---|---|---  
+I | [future] | do | the-referent-of | the-following: |   
+tu'e | kanji | lo | ni | cteki | .ice'o | lumci | le | karce  
+---|---|---|---|---|---|---|---|---  
+( | Compute | the | quantity-of | taxes. | And-then | wash | the | car.  
+.ice'o | dzukansa | le | gerku | tu'u  
+---|---|---|---|---  
+And-then | walkingly-accompany | the | dog. | )  
+List of things to do: Figure taxes. Wash car. Walk dog.  
+---  
+  
+
+Example 14.134 represents a list of things to be done in priority order. The order is important, hence the need for a sequence connective, but does not necessarily represent a time order (the dog may end up getting walked first). Note the use of __tu'e__ and __tu'u__ as general brackets around the whole list. This is related to, but distinct from, their use in Section 14.8, because there is no logical connective between the introductory phrase _mi ba gasnu la'edi'e_ and the rest. The brackets effectively show how large an utterance the word __di'e__ , which means “the following utterance”, refers to.
+Similarly, __.i__ __joi__ is used to connect sentences that represent the components of a joint event such as a joint cause: the Lojban equivalent of “Fran hit her head and fell out of the boat, so that she drowned” would join the events “Fran hit her head” and “Fran fell out of the boat” with __.i__ __joi__.
+The following __nai__ , if present, does not negate either of the things to be connected, but instead specifies that some other connection (logical or non-logical) is applicable: it is a scalar negation:
+**Example 14.135. **
+mi | jo'u | nai | do | cu | remei  
+---|---|---|---|---|---  
+I | in-common-with | [not!] | you |  | are-a-twosome  
+  
+
+The result of _mi jo'u do_ would be two individuals, not a mass, therefore __jo'u__ is not applicable; __joi__ would be the correct connective.
+There is no joik question cmavo as such; however, joiks and ijoiks may be uttered in isolation in response to a logical connective question, as in the following exchange:
+**Example 14.136. **
+do | djica | tu'a | loi | ckafi  
+---|---|---|---|---  
+You | desire | something-about | a-mass-of | coffee  
+ji | loi | tcati  
+---|---|---  
+[what-connective?] | a-mass-of | tea?  
+Do you want coffee or tea?  
+---  
+  
+
+**Example 14.137. **
+joi  
+---  
+Mixed-mass-and.  
+Both as a mass (i.e, mixed together).  
+---  
+  
+
+Ugh. (Or in Lojban: __.a'u__ __nai__ __sai__ __ro'o__.)
+* * *
+Chapter 14. If Wishes Were Horses: The Lojban Connective System  
+---  
+Prev: Section 14.14 |  Next: Section 14.16  
+---|---  
+Table of Contents
+Book Info Page
+
+
+Word: lo'e
+Filename: section-typicals.txt
+TF-IDF Score: 0.11146381138441432
+Content: Chapter 6. To Speak Of Many Things: The Lojban sumti  
+---  
+Prev: Section 6.4 |  Next: Section 6.6  
+---|---  
+Table of Contents
+Book Info Page
+* * *
+## 6.5. Descriptors for typical objects
+The following cmavo are discussed in this section:
+lo'e |  LE |  the typical  
+---|---|---  
+le'e |  LE |  the stereotypical  
+As promised in Section 6.3, Lojban has a method for discriminating between “the lion” who lives in Africa and “the Englishman” who, generally speaking, doesn't live in Africa even though some Englishmen do. The descriptor __lo'e__ means “the typical”, as in
+**Example 6.26. **
+lo'e | cinfo | cu | xabju | le | fi'ortu'a  
+---|---|---|---|---|---  
+The-typical | lion |  | dwells-in | the | African-land.  
+The lion dwells in Africa.  
+---  
+  
+
+What is this “typical lion”? Surely it is not any particular lion, because no lion has all of the “typical” characteristics, and (worse yet) some characteristics that all real lions have can't be viewed as typical. For example, all real lions are either male or female, but it would be bizarre to suppose that the typical lion is either one. So the typical lion has no particular sex, but does have a color (golden brown), a residence (Africa), a diet (game), and so on. Likewise we can say that
+**Example 6.27. **
+lo'e | glipre | cu | xabju  
+---|---|---|---  
+The-typical | English-person |  | dwells-in  
+le | fi'ortu'a | na.e | le | gligugde  
+---|---|---|---|---  
+the | African-land | (Not!) and | the | English-country.  
+The typical English person dwells not in Africa but in England.  
+---  
+  
+
+The relationship between _lo'e cinfo_ and _lo'i cinfo_ may be explained thus: the typical lion is an imaginary lion-abstraction which best exemplifies the set of lions. There is a similar relationship between __le'e__ and __le'i__ :
+**Example 6.28. **
+le'e | xelso | merko | cu | gusta | ponse  
+---|---|---|---|---|---  
+The-stereotypical | Greek-type-of | American |  | is-a-restaurant-type-of | owner.  
+Lots of Greek-Americans own restaurants.  
+---  
+  
+
+Here we are concerned not with the actual set of Greek-Americans, but with the set of those the speaker has in mind, which is typified by one (real or imaginary) who owns a restaurant. The word “stereotypical” is often derogatory in English, but __le'e__ need not be derogatory in Lojban: it simply suggests that the example is typical in the speaker's imagination rather than in some objectively agreed-upon way. Of course, different speakers may disagree about what the features of “the typical lion” are (some would include having a short intestine, whereas others would know nothing of lions' intestines), so the distinction between _lo'e cinfo_ and _le'e cinfo_ may be very fine.
+Furthermore,
+**Example 6.29. **
+le'e | skina | cu | se finti | ne'i | la | xali,uyd.  
+---|---|---|---|---|---|---  
+The-stereotypical | movie |  | is-invented | in | that-named | Hollywood.  
+  
+
+is probably true to an American, but might be false (not the stereotype) to someone living in India or Russia.
+Note that there is no naming equivalent of __lo'e__ and __le'e__ , because there is no need, as a rule, for a “typical George” or a “typical Smith”. People or things who share a common name do not, in general, have any other common attributes worth mentioning.
+* * *
+Chapter 6. To Speak Of Many Things: The Lojban sumti  
+---  
+Prev: Section 6.4 |  Next: Section 6.6  
+---|---  
+Table of Contents
+Book Info Page
+
+
+Word: lo'e
+Filename: section-lojban-within-mekso.txt
+TF-IDF Score: 0.04633159444393956
+Content: Chapter 18. lojbau mekso: Mathematical Expressions in Lojban  
+---  
+Prev: Section 18.17 |  Next: Section 18.19  
+---|---  
+Table of Contents
+Book Info Page
+* * *
+## 18.18. Using Lojban resources within mekso
+The following cmavo are discussed in this section:
+na'u |  NAhU |  selbri to operator  
+---|---|---  
+ni'e |  NIhE |  selbri to operand  
+mo'e |  MOhE |  sumti to operand  
+te'u |  TEhU |  terminator for all three  
+One of the mekso design goals requires the ability to make use of Lojban's vocabulary resources within mekso to extend the built-in cmavo for operands and operators. There are three relevant constructs: all three share the elidable terminator __te'u__ (which is also used to terminate vectors marked with __jo'i__)
+The cmavo __na'u__ makes a selbri into an operator. In general, the first place of the selbri specifies the result of the operator, and the other unfilled places specify the operands:
+**Example 18.124. **
+li | na'u | tanjo | te'u  
+---|---|---|---  
+The-number | the-operator | tangent | [end-operator]  
+vei | pai | fe'i | re | [ve'o] | du | li | ci'i  
+---|---|---|---|---|---|---|---  
+( | π | / | 2 | ) | = | the-number | infinity.  
+tan(π/2) = ∞  
+  
+
+__tanjo__ is the gismu for “x1 is the tangent of x2”, and the __na'u__ here makes it into an operator which is then used in forethought
+The cmavo __ni'e__ makes a selbri into an operand. The x1 place of the selbri generally represents a number, and therefore is often a __ni__ abstraction, since __ni__ abstractions represent numbers. The __ni'e__ makes that number available as a mekso operand. A common application is to make equations relating pure dimensions:
+**Example 18.125. **
+li | ni'e | ni | clani | [te'u]  
+---|---|---|---|---  
+The-number |  | quantity-of | length |   
+pi'i | ni'e | ni | ganra | [te'u]  
+---|---|---|---|---  
+times |  | quantity-of | width |   
+pi'i | ni'e | ni | condi | te'u  
+---|---|---|---|---  
+times |  | quantity-of | depth |   
+du | li | ni'e | ni | canlu  
+---|---|---|---|---  
+equals | the-number |  | quantity-of | volume.  
+Length × Width × Depth = Volume  
+  
+
+The cmavo __mo'e__ operates similarly to __ni'e__ , but makes a sumti (rather than a selbri) into an operand. This construction is useful in stating equations involving dimensioned numbers:
+**Example 18.126. **
+li | mo'e | re | ratcu | su'i | mo'e | re | ractu  
+---|---|---|---|---|---|---|---  
+The-number |  | two | rats | plus |  | two | rabbits  
+du | li | mo'e | vo | danlu  
+---|---|---|---|---  
+equals | the-number |  | four | animals.  
+2 rats + 2 rabbits = 4 animals.  
+  
+
+Another use is in constructing Lojbanic versions of so-called “folk quantifiers”, such as “a pride of lions”:
+**Example 18.127. **
+mi | viska | vei | mo'e | lo'e | lanzu | ve'o | cinfo  
+---|---|---|---|---|---|---|---  
+I | see | ( |  | the-typical | family | )-number-of | lions.  
+I see a pride of lions.  
+---  
+  
+
+* * *
+Chapter 18. lojbau mekso: Mathematical Expressions in Lojban  
+---  
+Prev: Section 18.17 |  Next: Section 18.19  
+---|---  
+Table of Contents
+Book Info Page

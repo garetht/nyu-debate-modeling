@@ -1,0 +1,520 @@
+
+The following definitions pulled from the above background may be particularly useful:
+{'Lojban': 'bilma', 'Lojban definition': 'x_{1} is ill/sick/diseased with symptoms x_{2} from disease x_{3}.', 'English': '- ill', 'Type': 'gismu'}
+{'Lojban': 'ro', 'Formal Language': 'PA4', 'English': 'each', 'Definition': 'digit/number: each, all', 'Confer': None, 'Type': 'cmavo'}
+{'Lojban': "bu'u", 'Formal Language': 'FAhA3', 'English': 'coincident with', 'Definition': 'location tense relation/direction; coincident with/at the same place as; space equivalent of ca', 'Confer': None, 'Type': 'cmavo'}
+{'Lojban': 'ti', 'Formal Language': 'KOhA6', 'English': 'this here', 'Definition': 'pro-sumti: this here; immediate demonstrative it; indicated thing/place near speaker', 'Confer': None, 'Type': 'cmavo'}
+{'Lojban': 'da', 'Formal Language': 'KOhA1', 'English': 'something 1', 'Definition': 'logically quantified existential pro-sumti: there exists something 1 (usually restricted)', 'Confer': None, 'Type': 'cmavo'}
+{'Lojban': 'pe', 'Formal Language': 'GOI', 'English': 'restrictive phrase', 'Definition': 'restrictive relative phrase marker: which is associated with ...; loosest associative/possessive', 'Confer': None, 'Type': 'cmavo'}
+
+The following are the top TF-IDF files for the words in choice A and choice B from the The Complete Lojban Language Grammar Book:
+Word: ti
+Filename: section-ti-series.txt
+TF-IDF Score: 0.3108108008572423
+Content: Chapter 7. Brevity Is The Soul Of Language: Pro-sumti And Pro-bridi  
+---  
+Prev: Section 7.2 |  Next: Section 7.4  
+---|---  
+Table of Contents
+Book Info Page
+* * *
+## 7.3. Demonstrative pro-sumti: the ti-series
+The following cmavo are discussed in this section:
+ti |  KOhA |  ti-series |  this here, a nearby object   
+---|---|---|---  
+ta |  KOhA |  ti-series |  that there, a medium-distant object  
+tu |  KOhA |  ti-series |  that yonder, a far-distant object  
+It is often useful to refer to things by pointing to them or by some related non-linguistic mechanism. In English, the words “this” and “that” serve this function among others: “this” refers to something pointed at that is near the speaker, and “that” refers to something further away. The Lojban pro-sumti of the ti-series serve the same functions, but more narrowly. The cmavo __ti__ , __ta__ , and __tu__ provide only the pointing function of “this” and “that”; they are not used to refer to things that cannot be pointed at.
+There are three pro-sumti of the ti-series rather than just two because it is often useful to distinguish between objects that are at more than two different distances. Japanese, among other languages, regularly does this. Until the 16th century, English did too; the pronoun “that” referred to something at a medium distance from the speaker, and the now-archaic pronoun “yon” to something far away.
+In conversation, there is a special rule about __ta__ and __tu__ that is often helpful in interpreting them. When used contrastingly, __ta__ refers to something that is near the listener, whereas __tu__ refers to something far from both speaker and listener. This makes for a parallelism between __ti__ and __mi__ , and __ta__ and __do__ , that is convenient when pointing is not possible; for example, when talking by telephone. In written text, on the other hand, the meaning of the ti-series is inherently vague; is the writer to be taken as pointing to something, and if so, to what? In all cases, what counts as “near” and “far away” is relative to the current situation.
+It is important to distinguish between the English pronoun “this” and the English adjective “this” as in “this boat”. The latter is not represented in Lojban by __ti__ :
+**Example 7.11. **
+le | ti | bloti  
+---|---|---  
+the | this | boat  
+  
+
+does not mean “this boat” but rather “this one's boat”, “the boat associated with this thing”, as explained in Section 8.7. A correct Lojban translation of Example 7.11 is
+**Example 7.12. **
+le | vi | bloti  
+---|---|---  
+the | here | boat  
+the nearby boat  
+---  
+  
+
+using a spatial tense before the selbri __bloti__ to express that the boat is near the speaker. (Tenses are explained in full in Chapter 10.) Another correct translation would be:
+**Example 7.13. **
+ti | noi | bloti  
+---|---|---  
+this-thing | which-incidentally | is-a-boat  
+  
+
+There are no demonstrative pro-bridi to correspond to the ti-series: you can't point to a relationship.
+* * *
+Chapter 7. Brevity Is The Soul Of Language: Pro-sumti And Pro-bridi  
+---  
+Prev: Section 7.2 |  Next: Section 7.4  
+---|---  
+Table of Contents
+Book Info Page
+
+
+Word: ti
+Filename: section-order-of-sumti.txt
+TF-IDF Score: 0.17106812303476623
+Content: Chapter 2. A Quick Tour of Lojban Grammar, With Diagrams  
+---  
+Prev: Section 2.6 |  Next: Section 2.8  
+---|---  
+Table of Contents
+Book Info Page
+* * *
+## 2.7. Varying the order of sumti
+For one reason or another you may want to change the order, placing one particular sumti at the front of the bridi. The cmavo __se__ , when placed before the last word of the selbri, will switch the meanings of the first and second sumti places. So
+**Example 2.21. **
+mi |  tavla |  do |  ti  
+---|---|---|---  
+I talk to you about this.  
+---  
+  
+
+has the same meaning as
+**Example 2.22. **
+do |  se tavla |  mi |  ti  
+---|---|---|---  
+You are talked to by me about this.  
+---  
+  
+
+The cmavo __te__ , when used in the same location, switches the meanings of the first and the third sumti places.
+**Example 2.23. **
+mi |  tavla |  do |  ti  
+---|---|---|---  
+I talk to you about this.  
+---  
+  
+
+has the same meaning as
+**Example 2.24. **
+ti |  te tavla |  do |  mi  
+---|---|---|---  
+This is talked about to you by me.  
+---  
+  
+
+Note that only the first and third sumti have switched places; the second sumti has remained in the second place.
+The cmavo __ve__ and __xe__ switch the first and fourth sumti places, and the first and fifth sumti places, respectively. These changes in the order of places are known as “conversions”, and the __se__ , __te__ , __ve__ , and __xe__ cmavo are said to convert the selbri.
+More than one of these operators may be used on a given selbri at one time, and in such a case they are evaluated from left to right. However, in practice they are used one at a time, as there are better tools for complex manipulation of the sumti places. See Section 9.4 for details.
+The effect is similar to what in English is called the “passive voice”. In Lojban, the converted selbri has a new place structure that is renumbered to reflect the place reversal, thus having effects when such a conversion is used in combination with other constructs such as _le selbri [ku]_ (see Section 2.10).
+* * *
+Chapter 2. A Quick Tour of Lojban Grammar, With Diagrams  
+---  
+Prev: Section 2.6 |  Next: Section 2.8  
+---|---  
+Table of Contents
+Book Info Page
+
+
+Word: ro
+Filename: section-universal-claims.txt
+TF-IDF Score: 0.14803100481938844
+Content: Chapter 16. “Who Did You Pass On The Road? Nobody”: Lojban And Logic  
+---  
+Prev: Section 16.2 |  Next: Section 16.4  
+---|---  
+Table of Contents
+Book Info Page
+* * *
+## 16.3. Universal claims
+What happens if we substitute “everything” for “something” in Example 16.7? We get:
+**Example 16.15. **
+Everything sees me.
+  
+
+Of course, this example is false, because there are many things which do not see the speaker. It is not easy to find simple truthful examples of so-called universal claims (those which are about everything), so bear with us for a while. (Indeed, some Lojbanists tend to avoid universal claims even in other languages, since they are so rarely true in Lojban.)
+The Lojban translation of Example 16.15 is
+**Example 16.16. **
+ro | da | zo'u | da | viska | mi  
+---|---|---|---|---|---  
+For-every | X | : | X | sees | me.  
+  
+
+When the variable cmavo __da__ is preceded by __ro__ , the combination means “For every X” rather than “There is an X”. Superficially, these English formulations look totally unrelated: Section 16.6 will bring them within a common viewpoint. For the moment, accept the use of _ro da_ for “everything” on faith.
+Here is a universal claim with two variables:
+**Example 16.17. **
+ro | da | ro | de | zo'u | da | prami | de  
+---|---|---|---|---|---|---|---  
+For-every | X, | for-every | Y | : | X | loves | Y.  
+Everything loves everything.  
+---  
+  
+
+Again, X and Y can represent the same thing, so Example 16.17 does not mean “Everything loves everything else.” Furthermore, because the claim is universal, it is about every thing, not merely every person, so we cannot use “everyone” or “everybody” in the translation.
+Note that __ro__ appears before both __da__ and __de__. If __ro__ is omitted before either variable, we get a mixed claim, partly existential like those of Section 16.2, partly universal.
+**Example 16.18. **
+ro | da | de | zo'u | da | viska | de  
+---|---|---|---|---|---|---  
+For-every | X, | there-is-a-Y | : | X | sees | Y.  
+Everything sees something.  
+---  
+  
+
+**Example 16.19. **
+da | ro | de | zo'u | da | viska | de  
+---|---|---|---|---|---|---  
+There-is-an-X | such-that-for-every | Y | : | X | sees | Y.  
+Something sees everything.  
+---  
+  
+
+Example 16.18 and Example 16.19 mean completely different things. Example 16.18 says that for everything, there is something which it sees, not necessarily the same thing seen for every seer. Example 16.19, on the other hand, says that there is a particular thing which can see everything that there is (including itself). Both of these are fairly silly, but they are different kinds of silliness.
+There are various possible translations of universal claims in English: sometimes we use “anybody/anything” rather than “everybody/everything”. Often it makes no difference which of these is used: when it does make a difference, it is a rather subtle one which is explained in Section 16.8.
+* * *
+Chapter 16. “Who Did You Pass On The Road? Nobody”: Lojban And Logic  
+---  
+Prev: Section 16.2 |  Next: Section 16.4  
+---|---  
+Table of Contents
+Book Info Page
+
+
+Word: ro
+Filename: section-prenex-elision.txt
+TF-IDF Score: 0.09061134302184871
+Content: Chapter 16. “Who Did You Pass On The Road? Nobody”: Lojban And Logic  
+---  
+Prev: Section 16.4 |  Next: Section 16.6  
+---|---  
+Table of Contents
+Book Info Page
+* * *
+## 16.5. Dropping the prenex
+It isn't really necessary for every Lojban bridi involving variables to have a prenex on the front. In fact, none of the examples we've seen so far required prenexes at all! The rule for dropping the prenex is simple: if the variables appear in the same order within the bridi as they did in the prenex, then the prenex is superfluous. However, any __ro__ or __poi__ appearing in the prenex must be transferred to the first occurrence of the variable in the main part of the bridi. Thus, Example 16.9 becomes just:
+**Example 16.25. **
+da | viska | mi  
+---|---|---  
+There-is-an-X-which | sees | me.  
+Something sees me.  
+---  
+  
+
+and Example 16.23 becomes:
+**Example 16.26. **
+ro | da | poi | gerku | cu | vasxu  
+---|---|---|---|---|---  
+For-every | X | which | is-a-dog, |  | it-breathes.  
+Every dog breathes.  
+---  
+  
+
+You might well suppose, then, that the purpose of the prenex is to allow the variables in it to appear in a different order than the bridi order, and that would be correct. Consider
+**Example 16.27. **
+ro | da | poi | prenu | ku'o | de  
+---|---|---|---|---|---  
+For-every | X | which | is-a-person, |  | there-is-a-Y  
+poi | gerku | ku'o | zo'u | de | batci | da  
+---|---|---|---|---|---|---  
+which | is-a-dog |  | : | Y | bites | X.  
+  
+
+The prenex of Example 16.27 is like that of Example 16.18 (but with relative clauses): it notes that the following bridi is true of every person with respect to some dog, not necessarily the same dog for each. But in the main bridi part, the __de__ appears before the __da__. Therefore, the true translation is
+**Example 16.28. **
+Every person is bitten by some dog (or other).
+  
+
+If we tried to omit the prenex and move the __ro__ and the relative clauses into the main bridi, we would get:
+**Example 16.29. **
+de | poi | gerku | cu | batci | ro | da | poi | prenu  
+---|---|---|---|---|---|---|---|---  
+There-is-a-Y | which | is-a-dog |  | which-bites | every | X | which | is-a-person  
+Some dog bites everyone.  
+---  
+  
+
+which has the structure of Example 16.19: it says that there is a dog (call him Fido) who bites, has bitten, or will bite every person that has ever existed! We can safely rule out Fido's existence, and say that Example 16.29 is false, while agreeing to Example 16.27.
+Even so, Example 16.27 is most probably false, since some people never experience dogbite. Examples like Example 16.27 and Example 16.23 (might there be some dogs which never have breathed, because they died as embryos?) indicate the danger in Lojban of universal claims even when restricted. In English we are prone to say that “Everyone says” or that “Everybody does” or that “Everything is” when in fact there are obvious counterexamples which we are ignoring for the sake of making a rhetorical point. Such statements are plain falsehoods in Lojban, unless saved by a context (such as tense) which implicitly restricts them.
+How can we express Example 16.27 in Lojban without a prenex? Since it is the order in which variables appear that matters, we can say:
+**Example 16.30. **
+ro | da | poi | prenu | cu | se | batci | de | poi | gerku  
+---|---|---|---|---|---|---|---|---|---  
+Every | X | which | is-a-person |  |  | is-bitten-by | some-Y | which | is-a-dog.  
+  
+
+using the conversion operator __se__ (explained in Section 5.11) to change the selbri __batci__ (“bites”) into _se batci_ (“is bitten by”). The translation given in Example 16.28 uses the corresponding strategy in English, since English does not have prenexes (except in strained “logician's English”). This implies that a sentence with both a universal and an existential variable can't be freely converted with __se__ ; one must be careful to preserve the order of the variables.
+If a variable occurs more than once, then any __ro__ or __poi__ decorations are moved only to the first occurrence of the variable when the prenex is dropped. For example,
+**Example 16.31. **
+di | poi | prenu | zo'u  
+---|---|---|---  
+There-is-a-Z | which | is-a-person | :  
+ti | xarci | di | di  
+---|---|---|---  
+this-thing | is-a-weapon | for-use-against-Z | by-Z  
+This is a weapon for someone to use against himself/herself.  
+---  
+  
+
+(in which __di__ is used rather than __da__ just for variety) loses its prenex as follows:
+**Example 16.32. **
+ti | xarci | di | poi | prenu | ku'o | di  
+---|---|---|---|---|---|---  
+This-thing | is-a-weapon-for-use-against | some-Z | which | is-a-person |  | by-Z.  
+  
+
+As the examples in this section show, dropping the prenex makes for terseness of expression often even greater than that of English (Lojban is meant to be an unambiguous language, not necessarily a terse or verbose one), provided the rules are observed.
+* * *
+Chapter 16. “Who Did You Pass On The Road? Nobody”: Lojban And Logic  
+---  
+Prev: Section 16.4 |  Next: Section 16.6  
+---|---  
+Table of Contents
+Book Info Page
+
+
+Word: da
+Filename: section-da-buha-series.txt
+TF-IDF Score: 0.37225678517660216
+Content: Chapter 7. Brevity Is The Soul Of Language: Pro-sumti And Pro-bridi  
+---  
+Prev: Section 7.11 |  Next: Section 7.13  
+---|---  
+Table of Contents
+Book Info Page
+* * *
+## 7.12. Bound variable pro-sumti and pro-bridi: the da-series and the bu'a-series
+The following cmavo are discussed in this section:
+da |  KOhA |  da-series |  something-1   
+---|---|---|---  
+de |  KOhA |  da-series |  something-2  
+di |  KOhA |  da-series |  something-3  
+bu'a |  GOhA |  bu'a-series |  some-predicate-1  
+bu'e |  GOhA |  bu'a-series |  some-predicate-2  
+bu'i |  GOhA |  bu'a-series |  some-predicate-3  
+Bound variables belong to the predicate-logic part of Lojban, and are listed here for completeness only. Their semantics is explained in Chapter 16. It is worth mentioning that the Lojban translation of Example 7.2 is:
+**Example 7.73. **
+la | djan. | cu | lafti | da | poi  
+---|---|---|---|---|---  
+That-named | John |  | raised | something-1 | which  
+grana | ku'o | gi'e | desygau | da  
+---|---|---|---|---  
+is-a-stick |  | and | shake-did | something-1.  
+John picked up a stick and shook it.  
+---  
+  
+
+* * *
+Chapter 7. Brevity Is The Soul Of Language: Pro-sumti And Pro-bridi  
+---  
+Prev: Section 7.11 |  Next: Section 7.13  
+---|---  
+Table of Contents
+Book Info Page
+
+
+Word: da
+Filename: section-quantified-variables.txt
+TF-IDF Score: 0.34455268276711926
+Content: Chapter 16. “Who Did You Pass On The Road? Nobody”: Lojban And Logic  
+---  
+Prev: Section 16.5 |  Next: Section 16.7  
+---|---  
+Table of Contents
+Book Info Page
+* * *
+## 16.6. Variables with generalized quantifiers
+So far, we have seen variables with either nothing in front, or with the cmavo __ro__ in front. Now __ro__ is a Lojban number, and means “all”; thus _ro prenu_ means “all persons”, just as _re prenu_ means “two persons”. In fact, unadorned __da__ is also taken to have an implicit number in front of it, namely __su'o__ , which means “at least one”. Why is this? Consider Example 16.9 again, this time with an explicit __su'o__ :
+**Example 16.33. **
+su'o | da | zo'u | da | viska | mi  
+---|---|---|---|---|---  
+For-at-least-one | X | : | X | sees | me.  
+Something sees me.  
+---  
+  
+
+From this version of Example 16.9, we understand the speaker's claim to be that of all the things that there are, at least one of them sees him or her. The corresponding universal claim, Example 16.16, says that of all the things that exist, every one of them can see the speaker.
+Any other number can be used instead of __ro__ or __su'o__ to precede a variable. Then we get claims like:
+**Example 16.34. **
+re | da | zo'u | da | viska | mi  
+---|---|---|---|---|---  
+For-two | Xes | : | X | sees | me.  
+Two things see me.  
+---  
+  
+
+This means that exactly two things, no more or less, saw the speaker on the relevant occasion. In English, we might take “Two things see me” to mean that at least two things see the speaker, but there might be more; in Lojban, though, that claim would have to be made as:
+**Example 16.35. **
+su'ore | da | zo'u | da | viska | mi  
+---|---|---|---|---|---  
+For-at-least-two | Xes | : | X | sees | me.  
+  
+
+which would be false if nothing, or only one thing, saw the speaker, but not otherwise. We note the __su'o__ here meaning “at least”; __su'o__ by itself is short for _su'opa_ where __pa__ means “one”, as is explained in Section 18.9.
+The prenex may be removed from Example 16.34 and Example 16.35 as from the others, leading to:
+**Example 16.36. **
+re | da | viska | mi  
+---|---|---|---  
+Two | Xes | see | me.  
+  
+
+and
+**Example 16.37. **
+su'ore | da | viska | mi  
+---|---|---|---  
+At-least-two | Xes | see | me.  
+  
+
+respectively, subject to the rules prescribed in Section 16.5.
+Now we can explain the constructions _ro prenu_ for “all persons” and _re prenu_ for “two persons” which were casually mentioned at the beginning of this Section. In fact, _ro prenu_ , a so-called “indefinite description”, is shorthand for _ro DA poi prenu_ , where “DA” represents a fictitious variable that hasn't been used yet and will not be used in future. (Even if all three of __da__ , __de__ , and __di__ have been used up, it does not matter, for there are ways of getting more variables, discussed in Section 16.14.) So in fact
+**Example 16.38. **
+re | prenu | cu | viska | mi  
+---|---|---|---|---  
+Two | persons |  | see | me.  
+  
+
+is short for
+**Example 16.39. **
+re | da | poi | prenu | cu | viska | mi  
+---|---|---|---|---|---|---  
+Two | Xes | which | are-persons |  | see | me.  
+  
+
+which in turn is short for:
+**Example 16.40. **
+re | da | poi | prenu | zo'u | da | viska | mi  
+---|---|---|---|---|---|---|---  
+For-two | Xes | which | are-persons | : | X | sees | me.  
+  
+
+Note that when we move more than one variable to the prenex (along with its attached relative clause), we must make sure that the variables are in the same order in the prenex as in the bridi proper.
+* * *
+Chapter 16. “Who Did You Pass On The Road? Nobody”: Lojban And Logic  
+---  
+Prev: Section 16.5 |  Next: Section 16.7  
+---|---  
+Table of Contents
+Book Info Page
+
+
+Word: pe
+Filename: section-relative-clause-cmavo-summary.txt
+TF-IDF Score: 0.06972955530441124
+Content: Chapter 8. Relative Clauses, Which Make sumti Even More Complicated  
+---  
+Prev: Section 8.10 |  Next: Chapter 9  
+---|---  
+Table of Contents
+Book Info Page
+* * *
+## 8.11. Index of relative clause cmavo
+Relative clause introducers (selma'o NOI):
+noi |  incidental clauses  
+---|---  
+poi |  restrictive clauses  
+voi |  restrictive clauses (non-veridical)  
+Relative phrase introducers (selma'o GOI):
+goi |  pro-sumti assignment  
+---|---  
+pe |  restrictive association  
+ne |  incidental association  
+po |  extrinsic (alienable) possession  
+po'e |  intrinsic (inalienable) possession  
+po'u |  restrictive identification  
+no'u |  incidental identification  
+Relativizing pro-sumti (selma'o KOhA):
+ke'a |  pro-sumti for relativized sumti  
+---|---  
+Relative clause joiner (selma'o ZIhE):
+zi'e |  joins relative clauses applying to a single sumti  
+---|---  
+Relative clause associator (selma'o VUhO):
+vu'o |  causes relative clauses to apply to all of a complex sumti  
+---|---  
+Elidable terminators (each its own selma'o):
+ku'o |  relative clause elidable terminator  
+---|---  
+ge'u |  relative phrase elidable terminator  
+* * *
+Chapter 8. Relative Clauses, Which Make sumti Even More Complicated  
+---  
+Prev: Section 8.10 |  Next: Chapter 9  
+---|---  
+Table of Contents
+Book Info Page
+
+
+Word: pe
+Filename: section-zihe.txt
+TF-IDF Score: 0.06780280737517098
+Content: Chapter 8. Relative Clauses, Which Make sumti Even More Complicated  
+---  
+Prev: Section 8.3 |  Next: Section 8.5  
+---|---  
+Table of Contents
+Book Info Page
+* * *
+## 8.4. Multiple relative clauses: _zi'e_
+zi'e |  ZIhE |  relative clause joiner  
+---|---|---  
+Sometimes it is necessary or useful to attach more than one relative clause to a sumti. This is made possible in Lojban by the cmavo __zi'e__ (of selma'o ZIhE), which is used to join one or more relative clauses together into a single unit, thus making them apply to the same sumti. For example:
+**Example 8.38. **
+le | gerku | poi | blabi | zi'e | poi | batci | le | nanmu | cu | klama  
+---|---|---|---|---|---|---|---|---|---|---  
+The dog which is white and which bites the man goes.  
+---  
+  
+
+The most usual translation of __zi'e__ in English is “and”, but __zi'e__ is not really a logical connective: unlike most of the true logical connectives (which are explained in Chapter 14), it cannot be converted into a logical connection between sentences.
+It is perfectly correct to use __zi'e__ to connect relative clauses of different kinds:
+**Example 8.39. **
+le | gerku | poi | blabi | zi'e | noi  
+---|---|---|---|---|---  
+The | dog | that-is | (white) | and | incidentally-such-that  
+le | mi | pendo | cu | ponse | ke'a | cu | klama  
+---|---|---|---|---|---|---|---  
+(- | my | friend |  | owns | IT | ) | goes.  
+The dog that is white, which my friend owns, is going.  
+---  
+  
+
+In Example 8.39, the restrictive clause _poi blabi_ specifies which dog is referred to, but the incidental clause _noi le mi pendo cu ponse_ is mere incidental information: the listener is supposed to already have identified the dog from the _poi blabi_. Of course, the meaning (though not necessarily the emphasis) is the same if the incidental clause appears first.
+It is also possible to connect relative phrases with __zi'e__ , or a relative phrase with a relative clause:
+**Example 8.40. **
+le | botpi | po | mi | zi'e | poi | blanu | cu | spofu  
+---|---|---|---|---|---|---|---|---  
+The | bottle | specific-to | me | and | which-is | blue |  | is-broken.  
+My blue bottle is broken.  
+---  
+  
+
+Note that if the colloquial translation of Example 8.40 were “My bottle, which is blue, is broken”, then __noi__ rather than __poi__ would have been correct in the Lojban version, since that version of the English implies that you do not need to know the bottle is blue. As written, Example 8.40 suggests that I probably have more than one bottle, and the one in question needs to be picked out as the blue one.
+**Example 8.41. **
+mi | ba | zutse | le | stizu | pe  
+---|---|---|---|---|---  
+I | [future] | sit-in | the | chair | associated-with  
+mi | zi'e | po | do | zi'e | poi | xunre  
+---|---|---|---|---|---|---  
+me | and | specific-to | you | and | which | is-red.  
+I will sit in my chair (really yours), the red one.  
+---  
+  
+
+Example 8.41 illustrates that more than two relative phrases or clauses can be connected with __zi'e__. It almost defies colloquial translation because of the very un-English contrast between _pe mi_ , implying that the chair is temporarily connected with me, and _po do_ , implying that the chair has a more permanent association with you. (Perhaps I am a guest in your house, in which case the chair would naturally be your property.)
+Here is another example, mixing a relative phrase and two relative clauses, a restrictive one and a non-restrictive one:
+**Example 8.42. **
+mi | ba | citka | le | dembi | pe | mi | zi'e | poi | cpana  
+---|---|---|---|---|---|---|---|---|---  
+I | [future] | eat | the | beans | associated-with | me | and | which | are-upon  
+le | mi | palta | zi'e | noi | do | dunda | ke'a |  | mi  
+---|---|---|---|---|---|---|---|---|---  
+| my | plate | and | which-incidentally | you | gave | IT | to | me.  
+I'll eat my beans that are on my plate, the ones you gave me.  
+---  
+  
+
+* * *
+Chapter 8. Relative Clauses, Which Make sumti Even More Complicated  
+---  
+Prev: Section 8.3 |  Next: Section 8.5  
+---|---  
+Table of Contents
+Book Info Page

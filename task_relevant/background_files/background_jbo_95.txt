@@ -1,0 +1,682 @@
+
+The following definitions pulled from the above background may be particularly useful:
+{'Lojban': 'labno', 'Lojban definition': 'x_{1} is a wolf/lupine of species/breed x_{2}.', 'English': '- wolf', 'Type': 'gismu'}
+{'Lojban': 'cu', 'Formal Language': 'CU', 'English': 'selbri separator', 'Definition': 'elidable marker: separates selbri from preceding sumti, allows preceding terminator elision', 'Confer': None, 'Type': 'cmavo'}
+{'Lojban': 'lo', 'Formal Language': 'LE', 'English': 'the really is', 'Definition': 'veridical descriptor: the one(s) that really is(are) ...', 'Confer': None, 'Type': 'cmavo'}
+{'Lojban': "ze'u", 'Formal Language': 'ZEhA', 'English': 'long time interval', 'Definition': 'time tense interval: a long amount of time', 'Confer': None, 'Type': 'cmavo'}
+{'Lojban': 'nicte', 'Lojban definition': 'x_{1} is a nighttime of day x_{2} at location x_{3}; (adjective:) x_{1} is at night/nocturnal.', 'English': '- night', 'Type': 'gismu'}
+{'Lojban': 'cmoni', 'Lojban definition': 'x_{1} utters moan/groan/howl/scream [non-linguistic utterance] x_{2} expressing x_{3} (property).', 'English': '- moan', 'Type': 'gismu'}
+
+The following are the top TF-IDF files for the words in choice A and choice B from the The Complete Lojban Language Grammar Book:
+Word: labno
+Filename: section-story-time.txt
+TF-IDF Score: 0.029694661899489508
+Content: Chapter 10. Imaginary Journeys: The Lojban Space/Time Tense System  
+---  
+Prev: Section 10.13 |  Next: Section 10.15  
+---|---  
+Table of Contents
+Book Info Page
+* * *
+## 10.14. Story time
+Making strict use of the conventions explained in Section 10.13 would be intolerably awkward when a story is being told. The time at which a story is told by the narrator is usually unimportant to the story. What matters is the flow of time within the story itself. The term “story” in this section refers to any series of statements related in more-or-less time-sequential order, not just a fictional one.
+Lojban speakers use a different set of conventions, commonly called “story time”, for inferring tense within a story. It is presumed that the event described by each sentence takes place some time more or less after the previous ones. Therefore, tenseless sentences are implicitly tensed as “what happens next”. In particular, any sticky time setting is advanced by each sentence.
+The following mini-story illustrates the important features of story time. A sentence-by-sentence explication follows:
+**Example 10.93. **
+pu | zu | ki | ku | ne'i | ki | le | kevna  
+---|---|---|---|---|---|---|---  
+[past] | [long] | [sticky] | [,] | [inside] | [sticky] | the | cave,  
+le | ninmu | goi | ko'a | zutse | le | rokci  
+---|---|---|---|---|---|---  
+the | woman | defined-as | she-1 | sat-on | the | rock  
+Long ago, in a cave, a woman sat on a rock.  
+---  
+  
+
+**Example 10.94. **
+.i | ko'a | citka | loi | kanba | rectu  
+---|---|---|---|---|---  
+| She-1 | eat-(tenseless) | some-of-the-mass-of | goat | flesh.  
+She was eating goat's meat.  
+---  
+  
+
+**Example 10.95. **
+.i | ko'a | pu | jukpa | ri | le | mudyfagri  
+---|---|---|---|---|---|---  
+| She | [past] | cook | the-last-mentioned | by-method-the | wood-fire.  
+She had cooked the meat over a wood fire.  
+---  
+  
+
+**Example 10.96. **
+.i | lei | rectu | cu | zanglare  
+---|---|---|---|---  
+| The-mass-of | flesh |  | is-(favorable)-warm.  
+The meat was pleasantly warm.  
+---  
+  
+
+**Example 10.97. **
+.i | le | labno | goi | ko'e  
+---|---|---|---|---  
+| The | wolf | defined-as | it-2  
+ba | za | ki | nenri | klama | le | kevna  
+---|---|---|---|---|---|---  
+[future] | [medium] | [sticky] | within | came | to-the | cave.  
+A while later, a wolf came into the cave.  
+---  
+  
+
+**Example 10.98. **
+.i | ko'e | lebna | lei | rectu | ko'a  
+---|---|---|---|---|---  
+| It-2 | takes-(tenseless) | the-mass-of | flesh | from-her-1.  
+It took the meat from her.  
+---  
+  
+
+**Example 10.99. **
+.i | ko'e | bartu | klama  
+---|---|---|---  
+| It-2 | out | ran  
+It ran out.  
+---  
+  
+
+Example 10.93 sets both the time (long ago) and the place (in a cave) using __ki__ , just like the sentence sequences in Section 10.13. No further space cmavo are used in the rest of the story, so the place is assumed to remain unchanged. The English translation of Example 10.93 is marked for past tense also, as the conventions of English storytelling require: consequently, all other English translation sentences are also in the past tense. (We don't notice how strange this is; even stories about the future are written in past tense!) This conventional use of past tense is not used in Lojban narratives.
+Example 10.94 is tenseless. Outside story time, it would be assumed that its event happens simultaneously with that of Example 10.93, since a sticky tense is in effect; the rules of story time, however, imply that the event occurs afterwards, and that the story time has advanced (changing the sticky time set in Example 10.93).
+Example 10.95 has an explicit tense. This is taken relative to the latest setting of the sticky time; therefore, the event of Example 10.95 happens before that of Example 10.94. It cannot be determined if Example 10.95 happens before or after Example 10.93.
+Example 10.96 is again tenseless. Story time was not changed by the flashback in Example 10.95, so Example 10.96 happens after Example 10.94.
+Example 10.97 specifies the future (relative to Example 10.96) and makes it sticky. So all further events happen after Example 10.97.
+Example 10.98 and Example 10.99 are again tenseless, and so happen after Example 10.97. (Story time is changed.)
+So the overall order is Example 10.93 \- Example 10.95 \- Example 10.94 \- Example 10.96 \- (medium interval) - Example 10.97 \- Example 10.98 \- Example 10.99. It is also possible that Example 10.95 happens before Example 10.93.
+If no sticky time (or space) is set initially, the story is set at an unspecified time (or space): the effect is like that of choosing an arbitrary reference point and making it sticky. This style is common in stories that are jokes. The same convention may be used if the context specifies the sticky time sufficiently.
+* * *
+Chapter 10. Imaginary Journeys: The Lojban Space/Time Tense System  
+---  
+Prev: Section 10.13 |  Next: Section 10.15  
+---|---  
+Table of Contents
+Book Info Page
+
+
+Word: cu
+Filename: section-attitudinals.txt
+TF-IDF Score: 0.22788147621681745
+Content: Chapter 2. A Quick Tour of Lojban Grammar, With Diagrams  
+---  
+Prev: Section 2.15 |  Next: Section 2.17  
+---|---  
+Table of Contents
+Book Info Page
+* * *
+## 2.16. Indicators
+Different cultures express emotions and attitudes with a variety of intonations and gestures that are not usually included in written language. Some of these are available in some languages as interjections (i.e. “Aha!”, “Oh no!”, “Ouch!”, “Aahh!”, etc.), but they vary greatly from culture to culture.
+Lojban has a group of cmavo known as “attitudinal indicators” which specifically covers this type of commentary on spoken statements. They are both written and spoken, but require no specific intonation or gestures. Grammatically they are very simple: one or more attitudinals at the beginning of a bridi apply to the entire bridi; anywhere else in the bridi they apply to the word immediately to the left. For example:
+**Example 2.79. **
+.ie |  mi |  [cu] |  klama  
+---|---|---|---  
+Agreement! |  I |  - |  go.  
+Yep! I'll go.  
+---  
+  
+
+**Example 2.80. **
+.ei |  mi |  [cu] |  klama  
+---|---|---|---  
+Obligation! |  I |  - |  go.  
+I should go.  
+---  
+  
+
+**Example 2.81. **
+mi |  [cu] |  klama |  le melbi  
+---|---|---|---  
+I |  - |  go |  to-the beautiful-thing  
+.ui |  [ku]  
+---|---  
+and I am happy because it is the beautiful thing I'm going to |  -  
+  
+
+Not all indicators indicate attitudes. Discursives, another group of cmavo with the same grammatical rules as attitudinal indicators, allow free expression of certain kinds of commentary about the main utterances. Using discursives allows a clear separation of these so-called “metalinguistic” features from the underlying statements and logical structure. By comparison, the English words “but” and “also”, which discursively indicate contrast or an added weight of example, are logically equivalent to “and”, which does not have a discursive content. The average English-speaker does not think about, and may not even realize, the paradoxical idea that “but” basically means “and”.
+**Example 2.82. **
+mi |  [cu] |  klama |  .i |  do |  [cu] |  stali  
+---|---|---|---|---|---|---  
+I |  - |  go. |  |  You |  - |  stay.  
+  
+
+**Example 2.83. **
+mi |  [cu] |  klama |  .i |  ji'a |  do |  [cu] |  stali  
+---|---|---|---|---|---|---|---  
+I |  - |  go. |  |  In addition, |  you |  - |  stay. |  added weight  
+  
+
+**Example 2.84. **
+mi |  [cu] |  klama |  .i |  ku'i |  do |  [cu] |  stali  
+---|---|---|---|---|---|---|---  
+I |  - |  go. |  |  However, |  you |  - |  stay. |  contrast  
+  
+
+Another group of indicators are called “evidentials”. Evidentials show the speaker's relationship to the statement, specifically how the speaker came to make the statement. These include __za'a__ (I directly observe the relationship), __pe'i__ (I believe that the relationship holds), __ru'a__ (I postulate the relationship), and others. Many American Indian languages use this kind of words.
+**Example 2.85. **
+pe'i |  do |  [cu] |  melbi  
+---|---|---|---  
+I opine! |  You |  - |  are beautiful.  
+  
+
+**Example 2.86. **
+za'a |  do |  [cu] |  melbi  
+---|---|---|---  
+I directly observe! |  You |  - |  are beautiful.  
+  
+
+* * *
+Chapter 2. A Quick Tour of Lojban Grammar, With Diagrams  
+---  
+Prev: Section 2.15 |  Next: Section 2.17  
+---|---  
+Table of Contents
+Book Info Page
+
+
+Word: cu
+Filename: section-some-brivla.txt
+TF-IDF Score: 0.15225388318577596
+Content: Chapter 2. A Quick Tour of Lojban Grammar, With Diagrams  
+---  
+Prev: Section 2.10 |  Next: Section 2.12  
+---|---  
+Table of Contents
+Book Info Page
+* * *
+## 2.11. Examples of brivla
+The simplest form of selbri is an individual word. A word which may by itself express a selbri relation is called a __brivla__. The three types of brivla are gismu (root words), lujvo (compounds), and fu'ivla (borrowings from other languages). All have identical grammatical uses. So far, most of our selbri have been gismu or tanru built from gismu.
+gismu:
+**Example 2.46. **
+mi |  [cu] |  klama |  ti |  zo'e |  zo'e |  ta  
+---|---|---|---|---|---|---  
+Go-er |  - |  goes |  destination |  origin |  route |  means.  
+I go here (to this) using that means (from somewhere via some route).  
+---  
+  
+
+lujvo:
+**Example 2.47. **
+ta |  [cu] |  blari'o  
+---|---|---  
+That |  - |  is-blue-green.  
+  
+
+fu'ivla:
+**Example 2.48. **
+ti |  [cu] |  djarspageti  
+---|---|---  
+This |  - |  is-spaghetti.  
+  
+
+Some cmavo may also serve as selbri, acting as variables that stand for another selbri. The most commonly used of these is __go'i__ , which represents the main bridi of the previous Lojban sentence, with any new sumti or other sentence features being expressed replacing the previously expressed ones. Thus, in this context:
+**Example 2.49. **
+ta |  [cu] |  go'i  
+---|---|---  
+That |  - |  too/same-as-last selbri.  
+That (is spaghetti), too.  
+---  
+  
+
+* * *
+Chapter 2. A Quick Tour of Lojban Grammar, With Diagrams  
+---  
+Prev: Section 2.10 |  Next: Section 2.12  
+---|---  
+Table of Contents
+Book Info Page
+
+
+Word: lo
+Filename: section-keha.txt
+TF-IDF Score: 0.08139590689754461
+Content: Chapter 7. Brevity Is The Soul Of Language: Pro-sumti And Pro-bridi  
+---  
+Prev: Section 7.9 |  Next: Section 7.11  
+---|---  
+Table of Contents
+Book Info Page
+* * *
+## 7.10. Relativized pro-sumti: _ke'a_
+The following cmavo are discussed in this section:
+ke'a |  KOhA |  relativized sumti  
+---|---|---  
+This pro-sumti is used in relative clauses (explained in Chapter 8) to indicate how the sumti being relativized fits within the clause. For example:
+**Example 7.69. **
+mi | catlu | lo | mlatu | poi | [zo'e]  
+---|---|---|---|---|---  
+I | see | a | cat | such-that | something-unspecified  
+zbasu | ke'a |  | lei | slasi  
+---|---|---|---|---  
+makes | the-thing-being-relativized-[the-cat] | from | some-mass-of | plastic.  
+I see a cat made of plastic.  
+---  
+  
+
+If __ke'a__ were omitted from Example 7.69, it might be confused with:
+**Example 7.70. **
+mi | catlu | lo | mlatu | poi  
+---|---|---|---|---  
+I | see | a | cat | such-that  
+[ke'a] | zbasu | lei | slasi  
+---|---|---|---  
+the-thing-being-relativized-[the-cat] | makes | a-mass-of | plastic  
+I see a cat that makes plastic.  
+---  
+  
+
+The anaphora cmavo __ri__ cannot be used in place of __ke'a__ in Example 7.69 and Example 7.70, because the relativized sumti is not yet complete when the __ke'a__ appears.
+Note that __ke'a__ is used only with relative clauses, and not with other embedded bridi such as abstract descriptions. In the case of relative clauses within relative clauses, __ke'a__ may be subscripted to make the difference clear (see Section 8.10).
+* * *
+Chapter 7. Brevity Is The Soul Of Language: Pro-sumti And Pro-bridi  
+---  
+Prev: Section 7.9 |  Next: Section 7.11  
+---|---  
+Table of Contents
+Book Info Page
+
+
+Word: lo
+Filename: section-multiple-compound-bridi.txt
+TF-IDF Score: 0.07964835163215547
+Content: Chapter 14. If Wishes Were Horses: The Lojban Connective System  
+---  
+Prev: Section 14.9 |  Next: Section 14.11  
+---|---  
+Table of Contents
+Book Info Page
+* * *
+## 14.10. Multiple compound bridi
+Giheks can be combined with __bo__ in the same way as eks:
+**Example 14.60. **
+mi | nelci | la | djan. | gi'e | nelci | la | martas. | gi'abo | nelci | la | meris.  
+---|---|---|---|---|---|---|---|---|---|---|---  
+I like John and ( like Martha or like Mary ).  
+---  
+  
+
+is equivalent in meaning to Example 14.39 and Example 14.40. Likewise, __ke__ … __ke'e__ grouping can be used after giheks:
+**Example 14.61. **
+mi | dzukla | le | zarci  
+---|---|---|---  
+I | walk-to | the | market  
+gi'e | dzukla | le | zdani  
+---|---|---|---  
+and | walk-to | the | house,  
+gi'a | ke | dzukla | le | ckule  
+---|---|---|---|---  
+or | ( | walk-to | the | school  
+gi'e | dzukla | le | briju | [ke'e]  
+---|---|---|---|---  
+and | walk-to | the | office. | )  
+  
+
+is the gihek version of Example 14.47. The same rule about using __ke__ … __ke'e__ bracketing only just after a connective applies to bridi-tails as to sumti, so the first two bridi-tails in Example 14.61 cannot be explicitly grouped; implicit left-grouping suffices to associate them.
+Each of the pairs of bridi-tails joined by multiple giheks can have its own set of tail-terms:
+**Example 14.62. **
+| mi | dejni | lo | rupnu | la | djan.  
+---|---|---|---|---|---|---  
+[If] | I | owe | some | currency-units | to-that-named | John,  
+.inaja | mi | dunda | le | cukta | la | djan.  
+---|---|---|---|---|---|---  
+then | I | give | the | book | to-that-named | John  
+.ijabo | mi | lebna | le | cukta | la | djan.  
+---|---|---|---|---|---|---  
+or | I | take | the | book | from-that-named | John.  
+  
+
+is equivalent in meaning to:
+**Example 14.63. **
+| mi | dejni | lo | rupnu | nagi'a | dunda  
+---|---|---|---|---|---|---  
+[If] | I | owe | some | currency-units | then | (give  
+gi'abo | lebna | vau | le | cukta | vau | la | djan.  
+---|---|---|---|---|---|---|---  
+or | take) |  | a | book |  | to/from-that-named | John.  
+  
+
+The literal English translation in Example 14.63 is almost unintelligible, but the Lojban is perfectly grammatical. __mi__ fills the x1 place of all three selbri; _lo rupnu_ is the x2 of __dejni__ , whereas _le cukta_ is a tail-term shared between __dunda__ and __lebna__ ; _la djan._ is a tail-term shared by __dejni__ and by _dunda gi'abo lebna_. In this case, greater clarity is probably achieved by moving _la djan._ to the beginning of the sentence, as in Example 14.53:
+**Example 14.64. **
+fi | la | djan. |  | fa | mi | dejni | lo | rupnu  
+---|---|---|---|---|---|---|---|---  
+To/from | that-named | John, | [if] |  | I | owe | some | currency-units  
+nagi'a |  | dunda | gi'abo | lebna | vau | le | cukta  
+---|---|---|---|---|---|---|---  
+then | [I] | give | or | take |  | the | book.  
+  
+
+Finally, what about forethought logical connection of bridi-tails? There is no direct mechanism for the purpose. Instead, Lojban grammar allows a pair of forethought-connected sentences to function as a single bridi-tail, and of course the sentences need not have terms before their selbri. For example:
+**Example 14.65. **
+mi | ge | klama | le | zarci | gi | nelci | la | djan.  
+---|---|---|---|---|---|---|---|---  
+I | both | go-to | the | market | and | like | that-named | John.  
+  
+
+is equivalent in meaning to Example 14.50.
+Of course, either of the connected sentences may contain giheks:
+**Example 14.66. **
+mi | ge | klama | le | zarci | gi'e | dzukla | le | zdani  
+---|---|---|---|---|---|---|---|---  
+I | both | (go | to-the | market | and | walk | to-the | house)  
+gi | nelci | la | djan.  
+---|---|---|---  
+and | like | that-named | John.  
+  
+
+The entire gek-connected sentence pair may be negated as a whole by prefixing __na__ :
+**Example 14.67. **
+| mi | na | ge | klama | le | zarci | gi | dzukla | le | zdani  
+---|---|---|---|---|---|---|---|---|---|---  
+[False!] | I |  | both | go-to | the | market | and | walk-to | the | house.  
+  
+
+Since a pair of sentences joined by geks is the equivalent of a bridi-tail, it may be followed by tail terms. The forethought equivalent of Example 14.54 is:
+**Example 14.68. **
+mi | ge | dunda | le | cukta  
+---|---|---|---|---  
+I | both | (give | the | book)  
+gi | lebna | lo | rupnu | vau | do  
+---|---|---|---|---|---  
+and | (take | some | currency-units | ) | to/from-you.  
+  
+
+Here is a pair of gek-connected observatives, a forethought equivalent of Example 14.57:
+**Example 14.69. **
+ge | klama | le | zarci | gi | dzukla | le | briju  
+---|---|---|---|---|---|---|---  
+Both | a-goer | to-the | market | and | a-walker | to-the | office.  
+  
+
+Finally, here is an example of gek-connected sentences with both shared and unshared terms before their selbri:
+**Example 14.70. **
+mi | gonai | le | zarci | cu | klama | gi | le | bisli | cu | dansu  
+---|---|---|---|---|---|---|---|---|---|---  
+I | either-but-not-both | to-the | office |  | go | or | on-the | ice |  | dance.  
+I either go to the office or dance on the ice (but not both).  
+---  
+  
+
+* * *
+Chapter 14. If Wishes Were Horses: The Lojban Connective System  
+---  
+Prev: Section 14.9 |  Next: Section 14.11  
+---|---  
+Table of Contents
+Book Info Page
+
+
+Word: ze'u
+Filename: section-tense-selmaho-summary.txt
+TF-IDF Score: 0.06221799176643452
+Content: Chapter 10. Imaginary Journeys: The Lojban Space/Time Tense System  
+---  
+Prev: Section 10.26 |  Next: Section 10.28  
+---|---  
+Table of Contents
+Book Info Page
+* * *
+## 10.27. Summary of tense selma'o
+PU
+    
+temporal direction
+pu |  past  
+---|---  
+ca |  present  
+ba |  future  
+ZI
+    
+temporal distance
+zi |  short  
+---|---  
+za |  medium  
+zu |  long  
+ZEhA
+    
+temporal interval
+ze'i |  short  
+---|---  
+ze'a |  medium  
+ze'u |  long  
+ze'e |  infinite  
+ROI
+    
+objective quantified tense flag
+noroi |  never  
+---|---  
+paroi |  once  
+[N]roi |  [N] times  
+roroi |  always  
+pare'u |  the first time  
+rere'u |  the second time  
+[N]re'u |  the [N]th time  
+TAhE
+    
+subjective quantified tense
+di'i |  regularly  
+---|---  
+na'o |  typically  
+ru'i |  continuously  
+ta'e |  habitually  
+ZAhO
+    
+event contours
+see Section 10.10
+FAhA
+    
+spatial direction
+see Section 10.28
+VA
+    
+spatial distance
+vi |  short  
+---|---  
+va |  medium  
+vu |  long  
+VEhA
+    
+spatial interval
+ve'i |  short  
+---|---  
+ve'a |  medium  
+ve'u |  long  
+ve'e |  infinite  
+VIhA
+    
+spatial dimensionality
+vi'i |  line  
+---|---  
+vi'a |  plane  
+vi'u |  space  
+vi'e |  space-time  
+FEhE
+    
+spatial interval modifier flag
+fe'enoroi |  nowhere  
+---|---  
+fe'eroroi |  everywhere  
+fe'eba'o |  beyond  
+etc.
+MOhI
+    
+spatial movement flag
+mo'i |  motion  
+---|---  
+see Section 10.28
+KI
+    
+set or reset sticky tense
+tense+__ki__ |  set  
+---|---  
+__ki__ alone |  reset  
+CUhE
+    
+tense question, reference point
+cu'e |  asks for a tense or aspect  
+---|---  
+nau |  use speaker's reference point  
+JAI
+    
+tense conversion
+jaica |  the time of  
+---|---  
+jaivi |  the place of  
+etc.
+* * *
+Chapter 10. Imaginary Journeys: The Lojban Space/Time Tense System  
+---  
+Prev: Section 10.26 |  Next: Section 10.28  
+---|---  
+Table of Contents
+Book Info Page
+
+
+Word: ze'u
+Filename: section-tcita.txt
+TF-IDF Score: 0.04731517520760816
+Content: Chapter 10. Imaginary Journeys: The Lojban Space/Time Tense System  
+---  
+Prev: Section 10.11 |  Next: Section 10.13  
+---|---  
+Table of Contents
+Book Info Page
+* * *
+## 10.12. Tenses as sumti tcita
+So far, we have seen tenses only just before the selbri, or (equivalently in meaning) floating about the bridi with __ku__. There is another major use for tenses in Lojban: as sumti tcita, or argument tags. A tense may be used to add spatial or temporal information to a bridi as, in effect, an additional place:
+**Example 10.69. **
+mi | klama | le | zarci | ca | le | nu | do | klama  
+---|---|---|---|---|---|---|---|---  
+I | go-to | the | market | [present] | the | event-of | you | go-to  
+le | zdani  
+---|---  
+the | house.  
+I go to the market when you go to the house.  
+---  
+  
+
+Here __ca__ does not appear before the selbri, nor with __ku__ ; instead, it governs the following sumti, the _le nu_ construct. What Example 10.69 asserts is that the action of the main bridi is happening at the same time as the event mentioned by that sumti. So __ca__ , which means “now” when used with a selbri, means “simultaneously-with” when used with a sumti. Consider another example:
+**Example 10.70. **
+mi | klama | le | zarci | pu | le | nu | do | pu | klama  
+---|---|---|---|---|---|---|---|---|---  
+I | go-to | the | market | [past] | the | event-of | you | [past] | go-to  
+le | zdani  
+---|---  
+the | house.  
+  
+
+The second __pu__ is simply the past tense marker for the event of your going to the house, and says that this event is in the speaker's past. How are we to understand the first __pu__ , the sumti tcita?
+All of our imaginary journeys so far have started at the speaker's location in space and time. Now we are specifying an imaginary journey that starts at a different location, namely at the event of your going to the house. Example 10.70 then says that my going to the market is in the past, relative not to the speaker's present moment, but instead relative to the moment when you went to the house. Example 10.70 can therefore be translated:
+> I had gone to the market before you went to the house.
+(Other translations are possible, depending on the ever-present context.) Spatial direction and distance sumti tcita are exactly analogous:
+**Example 10.71. **
+le | ratcu | cu | citka | le | cirla | vi | le | panka  
+---|---|---|---|---|---|---|---|---  
+The | rat |  | eats | the | cheese | [short-time-distance] | the | park.  
+The rat eats the cheese near the park.  
+---  
+  
+
+**Example 10.72. **
+le | ratcu | cu | citka | le | cirla | vi | le | vu | panka  
+---|---|---|---|---|---|---|---|---|---  
+The | rat |  | eats | the | cheese | [short-distance] | the | [long-distance] | park  
+The rat eats the cheese near the faraway park.  
+---  
+  
+
+**Example 10.73. **
+le | ratcu | cu | citka | le | cirla | vu | le | vi | panka  
+---|---|---|---|---|---|---|---|---|---  
+The | rat |  | eats | the | cheese | [long-distance] | the | [short-distance] | park  
+The rat eats the cheese far away from the nearby park.  
+---  
+  
+
+The event contours of selma'o ZAhO (and their space equivalents, prefixed with __fe'e__) are also useful as sumti tcita. The interpretation of ZAhO tcita differs from that of FAhA, VA, PU, and ZI tcita, however. The event described in the sumti is viewed as a process, and the action of the main bridi occurs at the phase of the process which the ZAhO specifies, or at least some part of that phase. The action of the main bridi itself is seen as a point event, so that there is no issue about which phase of the main bridi is intended. For example:
+**Example 10.74. **
+mi | morsi | ba'o | le | nu | mi | jmive  
+---|---|---|---|---|---|---  
+I | am-dead | [perfective] | the | event-of | I | live.  
+I die in the aftermath of my living.  
+---  
+  
+
+Here the (point-)event of my being dead is the portion of my living-process which occurs after the process is complete. Contrast Example 10.74 with:
+**Example 10.75. **
+mi | morsi | ba | le | nu | mi | jmive  
+---|---|---|---|---|---|---  
+I | am-dead | [future] | the | event-of | I | live.  
+  
+
+As explained in Section 10.6, Example 10.75 does not exclude the possibility that I died before I ceased to live!
+Likewise, we might say:
+**Example 10.76. **
+mi | klama | le | zarci | pu'o | le | nu | mi | citka  
+---|---|---|---|---|---|---|---|---  
+I | go-to | the | store | [inchoative] | the | event-of | I | eat  
+  
+
+which indicates that before my eating begins, I go to the store, whereas
+**Example 10.77. **
+mi | klama | le | zarci | ba'o | le | nu | mi | citka  
+---|---|---|---|---|---|---|---|---  
+I | go-to | the | store | [perfective] | the | event-of | I | eat  
+  
+
+would indicate that I go to the store after I am finished eating.
+Here is an example which mixes temporal ZAhO (as a tense) and spatial ZAhO (as a sumti tcita):
+**Example 10.78. **
+le | bloti | pu | za'o | xelklama  
+---|---|---|---|---  
+The | boat | [past] | [superfective] | is-a-transport-mechanism  
+fe'e | ba'o | le | lalxu  
+---|---|---|---  
+[space] | [perfective] | the | lake.  
+The boat sailed for too long and beyond the lake.  
+---  
+  
+
+Probably it sailed up onto the dock. One point of clarification: although _xelklama_ appears to mean simply “is-a-mode-of-transport”, it does not – the bridi of Example 10.78 has four omitted arguments, and thus has the (physical) journey which goes on too long as part of its meaning.
+The remaining tense cmavo, which have to do with interval size, dimension, and continuousness (or lack thereof) are interpreted to let the sumti specify the particular interval over which the main bridi operates:
+**Example 10.79. **
+mi | klama | le | zarci | reroi | le | ca | djedi  
+---|---|---|---|---|---|---|---  
+I | go-to | the | market | [twice] | the | [present] | day.  
+I go/went/will go to the market twice today.  
+---  
+  
+
+Be careful not to confuse a tense used as a sumti tcita with a tense used within a seltcita sumti:
+**Example 10.80. **
+loi | snime | cu | carvi  
+---|---|---|---  
+Some-of-the-mass-of | snow |  | rains  
+ze'u | le | ca | dunra  
+---|---|---|---  
+[long-time-interval] | the | [present] | winter.  
+Snow falls during this winter.  
+---  
+  
+
+claims that the interval specified by “this winter” is long, as events of snowfall go, whereas
+**Example 10.81. **
+loi | snime | cu | carvi | ca | le | ze'u | dunra  
+---|---|---|---|---|---|---|---  
+Some-of-the-mass-of | snow |  | rains | [present] | the | [long-time] | winter.  
+Snow falls in the long winter.  
+---  
+  
+
+claims that during some part of the winter, which is long as winters go, snow falls.
+* * *
+Chapter 10. Imaginary Journeys: The Lojban Space/Time Tense System  
+---  
+Prev: Section 10.11 |  Next: Section 10.13  
+---|---  
+Table of Contents
+Book Info Page

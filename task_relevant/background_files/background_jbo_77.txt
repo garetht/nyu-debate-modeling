@@ -1,0 +1,1212 @@
+
+The following definitions pulled from the above background may be particularly useful:
+{'Lojban': 'jukpa', 'Lojban definition': 'x_{1} cooks/prepares food-for-eating x_{2} by recipe/method x_{3} (process).', 'English': '- cook', 'Type': 'gismu'}
+{'Lojban': 'la', 'Formal Language': 'LA', 'English': 'that named', 'Definition': 'name descriptor: the one(s) called ... ; takes name or selbri description', 'Confer': None, 'Type': 'cmavo'}
+{'Lojban': 'fa', 'Formal Language': 'FA', 'English': '1st sumti place', 'Definition': 'sumti place tag: tag 1st sumti place', 'Confer': None, 'Type': 'cmavo'}
+{'Lojban': 'lo', 'Formal Language': 'LE', 'English': 'the really is', 'Definition': 'veridical descriptor: the one(s) that really is(are) ...', 'Confer': None, 'Type': 'cmavo'}
+{'Lojban': 'zo', 'Formal Language': 'ZO', 'English': '1-word quote', 'Definition': 'quote next word only; quotes a single Lojban word (not a cmavo compound or tanru)', 'Confer': None, 'Type': 'cmavo'}
+{'Lojban': 'cmene', 'Lojban definition': 'x_{1} (quoted word(s)) is a/the name/title/tag of x_{2} to/used-by namer/name-user x_{3} (person).', 'English': '- title; name<br>- name; reference word', 'Type': 'gismu'}
+
+The following are the top TF-IDF files for the words in choice A and choice B from the The Complete Lojban Language Grammar Book:
+Word: jukpa
+Filename: section-story-time.txt
+TF-IDF Score: 0.029694661899489508
+Content: Chapter 10. Imaginary Journeys: The Lojban Space/Time Tense System  
+---  
+Prev: Section 10.13 |  Next: Section 10.15  
+---|---  
+Table of Contents
+Book Info Page
+* * *
+## 10.14. Story time
+Making strict use of the conventions explained in Section 10.13 would be intolerably awkward when a story is being told. The time at which a story is told by the narrator is usually unimportant to the story. What matters is the flow of time within the story itself. The term “story” in this section refers to any series of statements related in more-or-less time-sequential order, not just a fictional one.
+Lojban speakers use a different set of conventions, commonly called “story time”, for inferring tense within a story. It is presumed that the event described by each sentence takes place some time more or less after the previous ones. Therefore, tenseless sentences are implicitly tensed as “what happens next”. In particular, any sticky time setting is advanced by each sentence.
+The following mini-story illustrates the important features of story time. A sentence-by-sentence explication follows:
+**Example 10.93. **
+pu | zu | ki | ku | ne'i | ki | le | kevna  
+---|---|---|---|---|---|---|---  
+[past] | [long] | [sticky] | [,] | [inside] | [sticky] | the | cave,  
+le | ninmu | goi | ko'a | zutse | le | rokci  
+---|---|---|---|---|---|---  
+the | woman | defined-as | she-1 | sat-on | the | rock  
+Long ago, in a cave, a woman sat on a rock.  
+---  
+  
+
+**Example 10.94. **
+.i | ko'a | citka | loi | kanba | rectu  
+---|---|---|---|---|---  
+| She-1 | eat-(tenseless) | some-of-the-mass-of | goat | flesh.  
+She was eating goat's meat.  
+---  
+  
+
+**Example 10.95. **
+.i | ko'a | pu | jukpa | ri | le | mudyfagri  
+---|---|---|---|---|---|---  
+| She | [past] | cook | the-last-mentioned | by-method-the | wood-fire.  
+She had cooked the meat over a wood fire.  
+---  
+  
+
+**Example 10.96. **
+.i | lei | rectu | cu | zanglare  
+---|---|---|---|---  
+| The-mass-of | flesh |  | is-(favorable)-warm.  
+The meat was pleasantly warm.  
+---  
+  
+
+**Example 10.97. **
+.i | le | labno | goi | ko'e  
+---|---|---|---|---  
+| The | wolf | defined-as | it-2  
+ba | za | ki | nenri | klama | le | kevna  
+---|---|---|---|---|---|---  
+[future] | [medium] | [sticky] | within | came | to-the | cave.  
+A while later, a wolf came into the cave.  
+---  
+  
+
+**Example 10.98. **
+.i | ko'e | lebna | lei | rectu | ko'a  
+---|---|---|---|---|---  
+| It-2 | takes-(tenseless) | the-mass-of | flesh | from-her-1.  
+It took the meat from her.  
+---  
+  
+
+**Example 10.99. **
+.i | ko'e | bartu | klama  
+---|---|---|---  
+| It-2 | out | ran  
+It ran out.  
+---  
+  
+
+Example 10.93 sets both the time (long ago) and the place (in a cave) using __ki__ , just like the sentence sequences in Section 10.13. No further space cmavo are used in the rest of the story, so the place is assumed to remain unchanged. The English translation of Example 10.93 is marked for past tense also, as the conventions of English storytelling require: consequently, all other English translation sentences are also in the past tense. (We don't notice how strange this is; even stories about the future are written in past tense!) This conventional use of past tense is not used in Lojban narratives.
+Example 10.94 is tenseless. Outside story time, it would be assumed that its event happens simultaneously with that of Example 10.93, since a sticky tense is in effect; the rules of story time, however, imply that the event occurs afterwards, and that the story time has advanced (changing the sticky time set in Example 10.93).
+Example 10.95 has an explicit tense. This is taken relative to the latest setting of the sticky time; therefore, the event of Example 10.95 happens before that of Example 10.94. It cannot be determined if Example 10.95 happens before or after Example 10.93.
+Example 10.96 is again tenseless. Story time was not changed by the flashback in Example 10.95, so Example 10.96 happens after Example 10.94.
+Example 10.97 specifies the future (relative to Example 10.96) and makes it sticky. So all further events happen after Example 10.97.
+Example 10.98 and Example 10.99 are again tenseless, and so happen after Example 10.97. (Story time is changed.)
+So the overall order is Example 10.93 \- Example 10.95 \- Example 10.94 \- Example 10.96 \- (medium interval) - Example 10.97 \- Example 10.98 \- Example 10.99. It is also possible that Example 10.95 happens before Example 10.93.
+If no sticky time (or space) is set initially, the story is set at an unspecified time (or space): the effect is like that of choosing an arbitrary reference point and making it sticky. This style is common in stories that are jokes. The same convention may be used if the context specifies the sticky time sufficiently.
+* * *
+Chapter 10. Imaginary Journeys: The Lojban Space/Time Tense System  
+---  
+Prev: Section 10.13 |  Next: Section 10.15  
+---|---  
+Table of Contents
+Book Info Page
+
+
+Word: la
+Filename: section-acronyms.txt
+TF-IDF Score: 0.32369313839572034
+Content: Chapter 17. As Easy As A-B-C? The Lojban Letteral System And Its Uses  
+---  
+Prev: Section 17.11 |  Next: Section 17.13  
+---|---  
+Table of Contents
+Book Info Page
+* * *
+## 17.12. Acronyms
+An acronym is a name constructed of lerfu. English examples are “DNA”, “NATO”, “CIA”. In English, some of these are spelled out (like “DNA” and “CIA”) and others are pronounced more or less as if they were ordinary English words (like “NATO”). Some acronyms fluctuate between the two pronunciations: “SQL” may be “ess cue ell” or “sequel”.
+In Lojban, a name can be almost any sequence of sounds that ends in a consonant and is followed by a pause. The easiest way to Lojbanize acronym names is to glue the lerfu words together, using _'_ wherever two vowels would come together (pauses are illegal in names) and adding a final consonant:
+**Example 17.40. **
+la dyny'abub. .i la ny'abuty'obub. .i la cy'ibu'abub.  
+---  
+DNA. NATO. CIA.  
+---  
+… .i la sykybulyl. .i la .ibubymym. .i la ny'ybucyc.  
+---  
+… SQL. IBM. NYC.  
+---  
+  
+
+There is no fixed convention for assigning the final consonant. In Example 17.40, the last consonant of the lerfu string has been replicated into final position.
+Some compression can be done by leaving out __bu__ after vowel lerfu words (except for __.y.bu__ , wherein the __bu__ cannot be omitted without ambiguity). Compression is moderately important because it's hard to say long names without introducing an involuntary (and illegal) pause:
+**Example 17.41. **
+la dyny'am. .i la ny'aty'om. .i la cy'i'am.  
+---  
+DNA. NATO. CIA.  
+---  
+… .i la sykybulym. .i la .ibymym. .i la ny'ybucym.  
+---  
+… SQL. IBM. NYC.  
+---  
+  
+
+In Example 17.41, the final consonant _m_ stands for __merko__ , indicating the source culture of these acronyms.
+Another approach, which some may find easier to say and which is compatible with older versions of the language that did not have a _'_ character, is to use the consonant _z_ instead of _'_ :
+**Example 17.42. **
+la dynyzaz. .i la nyzatyzoz. .i la cyzizaz.  
+---  
+DNA. NATO. CIA.  
+---  
+… .i la sykybulyz. .i la .ibymyz. .i la nyzybucyz.  
+---  
+… SQL. IBM. NYC.  
+---  
+  
+
+One more alternative to these lengthy names is to use the lerfu string itself prefixed with __me__ , the cmavo that makes sumti into selbri:
+**Example 17.43. **
+la | me | dy | ny. | .abu  
+---|---|---|---|---  
+that-named | what-pertains-to |  “d” |  “n” |  “a”  
+  
+
+This works because __la__ , the cmavo that normally introduces names used as sumti, may also be used before a predicate to indicate that the predicate is a (meaningful) name:
+**Example 17.44. **
+la | cribe | cu | ciska  
+---|---|---|---  
+That-named |  “Bear” |  | writes.  
+Bear is a writer.  
+---  
+  
+
+Example 17.44 does not of course refer to a bear (_le cribe_ or _lo cribe_) but to something else, probably a person, named “Bear”. Similarly, _me dy ny. .abu_ is a predicate which can be used as a name, producing a kind of acronym which can have pauses between the individual lerfu words.
+* * *
+Chapter 17. As Easy As A-B-C? The Lojban Letteral System And Its Uses  
+---  
+Prev: Section 17.11 |  Next: Section 17.13  
+---|---  
+Table of Contents
+Book Info Page
+
+
+Word: la
+Filename: section-non-logical-connectives.txt
+TF-IDF Score: 0.2409591667326584
+Content: Chapter 14. If Wishes Were Horses: The Lojban Connective System  
+---  
+Prev: Section 14.13 |  Next: Section 14.15  
+---|---  
+Table of Contents
+Book Info Page
+* * *
+## 14.14. Non-logical connectives
+Way back in Section 14.1, the point was made that not every use of English “and”, “if ... then”, and so on represents a Lojban logical connective. In particular, consider the “and” of:
+**Example 14.109. **
+John and Alice carried the piano.
+  
+
+Given the nature of pianos, this probably means that John carried one end and Alice the other. So it is not true that:
+**Example 14.110. **
+John carried the piano, and Alice carried the piano.
+  
+
+which would mean that each of them carried the piano by himself/herself. Lojban deals with this particular linguistic phenomenon as a “mass”. John and Alice are joined together into a mass, John-and-Alice, and it is this mass which carried the piano, not either of them separately. The cmavo __joi__ (of selma'o JOI) is used to join two or more components into a mass:
+**Example 14.111. **
+la | djan. | joi | la | .alis. | cu | bevri | le | pipno  
+---|---|---|---|---|---|---|---|---  
+That-named | John | massed-with | that-named | Alice |  | carry | the | piano.  
+  
+
+Example 14.111 covers the case mentioned, where John and Alice divide the labor; it also could mean that John did all the hauling and Alice did the supervising. This possibility arises because the properties of a mass are the properties of its components, which can lead to apparent contradictions: if John is small and Alice is large, then John-and-Alice is both small and large. Masses are also discussed in Section 6.3.
+Grammatically, __joi__ can appear between two sumti (like an ek) or between two tanru components (like a jek). This flexibility must be paid for in the form of occasional terminators that cannot be elided:
+**Example 14.112. **
+le | nanmu | ku | joi | le | ninmu | [ku] | cu | klama | le | zarci  
+---|---|---|---|---|---|---|---|---|---|---  
+The | man |  | massed-with | the | woman |  |  | go-to | the | market.  
+  
+
+The cmavo __ku__ is the elidable terminator for __le__ , which can almost always be elided, but not in this case. If the first __ku__ were elided here, Lojban's parsing rules would see _le nanmu joi_ and assume that another tanru component is to follow; since the second __le__ cannot be part of a tanru, a parsing error results. No such problem can occur with logical connectives, because an ek signals a following sumti and a jek a following tanru component unambiguously.
+Single or compound cmavo involving members of selma'o JOI are called joiks, by analogy with the names for logical connectives. It is not grammatical to use joiks to connect bridi-tails.
+In tanru, __joi__ has the connotation “mixed with”, as in the following example:
+**Example 14.113. **
+ti | blanu | joi | xunre | bolci  
+---|---|---|---|---  
+This | is-a-(blue | mixed-with | red) | ball.  
+This is a blue and red ball.  
+---  
+  
+
+Here the ball is neither wholly blue nor wholly red, but partly blue and partly red. Its blue/redness is a mass property. (Just how blue something has to be to count as “wholly blue” is an unsettled question, though. A _blanu zdani_ may be so even though not every part of it is blue.)
+There are several other cmavo in selma'o JOI which can be used in the same grammatical constructions. Not all of them are well-defined as yet in all contexts. All have clear definitions as sumti connectives; those definitions are shown in the following table:
+A __joi__ B | the mass with components A and B  
+---|---  
+A __ce__ B | the set with elements A and B  
+A __ce'o__ B | the sequence with elements A and B in order  
+A __se__ __ce'o__ B | the sequence with elements B and A in order  
+A __jo'u__ B | A and B considered jointly  
+A __fa'u__ B | A and B respectively  
+A __se__ __fa'u__ B | B and A respectively  
+A __jo'e__ B | the union of sets A and B  
+A __ku'a__ B | the intersection of sets A and B  
+A __pi'u__ B | the cross product of sets A and B  
+A __se__ __pi'u__ B | the cross product of sets B and A  
+The cmavo __se__ is grammatical before any JOI cmavo, but only useful with those that have inherent order. Here are some examples of joiks:
+**Example 14.114. **
+mi | cuxna | la | .alis. | la | frank.  
+---|---|---|---|---|---  
+I | choose | that-named | Alice | from-that-named | Frank  
+ce | la | .alis. | ce | la | djeimyz.  
+---|---|---|---|---|---  
+and-member | that-named | Alice | and-member | that-named | James.  
+I choose Alice from among Frank, Alice, and James.  
+---  
+  
+
+The x3 place of __cuxna__ is a set from which the choice is being made. A set is an abstract object which is determined by specifying its members. Unlike those of a mass, the properties of a set are unrelated to its members' properties: the set of all rats is large (since many rats exist), but the rats themselves are small. This chapter does not attempt to explain set theory (the mathematical study of sets) in detail: explaining propositional logic is quite enough for one chapter!
+In Example 14.114 we specify that set by listing the members with __ce__ joining them.
+**Example 14.115. **
+ti | liste | mi | ce'o | do | ce'o | la | djan.  
+---|---|---|---|---|---|---|---  
+This | is-a-list-of | me | and-sequence | you | and-sequence | that-named | John.  
+This is a list of you, me, and John.  
+---  
+  
+
+The x2 place of __liste__ is a sequence of the things which are mentioned in the list. (It is worth pointing out that _lo liste_ means a physical object such as a grocery list: a purely abstract list is _lo porsi_ , a sequence.) Here the three sumti connected by __ce'o__ are in a definite order, not just lumped together in a set or a mass.
+So __joi__ , __ce__ , and __ce'o__ are parallel, in that the sumti connected are taken to be individuals, and the result is something else: a mass, a set, or a sequence respectively. The cmavo __jo'u__ serves as a fourth element in this pattern: the sumti connected are individuals, and the result is still individuals – but inseparably so. The normal Lojban way of saying that James and George are brothers is:
+**Example 14.116. **
+la | djeimyz. | bruna | la | djordj.  
+---|---|---|---|---  
+That-named | James | is-the-brother-of | that-named | George.  
+  
+
+possibly adding a discursive element meaning “and vice versa”. However, “James and George are brothers” cannot be correctly translated as:
+**Example 14.117. **
+la | djeimyz. | .e | la | djordj. | bruna  
+---|---|---|---|---|---  
+That-named | James | and | that-named | George | is-a-brother.  
+  
+
+since that expands to two bridi and means that James is a brother and so is George, but not necessarily of each other. If the __e__ is changed to __jo'u__ , however, the meaning of Example 14.116 is preserved:
+**Example 14.118. **
+la | djeimyz. | jo'u  
+---|---|---  
+That-named | James | in-common-with | that-named  
+la | djordj. | cu | remei | bruna  
+---|---|---|---|---  
+George |  | are-a-twosome | type-of-brothers.  
+  
+
+The tanru _remei bruna_ is not strictly necessary in this sentence, but is used to make clear that we are not saying that James and George are both brothers of some third person not specified. Alternatively, we could turn the tanru around: the x1 place of __re__ __mei__ is a mass with two components, leading to:
+**Example 14.119. **
+la | djeimyz. | joi  
+---|---|---  
+That-named | James | massed-with  
+la | djordj. | cu | bruna | remei  
+---|---|---|---|---  
+that-named | George |  | are-a-brother | type-of-twosome.  
+  
+
+where __joi__ is used to create the necessary mass.
+Likewise, __fa'u__ can be used to put two individuals together where order matters. Typically, there will be another __fa'u__ somewhere else in the same bridi:
+**Example 14.120. **
+la | djeimyz. | fa'u | la | djordj.  
+---|---|---|---|---  
+That-named | James | jointly-in-order-with | that-named | George  
+prami | la | meris. | fa'u | la | martas.  
+---|---|---|---|---|---  
+loves | that-named | Mary | jointly-in-order-with | that-named | Martha.  
+James and George love Mary and Martha, respectively.  
+---  
+  
+
+Here the information carried by the English adverb “respectively”, namely that James loves Mary and George loves Martha, is divided between the two occurrences of __fa'u__. If both uses of __fa'u__ were to be changed to __e__ , we would get:
+**Example 14.121. **
+la | djeimyz. | .e | la | djordj. | prami  
+---|---|---|---|---|---  
+That-named | James | and | that-named | George | love  
+la | meris. | .e | la | martas.  
+---|---|---|---|---  
+that-named | Mary | and | that-named | Martha.  
+  
+
+which can be transformed to four bridi:
+**Example 14.122. **
+la | djeimyz. | prami | la | meris. | .ije | la | djordj. | prami  
+---|---|---|---|---|---|---|---|---  
+That-named | James | loves | that-named | Mary, | and | that-named | George | loves  
+la | meris. | .ije | la | djeimyz. | prami | la | martas.  
+---|---|---|---|---|---|---|---  
+that-named | Mary, | and | that-named | James | loves | that-named | Martha,  
+.ije | la | djordj. | prami | la | martas.  
+---|---|---|---|---|---  
+and | that-named | George | loves | that-named | Martha.  
+  
+
+which represents quite a different state of affairs from Example 14.120. The meaning of Example 14.120 can also be conveyed by a termset:
+**Example 14.123. **
+la | djeimyz. | ce'e | la | meris. | pe'e  
+---|---|---|---|---|---  
+That-named | James | [plus] | that-named | Mary | [joint]  
+.e | la | djordj. | ce'e | la | martas. | prami  
+---|---|---|---|---|---|---  
+and | that-named | George | [plus] | that-named | Martha | loves.  
+  
+
+at the expense of re-ordering the list of names so as to make the pairs explicit. This option is not available when one of the lists is only described rather than enumerated:
+**Example 14.124. **
+la | djeimyz. | fa'u | la | djordj. | prami | re | mensi  
+---|---|---|---|---|---|---|---  
+That-named | James | and-respectively | that-named | George | love | two | sisters.  
+  
+
+which conveys that James loves one sister and George the other, though we are not able to tell which of the sisters is which.
+* * *
+Chapter 14. If Wishes Were Horses: The Lojban Connective System  
+---  
+Prev: Section 14.13 |  Next: Section 14.15  
+---|---  
+Table of Contents
+Book Info Page
+
+
+Word: fa
+Filename: section-FA.txt
+TF-IDF Score: 0.3392345448940054
+Content: Chapter 9. To Boston Via The Road Go I, With An Excursion Into The Land Of Modals  
+---  
+Prev: Section 9.2 |  Next: Section 9.4  
+---|---  
+Table of Contents
+Book Info Page
+* * *
+## 9.3. Tagging places: FA
+The following cmavo are discussed in this section:
+fa |  FA |  tags x1 place  
+---|---|---  
+fe |  FA |  tags x2 place  
+fi |  FA |  tags x3 place  
+fo |  FA |  tags x4 place  
+fu |  FA |  tags x5 place  
+fi'a |  FA |  place structure question  
+In sentences like Example 9.1, it is easy to get lost and forget which sumti falls in which place, especially if the sumti are more complicated than simple names or descriptions. The place structure tags of selma'o FA may be used to help clarify place structures. The five cmavo __fa__ , __fe__ , __fi__ , __fo__ , and __fu__ may be inserted just before the sumti in the x1 to x5 places respectively:
+**Example 9.8. **
+fa | mi | cu | klama | fe | la | bastn. | fi | la | .atlantas.  
+---|---|---|---|---|---|---|---|---|---  
+x1= | I |  | go | x2= | that-named | Boston | x3= | that-named | Atlanta  
+fo | le | dargu | fu | le | karce  
+---|---|---|---|---|---  
+x4= | the | road | x5= | the | car.  
+I go to Boston from Atlanta via the road using the car.  
+---  
+  
+
+In Example 9.8, the tag __fu__ before _le karce_ clarifies that _le karce_ occupies the x5 place of __klama__. The use of __fu__ tells us nothing about the purpose or meaning of the x5 place; it simply says that _le karce_ occupies it.
+In Example 9.8, the tags are overkill; they serve only to make Example 9.1 even longer than it is. Here is a better illustration of the use of FA tags for clarification:
+**Example 9.9. **
+fa | mi | klama | fe | le | zdani | be | mi | be'o | poi  
+---|---|---|---|---|---|---|---|---|---  
+x1= | I | go | x2= | (the | house | of | me) |  | which  
+nurma | vau | fi | la | nu,IORK.  
+---|---|---|---|---  
+is-rural |  | x3= | that-named | New-York.  
+  
+
+In Example 9.9, the place structure of __klama__ is as follows:
+x1 | agent |  _ _mi_ _  
+---|---|---  
+x2 | destination |  _le zdani be mi be'o poi nurma vau_  
+x3 | origin |  _la nu,IORK._  
+x4 | route | (empty)  
+x5 | means | (empty)  
+The __fi__ tag serves to remind the hearer that what follows is in the x3 place of __klama__ ; after listening to the complex sumti occupying the x2 place, it's easy to get lost.
+Of course, once the sumti have been tagged, the order in which they are specified no longer carries the burden of distinguishing the places. Therefore, it is perfectly all right to scramble them into any order desired, and to move the selbri to anywhere in the bridi, even the beginning:
+**Example 9.10. **
+klama | fa | mi | fi | la | .atlantas. | fu | le | karce  
+---|---|---|---|---|---|---|---|---  
+go | x1= | I | x3= | that-named | Atlanta | x5= | the | car  
+fe | la | bastn. | fo | le | dargu  
+---|---|---|---|---|---  
+x2= | that-named | Boston | x4= | the | road.  
+Go I from Atlanta using the car to Boston via the road.  
+---  
+  
+
+Note that no __cu__ is permitted before the selbri in Example 9.10, because __cu__ separates the selbri from any preceding sumti, and Example 9.10 has no such sumti.
+**Example 9.11. **
+fu | le | karce | fo | le | dargu | fi | la | .atlantas.  
+---|---|---|---|---|---|---|---|---  
+x5= | the | car | x4= | the | road | x3= | that-named | Atlanta  
+fe | la | bastn. | cu | klama | fa | mi  
+---|---|---|---|---|---|---  
+x2= | that-named | Boston |  | go | x1= | I  
+Using the car, via the road, from Atlanta to Boston go I.  
+---  
+  
+
+Example 9.11 exhibits the reverse of the standard bridi form seen in Example 9.1 and Example 9.8, but still means exactly the same thing. If the FA tags were left out, however, producing:
+**Example 9.12. **
+le | karce | le | dargu | la | .atlantas.  
+---|---|---|---|---|---  
+The | car | to-the | road | from-that-named | Atlanta  
+la | bastn. | cu | klama | mi  
+---|---|---|---|---  
+via-that-named | Boston |  | goes | using-me.  
+The car goes to the road from Atlanta, with Boston as the route, using me as a means of transport.  
+---  
+  
+
+the meaning would be wholly changed, and in fact nonsensical.
+Tagging places with FA cmavo makes it easy not only to reorder the places but also to omit undesirable ones, without any need for __zo'e__ or special rules about the x1 place:
+**Example 9.13. **
+klama | fi | la | .atlantas. | fe | la | bastn.  
+---|---|---|---|---|---|---  
+A-goer | x3= | that-named | Atlanta | x2= | that-named | Boston  
+fu | le | karce  
+---|---|---  
+x5= | the | car.  
+A goer from Atlanta to Boston using the car.  
+---  
+  
+
+Here the x1 and x4 places are empty, and so no sumti are tagged with __fa__ or __fo__ ; in addition, the x2 and x3 places appear in reverse order.
+What if some sumti have FA tags and others do not? The rule is that after a FA-tagged sumti, any sumti following it occupy the places numerically succeeding it, subject to the proviso that an already-filled place is skipped:
+**Example 9.14. **
+klama | fa | mi | la | bastn. | la | .atlantas.  
+---|---|---|---|---|---|---  
+Go | x1= | I | x2=that-named | Boston | x3=that-named | Atlanta  
+le | dargu | le | karce  
+---|---|---|---  
+x4=the | road | x5=the | car.  
+Go I to Boston from Atlanta via the road using the car.  
+---  
+  
+
+In Example 9.14, the __fa__ causes __mi__ to occupy the x1 place, and then the following untagged sumti occupy in order the x2 through x5 places. This is the mechanism by which Lojban allows placing the selbri first while specifying a sumti for the x1 place.
+Here is a more complex (and more confusing) example:
+**Example 9.15. **
+mi | klama | fi | la | .atlantas. | le | dargu  
+---|---|---|---|---|---|---  
+I | go | x3= | that-named | Atlanta, | the | road  
+fe | la | bastn. | le | karce  
+---|---|---|---|---  
+x2= | that-named | Boston, | the | car.  
+I go from Atlanta via the road to Boston using the car.  
+---  
+  
+
+In Example 9.15, __mi__ occupies the x1 place because it is the first sumti in the sentence (and is before the selbri). The second sumti, _la .atlantas._ , occupies the x3 place by virtue of the tag __fi__ , and _le dargu_ occupies the x4 place as a result of following _la .atlantas._. Finally, _la bastn._ occupies the x2 place because of its tag __fe__ , and _le karce_ skips over the already-occupied x3 and x4 places to land in the x5 place.
+Such a convoluted use of tags should probably be avoided except when trying for a literal translation of some English (or other natural-language) sentence; the rules stated here are merely given so that some standard interpretation is possible.
+It is grammatically permitted to tag more than one sumti with the same FA cmavo. The effect is that of making more than one claim:
+**Example 9.16. **
+[fa] | la | rik. | fa | la | djein. | klama  
+---|---|---|---|---|---|---  
+[x1=] | that-named | Rick | x1= | that-named | Jane | goes-to  
+[fe] | le | skina | fe | le | zdani | fe | le | zarci  
+---|---|---|---|---|---|---|---|---  
+[x2=] | the | movie | x2= | the | house | x2= | the | office  
+  
+
+may be taken to say that both Rick and Jane go to the movie, the house, and the office, merging six claims into one. More likely, however, it will simply confuse the listener. There are better ways, involving logical connectives (explained in Chapter 14), to say such things in Lojban. In fact, putting more than one sumti into a place is odd enough that it can only be done by explicit FA usage: this is the motivation for the proviso above, that already-occupied places are skipped. In this way, no sumti can be forced into a place already occupied unless it has an explicit FA cmavo tagging it.
+The cmavo __fi'a__ also belongs to selma'o FA, and allows Lojban users to ask questions about place structures. A bridi containing __fi'a__ is a question, asking the listener to supply the appropriate other member of FA which will make the bridi a true statement:
+**Example 9.17. **
+fi'a | do | dunda | [fe] | le | vi | rozgu  
+---|---|---|---|---|---|---  
+[what-place]? | you | give | x2= | the | nearby | rose  
+In what way are you involved in the giving of this rose?  
+---  
+Are you the giver or the receiver of this rose?  
+  
+
+In Example 9.17, the speaker uses the selbri __dunda__ , whose place structure is:
+> _ _dunda_ _ x1 gives x2 to x3
+The tagged sumti _fi'a do_ indicates that the speaker wishes to know whether the sumti __do__ falls in the x1 or the x3 place (the x2 place is already occupied by _le rozgu_). The listener can reply with a sentence consisting solely of a FA cmavo: __fa__ if the listener is the giver, __fi__ if he/she is the receiver.
+I have inserted the tag __fe__ in brackets into Example 9.17, but it is actually not necessary, because __fi'a__ does not count as a numeric tag; therefore, _le vi rozgu_ would necessarily be in the x2 place even if no tag were present, because it immediately follows the selbri.
+There is also another member of FA, namely __fai__ , which is discussed in Section 9.12.
+* * *
+Chapter 9. To Boston Via The Road Go I, With An Excursion Into The Land Of Modals  
+---  
+Prev: Section 9.2 |  Next: Section 9.4  
+---|---  
+Table of Contents
+Book Info Page
+
+
+Word: fa
+Filename: section-jai.txt
+TF-IDF Score: 0.16798229599472905
+Content: Chapter 10. Imaginary Journeys: The Lojban Space/Time Tense System  
+---  
+Prev: Section 10.21 |  Next: Section 10.23  
+---|---  
+Table of Contents
+Book Info Page
+* * *
+## 10.22. Conversion of sumti tcita: JAI
+The following cmavo are discussed in this section:
+jai |  JAI |  tense conversion  
+---|---|---  
+fai |  FA |  indefinite place  
+Conversion is the regular Lojban process of moving around the places of a place structure. The cmavo of selma'o SE serve this purpose, exchanging the first place with one of the others:
+**Example 10.162. **
+mi | cu | klama | le | zarci  
+---|---|---|---|---  
+I |  | go-to | the | market.  
+  
+
+**Example 10.163. **
+le | zarci | cu | se klama | mi  
+---|---|---|---|---  
+The | market |  | is-gone-to | by-me.  
+  
+
+It is also possible to bring a place that is specified by a sumti tcita (for the purposes of this chapter, a tense sumti tcita) to the front, by using __jai__ plus the tense as the grammatical equivalent of SE:
+**Example 10.164. **
+le | ratcu | cu | citka | le | cirla | vi | le | panka  
+---|---|---|---|---|---|---|---|---  
+The | rat |  | eats | the | cheese | [short-distance] | the | park.  
+The rat eats the cheese in the park.  
+---  
+  
+
+**Example 10.165. **
+le | panka | cu | jai vi | citka | le | cirla | fai | le | ratcu  
+---|---|---|---|---|---|---|---|---|---  
+The | park |  | is-the-place-of | eating | the | cheese | by | the | rat.  
+The park is where the rat eats the cheese.  
+---  
+  
+
+In Example 10.165, the construction JAI+tense converts the location sumti into the first place. The previous first place has nowhere to go, since the location sumti is not a numbered place; however, it can be inserted back into the bridi with __fai__ , the indefinite member of selma'o FA.
+(The other members of FA are used to mark the first, second, etc. places of a bridi explicitly:
+**Example 10.166. **
+fa mi cu klama fe le zarci
+  
+
+means the same as
+**Example 10.167. **
+fe le zarci cu klama fa mi
+  
+
+as well as the simple
+**Example 10.168. **
+mi cu klama le zarci
+  
+
+in which the place structure is determined by position.)
+Like SE conversion, JAI+tense conversion is especially useful in descriptions with LE selma'o:
+**Example 10.169. **
+mi | viska | le | jai vi | citka | be | le | cirla  
+---|---|---|---|---|---|---|---  
+I | saw | the | place-of | eating |  | the | cheese.  
+  
+
+Here the eater of the cheese is elided, so no __fai__ appears.
+Of course, temporal tenses are also usable with JAI:
+**Example 10.170. **
+mi | djuno | fi | le | jai | ca | morsi | be | fai | la | djan.  
+---|---|---|---|---|---|---|---|---|---|---  
+I | know | about | the |  | [present] | is-dead |  | of | that-named |  “John” | .  
+I know the time of John's death.  
+---  
+I know when John died.  
+  
+
+* * *
+Chapter 10. Imaginary Journeys: The Lojban Space/Time Tense System  
+---  
+Prev: Section 10.21 |  Next: Section 10.23  
+---|---  
+Table of Contents
+Book Info Page
+
+
+Word: lo
+Filename: section-keha.txt
+TF-IDF Score: 0.08139590689754461
+Content: Chapter 7. Brevity Is The Soul Of Language: Pro-sumti And Pro-bridi  
+---  
+Prev: Section 7.9 |  Next: Section 7.11  
+---|---  
+Table of Contents
+Book Info Page
+* * *
+## 7.10. Relativized pro-sumti: _ke'a_
+The following cmavo are discussed in this section:
+ke'a |  KOhA |  relativized sumti  
+---|---|---  
+This pro-sumti is used in relative clauses (explained in Chapter 8) to indicate how the sumti being relativized fits within the clause. For example:
+**Example 7.69. **
+mi | catlu | lo | mlatu | poi | [zo'e]  
+---|---|---|---|---|---  
+I | see | a | cat | such-that | something-unspecified  
+zbasu | ke'a |  | lei | slasi  
+---|---|---|---|---  
+makes | the-thing-being-relativized-[the-cat] | from | some-mass-of | plastic.  
+I see a cat made of plastic.  
+---  
+  
+
+If __ke'a__ were omitted from Example 7.69, it might be confused with:
+**Example 7.70. **
+mi | catlu | lo | mlatu | poi  
+---|---|---|---|---  
+I | see | a | cat | such-that  
+[ke'a] | zbasu | lei | slasi  
+---|---|---|---  
+the-thing-being-relativized-[the-cat] | makes | a-mass-of | plastic  
+I see a cat that makes plastic.  
+---  
+  
+
+The anaphora cmavo __ri__ cannot be used in place of __ke'a__ in Example 7.69 and Example 7.70, because the relativized sumti is not yet complete when the __ke'a__ appears.
+Note that __ke'a__ is used only with relative clauses, and not with other embedded bridi such as abstract descriptions. In the case of relative clauses within relative clauses, __ke'a__ may be subscripted to make the difference clear (see Section 8.10).
+* * *
+Chapter 7. Brevity Is The Soul Of Language: Pro-sumti And Pro-bridi  
+---  
+Prev: Section 7.9 |  Next: Section 7.11  
+---|---  
+Table of Contents
+Book Info Page
+
+
+Word: lo
+Filename: section-multiple-compound-bridi.txt
+TF-IDF Score: 0.07964835163215547
+Content: Chapter 14. If Wishes Were Horses: The Lojban Connective System  
+---  
+Prev: Section 14.9 |  Next: Section 14.11  
+---|---  
+Table of Contents
+Book Info Page
+* * *
+## 14.10. Multiple compound bridi
+Giheks can be combined with __bo__ in the same way as eks:
+**Example 14.60. **
+mi | nelci | la | djan. | gi'e | nelci | la | martas. | gi'abo | nelci | la | meris.  
+---|---|---|---|---|---|---|---|---|---|---|---  
+I like John and ( like Martha or like Mary ).  
+---  
+  
+
+is equivalent in meaning to Example 14.39 and Example 14.40. Likewise, __ke__ … __ke'e__ grouping can be used after giheks:
+**Example 14.61. **
+mi | dzukla | le | zarci  
+---|---|---|---  
+I | walk-to | the | market  
+gi'e | dzukla | le | zdani  
+---|---|---|---  
+and | walk-to | the | house,  
+gi'a | ke | dzukla | le | ckule  
+---|---|---|---|---  
+or | ( | walk-to | the | school  
+gi'e | dzukla | le | briju | [ke'e]  
+---|---|---|---|---  
+and | walk-to | the | office. | )  
+  
+
+is the gihek version of Example 14.47. The same rule about using __ke__ … __ke'e__ bracketing only just after a connective applies to bridi-tails as to sumti, so the first two bridi-tails in Example 14.61 cannot be explicitly grouped; implicit left-grouping suffices to associate them.
+Each of the pairs of bridi-tails joined by multiple giheks can have its own set of tail-terms:
+**Example 14.62. **
+| mi | dejni | lo | rupnu | la | djan.  
+---|---|---|---|---|---|---  
+[If] | I | owe | some | currency-units | to-that-named | John,  
+.inaja | mi | dunda | le | cukta | la | djan.  
+---|---|---|---|---|---|---  
+then | I | give | the | book | to-that-named | John  
+.ijabo | mi | lebna | le | cukta | la | djan.  
+---|---|---|---|---|---|---  
+or | I | take | the | book | from-that-named | John.  
+  
+
+is equivalent in meaning to:
+**Example 14.63. **
+| mi | dejni | lo | rupnu | nagi'a | dunda  
+---|---|---|---|---|---|---  
+[If] | I | owe | some | currency-units | then | (give  
+gi'abo | lebna | vau | le | cukta | vau | la | djan.  
+---|---|---|---|---|---|---|---  
+or | take) |  | a | book |  | to/from-that-named | John.  
+  
+
+The literal English translation in Example 14.63 is almost unintelligible, but the Lojban is perfectly grammatical. __mi__ fills the x1 place of all three selbri; _lo rupnu_ is the x2 of __dejni__ , whereas _le cukta_ is a tail-term shared between __dunda__ and __lebna__ ; _la djan._ is a tail-term shared by __dejni__ and by _dunda gi'abo lebna_. In this case, greater clarity is probably achieved by moving _la djan._ to the beginning of the sentence, as in Example 14.53:
+**Example 14.64. **
+fi | la | djan. |  | fa | mi | dejni | lo | rupnu  
+---|---|---|---|---|---|---|---|---  
+To/from | that-named | John, | [if] |  | I | owe | some | currency-units  
+nagi'a |  | dunda | gi'abo | lebna | vau | le | cukta  
+---|---|---|---|---|---|---|---  
+then | [I] | give | or | take |  | the | book.  
+  
+
+Finally, what about forethought logical connection of bridi-tails? There is no direct mechanism for the purpose. Instead, Lojban grammar allows a pair of forethought-connected sentences to function as a single bridi-tail, and of course the sentences need not have terms before their selbri. For example:
+**Example 14.65. **
+mi | ge | klama | le | zarci | gi | nelci | la | djan.  
+---|---|---|---|---|---|---|---|---  
+I | both | go-to | the | market | and | like | that-named | John.  
+  
+
+is equivalent in meaning to Example 14.50.
+Of course, either of the connected sentences may contain giheks:
+**Example 14.66. **
+mi | ge | klama | le | zarci | gi'e | dzukla | le | zdani  
+---|---|---|---|---|---|---|---|---  
+I | both | (go | to-the | market | and | walk | to-the | house)  
+gi | nelci | la | djan.  
+---|---|---|---  
+and | like | that-named | John.  
+  
+
+The entire gek-connected sentence pair may be negated as a whole by prefixing __na__ :
+**Example 14.67. **
+| mi | na | ge | klama | le | zarci | gi | dzukla | le | zdani  
+---|---|---|---|---|---|---|---|---|---|---  
+[False!] | I |  | both | go-to | the | market | and | walk-to | the | house.  
+  
+
+Since a pair of sentences joined by geks is the equivalent of a bridi-tail, it may be followed by tail terms. The forethought equivalent of Example 14.54 is:
+**Example 14.68. **
+mi | ge | dunda | le | cukta  
+---|---|---|---|---  
+I | both | (give | the | book)  
+gi | lebna | lo | rupnu | vau | do  
+---|---|---|---|---|---  
+and | (take | some | currency-units | ) | to/from-you.  
+  
+
+Here is a pair of gek-connected observatives, a forethought equivalent of Example 14.57:
+**Example 14.69. **
+ge | klama | le | zarci | gi | dzukla | le | briju  
+---|---|---|---|---|---|---|---  
+Both | a-goer | to-the | market | and | a-walker | to-the | office.  
+  
+
+Finally, here is an example of gek-connected sentences with both shared and unshared terms before their selbri:
+**Example 14.70. **
+mi | gonai | le | zarci | cu | klama | gi | le | bisli | cu | dansu  
+---|---|---|---|---|---|---|---|---|---|---  
+I | either-but-not-both | to-the | office |  | go | or | on-the | ice |  | dance.  
+I either go to the office or dance on the ice (but not both).  
+---  
+  
+
+* * *
+Chapter 14. If Wishes Were Horses: The Lojban Connective System  
+---  
+Prev: Section 14.9 |  Next: Section 14.11  
+---|---  
+Table of Contents
+Book Info Page
+
+
+Word: zo
+Filename: section-more-quotations.txt
+TF-IDF Score: 0.17611823278889638
+Content: Chapter 19. Putting It All Together: Notes on the Structure of Lojban Texts  
+---  
+Prev: Section 19.9 |  Next: Section 19.11  
+---|---  
+Table of Contents
+Book Info Page
+* * *
+## 19.10. More on quotations: ZO, ZOI
+The following cmavo are discussed in this section:
+zo |  ZO |  quote single word  
+---|---|---  
+zoi |  ZOI |  non-Lojban quotation  
+la'o |  ZOI |  non-Lojban name  
+The cmavo __zo__ (of selma'o ZO) is a strong quotation mark for the single following word, which can be any Lojban word whatsoever. Among other uses, __zo__ allows a metalinguistic word to be referenced without having it act on the surrounding text. The word must be a morphologically legal (but not necessarily meaningful) single Lojban word; compound cmavo are not permitted. For example:
+**Example 19.48. **
+zo si cu lojbo valsi  
+---  
+__si__ is a Lojbanic word.  
+---  
+  
+
+Since __zo__ acts on a single word only, there is no corresponding terminator. Brevity, then, is a great advantage of __zo__ , since the terminators for other kinds of quotation are rarely or never elidable.
+The cmavo __zoi__ (of selma'o ZOI) is a quotation mark for quoting non-Lojban text. Its syntax is _zoi X. text .X_ , where X is a Lojban word (called the delimiting word) which is separated from the quoted text by pauses, and which is not found in the written text or spoken phoneme stream. It is common, but not required, to use the lerfu word (of selma'o BY) which corresponds to the Lojban name of the language being quoted:
+**Example 19.49. **
+zoi gy. John is a man .gy. cu glico jufra  
+---  
+“John is a man” is an English sentence.  
+---  
+  
+
+where __gy__ stands for __glico__. Other popular choices of delimiting words are _.kuot._ , a Lojban name which sounds like the English word “quote”, and the word __zoi__ itself. Another possibility is a Lojban word suggesting the topic of the quotation.
+Within written text, the Lojban written word used as a delimiting word may not appear, whereas within spoken text, the sound of the delimiting word may not be uttered. This leads to occasional breakdowns of audio-visual isomorphism: Example 19.50 is fine in speech but ungrammatical as written, whereas Example 19.51 is correct when written but ungrammatical in speech.
+**Example 19.50. **
+mi djuno fi le valsi po'u zoi gy. gyrations .gy.  
+---  
+I know about the word which-is “gyrations”.  
+---  
+  
+
+**Example 19.51. **
+mi djuno fi le valsi po'u zoi jai. gyrations .jai  
+---  
+I know about the word which-is “gyrations”.  
+---  
+  
+
+The text __gy__ appears in the written word “gyrations”, whereas the sound represented in Lojban by __jai__ appears in the spoken word “gyrations”. Such borderline cases should be avoided as a matter of good style.
+It should be noted particularly that __zoi__ quotation is the only way to quote rafsi, specifically CCV rafsi, because they are not Lojban words, and __zoi__ quotation is the only way to quote things which are not Lojban words. (CVC and CVV rafsi look like names and cmavo respectively, and so can be quoted using other methods.) For example:
+**Example 19.52. **
+zoi ry. sku .ry. cu rafsi zo cusku  
+---  
+“ _sku_ ” is a rafsi of “ __cusku__ ”.  
+---  
+  
+
+(A minor note on interaction between _lo'u ... le'u_ and __zoi__ : The text between __lo'u__ and __le'u__ should consist of Lojban words only. In fact, non-Lojban material in the form of a __zoi__ quotation may also appear. However, if the word __le'u__ is used either as the delimiting word for the __zoi__ quotation, or within the quotation itself, the outer __lo'u__ quotation will be prematurely terminated. Therefore, __le'u__ should be avoided as the delimiting word in any __zoi__ quotation.)
+Lojban strictly avoids any confusion between things and the names of things:
+**Example 19.53. **
+zo | .bab. | cmene | la | bab.  
+---|---|---|---|---  
+The-word |  “Bob” | is-the-name-of | the-one-named | Bob.  
+  
+
+In Example 19.53, _zo .bab._ is the word, whereas _la bab._ is the thing named by the word. The cmavo __la'e__ and __lu'e__ (of selma'o LAhE) convert back and forth between references and their referents:
+**Example 19.54. **
+zo | .bab. | cmene | la'e | zo | .bab.  
+---|---|---|---|---|---  
+The-word |  “Bob” | is-the-name-of | the-referent-of | the-word |  “Bob” | .  
+  
+
+**Example 19.55. **
+lu'e | la | bab. | cmene | la | bab.  
+---|---|---|---|---|---  
+A-symbol-for |  | Bob | is-the-name-of |  | Bob.  
+  
+
+Example 19.53 through Example 19.55 all mean approximately the same thing, except for differences in emphasis. Example 19.56 is different:
+**Example 19.56. **
+la bab. cmene la bab.  
+---  
+Bob is the name of Bob.  
+---  
+  
+
+and says that Bob is both the name and the thing named, an unlikely situation. People are not names.
+(In Example 19.53 through Example 19.54, the name _bab._ was separated from a preceding __zo__ by a pause, thus: _zo .bab._. The reason for this extra pause is that all Lojban names must be separated by pause from any preceding word other than __la__ , __lai__ , __la'i__ (all of selma'o LA) and __doi__ (of selma'o DOI). There are numerous other cmavo that may precede a name: of these, __zo__ is one of the most common.)
+The cmavo __la'o__ also belongs to selma'o ZOI, and is mentioned here for completeness, although it does not signal the beginning of a quotation. Instead, __la'o__ serves to mark non-Lojban names, especially the Linnaean binomial names (such as “Homo sapiens”) which are the internationally standardized names for species of animals and plants. Internationally known names which can more easily be recognized by spelling rather than pronunciation, such as “Goethe”, can also appear in Lojban text with __la'o__ :
+**Example 19.57. **
+la'o dy. Goethe .dy. cu me la'o ly. Homo sapiens .ly.  
+---  
+Goethe is a Homo sapiens.  
+---  
+  
+
+Using __la'o__ for all names rather than Lojbanizing, however, makes for very cumbersome text. A rough equivalent of __la'o__ might be _la me zoi_.
+* * *
+Chapter 19. Putting It All Together: Notes on the Structure of Lojban Texts  
+---  
+Prev: Section 19.9 |  Next: Section 19.11  
+---|---  
+Table of Contents
+Book Info Page
+
+
+Word: zo
+Filename: section-erasure.txt
+TF-IDF Score: 0.13101137689916975
+Content: Chapter 19. Putting It All Together: Notes on the Structure of Lojban Texts  
+---  
+Prev: Section 19.12 |  Next: Section 19.14  
+---|---  
+Table of Contents
+Book Info Page
+* * *
+## 19.13. Erasure: SI, SA, SU
+The following cmavo are discussed in this section:
+si |  SI |  erase word  
+---|---|---  
+sa |  SA |  erase phrase  
+su |  SU |  erase discourse  
+The cmavo __si__ (of selma'o SI) is a metalinguistic operator that erases the preceding word, as if it had never been spoken:
+**Example 19.75. **
+ti | gerku | si | mlatu  
+---|---|---|---  
+This | is-a-dog, | er, | is-a-cat.  
+  
+
+means the same thing as _ti mlatu_. Multiple __si__ cmavo in succession erase the appropriate number of words:
+**Example 19.76. **
+ta | blanu | zdani | si | si | xekri | zdani  
+---|---|---|---|---|---|---  
+That | is-a-blue | house, | er, | er, | is-a-black | house.  
+  
+
+In order to erase the word __zo__ , it is necessary to use three __si__ cmavo in a row:
+**Example 19.77. **
+zo | .bab. | se | cmene | zo | si | si | si | la | bab.  
+---|---|---|---|---|---|---|---|---|---  
+The-word |  “Bob” | is-the-name-of | the | word |  _ _si_ _ | , | er, | er, | Bob.  
+  
+
+The first use of __si__ does not erase anything, but completes the __zo__ quotation. Two more __si__ cmavo are then necessary to erase the first __si__ and the __zo__.
+Incorrect names can likewise cause trouble with __si__ :
+**Example 19.78. **
+mi | tavla | fo | la | .esperanto  
+---|---|---|---|---  
+I | talk | in-language | that-named | and-speranto,  
+si | si | .esperanton.  
+---|---|---  
+er, | er, | Esperanto.  
+  
+
+The Lojbanized spelling _.esperanto_ breaks up, as a consequence of the Lojban morphology rules (see Chapter 4) into two Lojban words, the cmavo __e__ and the undefined lujvo _speranto_. Therefore, two __si__ cmavo are needed to erase them. Of course, _.e speranto_ is not grammatical after __la__ , but recognition of __si__ is done before grammatical analysis.
+Even more messy is the result of an incorrect __zoi__ :
+**Example 19.79. **
+mi | cusku | zoi | fy. | gy. | .fy. | si | si | si | si | zo .djan  
+---|---|---|---|---|---|---|---|---|---|---  
+I | express | [foreign] | [quote] |  _ _gy_ _ | [unquote], | er, | er, | er, | er, |  “John” | .  
+  
+
+In Example 19.79, the first __fy__ is taken to be the delimiting word. The next word must be different from the delimiting word, and __gy.__ , the Lojban name for the letter _g_ , was chosen arbitrarily. Then the delimiting word must be repeated. For purposes of __si__ erasure, the entire quoted text is taken to be a word, so four words have been uttered, and four more __si__ cmavo are needed to erase them altogether. Similarly, a stray __lo'u__ quotation mark must be erased with _fy. le'u si si si_ , by completing the quotation and then erasing it all with three __si__ cmavo.
+What if less than the entire __zo__ or __zoi__ construct is erased? The result is something which has a loose __zo__ or __zoi__ in it, without its expected sequels, and which is incurably ungrammatical. Thus, to erase just the word quoted by __zo__ , it turns out to be necessary to erase the __zo__ as well:
+**Example 19.80. **
+mi | se | cmene | zo | .djan. | si | si | zo | .djordj.  
+---|---|---|---|---|---|---|---|---  
+I |  | am-named-by | the-word |  “John,” | er, | er, | the-word |  “George.”  
+  
+
+The parser will reject _zo .djan. si .djordj._ , because in that context _djordj._ is a name (of selma'o CMENE) rather than a quoted word.
+Note: The current machine parser does not implement __si__ erasure.
+As the above examples plainly show, precise erasures with __si__ can be extremely hard to get right. Therefore, the cmavo __sa__ (of selma'o SA) is provided for erasing more than one word. The cmavo following __sa__ should be the starting marker of some grammatical construct. The effect of the __sa__ is to erase back to and including the last starting marker of the same kind. For example:
+**Example 19.81. **
+mi | viska | le | sa | .i | mi | cusku | zo | .djan.  
+---|---|---|---|---|---|---|---|---  
+I | see | the | ... |  | I | say | the-word |  “John” | .  
+  
+
+Since the word following __sa__ is __i__ , the sentence separator, its effect is to erase the preceding sentence. So Example 19.81 is equivalent to:
+**Example 19.82. **
+mi cusku zo .djan.
+  
+
+Another example, erasing a partial description rather than a partial sentence:
+**Example 19.83. **
+mi | viska | le | blanu | .zdan. | sa | le | xekri | zdani  
+---|---|---|---|---|---|---|---|---  
+I | see | the | blue | hou | ... | the | black | house.  
+  
+
+In Example 19.83, _le blanu .zdan._ is ungrammatical, but clearly reflects the speaker's original intention to say _le blanu zdani_. However, the __zdani__ was cut off before the end and changed into a name. The entire ungrammatical __le__ construct is erased and replaced by _le xekri zdani_.
+Note: The current machine parser does not implement __sa__ erasure. Getting __sa__ right is even more difficult (for a computer) than getting __si__ right, as the behavior of __si__ is defined in terms of words rather than in terms of grammatical constructs (possibly incorrect ones) and words are conceptually simpler entities. On the other hand, __sa__ is generally easier for human beings, because the rules for using it correctly are less finicky.
+The cmavo __su__ (of selma'o SU) is yet another metalinguistic operator that erases the entire text. However, if the text involves multiple speakers, then __su__ will only erase the remarks made by the one who said it, unless that speaker has said nothing. Therefore _susu_ is needed to eradicate a whole discussion in conversation.
+Note: The current machine parser does not implement either __su__ or _susu_ erasure.
+* * *
+Chapter 19. Putting It All Together: Notes on the Structure of Lojban Texts  
+---  
+Prev: Section 19.12 |  Next: Section 19.14  
+---|---  
+Table of Contents
+Book Info Page
+
+
+Word: cmene
+Filename: section-pauses.txt
+TF-IDF Score: 0.27635473796604443
+Content: Chapter 4. The Shape Of Words To Come: Lojban Morphology  
+---  
+Prev: Section 4.8 |  Next: Section 4.10  
+---|---  
+Table of Contents
+Book Info Page
+* * *
+## 4.9. Rules for inserting pauses
+Summarized in one place, here are the rules for inserting pauses between Lojban words:
+  1. Any two words may have a pause between them; it is always illegal to pause in the middle of a word, because that breaks up the word into two words.
+  2. Every word ending in a consonant must be followed by a pause. Necessarily, all such words are cmene.
+  3. Every word beginning with a vowel must be preceded by a pause. Such words are either cmavo, fu'ivla, or cmene; all gismu and lujvo begin with consonants.
+  4. Every cmene must be preceded by a pause, unless the immediately preceding word is one of the cmavo __la__ , __lai__ , __la'i__ , or __doi__ (which is why those strings are forbidden in cmene). However, the situation triggering this rule rarely occurs.
+  5. If the last syllable of a word bears the stress, and a brivla follows, the two must be separated by a pause, to prevent confusion with the primary stress of the brivla. In this case, the first word must be either a cmavo or a cmene with unusual stress (which already ends with a pause, of course).
+  6. A cmavo of the form “Cy” must be followed by a pause unless another “Cy”-form cmavo follows.
+  7. When non-Lojban text is embedded in Lojban, it must be preceded and followed by pauses. (How to embed non-Lojban text is explained in Section 19.10.)
+
+
+* * *
+Chapter 4. The Shape Of Words To Come: Lojban Morphology  
+---  
+Prev: Section 4.8 |  Next: Section 4.10  
+---|---  
+Table of Contents
+Book Info Page
+
+
+Word: cmene
+Filename: section-cmene.txt
+TF-IDF Score: 0.1323539293397829
+Content: Chapter 4. The Shape Of Words To Come: Lojban Morphology  
+---  
+Prev: Section 4.7 |  Next: Section 4.9  
+---|---  
+Table of Contents
+Book Info Page
+* * *
+## 4.8. cmene
+Lojbanized names, called __cmene__ , are very much like their counterparts in other languages. They are labels applied to things (or people) to stand for them in descriptions or in direct address. They may convey meaning in themselves, but do not necessarily do so.
+Because names are often highly personal and individual, Lojban attempts to allow native language names to be used with a minimum of modification. The requirement that the Lojban speech stream be unambiguously analyzable, however, means that most names must be modified somewhat when they are Lojbanized. Here are a few examples of English names and possible Lojban equivalents:
+**Example 4.57. **
+djim.  
+---  
+Jim  
+  
+
+**Example 4.58. **
+djein.  
+---  
+Jane  
+  
+
+**Example 4.59. **
+.arnold.  
+---  
+Arnold  
+  
+
+**Example 4.60. **
+pit.  
+---  
+Pete  
+  
+
+**Example 4.61. **
+katrinas.  
+---  
+Katrina  
+  
+
+**Example 4.62. **
+kat,r,in.  
+---  
+Catherine  
+  
+
+(Note that syllabic _r_ is skipped in determining the stressed syllable, so Example 4.62 is stressed on the __ka__.)
+**Example 4.63. **
+katis.  
+---  
+Cathy  
+  
+
+**Example 4.64. **
+keit.  
+---  
+Kate  
+  
+
+Names may have almost any form, but always end in a consonant, and are followed by a pause. They are penultimately stressed, unless unusual stress is marked with capitalization. A name may have multiple parts, each ending with a consonant and pause, or the parts may be combined into a single word with no pause. For example,
+**Example 4.65. **
+djan. braun.  
+---  
+  
+
+and
+**Example 4.66. **
+djanbraun.  
+---  
+  
+
+are both valid Lojbanizations of “John Brown”.
+The final arbiter of the correct form of a name is the person doing the naming, although most cultures grant people the right to determine how they want their own name to be spelled and pronounced. The English name “Mary” can thus be Lojbanized as _meris._ , _maris._ , _meiris._ , _merix._ , or even _marys._. The last alternative is not pronounced much like its English equivalent, but may be desirable to someone who values spelling over pronunciation. The final consonant need not be an _s_ ; there must, however, be some Lojban consonant at the end.
+Names are not permitted to have the sequences __la__ , __lai__ , or __doi__ embedded in them, unless the sequence is immediately preceded by a consonant. These minor restrictions are due to the fact that all Lojban cmene embedded in a speech stream will be preceded by one of these words or by a pause. With one of these words embedded, the cmene might break up into valid Lojban words followed by a shorter cmene. However, break-up cannot happen after a consonant, because that would imply that the word before the __la__ , or whatever, ended in a consonant without pause, which is impossible.
+For example, the invalid name _laplas._ would look like the Lojban words _la plas._ , and _ilanas._ would be misunderstood as _.i la nas._. However, _NEderlants._ cannot be misheard as _NEder lants._ , because _NEder_ with no following pause is not a possible Lojban word.
+There are close alternatives to these forbidden sequences that can be used in Lojbanizing names, such as __ly__ , __lei__ , and __dai__ or __do'i__ , that do not cause these problems.
+Lojban cmene are identifiable as word forms by the following characteristics:
+  1. They must end in one or more consonants. There are no rules about how many consonants may appear in a cluster in cmene, provided that each consonant pair (whether standing by itself, or as part of a larger cluster) is a permissible pair.
+  2. They may contain the letter y as a normal, non-hyphenating vowel. They are the only kind of Lojban word that may contain the two diphthongs _iy_ and _uy_.
+  3. They are always followed in speech by a pause after the final consonant, written as _._.
+  4. They may be stressed on any syllable; if this syllable is not the penultimate one, it must be capitalized when writing. Neither names nor words that begin sentences are capitalized in Lojban, so this is the only use of capital letters.
+
+
+Names meeting these criteria may be invented, Lojbanized from names in other languages, or formed by appending a consonant onto a cmavo, a gismu, a fu'ivla or a lujvo. Some cmene built from Lojban words are:
+**Example 4.67. **
+pav.  
+---  
+the One  
+---  
+from the cmavo __pa__ , with rafsi _pav_ , meaning “one”
+  
+
+**Example 4.68. **
+sol.  
+---  
+the Sun  
+---  
+from the gismu __solri__ , meaning “solar”, or actually “pertaining to the Sun”
+  
+
+**Example 4.69. **
+ralj.  
+---  
+Chief (as a title)  
+---  
+from the gismu __ralju__ , meaning “principal”.
+  
+
+**Example 4.70. **
+nol.  
+---  
+Lord/Lady  
+---  
+from the gismu __nobli__ , with rafsi _nol_ , meaning “noble”.
+  
+
+To Lojbanize a name from the various natural languages, apply the following rules:
+  1. Eliminate double consonants and silent letters.
+  2. Add a final _s_ or _n_ (or some other consonant that sounds good) if the name ends in a vowel.
+  3. Convert all sounds to their closest Lojban equivalents.
+  4. If possible and acceptable, shift the stress to the penultimate (next-to-the-last) syllable. Use commas and capitalization in written Lojban when it is necessary to preserve non-standard syllabication or stress. Do not capitalize names otherwise.
+  5. If the name contains an impermissible consonant pair, insert a vowel between the consonants: _y_ is recommended.
+  6. No cmene may have the syllables __la__ , __lai__ , or __doi__ in them, unless immediately preceded by a consonant. If these combinations are present, they must be converted to something else. Possible substitutions include __ly__ , _ly'i_ , and __dai__ or __do'i__ , respectively.
+
+
+There are some additional rules for Lojbanizing the scientific names (technically known as “Linnaean binomials” after their inventor) which are internationally applied to each species of animal or plant. Where precision is essential, these names need not be Lojbanized, but can be directly inserted into Lojban text using the cmavo __la'o__ , explained in Section 19.10. Using this cmavo makes the already lengthy Latinized names at least four syllables longer, however, and leaves the pronunciation in doubt. The following suggestions, though incomplete, will assist in converting Linnaean binomals to valid Lojban names. They can also help to create fu'ivla based on Linnaean binomials or other words of the international scientific vocabulary. The term “back vowel” in the following list refers to any of the letters _a_ , _o_ , or _u_ ; the term “front vowel” correspondingly refers to any of the letters _e_ , _i_ , or _y_.
+  1. Change double consonants other than _cc_ to single consonants.
+  2. Change _cc_ before a front vowel to _kc_ , but otherwise to _k_.
+  3. Change _c_ before a back vowel and final _c_ to _k_.
+  4. Change _ng_ before a consonant (other than _h_) and final _ng_ to _n_.
+  5. Change _x_ to _z_ initially, but otherwise to _ks_.
+  6. Change _pn_ to _n_ initially.
+  7. Change final _ie_ and _ii_ to _i_.
+  8. Make the following idiosyncratic substitutions:
+aa | a  
+---|---  
+ae | e  
+ch | k  
+ee | i  
+eigh | ei  
+ew | u  
+igh | ai  
+oo | u  
+ou | u  
+ow | au  
+ph | f  
+q | k  
+sc | sk  
+w | u  
+y | i  
+However, the diphthong substitutions should not be done if the two vowels are in two different syllables.
+  9. Change “h” between two vowels to _'_ , but otherwise remove it completely. If preservation of the “h” seems essential, change it to _x_ instead.
+  10. Place _'_ between any remaining vowel pairs that do not form Lojban diphthongs.
+
+
+Some further examples of Lojbanized names are:
+English |  “Mary” | _meris._ or _meiris._  
+---|---|---  
+English |  “Smith” |  _smit._  
+English |  “Jones” |  _djonz._  
+English |  “John” | _djan._ or _jan._ (American) or _djon._ or _jon._ (British)  
+English |  “Alice” |  _.alis._  
+English |  “Elise” |  _.eLIS._  
+English |  “Johnson” |  _djansn._  
+English |  “William” | _.uiliam._ or _.uil,iam._  
+English |  “Brown” |  _braun._  
+English |  “Charles” |  _tcarlz._  
+French |  “Charles” |  _carl._  
+French |  “De Gaulle” |  _dyGOL._  
+German |  “Heinrich” |  _xainrix._  
+Spanish |  “Joaquin” |  _xuaKIN._  
+Russian |  “Svetlana” |  _sfietlanys._  
+Russian |  “Khrushchev” |  _xrucTCOF._  
+Hindi |  “Krishna” |  _kricnas._  
+Polish |  “Lech Walesa” |  _lex. va,uensas._  
+Spanish |  “Don Quixote” | _don. kicotes._ or modern Spanish: _don. kixotes._ or Mexican dialect: _don. ki'otes._  
+Chinese |  “Mao Zedong” |  _maudzydyn._  
+Japanese |  “Fujiko” | _fudjikos._ or _fujikos._  
+* * *
+Chapter 4. The Shape Of Words To Come: Lojban Morphology  
+---  
+Prev: Section 4.7 |  Next: Section 4.9  
+---|---  
+Table of Contents
+Book Info Page

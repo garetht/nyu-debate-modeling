@@ -1,0 +1,458 @@
+
+The following definitions pulled from the above background may be particularly useful:
+{'Lojban': 'fagri', 'Lojban definition': 'x_{1} is a fire/flame in fuel x_{2} burning-in/reacting-with oxidizer x_{3} (default air/oxygen).', 'English': '- fire', 'Type': 'gismu'}
+{'Lojban': 'cfari', 'Lojban definition': 'x_{1} [state/event/process] commences/initiates/starts/begins to occur; (intransitive verb).', 'English': '- happen; occur<br>- initiate; non-agentive', 'Type': 'gismu'}
+{'Lojban': 'lo', 'Formal Language': 'LE', 'English': 'the really is', 'Definition': 'veridical descriptor: the one(s) that really is(are) ...', 'Confer': None, 'Type': 'cmavo'}
+{'Lojban': 'ma', 'Formal Language': 'KOhA7', 'English': 'sumti ?', 'Definition': 'pro-sumti: sumti question (what/who/how/why/etc.); appropriately fill in sumti blank', 'Confer': None, 'Type': 'cmavo'}
+{'Lojban': 'cfagau', 'Lojban Composition': 'cfari+gasnu', 'English': 'to initiate something', 'Type': 'lujvo', 'Arguments': '$gasnu1 $cfari1'}
+
+The following are the top TF-IDF files for the words in choice A and choice B from the The Complete Lojban Language Grammar Book:
+Word: fagri
+Filename: chapter-lujvo.txt
+TF-IDF Score: 0.046234487958388595
+Content: The Complete Lojban Language  
+---  
+Prev: Section 11.13 |  Next: Section 12.2  
+---|---  
+Table of Contents
+Book Info Page
+* * *
+# Chapter 12. Dog House And White House: Determining lujvo Place Structures
+## 12.1. Why have lujvo?
+The Lojban vocabulary is founded on its list of 1350-plus gismu, made up by combining word lists from various sources. These gismu are not intended to be either a complete vocabulary for the language nor a minimal list of semantic primitives. Instead, the gismu list serves as a basis for the creation of compound words, or lujvo. The intention is that (except in certain semantically broad but shallow fields such as cultures, nations, foods, plants, and animals) suitable lujvo can be devised to cover the ten million or so concepts expressible in all the world's languages taken together. Grammatically, lujvo behave just like gismu: they have place structures and function as selbri.
+There is a close relationship between lujvo and tanru. In fact, lujvo are condensed forms of tanru:
+**Example 12.1. **
+ti |  | fagri | festi  
+---|---|---|---  
+That | is | fire | waste.  
+  
+
+contains a tanru which can be reduced to the lujvo in:
+**Example 12.2. **
+ti | fagyfesti  
+---|---  
+That | is-fire-waste.  
+That | is-ashes.  
+  
+
+Although the lujvo __fagyfesti__ is derived from the tanru _fagri festi_ , it is not equivalent in meaning to it. In particular, __fagyfesti__ has a distinct place structure of its own, not the same as that of __festi__. (In contrast, the tanru does have the same place structure as __festi__.) The lujvo needs to take account of the places of __fagri__ as well. When a tanru is made into a lujvo, there is no equivalent of __be__ … __bei__ … __be'o__ (described in Section 5.7) to incorporate sumti into the middle of the lujvo.
+So why have lujvo? Primarily to reduce semantic ambiguity. On hearing a tanru, there is a burden on the listener to figure out what the tanru might mean. Adding further terms to the tanru reduces ambiguity in one sense, by providing more information; but it increases ambiguity in another sense, because there are more and more tanru joints, each with an ambiguous significance. Since lujvo, like other brivla, have a fixed place structure and a single meaning, encapsulating a commonly-used tanru into a lujvo relieves the listener of the burden of creative understanding. In addition, lujvo are typically shorter than the corresponding tanru.
+There are no absolute laws fixing the place structure of a newly created lujvo. The maker must consider the place structures of all the components of the tanru and then decide which are still relevant and which can be removed. What is said in this chapter represents guidelines, presented as one possible standard, not necessarily complete, and not the only possible standard. There may well be lujvo that are built without regard for these guidelines, or in accordance with entirely different guidelines, should such alternative guidelines someday be developed. The reason for presenting any guidelines at all is so that Lojbanists have a starting point for deciding on a likely place structure – one that others seeing the same word can also arrive at by similar consideration.
+If the tanru includes connective cmavo such as __bo__ , __ke__ , __ke'e__ , or __je__ , or conversion or abstraction cmavo such as __se__ or __nu__ , there are ways of incorporating them into the lujvo as well. Sometimes this makes the lujvo excessively long; if so, the cmavo may be dropped. This leads to the possibility that more than one tanru could produce the same lujvo. Typically, however, only one of the possible tanru is useful enough to justify making a lujvo for it.
+The exact workings of the lujvo-making algorithm, which takes a tanru built from gismu (and possibly cmavo) and produces a lujvo from it, are described in Section 4.11.
+* * *
+The Complete Lojban Language  
+---  
+Prev: Section 11.13 |  Next: Section 12.2  
+---|---  
+Table of Contents
+Book Info Page
+
+
+Word: lo
+Filename: section-keha.txt
+TF-IDF Score: 0.08139590689754461
+Content: Chapter 7. Brevity Is The Soul Of Language: Pro-sumti And Pro-bridi  
+---  
+Prev: Section 7.9 |  Next: Section 7.11  
+---|---  
+Table of Contents
+Book Info Page
+* * *
+## 7.10. Relativized pro-sumti: _ke'a_
+The following cmavo are discussed in this section:
+ke'a |  KOhA |  relativized sumti  
+---|---|---  
+This pro-sumti is used in relative clauses (explained in Chapter 8) to indicate how the sumti being relativized fits within the clause. For example:
+**Example 7.69. **
+mi | catlu | lo | mlatu | poi | [zo'e]  
+---|---|---|---|---|---  
+I | see | a | cat | such-that | something-unspecified  
+zbasu | ke'a |  | lei | slasi  
+---|---|---|---|---  
+makes | the-thing-being-relativized-[the-cat] | from | some-mass-of | plastic.  
+I see a cat made of plastic.  
+---  
+  
+
+If __ke'a__ were omitted from Example 7.69, it might be confused with:
+**Example 7.70. **
+mi | catlu | lo | mlatu | poi  
+---|---|---|---|---  
+I | see | a | cat | such-that  
+[ke'a] | zbasu | lei | slasi  
+---|---|---|---  
+the-thing-being-relativized-[the-cat] | makes | a-mass-of | plastic  
+I see a cat that makes plastic.  
+---  
+  
+
+The anaphora cmavo __ri__ cannot be used in place of __ke'a__ in Example 7.69 and Example 7.70, because the relativized sumti is not yet complete when the __ke'a__ appears.
+Note that __ke'a__ is used only with relative clauses, and not with other embedded bridi such as abstract descriptions. In the case of relative clauses within relative clauses, __ke'a__ may be subscripted to make the difference clear (see Section 8.10).
+* * *
+Chapter 7. Brevity Is The Soul Of Language: Pro-sumti And Pro-bridi  
+---  
+Prev: Section 7.9 |  Next: Section 7.11  
+---|---  
+Table of Contents
+Book Info Page
+
+
+Word: lo
+Filename: section-multiple-compound-bridi.txt
+TF-IDF Score: 0.07964835163215547
+Content: Chapter 14. If Wishes Were Horses: The Lojban Connective System  
+---  
+Prev: Section 14.9 |  Next: Section 14.11  
+---|---  
+Table of Contents
+Book Info Page
+* * *
+## 14.10. Multiple compound bridi
+Giheks can be combined with __bo__ in the same way as eks:
+**Example 14.60. **
+mi | nelci | la | djan. | gi'e | nelci | la | martas. | gi'abo | nelci | la | meris.  
+---|---|---|---|---|---|---|---|---|---|---|---  
+I like John and ( like Martha or like Mary ).  
+---  
+  
+
+is equivalent in meaning to Example 14.39 and Example 14.40. Likewise, __ke__ … __ke'e__ grouping can be used after giheks:
+**Example 14.61. **
+mi | dzukla | le | zarci  
+---|---|---|---  
+I | walk-to | the | market  
+gi'e | dzukla | le | zdani  
+---|---|---|---  
+and | walk-to | the | house,  
+gi'a | ke | dzukla | le | ckule  
+---|---|---|---|---  
+or | ( | walk-to | the | school  
+gi'e | dzukla | le | briju | [ke'e]  
+---|---|---|---|---  
+and | walk-to | the | office. | )  
+  
+
+is the gihek version of Example 14.47. The same rule about using __ke__ … __ke'e__ bracketing only just after a connective applies to bridi-tails as to sumti, so the first two bridi-tails in Example 14.61 cannot be explicitly grouped; implicit left-grouping suffices to associate them.
+Each of the pairs of bridi-tails joined by multiple giheks can have its own set of tail-terms:
+**Example 14.62. **
+| mi | dejni | lo | rupnu | la | djan.  
+---|---|---|---|---|---|---  
+[If] | I | owe | some | currency-units | to-that-named | John,  
+.inaja | mi | dunda | le | cukta | la | djan.  
+---|---|---|---|---|---|---  
+then | I | give | the | book | to-that-named | John  
+.ijabo | mi | lebna | le | cukta | la | djan.  
+---|---|---|---|---|---|---  
+or | I | take | the | book | from-that-named | John.  
+  
+
+is equivalent in meaning to:
+**Example 14.63. **
+| mi | dejni | lo | rupnu | nagi'a | dunda  
+---|---|---|---|---|---|---  
+[If] | I | owe | some | currency-units | then | (give  
+gi'abo | lebna | vau | le | cukta | vau | la | djan.  
+---|---|---|---|---|---|---|---  
+or | take) |  | a | book |  | to/from-that-named | John.  
+  
+
+The literal English translation in Example 14.63 is almost unintelligible, but the Lojban is perfectly grammatical. __mi__ fills the x1 place of all three selbri; _lo rupnu_ is the x2 of __dejni__ , whereas _le cukta_ is a tail-term shared between __dunda__ and __lebna__ ; _la djan._ is a tail-term shared by __dejni__ and by _dunda gi'abo lebna_. In this case, greater clarity is probably achieved by moving _la djan._ to the beginning of the sentence, as in Example 14.53:
+**Example 14.64. **
+fi | la | djan. |  | fa | mi | dejni | lo | rupnu  
+---|---|---|---|---|---|---|---|---  
+To/from | that-named | John, | [if] |  | I | owe | some | currency-units  
+nagi'a |  | dunda | gi'abo | lebna | vau | le | cukta  
+---|---|---|---|---|---|---|---  
+then | [I] | give | or | take |  | the | book.  
+  
+
+Finally, what about forethought logical connection of bridi-tails? There is no direct mechanism for the purpose. Instead, Lojban grammar allows a pair of forethought-connected sentences to function as a single bridi-tail, and of course the sentences need not have terms before their selbri. For example:
+**Example 14.65. **
+mi | ge | klama | le | zarci | gi | nelci | la | djan.  
+---|---|---|---|---|---|---|---|---  
+I | both | go-to | the | market | and | like | that-named | John.  
+  
+
+is equivalent in meaning to Example 14.50.
+Of course, either of the connected sentences may contain giheks:
+**Example 14.66. **
+mi | ge | klama | le | zarci | gi'e | dzukla | le | zdani  
+---|---|---|---|---|---|---|---|---  
+I | both | (go | to-the | market | and | walk | to-the | house)  
+gi | nelci | la | djan.  
+---|---|---|---  
+and | like | that-named | John.  
+  
+
+The entire gek-connected sentence pair may be negated as a whole by prefixing __na__ :
+**Example 14.67. **
+| mi | na | ge | klama | le | zarci | gi | dzukla | le | zdani  
+---|---|---|---|---|---|---|---|---|---|---  
+[False!] | I |  | both | go-to | the | market | and | walk-to | the | house.  
+  
+
+Since a pair of sentences joined by geks is the equivalent of a bridi-tail, it may be followed by tail terms. The forethought equivalent of Example 14.54 is:
+**Example 14.68. **
+mi | ge | dunda | le | cukta  
+---|---|---|---|---  
+I | both | (give | the | book)  
+gi | lebna | lo | rupnu | vau | do  
+---|---|---|---|---|---  
+and | (take | some | currency-units | ) | to/from-you.  
+  
+
+Here is a pair of gek-connected observatives, a forethought equivalent of Example 14.57:
+**Example 14.69. **
+ge | klama | le | zarci | gi | dzukla | le | briju  
+---|---|---|---|---|---|---|---  
+Both | a-goer | to-the | market | and | a-walker | to-the | office.  
+  
+
+Finally, here is an example of gek-connected sentences with both shared and unshared terms before their selbri:
+**Example 14.70. **
+mi | gonai | le | zarci | cu | klama | gi | le | bisli | cu | dansu  
+---|---|---|---|---|---|---|---|---|---|---  
+I | either-but-not-both | to-the | office |  | go | or | on-the | ice |  | dance.  
+I either go to the office or dance on the ice (but not both).  
+---  
+  
+
+* * *
+Chapter 14. If Wishes Were Horses: The Lojban Connective System  
+---  
+Prev: Section 14.9 |  Next: Section 14.11  
+---|---  
+Table of Contents
+Book Info Page
+
+
+Word: ma
+Filename: section-sumti-and-bridi-questions.txt
+TF-IDF Score: 0.30304121530479355
+Content: Chapter 7. Brevity Is The Soul Of Language: Pro-sumti And Pro-bridi  
+---  
+Prev: Section 7.8 |  Next: Section 7.10  
+---|---  
+Table of Contents
+Book Info Page
+* * *
+## 7.9. sumti and bridi questions: _ma_ and _mo_
+The following cmavo are discussed in this section:
+ma |  KOhA |  sumti question  
+---|---|---  
+mo |  GOhA |  bridi question  
+Lojban questions are more fully explained in Section 19.5, but __ma__ and __mo__ are listed in this chapter for completeness. The cmavo __ma__ asks for a sumti to make the bridi true:
+**Example 7.63. **
+do | klama | ma  
+---|---|---  
+You | go-to | what?  
+Where are you going?  
+---  
+  
+
+The cmavo __mo__ , on the other hand, asks for a selbri which makes the question bridi true. If the answer is a full bridi, then the arguments of the answer override the arguments in the question, in the same manner as the go'i-series cmavo. A simple example is:
+**Example 7.64. **
+do mo  
+---  
+What predicate is true as applied to you?  
+---  
+How are you?  
+What are you doing?  
+What are you?  
+  
+
+Example 7.65 is a truly pregnant question that will have several meanings depending on context.
+(One thing it probably does not mean is “Who are you?” in the sense “What is your name/identity?”, which is better expressed by:
+**Example 7.65. **
+ma | cmene | do  
+---|---|---  
+What-sumti | is-the-name-of | you?  
+What is your name?  
+---  
+  
+
+or even
+**Example 7.66. **
+doi | ma  
+---|---  
+O | [what sumti?]  
+  
+
+which uses the vocative __doi__ to address someone, and simultaneously asks who the someone is.)
+A further example of __mo__ :
+**Example 7.67. **
+lo | mo |  | prenu | cu | darxi | do | .i | barda  
+---|---|---|---|---|---|---|---|---  
+A | [what selbri?] | type-of | person |  | hit | you? |  | A big thing.  
+Which person hit you? The big one.  
+---  
+  
+
+When __ma__ or __mo__ is repeated, multiple questions are being asked simultaneously:
+**Example 7.68. **
+ma | djuno | ma  
+---|---|---  
+[What-sumti] | knows | [what-sumti]?  
+Who knows what?  
+---  
+  
+
+* * *
+Chapter 7. Brevity Is The Soul Of Language: Pro-sumti And Pro-bridi  
+---  
+Prev: Section 7.8 |  Next: Section 7.10  
+---|---  
+Table of Contents
+Book Info Page
+
+
+Word: ma
+Filename: section-questions-and-answers.txt
+TF-IDF Score: 0.20059606003712982
+Content: Chapter 19. Putting It All Together: Notes on the Structure of Lojban Texts  
+---  
+Prev: Section 19.4 |  Next: Section 19.6  
+---|---  
+Table of Contents
+Book Info Page
+* * *
+## 19.5. Questions and answers
+The following cmavo are discussed in this section:
+xu |  UI |  truth question  
+---|---|---  
+ma |  KOhA |  sumti question  
+mo |  GOhA |  bridi question  
+xo |  PA |  number question  
+ji |  A |  sumti connective question  
+ge'i |  GA |  forethought connective question  
+gi'i |  GIhA |  bridi-tail connective question  
+gu'i |  GUhA |  tanru forethought connective question  
+je'i |  JA |  tanru connective question  
+pei |  UI |  attitude question  
+fi'a |  FA |  place structure question  
+cu'e |  CUhE |  tense/modal question  
+pau |  UI |  question premarker  
+Lojban questions are not at all like English questions. There are two basic types: truth questions, of the form “Is it true that ...”, and fill-in-the-blank questions. Truth questions are marked by preceding the bridi, or following any part of it specifically questioned, with the cmavo __xu__ (of selma'o UI):
+**Example 19.13. **
+xu | do | klama | le | zarci  
+---|---|---|---|---  
+[True-or-false?] | You | go-to | the | store  
+Are you going to the store/Did you go to the store?  
+---  
+  
+
+(Since the Lojban is tenseless, either colloquial translation might be correct.) Truth questions are further discussed in Section 15.8.
+Fill-in-the-blank questions have a cmavo representing some Lojban word or phrase which is not known to the questioner, and which the answerer is to supply. There are a variety of cmavo belonging to different selma'o which provide different kinds of blanks.
+Where a sumti is not known, a question may be formed with __ma__ (of selma'o KOhA), which is a kind of pro-sumti:
+**Example 19.14. **
+ma | klama | le | zarci  
+---|---|---|---  
+[What-sumti?] | goes-to | the | store  
+Who is going to the store?  
+---  
+  
+
+Of course, the __ma__ need not be in the x1 place:
+**Example 19.15. **
+do | klama | ma  
+---|---|---  
+You | go-to | [what-sumti?]  
+Where are you going?  
+---  
+  
+
+The answer is a simple sumti:
+**Example 19.16. **
+le zarci  
+---  
+The store.  
+---  
+  
+
+A sumti, then, is a legal utterance, although it does not by itself constitute a bridi – it does not claim anything, but merely completes the open-ended claim of the previous bridi.
+There can be two __ma__ cmavo in a single question:
+**Example 19.17. **
+ma klama ma  
+---  
+Who goes where?  
+---  
+  
+
+and the answer would be two sumti, which are meant to fill in the two __ma__ cmavo in order:
+**Example 19.18. **
+mi | le | zarci  
+---|---|---  
+I, | [to]-the | store.  
+  
+
+An even more complex example, depending on the non-logical connective __fa'u__ (of selma'o JOI), which is like the English “and ... respectively”:
+**Example 19.19. **
+ma | fa'u | ma | klama | ma | fa'u | ma  
+---|---|---|---|---|---|---  
+Who and who goes where and where, -respectively?  
+---  
+  
+
+An answer might be
+**Example 19.20. **
+la | djan. | la | marcas. | le | zarci | le | briju  
+---|---|---|---|---|---|---|---  
+| John, |  | Marsha, | the | store, | the | office.  
+John and Marsha go to the store and the office, respectively.  
+---  
+  
+
+(Note: A mechanical substitution of Example 19.20 into Example 19.19 produces an ungrammatical result, because _* ... le zarci fa'u le briju_ is ungrammatical Lojban: the first _le zarci_ has to be closed with its proper terminator __ku__ , for reasons explained in Section 14.14. This effect is not important: Lojban behaves as if all elided terminators have been supplied in both question and answer before inserting the latter into the former. The exchange is grammatical if question and answer are each separately grammatical.)
+Questions to be answered with a selbri are expressed with __mo__ of selma'o GOhA, which is a kind of pro-bridi:
+**Example 19.21. **
+la | lojban. | mo  
+---|---|---  
+| Lojban | [what-selbri?]  
+What is Lojban?  
+---  
+  
+
+Here the answerer is to supply some predicate which is true of Lojban. Such questions are extremely open-ended, due to the enormous range of possible predicate answers. The answer might be just a selbri, or might be a full bridi, in which case the sumti in the answer override those provided by the questioner. To limit the range of a __mo__ question, make it part of a tanru.
+Questions about numbers are expressed with __xo__ of selma'o PA:
+**Example 19.22. **
+do | viska | xo | prenu  
+---|---|---|---  
+You | saw | [what-number?] | persons.  
+How many people did you see?  
+---  
+  
+
+The answer would be a simple number, another kind of non-bridi utterance:
+**Example 19.23. **
+vomu  
+---  
+Forty-five.  
+  
+
+Fill-in-the-blank questions may also be asked about: logical connectives (using cmavo __ji__ of A, __ge'i__ of GA, __gi'i__ of GIhA, __gu'i__ of GUhA, or __je'i__ of JA, and receiving an ek, gihek, ijek, or ijoik as an answer) – see Section 14.13; attitudes (using __pei__ of UI, and receiving an attitudinal as an answer) – see Section 13.10; place structures (using __fi'a__ of FA, and receiving a cmavo of FA as an answer) – see Section 9.3; tenses and modals (using __cu'e__ of CUhE, and receiving any tense or BAI cmavo as an answer) – see Section 9.6 and Chapter 10.
+Questions can be marked by placing __pau__ (of selma'o UI) before the question bridi. See Section 13.13 for details.
+The full list of non-bridi utterances suitable as answers to questions is:
+  * any number of sumti (with elidable terminator __vau__ , see Chapter 6)
+  * an ek or gihek (logical connectives, see Chapter 14)
+  * a number, or any mathematical expression placed in parentheses (see Chapter 18)
+  * a bare __na__ negator (to negate some previously expressed bridi), or corresponding __ja'a__ affirmer (see Chapter 15)
+  * a relative clause (to modify some previously expressed sumti, see Chapter 8)
+  * a prenex/topic (to modify some previously expressed bridi, see Chapter 16)
+  * linked arguments (beginning with __be__ or __bei__ and attached to some previously expressed selbri, often in a description, see Section 5.7)
+
+
+At the beginning of a text, the following non-bridi are also permitted:
+  * one or more names (to indicate direct address without __doi__ , see Chapter 6)
+  * indicators (to express a prevailing attitude, see Chapter 13)
+  * __nai__ (to vaguely negate something or other, see Section 15.7)
+
+
+Where not needed for the expression of answers, most of these are made grammatical for pragmatic reasons: people will say them in conversation, and there is no reason to rule them out as ungrammatical merely because most of them are vague.
+* * *
+Chapter 19. Putting It All Together: Notes on the Structure of Lojban Texts  
+---  
+Prev: Section 19.4 |  Next: Section 19.6  
+---|---  
+Table of Contents
+Book Info Page

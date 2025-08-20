@@ -1,0 +1,929 @@
+
+The following definitions pulled from the above background may be particularly useful:
+{'Lojban': 'tunka', 'Lojban definition': 'x_{1} is made of/contains/is a quantity of copper (Cu); [metaphor: reddish, electrical conductor].', 'English': '- copper', 'Type': 'gismu'}
+{'Lojban': 'li', 'Formal Language': 'LI', 'English': 'the number', 'Definition': 'the number/evaluated expression; convert number/operand/evaluated math expression to sumti', 'Confer': None, 'Type': 'cmavo'}
+{'Lojban': 'cu', 'Formal Language': 'CU', 'English': 'selbri separator', 'Definition': 'elidable marker: separates selbri from preceding sumti, allows preceding terminator elision', 'Confer': None, 'Type': 'cmavo'}
+{'Lojban': 'mitre', 'Lojban definition': 'x_{1} is x_{2} meter(s) [metric unit] in length (default 1) measured in direction x_{3} by standard x_{4}.', 'English': '- meter', 'Type': 'gismu'}
+{'Lojban': 'lo', 'Formal Language': 'LE', 'English': 'the really is', 'Definition': 'veridical descriptor: the one(s) that really is(are) ...', 'Confer': None, 'Type': 'cmavo'}
+{'Lojban': 'skori', 'Lojban definition': 'x_{1} is cord/cable/rope/line/twine/cordage/woven strands of material x_{2}.', 'English': '- rope<br>- cord', 'Type': 'gismu'}
+{'Lojban': 'pa', 'Formal Language': 'PA1', 'English': '1', 'Definition': 'digit/number: 1 (digit) [one]', 'Confer': None, 'Type': 'cmavo'}
+
+The following are the top TF-IDF files for the words in choice A and choice B from the The Complete Lojban Language Grammar Book:
+Word: li
+Filename: section-connectives-within-mekso.txt
+TF-IDF Score: 0.2203477763024254
+Content: Chapter 18. lojbau mekso: Mathematical Expressions in Lojban  
+---  
+Prev: Section 18.16 |  Next: Section 18.18  
+---|---  
+Table of Contents
+Book Info Page
+* * *
+## 18.17. Logical and non-logical connectives within mekso
+The following cmavo are discussed in this section:
+.abu |  BY |  letter “a”  
+---|---|---  
+by |  BY |  letter “b”  
+cy |  BY |  letter “c”  
+fe'a |  VUhU |  nth root of (default square root)  
+lo'o |  LOhO |  terminator for LI  
+As befits a logical language, Lojban has extensive provision for logical connectives within both operators and operands. Full details on logical and non-logical connectives are provided in Chapter 14. Operands are connected in afterthought with selma'o A and in forethought with selma'o GA, just like sumti. Operators are connected in afterthought with selma'o JA and in forethought with selma'o GUhA, just like tanru components. This parallelism is no accident.
+In addition, A+BO and A+KE constructs are allowed for grouping logically connected operands, and __ke__ … __ke'e__ is allowed for grouping logically connected operators, although there are no analogues of tanru among the operators.
+Despite the large number of rules required to support this feature, it is of relatively minor importance in the mekso scheme of things. Example 18.114 exhibits afterthought logical connection between operands:
+**Example 18.114. **
+vei | ci | .a | vo | ve'o | prenu | cu | klama | le | zarci  
+---|---|---|---|---|---|---|---|---|---  
+( | Three | or | four | ) | people |  | go | to-the | market.  
+  
+
+Example 18.115 is equivalent in meaning, but uses forethought connection:
+**Example 18.115. **
+vei | ga | ci | gi | vo | ve'o | prenu | cu | klama | le | zarci  
+---|---|---|---|---|---|---|---|---|---|---  
+( | Either | 3 | or | 4 | ) | people |  | go | to-the | market.  
+  
+
+Note that the mekso here are being used as quantifiers. Lojban requires that any mekso other than a simple number be enclosed in parentheses when used as a quantifier. This rule prevents ambiguities that do not exist when using __li__.
+By the way, __li__ has an elidable terminator, __lo'o__ , which is needed when a __li__ sumti is followed by a logical connective that could seem to be within the mekso. For example:
+**Example 18.116. **
+li | re | su'i | re | du  
+---|---|---|---|---  
+The-number | two | plus | two | equals  
+li | vo | lo'o | .onai | lo | nalseldjuno | namcu  
+---|---|---|---|---|---|---  
+the-number | four |  | or-else | a | non-known | number.  
+  
+
+Omitting the __lo'o__ would cause the parser to assume that another operand followed the __.onai__ and reject __lo__ as an invalid operand.
+Simple examples of logical connection between operators are hard to come by. A contrived example is:
+**Example 18.117. **
+li | re | su'i | je | pi'i | re | du | li | vo  
+---|---|---|---|---|---|---|---|---  
+The-number | two | plus | and | times | two | equals | the-number | four.  
+2 + 2 = 4 and 2 × 2 = 4.  
+  
+
+The forethought-connection form of Example 18.117 is:
+**Example 18.118. **
+li | re | ge | su'i | gi | pi'i | re | du | li | vo  
+---|---|---|---|---|---|---|---|---|---  
+the-number | two | both | plus | and | times | two | equals | the-number | four.  
+Both 2 + 2 = 4 and 2 × 2 = 4.  
+  
+
+Here is a classic example of operand logical connection:
+**Example 18.119. **
+go | li | .abu | bi'epi'i | vei | xy. | te'a | re | ve'o | su'i  
+---|---|---|---|---|---|---|---|---|---  
+If-and-only-if | the-number |  “a” | times | ( |  “x” | power | two | ) | plus  
+by. | bi'epi'i | xy. | su'i | cy. | du | li | no  
+---|---|---|---|---|---|---|---  
+“b” | times |  “x” | plus |  “c” | equals | the-number | zero  
+gi | li | xy. | du | li | vei | va'a | by. | ku'e  
+---|---|---|---|---|---|---|---|---  
+then | the-number | x | equals | the-number | [ | the-negation-of( | b | )  
+su'i | ja | vu'u | fe'a  
+---|---|---|---  
+plus | or | minus | the-root-of  
+vei | by. | bi'ete'a | re | vu'u | vo | bi'epi'i | .abu | bi'epi'i | cy.  
+---|---|---|---|---|---|---|---|---|---  
+( |  “b” | power | 2 | minus | four | times |  “a” | times |  “c”  
+ve'o | [ku'e] | ve'o | fe'i | re | bi'epi'i | .abu  
+---|---|---|---|---|---|---  
+) |  | ] | divided-by | two | times |  “a”  
+Iff  a x 2 + b x + c = 0 , then  x = - b ± b 2 - 4 a c 2 a  
+  
+
+Note the mixture of styles in Example 18.119: the negation of b and the square root are represented by forethought and most of the operator precedence by prefixed __bi'e__ , but explicit parentheses had to be added to group the numerator properly. In addition, the square root parentheses cannot be removed here in favor of simple __fe'a__ and __ku'e__ bracketing, because infix operators are present in the operand. Getting Example 18.119 to parse perfectly using the current parser took several tries: a more relaxed style would dispense with most of the __bi'e__ cmavo and just let the standard precedence rules be understood.
+Non-logical connection with JOI and BIhI is also permitted between operands and between operators. One use for this construct is to connect operands with __bi'o__ to create intervals:
+**Example 18.120. **
+li | no | ga'o | bi'o | ke'i | pa  
+---|---|---|---|---|---  
+the-number | zero | (inclusive) | from-to | (exclusive) | one  
+[0,1)  
+the numbers from zero to one, including zero but not including one  
+---  
+  
+
+Intervals defined by a midpoint and range rather than beginning and end points can be expressed by __mi'i__ :
+**Example 18.121. **
+li | pimu | ga'o | mi'i | ke'i | pimu  
+---|---|---|---|---|---  
+the-number | 0.5 | (inclusive) | centered-with-range | (exclusive) | 0.5  
+  
+
+which expresses the same interval as Example 18.120. Note that the __ga'o__ and __ke'i__ still refer to the endpoints, although these are now implied rather than expressed. Another way of expressing the same thing:
+**Example 18.122. **
+li | pimu | su'i | ni'upimu | bi'o | ke'i | ma'upimu  
+---|---|---|---|---|---|---  
+the-number | 0.5 | plus | [-0.5 | from-to | (exclusive) | +0.5]  
+  
+
+Here we have the sum of a number and an interval, which produces another interval centered on the number. As Example 18.122 shows, non-logical (or logical) connection of operands has higher precedence than any mekso operator.
+You can also combine two operands with __ce'o__ , the sequence connective of selma'o JOI, to make a compound subscript:
+**Example 18.123. **
+xy. | xi | vei | by. | ce'o | dy. | [ve'o]  
+---|---|---|---|---|---|---  
+“x” | sub | ( |  “b” | sequence |  “d” | )  
+xb,d  
+  
+
+* * *
+Chapter 18. lojbau mekso: Mathematical Expressions in Lojban  
+---  
+Prev: Section 18.16 |  Next: Section 18.18  
+---|---  
+Table of Contents
+Book Info Page
+
+
+Word: li
+Filename: section-simple-infix.txt
+TF-IDF Score: 0.21831284782367955
+Content: Chapter 18. lojbau mekso: Mathematical Expressions in Lojban  
+---  
+Prev: Section 18.4 |  Next: Section 18.6  
+---|---  
+Table of Contents
+Book Info Page
+* * *
+## 18.5. Simple infix expressions and equations
+The following cmavo are discussed in this section:
+du |  GOhA |  equals  
+---|---|---  
+su'i |  VUhU |  plus  
+vu'u |  VUhU |  minus  
+pi'i |  VUhU |  times  
+te'a |  VUhU |  raised to the power  
+ny. |  BY |  letter “n”  
+vei |  VEI |  left parenthesis  
+ve'o |  VEhO |  right parenthesis  
+Let us begin at the beginning: one plus one equals two. In Lojban, that sentence translates to:
+**Example 18.22. **
+li | pa | su'i | pa | du | li | re  
+---|---|---|---|---|---|---  
+The-number | one | plus | one | equals | the-number | two.  
+1 + 1 = 2  
+  
+
+Example 18.22, a mekso sentence, is a regular Lojban bridi that exploits mekso features. __du__ is the predicate meaning “x1 is mathematically equal to x2”. It is a cmavo for conciseness, but it has the same grammatical uses as any brivla. Outside mathematical contexts, __du__ means “x1 is identical with x2” or “x1 is the same object as x2”.
+The cmavo __li__ is the number article. It is required whenever a sentence talks about numbers as numbers, as opposed to using numbers to quantify things. For example:
+**Example 18.23. **
+le | ci | prenu  
+---|---|---  
+the three persons  
+---  
+  
+
+requires no __li__ article, because the __ci__ is being used to specify the number of __prenu__. However, the sentence
+**Example 18.24. **
+levi | sfani | cu | grake | li | ci  
+---|---|---|---|---|---  
+This | fly |  | masses-in-grams | the-number | three.  
+This fly has a mass of 3 grams.  
+---  
+  
+
+requires __li__ because __ci__ is being used as a sumti. Note that this is the way in which measurements are stated in Lojban: all the predicates for units of length, mass, temperature, and so on have the measured object as the first place and a number as the second place. Using __li__ for __le__ in Example 18.23 would produce
+**Example 18.25. **
+li | ci | prenu  
+---|---|---  
+The-number | 3 | is-a-person.  
+  
+
+which is grammatical but nonsensical: numbers are not persons.
+The cmavo __su'i__ belongs to selma'o VUhU, which is composed of mathematical operators, and means “addition”. As mentioned before, it is distinct from __ma'u__ which means the positive sign as an indication of a positive number:
+**Example 18.26. **
+li | ma'u | pa | su'i  
+---|---|---|---  
+The-number | positive-sign | one | plus  
+ni'u | pa | du | li | no  
+---|---|---|---|---  
+negative-sign | one | equals | the-number | zero.  
++1 + -1 = 0  
+  
+
+Of course, it is legal to have complex mekso on both sides of __du__ :
+**Example 18.27. **
+li | mu | su'i | pa | du | li | ci | su'i | ci  
+---|---|---|---|---|---|---|---|---  
+The-number | five | plus | one | equals | the-number | three | plus | three.  
+5 + 1 = 3 + 3  
+  
+
+Why don't we say _li mu su'i li pa_ rather than just _li mu su'i pa_? The answer is that VUhU operators connect mekso operands (numbers, in Example 18.27), not general sumti. __li__ is used to make the entire mekso into a sumti, which then plays the roles applicable to other sumti: in Example 18.27, filling the places of a bridi
+By default, Lojban mathematics is like simple calculator mathematics: there is no notion of “operator precedence”. Consider the following example, where __pi'i__ means “times”, the multiplication operator:
+**Example 18.28. **
+li | ci | su'i | vo | pi'i | mu | du | li | reci  
+---|---|---|---|---|---|---|---|---  
+The-number | three | plus | four | times | five | equals | the-number | two-three.  
+3 + 4 × 5 = 23  
+  
+
+Is the Lojban version of Example 18.28 true? No! “3 + 4 × 5” is indeed 23, because the usual conventions of mathematics state that multiplication takes precedence over addition; that is, the multiplication “4 × 5” is done first, giving 20, and only then the addition “3 + 20”. But VUhU operators by default are done left to right, like other Lojban grouping, and so a truthful bridi would be:
+**Example 18.29. **
+li | ci | su'i | vo | pi'i | mu | du | li | cimu  
+---|---|---|---|---|---|---|---|---  
+The-number | three | plus | four | times | five | equals | the-number | three-five.  
+3 + 4 × 5 = 35  
+  
+
+Here we calculate 3 + 4 first, giving 7, and then calculate 7 × 5 second, leading to the result 35. While possessing the advantage of simplicity, this result violates the design goal of matching the standards of mathematics. What can be done?
+There are three solutions, all of which will probably be used to some degree. The first solution is to ignore the problem. People will say _li ci su'i vo pi'i mu_ and mean 23 by it, because the notion that multiplication takes precedence over addition is too deeply ingrained to be eradicated by Lojban parsing, which totally ignores semantics. This convention essentially allows semantics to dominate syntax in this one area.
+(Why not hard-wire the precedences into the grammar, as is done in computer programming languages? Essentially because there are too many operators, known and unknown, with levels of precedence that vary according to usage. The programming language 'C' has 13 levels of precedence, and its list of operators is not even extensible. For Lojban this approach is just not practical. In addition, hard-wired precedence could not be overridden in mathematical systems such as spreadsheets where the conventions are different.)
+The second solution is to use explicit means to specify the precedence of operators. This approach is fully general, but clumsy, and will be explained in Section 18.20.
+The third solution is simple but not very general. When an operator is prefixed with the cmavo __bi'e__ (of selma'o BIhE), it becomes automatically of higher precedence than other operators not so prefixed. Thus,
+**Example 18.30. **
+li | ci | su'i | vo | bi'e | pi'i | mu | du | li | reci  
+---|---|---|---|---|---|---|---|---|---  
+The-number | three | plus | four | times | five | equals | the-number | two-three.  
+3 + 4 × 5 = 23  
+  
+
+is a truthful Lojban bridi. If more than one operator has a __bi'e__ prefix, grouping is from the right; multiple __bi'e__ prefixes on a single operator are not allowed.
+In addition, of course, Lojban has the mathematical parentheses __vei__ and __ve'o__ , which can be used just like their written equivalents “(” and “)” to group expressions in any way desired:
+**Example 18.31. **
+li | vei | ny. | su'i | pa | ve'o | pi'i | vei | ny. | su'i | pa | [ve'o]  
+---|---|---|---|---|---|---|---|---|---|---|---  
+The-number | ( |  `n` | plus | one | ) | times | ( |  `n` | plus | one | )  
+du | li | ny. | [bi'e] | te'a | re  
+---|---|---|---|---|---  
+equals | the-number | n |  | to-the-power | two  
+su'i | re | bi'e | pi'i | ny. | su'i | pa  
+---|---|---|---|---|---|---  
+plus | two |  | times |  `n` | plus | 1.  
+(n+1)(n+1) = n2 \+ 2n + 1  
+  
+
+There are several new usages in Example 18.31: __te'a__ means “raised to the power”, and we also see the use of the lerfu word __ny__ , representing the letter “n”. In mekso, letters stand for just what they do in ordinary mathematics: variables. The parser will accept a string of lerfu words (called a “lerfu string”) as the equivalent of a single lerfu word, in agreement with computer-science conventions; “abc” is a single variable, not the equivalent of “a × b × c”. (Of course, a local convention could state that the value of a variable like “abc”, with a multi-lerfu name, was equal to the values of the variables “a”, “b”, and “c” multiplied together.)
+The explicit operator __pi'i__ is required in the Lojban verbal form whereas multiplication is implicit in the symbolic form. Note that __ve'o__ (the right parenthesis) is an elidable terminator: the first use of it in Example 18.31 is required, but the second use (marked by square brackets) could be elided. Additionally, the first __bi'e__ (also marked by square brackets) is not necessary to get the proper grouping, but it is included here for symmetry with the other one.
+* * *
+Chapter 18. lojbau mekso: Mathematical Expressions in Lojban  
+---  
+Prev: Section 18.4 |  Next: Section 18.6  
+---|---  
+Table of Contents
+Book Info Page
+
+
+Word: cu
+Filename: section-attitudinals.txt
+TF-IDF Score: 0.22788147621681745
+Content: Chapter 2. A Quick Tour of Lojban Grammar, With Diagrams  
+---  
+Prev: Section 2.15 |  Next: Section 2.17  
+---|---  
+Table of Contents
+Book Info Page
+* * *
+## 2.16. Indicators
+Different cultures express emotions and attitudes with a variety of intonations and gestures that are not usually included in written language. Some of these are available in some languages as interjections (i.e. “Aha!”, “Oh no!”, “Ouch!”, “Aahh!”, etc.), but they vary greatly from culture to culture.
+Lojban has a group of cmavo known as “attitudinal indicators” which specifically covers this type of commentary on spoken statements. They are both written and spoken, but require no specific intonation or gestures. Grammatically they are very simple: one or more attitudinals at the beginning of a bridi apply to the entire bridi; anywhere else in the bridi they apply to the word immediately to the left. For example:
+**Example 2.79. **
+.ie |  mi |  [cu] |  klama  
+---|---|---|---  
+Agreement! |  I |  - |  go.  
+Yep! I'll go.  
+---  
+  
+
+**Example 2.80. **
+.ei |  mi |  [cu] |  klama  
+---|---|---|---  
+Obligation! |  I |  - |  go.  
+I should go.  
+---  
+  
+
+**Example 2.81. **
+mi |  [cu] |  klama |  le melbi  
+---|---|---|---  
+I |  - |  go |  to-the beautiful-thing  
+.ui |  [ku]  
+---|---  
+and I am happy because it is the beautiful thing I'm going to |  -  
+  
+
+Not all indicators indicate attitudes. Discursives, another group of cmavo with the same grammatical rules as attitudinal indicators, allow free expression of certain kinds of commentary about the main utterances. Using discursives allows a clear separation of these so-called “metalinguistic” features from the underlying statements and logical structure. By comparison, the English words “but” and “also”, which discursively indicate contrast or an added weight of example, are logically equivalent to “and”, which does not have a discursive content. The average English-speaker does not think about, and may not even realize, the paradoxical idea that “but” basically means “and”.
+**Example 2.82. **
+mi |  [cu] |  klama |  .i |  do |  [cu] |  stali  
+---|---|---|---|---|---|---  
+I |  - |  go. |  |  You |  - |  stay.  
+  
+
+**Example 2.83. **
+mi |  [cu] |  klama |  .i |  ji'a |  do |  [cu] |  stali  
+---|---|---|---|---|---|---|---  
+I |  - |  go. |  |  In addition, |  you |  - |  stay. |  added weight  
+  
+
+**Example 2.84. **
+mi |  [cu] |  klama |  .i |  ku'i |  do |  [cu] |  stali  
+---|---|---|---|---|---|---|---  
+I |  - |  go. |  |  However, |  you |  - |  stay. |  contrast  
+  
+
+Another group of indicators are called “evidentials”. Evidentials show the speaker's relationship to the statement, specifically how the speaker came to make the statement. These include __za'a__ (I directly observe the relationship), __pe'i__ (I believe that the relationship holds), __ru'a__ (I postulate the relationship), and others. Many American Indian languages use this kind of words.
+**Example 2.85. **
+pe'i |  do |  [cu] |  melbi  
+---|---|---|---  
+I opine! |  You |  - |  are beautiful.  
+  
+
+**Example 2.86. **
+za'a |  do |  [cu] |  melbi  
+---|---|---|---  
+I directly observe! |  You |  - |  are beautiful.  
+  
+
+* * *
+Chapter 2. A Quick Tour of Lojban Grammar, With Diagrams  
+---  
+Prev: Section 2.15 |  Next: Section 2.17  
+---|---  
+Table of Contents
+Book Info Page
+
+
+Word: cu
+Filename: section-some-brivla.txt
+TF-IDF Score: 0.15225388318577596
+Content: Chapter 2. A Quick Tour of Lojban Grammar, With Diagrams  
+---  
+Prev: Section 2.10 |  Next: Section 2.12  
+---|---  
+Table of Contents
+Book Info Page
+* * *
+## 2.11. Examples of brivla
+The simplest form of selbri is an individual word. A word which may by itself express a selbri relation is called a __brivla__. The three types of brivla are gismu (root words), lujvo (compounds), and fu'ivla (borrowings from other languages). All have identical grammatical uses. So far, most of our selbri have been gismu or tanru built from gismu.
+gismu:
+**Example 2.46. **
+mi |  [cu] |  klama |  ti |  zo'e |  zo'e |  ta  
+---|---|---|---|---|---|---  
+Go-er |  - |  goes |  destination |  origin |  route |  means.  
+I go here (to this) using that means (from somewhere via some route).  
+---  
+  
+
+lujvo:
+**Example 2.47. **
+ta |  [cu] |  blari'o  
+---|---|---  
+That |  - |  is-blue-green.  
+  
+
+fu'ivla:
+**Example 2.48. **
+ti |  [cu] |  djarspageti  
+---|---|---  
+This |  - |  is-spaghetti.  
+  
+
+Some cmavo may also serve as selbri, acting as variables that stand for another selbri. The most commonly used of these is __go'i__ , which represents the main bridi of the previous Lojban sentence, with any new sumti or other sentence features being expressed replacing the previously expressed ones. Thus, in this context:
+**Example 2.49. **
+ta |  [cu] |  go'i  
+---|---|---  
+That |  - |  too/same-as-last selbri.  
+That (is spaghetti), too.  
+---  
+  
+
+* * *
+Chapter 2. A Quick Tour of Lojban Grammar, With Diagrams  
+---  
+Prev: Section 2.10 |  Next: Section 2.12  
+---|---  
+Table of Contents
+Book Info Page
+
+
+Word: mitre
+Filename: section-explicit-magnitudes.txt
+TF-IDF Score: 0.19532804519719074
+Content: Chapter 10. Imaginary Journeys: The Lojban Space/Time Tense System  
+---  
+Prev: Section 10.24 |  Next: Section 10.26  
+---|---  
+Table of Contents
+Book Info Page
+* * *
+## 10.25. Explicit magnitudes
+It is a limitation of the VA and ZI system of specifying magnitudes that they can only prescribe vague magnitudes: small, medium, or large. In order to express both an origin point and an exact distance, the Lojban construction called a “termset” is employed. (Termsets are explained further in Section 14.11 and Section 16.7.) It is grammatical for a termset to be placed after a tense or modal tag rather than a sumti, which allows both the origin of the imaginary journey and its distance to be specified. Here is an example:
+**Example 10.189. **
+la | frank. | sanli | zu'a | nu'i | la | djordj.  
+---|---|---|---|---|---|---  
+That-named | Frank | stands | [left] | [start-termset] |  | George  
+la'u | lo | mitre | be | li | mu | [nu'u]  
+---|---|---|---|---|---|---  
+[quantity] | a | thing-measuring-in-meters |  | the-number | 5 | [end-termset].  
+Frank is standing five meters to the left of George.  
+---  
+  
+
+Here the termset extends from the __nu'i__ to the implicit __nu'u__ at the end of the sentence, and includes the terms _la djordj._ , which is the unmarked origin point, and the tagged sumti _lo mitre be li mu_ , which the cmavo __la'u__ (of selma'o BAI, and meaning “with quantity”; see Section 9.6) marks as a quantity. Both terms are governed by the tag __zu'a__
+It is not necessary to have both an origin point and an explicit magnitude: a termset may have only a single term in it. A less precise version of Example 10.189 is:
+**Example 10.190. **
+la | frank. | sanli | zu'a | nu'i | la'u  
+---|---|---|---|---|---  
+That-named | Frank | stands | [left] | [termset] | [quantity]  
+lo | mitre | be | li | mu  
+---|---|---|---|---  
+a | thing-measuring-in-meters |  | the-number | 5.  
+Frank stands five meters to the left.  
+---  
+  
+
+* * *
+Chapter 10. Imaginary Journeys: The Lojban Space/Time Tense System  
+---  
+Prev: Section 10.24 |  Next: Section 10.26  
+---|---  
+Table of Contents
+Book Info Page
+
+
+Word: mitre
+Filename: chapter-sumti.txt
+TF-IDF Score: 0.06631240641683782
+Content: The Complete Lojban Language  
+---  
+Prev: Section 5.16 |  Next: Section 6.2  
+---|---  
+Table of Contents
+Book Info Page
+* * *
+# Chapter 6. To Speak Of Many Things: The Lojban sumti
+## 6.1. The five kinds of simple sumti
+If you understand anything about Lojban, you know what a sumti is by now, right? An argument, one of those things that fills the places of simple Lojban sentences like:
+**Example 6.1. **
+mi | klama | le | zarci  
+---|---|---|---  
+I | go-to | the | market  
+  
+
+In Example 6.1, __mi__ and _le zarci_ are the sumti. It is easy to see that these two sumti are not of the same kind: __mi__ is a pro-sumti (the Lojban analogue of a pronoun) referring to the speaker, whereas _le zarci_ is a description which refers to something described as being a market.
+There are five kinds of simple sumti provided by Lojban:
+  1. descriptions like _le zarci_ , which usually begin with a descriptor (called a __gadri__ in Lojban) such as __le__ ;
+  2. pro-sumti, such as __mi__ ;
+  3. names, such as _la lojban._ , which usually begin with __la__ ;
+  4. quotations, which begin with __lu__ , __le'u__ , __zo__ , or __zoi__ ;
+  5. pure numbers, which usually begin with __li__.
+
+
+Here are a few examples of each kind of sumti:
+**Example 6.2. **
+e'osai | ko | sarji | la | lojban.  
+---|---|---|---|---  
+[request] [!] | You [imperative] | support | that-named | Lojban.  
+Please support Lojban!  
+---  
+  
+
+Example 6.2 exhibits __ko__ , a pro-sumti; and _la lojban._ , a name.
+**Example 6.3. **
+mi | cusku | lu | e'osai | li'u | le | tcidu  
+---|---|---|---|---|---|---  
+I | express | [quote] | [request] [!] | [unquote] | to-the | reader.  
+I express “Please!” to the reader.  
+---  
+  
+
+Example 6.3 exhibits __mi__ , a pro-sumti; _lu e'osai li'u_ , a quotation; and _le tcidu_ , a description.
+**Example 6.4. **
+ti | mitre | li | ci  
+---|---|---|---  
+This | measures-in-meters | the-number | three.  
+This is three meters long.  
+---  
+  
+
+Example 6.4 exhibits __ti__ , a pro-sumti; and _li ci_ , a number.
+Most of this chapter is about descriptions, as they have the most complicated syntax and usage. Some attention is also given to names, which are closely interwoven with descriptions. Pro-sumti, numbers, and quotations are described in more detail in Chapter 7, Chapter 18, and Chapter 19 respectively, so this chapter only gives summaries of their forms and uses. See Section 6.13 through Section 6.15 for these summaries.
+* * *
+The Complete Lojban Language  
+---  
+Prev: Section 5.16 |  Next: Section 6.2  
+---|---  
+Table of Contents
+Book Info Page
+
+
+Word: lo
+Filename: section-keha.txt
+TF-IDF Score: 0.08139590689754461
+Content: Chapter 7. Brevity Is The Soul Of Language: Pro-sumti And Pro-bridi  
+---  
+Prev: Section 7.9 |  Next: Section 7.11  
+---|---  
+Table of Contents
+Book Info Page
+* * *
+## 7.10. Relativized pro-sumti: _ke'a_
+The following cmavo are discussed in this section:
+ke'a |  KOhA |  relativized sumti  
+---|---|---  
+This pro-sumti is used in relative clauses (explained in Chapter 8) to indicate how the sumti being relativized fits within the clause. For example:
+**Example 7.69. **
+mi | catlu | lo | mlatu | poi | [zo'e]  
+---|---|---|---|---|---  
+I | see | a | cat | such-that | something-unspecified  
+zbasu | ke'a |  | lei | slasi  
+---|---|---|---|---  
+makes | the-thing-being-relativized-[the-cat] | from | some-mass-of | plastic.  
+I see a cat made of plastic.  
+---  
+  
+
+If __ke'a__ were omitted from Example 7.69, it might be confused with:
+**Example 7.70. **
+mi | catlu | lo | mlatu | poi  
+---|---|---|---|---  
+I | see | a | cat | such-that  
+[ke'a] | zbasu | lei | slasi  
+---|---|---|---  
+the-thing-being-relativized-[the-cat] | makes | a-mass-of | plastic  
+I see a cat that makes plastic.  
+---  
+  
+
+The anaphora cmavo __ri__ cannot be used in place of __ke'a__ in Example 7.69 and Example 7.70, because the relativized sumti is not yet complete when the __ke'a__ appears.
+Note that __ke'a__ is used only with relative clauses, and not with other embedded bridi such as abstract descriptions. In the case of relative clauses within relative clauses, __ke'a__ may be subscripted to make the difference clear (see Section 8.10).
+* * *
+Chapter 7. Brevity Is The Soul Of Language: Pro-sumti And Pro-bridi  
+---  
+Prev: Section 7.9 |  Next: Section 7.11  
+---|---  
+Table of Contents
+Book Info Page
+
+
+Word: lo
+Filename: section-multiple-compound-bridi.txt
+TF-IDF Score: 0.07964835163215547
+Content: Chapter 14. If Wishes Were Horses: The Lojban Connective System  
+---  
+Prev: Section 14.9 |  Next: Section 14.11  
+---|---  
+Table of Contents
+Book Info Page
+* * *
+## 14.10. Multiple compound bridi
+Giheks can be combined with __bo__ in the same way as eks:
+**Example 14.60. **
+mi | nelci | la | djan. | gi'e | nelci | la | martas. | gi'abo | nelci | la | meris.  
+---|---|---|---|---|---|---|---|---|---|---|---  
+I like John and ( like Martha or like Mary ).  
+---  
+  
+
+is equivalent in meaning to Example 14.39 and Example 14.40. Likewise, __ke__ … __ke'e__ grouping can be used after giheks:
+**Example 14.61. **
+mi | dzukla | le | zarci  
+---|---|---|---  
+I | walk-to | the | market  
+gi'e | dzukla | le | zdani  
+---|---|---|---  
+and | walk-to | the | house,  
+gi'a | ke | dzukla | le | ckule  
+---|---|---|---|---  
+or | ( | walk-to | the | school  
+gi'e | dzukla | le | briju | [ke'e]  
+---|---|---|---|---  
+and | walk-to | the | office. | )  
+  
+
+is the gihek version of Example 14.47. The same rule about using __ke__ … __ke'e__ bracketing only just after a connective applies to bridi-tails as to sumti, so the first two bridi-tails in Example 14.61 cannot be explicitly grouped; implicit left-grouping suffices to associate them.
+Each of the pairs of bridi-tails joined by multiple giheks can have its own set of tail-terms:
+**Example 14.62. **
+| mi | dejni | lo | rupnu | la | djan.  
+---|---|---|---|---|---|---  
+[If] | I | owe | some | currency-units | to-that-named | John,  
+.inaja | mi | dunda | le | cukta | la | djan.  
+---|---|---|---|---|---|---  
+then | I | give | the | book | to-that-named | John  
+.ijabo | mi | lebna | le | cukta | la | djan.  
+---|---|---|---|---|---|---  
+or | I | take | the | book | from-that-named | John.  
+  
+
+is equivalent in meaning to:
+**Example 14.63. **
+| mi | dejni | lo | rupnu | nagi'a | dunda  
+---|---|---|---|---|---|---  
+[If] | I | owe | some | currency-units | then | (give  
+gi'abo | lebna | vau | le | cukta | vau | la | djan.  
+---|---|---|---|---|---|---|---  
+or | take) |  | a | book |  | to/from-that-named | John.  
+  
+
+The literal English translation in Example 14.63 is almost unintelligible, but the Lojban is perfectly grammatical. __mi__ fills the x1 place of all three selbri; _lo rupnu_ is the x2 of __dejni__ , whereas _le cukta_ is a tail-term shared between __dunda__ and __lebna__ ; _la djan._ is a tail-term shared by __dejni__ and by _dunda gi'abo lebna_. In this case, greater clarity is probably achieved by moving _la djan._ to the beginning of the sentence, as in Example 14.53:
+**Example 14.64. **
+fi | la | djan. |  | fa | mi | dejni | lo | rupnu  
+---|---|---|---|---|---|---|---|---  
+To/from | that-named | John, | [if] |  | I | owe | some | currency-units  
+nagi'a |  | dunda | gi'abo | lebna | vau | le | cukta  
+---|---|---|---|---|---|---|---  
+then | [I] | give | or | take |  | the | book.  
+  
+
+Finally, what about forethought logical connection of bridi-tails? There is no direct mechanism for the purpose. Instead, Lojban grammar allows a pair of forethought-connected sentences to function as a single bridi-tail, and of course the sentences need not have terms before their selbri. For example:
+**Example 14.65. **
+mi | ge | klama | le | zarci | gi | nelci | la | djan.  
+---|---|---|---|---|---|---|---|---  
+I | both | go-to | the | market | and | like | that-named | John.  
+  
+
+is equivalent in meaning to Example 14.50.
+Of course, either of the connected sentences may contain giheks:
+**Example 14.66. **
+mi | ge | klama | le | zarci | gi'e | dzukla | le | zdani  
+---|---|---|---|---|---|---|---|---  
+I | both | (go | to-the | market | and | walk | to-the | house)  
+gi | nelci | la | djan.  
+---|---|---|---  
+and | like | that-named | John.  
+  
+
+The entire gek-connected sentence pair may be negated as a whole by prefixing __na__ :
+**Example 14.67. **
+| mi | na | ge | klama | le | zarci | gi | dzukla | le | zdani  
+---|---|---|---|---|---|---|---|---|---|---  
+[False!] | I |  | both | go-to | the | market | and | walk-to | the | house.  
+  
+
+Since a pair of sentences joined by geks is the equivalent of a bridi-tail, it may be followed by tail terms. The forethought equivalent of Example 14.54 is:
+**Example 14.68. **
+mi | ge | dunda | le | cukta  
+---|---|---|---|---  
+I | both | (give | the | book)  
+gi | lebna | lo | rupnu | vau | do  
+---|---|---|---|---|---  
+and | (take | some | currency-units | ) | to/from-you.  
+  
+
+Here is a pair of gek-connected observatives, a forethought equivalent of Example 14.57:
+**Example 14.69. **
+ge | klama | le | zarci | gi | dzukla | le | briju  
+---|---|---|---|---|---|---|---  
+Both | a-goer | to-the | market | and | a-walker | to-the | office.  
+  
+
+Finally, here is an example of gek-connected sentences with both shared and unshared terms before their selbri:
+**Example 14.70. **
+mi | gonai | le | zarci | cu | klama | gi | le | bisli | cu | dansu  
+---|---|---|---|---|---|---|---|---|---|---  
+I | either-but-not-both | to-the | office |  | go | or | on-the | ice |  | dance.  
+I either go to the office or dance on the ice (but not both).  
+---  
+  
+
+* * *
+Chapter 14. If Wishes Were Horses: The Lojban Connective System  
+---  
+Prev: Section 14.9 |  Next: Section 14.11  
+---|---  
+Table of Contents
+Book Info Page
+
+
+Word: pa
+Filename: section-mekso-numbers.txt
+TF-IDF Score: 0.5390093999290587
+Content: Chapter 18. lojbau mekso: Mathematical Expressions in Lojban  
+---  
+Prev: Chapter 18 |  Next: Section 18.3  
+---|---  
+Table of Contents
+Book Info Page
+* * *
+## 18.2. Lojban numbers
+The following cmavo are discussed in this section:
+|  pa |  PA |  1  
+---|---|---  
+re |  PA |  2  
+ci |  PA |  3  
+vo |  PA |  4  
+mu |  PA |  5  
+|  xa |  PA |  6  
+---|---|---  
+ze |  PA |  7  
+bi |  PA |  8  
+so |  PA |  9  
+no |  PA |  0  
+The simplest kind of mekso are numbers, which are cmavo or compound cmavo. There are cmavo for each of the 10 decimal digits, and numbers greater than 9 are made by stringing together the cmavo. Some examples:
+**Example 18.2. **
+pa | re | ci  
+---|---|---  
+one | two | three  
+123  
+one hundred and twenty three  
+---  
+  
+
+**Example 18.3. **
+pa | no  
+---|---  
+one | zero  
+10  
+ten  
+---  
+  
+
+**Example 18.4. **
+pa | re | ci | vo | mu | xa | ze | bi | so | no  
+---|---|---|---|---|---|---|---|---|---  
+one | two | three | four | five | six | seven | eight | nine | zero  
+1234567890  
+one billion, two hundred and thirty-four million, five hundred and sixty-seven thousand, eight hundred and ninety.  
+---  
+  
+
+Therefore, there are no separate cmavo for “ten”, “hundred”, etc.
+There is a pattern to the digit cmavo (except for __no__ , 0) which is worth explaining. The cmavo from 1 to 5 end in the vowels _a_ , _e_ , _i_ , _o_ , _u_ respectively; and the cmavo from 6 to 9 likewise end in the vowels _a_ , _e_ , _i_ , and _o_ respectively. None of the digit cmavo begin with the same consonant, to make them easy to tell apart in noisy environments.
+* * *
+Chapter 18. lojbau mekso: Mathematical Expressions in Lojban  
+---  
+Prev: Chapter 18 |  Next: Section 18.3  
+---|---  
+Table of Contents
+Book Info Page
+
+
+Word: pa
+Filename: section-indefinite-numbers.txt
+TF-IDF Score: 0.46684388712661434
+Content: Chapter 18. lojbau mekso: Mathematical Expressions in Lojban  
+---  
+Prev: Section 18.7 |  Next: Section 18.9  
+---|---  
+Table of Contents
+Book Info Page
+* * *
+## 18.8. Indefinite numbers
+The following cmavo are discussed in this section:
+ro |  PA |  all  
+---|---|---  
+so'a |  PA |  almost all  
+so'e |  PA |  most  
+so'i |  PA |  many  
+so'o |  PA |  several  
+so'u |  PA |  a few  
+no'o |  PA |  the typical number of  
+da'a |  PA |  all but (one) of  
+piro |  PA+PA |  the whole of/all of  
+piso'a |  PA+PA |  almost the whole of  
+piso'e |  PA+PA |  most of  
+piso'i |  PA+PA |  much of  
+piso'o |  PA+PA |  a small part of  
+piso'u |  PA+PA |  a tiny part of  
+pino'o |  PA+PA |  the typical portion of  
+rau |  PA |  enough  
+du'e |  PA |  too many  
+mo'a |  PA |  too few  
+pirau |  PA+PA |  enough of  
+pidu'e |  PA+PA |  too much of  
+pimo'a |  PA+PA |  too little of  
+Not all the cmavo of PA represent numbers in the usual mathematical sense. For example, the cmavo __ro__ means “all” or “each”. This number does not have a definite value in the abstract: _li ro_ is undefined. But when used to count or quantify something, the parallel between __ro__ and __pa__ is clearer:
+**Example 18.41. **
+mi | catlu | pa | prenu  
+---|---|---|---  
+I | look-at | one | person  
+  
+
+**Example 18.42. **
+mi | catlu | ro | prenu  
+---|---|---|---  
+I | look-at | all | persons  
+  
+
+Example 18.41 might be true, whereas Example 18.42 is almost certainly false.
+The cmavo __so'a__ , __so'e__ , __so'i__ , __so'o__ , and __so'u__ represent a set of indefinite numbers less than __ro__. As you go down an alphabetical list, the magnitude decreases:
+**Example 18.43. **
+mi | catlu | so'a | prenu  
+---|---|---|---  
+I | look-at | almost-all | persons  
+  
+
+**Example 18.44. **
+mi | catlu | so'e | prenu  
+---|---|---|---  
+I | look-at | most | persons  
+  
+
+**Example 18.45. **
+mi | catlu | so'i | prenu  
+---|---|---|---  
+I | look-at | many | persons  
+  
+
+**Example 18.46. **
+mi | catlu | so'o | prenu  
+---|---|---|---  
+I | look-at | several | persons  
+  
+
+**Example 18.47. **
+mi | catlu | so'u | prenu  
+---|---|---|---  
+I | look-at | a-few | persons  
+  
+
+The English equivalents are only rough: the cmavo provide space for up to five indefinite numbers between __ro__ and __no__ , with a built-in ordering. In particular, __so'e__ does not mean “most” in the sense of “a majority” or “more than half”.
+Each of these numbers, plus __ro__ , may be prefixed with __pi__ (the decimal point) in order to make a fractional form which represents part of a whole rather than some elements of a totality. __piro__ therefore means “the whole of”:
+**Example 18.48. **
+mi | citka | piro | lei | nanba  
+---|---|---|---|---  
+I | eat | the-whole-of | the-mass-of | bread  
+  
+
+Similarly, __piso'a__ means “almost the whole of”; and so on down to __piso'u__ , “a tiny part of”. These numbers are particularly appropriate with masses, which are usually measured rather than counted, as Example 18.48 shows.
+In addition to these cmavo, there is __no'o__ , meaning “the typical value”, and _pino'o_ , meaning “the typical portion”: Sometimes __no'o__ can be translated “the average value”, but the average in question is not, in general, a mathematical mean, median, or mode; these would be more appropriately represented by operators.
+**Example 18.49. **
+mi | catlu | no'o | prenu  
+---|---|---|---  
+I | look-at | a-typical-number-of | persons  
+  
+
+**Example 18.50. **
+mi | citka | pino'o | lei | nanba  
+---|---|---|---|---  
+I | eat | a-typical-amount-of | the-mass-of | bread.  
+  
+
+__da'a__ is a related cmavo meaning “all but”:
+**Example 18.51. **
+mi | catlu | da'a | re | prenu  
+---|---|---|---|---  
+I | look-at | all-but | two | persons  
+  
+
+**Example 18.52. **
+mi | catlu | da'a | so'u | prenu  
+---|---|---|---|---  
+I | look-at | all-but | a-few | persons  
+  
+
+Example 18.52 is similar in meaning to Example 18.43.
+If no number follows __da'a__ , then __pa__ is assumed; __da'a__ by itself means “all but one”, or in ordinal contexts “all but the last”:
+**Example 18.53. **
+ro | ratcu | ka'e | citka | da'a | ratcu  
+---|---|---|---|---|---  
+All | rats | can | eat | all-but-one | rats.  
+All rats can eat all other rats.  
+---  
+  
+
+(The use of __da'a__ means that Example 18.53 does not require that all rats can eat themselves, but does allow it. Each rat has one rat it cannot eat, but that one might be some rat other than itself. Context often dictates that “itself” is, indeed, the “other” rat.)
+As mentioned in Section 18.3, __ma'u__ and __ni'u__ are also legal numbers, and they mean “some positive number” and “some negative number” respectively.
+**Example 18.54. **
+li | ci | vu'u | re | du | li | ma'u  
+---|---|---|---|---|---|---  
+the-number | 3 | − | 2 | = |  | some-positive-number  
+  
+
+**Example 18.55. **
+li | ci | vu'u | vo | du | li | ni'u  
+---|---|---|---|---|---|---  
+the-number | 3 | − | 4 | = |  | some-negative-number  
+  
+
+**Example 18.56. **
+mi | ponse | ma'u | rupnu  
+---|---|---|---  
+I | possess | a-positive-number-of | currency-units.  
+  
+
+All of the numbers discussed so far are objective, even if indefinite. If there are exactly six superpowers (_rairgugde_ , “superlative-states”) in the world, then _ro rairgugde_ means the same as _xa rairgugde_. It is often useful, however, to express subjective indefinite values. The cmavo __rau__ (enough), __du'e__ (too many), and __mo'a__ (too few) are then appropriate:
+**Example 18.57. **
+mi | ponse | rau | rupnu  
+---|---|---|---  
+I | possess | enough | currency-units.  
+  
+
+Like the __so'a__ -series, __rau__ , __du'e__ , and __mo'a__ can be preceded by __pi__ ; for example, _pirau_ means “a sufficient part of.”
+Another possibility is that of combining definite and indefinite numbers into a single number. This usage implies that the two kinds of numbers have the same value in the given context:
+**Example 18.58. **
+mi | viska | le | rore | gerku  
+---|---|---|---|---  
+I | saw | the | all-of/two | dogs.  
+I saw both dogs.  
+---  
+  
+
+**Example 18.59. **
+mi | speni | so'ici | prenu  
+---|---|---|---  
+I | am-married-to | many/three | persons.  
+I am married to three persons (which is “many” in the circumstances).  
+---  
+  
+
+Example 18.59 assumes a mostly monogamous culture by stating that three is “many”.
+* * *
+Chapter 18. lojbau mekso: Mathematical Expressions in Lojban  
+---  
+Prev: Section 18.7 |  Next: Section 18.9  
+---|---  
+Table of Contents
+Book Info Page

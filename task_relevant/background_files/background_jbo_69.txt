@@ -1,0 +1,1648 @@
+
+The following definitions pulled from the above background may be particularly useful:
+{'Lojban': 'ka', 'Formal Language': 'NU', 'English': 'property abstract', 'Definition': 'abstractor: property/quality abstractor (-ness); x1 is quality/property exhibited by [bridi]', 'Confer': None, 'Type': 'cmavo'}
+{'Lojban': "na'e", 'Formal Language': 'NAhE', 'English': 'scalar contrary', 'Definition': 'contrary scalar negator: other than ...; not ...; a scale or set is implied', 'Confer': None, 'Type': 'cmavo'}
+{'Lojban': 'lo', 'Formal Language': 'LE', 'English': 'the really is', 'Definition': 'veridical descriptor: the one(s) that really is(are) ...', 'Confer': None, 'Type': 'cmavo'}
+{'Lojban': 'kanro', 'Lojban definition': 'x_{1} is healthy/fit/well/in good health by standard x_{2}.', 'English': '- healthy<br>- well; in good health', 'Type': 'gismu'}
+{'Lojban': 'na', 'Formal Language': nan, 'English': 'bridi negator', 'Definition': 'bridi contradictory negator; scope is an entire bridi; logically negates in some cmavo compounds', 'Confer': None, 'Type': 'cmavo'}
+{'Lojban': 'mutce', 'Lojban definition': 'x_{1} is much/extreme in property x_{2} (ka), towards x_{3} extreme/direction; x_{1} is, in x_{2}, very x_{3}.', 'English': '- extreme; in the greatest degree<br>- very; to a great extent<br>- much', 'Type': 'gismu'}
+{'Lojban': 'do', 'Formal Language': 'KOhA3', 'English': 'you', 'Definition': 'pro-sumti: you listener(s); identified by vocative', 'Confer': None, 'Type': 'cmavo'}
+{'Lojban': 'simlu', 'Lojban definition': 'x_{1} seems/appears to have property(ies) x_{2} to observer x_{3} under conditions x_{4}.', 'English': '- seem', 'Type': 'gismu'}
+
+The following are the top TF-IDF files for the words in choice A and choice B from the The Complete Lojban Language Grammar Book:
+Word: ka
+Filename: section-properties.txt
+TF-IDF Score: 0.28572118852387113
+Content: Chapter 11. Events, Qualities, Quantities, And Other Vague Words: On Lojban Abstraction  
+---  
+Prev: Section 11.3 |  Next: Section 11.5  
+---|---  
+Table of Contents
+Book Info Page
+* * *
+## 11.4. Property abstractions
+The following cmavo are discussed in this section:
+ka |  NU |  property abstractor  
+---|---|---  
+ce'u |  KOhA |  abstraction focus  
+The things described by _le nu_ descriptions (or, to put it another way, the things of which __nu__ selbri may correctly be predicated) are only moderately “abstract”. They are still closely tied to happenings in space and time. Properties, however, are much more ethereal. What is “the property of being blue”, or “the property of being a go-er”? They are what logicians call “intensions”. If John has a heart, then “the property of having a heart” is an abstract object which, when applied to John, is true. In fact,
+**Example 11.21. **
+la | djan. | cu | se risna | zo'e  
+---|---|---|---|---  
+That-named | John |  | has-as-heart | something-unspecified.  
+John has a heart.  
+---  
+  
+
+has the same truth conditions as
+**Example 11.22. **
+la | djan. | cu | ckaji  
+---|---|---|---  
+That-named | John |  | has-the-property  
+le | ka | se risna | [zo'e] | [kei]  
+---|---|---|---|---  
+the | property-of | having-as-heart | something.  
+John has the property of having a heart.  
+---  
+  
+
+(The English word “have” frequently appears in any discussion of Lojban properties: things are said to “have” properties, but this is not the same sense of “have” as in “I have money”, which is possession.)
+Property descriptions, like event descriptions, are often wanted to fill places in brivla place structures:
+**Example 11.23. **
+do | cnino | mi | le | ka | xunre | [kei]  
+---|---|---|---|---|---|---  
+You | are-new | to-me | in-the-quality-of-the | property-of | being-red.  
+You are new to me in redness.  
+---  
+  
+
+(The English suffix “-ness” often signals a property abstraction, as does the suffix “-ity”.)
+We can also move the property description to the x1 place of Example 11.23, producing:
+**Example 11.24. **
+le | ka | do | xunre | [kei] | cu | cnino | mi  
+---|---|---|---|---|---|---|---  
+The | property-of | your | being-red |  |  | is-new | to me.  
+Your redness is new to me.  
+---  
+  
+
+It would be suitable to use Example 11.23 and Example 11.24 to someone who has returned from the beach with a sunburn.
+There are several different properties that can be extracted from a bridi, depending on which place of the bridi is “understood” as being specified externally. Thus:
+**Example 11.25. **
+ka | mi | prami | [zo'e] | [kei]  
+---|---|---|---|---  
+a-property-of | me | loving | something-unspecified  
+  
+
+is quite different from
+**Example 11.26. **
+ka | [zo'e] | prami | mi | [kei]  
+---|---|---|---|---  
+a-property-of | something-unspecified | loving | me  
+  
+
+In particular, sentences like Example 11.27 and Example 11.28 are quite different in meaning:
+**Example 11.27. **
+la | djan. | cu | zmadu | la | djordj.  
+---|---|---|---|---|---  
+That-named | John |  | exceeds | that-named | George  
+le | ka | mi | prami  
+---|---|---|---  
+in-the | property-of | (I | love | X)  
+I love John more than I love George.  
+---  
+  
+
+**Example 11.28. **
+la | djan. | cu | zmadu | la | djordj.  
+---|---|---|---|---|---  
+That-named | John |  | exceeds | that-named | George  
+le | ka |  | prami | mi  
+---|---|---|---|---  
+in-the | property of | (X | loves | me).  
+John loves me more than George loves me.  
+---  
+  
+
+The “X” used in the glosses of Example 11.27 through Example 11.28 as a place-holder cannot be represented only by ellipsis in Lojban, because ellipsis means that there must be a specific value that can fill the ellipsis, as mentioned in Section 11.2. Instead, the cmavo __ce'u__ of selma'o KOhA is employed when an explicit sumti is wanted. (The form “X” will be used in literal translations.)
+Therefore, an explicit equivalent of Example 11.27, with no ellipsis, is:
+**Example 11.29. **
+la | djan. | cu | zmadu | la | djordj.  
+---|---|---|---|---|---  
+That-named | John |  | exceeds | that-named | George  
+le | ka | mi | prami | ce'u  
+---|---|---|---|---  
+in-the | property-of | (I | love | X).  
+  
+
+and of Example 11.28 is:
+**Example 11.30. **
+la | djan. | cu | zmadu | la | djordj.  
+---|---|---|---|---|---  
+That-named | John |  | exceeds | that-named | George  
+le | ka | ce'u | prami | mi  
+---|---|---|---|---  
+in-the | property-of | (X | loves | me).  
+  
+
+This convention allows disambiguation of cases like:
+**Example 11.31. **
+le | ka | [zo'e] | dunda | le | xirma | [zo'e] | [kei]  
+---|---|---|---|---|---|---|---  
+the | property-of |  | giving | the | horse  
+  
+
+into
+**Example 11.32. **
+le | ka | ce'u | dunda | le | xirma |  | [zo'e] | [kei]  
+---|---|---|---|---|---|---|---|---  
+the | property-of | (X | is-a-giver-of | the | horse | to | someone-unspecified | )  
+the property of being a giver of the horse  
+---  
+  
+
+which is the most natural interpretation of Example 11.31, versus
+**Example 11.33. **
+le | ka | [zo'e] | dunda | le | xirma |  | ce'u | [kei]  
+---|---|---|---|---|---|---|---|---  
+the | property-of | (someone-unspecified | is-a-giver-of | the | horse | to | X | )  
+the property of being one to whom the horse is given  
+---  
+  
+
+which is also a possible interpretation.
+It is also possible to have more than one __ce'u__ in a __ka__ abstraction, which transforms it from a property abstraction into a relationship abstraction. Relationship abstractions “package up” a complex relationship for future use; such an abstraction can be translated back into a selbri by placing it in the x2 place of the selbri __bridi__ , whose place structure is:
+> _ _bridi_ _ x1 is a predicate relationship with relation x2 (abstraction) among arguments (sequence/set) x3
+The place structure of __ka__ abstraction selbri is simply:
+> _ _ka_ _ x1 is a property of (the bridi)
+* * *
+Chapter 11. Events, Qualities, Quantities, And Other Vague Words: On Lojban Abstraction  
+---  
+Prev: Section 11.3 |  Next: Section 11.5  
+---|---  
+Table of Contents
+Book Info Page
+
+
+Word: ka
+Filename: section-cehu.txt
+TF-IDF Score: 0.1494857015530961
+Content: Chapter 7. Brevity Is The Soul Of Language: Pro-sumti And Pro-bridi  
+---  
+Prev: Section 7.10 |  Next: Section 7.12  
+---|---  
+Table of Contents
+Book Info Page
+* * *
+## 7.11. Abstraction focus pro-sumti: _ce'u_
+The following cmavo are discussed in this section:
+ce'u |  KOhA |  abstraction focus  
+---|---|---  
+The cmavo __ce'u__ is used within abstraction bridi, particularly property abstractions introduced by the cmavo __ka__. Abstractions, including the uses of __ce'u__ , are discussed in full in Chapter 11.
+In brief: Every property abstraction specifies a property of one of the sumti in it; that sumti place is filled by using __ce'u__. This convention enables us to distinguish clearly between:
+**Example 7.71. **
+le | ka | ce'u | gleki  
+---|---|---|---  
+the | property-of | (X | being-happy)  
+the property of being happy  
+---  
+happiness  
+  
+
+and
+**Example 7.72. **
+le | ka | gleki | ce'u  
+---|---|---|---  
+the | property-of | (being-happy-about | X)  
+the property of being that which someone is happy about  
+---  
+  
+
+* * *
+Chapter 7. Brevity Is The Soul Of Language: Pro-sumti And Pro-bridi  
+---  
+Prev: Section 7.10 |  Next: Section 7.12  
+---|---  
+Table of Contents
+Book Info Page
+
+
+Word: na'e
+Filename: section-nahe.txt
+TF-IDF Score: 0.20401553124292277
+Content: Chapter 15. “No” Problems: On Lojban Negation  
+---  
+Prev: Section 15.3 |  Next: Section 15.5  
+---|---  
+Table of Contents
+Book Info Page
+* * *
+## 15.4. selbri and tanru negation
+All the scalar negations illustrated in Section 15.3 are expressed in Lojban using the cmavo __na'e__ (of selma'o NAhE). The most common use of __na'e__ is as a prefix to the selbri:
+**Example 15.44. **
+mi | klama | le | zarci  
+---|---|---|---  
+I | go-to | the | market.  
+  
+
+**Example 15.45. **
+mi | na'e | klama | le | zarci  
+---|---|---|---|---  
+I | (other-than | go-to) | the | market.  
+  
+
+Comparing these two, we see that the negation operator being used in Example 15.45 is __na'e__. But what exactly does __na'e__ negate? Does the negation include only the gismu __klama__ , which is the entire selbri in this case, or does it include the _le zarci_ as well? In Lojban, the answer is unambiguously “only the gismu”. The cmavo __na'e__ always applies only to what follows it.
+Example 15.45 looks as if it were parallel to:
+**Example 15.46. **
+mi | na | klama | le | zarci  
+---|---|---|---|---  
+I | [false] | go-to | the | market.  
+  
+
+but in fact there is no real parallelism at all. A negation using __na__ denies the truth of a relationship, but a selbri negation with __na'e__ asserts that a relationship exists other than that stated, one which specifically involves the sumti identified in the statement. The grammar allotted to __na'e__ allows us to unambiguously express scalar negations in terms of scope, scale, and range within the scale. Before we explain the scalar aspects, let us show how the scope of __na'e__ is determined.
+In tanru, we may wish to negate an individual element before combining it with another to form the tanru. We in effect need a shorter-than-selbri-scope negation, for which we can use __na'e__ as well. The positive sentence
+**Example 15.47. **
+mi | cadzu | klama | le | zarci  
+---|---|---|---|---  
+I | walking-ly | go-to | the | market.  
+  
+
+can be subjected to selbri negation in several ways. Two are:
+**Example 15.48. **
+mi | na'e | cadzu | klama | le | zarci  
+---|---|---|---|---|---  
+I | (other-than | walkingly) | go-to | the | market.  
+  
+
+**Example 15.49. **
+mi | cadzu | na'e | klama | le | zarci  
+---|---|---|---|---|---  
+I | walkingly | (other-than | go-to) | the | market.  
+  
+
+These negations show the default scope of __na'e__ is close-binding on an individual brivla in a tanru. Example 15.48 says that I am going to the market, but in some kind of a non-walking manner. (As with most tanru, there are a few other possible interpretations, but we'll assume this one – see Chapter 5 for a discussion of tanru meaning).
+In neither Example 15.48 nor Example 15.49 does the __na'e__ negate the entire selbri. While both sentences contain negations that deny a particular relationship between the sumti, they also have a component which makes a positive claim about such a relationship. This is clearer in Example 15.48, which says that I am going, but in a non-walking manner. In Example 15.49, we have claimed that the relationship between me and the market in some way involves walking, but is not one of “going to” (perhaps we are walking around the market, or walking-in-place while at the market).
+The “scale”, or actually the “set”, implied in Lojban tanru negations is anything which plausibly can be substituted into the tanru. (Plausibility here is interpreted in the same way that answers to a __mo__ question must be plausible – the result must not only have the right number of places and have sumti values appropriate to the place structure, it must also be appropriate or relevant to the context.) This minimal condition allows a speaker to be intentionally vague, while still communicating meaningful information. The speaker who uses selbri negation is denying one relationship, while minimally asserting a different relationship.
+We also need a scalar negation form that has a scope longer than a single brivla. There exists such a longer-scope selbri negation form, as exemplified by (each Lojban sentence in the next several examples is given twice, with parentheses in the second copy showing the scope of the __na'e__):
+**Example 15.50. **
+mi | na'e | ke | cadzu | klama | [ke'e] | le | zarci  
+---|---|---|---|---|---|---|---  
+mi | na'e | (ke | cadzu | klama | [ke'e]) | le | zarci  
+I | other-than | ( | walkingly | go-to | ) | the | market.  
+  
+
+This negation uses the same __ke__ and __ke'e__ delimiters (the __ke'e__ is always elidable at the end of a selbri) that are used in tanru. The sentence clearly negates the entire selbri. The __ke'e__ , whether elided or not, reminds us that the negation does not include the trailing sumti. While the trailing-sumti place-structure is defined as that of the final brivla, the trailing sumti themselves are not part of the selbri and are thus not negated by __na'e__.
+Negations of just part of the selbri are also permitted:
+**Example 15.51. **
+mi | na'e | ke | sutra | cadzu | ke'e | klama | le | zarci  
+---|---|---|---|---|---|---|---|---  
+mi | na'e | (ke | sutra | cadzu | ke'e) | klama | le | zarci  
+I | other-than | ( | quickly | walkingly | ) | go-to | the | market.  
+  
+
+In Example 15.51, only the _sutra cadzu_ tanru is negated, so the speaker is indeed going to the market, but not by walking quickly.
+Negations made with __na'e__ or _na'eke_ also include within their scope any sumti attached to the brivla or tanru with __be__ or __bei__. Such attached sumti are considered part of the brivla or tanru:
+**Example 15.52. **
+mi | na'e | ke | sutra | cadzu | be | le | mi | birka  
+---|---|---|---|---|---|---|---|---  
+I | other-than | ( | quickly | walking | on | the | of-me | arms-ly  
+ke'e | klama | le | zarci  
+---|---|---|---  
+) | go-to | the | market.  
+  
+
+Note that Example 15.53 and Example 15.54 do not express the same thing:
+**Example 15.53. **
+mi | na'e | ke | sutra | cadzu | [ke'e] | lemi | birka  
+---|---|---|---|---|---|---|---  
+mi | na'e | (ke | sutra | cadzu | [ke'e]) | lemi | birka  
+I | other-than | ( | quickly | walk-on | ) | my | arms.  
+  
+
+**Example 15.54. **
+mi | na'e | ke | sutra | cadzu | be | lemi | birka | [ke'e]  
+---|---|---|---|---|---|---|---|---  
+mi | na'e | (ke | sutra | cadzu | be | lemi | birka | [ke'e])  
+I | other-than | ( | quickly | walk | on | my | arms | ).  
+  
+
+The translations show that the negation in Example 15.53 is more restricted in scope; i.e. less of the sentence is negated with respect to x1 (__mi__).
+Logical scope being an important factor in Lojban's claims to be unambiguous, let us indicate the relative precedence of __na'e__ as an operator. Grouping with __ke__ and __ke'e__ , of course, has an overt scope, which is its advantage. __na'e__ is very close binding to its brivla. Internal binding of tanru, with __bo__ , is not as tightly bound as __na'e__. __co__ , the tanru inversion operator has a scope that is longer than all other tanru constructs.
+In short, __na'e__ and _na'eke_ define a type of negation, which is shorter in scope than bridi negation, and which affects all or part of a selbri. The result of __na'e__ negation remains an assertion of some specific truth and not merely a denial of another claim.
+The similarity becomes striking when it is noticed that the rafsi _-nal-_ , representing __na'e__ when a tanru is condensed into a lujvo, forms an exact parallel to the English usage of _non-_. Turning a series of related negations into lujvo gives:
+**Example 15.55. **
+  * na'e klama becomes nalkla
+  * na'e cadzu klama becomes naldzukla
+  * na'e sutra cadzu klama becomes nalsu'adzukla
+  * nake sutra cadzu ke'e klama becomes nalsu'adzuke'ekla
+
+
+  
+
+Note: _-kem-_ is the rafsi for __ke__ , but it is omitted in the final lujvo as superfluous – __ke'e__ is its own rafsi, and its inclusion in the lujvo implies a __ke__ after the _-nal-_ , since it needs to close something; only a __ke__ immediately after the negation would make the __ke'e__ meaningful in the tanru expressed in this lujvo.
+In a lujvo, it is probably clearest to translate _-nal-_ as “non-”, to match the English combining forms, except when the __na'e__ has single word scope and English uses “un-” or “im-” to negate that single word. Translation style should determine the use of “other than”, “non-”, or another negator for __na'e__ in tanru; the translator must render the Lojban into English so it is clear in context. Let's go back to our simplest example:
+**Example 15.56. **
+mi | na'e | klama | le | zarci  
+---|---|---|---|---  
+I | other-than | (go-to) | the | market.  
+I | not | go-to | the | market.  
+  
+
+**Example 15.57. **
+mi | nalkla | le | zarci  
+---|---|---|---  
+I | am-a-non-go-er-to | the | market.  
+  
+
+Note that to compare with the English translation form using “non-”, we've translated the Lojban as if the selbri were a noun. Since Lojban __klama__ is indifferently a noun, verb, or adjective, the difference is purely a translation change, not a true change in meaning. The English difference seems significant, though, due to the strongly different English grammatical forms and the ambiguity of English negation.
+Consider the following highly problematic sentence:
+**Example 15.58. **
+lo | ca | nolraitru  
+---|---|---  
+An-actual | currently | noblest-governor  
+be | le | fasygu'e | cu | krecau  
+---|---|---|---|---  
+of | the | French-country |  | is-hair-without.  
+The current King of France is bald.  
+---  
+  
+
+The selbri __krecau__ negates with __na'e__ as:
+**Example 15.59. **
+lo | ca | nolraitru  
+---|---|---  
+An-actual | currently | noblest-governor  
+be | le | fasygu'e | cu | na'e | krecau  
+---|---|---|---|---|---  
+of | the | French-country |  | is-other-than | hair-without.  
+The current King of France is other-than-bald.  
+---  
+  
+
+or, as a lujvo:
+**Example 15.60. **
+lo | ca | nolraitru  
+---|---|---  
+An-actual | currently | noblest-governor  
+be | le | fasygu'e | cu | nalkrecau  
+---|---|---|---|---  
+of | the | French-country |  | is-non-hair-without.  
+The current King of France is a non-bald-one.  
+---  
+  
+
+Example 15.59 and Example 15.60 express the predicate negation forms using a negation word (__na'e__) or rafsi (_-nal-_); yet they make positive assertions about the current King of France; ie., that he is other-than-bald or non-bald. This follows from the close binding of __na'e__ to the brivla. The lujvo form makes this overt by absorbing the negative marker into the word.
+Since there is no current King of France, it is false to say that he is bald, or non-bald, or to make any other affirmative claim about him. Any sentence about the current King of France containing only a selbri negation is as false as the sentence without the negation. No amount of selbri negations have any effect on the truth value of the sentence, which is invariably “false”, since no affirmative statement about the current King of France can be true. On the other hand, bridi negation does produce a truth:
+**Example 15.61. **
+lo | ca | nolraitru  
+---|---|---  
+An-actual | current | noblest-governor  
+be | le | fasygu'e | cu | na | krecau  
+---|---|---|---|---|---  
+of | the | French-country |  | [false] | is-hair-without.  
+It is false that the current King of France is bald.  
+---  
+  
+
+Note: __lo__ is used in these sentences because negation relates to truth conditions. To meaningfully talk about truth conditions in sentences carrying a description, it must be clear that the description actually applies to the referent. A sentence using __le__ instead of __lo__ can be true even if there is no current king of France, as long as the speaker and the listener agree to describe something as the current king of France. (See the explanations of __le__ in Section 6.2.)
+* * *
+Chapter 15. “No” Problems: On Lojban Negation  
+---  
+Prev: Section 15.3 |  Next: Section 15.5  
+---|---  
+Table of Contents
+Book Info Page
+
+
+Word: na'e
+Filename: section-scales-negation.txt
+TF-IDF Score: 0.17340268702866676
+Content: Chapter 15. “No” Problems: On Lojban Negation  
+---  
+Prev: Section 15.4 |  Next: Section 15.6  
+---|---  
+Table of Contents
+Book Info Page
+* * *
+## 15.5. Expressing scales in selbri negation
+In expressing a scalar negation, we can provide some indication of the scale, range, frame-of-reference, or universe of discourse that is being dealt with in an assertion. As stated in Section 15.4, the default is the set of plausible alternatives. Thus if we say:
+**Example 15.62. **
+le | stizu | cu | na'e | xunre  
+---|---|---|---|---  
+The | chair |  | is-a-non- | (red-thing).  
+  
+
+the pragmatic interpretation is that we mean a different color and not
+**Example 15.63. **
+le | stizu | cu | dzukla | be | le | zarci  
+---|---|---|---|---|---|---  
+The | chair |  | walkingly-goes | to | the | market.  
+  
+
+However, if we have reason to be more explicit (an obtuse or contrary listener, or simply an overt logical analysis), we can clarify that we are referring to a color by saying:
+**Example 15.64. **
+le | stizu | cu | na'e | xunre | skari  
+---|---|---|---|---|---  
+The | chair |  | (is-of-a-non | red) | color.  
+  
+
+We might also have reduced the pragmatic ambiguity by making the two trailing sumti values explicit (the “as perceived by” and “under conditions” places have been added to the place structure of __xunre__). But assume we have a really stubborn listener (an artificially semi-intelligent computer?) who will find a way to misinterpret Example 15.64 even with three specific sumti provided.
+In this case, we use a sumti tagged with the sumti tcita __ci'u__ , which translates roughly as “on a scale of X”, where `X` is the sumti. For maximal clarity, the tagged sumti can be bound into the negated selbri with __be__. To clarify Example 15.64, we might say:
+**Example 15.65. **
+le | stizu | cu | na'e | xunre | be | ci'u | loka | skari  
+---|---|---|---|---|---|---|---|---  
+The | chair |  | is-non | (red | on | a-scale-of | a-property | color-ness).  
+  
+
+We can alternately use the sumti tcita __teci'e__ , based on __ciste__ , which translates roughly as “of a system of components X”, for universes of discourse; in this case, we would express Example 15.64 as:
+**Example 15.66. **
+le | stizu | cu | na'e | xunre  
+---|---|---|---|---  
+The | chair |  | is-a-non | (red  
+be | teci'e | le | skari  
+---|---|---|---  
+of | a-system | with-components-the | colors)-thing.  
+  
+
+Other places of __ciste__ can be brought out using the grammar of selma'o BAI modals, allowing slightly different forms of expression, thus:
+**Example 15.67. **
+le | stizu | cu | na'e | xunre  
+---|---|---|---|---  
+The | chair |  | is-a-non | (red  
+be | ci'e | lo'i | skari  
+---|---|---|---  
+of | a-system | which-is-the-set-of | colors)-thing.  
+  
+
+The cmavo __le'a__ , also in selma'o BAI, can be used to specify a category:
+**Example 15.68. **
+le | stizu | cu | na'e | xunre  
+---|---|---|---|---  
+The | chair |  | is-a-non | (red  
+be | le'a | lo'i | skari  
+---|---|---|---  
+of | a-category | which-is-the-set-of | colors)-thing.  
+  
+
+which is minimally different in meaning from Example 15.67.
+The cmavo __na'e__ is not the only member of selma'o NAhE. If we want to express a scalar negation which is a polar opposite, we use the cmavo __to'e__ , which is grammatically equivalent to __na'e__ :
+**Example 15.69. **
+le | stizu | cu | to'e | xunre | be | ci'u | loka | skari  
+---|---|---|---|---|---|---|---|---  
+The | chair |  | is-a-(opposite-of | red) | on | scale | a-property-of | color-ness.  
+  
+
+Likewise, the midpoint of a scale can be expressed with the cmavo __no'e__ , also grammatically equivalent to __na'e__. Here are some parallel examples of __na'e__ , __no'e__ , and __to'e__ :
+**Example 15.70. **
+ta | melbi  
+---|---  
+That | is-beautiful.  
+  
+
+**Example 15.71. **
+ta | na'e | melbi  
+---|---|---  
+That | is-other-than | beautiful.  
+That is ugly [in one sense].  
+---  
+  
+
+**Example 15.72. **
+ta | no'e | melbi  
+---|---|---  
+That | is-neutrally | beautiful.  
+That is plain/ordinary-looking (neither ugly nor beautiful).  
+---  
+  
+
+**Example 15.73. **
+ta | to'e | melbi  
+---|---|---  
+That | is-opposite-of | beautiful.  
+That is ugly/very ugly/repulsive.  
+---  
+  
+
+The cmavo __to'e__ has the assigned rafsi _-tol-_ and _-to'e-_ ; the cmavo __no'e__ has the assigned rafsi _-nor-_ and _-no'e-_. The selbri in Example 15.71 through Example 15.73 could be replaced by the lujvo _nalmle_ , _normle_ , and __tolmle__ respectively.
+This large variety of scalar negations is provided because different scales have different properties. Some scales are open-ended in both directions: there is no “ultimately ugly” or “ultimately beautiful”. Other scales, like temperature, are open at one end and closed at the other: there is a minimum temperature (so-called “absolute zero”) but no maximum temperature. Still other scales are closed at both ends.
+Correspondingly, some selbri have no obvious __to'e__ \- what is the opposite of a dog? – while others have more than one, and need __ci'u__ to specify which opposite is meant.
+* * *
+Chapter 15. “No” Problems: On Lojban Negation  
+---  
+Prev: Section 15.4 |  Next: Section 15.6  
+---|---  
+Table of Contents
+Book Info Page
+
+
+Word: lo
+Filename: section-keha.txt
+TF-IDF Score: 0.08139590689754461
+Content: Chapter 7. Brevity Is The Soul Of Language: Pro-sumti And Pro-bridi  
+---  
+Prev: Section 7.9 |  Next: Section 7.11  
+---|---  
+Table of Contents
+Book Info Page
+* * *
+## 7.10. Relativized pro-sumti: _ke'a_
+The following cmavo are discussed in this section:
+ke'a |  KOhA |  relativized sumti  
+---|---|---  
+This pro-sumti is used in relative clauses (explained in Chapter 8) to indicate how the sumti being relativized fits within the clause. For example:
+**Example 7.69. **
+mi | catlu | lo | mlatu | poi | [zo'e]  
+---|---|---|---|---|---  
+I | see | a | cat | such-that | something-unspecified  
+zbasu | ke'a |  | lei | slasi  
+---|---|---|---|---  
+makes | the-thing-being-relativized-[the-cat] | from | some-mass-of | plastic.  
+I see a cat made of plastic.  
+---  
+  
+
+If __ke'a__ were omitted from Example 7.69, it might be confused with:
+**Example 7.70. **
+mi | catlu | lo | mlatu | poi  
+---|---|---|---|---  
+I | see | a | cat | such-that  
+[ke'a] | zbasu | lei | slasi  
+---|---|---|---  
+the-thing-being-relativized-[the-cat] | makes | a-mass-of | plastic  
+I see a cat that makes plastic.  
+---  
+  
+
+The anaphora cmavo __ri__ cannot be used in place of __ke'a__ in Example 7.69 and Example 7.70, because the relativized sumti is not yet complete when the __ke'a__ appears.
+Note that __ke'a__ is used only with relative clauses, and not with other embedded bridi such as abstract descriptions. In the case of relative clauses within relative clauses, __ke'a__ may be subscripted to make the difference clear (see Section 8.10).
+* * *
+Chapter 7. Brevity Is The Soul Of Language: Pro-sumti And Pro-bridi  
+---  
+Prev: Section 7.9 |  Next: Section 7.11  
+---|---  
+Table of Contents
+Book Info Page
+
+
+Word: lo
+Filename: section-multiple-compound-bridi.txt
+TF-IDF Score: 0.07964835163215547
+Content: Chapter 14. If Wishes Were Horses: The Lojban Connective System  
+---  
+Prev: Section 14.9 |  Next: Section 14.11  
+---|---  
+Table of Contents
+Book Info Page
+* * *
+## 14.10. Multiple compound bridi
+Giheks can be combined with __bo__ in the same way as eks:
+**Example 14.60. **
+mi | nelci | la | djan. | gi'e | nelci | la | martas. | gi'abo | nelci | la | meris.  
+---|---|---|---|---|---|---|---|---|---|---|---  
+I like John and ( like Martha or like Mary ).  
+---  
+  
+
+is equivalent in meaning to Example 14.39 and Example 14.40. Likewise, __ke__ … __ke'e__ grouping can be used after giheks:
+**Example 14.61. **
+mi | dzukla | le | zarci  
+---|---|---|---  
+I | walk-to | the | market  
+gi'e | dzukla | le | zdani  
+---|---|---|---  
+and | walk-to | the | house,  
+gi'a | ke | dzukla | le | ckule  
+---|---|---|---|---  
+or | ( | walk-to | the | school  
+gi'e | dzukla | le | briju | [ke'e]  
+---|---|---|---|---  
+and | walk-to | the | office. | )  
+  
+
+is the gihek version of Example 14.47. The same rule about using __ke__ … __ke'e__ bracketing only just after a connective applies to bridi-tails as to sumti, so the first two bridi-tails in Example 14.61 cannot be explicitly grouped; implicit left-grouping suffices to associate them.
+Each of the pairs of bridi-tails joined by multiple giheks can have its own set of tail-terms:
+**Example 14.62. **
+| mi | dejni | lo | rupnu | la | djan.  
+---|---|---|---|---|---|---  
+[If] | I | owe | some | currency-units | to-that-named | John,  
+.inaja | mi | dunda | le | cukta | la | djan.  
+---|---|---|---|---|---|---  
+then | I | give | the | book | to-that-named | John  
+.ijabo | mi | lebna | le | cukta | la | djan.  
+---|---|---|---|---|---|---  
+or | I | take | the | book | from-that-named | John.  
+  
+
+is equivalent in meaning to:
+**Example 14.63. **
+| mi | dejni | lo | rupnu | nagi'a | dunda  
+---|---|---|---|---|---|---  
+[If] | I | owe | some | currency-units | then | (give  
+gi'abo | lebna | vau | le | cukta | vau | la | djan.  
+---|---|---|---|---|---|---|---  
+or | take) |  | a | book |  | to/from-that-named | John.  
+  
+
+The literal English translation in Example 14.63 is almost unintelligible, but the Lojban is perfectly grammatical. __mi__ fills the x1 place of all three selbri; _lo rupnu_ is the x2 of __dejni__ , whereas _le cukta_ is a tail-term shared between __dunda__ and __lebna__ ; _la djan._ is a tail-term shared by __dejni__ and by _dunda gi'abo lebna_. In this case, greater clarity is probably achieved by moving _la djan._ to the beginning of the sentence, as in Example 14.53:
+**Example 14.64. **
+fi | la | djan. |  | fa | mi | dejni | lo | rupnu  
+---|---|---|---|---|---|---|---|---  
+To/from | that-named | John, | [if] |  | I | owe | some | currency-units  
+nagi'a |  | dunda | gi'abo | lebna | vau | le | cukta  
+---|---|---|---|---|---|---|---  
+then | [I] | give | or | take |  | the | book.  
+  
+
+Finally, what about forethought logical connection of bridi-tails? There is no direct mechanism for the purpose. Instead, Lojban grammar allows a pair of forethought-connected sentences to function as a single bridi-tail, and of course the sentences need not have terms before their selbri. For example:
+**Example 14.65. **
+mi | ge | klama | le | zarci | gi | nelci | la | djan.  
+---|---|---|---|---|---|---|---|---  
+I | both | go-to | the | market | and | like | that-named | John.  
+  
+
+is equivalent in meaning to Example 14.50.
+Of course, either of the connected sentences may contain giheks:
+**Example 14.66. **
+mi | ge | klama | le | zarci | gi'e | dzukla | le | zdani  
+---|---|---|---|---|---|---|---|---  
+I | both | (go | to-the | market | and | walk | to-the | house)  
+gi | nelci | la | djan.  
+---|---|---|---  
+and | like | that-named | John.  
+  
+
+The entire gek-connected sentence pair may be negated as a whole by prefixing __na__ :
+**Example 14.67. **
+| mi | na | ge | klama | le | zarci | gi | dzukla | le | zdani  
+---|---|---|---|---|---|---|---|---|---|---  
+[False!] | I |  | both | go-to | the | market | and | walk-to | the | house.  
+  
+
+Since a pair of sentences joined by geks is the equivalent of a bridi-tail, it may be followed by tail terms. The forethought equivalent of Example 14.54 is:
+**Example 14.68. **
+mi | ge | dunda | le | cukta  
+---|---|---|---|---  
+I | both | (give | the | book)  
+gi | lebna | lo | rupnu | vau | do  
+---|---|---|---|---|---  
+and | (take | some | currency-units | ) | to/from-you.  
+  
+
+Here is a pair of gek-connected observatives, a forethought equivalent of Example 14.57:
+**Example 14.69. **
+ge | klama | le | zarci | gi | dzukla | le | briju  
+---|---|---|---|---|---|---|---  
+Both | a-goer | to-the | market | and | a-walker | to-the | office.  
+  
+
+Finally, here is an example of gek-connected sentences with both shared and unshared terms before their selbri:
+**Example 14.70. **
+mi | gonai | le | zarci | cu | klama | gi | le | bisli | cu | dansu  
+---|---|---|---|---|---|---|---|---|---|---  
+I | either-but-not-both | to-the | office |  | go | or | on-the | ice |  | dance.  
+I either go to the office or dance on the ice (but not both).  
+---  
+  
+
+* * *
+Chapter 14. If Wishes Were Horses: The Lojban Connective System  
+---  
+Prev: Section 14.9 |  Next: Section 14.11  
+---|---  
+Table of Contents
+Book Info Page
+
+
+Word: kanro
+Filename: section-basic-questions.txt
+TF-IDF Score: 0.12074450152727419
+Content: Chapter 2. A Quick Tour of Lojban Grammar, With Diagrams  
+---  
+Prev: Section 2.14 |  Next: Section 2.16  
+---|---  
+Table of Contents
+Book Info Page
+* * *
+## 2.15. Questions
+There are many kinds of questions in Lojban: full explanations appear in Section 19.5 and in various other chapters throughout the book. In this chapter, we will introduce three kinds: sumti questions, selbri questions, and yes/no questions.
+The cmavo __ma__ is used to create a sumti question: it indicates that the speaker wishes to know the sumti which should be placed at the location of the __ma__ to make the bridi true. It can be translated as “Who?” or “What?” in most cases, but also serves for “When?”, “Where?”, and “Why?” when used in sumti places that express time, location, or cause. For example:
+**Example 2.64. **
+ma |  tavla |  do |  mi  
+---|---|---|---  
+Who? |  talks |  to-you |  about-me.  
+Who is talking to you about me?  
+---  
+  
+
+The listener can reply by simply stating a sumti:
+**Example 2.65. **
+la djan.  
+---  
+John (is talking to you about me).  
+---  
+  
+
+Like __ko__ , __ma__ can occur in any position where a sumti is allowed, not just in the first position:
+**Example 2.66. **
+do |  [cu] |  tavla |  ma  
+---|---|---|---  
+You |  - |  talk |  to what/whom?  
+  
+
+A __ma__ can also appear in multiple sumti positions in one sentence, in effect asking several questions at once.
+**Example 2.67. **
+ma |  [cu] |  tavla |  ma  
+---|---|---|---  
+What/Who |  - |  talks |  to what/whom?  
+  
+
+The two separate __ma__ positions ask two separate questions, and can therefore be answered with different values in each sumti place.
+The cmavo __mo__ is the selbri analogue of __ma__. It asks the respondent to provide a selbri that would be a true relation if inserted in place of the __mo__ :
+**Example 2.68. **
+do |  [cu] |  mo  
+---|---|---  
+You |  - |  are-what/do-what?  
+  
+
+A __mo__ may be used anywhere a brivla or other selbri might. Keep this in mind for later examples. Unfortunately, by itself, __mo__ is a very non-specific question. The response to the question in Example 2.68 could be:
+**Example 2.69. **
+mi |  [cu] |  melbi  
+---|---|---  
+I am beautiful.  
+---  
+  
+
+or:
+**Example 2.70. **
+mi |  [cu] |  tavla  
+---|---|---  
+I talk.  
+---  
+  
+
+Clearly, __mo__ requires some cooperation between the speaker and the respondent to ensure that the right question is being answered. If context doesn't make the question specific enough, the speaker must ask the question more specifically using a more complex construction such as a tanru (see Section 2.9).
+It is perfectly permissible for the respondent to fill in other unspecified places in responding to a __mo__ question. Thus, the respondent in Example 2.70 could have also specified an audience, a topic, and/or a language in the response.
+Finally, we must consider questions that can be answered “Yes” or “No”, such as
+**Example 2.71. **
+Are you talking to me?
+  
+
+Like all yes-or-no questions in English, Example 2.71 may be reformulated as
+**Example 2.72. **
+Is it true that you are talking to me?
+  
+
+In Lojban we have a word that asks precisely that question in precisely the same way. The cmavo __xu__ , when placed in front of a bridi, asks whether that bridi is true as stated. So
+**Example 2.73. **
+xu |  do |  tavla |  mi  
+---|---|---|---  
+Is-it-true-that |  you |  are-talking |  to-me?  
+  
+
+is the Lojban translation of Example 2.71.
+The answer “Yes” may be given by simply restating the bridi without the __xu__ question word. Lojban has a shorthand for doing this with the word __go'i__ , mentioned in Section 2.11. Instead of a negative answer, the bridi may be restated in such a way as to make it true. If this can be done by substituting sumti, it may be done with __go'i__ as well. For example:
+**Example 2.74. **
+xu |  do |  kanro  
+---|---|---  
+Are you healthy?  
+---  
+  
+
+can be answered with
+**Example 2.75. **
+mi |  kanro  
+---|---  
+I am healthy.  
+---  
+  
+
+or
+**Example 2.76. **
+go'i  
+---  
+I am healthy.  
+---  
+  
+
+(Note that __do__ to the questioner is __mi__ to the respondent.) 
+or
+**Example 2.77. **
+le tavla |  cu |  kanro  
+---|---|---  
+The talker is healthy.  
+---  
+  
+
+or
+**Example 2.78. **
+le tavla |  cu |  go'i  
+---|---|---  
+The talker is healthy.  
+---  
+  
+
+A general negative answer may be given by _na go'i_. __na__ may be placed before any selbri (but after the __cu__). It is equivalent to stating “It is not true that ...” before the bridi. It does not imply that anything else is true or untrue, only that that specific bridi is not true. More details on negative statements are available in Chapter 15.
+* * *
+Chapter 2. A Quick Tour of Lojban Grammar, With Diagrams  
+---  
+Prev: Section 2.14 |  Next: Section 2.16  
+---|---  
+Table of Contents
+Book Info Page
+
+
+Word: na
+Filename: section-bridi-negation-tenses.txt
+TF-IDF Score: 0.22685706301209047
+Content: Chapter 5. “Pretty Little Girls' School”: The Structure Of Lojban selbri  
+---  
+Prev: Section 5.12 |  Next: Section 5.14  
+---|---  
+Table of Contents
+Book Info Page
+* * *
+## 5.13. Tenses and bridi negation
+A bridi can have cmavo associated with it which specify the time, place, or mode of action. For example, in
+**Example 5.127. **
+mi | pu | klama | le | zarci  
+---|---|---|---|---  
+I | [past] | go-to | the | market.  
+I went to the market.  
+---  
+  
+
+the cmavo __pu__ specifies that the action of the speaker going to the market takes place in the past. Tenses are explained in full detail in Chapter 10. Tense is semantically a property of the entire bridi; however, the usual syntax for tenses attaches them at the front of the selbri, as in Example 5.127. There are alternative ways of expressing tense information as well. Modals, which are explained in Chapter 9, behave in the same way as tenses.
+Similarly, a bridi may have the particle __na__ (of selma'o NA) attached to the beginning of the selbri to negate the bridi. A negated bridi expresses what is false without saying anything about what is true. Do not confuse this usage with the scalar negation of Section 5.12. For example:
+**Example 5.128. **
+la | djonz. | na | pamoi | cusku  
+---|---|---|---|---  
+That-named | Jones | (Not!) | is-the-first | speaker  
+It is not true that Jones is the first speaker.  
+---  
+Jones isn't the first speaker.  
+  
+
+Jones may be the second speaker, or not a speaker at all; Example 5.128 doesn't say. There are other ways of expressing bridi negation as well; the topic is explained fully in Chapter 15.
+Various combinations of tense and bridi negation cmavo are permitted. If both are expressed, either order is permissible with no change in meaning:
+**Example 5.129. **
+mi | na | pu | klama | le | zarci  
+---|---|---|---|---|---  
+It is false that I went to the market.  
+---  
+I didn't go to the market.  
+  
+
+It is also possible to have more than one __na__ , in which case pairs of __na__ cmavo cancel out:
+**Example 5.130. **
+mi | na | na | klama | le | zarci  
+---|---|---|---|---|---  
+It is false that it is false that I go to the market.  
+---  
+I go to the market.  
+  
+
+It is even possible, though somewhat pointless, to have multiple __na__ cmavo and tense cmavo mixed together, subject to the limitation that two adjacent tense cmavo will be understood as a compound tense, and must fit the grammar of tenses as explained in Chapter 10.
+**Example 5.131. **
+mi | na | pu | na | ca | klama | le | zarci  
+---|---|---|---|---|---|---|---  
+I | [not] | [past] | [not] | [present] | go-to | the | market  
+It is not the case that in the past it was not the case that in the present I went to the market.  
+---  
+I didn't not go to the market.  
+I went to the market.  
+  
+
+Tense, modal, and negation cmavo can appear only at the beginning of the selbri. They cannot be embedded within it.
+* * *
+Chapter 5. “Pretty Little Girls' School”: The Structure Of Lojban selbri  
+---  
+Prev: Section 5.12 |  Next: Section 5.14  
+---|---  
+Table of Contents
+Book Info Page
+
+
+Word: na
+Filename: section-bridi-negation.txt
+TF-IDF Score: 0.1615671532630308
+Content: Chapter 15. “No” Problems: On Lojban Negation  
+---  
+Prev: Chapter 15 |  Next: Section 15.3  
+---|---  
+Table of Contents
+Book Info Page
+* * *
+## 15.2. bridi negation
+In discussing Lojban negation, we will call the form of logical negation that simply denies the truth of a statement “bridi negation”. Using bridi negation, we can say the equivalent of “I haven't stopped beating my wife” without implying that I ever started, nor even that I have a wife, meaning simply “It isn't true that I have stopped beating my wife.” Since Lojban uses bridi as smaller components of complex sentences, bridi negation is permitted in these components as well at the sentence level.
+For the bridi negation of a sentence to be true, the sentence being negated must be false. A major use of bridi negation is in making a negative response to a yes/no question; such responses are usually contradictory, denying the truth of the entire sentence. A negative answer to
+**Example 15.11. **
+Did you go to the store?
+  
+
+is taken as a negation of the entire sentence, equivalent to
+**Example 15.12. **
+No, I didn't go to the store.
+  
+
+The most important rule about bridi negation is that if a bridi is true, its negation is false, and vice versa.
+The simplest way to express a bridi negation is to use the cmavo __na__ of selma'o NA before the selbri of the affirmative form of the bridi (but after the __cu__ , if there is one):
+**Example 15.13. **
+mi | klama | le | zarci  
+---|---|---|---  
+I | go-to | the | store.  
+  
+
+when negated becomes:
+**Example 15.14. **
+mi | na | klama | le | zarci  
+---|---|---|---|---  
+I | [false] | go-to | the | store.  
+  
+
+Note that we have used a special convention to show in the English that a bridi negation is present. We would like to use the word “not”, because this highlights the naturalness of putting the negation marker just before the selbri, and makes the form easier to learn. But there is a major difference between Lojban's bridi negation with __na__ and natural language negation with “not”. In English, the word “not” can apply to a single word, to a phrase, to an English predicate, or to the entire sentence. In addition, “not” may indicate either contradictory negation or another form of negation, depending on the sentence. Lojban's internal bridi negation, on the other hand, always applies to an entire bridi, and is always a contradictory negation; that is, it contradicts the claim of the whole bridi.
+Because of the ambiguity of English “not”, we will use “[false]” in the translation of Lojban examples to remind the reader that we are expressing a contradictory negation. Here are more examples of bridi negation:
+**Example 15.15. **
+mi | [cu] | na | ca | klama | le | zarci  
+---|---|---|---|---|---|---  
+I |  | [false] | now | am-a-go-er-to | the | market.  
+I am not going to the market now.  
+---  
+  
+
+**Example 15.16. **
+lo | ca | nolraitru | be  
+---|---|---|---  
+The-actual | present | noblest-governor | of  
+le | fasygu'e | cu | na | krecau  
+---|---|---|---|---  
+the | French-country |  | [false] | is-hair-without.  
+The current king of France isn't bald.  
+---  
+  
+
+**Example 15.17. **
+ti | na | barda | prenu | co | melbi | mi  
+---|---|---|---|---|---|---  
+This | [false] | is-a-big | person | of-type | (beautiful-to | me).  
+This isn't a big person who is beautiful to me.  
+---  
+  
+
+Although there is this fundamental difference between Lojban's internal bridi negation and English negation, we note that in many cases, especially when there are no existential or quantified variables (the cmavo __da__ , __de__ , and __di__ of selma'o KOhA, explained in Chapter 16) in the bridi, you can indeed translate Lojban __na__ as “not” (or “isn't” or “doesn't”, as appropriate).
+The most important rule about bridi negation is that if a bridi is true, its negation is false, and vice versa.
+In Lojban, there are several structures that implicitly contain bridi, so that Lojban sentences may contain more than one occurrence of __na__. For example:
+**Example 15.18. **
+mi | na | gleki | le | nu  
+---|---|---|---|---  
+I | [false] | am-happy-about | the | event-of  
+na | klama | le | nu | dansu  
+---|---|---|---|---  
+([false] | going-to | the | event-of | dancing).  
+It is not the case that I am happy about it not being the case that I am going to the dance.  
+---  
+I am not happy about not going to the dance.  
+  
+
+In the previous example, we used internal negations in abstraction bridi; bridi negation may also be found in descriptions within sumti. For example:
+**Example 15.19. **
+mi | nelci | le | na | melbi  
+---|---|---|---|---  
+I | am-fond-of | the-one-described-as | ([false] | beautiful).  
+I am fond of the one who isn't beautiful.  
+---  
+  
+
+A more extreme (and more indefinite) example is:
+**Example 15.20. **
+mi | nelci | lo | na  
+---|---|---|---  
+I | am-fond-of | one-who-is | ([false]  
+ca | nolraitru | be | le | frasygu'e  
+---|---|---|---|---  
+the-current | king | of | the | French-country).  
+I am fond of one who isn't the current king of France.  
+---  
+  
+
+The claim of Example 15.20 could apply to anyone except a person who is fond of no one at all, since the relation within the description is false for everyone. You cannot readily express these situations in colloquial English.
+Negation with __na__ applies to an entire bridi, and not to just part of a selbri. Therefore, you won't likely have reason to put __na__ inside a tanru. In fact, the grammar currently does not allow you to do so (except in a lujvo and in elaborate constructs involving GUhA, the forethought connector for selbri). Any situation where you might want to do so can be expressed in a less-compressed non-tanru form. This grammatical restriction helps ensure that bridi negation is kept separate from other forms of negation.
+The grammar of __na__ allows multiple adjacent negations, which cancel out, as in normal logic:
+**Example 15.21. **
+ti | na | na | barda | prenu | co | melbi | mi  
+---|---|---|---|---|---|---|---  
+This | [false] | [false] | is-a-big | person | that | is-(beautiful-to | me).  
+  
+
+which is the same as:
+**Example 15.22. **
+ti | barda | prenu | co | melbi | mi  
+---|---|---|---|---|---  
+This | is-a-big | person | that | is-(beautiful-to | me).  
+  
+
+When a selbri is tagged with a tense or a modal, negation with __na__ is permitted in two positions: before or after the tag. No semantic difference between these forms has yet been defined, but this is not finally determined, since the interactions between tenses/modals and bridi negation have not been fully explored. In particular, it remains to be seen whether sentences using less familiar tenses, such as:
+**Example 15.23. **
+mi | [cu] | ta'e | klama | le | zarci  
+---|---|---|---|---|---  
+I |  | habitually | go-to | the | market.  
+  
+
+mean the same thing with __na__ before the __ta'e__ , as when the negation occurs afterwards; we'll let future, Lojban-speaking, logicians decide on how they relate to each other.
+A final caution on translating English negations into Lojban: if you translate the English literally, you'll get the wrong one. With English causal statements, and other statements with auxiliary clauses, this problem is more likely.
+Thus, if you translate the English:
+**Example 15.24. **
+I do not go to the market because the car is broken.
+  
+
+as:
+**Example 15.25. **
+mi | na | klama | le | zarci | ki'u  
+---|---|---|---|---|---  
+I | [false] | go-to | the | market | because-of  
+lenu | le | karce | cu | spofu  
+---|---|---|---|---  
+the-event-of | the | car |  | is-broken.  
+It is false that: I go to the market because the car is broken.  
+---  
+  
+
+you end up negating too much.
+Such mistranslations result from the ambiguity of English compounded by the messiness of natural language negation. A correct translation of the normal interpretation of Example 15.24 is:
+**Example 15.26. **
+le | nu | mi | na | klama | le | zarci | cu | se | krinu  
+---|---|---|---|---|---|---|---|---|---  
+The | event-of | (my | [false] | going-to | the | market) |  |  | is-justified-by  
+le | nu | le | karce | cu | spofu  
+---|---|---|---|---|---  
+the | event-of | (the | car |  | being-broken).  
+My not going to the market is because the car is broken.  
+---  
+  
+
+In Example 15.26, the negation is clearly confined to the event abstraction in the x1 sumti, and does not extend to the whole sentence. The English could also have been expressed by two separate sentences joined by a causal connective (which we'll not go into here).
+The problem is not confined to obvious causals. In the English:
+**Example 15.27. **
+I was not conscripted into the Army with the help of my uncle the Senator.
+  
+
+we do not intend the uncle's help to be part of the negation. We must thus move the negation into an event clause or use two separate sentences. The event-clause version would look like:
+**Example 15.28. **
+The event-of (my [false] being-conscripted-into the Army) was aided by my uncle the Senator.
+  
+
+It is possible that someone will want to incorporate bridi negations into lujvo. For this reason, the rafsi _-nar-_ has been reserved for __na__. However, before using this rafsi, make sure that you intend the contradictory bridi negation, and not the scalar negation described in Section 15.3, which will be much more common in tanru and lujvo.
+* * *
+Chapter 15. “No” Problems: On Lojban Negation  
+---  
+Prev: Chapter 15 |  Next: Section 15.3  
+---|---  
+Table of Contents
+Book Info Page
+
+
+Word: mutce
+Filename: section-complex-grouping.txt
+TF-IDF Score: 0.0394911306174898
+Content: Chapter 5. “Pretty Little Girls' School”: The Structure Of Lojban selbri  
+---  
+Prev: Section 5.3 |  Next: Section 5.5  
+---|---  
+Table of Contents
+Book Info Page
+* * *
+## 5.4. Complex tanru grouping
+If one element of a tanru can be another tanru, why not both elements?
+**Example 5.25. **
+do | mutce | bo | barda | gerku | bo | kavbu  
+---|---|---|---|---|---|---  
+You | are-a-(very | type-of | large) | (dog | type-of | capturer).  
+You are a very large dog-catcher.  
+---  
+  
+
+In Example 5.25, the selbri is a tanru with seltau _mutce bo barda_ and tertau _gerku bo kavbu_. It is worth emphasizing once again that this tanru has the same fundamental ambiguity as all other Lojban tanru: the sense in which the “dog type-of capturer” is said to be “very type-of large” is not precisely specified. Presumably it is his body which is large, but theoretically it could be one of his other properties.
+We will now justify the title of this chapter by exploring the ramifications of the phrase “pretty little girls' school”, an expansion of the tanru used in Section 5.3 to four brivla. (Although this example has been used in the Loglan Project almost since the beginning – it first appeared in Quine's book _Word and Object_ (1960) – it is actually a mediocre example because of the ambiguity of English “pretty”; it can mean “beautiful”, the sense intended here, or it can mean “very”. Lojban __melbi__ is not subject to this ambiguity: it means only “beautiful”.)
+Here are four ways to group this phrase:
+**Example 5.26. **
+ta | melbi |  | cmalu |  | nixli |  | ckule  
+---|---|---|---|---|---|---|---  
+That | is-a-((pretty | type-of | little) | type-of | girl) | type-of | school.  
+That is a school for girls who are beautifully small.  
+---  
+  
+
+**Example 5.27. **
+ta | melbi |  | cmalu | nixli | bo | ckule  
+---|---|---|---|---|---|---  
+That | is-a-(pretty | type-of | little) | (girl | type-of | school).  
+That is a girls' school which is beautifully small.  
+---  
+  
+
+**Example 5.28. **
+ta | melbi |  | cmalu | bo | nixli |  | ckule  
+---|---|---|---|---|---|---|---  
+That | is-a-(pretty | type-of | (little | type-of | girl)) | type-of | school.  
+That is a school for small girls who are beautiful.  
+---  
+  
+
+**Example 5.29. **
+ta | melbi |  | cmalu | bo | nixli | bo | ckule  
+---|---|---|---|---|---|---|---  
+That | is-a-pretty | type-of | (little | type-of | (girl | type-of | school)).  
+That is a small school for girls which is beautiful.  
+---  
+  
+
+Example 5.29 uses a construction which has not been seen before: _cmalu bo nixli bo ckule_ , with two consecutive uses of __bo__ between brivla. The rule for multiple __bo__ constructions is the opposite of the rule when no __bo__ is present at all: the last two are grouped together. Not surprisingly, this is called the “right-grouping rule”, and it is associated with every use of __bo__ in the language. Therefore,
+**Example 5.30. **
+ta | cmalu | bo | nixli | bo | ckule  
+---|---|---|---|---|---  
+That | is-a-little | type-of | (girl | type-of | school).  
+  
+
+means the same as Example 5.19, not Example 5.20. This rule may seem peculiar at first, but one of its consequences is that __bo__ is never necessary between the first two elements of any of the complex tanru presented so far: all of Example 5.26 through Example 5.29 could have __bo__ inserted between __melbi__ and __cmalu__ with no change in meaning.
+* * *
+Chapter 5. “Pretty Little Girls' School”: The Structure Of Lojban selbri  
+---  
+Prev: Section 5.3 |  Next: Section 5.5  
+---|---  
+Table of Contents
+Book Info Page
+
+
+Word: mutce
+Filename: section-sample-dialogue.txt
+TF-IDF Score: 0.016573037225647024
+Content: Chapter 13. Oooh! Arrgh! Ugh! Yecch! Attitudinal and Emotional Indicators  
+---  
+Prev: Section 13.14 |  Next: Section 13.16  
+---|---  
+Table of Contents
+Book Info Page
+* * *
+## 13.15. A sample dialogue
+The following dialogue in Lojban illustrates the uses of attitudinals and protocol vocatives in conversation. The phrases enclosed in _sei ... se'u_ indicate the speaker of each sentence.
+la | rik. | .e | la | .alis. | nerkla | le | kafybarja  
+---|---|---|---|---|---|---|---  
+That-name | Rick | and | that-named | Alice | in-go | to-the | coffee-bar.  
+Rick and Alice go into the coffee bar.  
+---  
+.i | sei | la | rik. | cusku | se'u  
+---|---|---|---|---|---  
+| [Comment] | that-named | Rick | says, | [end-comment]  
+ta'a | ro | zvati | be | ti  
+---|---|---|---|---  
+[Interrupt] | all | at |  | this-place,  
+mi | ba | za | speni | ti | .iu  
+---|---|---|---|---|---  
+I | [future] | [medium] | am-spouse-to | this-one | [love].  
+Rick said, “Sorry to break in, everybody. Pretty soon I'm getting married to my love here.”  
+---  
+.i | sei | la | djordj. | cusku | se'u  
+---|---|---|---|---|---  
+| [Comment] | that-named | George | says, | [end-comment]  
+.a'o | ko | gleki | doi | ma  
+---|---|---|---|---  
+[Hope] | [You-imperative] | are-happy, | O | [who?]  
+George said, “I hope you'll be happy, um, ...?”  
+---  
+.i | sei | la | pam. | cusku | se'u | pe'u | .alis.  
+---|---|---|---|---|---|---|---  
+| [Comment] | that-named | Pam | says, | [end-comment] | [Please] | Alice,  
+xu | mi | ba | terfriti | le | nunspenybi'o  
+---|---|---|---|---|---  
+[Is-it-true?] | I | [future] | receive-offer-of | the | event-of-spouse-becoming?  
+Pam said, “Please, Alice, am I going to be invited to the wedding?”  
+---  
+.i | sei | la | mark. | cusku | se'u  
+---|---|---|---|---|---  
+| [Comment] | that-named | Mark | says, | [end-comment]  
+coi | ba | za | speni  
+---|---|---|---  
+[Greetings] | [future] | [medium] | spouse(s),  
+a'o | le | re | do | lifri | le | ka | gleki  
+---|---|---|---|---|---|---|---  
+[Hope] | the | two | of-you | experience | the | property-of | being-happy.  
+Mark said, “Hello, spouses-to-be. I hope both of you will be very happy.”  
+---  
+.i | sei | la | rik. | cusku | se'u  
+---|---|---|---|---|---  
+| [Comment] | that-named | Rick | says, | [end-comment]  
+mi'e | .rik. | doi | terpreti  
+---|---|---|---  
+[I-am] | Rick, | O | questioners.  
+Rick said, “My name is Rick, for those of you who want to know.”  
+---  
+.i | sei | la | .alis. | cusku | se'u  
+---|---|---|---|---|---  
+| [Comment] | that-named | Alice | says, | [end-comment]  
+nu'e | .pam. | .o'e | ro'i | do | ba | zvati  
+---|---|---|---|---|---|---  
+[Promise-to] | Pam, | [closeness] | [emotional] | you | [future] | are-at.  
+Alice said, “I promise you'll be there, Pam honey.”  
+---  
+.i | sei | la | fred. | cusku | se'u  
+---|---|---|---|---|---  
+| [Comment] | that-named | Fred | says, | [end-comment]  
+.ui | nai | cai | ro'i | mi | ji'a  
+---|---|---|---|---|---  
+[Happy] | [not] | [maximal] | [emotional] | I | [additionally]  
+prami | la | .alis. | fe'o | .rik.  
+---|---|---|---|---  
+love | that-named | Alice. | [Over-and-out-to] | Rick.  
+“I love Alice too,” said Fred miserably. “Have a nice life, Rick.”  
+---  
+.i | la | fred. | cliva  
+---|---|---|---  
+| that-named | Fred | leaves.  
+And he left.  
+---  
+.i | sei | la | rik. | cusku | se'u  
+---|---|---|---|---|---  
+| [Comment] | that-named | Rick | says, | [end-comment]  
+fi'i | ro | zvati  
+---|---|---  
+[Welcome-to] | all | at-place,  
+ko | pinxe | pa | ckafi | fi'o | pleji | mi  
+---|---|---|---|---|---|---  
+[You-imperative] | drink | one | coffee | with | payer | me.  
+Rick said, raising his voice, “A cup of coffee for the house, on me.”  
+---  
+.i | sei | la | pam. | cusku | se'u  
+---|---|---|---|---|---  
+| [Comment] | that-named | Pam | says, | [end-comment]  
+be'e | selfu  
+---|---  
+[Request-to-speak-to] | server.  
+Pam said, “Waiter!”  
+---  
+.i | sei | le | selfu | cu | cusku | se'u | re'i  
+---|---|---|---|---|---|---|---  
+| [Comment] | the | server |  | says, | [end-comment] | [Ready-to-receive].  
+The waiter replied, “May I help you?”  
+---  
+.i | sei | la | pam. | cusku | se'u  
+---|---|---|---|---|---  
+| [Comment] | that-named | Pam | says, | [end-comment]  
+.e'o | ko | selfu | le | traji | xamgu | ckafi  
+---|---|---|---|---|---|---  
+[Petition] | [You-imperative] | serve | the | (superlatively | good) | coffee  
+le | ba | za | speni | fi'o | pleji | mi  
+---|---|---|---|---|---|---  
+to-the | [future] | [medium] | spouse | with | payer | me.  
+Pam said, “One Jamaica Blue for the lovebirds here, on my tab.”  
+---  
+.i | sei | le | selfu | cu | cusku | se'u | vi'o  
+---|---|---|---|---|---|---|---  
+| [Comment] | the | server |  | says, | [end-comment] | [Will-comply]  
+“Gotcha”, said the waiter.  
+---  
+.i | sei | la | rik. | cusku | se'u | ki'e | .pam.  
+---|---|---|---|---|---|---|---  
+| [Comment] | that-named | Rick | says, | [end-comment] | [Thanks] | Pam.  
+“Thanks, Pam”, said Rick.  
+---  
+.i | sei | la | pam. | cusku | se'u | je'e  
+---|---|---|---|---|---|---  
+| [Comment] | that-named | Pam | says, | [end-comment] | [Acknowledge].  
+“Sure”, said Pam.  
+---  
+.i | sei | la | djan. | cusku | se'u  
+---|---|---|---|---|---  
+| [Comment] | that-named | John | says, | [end-comment]  
+.y. | mi | .y. | mutce | spopa | .y. | le | nu | le | speni  
+---|---|---|---|---|---|---|---|---|---  
+[Uh] | I | [uh] | very | [nonexistent-gismu] | [uh] | the | event-of | the | spouse  
+si | .y. | ba | speni | .y. | .y. | su | .yyyyyy. | mu'o  
+---|---|---|---|---|---|---|---|---  
+[erase] | [uh] | [future] | spouse | [uh] | [uh] | [erase-all] | [uh] | [over]  
+John said, “I, er, a lotta, uh, marriage, upcoming marriage, .... Oh, forget it. Er, later.”  
+---  
+.i | sei | la | djordj. | cusku | se'u  
+---|---|---|---|---|---  
+| [Comment] | that-named | George | says, | [end-comment]  
+ke'o | .djan. | zo'o  
+---|---|---  
+[Repeat-O] | John | [humor].  
+“How's that again, John?” said George.  
+---  
+.i | sei | la | pam. | cusku | se'u  
+---|---|---|---|---|---  
+| [Comment] | that-named | Pam | says, | [end-comment]  
+ju'i | .djordj. | .e'unai | le | kabri | ba | zi | farlu  
+---|---|---|---|---|---|---|---  
+[Attention] | George, | [Warning] | the | cup | [future] | [short] | falls.  
+“George, watch out!” said Pam. “The cup's falling!”  
+---  
+.i | le | kabri | cu | je'a | farlu  
+---|---|---|---|---|---  
+| The | cup |  | indeed | falls.  
+The cup fell.  
+---  
+.i | sei | la | djan. | cusku | se'u  
+---|---|---|---|---|---  
+| [Comment] | that-named | John | says, | [end-comment]  
+e'o | doi | djordj. | zo'o | rapygau  
+---|---|---|---|---  
+[Petition] | o | George | [humor] | repeat-cause.  
+John said, “Try that again, George!”  
+---  
+.i | sei | la | djordj. | cusku | se'u  
+---|---|---|---|---|---  
+| [Comment] | that-named | George | says, | [end-comment]  
+co'o | ro | zvati | pe | secau | la | djan. | ga'i  
+---|---|---|---|---|---|---|---  
+[Partings] | all | at-place | which-are | without | that-named | John | [superiority]  
+“Goodbye to all of you,” said George sneeringly, “except John.”  
+---  
+.i | la | djordj. | cliva  
+---|---|---|---  
+| that-named | George | leaves.  
+George left.  
+---  
+* * *
+Chapter 13. Oooh! Arrgh! Ugh! Yecch! Attitudinal and Emotional Indicators  
+---  
+Prev: Section 13.14 |  Next: Section 13.16  
+---|---  
+Table of Contents
+Book Info Page
+
+
+Word: do
+Filename: section-tenses-vs-modals.txt
+TF-IDF Score: 0.15431566481022332
+Content: Chapter 10. Imaginary Journeys: The Lojban Space/Time Tense System  
+---  
+Prev: Section 10.22 |  Next: Section 10.24  
+---|---  
+Table of Contents
+Book Info Page
+* * *
+## 10.23. Tenses versus modals
+Grammatically, every use of tenses seen so far is exactly paralleled by some use of modals as explained in Chapter 9. Modals and tenses alike can be followed by sumti, can appear before the selbri, can be used in pure and mixed connections, can participate in JAI conversions. The parallelism is perfect. However, there is a deep difference in the semantics of tense constructs and modal constructs, grounded in historical differences between the two forms. Originally, modals and tenses were utterly different things in earlier versions of Loglan; only in Lojban have they become grammatically interchangeable. And even now, differences in semantics continue to be maintained.
+The core distinction is that whereas the modal bridi
+**Example 10.171. **
+mi | nelci | do | mu'i | le | nu | do | nelci | mi  
+---|---|---|---|---|---|---|---|---  
+I | like | you | with-motivation | the | event-of | you | like | me.  
+I like you because you like me.  
+---  
+  
+
+places the _le nu_ sumti in the x1 place of the gismu __mukti__ (which underlies the modal __mu'i__), namely the motivating event, the tensed bridi
+**Example 10.172. **
+mi | nelci | do | ba | le | nu | do | nelci | mi  
+---|---|---|---|---|---|---|---|---  
+I | like | you | after | the | event-of | you | like | me.  
+I like you after you like me.  
+---  
+  
+
+places the _le nu_ sumti in the x2 place of the gismu __balvi__ (which underlies the tense __ba__), namely the point of reference for the future tense. Paraphrases of Example 10.171 and Example 10.172, employing the brivla __mukti__ and __balvi__ explicitly, would be:
+**Example 10.173. **
+le | nu | do | nelci | mi | cu | mukti | le | nu  
+---|---|---|---|---|---|---|---|---  
+The | event-of | you | like | me |  | motivates | the | event-of  
+mi | nelci | do  
+---|---|---  
+I | like | you.  
+Your liking me is the motive for my liking you.  
+---  
+  
+
+and
+**Example 10.174. **
+le | nu | mi | nelci | do | cu | balvi | le | nu  
+---|---|---|---|---|---|---|---|---  
+The | event-of | I | like | you |  | is-after | the | event-of  
+do | nelci | mi  
+---|---|---  
+you | like | me.  
+My liking you follows (in time) your liking me.  
+---  
+  
+
+(Note that the paraphrase is not perfect due to the difference in what is claimed; Example 10.173 and Example 10.174 claim only the causal and temporal relationships between the events, not the existence of the events themselves.)
+As a result, the afterthought sentence-connective forms of Example 10.171 and Example 10.172 are, respectively:
+**Example 10.175. **
+mi | nelci | do | .imu'ibo | do | nelci | mi  
+---|---|---|---|---|---|---  
+I | like | you. | [That-is] Because | you | like | me.  
+  
+
+**Example 10.176. **
+do | nelci | mi | .ibabo | mi | nelci | do  
+---|---|---|---|---|---|---  
+You | like | me. | Afterward, | I | like | you.  
+  
+
+In Example 10.175, the order of the two bridi _mi nelci do_ and _do nelci mi_ is the same as in Example 10.171. In Example 10.176, however, the order is reversed: the origin point _do nelci mi_ physically appears before the future-time event _mi nelci do_. In both cases, the bridi characterizing the event in the x2 place appears before the bridi characterizing the event in the x1 place of __mukti__ or __balvi__.
+In forethought connections, however, the asymmetry between modals and tenses is not found. The forethought equivalents of Example 10.175 and Example 10.176 are
+**Example 10.177. **
+mu'igi | do | nelci | mi | gi | mi | nelci | do  
+---|---|---|---|---|---|---|---  
+Because | you | like | me | , | I | like | you.  
+  
+
+and
+**Example 10.178. **
+bagi | do | nelci | mi | gi | mi | nelci | do  
+---|---|---|---|---|---|---|---  
+After | you | like | me | , | I | like | you.  
+  
+
+respectively.
+The following modal sentence schemata (where X and Y represent sentences) all have the same meaning:
+X .i BAI bo Y   
+---  
+BAI gi Y gi X   
+X BAI le nu Y   
+whereas the following tensed sentence schemata also have the same meaning:
+X .i TENSE bo Y   
+---  
+TENSE gi X gi Y   
+Y TENSE le nu X   
+neglecting the question of what is claimed. In the modal sentence schemata, the modal tag is always followed by Y, the sentence representing the event in the x1 place of the gismu that underlies the BAI. In the tensed sentences, no such simple rule exists.
+* * *
+Chapter 10. Imaginary Journeys: The Lojban Space/Time Tense System  
+---  
+Prev: Section 10.22 |  Next: Section 10.24  
+---|---  
+Table of Contents
+Book Info Page
+
+
+Word: do
+Filename: section-propositional-emotions.txt
+TF-IDF Score: 0.11478290337361756
+Content: Chapter 13. Oooh! Arrgh! Ugh! Yecch! Attitudinal and Emotional Indicators  
+---  
+Prev: Section 13.2 |  Next: Section 13.4  
+---|---  
+Table of Contents
+Book Info Page
+* * *
+## 13.3. Propositional attitude indicators
+As mentioned at the beginning of Section 13.2, attitudinals may be divided into two groups, the pure emotion indicators explained in that section, and a contrasting group which may be called the “propositional attitude indicators”. These indicators establish an internal, hypothetical world which the speaker is reacting to, distinct from the world as it really is. Thus we may be expressing our attitude towards “what the world would be like if ...”, or more directly stating our attitude towards making the potential world a reality.
+In general, the bridi paraphrases of pure emotions look (in English) something like “I'm going to the market, and I'm happy about it”. The emotion is present with the subject of the primary claim, but is logically independent of it. Propositional attitudes, though, look more like “I intend to go to the market”, where the main claim is logically subordinate to the intention: I am not claiming that I am actually going to the market, but merely that I intend to.
+There is no sharp distinction between attitudinals beginning with _a_ and those beginning with _e_ ; however, the original intent (not entirely realized due to the need to cram too many attitudes into too little space) was to make the members of the _a_ -series the purer, more attitudinal realizers of a potential world, while the members of the _e_ -series were more ambivalent or complex about the speaker's intention with regard to the predication. The relationship between the _a_ -series and the _e_ -series is similar to that between the _u_ -series and the _o_ -series, respectively. A few propositional attitude indicators overflowed into the _i_ -series as well.
+In fact, the entire distinction between pure emotions and propositional attitudes is itself a bit shaky: __u'u__ can be seen as a propositional attitude indicator meaning “I regret that ...”, and __a'e__ (discussed below) can be seen as a pure emotion meaning “I'm awake/aware”. The division of the attitudinals into pure-emotion and propositional-attitude classes in this chapter is mostly by way of explanation; it is not intended to permit firm rulings on specific points. Attitudinals are the part of Lojban most distant from the “logical language” aspect.
+Here is the list of propositional attitude indicators grouped by initial letter, starting with those beginning with _a_ :
+.a'a |  attentive |  inattentive |  avoiding  
+---|---|---|---  
+.a'e |  alertness |  |  exhaustion  
+.ai |  intent |  indecision |  refusal  
+.a'i |  effort |  no real effort |  repose  
+.a'o |  hope |  |  despair  
+.au |  desire |  indifference |  reluctance  
+.a'u |  interest |  no interest |  repulsion  
+Some examples (of a parental kind):
+**Example 13.25. **
+.a'a | do | zgana | le | veltivni  
+---|---|---|---|---  
+[attentive] | you | observe | the | television-receiver.  
+I'm noticing that you are watching the TV.  
+---  
+  
+
+**Example 13.26. **
+.a'enai | do | ranji | bacru  
+---|---|---|---  
+[exhaustion] | you | continuously | utter.  
+I'm worn out by your continuous talking.  
+---  
+  
+
+**Example 13.27. **
+.ai | mi | benji | do | le | ckana  
+---|---|---|---|---|---  
+[intent] | I | transfer | you | to-the | bed.  
+I'm putting you to bed.  
+---  
+  
+
+**Example 13.28. **
+.a'i | mi | ba | gasnu | le | nu | do | cikna | binxo  
+---|---|---|---|---|---|---|---|---  
+[effort] | I | [future] | am-the-actor-in | the | event-of | you | awake-ly | become.  
+It'll be hard for me to wake you up.  
+---  
+  
+
+**Example 13.29. **
+.a'o | mi | kanryze'a | ca | le | bavlamdei  
+---|---|---|---|---|---  
+[hope] | I | am-health-increased | at-time | the | future-adjacent-day.  
+I hope I feel better tomorrow!  
+---  
+  
+
+**Example 13.30. **
+.au | mi | sipna  
+---|---|---  
+[desire] | I | sleep.  
+I want to sleep.  
+---  
+  
+
+**Example 13.31. **
+.a'ucu'i | do | pante  
+---|---|---  
+[no-interest] | you | complain.  
+I have no interest in your complaints.  
+---  
+  
+
+(In a real-life situation, Example 13.25 through Example 13.31 would also be decorated by various pure emotion indicators, certainly including _.oicai_ , but probably also _.iucai_.)
+Splitting off the attitude into an indicator allows the regular bridi grammar to do what it does best: express the relationships between concepts that are intended, desired, hoped for, or whatever. Rephrasing these examples to express the attitude as the main selbri would make for unacceptably heavyweight grammar.
+Here are the propositional attitude indicators beginning with _e_ , which stand roughly in the relation to those beginning with _a_ as the pure-emotion indicators beginning with _o_ do to those beginning with _u_ \- they are more complex or difficult:
+.e'a |  permission |  |  prohibition  
+---|---|---|---  
+.e'e |  competence |  |  incompetence  
+.ei |  obligation |  |  freedom  
+.e'i |  constraint |  independence |  resistance to constraint  
+.e'o |  request |  |  negative request  
+.e'u |  suggestion |  no suggestion |  warning  
+More examples (after a good night's sleep):
+**Example 13.32. **
+.e'a | do | sazri | le | karce  
+---|---|---|---|---  
+[permission] | you | drive | the | car.  
+Sure, you can drive the car.  
+---  
+  
+
+**Example 13.33. **
+.e'e | mi | lifri | tu'a | do  
+---|---|---|---|---  
+[competence] | I | experience | something-related-to | you.  
+I feel up to dealing with you.  
+---  
+  
+
+**Example 13.34. **
+.ei | mi | tisygau | le | karce | ctilyvau  
+---|---|---|---|---|---  
+[obligation] | I | fill | the | car-type-of | petroleum-container.  
+I should fill the car's gas tank.  
+---  
+  
+
+**Example 13.35. **
+.e'o | ko | ko | kurji  
+---|---|---|---  
+[request] | you-imperative | of-you-imperative | take-care.  
+Please take care of yourself!  
+---  
+  
+
+**Example 13.36. **
+.e'u | do | klama | le | panka  
+---|---|---|---|---  
+[suggestion] | you | go | to-the | park.  
+I suggest going to the park.  
+---  
+  
+
+Finally, the propositional attitude indicators beginning with _i_ , which are the overflow from the other sets:
+.ia |  belief |  skepticism |  disbelief  
+---|---|---|---  
+.i'a |  acceptance |  |  blame  
+.ie |  agreement |  |  disagreement  
+.i'e |  approval |  non-approval |  disapproval  
+Still more examples (much, much later):
+**Example 13.37. **
+.ianai | do | pu | pensi | le | nu | tcica | mi  
+---|---|---|---|---|---|---|---  
+[disbelief] | you | [past] | think | the | event-of | deceiving | me.  
+I can't believe you thought you could fool me.  
+---  
+  
+
+**Example 13.38. **
+do | .i'anai | na | xruti | do | le | zdani  
+---|---|---|---|---|---|---  
+You | [blame] | did-not | return | you | to-the | house.  
+I blame you for not coming home.  
+---  
+  
+
+**Example 13.39. **
+.ie | mi | na | cusku | lu'e  
+---|---|---|---|---  
+[agreement] | I | did-not | express | a-symbol-for  
+le | tcika | be | le | nu | xruti  
+---|---|---|---|---|---  
+the | time-of-day | of | the | event-of | return.  
+It's true I didn't tell you when to come back.  
+---  
+  
+
+**Example 13.40. **
+.i'enai | do | .i'e | zukte  
+---|---|---|---  
+[disapproval] | you | [approval] | act.  
+I don't approve of what you did, but I approve of you.  
+---  
+  
+
+Example 13.40 illustrates the use of a propositional attitude indicator, __i'e__ , in both the usual sense (at the beginning of the bridi) and as a pure emotion (attached to __do__). The event expressed by the main bridi is disapproved of by the speaker, but the referent of the sumti in the x1 place (namely the listener) is approved of.
+To indicate that an attitudinal discussed in this section is not meant to indicate a propositional attitude, the simplest expedient is to split the attitudinal off into a separate sentence. Thus, a version of Example 13.32 which actually claimed that the listener was or would be driving the car might be:
+**Example 13.41. **
+do | sazri | le | karce | .i | .e'a  
+---|---|---|---|---|---  
+You | drive | the | car. |  | [Permission].  
+You're driving (or will drive) the car, and that's fine.  
+---  
+  
+
+* * *
+Chapter 13. Oooh! Arrgh! Ugh! Yecch! Attitudinal and Emotional Indicators  
+---  
+Prev: Section 13.2 |  Next: Section 13.4  
+---|---  
+Table of Contents
+Book Info Page
