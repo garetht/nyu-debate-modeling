@@ -30,29 +30,38 @@ def adjust_preference_values(input_dir, undo=False):
                         rejected_pref = supplemental["rejected_responses"][0].get("preference")
 
                         if chosen_pref is not None and rejected_pref is not None:
+                            # Determine the adjustment direction
+                            higher_pref, lower_pref = (chosen_pref, rejected_pref) if chosen_pref > rejected_pref else (rejected_pref, chosen_pref)
+                            
                             if undo:
-                                # Reverse the logic
-                                if chosen_pref > rejected_pref:
-                                    supplemental["preference"] = max(0.0, chosen_pref - ADJUSTMENT_CONSTANT)
-                                    supplemental["rejected_responses"][0]["preference"] = min(1.0, rejected_pref + ADJUSTMENT_CONSTANT)
+                                # Check if undo is possible
+                                if higher_pref >= ADJUSTMENT_CONSTANT and lower_pref <= 1.0 - ADJUSTMENT_CONSTANT:
+                                    new_higher_pref = higher_pref - ADJUSTMENT_CONSTANT
+                                    new_lower_pref = lower_pref + ADJUSTMENT_CONSTANT
                                 else:
-                                    supplemental["preference"] = min(1.0, chosen_pref + ADJUSTMENT_CONSTANT)
-                                    supplemental["rejected_responses"][0]["preference"] = max(0.0, rejected_pref - ADJUSTMENT_CONSTANT)
+                                    continue # Skip if not reversible
                             else:
-                                # Original logic
-                                if chosen_pref > rejected_pref:
-                                    supplemental["preference"] = min(1.0, chosen_pref + ADJUSTMENT_CONSTANT)
-                                    supplemental["rejected_responses"][0]["preference"] = max(0.0, rejected_pref - ADJUSTMENT_CONSTANT)
+                                # Check if forward adjustment is possible
+                                if higher_pref <= 1.0 - ADJUSTMENT_CONSTANT and lower_pref >= ADJUSTMENT_CONSTANT:
+                                    new_higher_pref = higher_pref + ADJUSTMENT_CONSTANT
+                                    new_lower_pref = lower_pref - ADJUSTMENT_CONSTANT
                                 else:
-                                    supplemental["preference"] = max(0.0, chosen_pref - ADJUSTMENT_CONSTANT)
-                                    supplemental["rejected_responses"][0]["preference"] = min(1.0, rejected_pref + ADJUSTMENT_CONSTANT)
+                                    continue # Skip if not reversible
+
+                            # Apply the changes
+                            if chosen_pref > rejected_pref:
+                                supplemental["preference"] = new_higher_pref
+                                supplemental["rejected_responses"][0]["preference"] = new_lower_pref
+                            else:
+                                supplemental["preference"] = new_lower_pref
+                                supplemental["rejected_responses"][0]["preference"] = new_higher_pref
 
             with open(filepath, "w") as f:
                 json.dump(data, f, indent=2)
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(
-        description="Adjust preference values in DPO training data."
+        description="Reversibly adjust preference values in DPO training data."
     )
     parser.add_argument(
         "input_dir",

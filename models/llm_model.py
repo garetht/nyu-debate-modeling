@@ -89,6 +89,9 @@ class LLModel(Model):
             self.is_debater = is_debater
             self.tokenizer_file_path = tokenizer_file_path or file_path
 
+            print("instantiating with file path")
+            print(file_path)
+            print(tokenizer_file_path)
             self.tokenizer, self.model = self.instantiate_tokenizer_and_hf_model(
                 file_path=file_path,
                 tokenizer_file_path=tokenizer_file_path,
@@ -182,6 +185,11 @@ class LLModel(Model):
     ) -> tuple[AutoTokenizer, AutoModelForCausalLM]:
         local_rank = int(os.environ.get("LOCAL_RANK", "0"))
         device_map = {"": local_rank}
+
+        print("two models")
+        print(peft_base_model)
+        print(file_path)
+
         model = AutoModelForCausalLM.from_pretrained(
             pretrained_model_name_or_path=peft_base_model or file_path,
             device_map=device_map,

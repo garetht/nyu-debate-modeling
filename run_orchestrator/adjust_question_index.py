@@ -198,7 +198,7 @@ def renumber_question_indices(transcripts: list[Transcript]) -> list[Transcript]
 
 def read_jsons() -> list[tuple[Transcript, Path]]:
     # Replace 'data.json' with your actual file path
-    directory_path = 'outputs/DataGeneration-Llama3-SingleRound-FullTrain-SFT/outputs/transcripts'
+    directory_path = 'outputs/DataGenerationLlama3MultiRoundHalfBranchedFullTrainDPO/outputs/transcripts'
     directory = Path(directory_path)
 
     if not directory.exists():

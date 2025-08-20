@@ -1,5 +1,5 @@
 ## NOTE: This is an edited version of Huggingface's DPO implementation that uses custom label smoothing
-
+import logging
 
 # DPO Authors: Rafael Rafailov, Archit Sharma, Eric Mitchell, Stefano Ermon, Christopher D. Manning, and Chelsea Finn 2023
 # Copyright 2023 The HuggingFace Team. All rights reserved.
@@ -905,10 +905,15 @@ class SmoothedDPOTrainer(Trainer):
             loss_rej = (0.5 * ipo_loss_rej) + (0.5 * sft_loss_rej)
 
             losses = (preference * loss_pref) + ((1 - preference) * loss_rej)
-            self.logger.warn(
+            self.logger.warn( 
                 f"ipo_pref: {ipo_loss_pref.item()}\tsft_pref: {sft_loss_pref.item()}\tipo_rej: {ipo_loss_rej.item()}\tsft_rej: {sft_loss_rej.item()}\tlosses:{losses.item()}\tpreference:{preference.item()}\tlogits_diff:{logits.item()}"
             )
             """
+            self.logger.info("policy chosen and reference logprobs")
+            self.logger.info(policy_chosen_logps)
+            self.logger.info(reference_chosen_logps)
+            self.logger.info(logits)
+            self.logger.info(preference)
 
             dpo_loss = (-F.logsigmoid(self.beta * logits) * preference) - (
                 F.logsigmoid(-self.beta * logits) * (1 - preference)
@@ -916,13 +921,13 @@ class SmoothedDPOTrainer(Trainer):
             sft_loss = -policy_chosen_logps.to(self.accelerator.device)
             losses = (self.alpha * sft_loss) + ((1 - self.alpha) * dpo_loss)
 
-            self.logger.info(f"Overall Loss: {losses.item()}\tDPO Loss: {dpo_loss.item()}\tSFT Loss: {sft_loss.item()}")
+            self.logger.info(f"Overall Loss 2: {losses.item()}\tDPO Loss: {dpo_loss.item()}\tSFT Loss: {sft_loss.item()}")
         elif self.loss_type == "bon-ipo":
             dpo_loss = (logits - (pref / (2 * self.beta))) ** 2
             sft_loss = -policy_chosen_logps.to(self.accelerator.device)
             losses = (self.alpha * sft_loss) + ((1 - self.alpha) * dpo_loss)
 
-            self.logger.info(f"Overall Loss: {losses.item()}\tDPO Loss: {dpo_loss.item()}\tSFT Loss: {sft_loss.item()}")
+            self.logger.info(f"Overall Loss 1: {losses.item()}\tDPO Loss: {dpo_loss.item()}\tSFT Loss: {sft_loss.item()}")
         else:
             raise ValueError(
                 f"Unknown loss type: {self.loss_type}. Should be one of ['sigmoid', 'hinge', 'ipo', 'kto_pair', 'bon']"
@@ -1036,7 +1041,6 @@ class SmoothedDPOTrainer(Trainer):
     ):
         """Compute the DPO loss and other metrics for the given batch of inputs for train or test."""
         metrics = {}
-
         (
             policy_chosen_logps,
             policy_rejected_logps,

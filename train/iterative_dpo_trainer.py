@@ -169,6 +169,7 @@ class IterativeDirectPreferenceTrainer:
         for i in range(epoch_size):
             new_samples = self.generate_one_round_samples(idx=start_idx + i)
             samples.extend(new_samples)
+            print(new_samples)
 
         return self.convert_dataset([JudgePreferencesDataset(train_data=samples, val_data=[], test_data=[])])
 

@@ -134,6 +134,14 @@ setup_python_env() {
       echo "Directory is not empty. Skipping model download."
     fi
 
+    DIR=./downloaded-models/openai/gpt-oss-20b
+    if [ -d "$DIR" ] && [ -z "$(ls -A "$DIR")" ]; then
+      log_info "Directory is empty. Downloading openai model..."
+      python scripts/huggingface_downloader.py openai/gpt-oss-20b "$DIR"
+    else
+      echo "Directory is not empty. Skipping openai model download."
+    fi
+
     log_info "Python environment setup complete!"
     return 0
 }

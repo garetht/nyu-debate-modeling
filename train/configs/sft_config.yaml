@@ -136,7 +136,7 @@ Train - Llama3 - Open Debater - SFT Base:
     speech_structure: 
         - open_debate
 Train - Llama3 - Human and GPT:
-    model_name: /home/ubuntu/mars-arnesen-gh/downloaded-models/gradientai/Llama-3-8B-Instruct-262k
+    model_name: /home/ubuntu/mars-arnesen-gh/garethtan/downloaded-models/gradientai/Llama-3-8B-Instruct-262k
     llm_type: llama3
     target: debater
     opening_speeches_only: False
@@ -153,11 +153,11 @@ Train - Llama3 - Human and GPT:
         peft_type: lora
     logging_and_saving_config:
         logging_steps: 10
-        output_dir: /home/ubuntu/mars-arnesen-gh/models/trained_models/llama-3-mega
-        merge_output_dir: /home/ubuntu/mars-arnesen-gh/models/trained_models/llama-3-mega-merged
+        output_dir: /home/ubuntu/mars-arnesen-gh/garethtan/models/trained_models/llama-3-mega
+        merge_output_dir: /home/ubuntu/mars-arnesen-gh/garethtan/models/trained_models/llama-3-mega-merged
     dataset:
         - dataset_type: quality_debates
-          full_dataset_file_path: /home/ubuntu/mars-arnesen-gh/sft_data/debater/debater_combined.jsonl
+          full_dataset_file_path: /home/ubuntu/mars-arnesen-gh/garethtan/sft_data/debater/debater_combined.jsonl
         - dataset_type: external_huggingface
           full_dataset_file_path: yahma/alpaca-cleaned
 Train - Llama3 - Human and GPT - Passage - 2:

@@ -53,6 +53,7 @@ class ScriptUtils:
         parser.add_argument("--start_time", type=str, default="")
         parser.add_argument("--force_save_results", action="store_true", default=False)
         parser.add_argument("--force_save_transcripts", action="store_true", default=False)
+        parser.add_argument("--transcripts_dir", type=str, default=None)
         args = parser.parse_args()
         ScriptUtils.set_log_level(args)
         return args
