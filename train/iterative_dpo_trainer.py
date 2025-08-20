@@ -47,7 +47,7 @@ class IterativeDirectPreferenceTrainer:
             load_as_peft_model=bool(config.training_hyperparameters.supplemental.get("force_sft_as_reference", False)),
         )
 
-        if False:
+        if FLASH_ATTENTION_AVAILABLE:
             self.model = upcast_layer_for_flash_attention(self.model, torch.bfloat16)
 
         self.peft_config = TrainUtils.get_peft_config(config=config)
