@@ -36,7 +36,6 @@ def run_experiments(config_name):
         config = config_group['configurations']
         name = config['name']
         num_iters = config['num_iters']
-        starting_index = config.get('starting_index', None)
         count = config['count']
 
         for i in range(count):
@@ -55,9 +54,6 @@ def run_experiments(config_name):
                 f'--num_iters={num_iters}',
                 # f'--starting_index={(i + count * index) * 157}',
             ]
-
-            if starting_index is not None:
-                command.append(f'--starting_index={starting_index}')
 
             print(f"Running command: {' '.join(command)}")
             

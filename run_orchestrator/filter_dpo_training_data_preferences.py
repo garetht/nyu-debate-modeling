@@ -24,12 +24,13 @@ def filter_preference_values(input_dir, preference_threshold):
     if os.path.exists(output_dir):
         shutil.rmtree(output_dir)
     os.makedirs(output_dir)
-
+    print(output_dir)
+    #
     for filename in os.listdir(input_dir):
         if filename.endswith(".json"):
             filepath = os.path.join(input_dir, filename)
             output_filepath = os.path.join(output_dir, filename)
-            
+
             with open(filepath, "r") as f:
                 try:
                     data = json.load(f)
@@ -45,12 +46,12 @@ def filter_preference_values(input_dir, preference_threshold):
                     if supplemental:
                         preference = supplemental.get("preference")
                         rejected_responses = supplemental.get("rejected_responses")
-                        if (preference is not None and 
-                            rejected_responses and 
-                            isinstance(rejected_responses, list) and 
-                            len(rejected_responses) > 0 and 
+                        if (preference is not None and
+                            rejected_responses and
+                            isinstance(rejected_responses, list) and
+                            len(rejected_responses) > 0 and
                             "preference" in rejected_responses[0]):
-                            
+
                             rejected_preference = rejected_responses[0].get("preference")
                             if rejected_preference is not None:
                                 if abs(preference - rejected_preference) >= preference_threshold:
@@ -63,7 +64,7 @@ def filter_preference_values(input_dir, preference_threshold):
                             filtered_speeches.append(speech)
                     else:
                         filtered_speeches.append(speech)
-                
+
                 data["speeches"] = filtered_speeches
                 if len(filtered_speeches) < original_speech_count:
                     print(f"Filtered {original_speech_count - len(filtered_speeches)} speeches from {filename}")

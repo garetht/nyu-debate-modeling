@@ -871,7 +871,6 @@ class SmoothedDPOTrainer(Trainer):
             The losses tensor contains the DPO loss for each example in the batch.
             The chosen_rewards and rejected_rewards tensors contain the rewards for the chosen and rejected responses, respectively.
         """
-
         pi_logratios = policy_chosen_logps - policy_rejected_logps
         if self.reference_free:
             ref_logratios = torch.tensor([0], dtype=pi_logratios.dtype, device=pi_logratios.device)
