@@ -22,6 +22,7 @@ import math
 import os
 import re
 import uuid
+from pathlib import Path
 
 
 class WinStats(BaseModel):
@@ -162,7 +163,11 @@ class ResultsCollector:
 
     def __save_graph(self, name: str):
         if self.graphs_path_prefix and self.should_save:
-            plt.savefig(f"{self.graphs_path_prefix}{name}.png")
+            p = Path(self.graphs_path_prefix)
+            safe_prefix = re.sub(r'[<>:"/\\|?*]', '_', p.name)
+            safe_name = re.sub(r'[<>:"/\\|?*]', '_', name)
+            safe_path = p.parent / (safe_prefix + safe_name + ".png")
+            plt.savefig(str(safe_path))
 
     def record_result(self, summaries: DebateRoundSummary | list[DebateRoundSummary]) -> None:
         """Adds metrics from that debate round to local store"""
@@ -799,7 +804,10 @@ class ResultsCollector:
 
         df = pd.DataFrame(rows)
         if self.should_save and self.full_record_path_prefix:
-            df.to_csv(f"{self.full_record_path_prefix}run.csv")
+            p = Path(self.full_record_path_prefix)
+            safe_name = re.sub(r'[<>:"/\\|?*]', '_', p.name)
+            safe_path = p.parent / (safe_name + "run.csv")
+            df.to_csv(str(safe_path))
 
     def graph_results(self) -> None:
         """
@@ -858,7 +866,10 @@ class ResultsCollector:
                 self.logger.info(significance_results)
 
             if self.should_save and self.stats_path_prefix:
-                with open(f"{self.stats_path_prefix}.json", "w") as f:
+                p = Path(self.stats_path_prefix)
+                safe_name = re.sub(r'[<>:"/\\|?*]', '_', p.name)
+                safe_path = p.parent / (safe_name + ".json")
+                with open(safe_path, "w") as f:
                     json.dump(all_stats, f)
         except Exception as e:
             self.logger.error(e)

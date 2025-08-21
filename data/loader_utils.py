@@ -34,5 +34,7 @@ def get_loader_type(dataset_type: DatasetType) -> Type[RawDataLoader]:
         return CorrectnessJudgePreferencesLoader
     elif dataset_type == DatasetType.LOJBAN:
         return LojbanLoader
+    # elif dataset_type == DatasetType.LOJBAN_CONSULTANCY:
+    #     return LojbanConsultancyLoader
 
     raise Exception(f"Loader {dataset_type} not found")

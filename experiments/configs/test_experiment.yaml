@@ -901,3 +901,22 @@ Consultancy_Double_SFT_Test:
   dataset:
     dataset_type: quality
     split_type: val
+Lojban_Test:
+  batch_size: 1
+  num_speeches: 1
+  flip: True
+  agents:
+    debaters:
+      - model_settings:
+          model_type: random
+          alias: random-debater
+      - model_settings:
+          model_type: random
+          alias: random-debater
+    judge:
+      model_settings:
+        model_type: random
+        alias: random-judge
+  dataset:
+    full_dataset_file_path: data\datasets\lojban\lojban_dataset.jsonl
+    dataset_type: lojban

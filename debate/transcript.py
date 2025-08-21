@@ -11,6 +11,9 @@ from enum import Enum
 from typing import Any, Callable, Optional, Union
 import copy
 import json
+import re
+from pathlib import Path
+
 
 
 class Transcript:
@@ -58,7 +61,11 @@ class Transcript:
         with open(save_file_path_prefix + ".txt", "w") as f:
             f.write(str(self.full_string_value()))
         """
-        with open(save_file_path_prefix + ".json", "w") as f:
+        p = Path(save_file_path_prefix)
+        # Sanitize only the filename part
+        safe_name = re.sub(r'[<>:"/\\|?*]', '_', p.name)
+        safe_path = p.with_name(safe_name + ".json")
+        with open(safe_path, "w") as f: 
             json.dump(self.json_value(metadata=metadata), f)
 
     def to_model_input(self) -> list[ModelInput]:
