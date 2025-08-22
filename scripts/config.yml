@@ -13,8 +13,9 @@ prompt_config:
 
 # 3. Which dataset(s) to convert?
 dataset:
-  - dataset_type: quality_debates
-    full_dataset_file_path: /home/ubuntu/mars-arnesen-gh/sft_data/judge/combined.jsonl
+  - dataset_type: quality_debates # QUALITY_CONSULTANCY
+    #full_dataset_file_path: /home/ubuntu/mars-arnesen-gh/leonidtsyplenkov/data/datasets/quality-debates/debates-readable.jsonl
+    full_dataset_file_path: /home/ubuntu/mars-arnesen-gh/leonidtsyplenkov/sft_data/converted_khan_only_debate_filled.jsonl
     split_type: train                      # must match the SplitType enum (TRAIN, VALIDATION, TEST)
   # - dataset_type: HUGGING_FACE           # you can list more datasets here if you need
 
@@ -32,4 +33,4 @@ scratchpad_config:
 
 # 7. How to format transcripts
 speech_structure:
-  - DEFAULT_DEBATE
+  - default_debate #default_consultancy

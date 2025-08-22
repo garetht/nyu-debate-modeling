@@ -136,7 +136,7 @@ Train - Llama3 - Open Debater - SFT Base:
     speech_structure: 
         - open_debate
 Train - Llama3 - Human and GPT:
-    model_name: /home/ubuntu/mars-arnesen-gh/downloaded-models/gradientai/Llama-3-8B-Instruct-262k
+    model_name: /home/ubuntu/mars-arnesen-gh/leonidtsyplenkov/downloaded-models/gradientai/Llama-3-8B-Instruct-262k
     llm_type: llama3
     target: debater
     opening_speeches_only: False
@@ -153,13 +153,66 @@ Train - Llama3 - Human and GPT:
         peft_type: lora
     logging_and_saving_config:
         logging_steps: 10
-        output_dir: /home/ubuntu/mars-arnesen-gh/models/trained_models/llama-3-mega-11.07
-        merge_output_dir: /home/ubuntu/mars-arnesen-gh/models/trained_models/llama-3-mega-merged-11.07
+        output_dir: /home/ubuntu/mars-arnesen-gh/leonidtsyplenkov/trained_models/llama-3-mega-no-judge-speeches-15.08
+        merge_output_dir: /home/ubuntu/mars-arnesen-gh/leonidtsyplenkov/models/trained_models/llama-3-mega-merged-no-judge-speeches-15.08
     dataset:
         - dataset_type: quality_debates
-          full_dataset_file_path: /home/ubuntu/mars-arnesen-gareth/sft_data/debater/debater_combined_filled.jsonl
+          full_dataset_file_path: /home/ubuntu/mars-arnesen-gh/leonidtsyplenkov/sft_data/debater/debater_combined_filled.jsonl
         - dataset_type: external_huggingface
           full_dataset_file_path: yahma/alpaca-cleaned
+
+Train - minitron - Human and GPT:
+    model_name: mistralai/Ministral-8B-Instruct-2410
+    llm_type: mistral
+    target: debater
+    opening_speeches_only: False
+    max_length: 32986
+    training_hyperparameters:
+        num_train_epochs: 2
+        per_device_train_batch_size: 2
+        gradient_accumulation_steps: 8
+        optim: adamw_hf
+        learning_rate: 2e-4
+        max_grad_norm: 0.3
+        warmup_ratio: 0.03
+        lr_scheduler_type: constant
+        peft_type: lora
+    logging_and_saving_config:
+        logging_steps: 10
+        output_dir: /home/ubuntu/mars-arnesen-gh/leonidtsyplenkov/trained_models/minitron-no-judge-speeches-31.07
+        merge_output_dir: /home/ubuntu/mars-arnesen-gh/leonidtsyplenkov/models/trained_models/minitron-merged-no-judge-speeches-31.07
+    dataset:
+        - dataset_type: quality_debates
+          full_dataset_file_path: /home/ubuntu/mars-arnesen-gh/leonidtsyplenkov/sft_data/debater/debater_combined_filled.jsonl
+        - dataset_type: external_huggingface
+          full_dataset_file_path: yahma/alpaca-cleaned
+
+Train - qwen - Human and GPT:
+    model_name: Qwen/Qwen2.5-14B-Instruct
+    llm_type: qwen
+    target: debater
+    opening_speeches_only: False
+    max_length: 32986
+    training_hyperparameters:
+        num_train_epochs: 2
+        per_device_train_batch_size: 2
+        gradient_accumulation_steps: 8
+        optim: adamw_hf
+        learning_rate: 2e-4
+        max_grad_norm: 0.3
+        warmup_ratio: 0.03
+        lr_scheduler_type: constant
+        peft_type: lora
+    logging_and_saving_config:
+        logging_steps: 10
+        output_dir: /home/ubuntu/mars-arnesen-gh/leonidtsyplenkov/trained_models/qwen-no-judge-speeches-18.08
+        merge_output_dir: /home/ubuntu/mars-arnesen-gh/leonidtsyplenkov/models/trained_models/qwen-merged-no-judge-speeches-18.08
+    dataset:
+        - dataset_type: quality_debates
+          full_dataset_file_path: /home/ubuntu/mars-arnesen-gh/leonidtsyplenkov/sft_data/debater/debater_combined_filled.jsonl
+        - dataset_type: external_huggingface
+          full_dataset_file_path: yahma/alpaca-cleaned
+
 Train - Llama3 - Human and GPT - Passage - 2:
     model_name: /vast/spa9663/models/base_models/llama3-8b-262k
     llm_type: llama3

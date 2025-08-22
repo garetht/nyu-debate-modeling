@@ -1,11 +1,10 @@
 #!/usr/bin/env python3
 import argparse
 import json
-import math
 import re
 import pandas as pd
 
-# --- Character‐count limits ---
+# --- Character-count limits ---
 DEBATER_CHAR_LIMIT     = 1500
 DEBATER_QUOTE_LIMIT    = 500
 CONSULTANT_CHAR_LIMIT  = 1500
@@ -27,18 +26,13 @@ def process_row(row: pd.Series) -> dict:
     story_text  = transcript.get('story', '')
     question    = row['question']
     ans         = transcript['answers']
-    #answers     = [ans['incorrect'], ans['correct']]    # [distractor, correct]
 
     turns = []
 
     if row['debate_method'] == 'debate':
-        # Figure out which name is A vs B
         names = transcript.get('names', {})
         name_A = 'Debater A'
-        # Determine which side (correct vs incorrect) is Debater A
-        # transcript['names']['correct'] is e.g. "Debater B"
-        # transcript['names']['incorrect'] is the other
-        correct_is_A   = (names.get('correct')   == name_A)
+        correct_is_A = (names.get('correct') == name_A)
 
         if correct_is_A:
             answers = [ans['correct'], ans['incorrect']]
@@ -47,46 +41,33 @@ def process_row(row: pd.Series) -> dict:
 
         idx = 0
         for rnd in transcript.get('rounds', []):
-            text_corr = rnd.get('correct','').strip()
-            text_inc  = rnd.get('incorrect','').strip()
+            text_corr = rnd.get('correct', '').strip()
+            text_inc  = rnd.get('incorrect', '').strip()
 
             # Assign A's and B's text
             if correct_is_A:
-                text_A, text_B = text_corr, text_inc
+                texts = [text_corr, text_inc]
             else:
-                # either correct_is_A or fallback
-                text_A, text_B = text_inc, text_corr
+                texts = [text_inc, text_corr]
 
-            # Emit Debater A
-            idx += 1
-            turns.append({
-                "role": "Debater",
-                "index": idx,
-                "text": text_A,
-                "probabilities": None,
-                "chars": len(text_A),
-                "charLimit": DEBATER_CHAR_LIMIT,
-                "quoteChars": count_quote_chars(text_A),
-                "quoteCharLimit": DEBATER_QUOTE_LIMIT
-            })
-            # Emit Debater B
-            idx += 1
-            turns.append({
-                "role": "Debater",
-                "index": idx,
-                "text": text_B,
-                "probabilities": None,
-                "chars": len(text_B),
-                "charLimit": DEBATER_CHAR_LIMIT,
-                "quoteChars": count_quote_chars(text_B),
-                "quoteCharLimit": DEBATER_QUOTE_LIMIT
-            })
+            # Emit Debater turns with 0-based indexing
+            for t in texts:
+                turns.append({
+                    "role": "Debater",
+                    "index": idx,
+                    "text": t,
+                    "probabilities": None,
+                    "chars": len(t),
+                    "charLimit": DEBATER_CHAR_LIMIT,
+                    "quoteChars": count_quote_chars(t),
+                    "quoteCharLimit": DEBATER_QUOTE_LIMIT
+                })
+                idx += 1
 
     elif row['debate_method'] == 'consultancy':
-        # Single‐speaker consultancy: one Consultant per round
         ctype = row['consultant_type']  # "correct" or "incorrect"
         idx = 0
-        answers = [ans[ctype]]
+        answers = [transcript['answers'][ctype]]
         for rnd in transcript.get('rounds', []):
             text = (rnd.get(ctype) or '').strip()
             if not text:
@@ -103,10 +84,10 @@ def process_row(row: pd.Series) -> dict:
                 "quoteCharLimit": CONSULTANT_QUOTE_LIMIT
             })
 
-    # Final Judge turn (common)
+    # Final Judge turn
     p_corr = float(row['confidence']) / 100.0
     p_inc  = 1.0 - p_corr
-    judge_text = row.get('explanation','').strip()
+    judge_text = row.get('explanation', '').strip()
     turns.append({
         "role": "Judge",
         "index": None,
@@ -118,19 +99,17 @@ def process_row(row: pd.Series) -> dict:
         "quoteCharLimit": JUDGE_QUOTE_LIMIT
     })
 
-    try:
-        return {
-            "storyId":        story_id,
-            "storyTitle":     story_title,
-            "story":          story_text,
-            "question":       question,
-            "answers":        answers,
-            "debateId":       debate_id,
-            "turns":          turns,
-            "isJudgeCorrect": bool(row['correct'])
-        }
-    except:
-        print(row['debate_method'])
+    return {
+        "storyId":    story_id,
+        "storyTitle": story_title,
+        "story":      story_text,
+        "question":   question,
+        "answers":    answers,
+        "debateId":   debate_id,
+        "turns":      turns,
+        "isJudgeCorrect": bool(row['correct'])
+    }
+
 
 def main():
     parser = argparse.ArgumentParser(
@@ -138,15 +117,14 @@ def main():
     )
     parser.add_argument("infile",  help="Raw CSV path")
     parser.add_argument("outfile", help="Output JSONL path")
-    parser.add_argument("with_consultancy", help="Include consultancy or not (yes / no) ")
+    parser.add_argument("with_consultancy", help="Include consultancy or not (yes / no)")
     args = parser.parse_args()
 
     df = pd.read_csv(args.infile)
     df = df[df['experiment_name'] == 'Experiment 8']
-    with_consultancy = args.with_consultancy
     with open(args.outfile, "w", encoding="utf-8") as fout:
         for _, row in df.iterrows():
-            if with_consultancy == 'no' and row['debate_method'] == 'consultancy':
+            if args.with_consultancy == 'no' and row['debate_method'] == 'consultancy':
                 continue
             out = process_row(row)
             fout.write(json.dumps(out, ensure_ascii=False) + "\n")
@@ -154,5 +132,6 @@ def main():
 if __name__ == "__main__":
     main()
 
-#bash-3.2$ python3 converter_raw_debates.py llm_debate_human_judge_dataset.csv converted_khan_with_consultancy.jsonl yes
-#bash-3.2$ python3 converter_raw_debates.py llm_debate_human_judge_dataset.csv converted_khan_only_debate.jsonl no
+
+# python converter_raw_debates.py llm_debate_human_judge_dataset.csv converted_khan_with_consultancy.jsonl yes
+# python converter_raw_debates.py llm_debate_human_judge_dataset.csv converted_khan_only_debate.jsonl no

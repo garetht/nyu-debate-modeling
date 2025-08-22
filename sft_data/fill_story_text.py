@@ -6,8 +6,8 @@ from pathlib import Path
 QUALITY_DIR = Path.home() / "study" / "debate" / "repo" / "nyu-debate-modeling" / "data" / "datasets" / "quality"
 
 SCRIPT_DIR        = Path(__file__).parent
-INPUT_FILE        = "converted_khan_with_consultancy.jsonl"
-OUTPUT_FILE       = "converted_khan_only_with_consultancy_filled.jsonl"
+INPUT_FILE        = "converted_khan_only_debate.jsonl"
+OUTPUT_FILE       = "converted_khan_only_only_debate_filled.jsonl"
 
 
 def build_quality_lookup(quality_dir: Path):

@@ -36,98 +36,31 @@ class SupervisedTrainer:
     ) -> datasets.Dataset:
         """Converts a dataset (abstraction used in this codebase) into a Dataset object (abstraction
         used by huggingface's trainer objects)"""
+        # 1) Load the CSV into a HF Dataset
+        dataset = datasets.load_dataset(
+            "csv",
+            #data_files={"train": "/home/ubuntu/mars-arnesen-gh/leonidtsyplenkov/sft_data/debater/training_dataset_for_debater_no_judge_speeches.csv"},
+            #data_files={"train": "/home/ubuntu/mars-arnesen-gh/leonidtsyplenkov/sft_data/debater/training_dataset_for_debater_no_judge_speeches_minitron.csv"},
+            data_files={"train": "/home/ubuntu/mars-arnesen-gh/leonidtsyplenkov/sft_data/debater/training_dataset_for_debater_no_judge_speeches_qwen.csv"},
+            split="train"
+        )  
 
-        def validate_structure(val: Any) -> bool:
-            if not isinstance(val, list):
-                print("fail 1")
-                return False
-            for item in val:
-                if not isinstance(item, list):
-                    print("fail 2")
-                    return False
-                for elem in item:
-                    if not isinstance(elem, tuple):
-                        print("fail 3")
-                        print(type(elem[0]))
-                        return False
-                    if not isinstance(elem[1], str):
-                        print("fail 4")
-                        return False
-                    if not isinstance(elem[0], list):
-                        print("fail 5")
-                        return False
-                    for x in elem[0]:
-                        if not isinstance(x, ModelInput):
-                            print("fail 6")
-                            return False
-            return True
+         # 2) Compute token length of your response boundary
+        suffix = "<|eot_id|>" + "<|start_header_id|>assistant<|end_header_id|>\n\n"
+        suffix_len = len(tokenizer.encode(suffix, add_special_tokens=False))
+        # 2) Define a predicate to keep only examples within max_length
+        def is_within_limit(example):
+            inst_len = len(tokenizer(
+                example["instruction"],
+                truncation=False
+            )["input_ids"])
+            return inst_len + suffix_len <= config.max_length
 
-        dataset_configs = config.dataset
-        if isinstance(dataset_configs, DatasetConfig):
-            dataset_configs = [dataset_configs]
+        # 3) Apply filter to drop too-long examples
+        #dataset = dataset.filter(is_within_limit)  
+        # (Optional) Shuffle for training randomness
+        dataset = dataset.shuffle(seed=42)
 
-        output_structure = (
-            SpeechStructure.OPEN_ENDED if config.target == TrainingTarget.DEBATER else SpeechStructure.DECISION
-        )
-
-        llm_inputs = []
-        for idx, raw_dataset in enumerate(raw_datasets):
-            speech_structure = config.speech_structure[idx % len(config.speech_structure)]
-            transcript_lists = [
-                RowConverter.convert_row(
-                    row=row,
-                    config=config,
-                    dataset=raw_dataset,
-                    speech_structure=speech_structure,
-                    use_gold_labels=config.training_hyperparameters.supplemental.get("gold_labels", False),
-                    use_minimal_output_format=config.training_hyperparameters.supplemental.get(
-                        "use_minimal_output_format", False
-                    ),
-                )
-                for i, row in enumerate(raw_dataset.get_data(split=config.dataset[idx].split_type))
-            ]
-
-            if validate_structure(val=transcript_lists):
-                for transcript_list in transcript_lists:
-                    for model_inputs, speech in transcript_list:
-                        llm_inputs.append(
-                            {
-                                "instruction": LLModel.convert_to_input_string(
-                                    input_list=model_inputs,
-                                    tokenizer=tokenizer,
-                                    speech_structure=output_structure,
-                                ),
-                                "output": speech,
-                            }
-                        )
-            else:
-                raise Exception("Data format was invalid")
-
-        max_instruction_length = int((2 / 3) * len(llm_inputs))
-        instruction_count = 0
-        for dataset_config in filter(lambda x: not x.dataset_type.is_instantiable, dataset_configs):
-            external_dataset = datasets.load_dataset(path=dataset_config.full_dataset_file_path, split="train")
-            external_df = pd.DataFrame(external_dataset)
-            for i, row in external_df.iterrows():
-                if instruction_count < max_instruction_length and (row["instruction"] or row["input"]):
-                    instruction_count += 1
-                    llm_inputs.append(
-                        {
-                            "instruction": LLModel.convert_to_input_string(
-                                input_list=[
-                                    ModelInput(role=RoleType.SYSTEM, content=row["instruction"]),
-                                    ModelInput(role=RoleType.USER, content=row["input"]),
-                                ],
-                                tokenizer=tokenizer,
-                                speech_structure=output_structure,
-                            ),
-                            "output": row["output"],
-                        }
-                    )
-
-        df = pd.DataFrame(data=llm_inputs)
-        df.to_csv('/home/ubuntu/mars-arnesen-gh/sft_data/training_dataset_from_hf.csv')
-        dataset = datasets.Dataset.from_pandas(df).shuffle()
         return dataset
 
     @classmethod
@@ -164,7 +97,22 @@ class SupervisedTrainer:
             raw_datasets = TrainUtils.create_datasets(config=config)
 
         tokenizer = TrainUtils.get_tokenizer(config=config, is_local=is_local)
-        model = TrainUtils.load_model(config=config, is_local=is_local)
+        model     = TrainUtils.load_model(config=config, is_local=is_local)
+        llm_class = TrainUtils.get_llm_class(config=config)
+
+        # ─── FIX: Build response_template_ids robustly ───────────────────────────────
+        #eot = "<|eot_id|>"                  # or pull from your constants module
+        #suffix = llm_class.INSTRUCTION_SUFFIX
+        #response_template = f"{eot}{suffix}"
+        response_template = "[/INST]"
+
+        collator = DataCollatorForCompletionOnlyLM(
+            response_template=response_template,
+            tokenizer=tokenizer,
+            mlm=False
+        )
+        # ────────────────────────────────────────────────────────────────────────────
+
 
         training_args = TrainingArguments(
             output_dir=config.logging_and_saving_config.output_dir,
@@ -182,13 +130,6 @@ class SupervisedTrainer:
             disable_tqdm=False,
             ddp_find_unused_parameters=False,
             use_cpu=is_local,
-        )
-
-        llm_class = TrainUtils.get_llm_class(config=config)
-
-        collator = DataCollatorForCompletionOnlyLM(
-            response_template=tokenizer.encode("\n " + llm_class.INSTRUCTION_SUFFIX, add_special_tokens=False)[2:],
-            tokenizer=tokenizer,
         )
 
         train_dataset = SupervisedTrainer.convert_dataset(
