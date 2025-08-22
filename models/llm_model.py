@@ -194,7 +194,6 @@ class LLModel(Model):
             pretrained_model_name_or_path=peft_base_model or file_path,
             device_map=device_map,
             trust_remote_code=True,
-            use_flash_attention_2=True,
             use_cache=use_cache,
             token=os.getenv("META_ACCESS_TOKEN") if requires_token else None,
             quantization_config=LLModel.get_bnb_config() if quantize else None,
