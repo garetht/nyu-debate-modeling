@@ -227,6 +227,565 @@ debater-cross-play-sft-0731-rl-0810:
     dataset_type: quality
     split_type: val
     shuffle_deterministically: True
+#debater-cross-play-sft-0731-rl-0810-checkpoint-replication-0822-1:
+#  batch_size: 1
+#  num_speeches: 1
+#  flip: True
+#  enable_self_debate: True
+#  speech_structure: default_debate
+#  alternate: False
+#  agents:
+#    debaters:
+#      - model_settings:
+#          model_type: llama3
+#          model_file_path: /home/ubuntu/mars-arnesen-gh/garethtan/models/trained_models/llama-3-DPO-811-FullTrainDebateLowLR-test/checkpoint-240
+#          alias: "dpo-round-1-full-trained"
+#          require_quote_validation: True
+#          generation_params:
+#            temperature: 0.5
+#    judge:
+#      model_settings:
+#        model_type: openai
+#        alias: openai-judge-ft-0731
+#        model_file_path: ft:gpt-4.1-2025-04-14:modulo-research-ltd:michael-and-khan-data-judge-31-07:BzYGc8SU
+#  tournament:
+#    tournament_type: capped_round_robin
+debater-cross-play-sft-0731-rl-0810-checkpoint-replication-0822-2:
+  batch_size: 1
+  num_speeches: 1
+  flip: True
+  enable_self_debate: False
+  speech_structure: default_debate
+  alternate: False
+  agents:
+    debaters:
+      - model_settings:
+          model_type: llama3
+          model_file_path: /home/ubuntu/mars-arnesen-gh/garethtan/models/trained_models/llama-3-DPO-811-FullTrainDebateRoundTwo-full-trained/checkpoint-32
+          peft_base_model: /home/ubuntu/mars-arnesen-gh/garethtan/models/trained_models/llama-3-DPO-811-FullTrainDebateRoundTwo-full-trained/
+          alias: "dpo-round-2-checkpoint-32-trained"
+          require_quote_validation: True
+          generation_params:
+            temperature: 0.5
+    judge:
+      model_settings:
+        model_type: openai
+        alias: openai-judge-ft-0731
+        model_file_path: ft:gpt-4.1-2025-04-14:modulo-research-ltd:michael-and-khan-data-judge-31-07:BzYGc8SU
+  tournament:
+    tournament_type: capped_round_robin
+  dataset:
+    dataset_type: quality
+    split_type: val
+    shuffle_deterministically: True
+debater-cross-play-sft-0731-rl-0810-checkpoint-replication-0822-3:
+  batch_size: 1
+  num_speeches: 1
+  flip: True
+  enable_self_debate: False
+  speech_structure: default_debate
+  alternate: False
+  agents:
+    debaters:
+      - model_settings:
+          model_type: llama3
+          model_file_path: /home/ubuntu/mars-arnesen-gh/garethtan/models/trained_models/llama-3-DPO-811-FullTrainDebateRoundTwo-full-trained/checkpoint-64
+          peft_base_model: /home/ubuntu/mars-arnesen-gh/garethtan/models/trained_models/llama-3-DPO-811-FullTrainDebateRoundTwo-full-trained/
+          alias: "dpo-round-2-checkpoint-64-trained"
+          require_quote_validation: True
+          generation_params:
+            temperature: 0.5
+    judge:
+      model_settings:
+        model_type: openai
+        alias: openai-judge-ft-0731
+        model_file_path: ft:gpt-4.1-2025-04-14:modulo-research-ltd:michael-and-khan-data-judge-31-07:BzYGc8SU
+  tournament:
+    tournament_type: capped_round_robin
+  dataset:
+    dataset_type: quality
+    split_type: val
+    shuffle_deterministically: True
+debater-cross-play-sft-0731-rl-0810-checkpoint-replication-0822-4:
+  batch_size: 1
+  num_speeches: 1
+  flip: True
+  enable_self_debate: False
+  speech_structure: default_debate
+  alternate: False
+  agents:
+    debaters:
+      - model_settings:
+          model_type: llama3
+          model_file_path: /home/ubuntu/mars-arnesen-gh/garethtan/models/trained_models/llama-3-DPO-811-FullTrainDebateRoundTwo-full-trained/checkpoint-96
+          peft_base_model: /home/ubuntu/mars-arnesen-gh/garethtan/models/trained_models/llama-3-DPO-811-FullTrainDebateRoundTwo-full-trained/
+          alias: "dpo-round-2-checkpoint-96-trained"
+          require_quote_validation: True
+          generation_params:
+            temperature: 0.5
+    judge:
+      model_settings:
+        model_type: openai
+        alias: openai-judge-ft-0731
+        model_file_path: ft:gpt-4.1-2025-04-14:modulo-research-ltd:michael-and-khan-data-judge-31-07:BzYGc8SU
+  tournament:
+    tournament_type: capped_round_robin
+  dataset:
+    dataset_type: quality
+    split_type: val
+    shuffle_deterministically: True
+debater-cross-play-sft-0731-rl-0810-checkpoint-replication-0822-5:
+  batch_size: 1
+  num_speeches: 1
+  flip: True
+  enable_self_debate: False
+  speech_structure: default_debate
+  alternate: False
+  agents:
+    debaters:
+      - model_settings:
+          model_type: llama3
+          model_file_path: /home/ubuntu/mars-arnesen-gh/garethtan/models/trained_models/llama-3-DPO-811-FullTrainDebateRoundTwo-full-trained/checkpoint-128
+          peft_base_model: /home/ubuntu/mars-arnesen-gh/garethtan/models/trained_models/llama-3-DPO-811-FullTrainDebateRoundTwo-full-trained/
+          alias: "dpo-round-2-checkpoint-128-trained"
+          require_quote_validation: True
+          generation_params:
+            temperature: 0.5
+    judge:
+      model_settings:
+        model_type: openai
+        alias: openai-judge-ft-0731
+        model_file_path: ft:gpt-4.1-2025-04-14:modulo-research-ltd:michael-and-khan-data-judge-31-07:BzYGc8SU
+  tournament:
+    tournament_type: capped_round_robin
+  dataset:
+    dataset_type: quality
+    split_type: val
+    shuffle_deterministically: True
+debater-cross-play-sft-0731-rl-0810-checkpoint-replication-0822-6:
+  batch_size: 1
+  num_speeches: 1
+  flip: True
+  enable_self_debate: False
+  speech_structure: default_debate
+  alternate: False
+  agents:
+    debaters:
+      - model_settings:
+          model_type: llama3
+          model_file_path: /home/ubuntu/mars-arnesen-gh/garethtan/models/trained_models/llama-3-DPO-811-FullTrainDebateRoundTwo-full-trained/checkpoint-160
+          peft_base_model: /home/ubuntu/mars-arnesen-gh/garethtan/models/trained_models/llama-3-DPO-811-FullTrainDebateRoundTwo-full-trained/
+          alias: "dpo-round-2-checkpoint-160-trained"
+          require_quote_validation: True
+          generation_params:
+            temperature: 0.5
+    judge:
+      model_settings:
+        model_type: openai
+        alias: openai-judge-ft-0731
+        model_file_path: ft:gpt-4.1-2025-04-14:modulo-research-ltd:michael-and-khan-data-judge-31-07:BzYGc8SU
+  tournament:
+    tournament_type: capped_round_robin
+  dataset:
+    dataset_type: quality
+    split_type: val
+    shuffle_deterministically: True
+debater-cross-play-sft-0731-rl-0810-checkpoint-replication-0822-7:
+  batch_size: 1
+  num_speeches: 1
+  flip: True
+  enable_self_debate: False
+  speech_structure: default_debate
+  alternate: False
+  agents:
+    debaters:
+      - model_settings:
+          model_type: llama3
+          model_file_path: /home/ubuntu/mars-arnesen-gh/garethtan/models/trained_models/llama-3-DPO-811-FullTrainDebateRoundTwo-full-trained/checkpoint-192
+          peft_base_model: /home/ubuntu/mars-arnesen-gh/garethtan/models/trained_models/llama-3-DPO-811-FullTrainDebateRoundTwo-full-trained/
+          alias: "dpo-round-2-checkpoint-192-trained"
+          require_quote_validation: True
+          generation_params:
+            temperature: 0.5
+    judge:
+      model_settings:
+        model_type: openai
+        alias: openai-judge-ft-0731
+        model_file_path: ft:gpt-4.1-2025-04-14:modulo-research-ltd:michael-and-khan-data-judge-31-07:BzYGc8SU
+  tournament:
+    tournament_type: capped_round_robin
+  dataset:
+    dataset_type: quality
+    split_type: val
+    shuffle_deterministically: True
+debater-cross-play-sft-0731-rl-0810-checkpoint-replication-0822-8:
+  batch_size: 1
+  num_speeches: 1
+  flip: True
+  enable_self_debate: False
+  speech_structure: default_debate
+  alternate: False
+  agents:
+    debaters:
+      - model_settings:
+          model_type: llama3
+          model_file_path: /home/ubuntu/mars-arnesen-gh/garethtan/models/trained_models/llama-3-DPO-811-FullTrainDebateRoundTwo-full-trained/checkpoint-224
+          peft_base_model: /home/ubuntu/mars-arnesen-gh/garethtan/models/trained_models/llama-3-DPO-811-FullTrainDebateRoundTwo-full-trained/
+          alias: "dpo-round-2-checkpoint-224-trained"
+          require_quote_validation: True
+          generation_params:
+            temperature: 0.5
+    judge:
+      model_settings:
+        model_type: openai
+        alias: openai-judge-ft-0731
+        model_file_path: ft:gpt-4.1-2025-04-14:modulo-research-ltd:michael-and-khan-data-judge-31-07:BzYGc8SU
+  tournament:
+    tournament_type: capped_round_robin
+  dataset:
+    dataset_type: quality
+    split_type: val
+    shuffle_deterministically: True
+debater-cross-play-sft-0731-rl-0810-checkpoint-replication-0822-9:
+  batch_size: 1
+  num_speeches: 1
+  flip: True
+  enable_self_debate: False
+  speech_structure: default_debate
+  alternate: False
+  agents:
+    debaters:
+      - model_settings:
+          model_type: llama3
+          model_file_path: /home/ubuntu/mars-arnesen-gh/garethtan/models/trained_models/llama-3-DPO-811-FullTrainDebateRoundTwo-full-trained/checkpoint-256
+          peft_base_model: /home/ubuntu/mars-arnesen-gh/garethtan/models/trained_models/llama-3-DPO-811-FullTrainDebateRoundTwo-full-trained/
+          alias: "dpo-round-2-checkpoint-256-trained"
+          require_quote_validation: True
+          generation_params:
+            temperature: 0.5
+    judge:
+      model_settings:
+        model_type: openai
+        alias: openai-judge-ft-0731
+        model_file_path: ft:gpt-4.1-2025-04-14:modulo-research-ltd:michael-and-khan-data-judge-31-07:BzYGc8SU
+  tournament:
+    tournament_type: capped_round_robin
+  dataset:
+    dataset_type: quality
+    split_type: val
+    shuffle_deterministically: True
+debater-cross-play-sft-0731-rl-0810-checkpoint-replication-0822-10:
+  batch_size: 1
+  num_speeches: 1
+  flip: True
+  enable_self_debate: False
+  speech_structure: default_debate
+  alternate: False
+  agents:
+    debaters:
+      - model_settings:
+          model_type: llama3
+          model_file_path: /home/ubuntu/mars-arnesen-gh/garethtan/models/trained_models/llama-3-DPO-811-FullTrainDebateRoundTwo-full-trained/checkpoint-288
+          peft_base_model: /home/ubuntu/mars-arnesen-gh/garethtan/models/trained_models/llama-3-DPO-811-FullTrainDebateRoundTwo-full-trained/
+          alias: "dpo-round-2-checkpoint-288-trained"
+          require_quote_validation: True
+          generation_params:
+            temperature: 0.5
+    judge:
+      model_settings:
+        model_type: openai
+        alias: openai-judge-ft-0731
+        model_file_path: ft:gpt-4.1-2025-04-14:modulo-research-ltd:michael-and-khan-data-judge-31-07:BzYGc8SU
+  tournament:
+    tournament_type: capped_round_robin
+  dataset:
+    dataset_type: quality
+    split_type: val
+    shuffle_deterministically: True
+debater-cross-play-sft-0731-rl-0810-checkpoint-replication-0822-11:
+  batch_size: 1
+  num_speeches: 1
+  flip: True
+  enable_self_debate: False
+  speech_structure: default_debate
+  alternate: False
+  agents:
+    debaters:
+      - model_settings:
+          model_type: llama3
+          model_file_path: /home/ubuntu/mars-arnesen-gh/garethtan/models/trained_models/llama-3-DPO-811-FullTrainDebateRoundTwo-full-trained/checkpoint-320
+          peft_base_model: /home/ubuntu/mars-arnesen-gh/garethtan/models/trained_models/llama-3-DPO-811-FullTrainDebateRoundTwo-full-trained/
+          alias: "dpo-round-2-checkpoint-320-trained"
+          require_quote_validation: True
+          generation_params:
+            temperature: 0.5
+    judge:
+      model_settings:
+        model_type: openai
+        alias: openai-judge-ft-0731
+        model_file_path: ft:gpt-4.1-2025-04-14:modulo-research-ltd:michael-and-khan-data-judge-31-07:BzYGc8SU
+  tournament:
+    tournament_type: capped_round_robin
+  dataset:
+    dataset_type: quality
+    split_type: val
+    shuffle_deterministically: True
+debater-cross-play-sft-0731-rl-0810-checkpoint-replication-0822-12:
+  batch_size: 1
+  num_speeches: 1
+  flip: True
+  enable_self_debate: False
+  speech_structure: default_debate
+  alternate: False
+  agents:
+    debaters:
+      - model_settings:
+          model_type: llama3
+          model_file_path: /home/ubuntu/mars-arnesen-gh/garethtan/models/trained_models/llama-3-DPO-811-FullTrainDebateRoundTwo-full-trained/checkpoint-352
+          peft_base_model: /home/ubuntu/mars-arnesen-gh/garethtan/models/trained_models/llama-3-DPO-811-FullTrainDebateRoundTwo-full-trained/
+          alias: "dpo-round-2-checkpoint-352-trained"
+          require_quote_validation: True
+          generation_params:
+            temperature: 0.5
+    judge:
+      model_settings:
+        model_type: openai
+        alias: openai-judge-ft-0731
+        model_file_path: ft:gpt-4.1-2025-04-14:modulo-research-ltd:michael-and-khan-data-judge-31-07:BzYGc8SU
+  tournament:
+    tournament_type: capped_round_robin
+  dataset:
+    dataset_type: quality
+    split_type: val
+    shuffle_deterministically: True
+debater-cross-play-sft-0731-rl-0810-checkpoint-replication-0822-13:
+  batch_size: 1
+  num_speeches: 1
+  flip: True
+  enable_self_debate: False
+  speech_structure: default_debate
+  alternate: False
+  agents:
+    debaters:
+      - model_settings:
+          model_type: llama3
+          model_file_path: /home/ubuntu/mars-arnesen-gh/garethtan/models/trained_models/llama-3-DPO-811-FullTrainDebateRoundTwo-full-trained/checkpoint-384
+          peft_base_model: /home/ubuntu/mars-arnesen-gh/garethtan/models/trained_models/llama-3-DPO-811-FullTrainDebateRoundTwo-full-trained/
+          alias: "dpo-round-2-checkpoint-384-trained"
+          require_quote_validation: True
+          generation_params:
+            temperature: 0.5
+    judge:
+      model_settings:
+        model_type: openai
+        alias: openai-judge-ft-0731
+        model_file_path: ft:gpt-4.1-2025-04-14:modulo-research-ltd:michael-and-khan-data-judge-31-07:BzYGc8SU
+  tournament:
+    tournament_type: capped_round_robin
+  dataset:
+    dataset_type: quality
+    split_type: val
+    shuffle_deterministically: True
+debater-cross-play-sft-0731-rl-0810-checkpoint-replication-0822-14:
+  batch_size: 1
+  num_speeches: 1
+  flip: True
+  enable_self_debate: False
+  speech_structure: default_debate
+  alternate: False
+  agents:
+    debaters:
+      - model_settings:
+          model_type: llama3
+          model_file_path: /home/ubuntu/mars-arnesen-gh/garethtan/models/trained_models/llama-3-DPO-811-FullTrainDebateRoundTwo-full-trained/checkpoint-416
+          peft_base_model: /home/ubuntu/mars-arnesen-gh/garethtan/models/trained_models/llama-3-DPO-811-FullTrainDebateRoundTwo-full-trained/
+          alias: "dpo-round-2-checkpoint-416-trained"
+          require_quote_validation: True
+          generation_params:
+            temperature: 0.5
+    judge:
+      model_settings:
+        model_type: openai
+        alias: openai-judge-ft-0731
+        model_file_path: ft:gpt-4.1-2025-04-14:modulo-research-ltd:michael-and-khan-data-judge-31-07:BzYGc8SU
+  tournament:
+    tournament_type: capped_round_robin
+  dataset:
+    dataset_type: quality
+    split_type: val
+    shuffle_deterministically: True
+debater-cross-play-sft-0731-rl-0810-checkpoint-replication-0822:
+  batch_size: 1
+  num_speeches: 1
+  flip: True
+  enable_self_debate: False
+  speech_structure: default_debate
+  alternate: False
+  agents:
+    debaters:
+      - model_settings:
+          model_type: llama3
+          model_file_path: /home/ubuntu/mars-arnesen-gh/garethtan/models/trained_models/llama-3-DPO-811-FullTrainDebateLowLR-test
+          alias: "dpo-round-1-full-trained"
+          require_quote_validation: True
+          generation_params:
+            temperature: 0.5
+      - model_settings:
+          model_type: llama3
+          model_file_path: /home/ubuntu/mars-arnesen-gh/garethtan/models/trained_models/llama-3-DPO-811-FullTrainDebateRoundTwo-full-trained/checkpoint-32
+          peft_base_model: /home/ubuntu/mars-arnesen-gh/garethtan/models/trained_models/llama-3-DPO-811-FullTrainDebateRoundTwo-full-trained
+          alias: "dpo-round-2-checkpoint-32-trained"
+          require_quote_validation: True
+          generation_params:
+            temperature: 0.5
+      - model_settings:
+          model_type: llama3
+          model_file_path: /home/ubuntu/mars-arnesen-gh/garethtan/models/trained_models/llama-3-DPO-811-FullTrainDebateRoundTwo-full-trained/checkpoint-64
+          peft_base_model: /home/ubuntu/mars-arnesen-gh/garethtan/models/trained_models/llama-3-DPO-811-FullTrainDebateRoundTwo-full-trained
+          alias: "dpo-round-2-checkpoint-64-trained"
+          require_quote_validation: True
+          generation_params:
+            temperature: 0.5
+      - model_settings:
+          model_type: llama3
+          model_file_path: /home/ubuntu/mars-arnesen-gh/garethtan/models/trained_models/llama-3-DPO-811-FullTrainDebateRoundTwo-full-trained/checkpoint-96
+          peft_base_model: /home/ubuntu/mars-arnesen-gh/garethtan/models/trained_models/llama-3-DPO-811-FullTrainDebateRoundTwo-full-trained
+          alias: "dpo-round-2-checkpoint-96-trained"
+          require_quote_validation: True
+          generation_params:
+            temperature: 0.5
+      - model_settings:
+          model_type: llama3
+          model_file_path: /home/ubuntu/mars-arnesen-gh/garethtan/models/trained_models/llama-3-DPO-811-FullTrainDebateRoundTwo-full-trained/checkpoint-128
+          peft_base_model: /home/ubuntu/mars-arnesen-gh/garethtan/models/trained_models/llama-3-DPO-811-FullTrainDebateRoundTwo-full-trained
+          alias: "dpo-round-2-checkpoint-128-trained"
+          require_quote_validation: True
+          generation_params:
+            temperature: 0.5
+      - model_settings:
+          model_type: llama3
+          model_file_path: /home/ubuntu/mars-arnesen-gh/garethtan/models/trained_models/llama-3-DPO-811-FullTrainDebateRoundTwo-full-trained/checkpoint-160
+          peft_base_model: /home/ubuntu/mars-arnesen-gh/garethtan/models/trained_models/llama-3-DPO-811-FullTrainDebateRoundTwo-full-trained
+          alias: "dpo-round-2-checkpoint-160-trained"
+          require_quote_validation: True
+          generation_params:
+            temperature: 0.5
+      - model_settings:
+          model_type: llama3
+          model_file_path: /home/ubuntu/mars-arnesen-gh/garethtan/models/trained_models/llama-3-DPO-811-FullTrainDebateRoundTwo-full-trained/checkpoint-192
+          peft_base_model: /home/ubuntu/mars-arnesen-gh/garethtan/models/trained_models/llama-3-DPO-811-FullTrainDebateRoundTwo-full-trained
+          alias: "dpo-round-2-checkpoint-192-trained"
+          require_quote_validation: True
+          generation_params:
+            temperature: 0.5
+      - model_settings:
+          model_type: llama3
+          model_file_path: /home/ubuntu/mars-arnesen-gh/garethtan/models/trained_models/llama-3-DPO-811-FullTrainDebateRoundTwo-full-trained/checkpoint-224
+          peft_base_model: /home/ubuntu/mars-arnesen-gh/garethtan/models/trained_models/llama-3-DPO-811-FullTrainDebateRoundTwo-full-trained
+          alias: "dpo-round-2-checkpoint-224-trained"
+          require_quote_validation: True
+          generation_params:
+            temperature: 0.5
+      - model_settings:
+          model_type: llama3
+          model_file_path: /home/ubuntu/mars-arnesen-gh/garethtan/models/trained_models/llama-3-DPO-811-FullTrainDebateRoundTwo-full-trained/checkpoint-256
+          peft_base_model: /home/ubuntu/mars-arnesen-gh/garethtan/models/trained_models/llama-3-DPO-811-FullTrainDebateRoundTwo-full-trained
+          alias: "dpo-round-2-checkpoint-256-trained"
+          require_quote_validation: True
+          generation_params:
+            temperature: 0.5
+      - model_settings:
+          model_type: llama3
+          model_file_path: /home/ubuntu/mars-arnesen-gh/garethtan/models/trained_models/llama-3-DPO-811-FullTrainDebateRoundTwo-full-trained/checkpoint-288
+          peft_base_model: /home/ubuntu/mars-arnesen-gh/garethtan/models/trained_models/llama-3-DPO-811-FullTrainDebateRoundTwo-full-trained
+          alias: "dpo-round-2-checkpoint-288-trained"
+          require_quote_validation: True
+          generation_params:
+            temperature: 0.5
+      - model_settings:
+          model_type: llama3
+          model_file_path: /home/ubuntu/mars-arnesen-gh/garethtan/models/trained_models/llama-3-DPO-811-FullTrainDebateRoundTwo-full-trained/checkpoint-320
+          peft_base_model: /home/ubuntu/mars-arnesen-gh/garethtan/models/trained_models/llama-3-DPO-811-FullTrainDebateRoundTwo-full-trained
+          alias: "dpo-round-2-checkpoint-320-trained"
+          require_quote_validation: True
+          generation_params:
+            temperature: 0.5
+      - model_settings:
+          model_type: llama3
+          model_file_path: /home/ubuntu/mars-arnesen-gh/garethtan/models/trained_models/llama-3-DPO-811-FullTrainDebateRoundTwo-full-trained/checkpoint-352
+          peft_base_model: /home/ubuntu/mars-arnesen-gh/garethtan/models/trained_models/llama-3-DPO-811-FullTrainDebateRoundTwo-full-trained
+          alias: "dpo-round-2-checkpoint-352-trained"
+          require_quote_validation: True
+          generation_params:
+            temperature: 0.5
+      - model_settings:
+          model_type: llama3
+          model_file_path: /home/ubuntu/mars-arnesen-gh/garethtan/models/trained_models/llama-3-DPO-811-FullTrainDebateRoundTwo-full-trained/checkpoint-384
+          peft_base_model: /home/ubuntu/mars-arnesen-gh/garethtan/models/trained_models/llama-3-DPO-811-FullTrainDebateRoundTwo-full-trained
+          alias: "dpo-round-2-checkpoint-384-trained"
+          require_quote_validation: True
+          generation_params:
+            temperature: 0.5
+      - model_settings:
+          model_type: llama3
+          model_file_path: /home/ubuntu/mars-arnesen-gh/garethtan/models/trained_models/llama-3-DPO-811-FullTrainDebateRoundTwo-full-trained/checkpoint-416
+          peft_base_model: /home/ubuntu/mars-arnesen-gh/garethtan/models/trained_models/llama-3-DPO-811-FullTrainDebateRoundTwo-full-trained
+          alias: "dpo-round-2-checkpoint-416-trained"
+          require_quote_validation: True
+          generation_params:
+            temperature: 0.5
+      - model_settings:
+          model_type: llama3
+          model_file_path: /home/ubuntu/mars-arnesen-gh/garethtan/models/trained_models/llama-3-DPO-811-FullTrainDebateRoundTwo-full-trained/checkpoint-448
+          peft_base_model: /home/ubuntu/mars-arnesen-gh/garethtan/models/trained_models/llama-3-DPO-811-FullTrainDebateRoundTwo-full-trained
+          alias: "dpo-round-2-checkpoint-448-trained"
+          require_quote_validation: True
+          generation_params:
+            temperature: 0.5
+      - model_settings:
+          model_type: llama3
+          model_file_path: /home/ubuntu/mars-arnesen-gh/garethtan/models/trained_models/llama-3-DPO-811-FullTrainDebateRoundTwo-full-trained/checkpoint-468
+          peft_base_model: /home/ubuntu/mars-arnesen-gh/garethtan/models/trained_models/llama-3-DPO-811-FullTrainDebateRoundTwo-full-trained
+          alias: "dpo-round-2-checkpoint-468-trained"
+          require_quote_validation: True
+          generation_params:
+            temperature: 0.5
+      - model_settings:
+          model_type: llama3
+          model_file_path: /home/ubuntu/mars-arnesen-gh/garethtan/models/trained_models/llama-3-DPO-811-FullTrainDebateRoundTwo-full-trained
+          alias: "dpo-round-2-full-trained"
+          require_quote_validation: True
+          generation_params:
+            temperature: 0.5
+    judge:
+      model_settings:
+        model_type: openai
+        alias: openai-judge-ft-0731
+        model_file_path: ft:gpt-4.1-2025-04-14:modulo-research-ltd:michael-and-khan-data-judge-31-07:BzYGc8SU
+  tournament:
+    tournament_type: capped_round_robin
+    custom_matchups:
+      - ["dpo-round-1-full-trained", "dpo-round-1-full-trained"]
+      - ["dpo-round-2-checkpoint-32-trained", "dpo-round-2-checkpoint-32-trained"]
+      - ["dpo-round-2-checkpoint-64-trained", "dpo-round-2-checkpoint-64-trained"]
+      - ["dpo-round-2-checkpoint-96-trained", "dpo-round-2-checkpoint-96-trained"]
+      - ["dpo-round-2-checkpoint-128-trained", "dpo-round-2-checkpoint-128-trained"]
+      - ["dpo-round-2-checkpoint-160-trained", "dpo-round-2-checkpoint-160-trained"]
+      - ["dpo-round-2-checkpoint-192-trained", "dpo-round-2-checkpoint-192-trained"]
+      - ["dpo-round-2-checkpoint-224-trained", "dpo-round-2-checkpoint-224-trained"]
+      - ["dpo-round-2-checkpoint-256-trained", "dpo-round-2-checkpoint-256-trained"]
+      - ["dpo-round-2-checkpoint-288-trained", "dpo-round-2-checkpoint-288-trained"]
+      - ["dpo-round-2-checkpoint-320-trained", "dpo-round-2-checkpoint-320-trained"]
+      - ["dpo-round-2-checkpoint-352-trained", "dpo-round-2-checkpoint-352-trained"]
+      - ["dpo-round-2-checkpoint-384-trained", "dpo-round-2-checkpoint-384-trained"]
+      - ["dpo-round-2-checkpoint-416-trained", "dpo-round-2-checkpoint-416-trained"]
+      - ["dpo-round-2-checkpoint-448-trained", "dpo-round-2-checkpoint-448-trained"]
+      - ["dpo-round-2-checkpoint-468-trained", "dpo-round-2-checkpoint-468-trained"]
+      - ["dpo-round-2-full-trained", "dpo-round-2-full-trained"]
+  dataset:
+    dataset_type: quality
+    split_type: val
+    shuffle_deterministically: True
 Data Generation - Llama3 - SingleRound - FullTrain - SFT:
   batch_size: 1
   num_speeches: 1

@@ -238,7 +238,7 @@ class TrainUtils:
                 model = AutoModelForCausalLMWithValueHead.from_pretrained(
                     pretrained_model_name_or_path=model,
                     trust_remote_code=True,
-                    use_flash_attention_2=True,
+                    # use_flash_attention_2=True,
                     use_cache=False,
                     peft_config=peft_config,
                     quantization_config=LLModel.get_bnb_config() if llm_cls.QUANTIZE else None,
