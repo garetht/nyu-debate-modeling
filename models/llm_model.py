@@ -590,7 +590,11 @@ class OpenWeightsOpenAIModel(LLModel):
         generation_config = super().create_default_generation_config(
             is_debater=is_debater, generation_params=generation_params
         )
-        generation_config.eos_token_id = [self.tokenizer.eos_token_id, self.tokenizer.convert_tokens_to_ids("<|eot_id|>")]
+
+        print("tokenizer eos id")
+        print(self.tokenizer.eos_token_id)
+
+        generation_config.eos_token_id = [self.tokenizer.eos_token_id]
         return generation_config
 
 
