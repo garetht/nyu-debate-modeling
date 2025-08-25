@@ -186,31 +186,16 @@ class LLModel(Model):
         local_rank = int(os.environ.get("LOCAL_RANK", "0"))
         device_map = {"": local_rank}
 
-        print("using existing instantiation")
-        print(file_path)
-
-        if file_path:
-            model = AutoModelForCausalLM.from_pretrained(
-                pretrained_model_name_or_path=peft_base_model or file_path,
-                device_map=device_map,
-                trust_remote_code=True,
-                # use_flash_attention_2=True,
-                use_cache=use_cache,
-                token=os.getenv("META_ACCESS_TOKEN") if requires_token else None,
-                # quantization_config=LLModel.get_bnb_config() if quantize else None,
-                torch_dtype=None if quantize else torch.bfloat16,
-            )
-        else:
-            model = AutoModelForCausalLM.from_pretrained(
-                pretrained_model_name_or_path=peft_base_model or file_path,
-                device_map=device_map,
-                trust_remote_code=True,
-                use_flash_attention_2=True,
-                use_cache=use_cache,
-                token=os.getenv("META_ACCESS_TOKEN") if requires_token else None,
-                quantization_config=LLModel.get_bnb_config() if quantize else None,
-                torch_dtype=None if quantize else torch.bfloat16,
-            )
+        model = AutoModelForCausalLM.from_pretrained(
+            pretrained_model_name_or_path=peft_base_model or file_path,
+            device_map=device_map,
+            trust_remote_code=True,
+            # use_flash_attention_2=True,
+            use_cache=use_cache,
+            token=os.getenv("META_ACCESS_TOKEN") if requires_token else None,
+            # quantization_config=LLModel.get_bnb_config() if quantize else None,
+            torch_dtype=None if quantize else torch.bfloat16,
+        )
 
         if peft_base_model:
             model = PeftModel.from_pretrained(model=model, model_id=file_path, adapter_name="default", is_trainable=False)
@@ -273,8 +258,6 @@ class LLModel(Model):
                 add_generation_prompt=True,
                 chat_template=tokenizer.chat_template,
             )
-            print("This is the chat template that is being output")
-            print(output)
             return output
         except Exception as e:
             return LLModel.generate_input_str(
@@ -359,8 +342,6 @@ class LLModel(Model):
             ]
             for minibatch in minibatches:
                 inputs = self.tokenizer(minibatch, return_tensors="pt", padding=True).to(device)
-
-                print(f"generate output inputs: {inputs=}")
 
                 outputs = self.model.generate(**inputs, generation_config=create_new_generation_config())
                 mini_sequences = outputs.sequences if not isinstance(self.model, LLModuleWithLinearProbe) else outputs
@@ -590,9 +571,6 @@ class OpenWeightsOpenAIModel(LLModel):
         generation_config = super().create_default_generation_config(
             is_debater=is_debater, generation_params=generation_params
         )
-
-        print("tokenizer eos id")
-        print(self.tokenizer.eos_token_id)
 
         generation_config.eos_token_id = [self.tokenizer.eos_token_id]
         return generation_config

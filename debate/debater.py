@@ -62,8 +62,6 @@ class Debater(Agent):
         """Generates new text using the pre-existing transcript as input"""
         model_inputs = [transcript.to_model_input() for transcript in self.transcripts]
 
-        print(f"{model_inputs=}")
-
         return self.model.predict(
             inputs=model_inputs,
             max_new_tokens=max_new_tokens or self.speech_format.tokens_per_speech,
