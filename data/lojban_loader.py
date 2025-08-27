@@ -80,7 +80,7 @@ class LojbanDataset(RawDataset):
                         entry["answers"][first],
                         entry["answers"][second],
                     ),
-                    story_title=entry["original_id"],
+                    debate_id=entry["original_id"]
                 )
             )
             if not self.flip_sides:
