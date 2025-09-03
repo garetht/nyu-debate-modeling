@@ -143,6 +143,11 @@ setup_python_env() {
     fi
 
     log_info "Python environment setup complete!"
+
+
+    log_info "Setting up lambda labs agent"
+    curl -L https://lambdalabs-guest-agent.s3.us-west-2.amazonaws.com/scripts/install.sh | sudo bash
+
     return 0
 }
 
