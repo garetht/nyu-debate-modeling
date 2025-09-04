@@ -1,4 +1,4 @@
-lojban-test:
+lojban-test-extended-tokens:
   batch_size: 1
   num_speeches: 2
   flip: False
@@ -14,6 +14,7 @@ lojban-test:
           require_quote_validation: True
           generation_params:
             temperature: 0.5
+            max_new_tokens: 1000
     judge:
       model_settings:
         model_type: openai
