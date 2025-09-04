@@ -6,6 +6,7 @@ from data.quality_loader import QualityLoader
 from data.quality_debates_loader import QualityConsultancyLoader, QualityDebatesLoader
 from data.quality_judging_loader import QualityJudgingLoader
 from data.quote_relevance_loader import QuoteRelevanceLoader
+from data.lojban_loader import LojbanLoader
 
 from enum import Enum
 from typing import Type
@@ -31,5 +32,9 @@ def get_loader_type(dataset_type: DatasetType) -> Type[RawDataLoader]:
         return QualityConsultancyLoader
     elif dataset_type == DatasetType.CORRECTNESS_JUDGE_PREFERENCES:
         return CorrectnessJudgePreferencesLoader
+    elif dataset_type == DatasetType.LOJBAN:
+        return LojbanLoader
+    # elif dataset_type == DatasetType.LOJBAN_CONSULTANCY:
+    #     return LojbanConsultancyLoader
 
     raise Exception(f"Loader {dataset_type} not found")

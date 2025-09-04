@@ -5,6 +5,10 @@ from difflib import SequenceMatcher
 from typing import Optional
 import re
 
+import json
+from pathlib import Path
+
+
 import fuzzysearch  #  potentially delete
 
 
@@ -208,6 +212,7 @@ def validate_and_replace_quotes(speech_content: str, background_text: str) -> st
     the input quote is replaced with the correct text. If no match is found, the original
     quote is wrapped in invalid quote tags. See find_best_match() for
     explanations of the remaining parameters."""
+    output_jsonl_path = Path.cwd() / "quotes_log.jsonl"
     updated_speech_content = clean_up_quotes(speech_content)
     for quote in extract_quotes(speech_content=updated_speech_content):
         if not validate_quote(quote=quote, background_text=background_text):
@@ -218,6 +223,9 @@ def validate_and_replace_quotes(speech_content: str, background_text: str) -> st
                 early_stopping_threshold=constants.QUOTE_FUZZY_MATCH_EARLY_STOPPING_THRESHOLD,
                 min_threshold=constants.QUOTE_FUZZY_MATCH_MIN_THRESHOLD,
             )
+            with open(output_jsonl_path, "a", encoding="utf-8") as f:
+                json.dump({"quote": quote, "replacement": updated_speech_content, "background_text": background_text}, f)
+                f.write("\n")
     return updated_speech_content
 
 
