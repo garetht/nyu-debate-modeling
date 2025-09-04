@@ -186,10 +186,6 @@ class LLModel(Model):
         local_rank = int(os.environ.get("LOCAL_RANK", "0"))
         device_map = {"": local_rank}
 
-        print("two models")
-        print(peft_base_model)
-        print(file_path)
-
         model = AutoModelForCausalLM.from_pretrained(
             pretrained_model_name_or_path=peft_base_model or file_path,
             device_map=device_map,
@@ -197,7 +193,7 @@ class LLModel(Model):
             # use_flash_attention_2=True,
             use_cache=use_cache,
             token=os.getenv("META_ACCESS_TOKEN") if requires_token else None,
-            quantization_config=LLModel.get_bnb_config() if quantize else None,
+            # quantization_config=LLModel.get_bnb_config() if quantize else None,
             torch_dtype=None if quantize else torch.bfloat16,
         )
 
@@ -346,6 +342,7 @@ class LLModel(Model):
             ]
             for minibatch in minibatches:
                 inputs = self.tokenizer(minibatch, return_tensors="pt", padding=True).to(device)
+
                 outputs = self.model.generate(**inputs, generation_config=create_new_generation_config())
                 mini_sequences = outputs.sequences if not isinstance(self.model, LLModuleWithLinearProbe) else outputs
                 sequences += [row for row in mini_sequences]
@@ -517,6 +514,66 @@ class MistralModel(LLModel):
         copy.model = self.model
         copy.generation_config = self.generation_config
         return copy
+
+
+class OpenWeightsOpenAIModel(LLModel):
+    INSTRUCTION_PREFIX = "<|start|>user<|message|>"
+    INSTRUCTION_SUFFIX = "<|end|>\n\n"
+    ATTENTION_MODULES = ["q_proj", "k_proj", "v_proj"]
+    MLP_MODULES = [],
+    TARGET_MODULES = ["q_proj", "k_proj", "v_proj"]
+
+    QUANTIZE = False
+
+    def __init__(
+            self,
+            alias: str,
+            file_path: Optional[str] = None,
+            is_debater: bool = True,
+            nucleus: bool = True,
+            probe_hyperparams: Optional[ProbeHyperparams] = None,
+            generation_params: GenerationParams = GenerationParams(),
+            peft_base_model: Optional[str] = None,
+    ):
+        super().__init__(
+            alias=alias,
+            file_path=file_path,
+            is_debater=is_debater,
+            nucleus=nucleus,
+            instruction_prefix="",
+            instruction_suffix="",
+            requires_file_path=True,
+            probe_hyperparams=probe_hyperparams,
+            max_mini_batch_size=1,
+            quantize=False,
+            generation_params=generation_params,
+            peft_base_model=peft_base_model,
+        )
+
+    def copy(self, alias: str, is_debater: Optional[bool] = None, nucleus: bool = False) -> LLModel:
+        """Generates a deepcopy of this model"""
+        copy = OpenWeightsOpenAIModel(
+            alias=alias,
+            is_debater=self.is_debater if is_debater == None else is_debater,
+            nucleus=nucleus,
+            generation_params=self.generation_params,
+        )
+        copy.is_debater = self.is_debater if is_debater == None else is_debater
+        copy.tokenizer = self.tokenizer
+        copy.model = self.model
+        copy.generation_config = self.generation_config
+        return copy
+
+    def create_default_generation_config(
+            self, is_debater: bool = True, generation_params: GenerationParams = GenerationParams()
+    ) -> GenerationConfig:
+        """Creates a default generation config so that the model can generate text"""
+        generation_config = super().create_default_generation_config(
+            is_debater=is_debater, generation_params=generation_params
+        )
+
+        generation_config.eos_token_id = [self.tokenizer.eos_token_id]
+        return generation_config
 
 
 class Llama3Model(LLModel):

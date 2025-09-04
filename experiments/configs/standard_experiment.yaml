@@ -94,7 +94,7 @@ debater-rl-trained-0711-judge-untrained:
   dataset:
     dataset_type: quality
     split_type: val
-debater-gptoss-untrained-judge-trained-0731:
+debater-gpt-oss-untrained-judge-trained-0731:
   batch_size: 1
   num_speeches: 2
   flip: False
@@ -104,9 +104,9 @@ debater-gptoss-untrained-judge-trained-0731:
   agents:
     debaters:
       - model_settings:
-          model_type: llama3
-          model_file_path: /home/ubuntu/mars-arnesen-gh/garethtan/downloaded-models/gradientai/Llama-3-8B-Instruct-262k
-          alias: "dpo-rl-0731-model"
+          model_type: open_weights_openai
+          model_file_path: /home/ubuntu/mars-arnesen-gh/garethtan/downloaded-models/openai/gpt-oss-20b
+          alias: "gpt-oss-20b-untrained"
           require_quote_validation: True
           generation_params:
             temperature: 0.5
