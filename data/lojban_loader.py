@@ -3,6 +3,7 @@ from typing import Any, Callable, Optional, Type
 import json
 import os
 import re
+from data.quality_loader import QualityLoader
 import utils.constants as constants
 import random
 
@@ -11,6 +12,7 @@ class LojbanDataset(RawDataset):
     def __init__(
         self,
         test_data: list[dict[str, Any]],
+        val_data: list[dict[str, Any]],
         override_type: Optional[DatasetType] = None,
         flip_sides: bool = False,
         shuffle_deterministically: bool = False,
@@ -21,10 +23,13 @@ class LojbanDataset(RawDataset):
             random.seed(a=123456789)
         self.flip_sides = flip_sides
         self.data = {
-            SplitType.TEST: self.convert_batch_to_rows(test_data),
+            SplitType.VAL: self.convert_batch_to_rows(val_data),
+            SplitType.TEST: self.convert_batch_to_rows(test_data)
         }
-        self.idxs = {SplitType.TEST: 0}
+
+        self.idxs = {SplitType.VAL: 0, SplitType.TEST: 0}
         
+        self.data[SplitType.VAL] = self.__reorder(self.data[SplitType.VAL])
         self.data[SplitType.TEST] = self.__reorder(self.data[SplitType.TEST])
         self.shuffle_deterministically = shuffle_deterministically
 
@@ -80,7 +85,9 @@ class LojbanDataset(RawDataset):
                         entry["answers"][first],
                         entry["answers"][second],
                     ),
-                    debate_id=entry["original_id"]
+                    debate_id=entry["original_id"],
+                    ground_truth=entry["original_key"],
+                    explanations=entry["explanations"]
                 )
             )
             if not self.flip_sides:
@@ -106,56 +113,56 @@ class LojbanDataset(RawDataset):
                 final_order.append(prompt_to_rows[story][index])
         return final_order
 
-class LojbanTranscripts:
-    DEFAULT_FILE_PATH = os.environ[constants.SRC_ROOT] + "data/datasets/quality-debates/debates-readable.jsonl"
+class LojbanLoader(RawDataLoader):
+    DEFAULT_VAL_PATH = os.environ[constants.SRC_ROOT] + "data/datasets/lojban/lojban_dataset.jsonl"
+    DEFAULT_TEST_PATH = os.environ[constants.SRC_ROOT] + "data/datasets/lojban/lojban_dataset_test.jsonl"
+
     @classmethod
-    def get_test_split(
-            cls,
-            file_path: str,
-    ) -> list[dict]:
-        
-        def _load_file(file_path: str):
+    def get_splits(
+        cls,
+        train_filepath: Optional[str] = None,
+        val_filepath: Optional[str] = None,
+        test_filepath: Optional[str] = None,
+    ) -> tuple[list[dict]]:
+        """Splits the data in train, val, and test sets"""
+
+        def __load_individual_file(filepath: str) -> list[str, Any]:
             entries = []
-            with open(file_path, "r", encoding="utf-8") as f:
-                for line in f:
-                    entries.append(json.loads(line))
+            if filepath:
+                with open(filepath, "r", encoding="utf-8") as f:
+                    for line in f.readlines():
+                        entries.append(json.loads(line))
             return entries
-        
-        return _load_file(file_path)
-    
+
+        val_filepath = val_filepath or LojbanLoader.DEFAULT_VAL_PATH
+        test_filepath = test_filepath or LojbanLoader.DEFAULT_TEST_PATH
+
+        val_split = __load_individual_file(val_filepath)
+        test_split = __load_individual_file(test_filepath)
+        return val_split, test_split
+
+
     @classmethod
     def load(
         cls,
         constructor_cls: Type[RawDataLoader],
         full_dataset_filepath: Optional[str] = None,
-    ) -> LojbanDataset:
-        full_dataset_filepath = full_dataset_filepath or LojbanTranscripts.DEFAULT_FILE_PATH
-        test = constructor_cls.get_test_split(
-            file_path=full_dataset_filepath,
-        )
-        return LojbanDataset(
-            test_data=test,
-        )
-
-class LojbanLoader(RawDataLoader):
-    @classmethod
-    def get_test_split(cls, file_path: str):
-        return LojbanTranscripts.get_test_split(
-            file_path=file_path,
-        )
-
-    @classmethod
-    def load(
-        cls,
-        full_dataset_filepath: Optional[str] = None,
+        val_filepath: Optional[str] = None,
         test_filepath: Optional[str] = None,
         supplemental_file_paths: Optional[dict[str, str]] = None,
         flip_sides: bool = False,
         shuffle_deterministically: bool = False,
         **kwargs
     ) -> LojbanDataset:
-        dataset_path = test_filepath or full_dataset_filepath
-        return LojbanTranscripts.load(
-            constructor_cls=cls,
-            full_dataset_filepath=dataset_path,
+        """Constructs a LojbanDataset"""
+
+        val_split, test_split = LojbanLoader.get_splits(
+            val_filepath=val_filepath, test_filepath=test_filepath
+        )
+
+        return LojbanDataset(
+            test_data=test_split,
+            val_data=val_split,
+            flip_sides=flip_sides,
+            shuffle_deterministically=shuffle_deterministically
         )
