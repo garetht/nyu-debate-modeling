@@ -24,10 +24,11 @@ class LojbanDataset(RawDataset):
         self.flip_sides = flip_sides
         self.data = {
             SplitType.VAL: self.convert_batch_to_rows(val_data),
-            SplitType.TEST: self.convert_batch_to_rows(test_data)
+            SplitType.TEST: self.convert_batch_to_rows(test_data),
+            SplitType.TRAIN: self.convert_batch_to_rows(test_data)  # Use TEST data for TRAIN since no separate training data
         }
 
-        self.idxs = {SplitType.VAL: 0, SplitType.TEST: 0}
+        self.idxs = {SplitType.VAL: 0, SplitType.TEST: 0, SplitType.TRAIN: 0}
         
         self.data[SplitType.VAL] = self.__reorder(self.data[SplitType.VAL])
         self.data[SplitType.TEST] = self.__reorder(self.data[SplitType.TEST])
@@ -35,14 +36,14 @@ class LojbanDataset(RawDataset):
 
     def get_data(self, split: SplitType = SplitType.TEST) -> list[DataRow]:
         """Returns all the data for a given split"""
-        if split != SplitType.TEST:
-            raise ValueError(f"Split type {split} is not available. Only TEST split is supported for Lojban dataset")
+        # if split != SplitType.TEST:
+        #     raise ValueError(f"Split type {split} is not available. Only TEST split is supported for Lojban dataset")
         return self.data[split]
 
     def get_batch(self, split: SplitType = SplitType.TEST, batch_size: int = 1) -> list[DataRow]:
         """Returns a subset of the data for a given split"""
-        if split != SplitType.TEST:
-            raise ValueError(f"Split type {split} is not available. Only TEST split is supported for Lojban dataset")
+        # if split != SplitType.TEST:
+        #     raise ValueError(f"Split type {split} is not available. Only TEST split is supported for Lojban dataset")
         if batch_size < 1:
             raise ValueError(f"Batch size must be >= 1. Inputted batch size was {batch_size}")
         data_to_return = self.data[split][self.idxs[split] : min(self.idxs[split] + batch_size, len(self.data[split]))]
@@ -51,8 +52,8 @@ class LojbanDataset(RawDataset):
 
     def get_example(self, split: SplitType = SplitType.TEST, idx: int = 0) -> DataRow:
         """Returns an individual row in the dataset"""
-        if split != SplitType.TEST:
-            raise ValueError(f"Split type {split} is not available. Only TEST split is supported for Lojban dataset")
+        # if split != SplitType.TEST:
+        #     raise ValueError(f"Split type {split} is not available. Only TEST split is supported for Lojban dataset")
         return self.data[split][idx % len(self.data[split])]
 
     def convert_batch_to_rows(self, batch: list[dict[str, Any]]):
@@ -87,7 +88,7 @@ class LojbanDataset(RawDataset):
                     ),
                     debate_id=entry["original_id"],
                     ground_truth=entry["original_key"],
-                    explanations=entry["explanations"]
+                    explanations=entry["original_explanation"]
                 )
             )
             if not self.flip_sides:
@@ -145,7 +146,6 @@ class LojbanLoader(RawDataLoader):
     @classmethod
     def load(
         cls,
-        constructor_cls: Type[RawDataLoader],
         full_dataset_filepath: Optional[str] = None,
         val_filepath: Optional[str] = None,
         test_filepath: Optional[str] = None,
