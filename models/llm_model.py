@@ -160,6 +160,7 @@ class LLModel(Model):
         tokenizer = AutoTokenizer.from_pretrained(
             file_path,
             token=os.getenv("META_ACCESS_TOKEN") if requires_token else None,
+            use_fast=True
         )
         tokenizer.pad_token = tokenizer.eos_token
         tokenizer.padding_side = "right"
@@ -329,7 +330,7 @@ class LLModel(Model):
 
         def create_new_generation_config():
             config_to_use = copy.deepcopy(self.generation_config)
-            config_to_use.max_new_tokens = max_new_tokens
+            # config_to_use.max_new_tokens = max_new_tokens
             config_to_use.num_return_sequences = num_return_sequences
             return config_to_use
 

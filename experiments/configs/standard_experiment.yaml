@@ -143,6 +143,31 @@ debater-gpt-oss-untrained-judge-trained-0731:
   dataset:
     dataset_type: quality
     split_type: val
+debater-gpt-oss-trained-0899-judge-o4-mini-rft-0822:
+  batch_size: 1
+  num_speeches: 2
+  flip: False
+  enable_self_debate: True
+  speech_structure: default_debate
+  alternate: False
+  agents:
+    debaters:
+      - model_settings:
+          model_type: open_weights_openai
+          model_file_path: /home/ubuntu/mars-arnesen-gh/leonidtsyplenkov/models/trained_models/gpt_oss_20b_lora/lora_adapter
+          peft_base_model: /home/ubuntu/mars-arnesen-gh/leonidtsyplenkov/models/trained_models/gpt_oss_20b_lora/merged
+          alias: "gpt-oss-20b-lora-trained"
+          require_quote_validation: True
+          generation_params:
+            temperature: 0.5
+    judge:
+      model_settings:
+        model_type: openai
+        alias: openai-o4-mini-judge-rft-0822
+        model_file_path: ft:o4-mini-2025-04-16:modulo-research-ltd:michael-and-khan-data-judge-22-08:C7f9cyRI
+  dataset:
+    dataset_type: quality
+    split_type: val
 debater-sft-trained-0731-judge-trained-0731:
   batch_size: 1
   num_speeches: 2

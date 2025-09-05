@@ -18,7 +18,7 @@ class QuoteStats(BaseModel):
 
 
 class QuotesCollector:
-    MAX_TRACKED_QUOTE_LENGTH = 300
+    MAX_TRACKED_QUOTE_LENGTH = 1000
 
     def __init__(self, experiment: ExperimentConfig):
         """Collects metrics about quotation usage from debate rounds"""
