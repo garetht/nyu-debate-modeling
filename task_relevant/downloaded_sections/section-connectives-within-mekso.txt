@@ -1,0 +1,123 @@
+Chapter 18. lojbau mekso: Mathematical Expressions in Lojban  
+---  
+Prev: Section 18.16 |  Next: Section 18.18  
+---|---  
+Table of Contents
+Book Info Page
+* * *
+## 18.17. Logical and non-logical connectives within mekso
+The following cmavo are discussed in this section:
+.abu |  BY |  letter “a”  
+---|---|---  
+by |  BY |  letter “b”  
+cy |  BY |  letter “c”  
+fe'a |  VUhU |  nth root of (default square root)  
+lo'o |  LOhO |  terminator for LI  
+As befits a logical language, Lojban has extensive provision for logical connectives within both operators and operands. Full details on logical and non-logical connectives are provided in Chapter 14. Operands are connected in afterthought with selma'o A and in forethought with selma'o GA, just like sumti. Operators are connected in afterthought with selma'o JA and in forethought with selma'o GUhA, just like tanru components. This parallelism is no accident.
+In addition, A+BO and A+KE constructs are allowed for grouping logically connected operands, and __ke__ … __ke'e__ is allowed for grouping logically connected operators, although there are no analogues of tanru among the operators.
+Despite the large number of rules required to support this feature, it is of relatively minor importance in the mekso scheme of things. Example 18.114 exhibits afterthought logical connection between operands:
+**Example 18.114. **
+vei | ci | .a | vo | ve'o | prenu | cu | klama | le | zarci  
+---|---|---|---|---|---|---|---|---|---  
+( | Three | or | four | ) | people |  | go | to-the | market.  
+  
+
+Example 18.115 is equivalent in meaning, but uses forethought connection:
+**Example 18.115. **
+vei | ga | ci | gi | vo | ve'o | prenu | cu | klama | le | zarci  
+---|---|---|---|---|---|---|---|---|---|---  
+( | Either | 3 | or | 4 | ) | people |  | go | to-the | market.  
+  
+
+Note that the mekso here are being used as quantifiers. Lojban requires that any mekso other than a simple number be enclosed in parentheses when used as a quantifier. This rule prevents ambiguities that do not exist when using __li__.
+By the way, __li__ has an elidable terminator, __lo'o__ , which is needed when a __li__ sumti is followed by a logical connective that could seem to be within the mekso. For example:
+**Example 18.116. **
+li | re | su'i | re | du  
+---|---|---|---|---  
+The-number | two | plus | two | equals  
+li | vo | lo'o | .onai | lo | nalseldjuno | namcu  
+---|---|---|---|---|---|---  
+the-number | four |  | or-else | a | non-known | number.  
+  
+
+Omitting the __lo'o__ would cause the parser to assume that another operand followed the __.onai__ and reject __lo__ as an invalid operand.
+Simple examples of logical connection between operators are hard to come by. A contrived example is:
+**Example 18.117. **
+li | re | su'i | je | pi'i | re | du | li | vo  
+---|---|---|---|---|---|---|---|---  
+The-number | two | plus | and | times | two | equals | the-number | four.  
+2 + 2 = 4 and 2 × 2 = 4.  
+  
+
+The forethought-connection form of Example 18.117 is:
+**Example 18.118. **
+li | re | ge | su'i | gi | pi'i | re | du | li | vo  
+---|---|---|---|---|---|---|---|---|---  
+the-number | two | both | plus | and | times | two | equals | the-number | four.  
+Both 2 + 2 = 4 and 2 × 2 = 4.  
+  
+
+Here is a classic example of operand logical connection:
+**Example 18.119. **
+go | li | .abu | bi'epi'i | vei | xy. | te'a | re | ve'o | su'i  
+---|---|---|---|---|---|---|---|---|---  
+If-and-only-if | the-number |  “a” | times | ( |  “x” | power | two | ) | plus  
+by. | bi'epi'i | xy. | su'i | cy. | du | li | no  
+---|---|---|---|---|---|---|---  
+“b” | times |  “x” | plus |  “c” | equals | the-number | zero  
+gi | li | xy. | du | li | vei | va'a | by. | ku'e  
+---|---|---|---|---|---|---|---|---  
+then | the-number | x | equals | the-number | [ | the-negation-of( | b | )  
+su'i | ja | vu'u | fe'a  
+---|---|---|---  
+plus | or | minus | the-root-of  
+vei | by. | bi'ete'a | re | vu'u | vo | bi'epi'i | .abu | bi'epi'i | cy.  
+---|---|---|---|---|---|---|---|---|---  
+( |  “b” | power | 2 | minus | four | times |  “a” | times |  “c”  
+ve'o | [ku'e] | ve'o | fe'i | re | bi'epi'i | .abu  
+---|---|---|---|---|---|---  
+) |  | ] | divided-by | two | times |  “a”  
+Iff  a x 2 + b x + c = 0 , then  x = - b ± b 2 - 4 a c 2 a  
+  
+
+Note the mixture of styles in Example 18.119: the negation of b and the square root are represented by forethought and most of the operator precedence by prefixed __bi'e__ , but explicit parentheses had to be added to group the numerator properly. In addition, the square root parentheses cannot be removed here in favor of simple __fe'a__ and __ku'e__ bracketing, because infix operators are present in the operand. Getting Example 18.119 to parse perfectly using the current parser took several tries: a more relaxed style would dispense with most of the __bi'e__ cmavo and just let the standard precedence rules be understood.
+Non-logical connection with JOI and BIhI is also permitted between operands and between operators. One use for this construct is to connect operands with __bi'o__ to create intervals:
+**Example 18.120. **
+li | no | ga'o | bi'o | ke'i | pa  
+---|---|---|---|---|---  
+the-number | zero | (inclusive) | from-to | (exclusive) | one  
+[0,1)  
+the numbers from zero to one, including zero but not including one  
+---  
+  
+
+Intervals defined by a midpoint and range rather than beginning and end points can be expressed by __mi'i__ :
+**Example 18.121. **
+li | pimu | ga'o | mi'i | ke'i | pimu  
+---|---|---|---|---|---  
+the-number | 0.5 | (inclusive) | centered-with-range | (exclusive) | 0.5  
+  
+
+which expresses the same interval as Example 18.120. Note that the __ga'o__ and __ke'i__ still refer to the endpoints, although these are now implied rather than expressed. Another way of expressing the same thing:
+**Example 18.122. **
+li | pimu | su'i | ni'upimu | bi'o | ke'i | ma'upimu  
+---|---|---|---|---|---|---  
+the-number | 0.5 | plus | [-0.5 | from-to | (exclusive) | +0.5]  
+  
+
+Here we have the sum of a number and an interval, which produces another interval centered on the number. As Example 18.122 shows, non-logical (or logical) connection of operands has higher precedence than any mekso operator.
+You can also combine two operands with __ce'o__ , the sequence connective of selma'o JOI, to make a compound subscript:
+**Example 18.123. **
+xy. | xi | vei | by. | ce'o | dy. | [ve'o]  
+---|---|---|---|---|---|---  
+“x” | sub | ( |  “b” | sequence |  “d” | )  
+xb,d  
+  
+
+* * *
+Chapter 18. lojbau mekso: Mathematical Expressions in Lojban  
+---  
+Prev: Section 18.16 |  Next: Section 18.18  
+---|---  
+Table of Contents
+Book Info Page

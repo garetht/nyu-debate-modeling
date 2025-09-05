@@ -1,0 +1,128 @@
+Chapter 16. “Who Did You Pass On The Road? Nobody”: Lojban And Logic  
+---  
+Prev: Section 16.11 |  Next: Section 16.13  
+---|---  
+Table of Contents
+Book Info Page
+* * *
+## 16.12. Logical Connectives and DeMorgan's Law
+DeMorgan's Law states that when a logical connective between terms falls within a negation, then expanding the negation requires a change in the connective. Thus (where “p” and “q” stand for terms or sentences) “not (p or q)” is identical to “not p and not q”, and “not (p and q)” is identical to “not p or not q”. The corresponding changes for the other two basic Lojban connectives are: “not (p equivalent to q)” is identical to “not p exclusive-or not q”, and “not (p whether-or-not q)” is identical to both “not p whether-or-not q” and “not p whether-or-not not q”. In any Lojban sentence having one of the basic connectives, you can substitute in either direction from these identities. (These basic connectives are explained in Chapter 14.)
+The effects of DeMorgan's Law on the logical connectives made by modifying the basic connectives with __nai__ , __na__ and __se__ can be derived directly from these rules; modify the basic connective for DeMorgan's Law by substituting from the above identities, and then, apply each __nai__ , __na__ and __se__ modifier of the original connectives. Cancel any double negatives that result.
+When do we apply DeMorgan's Law? Whenever we wish to “distribute” a negation over a logical connective; and, for internal _naku_ negation, whenever a logical connective moves in to, or out of, the scope of a negation – when it crosses a negation boundary.
+Let us apply DeMorgan's Law to some sample sentences. These sentences make use of forethought logical connectives, which are explained in Section 14.5. It suffices to know that __ga__ and __gi__ , used before each of a pair of sumti or bridi, mean “either” and “or” respectively, and that __ge__ and __gi__ used similarly mean “both” and “and”. Furthermore, __ga__ , __ge__ , and __gi__ can all be suffixed with __nai__ to negate the bridi or sumti that follows.
+We have defined __na__ and _naku zo'u_ as, respectively, internal and external bridi negation. These forms being identical, the negation boundary always remains at the left end of the prenex. Thus, exporting or importing negation between external and internal bridi negation forms never requires DeMorgan's Law to be applied. Example 16.94 and Example 16.95 are exactly equivalent:
+**Example 16.94. **
+la | djan. | na | klama | ga  
+---|---|---|---|---  
+that-named | John | [false] | goes-to | either  
+la | paris. | gi | la | rom.  
+---|---|---|---|---  
+that-named | Paris | or | that-named | Rome.  
+  
+
+**Example 16.95. **
+naku | zo'u | la | djan. | klama  
+---|---|---|---|---  
+It-is-false | that: | that-named | John | goes-to  
+ga | la | paris. | gi | la | rom.  
+---|---|---|---|---|---  
+either | that-named | Paris | or | that-named | Rome.  
+  
+
+It is not an acceptable logical manipulation to move a negator from the bridi level to one or more sumti. However, Example 16.94 and related examples are not sumti negations, but rather expand to form two logically connected sentences. In such a situation, DeMorgan's Law must be applied. For instance, Example 16.95 expands to:
+**Example 16.96. **
+| ge | la | djan. | la | paris. | na | klama  
+---|---|---|---|---|---|---|---  
+[It-is-true-that] | both | that-named | John, | to-that-named | Paris, | [false] | goes,  
+gi | la | djan. | la | rom. | na | klama  
+---|---|---|---|---|---|---  
+and | that-named | John, | to-that-named | Rome, | [false] | goes.  
+  
+
+The __ga__ and __gi__ , meaning “either-or”, have become __ge__ and __gi__ , meaning “both-and”, as a consequence of moving the negators into the individual bridi.
+Here is another example of DeMorgan's Law in action, involving bridi-tail logical connection (explained in Section 14.9):
+**Example 16.97. **
+la | djein. | le | zarci | na | ge | dzukla | gi | bajrykla  
+---|---|---|---|---|---|---|---|---  
+that-named | Jane | to-the | market | [false] | both | walks | and | runs.  
+  
+
+**Example 16.98. **
+la | djein. | le | zarci | ganai | dzukla | ginai | bajrykla  
+---|---|---|---|---|---|---|---  
+that-named | Jane | to-the | market | either-([false] | walks) | or-([false] | runs.  
+that-named | Jane | to-the | market | if | walks | then-([false] | runs).  
+  
+
+(Placing _le zarci_ before the selbri makes sure that it is properly associated with both parts of the logical connection. Otherwise, it is easy to erroneously leave it off one of the two sentences.)
+It is wise, before freely doing transformations such as the one from Example 16.97 to Example 16.98, that you become familiar with expanding logical connectives to separate sentences, transforming the sentences, and then recondensing. Thus, you would prove the transformation correct by the following steps. By moving its __na__ to the beginning of the prenex as a _naku_ , Example 16.97 becomes:
+**Example 16.99. **
+naku | zo'u | la | djein. | le | zarci  
+---|---|---|---|---|---  
+It-is-false-that | : | that-named | Jane | to-the | market  
+ge | dzukla | gi | bajrykla  
+---|---|---|---  
+(both | walks | and | runs).  
+  
+
+And by dividing the bridi with logically connected selbri into two bridi,
+**Example 16.100. **
+naku | zo'u | ge | la | djein. | le | zarci | cu | dzukla  
+---|---|---|---|---|---|---|---|---  
+It-is-false | that: | both | (that-named | Jane | to-the | market |  | walks)  
+gi | la | djein. | le | zarci | cu | bajrykla  
+---|---|---|---|---|---|---  
+and | (that-named | Jane | to-the | market |  | runs).  
+  
+
+is the result.
+At this expanded level, we apply DeMorgan's Law to distribute the negation in the prenex across both sentences, to get
+**Example 16.101. **
+ga | la | djein. | le | zarci | na | dzukla  
+---|---|---|---|---|---|---  
+Either | that-named | Jane | to-the | market | [false] | walks,  
+gi | la | djein. | le | zarci | na | bajrykla  
+---|---|---|---|---|---|---  
+or | that-named | Jane | to-the | market | [false] | runs.  
+  
+
+which is the same as
+**Example 16.102. **
+ganai | la | djein. | le | zarci | cu | dzukla  
+---|---|---|---|---|---|---  
+If | that-named | Jane | to-the | market |  | walks,  
+ginai | la | djein. | le | zarci | cu | bajrykla  
+---|---|---|---|---|---|---  
+then-([false] | that-named | Jane | to-the | market |  | runs).  
+If Jane walks to the market, then she doesn't run.  
+---  
+  
+
+which then condenses down to Example 16.98.
+DeMorgan's Law must also be applied to internal _naku_ negations:
+**Example 16.103. **
+ga | la | paris. | gi | la | rom.  
+---|---|---|---|---|---  
+(Either | that-named | Paris | or | that-named | Rome)  
+naku | se | klama | la | djan.  
+---|---|---|---|---  
+is-not | gone-to-by | that-named | John.  
+  
+
+**Example 16.104. **
+la | djan. | naku | klama | ge  
+---|---|---|---|---  
+that-named | John | doesn't | go-to | both  
+la | paris. | gi | la | rom.  
+---|---|---|---|---  
+that-named | Paris | and | that-named | Rome.  
+  
+
+That Example 16.103 and Example 16.104 mean the same should become evident by studying the English. It is a good exercise to work through the Lojban and prove that they are the same.
+* * *
+Chapter 16. “Who Did You Pass On The Road? Nobody”: Lojban And Logic  
+---  
+Prev: Section 16.11 |  Next: Section 16.13  
+---|---  
+Table of Contents
+Book Info Page

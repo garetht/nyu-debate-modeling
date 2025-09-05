@@ -1,0 +1,65 @@
+Chapter 16. “Who Did You Pass On The Road? Nobody”: Lojban And Logic  
+---  
+Prev: Section 16.3 |  Next: Section 16.5  
+---|---  
+Table of Contents
+Book Info Page
+* * *
+## 16.4. Restricted claims: _da poi_
+The universal claims of Section 16.3 are not only false but absurd: there is really very little to be said that is both true and non-trivial about every object whatsoever. Furthermore, we have been glossing over the distinction between “everything” and “everybody” and the other pairs ending in “-thing” and “-body”. It is time to bring up the most useful feature of Lojban variables: the ability to restrict their ranges.
+In Lojban, a variable __da__ , __de__ , or __di__ may be followed by a __poi__ relative clause in order to restrict the range of things that the variable describes. Relative clauses are described in detail in Chapter 8, but the kind we will need at present consist of __poi__ followed by a bridi (often just a selbri) terminated with __ku'o__ or __vau__ (which can usually be elided). Consider the difference between
+**Example 16.20. **
+da | zo'u | da | viska | la | djim.  
+---|---|---|---|---|---  
+There-is-an-X | : | X | sees | that-named | Jim.  
+Something sees Jim.  
+---  
+  
+
+and
+**Example 16.21. **
+da | poi | prenu | zo'u | da | viska | la | djim.  
+---|---|---|---|---|---|---|---  
+There-is-an-X | which | is-a-person | : | X | sees | that-named | Jim.  
+Someone sees Jim.  
+---  
+  
+
+In Example 16.20, the variable __da__ can refer to any object whatever; there are no restrictions on it. In Example 16.21, __da__ is restricted by the _poi prenu_ relative clause to persons only, and so _da poi prenu_ translates as “someone.” (The difference between “someone” and “somebody” is a matter of English style, with no real counterpart in Lojban.) If Example 16.21 is true, then Example 16.20 must be true, but not necessarily vice versa.
+Universal claims benefit even more from the existence of relative clauses. Consider
+**Example 16.22. **
+ro | da | zo'u | da | vasxu  
+---|---|---|---|---  
+For-every | X | : | X | breathes  
+Everything breathes  
+---  
+  
+
+and
+**Example 16.23. **
+ro | da | poi | gerku | zo'u | da | vasxu  
+---|---|---|---|---|---|---  
+For-every | X | which | is-a-dog | : | X | breathes.  
+Every dog breathes.  
+---  
+Each dog breathes.  
+All dogs breathe.  
+  
+
+Example 16.22 is a silly falsehood, but Example 16.23 is an important truth (at least if applied in a timeless or potential sense: see Section 10.19). Note the various colloquial translations “every dog”, “each dog”, and “all dogs”. They all come to the same thing in Lojban, since what is true of every dog is true of all dogs. “All dogs” is treated as an English plural and the others as singular, but Lojban makes no distinction.
+If we make an existential claim about dogs rather than a universal one, we get:
+**Example 16.24. **
+da | poi | gerku | zo'u | da | vasxu  
+---|---|---|---|---|---  
+There-is-an-X | which | is-a-dog | : | X | breathes.  
+Some dog breathes.  
+---  
+  
+
+* * *
+Chapter 16. “Who Did You Pass On The Road? Nobody”: Lojban And Logic  
+---  
+Prev: Section 16.3 |  Next: Section 16.5  
+---|---  
+Table of Contents
+Book Info Page

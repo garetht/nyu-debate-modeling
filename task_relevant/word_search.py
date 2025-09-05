@@ -104,7 +104,7 @@ def csv_converter(csv_file: str, jsonl_file: str) -> None:
     Returns:
         None
     """
-    with open(csv_file, 'r', encoding='utf-8') as csv_input:
+    with open(csv_file, 'r', encoding='utf-8-sig') as csv_input:
         csv_reader = csv.DictReader(csv_input)
         with open(jsonl_file, 'w', encoding='utf-8') as jsonl_output:
             for row in csv_reader:

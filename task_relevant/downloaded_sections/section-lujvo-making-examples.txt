@@ -1,0 +1,84 @@
+Chapter 4. The Shape Of Words To Come: Lojban Morphology  
+---  
+Prev: Section 4.12 |  Next: Section 4.14  
+---|---  
+Table of Contents
+Book Info Page
+* * *
+## 4.13. lujvo-making examples
+This section contains examples of making and scoring lujvo. First, we will start with the tanru _gerku zdani_ (“dog house”) and construct a lujvo meaning “doghouse”, that is, a house where a dog lives. We will use a brute-force application of the algorithm in Section 4.12, using every possible rafsi.
+The rafsi for __gerku__ are:
+_-ger-_ ,  | _-ge'u-_ ,  | _-gerk-_ ,  |  _-gerku_  
+---|---|---|---  
+The rafsi for __zdani__ are:
+_-zda-_ ,  | _-zdan-_ ,  | _-zdani_.  
+---|---|---  
+Step 1 of the algorithm directs us to use _-ger-_ , _-ge'u-_ and _-gerk-_ as possible rafsi for __gerku__ ; Step 2 directs us to use _-zda-_ and _-zdani_ as possible rafsi for __zdani__. The six possible forms of the lujvo are then:
+_ger_ _-zda_  
+---  
+_ger_ _-zdani_  
+_ge'u_ _-zda_  
+_ge'u_ _-zdani_  
+_gerk_ _-zda_  
+_gerk_ _-zdani_  
+We must then insert appropriate hyphens in each case. The first two forms need no hyphenation: __ge__ cannot fall off the front, because the following word would begin with _rz_ , which is not a permissible initial consonant pair. So the lujvo forms are __gerzda__ and _gerzdani_.
+The third form, _ge'u_ _-zda_ , needs no hyphen, because even though the first rafsi is CVV, the second one is CCV, so there is a consonant cluster in the first five letters. So _ge'uzda_ is this form of the lujvo.
+The fourth form, _ge'u-zdani_ , however, requires an r-hyphen; otherwise, the _ge'u-_ part would fall off as a cmavo. So this form of the lujvo is _ge'urzdani_.
+The last two forms require y-hyphens, as all 4-letter rafsi do, and so are _gerkyzda_ and _gerkyzdani_ respectively.
+The scoring algorithm is heavily weighted in favor of short lujvo, so we might expect that __gerzda__ would win. Its `L` score is 6, its `A` score is 0, its `H` score is 0, its `R` score is 12, and its `V` score is 3, for a final score of 5878. The other forms have scores of 7917, 6367, 9506, 8008, and 10047 respectively. Consequently, this lujvo would probably appear in the dictionary in the form __gerzda__.
+For the next example, we will use the tanru _bloti klesi_ (“boat class”) presumably referring to the category (rowboat, motorboat, cruise liner) into which a boat falls. We will omit the long rafsi from the process, since lujvo containing long rafsi are almost never preferred by the scoring algorithm when there are short rafsi available.
+The rafsi for __bloti__ are _-lot-_ , _-blo-_ , and _-lo'i-_ ; for __klesi__ they are _-kle-_ and _-lei-_. Both these gismu are among the handful which have both CVV-form and CCV-form rafsi, so there is an unusual number of possibilities available for a two-part tanru:
+_lotkle_ |  _blokle_ |  _lo'ikle_  
+---|---|---  
+_lotlei_ |  _ _blolei_ _ |  _lo'irlei_  
+Only _lo'irlei_ requires hyphenation (to avoid confusion with the cmavo sequence _lo'i lei_). All six forms are valid versions of the lujvo, as are the six further forms using long rafsi; however, the scoring algorithm produces the following results:
+_lotkle_ | 5878  
+---|---  
+_blokle_ | 5858  
+_lo'ikle_ | 6367  
+_lotlei_ | 5867  
+_ _blolei_ _ | 5847  
+_lo'irlei_ | 7456  
+So the form __blolei__ is preferred, but only by a tiny margin over _blokle_ ; "lotlei" and "lotkle" are only slightly worse; _lo'ikle_ suffers because of its apostrophe, and _lo'irlei_ because of having both apostrophe and hyphen.
+Our third example will result in forming both a lujvo and a name from the tanru _logji bangu girzu_ , or “logical-language group” in English. (“The Logical Language Group” is the name of the publisher of this book and the organization for the promotion of Lojban.)
+The available rafsi are _-loj-_ and _-logj-_ ; _-ban-_ , _-bau-_ , and _-bang-_ ; and _-gri-_ and _-girzu_ , and (for name purposes only) _-gir-_ and _-girz-_. The resulting 12 lujvo possibilities are:
+_loj_ _-ban_ _-gri_ |  _loj_ _-bau_ _-gri_ |  _loj_ _-bang_ _-gri_  
+---|---|---  
+_logj_ _-ban_ _-gri_ |  _logj_ _-bau_ _-gri_ |  _logj_ _-bang_ _-gri_  
+_loj_ _-ban_ _-girzu_ |  _loj_ _-bau_ _-girzu_ |  _loj_ _-bang_ _-girzu_  
+_logj_ _-ban_ _-girzu_ |  _logj_ _-bau_ _-girzu_ |  _logj_ _-bang_ _-girzu_  
+and the 12 name possibilities are:
+_loj_ _-ban_ _-gir_ |  _loj_ _-bau_ _-gir_ |  _loj_ _-bang_ _-gir_  
+---|---|---  
+_logj_ _-ban_ _-gir_ |  _logj_ _-bau_ _-gir_ |  _logj_ _-bang_ _-gir_  
+_loj_ _-ban_ _-girz_ |  _loj_ _-bau_ _-girz_ |  _loj_ _-bang_ _-girz_  
+_logj_ _-ban_ _-girz_ |  _logj_ _-bau_ _-girz_ |  _logj_ _-bang_ _-girz_  
+After hyphenation, we have:
+_lojbangri_ |  _lojbaugri_ |  _lojbangygri_  
+---|---|---  
+_logjybangri_ |  _logjybaugri_ |  _logjybangygri_  
+_lojbangirzu_ |  _lojbaugirzu_ |  _lojbangygirzu_  
+_logjybangirzu_ |  _logjybaugirzu_ |  _logjybangygirzu_  
+_lojbangir_ |  _lojbaugir_ |  _lojbangygir_  
+_logjybangir_ |  _logjybaugir_ |  _logjybangygir_  
+_ _lojbangirz_ _ |  _lojbaugirz_ |  _lojbangygirz_  
+_logjybangirz_ |  _logjybaugirz_ |  _logjybangygirz_  
+The only fully reduced lujvo forms are _lojbangri_ and __lojbaugri__ , of which the latter has a slightly lower score: 8827 versus 8796, respectively. However, for the name of the organization, we chose to make sure the name of the language was embedded in it, and to use the clearer long-form rafsi for __girzu__ , producing _lojbangirz._
+Finally, here is a four-part lujvo with a cmavo in it, based on the tanru _nakni ke cinse ctuca_ or “male (sexual teacher)”. The __ke__ cmavo ensures the interpretation “teacher of sexuality who is male”, rather than “teacher of male sexuality”. Here are the possible forms of the lujvo, both before and after hyphenation:
+_nak_ _-kem_ _-cin_ _-ctu_ |  _ _nakykemcinctu_ _  
+---|---  
+_nak_ _-kem_ _-cin_ _-ctuca_ |  _nakykemcinctuca_  
+_nak_ _-kem_ _-cins_ _-ctu_ |  _nakykemcinsyctu_  
+_nak_ _-kem_ _-cins_ _-ctuca_ |  _nakykemcinsyctuca_  
+_nakn_ _-kem_ _-cin_ _-ctu_ |  _naknykemcinctu_  
+_nakn_ _-kem_ _-cin_ _-ctuca_ |  _naknykemcinctuca_  
+_nakn_ _-kem_ _-cins_ _-ctu_ |  _naknykemcinsyctu_  
+_nakn_ _-kem_ _-cins_ _-ctuca_ |  _naknykemcinsyctuca_  
+Of these forms, __nakykemcinctu__ is the shortest and is preferred by the scoring algorithm. On the whole, however, it might be better to just make a lujvo for _cinse ctuca_ (which would be _cinctu_) since the sex of the teacher is rarely important. If there was a reason to specify “male”, then the simpler tanru _nakni cinctu_ (“male sexual-teacher”) would be appropriate. This tanru is actually shorter than the four-part lujvo, since the __ke__ required for grouping need not be expressed.
+* * *
+Chapter 4. The Shape Of Words To Come: Lojban Morphology  
+---  
+Prev: Section 4.12 |  Next: Section 4.14  
+---|---  
+Table of Contents
+Book Info Page

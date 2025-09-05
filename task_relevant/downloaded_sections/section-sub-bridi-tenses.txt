@@ -1,0 +1,90 @@
+Chapter 10. Imaginary Journeys: The Lojban Space/Time Tense System  
+---  
+Prev: Section 10.14 |  Next: Section 10.16  
+---|---  
+Table of Contents
+Book Info Page
+* * *
+## 10.15. Tenses in subordinate bridi
+English has a set of rules, formally known as “sequence of tense rules”, for determining what tense should be used in a subordinate clause, depending on the tense used in the main sentence. Here are some examples:
+**Example 10.100. **
+John says that George is going to the market.
+  
+
+**Example 10.101. **
+John says that George went to the market.
+  
+
+**Example 10.102. **
+John said that George went to the market.
+  
+
+**Example 10.103. **
+John said that George had gone to the market.
+  
+
+In Example 10.100 and Example 10.101, the tense of the main sentence is the present: “says”. If George goes when John speaks, we get the present tense “is going” (“goes” would be unidiomatic); if George goes before John speaks, we get the past tense “went”. But if the tense of the main sentence is the past, with “said”, then the tense required in the subordinate clause is different. If George goes when John speaks, we get the past tense “went”; if George goes before John speaks, we get the past-perfect tense “had gone”.
+The rule of English, therefore, is that both the tense of the main sentence and the tense of the subordinate clause are understood relative to the speaker of the main sentence (not John, but the person who speaks Example 10.100 through Example 10.103).
+Lojban, like Russian and Esperanto, uses a different convention. A tense in a subordinate bridi is understood to be relative to the tense already set in the main bridi. Thus Example 10.100 through Example 10.103 can be expressed in Lojban respectively thus:
+**Example 10.104. **
+la | djan. | ca | cusku | le | se | du'u  
+---|---|---|---|---|---|---  
+| John | [present] | says | the |  | statement-that  
+la | djordj. | ca | klama | le | zarci  
+---|---|---|---|---|---  
+That-named | George | [present] | goes-to | the | market.  
+  
+
+**Example 10.105. **
+la | djan. | ca | cusku | le | se | du'u  
+---|---|---|---|---|---|---  
+That-named | John | [present] | says | the |  | statement-that  
+la | djordj. | pu | klama | le | zarci  
+---|---|---|---|---|---  
+That-named | George | [past] | goes-to | the | market.  
+  
+
+**Example 10.106. **
+la | djan. | pu | cusku | le | se | du'u  
+---|---|---|---|---|---|---  
+That-named | John | [past] | says | the |  | statement-that  
+la | djordj. | ca | klama | le | zarci  
+That-named | George | [present] | goes-to | the | market.  
+  
+
+**Example 10.107. **
+la | djan. | pu | cusku | le | se | du'u  
+---|---|---|---|---|---|---  
+That-named | John | [past] | says | the |  | statement-that  
+la | djordj. | pu | klama | le | zarci  
+---|---|---|---|---|---  
+That-named | George | [past] | goes-to | the | market.  
+  
+
+Probably the most counterintuitive of the Lojban examples is Example 10.106. The __ca__ looks quite odd, as if George were going to the market right now, rather than back when John spoke. But this __ca__ is really a __ca__ with respect to a reference point specified by the outer __pu__. This behavior is the same as the additive behavior of multiple tenses in the same bridi, as explained in Section 10.13.
+There is a special cmavo __nau__ (of selma'o CUhE) which can be used to override these rules and get to the speaker's current reference point. (Yes, it sounds like English “now”.) It is not grammatical to combine __nau__ with any other cmavo in a tense, except by way of a logical or non-logical connection (see Section 10.20). Here is a convoluted sentence with several nested bridi which uses __nau__ at the lowest level:
+**Example 10.108. **
+la | djan. | pu | cusku | le | se | du'u  
+---|---|---|---|---|---|---  
+That-named | John | [past] | says | the |  | statement-that  
+la | .alis | pu | cusku | le | se | du'u  
+---|---|---|---|---|---|---  
+That-named | Alice | [past] | says | the |  | statement-that  
+la | djordj. | pu | cusku | le | se | du'u  
+---|---|---|---|---|---|---  
+That-named | George | [past] | says | the |  | statement-that  
+la | maris. | nau | klama | le | zarci  
+---|---|---|---|---|---  
+That-named | Mary | [now] | goes-to | the | market.  
+John said that Alice had said that George had earlier said that Mary is now going to the market.  
+---  
+  
+
+The use of __nau__ does not affect sticky tenses.
+* * *
+Chapter 10. Imaginary Journeys: The Lojban Space/Time Tense System  
+---  
+Prev: Section 10.14 |  Next: Section 10.16  
+---|---  
+Table of Contents
+Book Info Page

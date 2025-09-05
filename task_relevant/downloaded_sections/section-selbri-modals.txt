@@ -1,0 +1,47 @@
+Chapter 9. To Boston Via The Road Go I, With An Excursion Into The Land Of Modals  
+---  
+Prev: Section 9.4 |  Next: Section 9.6  
+---|---  
+Table of Contents
+Book Info Page
+* * *
+## 9.5. Modal places: FIhO, FEhU
+The following cmavo are discussed in this section:
+fi'o |  FIhO |  modal place prefix  
+---|---|---  
+fe'u |  FEhU |  modal terminator  
+Sometimes the place structures engineered into Lojban are inadequate to meet the needs of actual speech. Consider the gismu __viska__ , whose place structure is:
+> _ _viska_ _ x1 sees x2 under conditions x3
+Seeing is a threefold relationship, involving an agent (le viska), an object of sight (le se viska), and an environment that makes seeing possible (le te viska). Seeing is done with one or more eyes, of course; in general, the eyes belong to the entity in the x1 place.
+Suppose, however, that you are blind in one eye and are talking to someone who doesn't know that. You might want to say, “I see you with the left eye.” There is no place in the place structure of __viska__ such as “with eye x4” or the like. Lojban allows you to solve the problem by adding a new place, changing the relationship:
+**Example 9.26. **
+mi | viska | do | fi'o | kanla | [fe'u] | le | zunle  
+---|---|---|---|---|---|---|---  
+I | see | you | [modal] | eye: |  | the | left-thing  
+I see you with the left eye.  
+---  
+  
+
+The three-place relation __viska__ has now acquired a fourth place specifying the eye used for seeing. The combination of the cmavo __fi'o__ (of selma'o FIhO) followed by a selbri, in this case the gismu __kanla__ , forms a tag which is prefixed to the sumti filling the new place, namely _le zunle_. The semantics of _fi'o kanla le zunle_ is that _le zunle_ fills the x1 place of __kanla__ , whose place structure is
+> _ _kanla_ _ x1 is an/the eye of body x2
+Thus _le zunle_ is an eye. The x2 place of __kanla__ is unspecified and must be inferred from the context. It is important to remember that even though _le zunle_ is placed following _fi'o kanla_ , semantically it belongs in the x1 place of __kanla__. The selbri may be terminated with __fe'u__ (of selma'o FEhU), an elidable terminator which is rarely required unless a non-logical connective follows the tag (omitting __fe'u__ in that case would make the connective affect the selbri).
+The term for such an added place is a “modal place”, as distinguished from the regular numbered places. (This use of the word “modal” is specific to the Loglan Project, and does not agree with the standard uses in either logic or linguistics, but is now too entrenched to change easily.) The __fi'o__ construction marking a modal place is called a “modal tag”, and the sumti which follows it a “modal sumti”; the purely Lojban terms _sumti tcita_ and _seltcita sumti_ , respectively, are also commonly used. Modal sumti may be placed anywhere within the bridi, in any order; they have no effect whatever on the rules for assigning unmarked bridi to numbered places, and they may not be marked with FA cmavo.
+Consider Example 9.26 again. Another way to view the situation is to consider the speaker's left eye as a tool, a tool for seeing. The relevant selbri then becomes __pilno__ , whose place structure is
+> _ _pilno_ _ x1 uses x2 as a tool for purpose x3
+and we can rewrite Example 9.26 as
+**Example 9.27. **
+mi | viska | do | fi'o | se | pilno | le | zunle | kanla  
+---|---|---|---|---|---|---|---|---  
+I | see | you | [modal] | [conversion] | use: | the | left | eye.  
+I see you using my left eye.  
+---  
+  
+
+Here the selbri belonging to the modal is _se pilno_. The conversion of __pilno__ is necessary in order to get the “tool” place into x1, since only x1 can be the modal sumti. The “tool user” place is the x2 of _se pilno_ (because it is the x1 of __pilno__) and remains unspecified. The tag _fi'o pilno_ would mean “with tool user”, leaving the tool unspecified.
+* * *
+Chapter 9. To Boston Via The Road Go I, With An Excursion Into The Land Of Modals  
+---  
+Prev: Section 9.4 |  Next: Section 9.6  
+---|---  
+Table of Contents
+Book Info Page

@@ -1,0 +1,79 @@
+Chapter 5. “Pretty Little Girls' School”: The Structure Of Lojban selbri  
+---  
+Prev: Section 5.2 |  Next: Section 5.4  
+---|---  
+Table of Contents
+Book Info Page
+* * *
+## 5.3. Three-part tanru grouping with _bo_
+The following cmavo is discussed in this section:
+bo |  BO |  closest scope grouping  
+---|---|---  
+Consider the English sentence:
+**Example 5.16. **
+That's a little girls' school.
+  
+
+What does it mean? Two possible readings are:
+**Example 5.17. **
+That's a little school for girls.
+  
+
+**Example 5.18. **
+That's a school for little girls.
+  
+
+This ambiguity is quite different from the simple tanru ambiguity described in Section 5.2. We understand that “girls' school” means “a school where girls are the students”, and not “a school where girls are the teachers” or “a school which is a girl” (!). Likewise, we understand that “little girl” means “girl who is small”. This is an ambiguity of grouping. Is “girls' school” to be taken as a unit, with “little” specifying the type of girls' school? Or is “little girl” to be taken as a unit, specifying the type of school? In English speech, different tones of voice, or exaggerated speech rhythm showing the grouping, are used to make the distinction; English writing usually leaves it unrepresented.
+Lojban makes no use of tones of voice for any purpose; explicit words are used to do the work. The cmavo __bo__ (which belongs to selma'o BO) may be placed between the two brivla which are most closely associated. Therefore, a Lojban translation of Example 5.17 would be:
+**Example 5.19. **
+ta | cmalu | nixli | bo | ckule  
+---|---|---|---|---  
+That | is-a-small | girl | - | school.  
+  
+
+Example 5.18 might be translated:
+**Example 5.20. **
+ta | cmalu | bo | nixli | ckule  
+---|---|---|---|---  
+That | is-a-small | - | girl | school.  
+  
+
+The __bo__ is represented in the literal translation by a bracketed hyphen (not to be confused with the bare hyphen used as a placeholder in other glosses) because in written English a hyphen is sometimes used for the same purpose: “a big dog-catcher” would be quite different from a “big-dog catcher” (presumably someone who catches only big dogs).
+Analysis of Example 5.19 and Example 5.20 reveals a tanru nested within a tanru. In Example 5.19, the main tanru has a seltau of __cmalu__ and a tertau of _nixli bo ckule_ ; the tertau is itself a tanru with __nixli__ as the seltau and __ckule__ as the tertau. In Example 5.20, on the other hand, the seltau is _cmalu bo nixli_ (itself a tanru), whereas the tertau is __ckule__. This structure of tanru nested within tanru forms the basis for all the more complex types of selbri that will be explained below.
+What about Example 5.21? What does it mean?
+**Example 5.21. **
+ta | cmalu | nixli | ckule  
+---|---|---|---  
+That | is-a-small | girl | school.  
+  
+
+The rules of Lojban do not leave this sentence ambiguous, as the rules of English do with Example 5.16. The choice made by the language designers is to say that Example 5.21 means the same as Example 5.20. This is true no matter what three brivla are used: the leftmost two are always grouped together. This rule is called the “left-grouping rule”. Left-grouping in seemingly ambiguous structures is quite common – though not universal – in other contexts in Lojban.
+Another way to express the English meaning of Example 5.19 and Example 5.20, using parentheses to mark grouping, is:
+**Example 5.22. **
+ta | cmalu |  | nixli | bo | ckule  
+---|---|---|---|---|---  
+That | is-a-small | type-of | (girl | type-of | school).  
+  
+
+**Example 5.23. **
+ta | cmalu | bo | nixli |  | ckule  
+---|---|---|---|---|---  
+That | is-a-(small | type-of | girl) | type-of | school.  
+  
+
+Because “type-of” is implicit in the Lojban tanru form, it has no Lojban equivalent.
+Note: It is perfectly legal, though pointless, to insert __bo__ into a simple tanru:
+**Example 5.24. **
+ta | klama | bo | jubme  
+---|---|---|---  
+That | is-a-goer | - | table.  
+  
+
+is a legal Lojban bridi that means exactly the same thing as Example 5.13, and is ambiguous in exactly the same ways. The cmavo __bo__ serves only to resolve grouping ambiguity: it says nothing about the more basic ambiguity present in all tanru.
+* * *
+Chapter 5. “Pretty Little Girls' School”: The Structure Of Lojban selbri  
+---  
+Prev: Section 5.2 |  Next: Section 5.4  
+---|---  
+Table of Contents
+Book Info Page

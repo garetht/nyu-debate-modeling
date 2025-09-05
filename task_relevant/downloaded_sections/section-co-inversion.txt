@@ -1,0 +1,132 @@
+Chapter 5. “Pretty Little Girls' School”: The Structure Of Lojban selbri  
+---  
+Prev: Section 5.7 |  Next: Section 5.9  
+---|---  
+Table of Contents
+Book Info Page
+* * *
+## 5.8. Inversion of tanru: _co_
+The following cmavo is discussed in this section:
+co |  CO |  tanru inversion marker  
+---|---|---  
+The standard order of Lojban tanru, whereby the modifier precedes what it modifies, is very natural to English-speakers: we talk of “blue houses”, not of “houses blue”. In other languages, however, such matters are differently arranged, and Lojban supports this reverse order (tertau before seltau) by inserting the particle __co__. Example 5.76 and Example 5.77 mean exactly the same thing:
+**Example 5.76. **
+ta | blanu | zdani  
+---|---|---  
+That | is-a-blue | type-of-house.  
+That is a blue house.  
+---  
+  
+
+**Example 5.77. **
+ta | zdani | co | blanu  
+---|---|---|---  
+That | is-a-house | of-type | blue.  
+That is a blue house.  
+---  
+  
+
+This change is called “tanru inversion”. In tanru inversion, the element before __co__ (__zdani__ in Example 5.77) is the tertau, and the element following __co__ (__blanu__) in Example 5.77) is the seltau.
+The meaning, and more specifically, the place structure, of a tanru is not affected by inversion: the place structure of _zdani co blanu_ is still that of __zdani__. However, the existence of inversion in a selbri has a very special effect on any sumti which follow that selbri. Instead of being interpreted as filling places of the selbri, they actually fill the places (starting with x2) of the seltau. In Section 5.7, we saw how to fill interior places with __be__ … __bei__ … __be'o__ , and in fact Example 5.78 and Example 5.79 have the same meaning:
+**Example 5.78. **
+mi | klama | be | le | zarci | bei | le | zdani | be'o | troci  
+---|---|---|---|---|---|---|---|---|---  
+I | am-a-(goer | to | the | market | from | the | house | ) | type-of-trier.  
+I try to go to the market from the house.  
+---  
+  
+
+**Example 5.79. **
+mi | troci | co | klama | le | zarci | le | zdani  
+---|---|---|---|---|---|---|---  
+I | am-a-trier | of-type | (goer | to-the | market | from-the | house).  
+I try to go to the market from the house.  
+---  
+  
+
+Example 5.79 is a less deeply nested construction, requiring fewer cmavo. As a result it is probably easier to understand.
+Note that in Lojban “trying to go” is expressed using __troci__ as the tertau. The reason is that “trying to go” is a “going type of trying”, not a “trying type of going”. The trying is more fundamental than the going – if the trying fails, we may not have a going at all.
+Any sumti which precede a selbri with an inverted tanru fill the places of the selbri (i.e., the places of the tertau) in the ordinary way. In Example 5.79, __mi__ fills the x1 place of _troci co klama_ , which is the x1 place of __troci__. The other places of the selbri remain unfilled. The trailing sumti _le zarci_ and _le zdani_ do not occupy selbri places, despite appearances.
+As a result, the regular mechanisms (involving selma'o VOhA and GOhI, explained in Chapter 7) for referring to individual sumti of a bridi cannot refer to any of the trailing places of Example 5.79, because they are not really “sumti of the bridi” at all.
+When inverting a more complex tanru, it is possible to invert it only at the most general modifier-modified pair. The only possible inversion of Example 5.19, for instance, is:
+**Example 5.80. **
+ta | nixli | [bo] | ckule | co | cmalu  
+---|---|---|---|---|---  
+That | (is-a-girl | type-of | school) | of-type | little.  
+That's a girls' school which is small.  
+---  
+  
+
+Note that the __bo__ of Example 5.19 is optional in Example 5.80, because __co__ groups more loosely than any other cmavo used in tanru, including none at all. Not even __ke__ … __ke'e__ parentheses can encompass a __co__ :
+**Example 5.81. **
+ta | cmalu |  | ke | nixli |  | ckule | [ke'e] | co | melbi  
+---|---|---|---|---|---|---|---|---|---  
+That | is-a-(little | type-of | ( | girl | type-of | school | )) | of-type | pretty.  
+That's a small school for girls which is beautiful.  
+---  
+  
+
+In Example 5.81, the __ke'e__ is automatically inserted before the __co__ rather than at its usual place at the end of the selbri. As a result, there is a simple and mechanical rule for removing __co__ from any selbri: change “A co B” to “ke B ke'e A”. (At the same time, any sumti following the selbri must be transformed into __be__ … __bei__ … __be'o__ form and attached following B.) Therefore,
+**Example 5.82. **
+ckule | co | melbi | nixli  
+---|---|---|---  
+school | of-type | pretty | girl  
+school for beautiful girls  
+---  
+  
+
+means the same as:
+**Example 5.83. **
+ke | melbi | nixli | ke'e | ckule  
+---|---|---|---|---  
+( | pretty | girl | ) | school  
+  
+
+Multiple __co__ cmavo can appear within a selbri, indicating multiple inversions: a right-grouping rule is employed, as for __bo__. The above rule can be applied to interpret such selbri, but all __co__ cmavo must be removed simultaneously:
+**Example 5.84. **
+ckule | co | nixli | co | cmalu  
+---|---|---|---|---  
+school | of-type | (girl | of-type | little)  
+  
+
+becomes formally
+**Example 5.85. **
+ke | ke | cmalu | ke'e | nixli | ke'e | ckule  
+---|---|---|---|---|---|---  
+( | ( | little | ) | girl | ) | school  
+  
+
+which by the left-grouping rule is simply
+**Example 5.86. **
+cmalu | nixli | ckule  
+---|---|---  
+little | girl | school  
+school for little girls  
+---  
+  
+
+As stated above, the selbri places, other than the first, of
+**Example 5.87. **
+mi | klama | co | sutra  
+---|---|---|---  
+I | am-a-goer | of-type | quick  
+I go quickly  
+---  
+  
+
+cannot be filled by placing sumti after the selbri, because any sumti in that position fill the places of __sutra__ , the seltau. However, the tertau places (which means in effect the selbri places) can be filled with __be__ :
+**Example 5.88. **
+mi | klama | be | le | zarci | be'o | co | sutra  
+---|---|---|---|---|---|---|---  
+I | am-a-goer | ( | to-the | store | ) | of-type | quick.  
+I go to the store quickly.  
+---  
+  
+
+* * *
+Chapter 5. “Pretty Little Girls' School”: The Structure Of Lojban selbri  
+---  
+Prev: Section 5.7 |  Next: Section 5.9  
+---|---  
+Table of Contents
+Book Info Page

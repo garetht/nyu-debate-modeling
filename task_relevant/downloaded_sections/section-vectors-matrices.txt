@@ -1,0 +1,61 @@
+Chapter 18. lojbau mekso: Mathematical Expressions in Lojban  
+---  
+Prev: Section 18.14 |  Next: Section 18.16  
+---|---  
+Table of Contents
+Book Info Page
+* * *
+## 18.15. Vectors and matrices
+The following cmavo are discussed in this section:
+jo'i |  JOhI |  start vector  
+---|---|---  
+te'u |  TEhU |  end vector  
+pi'a |  VUhU |  matrix row combiner  
+sa'i |  VUhU |  matrix column combiner  
+A mathematical vector is a list of numbers, and a mathematical matrix is a table of numbers. Lojban considers matrices to be built up out of vectors, which are in turn built up out of operands.
+__jo'i__ , the only cmavo of selma'o JOhI, is the vector indicator: it has a syntax reminiscent of a forethought operator, but has very high precedence. The components must be simple operands rather than full expressions (unless parenthesized). A vector can have any number of components; __te'u__ is the elidable terminator. An example:
+**Example 18.107. **
+li | jo'i | paboi | reboi | te'u | su'i | jo'i | ciboi | voboi  
+---|---|---|---|---|---|---|---|---  
+The-number | array | (one, | two | ) | plus | array | (three, | four)  
+du | li | jo'i | voboi | xaboi  
+---|---|---|---|---  
+equals | the-number | array | (four, | six).  
+(1,2) + (3,4) = (4,6)  
+  
+
+Vectors can be combined into matrices using either __pi'a__ , the matrix row operator, or __sa'i__ , the matrix column operator. The first combines vectors representing rows of the matrix, and the second combines vectors representing columns of the matrix. Both of them allow any number of arguments: additional arguments are tacked on with the null operator __ge'a__.
+Therefore, the “magic square” matrix
+8 | 1 | 6  
+---|---|---  
+3 | 5 | 7  
+4 | 9 | 2  
+can be represented either as:
+**Example 18.108. **
+jo'i | biboi | paboi | xa | pi'a | jo'i | ciboi | muboi | ze  
+---|---|---|---|---|---|---|---|---  
+the-vector | (8 | 1 | 6) | matrix-row | the-vector | (3 | 5 | 7),  
+ge'a | jo'i | voboi | soboi | re  
+---|---|---|---|---  
+| the-vector | (4 | 9 | 2)  
+  
+
+or as
+**Example 18.109. **
+jo'i | biboi | ciboi | vo | sa'i | jo'i | paboi | muboi | so  
+---|---|---|---|---|---|---|---|---  
+the-vector | (8 | 3 | 4) | matrix-column | the-vector | (1 | 5 | 9),  
+ge'a | jo'i | xaboi | zeboi | re  
+---|---|---|---|---  
+| the-vector | (6 | 7 | 2)  
+  
+
+The regular mekso operators can be applied to vectors and to matrices, since grammatically both of these are expressions. It is usually necessary to parenthesize matrices when used with operators in order to avoid incorrect groupings. There are no VUhU operators for the matrix operators of inner or outer products, but appropriate operators can be created using a suitable symbolic lerfu word or string prefixed by __ma'o__.
+Matrices of more than two dimensions can be built up using either __pi'a__ or __sa'i__ with an appropriate subscript numbering the dimension. When subscripted, there is no difference between __pi'a__ and __sa'i__.
+* * *
+Chapter 18. lojbau mekso: Mathematical Expressions in Lojban  
+---  
+Prev: Section 18.14 |  Next: Section 18.16  
+---|---  
+Table of Contents
+Book Info Page

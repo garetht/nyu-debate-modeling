@@ -1,0 +1,113 @@
+Chapter 14. If Wishes Were Horses: The Lojban Connective System  
+---  
+Prev: Section 14.8 |  Next: Section 14.10  
+---|---  
+Table of Contents
+Book Info Page
+* * *
+## 14.9. Compound bridi
+So far we have seen how to handle two sentences that need have no similarity at all (bridi connection) and sentences that are identical except for a difference in one sumti (sumti connection). It would seem natural to ask how to logically connect sentences that are identical except for having different selbri.
+Surprise! Lojban provides no logical connective that is designed to handle selbri and nothing else. Instead, selbri connection is provided as part of a more general-purpose mechanism called “compound bridi”. Compound bridi result from logically connecting sentences that differ in their selbri and possibly some of their sumti.
+The simplest cases result when the x1 sumti is the only common point:
+**Example 14.49. **
+mi | klama | le | zarci | .ije | mi | nelci | la | djan.  
+---|---|---|---|---|---|---|---|---  
+I | go-to | the | market, | and | I | like | that-named | John.  
+  
+
+is equivalent in meaning to the compound bridi:
+**Example 14.50. **
+mi | klama | le | zarci | gi'e | nelci | la | djan.  
+---|---|---|---|---|---|---|---  
+I | go-to | the | market | and | like | that-named | John.  
+  
+
+As Example 14.50 indicates, giheks are used in afterthought to create compound bridi; __gi'e__ is the gihek corresponding to “and”. The actual phrases _klama le zarci_ and _nelci la djan._ that the gihek connects are known as “bridi-tails”, because they represent (in this use) the “tail end” of a bridi, including the selbri and any following sumti, but excluding any sumti that precede the selbri:
+**Example 14.51. **
+mi | ricfu | gi'e | klama | le | zarci  
+---|---|---|---|---|---  
+I | am-rich | and | go-to | the | market.  
+  
+
+In Example 14.51, the first bridi-tail is __ricfu__ , a simple selbri, and the second bridi-tail is _klama le zarci_ , a selbri with one following sumti.
+Suppose that more than a single sumti is identical between the two sentences:
+**Example 14.52. **
+mi | dunda | le | cukta | do | .ije | mi | lebna | lo | rupnu | do  
+---|---|---|---|---|---|---|---|---|---|---  
+I | give | the | book | to-you, | and | I | take | some | currency-units | from-you.  
+  
+
+In Example 14.52, the first and last sumti of each bridi are identical; the selbri and the second sumti are different. By moving the final sumti to the beginning, a form analogous to Example 14.50 can be achieved:
+**Example 14.53. **
+fi | do | fa | mi | dunda | le | cukta  
+---|---|---|---|---|---|---  
+to/from | you |  | I | give | the | book  
+gi'e | lebna | lo | rupnu  
+---|---|---|---  
+and | take | some | currency-units.  
+  
+
+where the __fi__ does not have an exact English translation because it merely places __do__ in the third place of both __lebna__ and __dunda__. However, a form that preserves natural sumti order also exists in Lojban. Giheks connect two bridi-tails, but also allow sumti to be added following the bridi-tail. These sumti are known as tail-terms, and apply to both bridi. The straightforward gihek version of Example 14.52 therefore is:
+**Example 14.54. **
+mi | dunda | le | cukta | gi'e | lebna | lo | rupnu | vau | do  
+---|---|---|---|---|---|---|---|---|---  
+I | (give | the | book) | and | (take | some | currency-units) |  | to/from-you.  
+  
+
+The __vau__ (of selma'o VAU) serves to separate the bridi-tail from the tail-terms. Every bridi-tail is terminated by an elidable __vau__ , but only in connection with compound bridi is it ever necessary to express this __vau__. Thus:
+**Example 14.55. **
+mi | klama | le | zarci | [vau]  
+---|---|---|---|---  
+I | go-to | the | market.  
+  
+
+has a single elided __vau__ , and Example 14.50 is equivalent to:
+**Example 14.56. **
+mi klama le zarci [vau] gi'e nelci la djan. [vau] [vau]
+  
+
+where the double __vau__ at the end of Example 14.56 terminates both the right-hand bridi-tail and the unexpressed tail-terms.
+A final use of giheks is to combine bridi-tails used as complete sentences, the Lojban observative:
+**Example 14.57. **
+klama | le | zarci | gi'e | dzukla | le | briju  
+---|---|---|---|---|---|---  
+A-goer | to-the | market | and | a-walker | to-the | office.  
+  
+
+Since x1 is omitted in both of the bridi underlying Example 14.57, this compound bridi does not necessarily imply that the goer and the walker are the same. Only the presence of an explicit x1 (other than __zo'e__ , which is equivalent to omission) can force the goer and the walker to be identical.
+A strong argument for this convention is provided by analysis of the following example:
+**Example 14.58. **
+klama | la | nu,IORK.  
+---|---|---  
+A-goer | to-that-named | New-York  
+la | finyks.  
+---|---  
+from-that-named | Phoenix  
+gi'e | klama | la | nu,IORK.  
+---|---|---|---  
+and | a-goer | to-that-named | New-York  
+la | rom.  
+---|---  
+from-that-named | Rome.  
+  
+
+If the rule were that the x1 places of the two underlying bridi were considered identical, then (since there is nothing special about x1), the unspecified x4 (route) and x5 (means) places would also have to be the same, leading to the absurd result that the route from Phoenix to New York is the same as the route from Rome to New York. Inserting __da__ , meaning roughly “something”, into the x1 place cures the problem:
+**Example 14.59. **
+da | klama | la | nu,IORK. | la | finyks.  
+---|---|---|---|---|---  
+Something | is-a-goer | to-that-named | New-York | from-that-named | Phoenix  
+gi'e | klama | la | nu,IORK. | la | rom.  
+---|---|---|---|---|---  
+and | is-a-goer | to-that-named | New-York | from-that-named | Rome.  
+  
+
+The syntax of giheks is:
+> [na] [se] GIhA [nai] 
+which is exactly parallel to the syntax of eks.
+* * *
+Chapter 14. If Wishes Were Horses: The Lojban Connective System  
+---  
+Prev: Section 14.8 |  Next: Section 14.10  
+---|---  
+Table of Contents
+Book Info Page

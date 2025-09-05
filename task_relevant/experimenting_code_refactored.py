@@ -909,7 +909,7 @@ async def run_single_llm_with_background() -> Tuple[List, List]:
             # Generate background information  
             script_dir = os.path.dirname(os.path.abspath(__file__))
             relevant_background = reiterate_background(choice_a, choice_b)
-            choices_tfidf = get_top_tfidf_files_for_words(os.path.join(script_dir, "background_files"), choice_a, choice_b, top_n=2)
+            choices_tfidf = get_top_tfidf_files_for_words(os.path.join(script_dir, "downloaded_sections"), choice_a, choice_b, top_n=2)
 
             background = f"""
 The following definitions may be particularly useful:
@@ -1038,54 +1038,54 @@ Example JSON format:
     return out_answer, arguments
 
 
-async def run_single_llm_with_background_as_ablation() -> AblationResults:
-    """Wrapper to run single LLM with background and return AblationResults."""
-    answers, arguments = await run_single_llm_with_background()
-    judge_results = AblationResults("judge_with_background")
+# async def run_single_llm_with_background_as_ablation() -> AblationResults:
+#     """Wrapper to run single LLM with background and return AblationResults."""
+#     answers, arguments = await run_single_llm_with_background()
+#     judge_results = AblationResults("judge_with_background")
     
-    # Read ground truth data to calculate correctness
-    dir_path = os.path.dirname(os.path.realpath(__file__))
-    with open(os.path.join(dir_path, "converted_data"), "r", encoding="utf-8") as f:
-        for i, line in enumerate(f):
-            data_json = json.loads(line.strip())
-            ground_truth = data_json.get("original_key")
+#     # Read ground truth data to calculate correctness
+#     dir_path = os.path.dirname(os.path.realpath(__file__))
+#     with open(os.path.join(dir_path, "converted_data"), "r", encoding="utf-8") as f:
+#         for i, line in enumerate(f):
+#             data_json = json.loads(line.strip())
+#             ground_truth = data_json.get("original_key")
             
-            if i < len(answers):
-                judge_results.add_result(
-                    answer=answers[i] if answers[i] is not None else "ERROR",
-                    argument=arguments[i] if i < len(arguments) and arguments[i] is not None else "",
-                    is_correct=(answers[i] == ground_truth) if answers[i] is not None else False,
-                    question_id=f"jbo_{i+1}",
-                    ground_truth=ground_truth
-                )
+#             if i < len(answers):
+#                 judge_results.add_result(
+#                     answer=answers[i] if answers[i] is not None else "ERROR",
+#                     argument=arguments[i] if i < len(arguments) and arguments[i] is not None else "",
+#                     is_correct=(answers[i] == ground_truth) if answers[i] is not None else False,
+#                     question_id=f"jbo_{i+1}",
+#                     ground_truth=ground_truth
+#                 )
     
-    judge_results.save_results()
-    return judge_results
+#     judge_results.save_results()
+#     return judge_results
 
 
-async def run_single_llm_without_background_as_ablation() -> AblationResults:
-    """Wrapper to run single LLM without background and return AblationResults."""
-    answers, arguments = await run_single_llm_without_background()
-    judge_results = AblationResults("judge_without_background")
+# async def run_single_llm_without_background_as_ablation() -> AblationResults:
+#     """Wrapper to run single LLM without background and return AblationResults."""
+#     answers, arguments = await run_single_llm_without_background()
+#     judge_results = AblationResults("judge_without_background")
     
-    # Read ground truth data to calculate correctness
-    dir_path = os.path.dirname(os.path.realpath(__file__))
-    with open(os.path.join(dir_path, "converted_data"), "r", encoding="utf-8") as f:
-        for i, line in enumerate(f):
-            data_json = json.loads(line.strip())
-            ground_truth = data_json.get("original_key")
+#     # Read ground truth data to calculate correctness
+#     dir_path = os.path.dirname(os.path.realpath(__file__))
+#     with open(os.path.join(dir_path, "converted_data"), "r", encoding="utf-8") as f:
+#         for i, line in enumerate(f):
+#             data_json = json.loads(line.strip())
+#             ground_truth = data_json.get("original_key")
             
-            if i < len(answers):
-                judge_results.add_result(
-                    answer=answers[i] if answers[i] is not None else "ERROR",
-                    argument=arguments[i] if i < len(arguments) and arguments[i] is not None else "",
-                    is_correct=(answers[i] == ground_truth) if answers[i] is not None else False,
-                    question_id=f"jbo_{i+1}",
-                    ground_truth=ground_truth
-                )
+#             if i < len(answers):
+#                 judge_results.add_result(
+#                     answer=answers[i] if answers[i] is not None else "ERROR",
+#                     argument=arguments[i] if i < len(arguments) and arguments[i] is not None else "",
+#                     is_correct=(answers[i] == ground_truth) if answers[i] is not None else False,
+#                     question_id=f"jbo_{i+1}",
+#                     ground_truth=ground_truth
+#                 )
     
-    judge_results.save_results()
-    return judge_results
+#     judge_results.save_results()
+#     return judge_results
 
 
 # =============================================================================  
@@ -1707,7 +1707,7 @@ async def run_judge_with_background_unused() -> AblationResults:
             script_dir = os.path.dirname(os.path.abspath(__file__))
             relevant_background = reiterate_background(choice_a, choice_b)
             choices_tfidf = get_top_tfidf_files_for_words(
-                os.path.join(script_dir, "background_files"), choice_a, choice_b, top_n=2)
+                os.path.join(script_dir, "downloaded_sections"), choice_a, choice_b, top_n=2)
             
             background = f"""
 The following definitions may be particularly useful:
