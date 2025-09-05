@@ -168,7 +168,7 @@ class OpenAIModel(Model):
         return self.client.chat.completions.create(
             model=self.endpoint,
             messages=messages,
-            max_tokens=max_new_tokens,
+            max_completion_tokens=max_new_tokens,
             logprobs=(speech_structure != SpeechStructure.OPEN_ENDED),
             top_logprobs=5 if (speech_structure != SpeechStructure.OPEN_ENDED) else None,
         )
