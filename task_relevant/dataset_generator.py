@@ -128,8 +128,8 @@ def csv_converter_test(csv_file, jsonl_file):
     Uses caching to avoid regenerating backgrounds for the same stimulus ID.
     """
     import re
-    
-    columns = ["original_id", "prompt", "original_key", "correct_answer", "choice_a", "choice_b", "explanation"]
+
+    columns = ["original_id", "prompt", "original_key", "correct_answer", "choice_a", "choice_b", "original_explanation"]
     tuple_columns = ["choice_a", "choice_b"]
     tuple_field_name = "answers"
     
