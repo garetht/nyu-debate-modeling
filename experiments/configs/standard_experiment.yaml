@@ -14,7 +14,7 @@ lojban-test-extended-tokens:
           require_quote_validation: True
           generation_params:
             temperature: 0.5
-            max_new_tokens: 1000
+            max_new_tokens: 500
     judge:
       model_settings:
         model_type: openai
@@ -143,7 +143,7 @@ debater-gpt-oss-untrained-judge-trained-0731:
   dataset:
     dataset_type: quality
     split_type: val
-debater-gpt-oss-trained-0899-judge-o4-mini-rft-0822:
+debater-gpt-oss-trained-0822-judge-o4-mini-sft-0731:
   batch_size: 1
   num_speeches: 2
   flip: False
@@ -163,8 +163,8 @@ debater-gpt-oss-trained-0899-judge-o4-mini-rft-0822:
     judge:
       model_settings:
         model_type: openai
-        alias: openai-o4-mini-judge-rft-0822
-        model_file_path: ft:o4-mini-2025-04-16:modulo-research-ltd:michael-and-khan-data-judge-22-08:C7f9cyRI
+        alias: openai-o4-mini-judge-sft-0731
+        model_file_path: ft:gpt-4.1-2025-04-14:modulo-research-ltd:michael-and-khan-data-judge-31-07:BzYGc8SU
   dataset:
     dataset_type: quality
     split_type: val
