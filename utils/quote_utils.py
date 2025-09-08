@@ -223,9 +223,6 @@ def validate_and_replace_quotes(speech_content: str, background_text: str) -> st
                 early_stopping_threshold=constants.QUOTE_FUZZY_MATCH_EARLY_STOPPING_THRESHOLD,
                 min_threshold=constants.QUOTE_FUZZY_MATCH_MIN_THRESHOLD,
             )
-            with open(output_jsonl_path, "a", encoding="utf-8") as f:
-                json.dump({"quote": quote, "replacement": updated_speech_content, "background_text": background_text}, f)
-                f.write("\n")
     return updated_speech_content
 
 

@@ -1,0 +1,64 @@
+Chapter 4. The Shape Of Words To Come: Lojban Morphology  
+---  
+Prev: Section 4.11 |  Next: Section 4.13  
+---|---  
+Table of Contents
+Book Info Page
+* * *
+## 4.12. The lujvo scoring algorithm
+This algorithm was devised by Bob and Nora LeChevalier in 1989. It is not the only possible algorithm, but it usually gives a choice that people find preferable. The algorithm may be changed in the future. The lowest-scoring variant will usually be the dictionary form of the lujvo. (In previous versions, it was the highest-scoring variant.)
+  1. Count the total number of letters, including hyphens and apostrophes; call it `L`.
+  2. Count the number of apostrophes; call it `A`.
+  3. Count the number of _y-_ , _r-_ , and n-hyphens; call it `H`.
+  4. For each rafsi, find the value in the following table. Sum this value over all rafsi; call it `R`: 
+CVC/CV (final) | (_-sarji_) | 1  
+---|---|---  
+CVC/C | (_-sarj-_) | 2  
+CCVCV (final) | (_-zbasu_) | 3  
+CCVC | (_-zbas-_) | 4  
+CVC | (_-nun-_) | 5  
+CVV with an apostrophe | (_-ta'u-_) | 6  
+CCV | (_-zba-_) | 7  
+CVV with no apostrophe | (_-sai-_) | 8  
+  5. Count the number of vowels, not including _y_ ; call it `V`.
+
+
+The score is then: 
+(1000 * L) - (500 * A) + (100 * H) - (10 * R) - V
+In case of ties, there is no preference. This should be rare. Note that the algorithm essentially encodes a hierarchy of priorities: short words are preferred (counting apostrophes as half a letter), then words with fewer hyphens, words with more pleasing rafsi (this judgment is subjective), and finally words with more vowels are chosen. Each decision principle is applied in turn if the ones before it have failed to choose; it is possible that a lower-ranked principle might dominate a higher-ranked one if it is ten times better than the alternative.
+Here are some lujvo with their scores (not necessarily the lowest scoring forms for these lujvo, nor even necessarily sensible lujvo):
+**Example 4.71. **
+zbasai  
+---  
+_zba + sai_  
+(1000 * 6) - (500 * 0) + (100 * 0) - (10 * 15) - 3 = 5847  
+  
+
+**Example 4.72. **
+nunynau  
+---  
+_nun + y + nau_  
+(1000 * 7) - (500 * 0) + (100 * 1) - (10 * 13) - 3 = 6967  
+  
+
+**Example 4.73. **
+sairzbata'u  
+---  
+_sai + r + zba + ta'u_  
+(1000 * 11) - (500 * 1) + (100 * 1) - (10 * 21) - 5 = 10385  
+  
+
+**Example 4.74. **
+zbazbasysarji  
+---  
+_zba + zbas + y + sarji_  
+(1000 * 13) - (500 * 0) + (100 * 1) - (10 * 12) - 4 = 12976  
+  
+
+* * *
+Chapter 4. The Shape Of Words To Come: Lojban Morphology  
+---  
+Prev: Section 4.11 |  Next: Section 4.13  
+---|---  
+Table of Contents
+Book Info Page

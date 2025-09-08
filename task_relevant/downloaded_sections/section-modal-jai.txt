@@ -1,0 +1,61 @@
+Chapter 9. To Boston Via The Road Go I, With An Excursion Into The Land Of Modals  
+---  
+Prev: Section 9.11 |  Next: Section 9.13  
+---|---  
+Table of Contents
+Book Info Page
+* * *
+## 9.12. Modal conversion: JAI
+The following cmavo are discussed in this section:
+jai |  JAI |  modal conversion  
+---|---|---  
+fai |  FA |  modal place structure tag  
+So far, conversion of numbered bridi places with SE and the addition of modal places with BAI have been two entirely separate operations. However, it is possible to convert a selbri in such a way that, rather than exchanging two numbered places, a modal place is made into a numbered place. For example,
+**Example 9.82. **
+mi | cusku |  | bau | la | lojban.  
+---|---|---|---|---|---  
+I | express | [something] | in-language | that-named | Lojban.  
+  
+
+has an explicit x1 place occupied by __mi__ and an explicit __bau__ place occupied by _la lojban._ To exchange these two, we use a modal conversion operator consisting of __jai__ (of selma'o JAI) followed by the modal cmavo. Thus, the modal conversion of Example 9.82 is:
+**Example 9.83. **
+la | lojban. | jai bau cusku | fai | mi  
+---|---|---|---|---  
+That-named | Lojban | is-the-language-of-expression | used-by | me.  
+  
+
+In Example 9.83, the modal place _la lojban._ has become the x1 place of the new selbri _jai bau cusku_. What has happened to the old x1 place? There is no numbered place for it to move to, so it moves to a special “unnumbered place” marked by the tag __fai__ of selma'o FA.
+Note: For the purposes of place numbering, __fai__ behaves like __fi'a__ ; it does not affect the numbering of the other places around it.
+Like SE conversions, JAI conversions are especially convenient in descriptions. We may refer to “the language of an expression” as _le jai bau cusku_ , for example.
+In addition, it is grammatical to use __jai__ without a following modal. This usage is not related to modals, but is explained here for completeness. The effect of __jai__ by itself is to send the x1 place, which should be an abstraction, into the __fai__ position, and to raise one of the sumti from the abstract sub-bridi into the x1 place of the main bridi. This feature is discussed in more detail in Section 11.10. The following two examples mean the same thing:
+**Example 9.84. **
+le | nu | mi | lebna | le | cukta | cu | se krinu  
+---|---|---|---|---|---|---|---  
+The | event-of | (I | take | the | book) |  | is-justified-by  
+le | nu | mi | viska | le | cukta  
+---|---|---|---|---|---  
+the | event-of | (I | see | the | book).  
+My taking the book is justified by my seeing it.  
+---  
+  
+
+**Example 9.85. **
+mi | jai se krinu | le | nu | mi | viska | le | cukta | kei  
+---|---|---|---|---|---|---|---|---  
+I | am-justified-by | the | event-of | (I | see | the | book) |   
+[fai | le | nu | mi | lebna | le | cukta]  
+---|---|---|---|---|---|---  
+[namely, | the | event-of | (I | take | the | book)]  
+I am justified in taking the book by seeing the book.  
+---  
+  
+
+Example 9.85, with the bracketed part omitted, allows us to say that “I am justified” whereas in fact it is my action that is justified. This construction is vague, but useful in representing natural-language methods of expression.
+Note: The uses of modals discussed in this section are applicable both to BAI modals and to _fi'o-_ plus-selbri modals.
+* * *
+Chapter 9. To Boston Via The Road Go I, With An Excursion Into The Land Of Modals  
+---  
+Prev: Section 9.11 |  Next: Section 9.13  
+---|---  
+Table of Contents
+Book Info Page

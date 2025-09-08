@@ -1,0 +1,54 @@
+Chapter 18. lojbau mekso: Mathematical Expressions in Lojban  
+---  
+Prev: Section 18.6 |  Next: Section 18.8  
+---|---  
+Table of Contents
+Book Info Page
+* * *
+## 18.7. Other useful selbri for mekso bridi
+So far our examples have been isolated mekso (it is legal to have a bare mekso as a sentence in Lojban) and equation bridi involving __du__. What about inequalities such as “x < 5”? The answer is to use a bridi with an appropriate selbri, thus:
+**Example 18.38. **
+li | xy. | mleca | li | mu  
+---|---|---|---|---  
+The-number | x | is-less-than | the-number | 5.  
+  
+
+Here is a partial list of selbri useful in mathematical bridi:
+_ _du_ _ |  x1 is identical to x2, x3, x4, ...  
+---|---  
+_ _dunli_ _ |  x1 is equal/congruent to x2 in/on property/quality/dimension/quantity x3  
+_ _mleca_ _ |  x1 is less than x2  
+_ _zmadu_ _ |  x1 is greater than x2  
+_ _dubjavme'a_ _ |  x1 is less than or equal to x2 [__du__ __ja__ __mleca__ , equal or less]  
+_ _dubjavmau_ _ |  x1 is greater than or equal to x2 [__du__ __ja__ __zmadu__ , equal or greater]  
+_ _tamdu'i_ _ |  x1 is similar to x2 [__tarmi__ __dunli__ , shape-equal]  
+_turdu'i_ |  x1 is isomorphic to x2 [__stura__ __dunli__ , structure-equal]  
+_ _cmima_ _ |  x1 is a member of set x2  
+_gripau_ |  x1 is a subset of set x2 [__girzu__ __pagbu__ , set-part]  
+_ _na'ujbi_ _ |  x1 is approximately equal to x2 [__namcu__ __jibni__ , number-near]  
+_terci'e_ |  x1 is a component with function x2 of system x3  
+Note the difference between __dunli__ and __du__ ; __dunli__ has a third place that specifies the kind of equality that is meant. __du__ refers to actual identity, and can have any number of places:
+**Example 18.39. **
+py. | du | xy.boi | zy.  
+---|---|---|---  
+“p” | is-identical-to |  “x” |  “z”  
+p = x = z  
+  
+
+Lojban bridi can have only one predicate, so the __du__ is not repeated.
+Any of these selbri may usefully be prefixed with __na__ , the contradictory negation cmavo, to indicate that the relation is false:
+**Example 18.40. **
+li | re | su'i | re | na | du | li | mu  
+---|---|---|---|---|---|---|---  
+the-number | 2 | + | 2 | is-not | equal-to | the-number | 5.  
+2 + 2 ≠ 5  
+  
+
+As usual in Lojban, negated bridi say what is false, and do not say anything about what might be true.
+* * *
+Chapter 18. lojbau mekso: Mathematical Expressions in Lojban  
+---  
+Prev: Section 18.6 |  Next: Section 18.8  
+---|---  
+Table of Contents
+Book Info Page

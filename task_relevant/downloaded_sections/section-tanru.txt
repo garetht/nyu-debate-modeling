@@ -1,0 +1,122 @@
+Chapter 14. If Wishes Were Horses: The Lojban Connective System  
+---  
+Prev: Section 14.11 |  Next: Section 14.13  
+---|---  
+Table of Contents
+Book Info Page
+* * *
+## 14.12. Logical connection within tanru
+As noted at the beginning of Section 14.9, there is no logical connective in Lojban that joins selbri and nothing but selbri. However, it is possible to have logical connectives within a selbri, forming a kind of tanru that involves a logical connection. Consider the simple tanru _blanu zdani_ , blue house. Now anything that is a blue ball, in the most ordinary understanding of the phrase at least, is both blue and a ball. And indeed, instead of _blanu bolci_ , Lojbanists can say _blanu je bolci_ , using a jek connective within the tanru. (We saw jeks used in Section 14.11 also, but there they were always prefixed by __pe'e__ ; in this section they are used alone.) Here is a pair of examples:
+**Example 14.78. **
+ti | blanu | zdani  
+---|---|---  
+This | is-a-blue-type-of | house.  
+  
+
+**Example 14.79. **
+ti | blanu | je | zdani  
+---|---|---|---  
+This | is-blue | and | is-a-house.  
+  
+
+But of course Example 14.78 and Example 14.79 are not necessarily equivalent in meaning! It is the most elementary point about Lojban tanru that Example 14.78 might just as well mean
+**Example 14.80. **
+This is a house for blue inhabitants.
+  
+
+and Example 14.79 certainly is not equivalent in meaning to Example 14.80.
+A full explanation of logical connection within tanru belongs rather to a discussion of selbri structure than to logical connectives in general. Why? Because although Example 14.79 happens to mean the same as
+**Example 14.81. **
+ti blanu gi'e zdani
+  
+
+and therefore as
+**Example 14.82. **
+ti blanu .ije ti zdani
+  
+
+the rule of expansion into separate bridi simply does not always work for tanru connection. Supposing Alice to be a person who lives in blue houses, then
+**Example 14.83. **
+la | .alis. | cu |  | blanu | je | zdani |  | prenu  
+---|---|---|---|---|---|---|---|---  
+That-named | Alice |  | is-a-( | blue | and | house | ) | type-of-person.  
+  
+
+would be true, because tanru grouping with a jek has higher precedence than unmarked tanru grouping, but:
+**Example 14.84. **
+la | .alis. | cu |  | blanu | prenu  
+---|---|---|---|---|---  
+That-named | Alice |  | is-a | blue | person,  
+.ije | la | .alis. | cu |  | zdani | prenu  
+---|---|---|---|---|---|---  
+and | that-named | Alice |  | is-a | house | person.  
+  
+
+is probably false, because the blueness is associated with the house, not with Alice, even leaving aside the question of what it means to say “Alice is a blue person”. (Perhaps she belongs to the Blue team, or is wearing blue clothes.) The semantic ambiguity of tanru make such logical manipulations impossible.
+It suffices to note here, then, a few purely grammatical points about tanru logical connection. __bo__ may be appended to jeks as to eks, with the same rules:
+**Example 14.85. **
+la | teris. | cu | ricfu | je | nakni | jabo | fetsi  
+---|---|---|---|---|---|---|---  
+That-named | Terry |  | is-rich | and | (male | or | female).  
+  
+
+The components of tanru may be grouped with __ke__ both before and after a logical connective:
+**Example 14.86. **
+la | .teris. | cu | [ke] | ricfu | ja | pindi | [ke'e]  
+---|---|---|---|---|---|---|---  
+That-named | Terry |  | ( | is-rich | or | is-poor | )  
+je | ke | nakni | ja | fetsi | [ke'e]  
+---|---|---|---|---|---  
+and | ( | male | or | female | ).  
+  
+
+where the first __ke__ … __ke'e__ pair may be omitted altogether by the rule of left-grouping, but is optionally permitted. In any case, the last instance of __ke'e__ may be elided.
+The syntax of jeks is:
+> [na] [se] JA [nai] 
+parallel to eks and giheks.
+Forethought tanru connection does not use geks, but uses guheks instead. Guheks have exactly the same form as geks: 
+> [se] GUhA [nai] 
+Using guheks in tanru connection (rather than geks) resolves what would otherwise be an unacceptable ambiguity between bridi-tail and tanru connection:
+**Example 14.87. **
+la | .alis. | gu'e | ricfu | gi | fetsi  
+---|---|---|---|---|---  
+That-named | Alice | is-both | rich | and | female.  
+  
+
+Note that giks are used with guheks in exactly the same way they are used with geks. Like jeks, guheks bind more closely than unmarked tanru grouping does:
+**Example 14.88. **
+la | .alis. | gu'e | blanu | gi | zdani | prenu  
+---|---|---|---|---|---|---  
+That-named | Alice | is-a-(both | blue | and | a-house) | type-of-person.  
+  
+
+is the forethought version of Example 14.83.
+A word of caution about the use of logically connected tanru within descriptions. English-based intuition can lead the speaker astray. In correctly reducing
+**Example 14.89. **
+mi | viska | pa | nanmu | .ije | mi | viska | pa | ninmu  
+---|---|---|---|---|---|---|---|---  
+I | see | a | man, | and | I | see | a | woman.  
+  
+
+to
+**Example 14.90. **
+mi | viska | pa | nanmu | .e | pa | ninmu  
+---|---|---|---|---|---|---  
+I | see | a | man | and | a | woman.  
+  
+
+there is a great temptation to reduce further to:
+**Example 14.91. **
+mi | viska | pa | nanmu | je | ninmu  
+---|---|---|---|---|---  
+I | see | a | man | and | woman.  
+  
+
+But Example 14.91 means that you see one thing which is both a man and a woman simultaneously! A _nanmu je ninmu_ is a manwoman, a presumably non-existent creature who is both a __nanmu__ and a __ninmu__.
+* * *
+Chapter 14. If Wishes Were Horses: The Lojban Connective System  
+---  
+Prev: Section 14.11 |  Next: Section 14.13  
+---|---  
+Table of Contents
+Book Info Page

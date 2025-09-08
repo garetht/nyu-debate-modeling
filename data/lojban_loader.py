@@ -3,6 +3,7 @@ from typing import Any, Callable, Optional, Type
 import json
 import os
 import re
+from data.quality_loader import QualityLoader
 import utils.constants as constants
 import random
 
@@ -10,9 +11,8 @@ import random
 class LojbanDataset(RawDataset):
     def __init__(
         self,
-        train_data: list[dict[str, Any]],
-        val_data: list[dict[str, Any]],
         test_data: list[dict[str, Any]],
+        val_data: list[dict[str, Any]],
         override_type: Optional[DatasetType] = None,
         flip_sides: bool = False,
         shuffle_deterministically: bool = False,
@@ -23,35 +23,37 @@ class LojbanDataset(RawDataset):
             random.seed(a=123456789)
         self.flip_sides = flip_sides
         self.data = {
-            SplitType.TRAIN: self.convert_batch_to_rows(train_data),
             SplitType.VAL: self.convert_batch_to_rows(val_data),
             SplitType.TEST: self.convert_batch_to_rows(test_data),
+            SplitType.TRAIN: self.convert_batch_to_rows(test_data)  # Use TEST data for TRAIN since no separate training data
         }
-        self.idxs = {SplitType.TRAIN: 0, SplitType.VAL: 0, SplitType.TEST: 0}
-        if not self.data[SplitType.TEST]:  # Adding b/c Quality Test Set does not have gold labels
-                    self.__split_validation_and_test_sets()
+
+        self.idxs = {SplitType.VAL: 0, SplitType.TEST: 0, SplitType.TRAIN: 0}
         
-        self.data[SplitType.TRAIN] = self.__reorder(self.data[SplitType.TRAIN])
         self.data[SplitType.VAL] = self.__reorder(self.data[SplitType.VAL])
         self.data[SplitType.TEST] = self.__reorder(self.data[SplitType.TEST])
         self.shuffle_deterministically = shuffle_deterministically
 
-    def get_data(self, split: SplitType = SplitType.TRAIN) -> list[DataRow]:
+    def get_data(self, split: SplitType = SplitType.TEST) -> list[DataRow]:
         """Returns all the data for a given split"""
-        if split not in self.data:
-            raise ValueError(f"Split type {split} is not recognized. Only TRAIN, VAL, and TEST are recognized")
+        # if split != SplitType.TEST:
+        #     raise ValueError(f"Split type {split} is not available. Only TEST split is supported for Lojban dataset")
         return self.data[split]
 
-    def get_batch(self, split: SplitType = SplitType.TRAIN, batch_size: int = 1) -> list[DataRow]:
+    def get_batch(self, split: SplitType = SplitType.TEST, batch_size: int = 1) -> list[DataRow]:
         """Returns a subset of the data for a given split"""
+        # if split != SplitType.TEST:
+        #     raise ValueError(f"Split type {split} is not available. Only TEST split is supported for Lojban dataset")
         if batch_size < 1:
             raise ValueError(f"Batch size must be >= 1. Inputted batch size was {batch_size}")
         data_to_return = self.data[split][self.idxs[split] : min(self.idxs[split] + batch_size, len(self.data[split]))]
         self.idxs[split] = self.idxs[split] + batch_size if self.idxs[split] + batch_size < len(self.data[split]) else 0
         return data_to_return
 
-    def get_example(self, split: SplitType = SplitType.TRAIN, idx: int = 0) -> DataRow:
+    def get_example(self, split: SplitType = SplitType.TEST, idx: int = 0) -> DataRow:
         """Returns an individual row in the dataset"""
+        # if split != SplitType.TEST:
+        #     raise ValueError(f"Split type {split} is not available. Only TEST split is supported for Lojban dataset")
         return self.data[split][idx % len(self.data[split])]
 
     def convert_batch_to_rows(self, batch: list[dict[str, Any]]):
@@ -84,25 +86,15 @@ class LojbanDataset(RawDataset):
                         entry["answers"][first],
                         entry["answers"][second],
                     ),
-                    story_title=entry["original_id"],
+                    debate_id=entry["original_id"],
+                    ground_truth=entry["original_key"],
+                    explanations=entry["original_explanation"]
                 )
             )
             if not self.flip_sides:
                 break
         return rows 
 
-    def __split_validation_and_test_sets(self):
-        second_half = self.data[SplitType.VAL][int(len(self.data[SplitType.VAL]) / 2) :]
-        self.data[SplitType.VAL] = self.data[SplitType.VAL][0 : int(len(self.data[SplitType.VAL]) / 2)]
-        val_prompts = set([row.story_title for row in self.data[SplitType.VAL]])
-
-        test_data = []
-        for row in second_half:
-            if row.story_title not in val_prompts:
-                test_data.append(row)
-            else:
-                self.data[SplitType.VAL].append(row)
-        self.data[SplitType.TEST] = test_data
 
     def __reorder(self, rows: list[DataRow]) -> list[DataRow]:
         if len(rows) == 0:
@@ -122,90 +114,55 @@ class LojbanDataset(RawDataset):
                 final_order.append(prompt_to_rows[story][index])
         return final_order
 
-class LojbanTranscripts:
-    DEFAULT_FILE_PATH = os.environ[constants.SRC_ROOT] + "data/datasets/quality-debates/debates-readable.jsonl"
+class LojbanLoader(RawDataLoader):
+    DEFAULT_VAL_PATH = os.environ[constants.SRC_ROOT] + "data/datasets/lojban/lojban_dataset.jsonl"
+    DEFAULT_TEST_PATH = os.environ[constants.SRC_ROOT] + "data/datasets/lojban/lojban_dataset_test.jsonl"
+
     @classmethod
     def get_splits(
-            cls,
-            file_path: str,
-            combine_train_and_val: bool = False,
-    ) -> tuple[list[dict], list[dict], list[dict]]:
-        
-        def _load_file(file_path: str):
-            entries = []
-            with open(file_path, "r", encoding="utf-8") as f:
-                for line in f:
-                    entries.append(json.loads(line))
-            return entries
-        
-        def __create_splits(rows: list[dict], combine_train_and_val: bool = False):
-            background_to_row = {}
-            background_to_question = {}
-            for row in rows:
-                if row["original_id"] not in background_to_row:
-                    background_to_row[row["original_id"]] = []
-                    background_to_question[row["original_id"]] = []
-                if row["prompt"] not in background_to_question[row["original_id"]]:
-                    background_to_row[row["original_id"]].append(row)
-                    background_to_question[row["original_id"]].append(row["prompt"])
-            train = []
-            val = []
-            test = []
-            for i, background in enumerate(background_to_row):
-                if i < int(0.8 * len(background_to_row)):
-                    train.extend(background_to_row[background])
-                elif i < int(0.9 * len(background_to_row)):
-                    val.extend(background_to_row[background])
-                else:
-                    test.extend(background_to_row[background])
-
-            if combine_train_and_val:
-                train = train + val
-
-            return train, val, test
-        
-        return __create_splits(rows=_load_file(file_path), combine_train_and_val=combine_train_and_val)
-    
-    @classmethod
-    def load(
         cls,
-        constructor_cls: Type[RawDataLoader],
-        full_dataset_filepath: Optional[str] = None,
-        combine_train_and_val: bool = False,
-    ) -> LojbanDataset:
-        full_dataset_filepath = full_dataset_filepath or LojbanTranscripts.DEFAULT_FILE_PATH
-        train, val, test = constructor_cls.get_splits(
-            file_path=full_dataset_filepath,
-            combine_train_and_val=combine_train_and_val,
-        )
-        return LojbanDataset(
-            train_data=train,
-            val_data=val,
-            test_data=test,
-        )
-
-class LojbanLoader(RawDataLoader):
-    @classmethod
-    def get_splits(cls, file_path: str, combine_train_and_val: bool = False):
-        return LojbanTranscripts.get_splits(
-            file_path=file_path,
-            combine_train_and_val=combine_train_and_val,
-        )
-
-    @classmethod
-    def load(
-        cls,
-        full_dataset_filepath: Optional[str] = None,
-        combine_train_and_val: bool = False,
         train_filepath: Optional[str] = None,
+        val_filepath: Optional[str] = None,
+        test_filepath: Optional[str] = None,
+    ) -> tuple[list[dict]]:
+        """Splits the data in train, val, and test sets"""
+
+        def __load_individual_file(filepath: str) -> list[str, Any]:
+            entries = []
+            if filepath:
+                with open(filepath, "r", encoding="utf-8") as f:
+                    for line in f.readlines():
+                        entries.append(json.loads(line))
+            return entries
+
+        val_filepath = val_filepath or LojbanLoader.DEFAULT_VAL_PATH
+        test_filepath = test_filepath or LojbanLoader.DEFAULT_TEST_PATH
+
+        val_split = __load_individual_file(val_filepath)
+        test_split = __load_individual_file(test_filepath)
+        return val_split, test_split
+
+
+    @classmethod
+    def load(
+        cls,
+        full_dataset_filepath: Optional[str] = None,
         val_filepath: Optional[str] = None,
         test_filepath: Optional[str] = None,
         supplemental_file_paths: Optional[dict[str, str]] = None,
         flip_sides: bool = False,
-        shuffle_deterministically: bool = False
+        shuffle_deterministically: bool = False,
+        **kwargs
     ) -> LojbanDataset:
-        return LojbanTranscripts.load(
-            constructor_cls=cls,
-            full_dataset_filepath=full_dataset_filepath,
-            combine_train_and_val=combine_train_and_val,
+        """Constructs a LojbanDataset"""
+
+        val_split, test_split = LojbanLoader.get_splits(
+            val_filepath=val_filepath, test_filepath=test_filepath
+        )
+
+        return LojbanDataset(
+            test_data=test_split,
+            val_data=val_split,
+            flip_sides=flip_sides,
+            shuffle_deterministically=shuffle_deterministically
         )

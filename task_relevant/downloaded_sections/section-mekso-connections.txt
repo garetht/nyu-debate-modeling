@@ -1,0 +1,71 @@
+Chapter 14. If Wishes Were Horses: The Lojban Connective System  
+---  
+Prev: Section 14.16 |  Next: Section 14.18  
+---|---  
+Table of Contents
+Book Info Page
+* * *
+## 14.17. Logical and non-logical connectives within mekso
+Lojban has a separate grammar embedded within the main grammar for representing mathematical expressions (or mekso in Lojban) such as “2 + 2”. Mathematical expressions are explained fully in Chapter 18. The basic components of mekso are operands, like “2”, and operators, like “+”. Both of these may be either logically or non-logically connected.
+Operands are connected in afterthought with eks and in forethought with geks, just like sumti. Operators, on the other hand, are connected in afterthought with jeks and in forethought with guheks, just like tanru components. (However, jeks and joiks with __bo__ are not allowed for operators.) This parallelism is no accident.
+In addition, eks with __bo__ and with __ke__ … __ke'e__ are allowed for grouping logically connected operands, and __ke__ … __ke'e__ is allowed for grouping logically connected operators, although there is no analogue of tanru among the operators.
+Only a few examples of each kind of mekso connection will be given. Despite the large number of rules required to support this feature, it is of relatively minor importance in either the mekso or the logical-connective scheme of things. These examples are drawn from Section 18.17, and contain many mekso features not explained in this chapter.
+Example 14.149 exhibits afterthought logical connection between operands:
+**Example 14.149. **
+vei | ci | .a | vo | [ve'o] | prenu | cu | klama | le | zarci  
+---|---|---|---|---|---|---|---|---|---  
+( | Three | or | four | ) | people |  | go-to | the | market.  
+  
+
+Example 14.150 is equivalent in meaning, but uses forethought connection:
+**Example 14.150. **
+vei | ga | ci | gi | vo | [ve'o] | prenu | cu | klama | le | zarci  
+---|---|---|---|---|---|---|---|---|---|---  
+( | Either | 3 | or | 4 | ) | people |  | go-to | the | market.  
+  
+
+Note that the mekso in Example 14.149 and Example 14.150 are being used as quantifiers. Lojban requires that any mekso other than a simple number be enclosed in __vei__ and __ve'o__ parentheses when used as a quantifier. The right parenthesis mark, __ve'o__ , is an elidable terminator.
+Simple examples of logical connection between operators are hard to come by. A contrived example is:
+**Example 14.151. **
+li | re | su'i | je | pi'i | re | du | li | vo  
+---|---|---|---|---|---|---|---|---  
+The-number | 2 | plus | and | times | 2 | equals | the-number | 4.  
+2 + 2 = 4 and 2 x 2 = 4.  
+---  
+  
+
+The forethought form of Example 14.151 is:
+**Example 14.152. **
+li | re | ge | su'i | gi | pi'i | re | du | li | vo  
+---|---|---|---|---|---|---|---|---|---  
+The-number | two | both | plus | and | times | two | equals | the-number | four.  
+Both 2 + 2 = 4 and 2 x 2 = 4.  
+---  
+  
+
+Non-logical connection with joiks or joigiks is also permitted between operands and between operators. One use for this construct is to connect operands with __bi'i__ to create mathematical intervals:
+**Example 14.153. **
+li | no | ga'o | bi'i | ke'i | pa  
+---|---|---|---|---|---  
+the-number | zero | (inclusive) | from-to | (exclusive) | one  
+[0,1)  
+the numbers from zero to one, including zero but not including one  
+---  
+  
+
+You can also combine two operands with __ce'o__ , the sequence connective of selma'o JOI, to make a compound subscript:
+**Example 14.154. **
+xy. | boi | xi | vei | by. | ce'o | dy. | [ve'o]  
+---|---|---|---|---|---|---|---  
+“x” |  | sub | ( |  “b” | sequence |  “d” | )  
+xb,d  
+  
+
+Note that the __boi__ in Example 14.154 is not elidable, because the __xi__ subscript needs something to attach to.
+* * *
+Chapter 14. If Wishes Were Horses: The Lojban Connective System  
+---  
+Prev: Section 14.16 |  Next: Section 14.18  
+---|---  
+Table of Contents
+Book Info Page

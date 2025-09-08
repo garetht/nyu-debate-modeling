@@ -104,6 +104,8 @@ class DataRow(BaseModel):
     correct_index: Optional[int] = None
     debate_id: Optional[str] = None
     story_title: Optional[str] = None
+    explanations : Optional[str] = None
+    ground_truth: Optional[str] = None
 
 
 class JudgePreferenceDataRow(BaseModel):
