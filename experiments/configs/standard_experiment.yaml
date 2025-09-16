@@ -26,6 +26,62 @@ lojban-validation-debaters-0809:
     full_dataset_file_path: /home/ubuntu/mars-arnesen-gh/garethtan/data/datasets/lojban/lojban_dataset.jsonl
     dataset_type: lojban
     split_type: val
+lojban-debaters-llama-sfted-judge-nano-sfted:
+  batch_size: 1
+  num_speeches: 2
+  flip: False
+  enable_self_debate: True
+  speech_structure: default_debate
+  alternate: False
+  prompt_config:
+    file_path: /home/ubuntu/mars-arnesen-gh/garethtan/prompts/configs/lojban_prompts.yaml
+  agents:
+    debaters:
+      - model_settings:
+          model_type: llama3
+          model_file_path: /home/ubuntu/mars-arnesen-gh/leonidtsyplenkov/models/trained_models/llama-3-mega-merged-no-judge-speeches-31.07
+          alias: "sft-0731-model"
+          require_quote_validation: True
+          generation_params:
+            temperature: 0.5
+            max_new_tokens: 500
+    judge:
+      model_settings:
+        model_type: openai
+        alias: openai-judge-nano-sft-0916
+        model_file_path: ft:gpt-4.1-nano-2025-04-14:modulo-research-ltd:michael-and-khan-data-judge-nano-16-09:CGRIpeD6
+  dataset:
+    full_dataset_file_path: /home/ubuntu/mars-arnesen-gh/garethtan/data/datasets/lojban/lojban_dataset_test.jsonl
+    dataset_type: lojban
+    split_type: test
+lojban-debaters-llama-rled-judge-nano-sfted:
+  batch_size: 1
+  num_speeches: 2
+  flip: False
+  enable_self_debate: True
+  speech_structure: default_debate
+  alternate: False
+  prompt_config:
+    file_path: /home/ubuntu/mars-arnesen-gh/garethtan/prompts/configs/lojban_prompts.yaml
+  agents:
+    debaters:
+      - model_settings:
+          model_type: llama3
+          model_file_path: /home/ubuntu/mars-arnesen-gh/garethtan/models/trained_models/llama-3-DPO-811-FullTrainDebateRoundTwo-full-trained
+          alias: "dpo-rl-round-2-240-0810-model"
+          require_quote_validation: True
+          generation_params:
+            temperature: 0.5
+            max_new_tokens: 500
+    judge:
+      model_settings:
+        model_type: openai
+        alias: openai-judge-nano-sft-0916
+        model_file_path: ft:gpt-4.1-nano-2025-04-14:modulo-research-ltd:michael-and-khan-data-judge-nano-16-09:CGRIpeD6
+  dataset:
+    full_dataset_file_path: /home/ubuntu/mars-arnesen-gh/garethtan/data/datasets/lojban/lojban_dataset_test.jsonl
+    dataset_type: lojban
+    split_type: test
 lojban-test-extended-tokens:
   batch_size: 1
   num_speeches: 2
@@ -121,7 +177,7 @@ debater-untrained-gpt-o4-mini-0913-judge-trained:
   dataset:
     dataset_type: quality
     split_type: val
-debater-llama-sft-trained-gpt-41-nano-untrained-judge:
+quality-debaters-llama-sfted-judge-nano-sfted:
   batch_size: 1
   num_speeches: 2
   flip: False
@@ -140,12 +196,12 @@ debater-llama-sft-trained-gpt-41-nano-untrained-judge:
     judge:
       model_settings:
         model_type: openai
-        alias: openai-41-nano-untrained-judge
-        model_file_path: gpt-4.1-nano-2025-04-14
+        alias: openai-judge-nano-sft-0916
+        model_file_path: ft:gpt-4.1-nano-2025-04-14:modulo-research-ltd:michael-and-khan-data-judge-nano-16-09:CGRIpeD6
   dataset:
     dataset_type: quality
     split_type: val
-debater-llama-rl-trained-gpt-41-nano-untrained-judge:
+quality-debaters-llama-rled-judge-nano-sfted:
   batch_size: 1
   num_speeches: 2
   flip: False
@@ -164,8 +220,8 @@ debater-llama-rl-trained-gpt-41-nano-untrained-judge:
     judge:
       model_settings:
         model_type: openai
-        alias: openai-41-nano-untrained-judge
-        model_file_path: gpt-4.1-nano-2025-04-14
+        alias: openai-judge-nano-sft-0916
+        model_file_path: ft:gpt-4.1-nano-2025-04-14:modulo-research-ltd:michael-and-khan-data-judge-nano-16-09:CGRIpeD6
   dataset:
     dataset_type: quality
     split_type: val
@@ -1508,6 +1564,30 @@ DataGenerationLlama3MultiRoundHalfBranchedFullTrainDPO-0731:
         model_type: openai
         alias: openai-judge
         model_file_path: ft:gpt-4.1-2025-04-14:modulo-research-ltd:michael-and-khan-data-judge-31-07:BzYGc8SU
+  dataset:
+    dataset_type: quality
+    split_type: train
+    flip_sides: False
+data-generation-llama-sfted-gpt-41-nano-judge-sfted:
+  batch_size: 1
+  num_speeches: 2
+  flip: True
+  enable_self_debate: True
+  multi_round_branching: half
+  agents:
+    debaters:
+      - model_settings:
+          model_type: llama3
+          model_file_path: /home/ubuntu/mars-arnesen-gh/leonidtsyplenkov/models/trained_models/llama-3-mega-merged-no-judge-speeches-31.07
+          alias: "sft-0731"
+          require_quote_validation: True
+          generation_params:
+            temperature: 0.5
+    judge:
+      model_settings:
+        model_type: openai
+        alias: openai-nano-sft-judge
+        model_file_path: ft:gpt-4.1-nano-2025-04-14:modulo-research-ltd:michael-and-khan-data-judge-nano-16-09:CGRIpeD6
   dataset:
     dataset_type: quality
     split_type: train

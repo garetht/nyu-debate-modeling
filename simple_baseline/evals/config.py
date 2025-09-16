@@ -38,21 +38,19 @@ DEBATER_LOCAL_EVAL_CONFIG = dict(
     max_connections=1,
 )
 
-DEBATER_LOJBAN_EVAL_CONFIG = dict(
-    model=[
-        create_local_llama_model(max_connections=2),
-        GPT_O4_MINI_MODEL,
-    ],
-)
-
-DEBATER_QUALITY_EVAL_CONFIG = dict(
-    model=[
-        create_local_llama_model(max_connections=4),
-        GPT_O4_MINI_MODEL,
-    ],
-)
-
-
+# DEBATER_LOJBAN_EVAL_CONFIG = dict(
+#     model=[
+#         create_local_llama_model(max_connections=2),
+#         GPT_O4_MINI_MODEL,
+#     ],
+# )
+#
+# DEBATER_QUALITY_EVAL_CONFIG = dict(
+#     model=[
+#         create_local_llama_model(max_connections=4),
+#         GPT_O4_MINI_MODEL,
+#     ],
+# )
 
 
 GPT_4_1_MODEL_CONFIG = get_model(
@@ -62,9 +60,28 @@ GPT_4_1_MODEL_CONFIG = get_model(
     )
 )
 
+GPT_4_1_NANO_MODEL_CONFIG = get_model(
+    model="openai/gpt-4.1-nano-2025-04-14",
+    config=GenerateConfig(
+        max_connections=10,
+        temperature=0.5
+    )
+)
+
+
+GPT_4_1_NANO_FINETUNED_MODEL_CONFIG = get_model(
+    model="openai/ft:gpt-4.1-nano-2025-04-14:modulo-research-ltd:michael-and-khan-data-judge-nano-16-09:CGRIpeD6",
+    config=GenerateConfig(
+        max_connections=10,
+        temperature=0.5
+    )
+)
+
 JUDGE_EVAL_CONFIG = dict(
     model=[
-        GPT_4_1_MODEL_CONFIG,
+        # GPT_4_1_MODEL_CONFIG,
+        # GPT_4_1_NANO_MODEL_CONFIG
+        GPT_4_1_NANO_FINETUNED_MODEL_CONFIG
     ]
 )
 

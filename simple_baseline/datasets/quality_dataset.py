@@ -1,6 +1,6 @@
 # %%
 import random
-from collections import defaultdict
+from collections import defaultdict, Counter
 from typing import Callable
 
 from inspect_ai.dataset import json_dataset, Sample
@@ -8,6 +8,7 @@ from inspect_ai.dataset import json_dataset, Sample
 from simple_baseline import locations
 from simple_baseline.data_models.quality import QualityTranscript, Question
 
+randomness = random.Random(189239411823)
 
 def get_question_ids() -> dict[str, set[str]]:
     questions_file = locations.PROJECT_ROOT / "all_debate_questions.txt"
@@ -50,7 +51,7 @@ def assign_random_values(data: dict[str, set[str]], total: int = 2502) -> dict[s
     leaves_list = list(all_leaves)
 
     # Randomly select which leaves get an extra +1
-    bonus_leaves = set(random.sample(leaves_list, remainder)) if remainder > 0 else set()
+    bonus_leaves = set(randomness.sample(leaves_list, remainder)) if remainder > 0 else set()
 
     # Create assignments for each leaf
     leaf_assignments = {}
@@ -65,8 +66,6 @@ def assign_random_values(data: dict[str, set[str]], total: int = 2502) -> dict[s
             result[key][leaf] = leaf_assignments[leaf]
 
     return result
-
-
 
 
 def debater_input_creator(transcript: QualityTranscript, question: Question):
@@ -96,11 +95,11 @@ def quality_record_to_sample(input_creator: Callable[[QualityTranscript, Questio
             other_indices = [i for i in range(len(question.options)) if i != correct_idx]
 
             # Randomly select one incorrect option
-            distractor_idx = random.choice(other_indices)
+            distractor_idx = randomness.choice(other_indices)
 
             # Create the two options - correct and one distractor
             # Randomly decide whether correct answer comes first or second
-            if random.choice([True, False]):
+            if randomness.choice([True, False]):
                 # Correct answer first
                 new_options = [question.options[correct_idx], question.options[distractor_idx]]
                 new_target = 'A'
