@@ -6,6 +6,7 @@ class PowerPairScheduler:
     This handles the scheduling for a power-paired (Swiss) tournament.
     """
 
+
     def __init__(self, debates: list[DebateRound]):
         self.alias_to_record = {alias: [0, 0] for alias in self.__get_aliases(debates=debates)}
         self.debate_map, self.debate_idx_map = self.__get_debate_map(debates=debates)
