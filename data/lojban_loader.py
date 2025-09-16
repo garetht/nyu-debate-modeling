@@ -87,6 +87,7 @@ class LojbanDataset(RawDataset):
                         entry["answers"][second],
                     ),
                     debate_id=entry["original_id"],
+                    story_title=entry["original_id"],
                     ground_truth=entry["original_key"],
                     explanations=entry["original_explanation"]
                 )
