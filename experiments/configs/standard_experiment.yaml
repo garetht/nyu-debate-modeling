@@ -82,6 +82,62 @@ lojban-debaters-llama-rled-judge-nano-sfted:
     full_dataset_file_path: /home/ubuntu/mars-arnesen-gh/garethtan/data/datasets/lojban/lojban_dataset_test.jsonl
     dataset_type: lojban
     split_type: test
+lojban-debaters-o4-mini-untrained-judge-nano-sfted:
+    batch_size: 1
+    num_speeches: 2
+    flip: False
+    enable_self_debate: True
+    speech_structure: default_debate
+    alternate: False
+    prompt_config:
+      file_path: /home/ubuntu/mars-arnesen-gh/garethtan/prompts/configs/lojban_prompts.yaml
+    agents:
+      debaters:
+        - model_settings:
+            model_type: openai
+            alias: openai-debater-o4-untrained
+            model_file_path: o4-mini-2025-04-16
+            require_quote_validation: True
+            generation_params:
+              temperature: 0.5
+              max_new_tokens: 500
+      judge:
+        model_settings:
+          model_type: openai
+          alias: openai-judge-nano-sft-0916
+          model_file_path: ft:gpt-4.1-nano-2025-04-14:modulo-research-ltd:michael-and-khan-data-judge-nano-16-09:CGRIpeD6
+    dataset:
+      full_dataset_file_path: /home/ubuntu/mars-arnesen-gh/garethtan/data/datasets/lojban/lojban_dataset_test.jsonl
+      dataset_type: lojban
+      split_type: test
+lojban-debaters-o4-mini-trained-judge-nano-sfted:
+    batch_size: 1
+    num_speeches: 2
+    flip: False
+    enable_self_debate: True
+    speech_structure: default_debate
+    alternate: False
+    prompt_config:
+      file_path: /home/ubuntu/mars-arnesen-gh/garethtan/prompts/configs/lojban_prompts.yaml
+    agents:
+      debaters:
+        - model_settings:
+            model_type: openai
+            alias: openai-debater-o4-trained
+            model_file_path: ft:o4-mini-2025-04-16:modulo-research-ltd:michael-and-khan-data-debater-15-09:CGO8p7XH
+            require_quote_validation: True
+            generation_params:
+              temperature: 0.5
+              max_new_tokens: 500
+      judge:
+        model_settings:
+          model_type: openai
+          alias: openai-judge-nano-sft-0916
+          model_file_path: ft:gpt-4.1-nano-2025-04-14:modulo-research-ltd:michael-and-khan-data-judge-nano-16-09:CGRIpeD6
+    dataset:
+      full_dataset_file_path: /home/ubuntu/mars-arnesen-gh/garethtan/data/datasets/lojban/lojban_dataset_test.jsonl
+      dataset_type: lojban
+      split_type: test
 lojban-test-extended-tokens:
   batch_size: 1
   num_speeches: 2
@@ -214,6 +270,54 @@ quality-debaters-llama-rled-judge-nano-sfted:
           model_type: llama3
           model_file_path: /home/ubuntu/mars-arnesen-gh/garethtan/models/trained_models/llama-3-DPO-811-FullTrainDebateRoundTwo-full-trained
           alias: "dpo-rl-round-2-240-0810-model"
+          require_quote_validation: True
+          generation_params:
+            temperature: 0.5
+    judge:
+      model_settings:
+        model_type: openai
+        alias: openai-judge-nano-sft-0916
+        model_file_path: ft:gpt-4.1-nano-2025-04-14:modulo-research-ltd:michael-and-khan-data-judge-nano-16-09:CGRIpeD6
+  dataset:
+    dataset_type: quality
+    split_type: val
+quality-debaters-o4-mini-untrained-judge-nano-sfted:
+  batch_size: 1
+  num_speeches: 2
+  flip: False
+  enable_self_debate: True
+  speech_structure: default_debate
+  alternate: False
+  agents:
+    debaters:
+      - model_settings:
+          model_type: openai
+          alias: openai-debater-o4-untrained
+          model_file_path: o4-mini-2025-04-16
+          require_quote_validation: True
+          generation_params:
+            temperature: 0.5
+    judge:
+      model_settings:
+        model_type: openai
+        alias: openai-judge-nano-sft-0916
+        model_file_path: ft:gpt-4.1-nano-2025-04-14:modulo-research-ltd:michael-and-khan-data-judge-nano-16-09:CGRIpeD6
+  dataset:
+    dataset_type: quality
+    split_type: val
+quality-debaters-o4-mini-trained-judge-nano-sfted:
+  batch_size: 1
+  num_speeches: 2
+  flip: False
+  enable_self_debate: True
+  speech_structure: default_debate
+  alternate: False
+  agents:
+    debaters:
+      - model_settings:
+          model_type: openai
+          alias: openai-debater-o4-trained
+          model_file_path: ft:o4-mini-2025-04-16:modulo-research-ltd:michael-and-khan-data-debater-15-09:CGO8p7XH
           require_quote_validation: True
           generation_params:
             temperature: 0.5
