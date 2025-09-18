@@ -6,6 +6,7 @@ import utils.constants as constants
 
 import backoff
 import openai
+from openai import NOT_GIVEN
 
 from concurrent.futures import ThreadPoolExecutor
 from typing import Union, Optional
@@ -33,6 +34,7 @@ class OpenAIModel(Model):
         self.client = openai.OpenAI()
         self.endpoint = endpoint if endpoint else OpenAIModel.DEFAULT_MODEL_ENDPOINT
         self.logger = logger_utils.get_default_logger(__name__)
+        self.generation_params = kwargs["generation_params"] if "generation_params" in kwargs else {}
 
     def __configure(self):
         openai.organization = os.getenv("OPENAI_ORGANIZATION")
@@ -64,7 +66,7 @@ class OpenAIModel(Model):
                 executor.submit(
                     self.predict_single_input,
                     model_input_list=input_value,
-                    max_new_tokens=max_new_tokens,
+                    max_new_tokens=self.generation_params.max_new_tokens if self.generation_params else max_new_tokens,
                     speech_structure=speech_structure,
                 )
                 for input_value in inputs
@@ -168,6 +170,7 @@ class OpenAIModel(Model):
         return self.client.chat.completions.create(
             model=self.endpoint,
             messages=messages,
+            reasoning_effort="low" if "o4" in self.endpoint else NOT_GIVEN,
             max_completion_tokens=max_new_tokens,
             logprobs=(speech_structure != SpeechStructure.OPEN_ENDED),
             top_logprobs=5 if (speech_structure != SpeechStructure.OPEN_ENDED) else None,
@@ -175,7 +178,10 @@ class OpenAIModel(Model):
 
     def copy(self, alias: str, is_debater: Optional[bool] = None, **kwargs) -> OpenAIModel:
         """Generates a deepcopy of this model"""
-        return OpenAIModel(alias=alias, is_debater=is_debater, endpoint=self.endpoint)
+        return OpenAIModel(alias=alias,
+                           is_debater=is_debater,
+                           endpoint=self.endpoint,
+                           generation_params=self.generation_params)
 
     @classmethod
     def generate_llm_input_from_model_inputs(
