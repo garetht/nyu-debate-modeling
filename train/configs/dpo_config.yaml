@@ -2433,6 +2433,39 @@ iterative-llama-debaters-nano-judge-dpo-round-one:
     dataset:
       dataset_type: judge_preferences
       full_dataset_file_path: /home/ubuntu/mars-arnesen-gh/garethtan/outputs/data-generation-llama-sfted-gpt-41-nano-judge-sfted/outputs/transcripts/2025-09-16
+iterative-llama-debaters-nano-judge-dpo-round-two:
+    model_name:  /home/ubuntu/mars-arnesen-gh/garethtan/models/trained_models/llama-3-dpo-round-1-nano-judge-0917
+    target: debater
+    llm_type: llama3
+    opening_speeches_only: True
+    training_hyperparameters:
+      num_train_epochs: 1
+      per_device_train_batch_size: 1
+      gradient_accumulation_steps: 32
+      optim: paged_adamw_32bit
+      learning_rate: 10e-5
+      max_grad_norm: 0.3
+      warmup_ratio: 0.03
+      lr_scheduler_type: constant
+      peft_type: lora
+      lora_rank: 128
+      kl_penalty: 0.5
+      steps: 1
+      target_module: all
+      supplemental:
+        epoch_size: 1024
+        save_steps: 16
+        reward_type: prob
+        loss_type: bon
+        multiplier: 7
+    logging_and_saving_config:
+      logging_steps: 1
+      output_dir: /home/ubuntu/mars-arnesen-gh/models/trained_models/llama-3-dpo-round-2-nano-judge-0917
+    dataset:
+      - dataset_type: judge_preferences
+        full_dataset_file_path: /home/ubuntu/mars-arnesen-gh/garethtan/outputs/data-generation-llama-sfted-gpt-41-nano-judge-sfted/outputs/transcripts/2025-09-16
+      - dataset_type: judge_preferences
+        full_dataset_file_path: /home/ubuntu/mars-arnesen-gh/garethtan/outputs/data-generation-llama-sfted-gpt-41-nano-judge-sfted-round-two/outputs/transcripts/2025-09-17
 Iterative - FullTrainRoundOneSignificant - 76:
     model_name: /home/ubuntu/mars-arnesen-gh/leonidtsyplenkov/models/trained_models/llama-3-mega-merged-no-judge-speeches-31.07
     target: debater

@@ -1,6 +1,6 @@
 import json
 from dataclasses import dataclass
-from pathlib import Path
+from pathlib import Path, PosixPath
 
 from dataclasses import dataclass
 from typing import Any, List, Optional, TypeVar, Callable, Type, cast
@@ -186,18 +186,20 @@ class Speech:
 class Transcript:
     metadata: Metadata
     speeches: List[Speech]
+    file_path: PosixPath
 
     @staticmethod
-    def from_dict(obj: Any) -> 'Transcript':
+    def from_dict(obj: Any, file_path: PosixPath) -> 'Transcript':
         assert isinstance(obj, dict)
         metadata = Metadata.from_dict(obj.get("metadata"))
         speeches = from_list(Speech.from_dict, obj.get("speeches"))
-        return Transcript(metadata, speeches)
+        return Transcript(metadata, speeches, file_path)
 
     def to_dict(self) -> dict:
         result: dict = {}
         result["metadata"] = to_class(Metadata, self.metadata)
         result["speeches"] = from_list(lambda x: to_class(Speech, x), self.speeches)
+        result["file_path"] = self.file_path
         return result
 
 
@@ -221,7 +223,7 @@ def read_transcripts_from_folder(folder_path: Path) -> list[Transcript]:
         try:
             with open(file_path, 'r', encoding='utf-8') as file:
                 data = json.load(file)
-                transcripts.append(Transcript.from_dict(data))
+                transcripts.append(Transcript.from_dict(data, file_path))
         except json.JSONDecodeError:
             print(f"Warning: Could not decode JSON from {file_path}. File will be skipped.")
         except (KeyError, AssertionError, TypeError) as e:

@@ -100,7 +100,7 @@ lojban-debaters-o4-mini-untrained-judge-nano-sfted:
             require_quote_validation: True
             generation_params:
               temperature: 0.5
-              max_new_tokens: 1400
+              max_new_tokens: 2000
       judge:
         model_settings:
           model_type: openai
@@ -128,7 +128,7 @@ lojban-debaters-o4-mini-trained-judge-nano-sfted:
             require_quote_validation: True
             generation_params:
               temperature: 0.5
-              max_new_tokens: 1400
+              max_new_tokens: 2000
       judge:
         model_settings:
           model_type: openai
@@ -268,8 +268,8 @@ quality-debaters-llama-rled-judge-nano-sfted:
     debaters:
       - model_settings:
           model_type: llama3
-          model_file_path: /home/ubuntu/mars-arnesen-gh/garethtan/models/trained_models/llama-3-DPO-811-FullTrainDebateRoundTwo-full-trained
-          alias: "dpo-rl-round-2-240-0810-model"
+          model_file_path: /home/ubuntu/mars-arnesen-gh/garethtan/models/trained_models/llama-3-dpo-round-2-nano-judge-0917/checkpoint-384
+          alias: "dpo-rl-round-2-384-0919-model"
           require_quote_validation: True
           generation_params:
             temperature: 0.5
