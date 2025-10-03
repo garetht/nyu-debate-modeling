@@ -1,0 +1,93 @@
+Chapter 19. Putting It All Together: Notes on the Structure of Lojban Texts  
+---  
+Prev: Section 19.12 |  Next: Section 19.14  
+---|---  
+Table of Contents
+Book Info Page
+* * *
+## 19.13. Erasure: SI, SA, SU
+The following cmavo are discussed in this section:
+si |  SI |  erase word  
+---|---|---  
+sa |  SA |  erase phrase  
+su |  SU |  erase discourse  
+The cmavo __si__ (of selma'o SI) is a metalinguistic operator that erases the preceding word, as if it had never been spoken:
+**Example 19.75. **
+ti | gerku | si | mlatu  
+---|---|---|---  
+This | is-a-dog, | er, | is-a-cat.  
+  
+
+means the same thing as _ti mlatu_. Multiple __si__ cmavo in succession erase the appropriate number of words:
+**Example 19.76. **
+ta | blanu | zdani | si | si | xekri | zdani  
+---|---|---|---|---|---|---  
+That | is-a-blue | house, | er, | er, | is-a-black | house.  
+  
+
+In order to erase the word __zo__ , it is necessary to use three __si__ cmavo in a row:
+**Example 19.77. **
+zo | .bab. | se | cmene | zo | si | si | si | la | bab.  
+---|---|---|---|---|---|---|---|---|---  
+The-word |  “Bob” | is-the-name-of | the | word |  _ _si_ _ | , | er, | er, | Bob.  
+  
+
+The first use of __si__ does not erase anything, but completes the __zo__ quotation. Two more __si__ cmavo are then necessary to erase the first __si__ and the __zo__.
+Incorrect names can likewise cause trouble with __si__ :
+**Example 19.78. **
+mi | tavla | fo | la | .esperanto  
+---|---|---|---|---  
+I | talk | in-language | that-named | and-speranto,  
+si | si | .esperanton.  
+---|---|---  
+er, | er, | Esperanto.  
+  
+
+The Lojbanized spelling _.esperanto_ breaks up, as a consequence of the Lojban morphology rules (see Chapter 4) into two Lojban words, the cmavo __e__ and the undefined lujvo _speranto_. Therefore, two __si__ cmavo are needed to erase them. Of course, _.e speranto_ is not grammatical after __la__ , but recognition of __si__ is done before grammatical analysis.
+Even more messy is the result of an incorrect __zoi__ :
+**Example 19.79. **
+mi | cusku | zoi | fy. | gy. | .fy. | si | si | si | si | zo .djan  
+---|---|---|---|---|---|---|---|---|---|---  
+I | express | [foreign] | [quote] |  _ _gy_ _ | [unquote], | er, | er, | er, | er, |  “John” | .  
+  
+
+In Example 19.79, the first __fy__ is taken to be the delimiting word. The next word must be different from the delimiting word, and __gy.__ , the Lojban name for the letter _g_ , was chosen arbitrarily. Then the delimiting word must be repeated. For purposes of __si__ erasure, the entire quoted text is taken to be a word, so four words have been uttered, and four more __si__ cmavo are needed to erase them altogether. Similarly, a stray __lo'u__ quotation mark must be erased with _fy. le'u si si si_ , by completing the quotation and then erasing it all with three __si__ cmavo.
+What if less than the entire __zo__ or __zoi__ construct is erased? The result is something which has a loose __zo__ or __zoi__ in it, without its expected sequels, and which is incurably ungrammatical. Thus, to erase just the word quoted by __zo__ , it turns out to be necessary to erase the __zo__ as well:
+**Example 19.80. **
+mi | se | cmene | zo | .djan. | si | si | zo | .djordj.  
+---|---|---|---|---|---|---|---|---  
+I |  | am-named-by | the-word |  “John,” | er, | er, | the-word |  “George.”  
+  
+
+The parser will reject _zo .djan. si .djordj._ , because in that context _djordj._ is a name (of selma'o CMENE) rather than a quoted word.
+Note: The current machine parser does not implement __si__ erasure.
+As the above examples plainly show, precise erasures with __si__ can be extremely hard to get right. Therefore, the cmavo __sa__ (of selma'o SA) is provided for erasing more than one word. The cmavo following __sa__ should be the starting marker of some grammatical construct. The effect of the __sa__ is to erase back to and including the last starting marker of the same kind. For example:
+**Example 19.81. **
+mi | viska | le | sa | .i | mi | cusku | zo | .djan.  
+---|---|---|---|---|---|---|---|---  
+I | see | the | ... |  | I | say | the-word |  “John” | .  
+  
+
+Since the word following __sa__ is __i__ , the sentence separator, its effect is to erase the preceding sentence. So Example 19.81 is equivalent to:
+**Example 19.82. **
+mi cusku zo .djan.
+  
+
+Another example, erasing a partial description rather than a partial sentence:
+**Example 19.83. **
+mi | viska | le | blanu | .zdan. | sa | le | xekri | zdani  
+---|---|---|---|---|---|---|---|---  
+I | see | the | blue | hou | ... | the | black | house.  
+  
+
+In Example 19.83, _le blanu .zdan._ is ungrammatical, but clearly reflects the speaker's original intention to say _le blanu zdani_. However, the __zdani__ was cut off before the end and changed into a name. The entire ungrammatical __le__ construct is erased and replaced by _le xekri zdani_.
+Note: The current machine parser does not implement __sa__ erasure. Getting __sa__ right is even more difficult (for a computer) than getting __si__ right, as the behavior of __si__ is defined in terms of words rather than in terms of grammatical constructs (possibly incorrect ones) and words are conceptually simpler entities. On the other hand, __sa__ is generally easier for human beings, because the rules for using it correctly are less finicky.
+The cmavo __su__ (of selma'o SU) is yet another metalinguistic operator that erases the entire text. However, if the text involves multiple speakers, then __su__ will only erase the remarks made by the one who said it, unless that speaker has said nothing. Therefore _susu_ is needed to eradicate a whole discussion in conversation.
+Note: The current machine parser does not implement either __su__ or _susu_ erasure.
+* * *
+Chapter 19. Putting It All Together: Notes on the Structure of Lojban Texts  
+---  
+Prev: Section 19.12 |  Next: Section 19.14  
+---|---  
+Table of Contents
+Book Info Page

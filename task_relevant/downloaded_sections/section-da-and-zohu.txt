@@ -1,0 +1,84 @@
+Chapter 16. “Who Did You Pass On The Road? Nobody”: Lojban And Logic  
+---  
+Prev: Chapter 16 |  Next: Section 16.3  
+---|---  
+Table of Contents
+Book Info Page
+* * *
+## 16.2. Existential claims, prenexes, and variables
+Let us consider, to begin with, a sentence that is not in the dialogue:
+**Example 16.7. **
+Something sees me.
+  
+
+There are two plausible Lojban translations of Example 16.7. The simpler one is:
+**Example 16.8. **
+[zo'e] | viska | mi  
+---|---|---  
+Something-unspecified | sees | me.  
+  
+
+The cmavo __zo'e__ indicates that a sumti has been omitted (indeed, even __zo'e__ itself can be omitted in this case, as explained in Section 7.7) and the listener must fill in the correct value from context. In other words, Example 16.8 means “‘You-know-what’ sees me.”
+However, Example 16.7 is just as likely to assert simply that there is someone who sees me, in which case a correct translation is:
+**Example 16.9. **
+da | zo'u | da | viska | mi  
+---|---|---|---|---  
+There-is-an-X | such-that | X | sees | me.  
+  
+
+Example 16.9 does not presuppose that the listener knows who sees the speaker, but simply tells the listener that there is someone who sees the speaker. Statements of this kind are called “existential claims”. (Formally, the one doing the seeing is not restricted to being a person; it could be an animal or – in principle – an inanimate object. We will see in Section 16.4 how to represent such restrictions.)
+Example 16.9 has a two-part structure: there is the part _da zo'u_ , called the prenex, and the part _da viska mi_ , the main bridi. Almost any Lojban bridi can be preceded by a prenex, which syntactically is any number of sumti followed by the cmavo __zo'u__ (of selma'o ZOhU). For the moment, the sumti will consist of one or more of the cmavo __da__ , __de__ , and __di__ (of selma'o KOhA), glossed in the literal translations as “X”, “Y”, and “Z” respectively. By analogy to the terminology of symbolic logic, these cmavo are called “variables”.
+Here is an example of a prenex with two variables:
+**Example 16.10. **
+da | de | zo'u | da | prami | de  
+---|---|---|---|---|---  
+There-is-an-X | there-is-a-Y | such | that | X | loves | Y.  
+Somebody loves somebody.  
+---  
+  
+
+In Example 16.10, the literal interpretation of the two variables __da__ and __de__ as “there-is-an-X” and “there-is-a-Y” tells us that there are two things which stand in the relationship that one loves the other. It might be the case that the supposed two things are really just a single thing that loves itself; nothing in the Lojban version of Example 16.10 rules out that interpretation, which is why the colloquial translation does not say “Somebody loves somebody else.” The things referred to by different variables may be different or the same. (We use “somebody” here rather than “something” for naturalness; lovers and beloveds are usually persons, though the Lojban does not say so.)
+It is perfectly all right for the variables to appear more than once in the main bridi:
+**Example 16.11. **
+da | zo'u | da | prami | da  
+---|---|---|---|---  
+There-is-an-X | such-that | X | loves | X  
+Somebody loves himself/herself.  
+---  
+  
+
+What Example 16.11 claims is fundamentally different from what Example 16.10 claims, because _da prami da_ is not structurally the same as _da prami de_. However,
+**Example 16.12. **
+de | zo'u | de | prami | de  
+---|---|---|---|---  
+There-is-a-Y | such-that | Y | loves | Y  
+  
+
+means exactly the same thing as Example 16.11; it does not matter which variable is used as long as they are used consistently.
+It is not necessary for a variable to be a sumti of the main bridi directly:
+**Example 16.13. **
+da | zo'u | le | da | gerku | cu | viska | mi  
+---|---|---|---|---|---|---|---  
+There-is-an-X | such-that | the | of-X | dog |  | sees | me  
+Somebody's dog sees me  
+---  
+  
+
+is perfectly correct even though the __da__ is used only in a possessive construction. (Possessives are explained in Section 8.7.)
+It is very peculiar, however, even if technically grammatical, for the variable not to appear in the main bridi at all:
+**Example 16.14. **
+da | zo'u | la | ralf. | gerku  
+---|---|---|---|---  
+There-is-an-X | such-that | that-named | Ralph | is-a-dog  
+There is something such that Ralph is a dog.  
+---  
+  
+
+has a variable bound in a prenex whose relevance to the claim of the following bridi is completely unspecified.
+* * *
+Chapter 16. “Who Did You Pass On The Road? Nobody”: Lojban And Logic  
+---  
+Prev: Chapter 16 |  Next: Section 16.3  
+---|---  
+Table of Contents
+Book Info Page

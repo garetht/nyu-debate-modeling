@@ -1,0 +1,138 @@
+Chapter 5. “Pretty Little Girls' School”: The Structure Of Lojban selbri  
+---  
+Prev: Section 5.11 |  Next: Section 5.13  
+---|---  
+Table of Contents
+Book Info Page
+* * *
+## 5.12. Scalar negation of selbri
+Negation is too large and complex a topic to explain fully in this chapter; see Chapter 15. In brief, there are two main types of negation in Lojban. This section is concerned with so-called “scalar negation”, which is used to state that a true relation between the sumti is something other than what the selbri specifies. Scalar negation is expressed by cmavo of selma'o NAhE:
+**Example 5.116. **
+la | .alis. | cu | na'e | ke | cadzu | klama | [ke'e] | le | zarci  
+---|---|---|---|---|---|---|---|---|---  
+That-named | Alice |  | non- | ( | walkingly | goes-to | ) | the | market.  
+Alice doesn't walk to the market.  
+---  
+  
+
+meaning that Alice's relationship to the market is something other than that of walking there. But if the __ke__ were omitted, the result would be:
+**Example 5.117. **
+la | .alis. | cu | na'e | cadzu | klama | le | zarci  
+---|---|---|---|---|---|---|---  
+That-named | Alice |  | non- | walkingly | goes-to | the | market.  
+Alice doesn't walk to the market.  
+---  
+  
+
+meaning that Alice does go there in some way (__klama__ is not negated), but by a means other than that of walking. Example 5.116 negates both __cadzu__ and __klama__ , suggesting that Alice's relation to the market is something different from walkingly-going; it might be walking without going, or going without walking, or neither.
+Of course, any of the simple selbri types explained in Section 5.9 may be used in place of brivla in any of these examples:
+**Example 5.118. **
+la | djonz. | cu | na'e | pamoi | cusku  
+---|---|---|---|---|---  
+That-named | Jones |  | is-non- | 1st | speaker  
+Jones is not the first speaker.  
+---  
+  
+
+Since only __pamoi__ is negated, an appropriate inference is that he is some other kind of speaker.
+Here is an assortment of more complex examples showing the interaction of scalar negation with __bo__ grouping, __ke__ and __ke'e__ grouping, logical connection, and sumti linked with __be__ and __bei__ :
+**Example 5.119. **
+mi | na'e | sutra | cadzu | be | fi | le | birka | be'o | klama | le | zarci  
+---|---|---|---|---|---|---|---|---|---|---|---  
+I | ((non- | quickly) | (walking |  | using | the | arms | )) | go-to | the | market.  
+I go to the market, walking using my arms other than quickly.  
+---  
+  
+
+In Example 5.119, __na'e__ negates only __sutra__. Contrast Example 5.120:
+**Example 5.120. **
+mi | na'e | ke | sutra | cadzu | be | fi | le | birka | [be'o]  
+---|---|---|---|---|---|---|---|---|---  
+I | non- | ( | quickly | (walking |  | using | the | arms | )  
+ke'e | klama | le | zarci  
+---|---|---|---  
+) | go-to | the | market.  
+I go to the market, other than by walking quickly on my arms.  
+---  
+  
+
+Now consider Example 5.121 and Example 5.122, which are equivalent in meaning, but use __ke__ grouping and __bo__ grouping respectively:
+**Example 5.121. **
+mi | sutra | cadzu | be | fi | le | birka | be'o  
+---|---|---|---|---|---|---|---  
+I | (quickly | (walking |  | using | the | arms | )  
+je | masno | klama | le | zarci  
+---|---|---|---|---  
+and | slowly) | go-to | the | market.  
+I go to the market, both quickly walking using my arms and slowly.  
+---  
+  
+
+**Example 5.122. **
+mi | ke | sutra | cadzu | be | fi | le | birka | [be'o] | ke'e  
+---|---|---|---|---|---|---|---|---|---  
+I | ( | (quickly | (walking |  | using | the | arms | ) | )  
+je | masno | klama | le | zarci  
+---|---|---|---|---  
+and | slowly) | go-to | the | market.  
+I go to the market, both quickly walking using my arms and slowly.  
+---  
+  
+
+However, if we place a __na'e__ at the beginning of the selbri in both Example 5.121 and Example 5.122, we get different results:
+**Example 5.123. **
+mi | na'e | sutra | cadzu | be | fi | le | birka | be'o  
+---|---|---|---|---|---|---|---|---  
+I | ((non- | quickly) | (walking |  | using | the | arms | )  
+je | masno | klama | le | zarci  
+---|---|---|---|---  
+and | slowly) | go-to | the | market.  
+I go to the market, both walking using my arms other than quickly, and also slowly.  
+---  
+  
+
+**Example 5.124. **
+mi | na'e | ke | sutra | cadzu | be | fi | le | birka | [be'o] | ke'e  
+---|---|---|---|---|---|---|---|---|---|---  
+I | (non | ( | quickly | (walking |  | using | the | arms) |  | )  
+je | masno | klama | le | zarci  
+---|---|---|---|---  
+and | slowly) | go-to | the | market.  
+I go to the market, both other than quickly walking using my arms, and also slowly.  
+---  
+  
+
+The difference arises because the __na'e__ in Example 5.124 negates the whole construction from __ke__ to __ke'e__ , whereas in Example 5.123 it negates __sutra__ alone.
+Beware of omitting terminators in these complex examples! If the explicit __ke'e__ is left out in Example 5.124, it is transformed into:
+**Example 5.125. **
+mi | na'e | ke | sutra | cadzu | be | fi | le | birka | be'o  
+---|---|---|---|---|---|---|---|---|---  
+I | non- | ( | quickly | ((walking |  | using | the | arms) | )  
+je | masno | klama | [ke'e] | le | zarci  
+---|---|---|---|---|---  
+and | slowly) | go-to | ) | the | market.  
+I do something other than quickly both going to the market walking using my arms and slowly going to the market.  
+---  
+  
+
+And if both __ke'e__ and __be'o__ are omitted, the results are even sillier:
+**Example 5.126. **
+mi | na'e | ke | sutra | cadzu | be | fi | le | birka | je | masno  
+---|---|---|---|---|---|---|---|---|---|---  
+I | non | ( | quickly | walk |  | on-my | (the | arm-type | and | slow)  
+klama | [be'o] | [ke'e] | le | zarci  
+---|---|---|---|---  
+goers |  | ) | on-the | market.  
+I do something other than quickly walking using the goers, both arm-type and slow, relative-to the market.  
+---  
+  
+
+In Example 5.126, everything after __be__ is a linked sumti, so the place structure is that of __cadzu__ , whose x2 place is the surface walked upon. It is less than clear what an “arm-type goer” might be. Furthermore, since the x3 place has been occupied by the linked sumti, the _le zarci_ following the selbri falls into the nonexistent x4 place of __cadzu__. As a result, the whole example, though grammatical, is complete nonsense. (The bracketed Lojban words appear where a fluent Lojbanist would understand them to be implied.)
+Finally, it is also possible to place __na'e__ before a __gu'e__ … __gi__ logically connected tanru construction. The meaning of this usage has not yet been firmly established.
+* * *
+Chapter 5. “Pretty Little Girls' School”: The Structure Of Lojban selbri  
+---  
+Prev: Section 5.11 |  Next: Section 5.13  
+---|---  
+Table of Contents
+Book Info Page

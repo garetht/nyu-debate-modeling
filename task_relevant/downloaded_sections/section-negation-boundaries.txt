@@ -1,0 +1,173 @@
+Chapter 16. “Who Did You Pass On The Road? Nobody”: Lojban And Logic  
+---  
+Prev: Section 16.8 |  Next: Section 16.10  
+---|---  
+Table of Contents
+Book Info Page
+* * *
+## 16.9. Negation boundaries
+This section, as well as Section 16.10 through Section 16.12, are in effect a continuation of Chapter 15, introducing features of Lojban negation that require an understanding of prenexes and variables. In the examples below, “there is a Y” and the like must be understood as “there is at least one Y, possibly more”.
+As explained in Section 15.2, the negation of a bridi is usually accomplished by inserting __na__ at the beginning of the selbri:
+**Example 16.57. **
+mi | na | klama | le | zarci  
+---|---|---|---|---  
+I | [false] | go-to | the | store.  
+It is false that I go to the store.  
+---  
+I don't go to the store.  
+  
+
+The other form of bridi negation is expressed by using the compound cmavo _naku_ in the prenex, which is identified and compounded by the lexer before looking at the sentence grammar. In Lojban grammar, _naku_ is then treated like a sumti. In a prenex, _naku_ means precisely the same thing as the logician's “it is not the case that” in a similar English context. (Outside of a prenex, _naku_ is also grammatically treated as a single entity – the equivalent of a sumti – but does not have this exact meaning; we'll discuss these other situations in Section 16.11.)
+To represent a bridi negation using a prenex, remove the __na__ from before the selbri and place _naku_ at the left end of the prenex. This form is called “external bridi negation”, as opposed to “internal bridi negation” using __na__. The prenex version of Example 16.57 is
+**Example 16.58. **
+naku | zo'u | la | djan. | klama  
+---|---|---|---|---  
+It-is-not-the-case-that | : | that-named | John | comes.  
+It is false that: John comes.  
+---  
+  
+
+However, _naku_ can appear at other points in the prenex as well. Compare
+**Example 16.59. **
+naku | de | zo'u | de | zutse  
+---|---|---|---|---  
+It-is-not-the-case-that: | for-some-Y | : | Y | sits.  
+It-is-false-that: | for-at-least-one-Y | : | Y | sits.  
+It is false that something sits.  
+---  
+Nothing sits.  
+  
+
+with
+**Example 16.60. **
+su'ode | naku | zo'u | de | zutse  
+---|---|---|---|---  
+For-at-least-one-Y, | it-is-false-that | : | Y | sits.  
+There is something that doesn't sit.  
+---  
+  
+
+The relative position of negation and quantification terms within a prenex has a drastic effect on meaning. Starting without a negation, we can have:
+**Example 16.61. **
+roda | su'ode | zo'u | da | prami | de  
+---|---|---|---|---|---  
+For-every-X, | there-is-a-Y, | such-that | X | loves | Y.  
+Everybody loves at least one thing (each, not necessarily the same thing).  
+---  
+  
+
+or:
+**Example 16.62. **
+su'ode | roda | zo'u | da | prami | de  
+---|---|---|---|---|---  
+There-is-a-Y, | such-that-for-each-X | : | X | loves | Y.  
+There is at least one particular thing that is loved by everybody.  
+---  
+  
+
+The simplest form of bridi negation to interpret is one where the negation term is at the beginning of the prenex:
+**Example 16.63. **
+naku | roda | su'ode | zo'u | da | prami | de  
+---|---|---|---|---|---|---  
+It-is-false-that: | for-every-X, | there-is-a-Y, | such-that: | X | loves | Y.  
+It is false that: everybody loves at least one thing.  
+---  
+(At least) someone doesn't love anything.  
+  
+
+the negation of Example 16.61, and
+**Example 16.64. **
+naku | su'ode | roda | zo'u | da | prami | de  
+---|---|---|---|---|---|---  
+It-is-false-that: | there-is-a-Y | such-that | for-each-X | : | X | loves | Y.  
+It is false that: there is at least one thing that is loved by everybody.  
+---  
+There isn't any one thing that everybody loves.  
+  
+
+the negation of Example 16.62.
+The rules of formal logic require that, to move a negation boundary within a prenex, you must “invert any quantifier” that the negation boundary passes across. Inverting a quantifier means that any __ro__ (all) is changed to __su'o__ (at least one) and vice versa. Thus, Example 16.63 and Example 16.64 can be restated as, respectively:
+**Example 16.65. **
+su'oda | naku | su'ode | zo'u | da | prami | de  
+---|---|---|---|---|---|---  
+For-some-X, | it-is-false-that: | there-is-a-Y | such-that: | X | loves | Y.  
+There is somebody who doesn't love anything.  
+---  
+  
+
+and:
+**Example 16.66. **
+rode | naku | roda | zo'u | da | prami | de  
+---|---|---|---|---|---|---  
+For-every-Y, | it-is-false-that: | for-every-X | : | X | loves | Y.  
+For each thing, it is not true that everybody loves it.  
+---  
+  
+
+Another movement of the negation boundary produces:
+**Example 16.67. **
+su'oda | rode | naku | zo'u | da | prami | de  
+---|---|---|---|---|---|---  
+There-is-an-X | such-that-for-every-Y, | it-is-false-that | : | X | loves | Y.  
+There is someone who, for each thing, doesn't love that thing.  
+---  
+  
+
+and
+**Example 16.68. **
+rode | su'oda | naku | zo'u | da | prami | de  
+---|---|---|---|---|---|---  
+For-every-Y, | there-is-an-X, | such-that-it-is-false-that | : | X | loves | Y.  
+For each thing there is someone who doesn't love it.  
+---  
+  
+
+Investigation will show that, indeed, each transformation preserves the meanings of Example 16.63 and Example 16.64.
+The quantifier __no__ (meaning “zero of”) also involves a negation boundary. To transform a bridi containing a variable quantified with __no__ , we must first expand it. Consider
+**Example 16.69. **
+noda | rode | zo'u | da | prami | de  
+---|---|---|---|---|---  
+There-is-no-X, | for-every-Y, | such-that | X | loves | Y.  
+Nobody loves everything.  
+---  
+  
+
+which is negated by:
+**Example 16.70. **
+naku | noda | rode | zo'u | da | prami | de  
+---|---|---|---|---|---|---  
+It-is-false-that: | there-is-no-X-that, | for-every-Y | : | X | loves | Y.  
+It is false that there is nobody who loves everything.  
+---  
+  
+
+We can simplify Example 16.70 by transforming the prenex. To move the negation phrase within the prenex, we must first expand the __no__ quantifier. Thus “for no x” means the same thing as “it is false for some x”, and the corresponding Lojban __noda__ can be replaced by _naku su'oda_. Making this substitution, we get:
+**Example 16.71. **
+naku | naku | su'oda  
+---|---|---  
+It-is-false-that | it-is-false-that | there-is-some-X-such-that  
+…rode | zo'u | da | prami | de  
+---|---|---|---|---  
+for-every-X | : | X | loves | Y  
+It is false that it is false that: for an X, for every Y: X loves Y.  
+---  
+  
+
+Adjacent pairs of negation boundaries in the prenex can be dropped, so this means the same as:
+**Example 16.72. **
+su'oda | rode | zo'u | da | prami | de  
+---|---|---|---|---|---  
+There-is-an-X-such-that, | for-every-Y | : | X | loves | Y.  
+At least one person loves everything.  
+---  
+  
+
+which is clearly the desired contradiction of Example 16.69.
+The interactions between quantifiers and negation mean that you cannot eliminate double negatives that are not adjacent. You must first move the negation phrases so that they are adjacent, inverting any quantifiers they cross, and then the double negative can be eliminated.
+* * *
+Chapter 16. “Who Did You Pass On The Road? Nobody”: Lojban And Logic  
+---  
+Prev: Section 16.8 |  Next: Section 16.10  
+---|---  
+Table of Contents
+Book Info Page

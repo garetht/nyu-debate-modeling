@@ -1,0 +1,149 @@
+Chapter 11. Events, Qualities, Quantities, And Other Vague Words: On Lojban Abstraction  
+---  
+Prev: Section 11.3 |  Next: Section 11.5  
+---|---  
+Table of Contents
+Book Info Page
+* * *
+## 11.4. Property abstractions
+The following cmavo are discussed in this section:
+ka |  NU |  property abstractor  
+---|---|---  
+ce'u |  KOhA |  abstraction focus  
+The things described by _le nu_ descriptions (or, to put it another way, the things of which __nu__ selbri may correctly be predicated) are only moderately “abstract”. They are still closely tied to happenings in space and time. Properties, however, are much more ethereal. What is “the property of being blue”, or “the property of being a go-er”? They are what logicians call “intensions”. If John has a heart, then “the property of having a heart” is an abstract object which, when applied to John, is true. In fact,
+**Example 11.21. **
+la | djan. | cu | se risna | zo'e  
+---|---|---|---|---  
+That-named | John |  | has-as-heart | something-unspecified.  
+John has a heart.  
+---  
+  
+
+has the same truth conditions as
+**Example 11.22. **
+la | djan. | cu | ckaji  
+---|---|---|---  
+That-named | John |  | has-the-property  
+le | ka | se risna | [zo'e] | [kei]  
+---|---|---|---|---  
+the | property-of | having-as-heart | something.  
+John has the property of having a heart.  
+---  
+  
+
+(The English word “have” frequently appears in any discussion of Lojban properties: things are said to “have” properties, but this is not the same sense of “have” as in “I have money”, which is possession.)
+Property descriptions, like event descriptions, are often wanted to fill places in brivla place structures:
+**Example 11.23. **
+do | cnino | mi | le | ka | xunre | [kei]  
+---|---|---|---|---|---|---  
+You | are-new | to-me | in-the-quality-of-the | property-of | being-red.  
+You are new to me in redness.  
+---  
+  
+
+(The English suffix “-ness” often signals a property abstraction, as does the suffix “-ity”.)
+We can also move the property description to the x1 place of Example 11.23, producing:
+**Example 11.24. **
+le | ka | do | xunre | [kei] | cu | cnino | mi  
+---|---|---|---|---|---|---|---  
+The | property-of | your | being-red |  |  | is-new | to me.  
+Your redness is new to me.  
+---  
+  
+
+It would be suitable to use Example 11.23 and Example 11.24 to someone who has returned from the beach with a sunburn.
+There are several different properties that can be extracted from a bridi, depending on which place of the bridi is “understood” as being specified externally. Thus:
+**Example 11.25. **
+ka | mi | prami | [zo'e] | [kei]  
+---|---|---|---|---  
+a-property-of | me | loving | something-unspecified  
+  
+
+is quite different from
+**Example 11.26. **
+ka | [zo'e] | prami | mi | [kei]  
+---|---|---|---|---  
+a-property-of | something-unspecified | loving | me  
+  
+
+In particular, sentences like Example 11.27 and Example 11.28 are quite different in meaning:
+**Example 11.27. **
+la | djan. | cu | zmadu | la | djordj.  
+---|---|---|---|---|---  
+That-named | John |  | exceeds | that-named | George  
+le | ka | mi | prami  
+---|---|---|---  
+in-the | property-of | (I | love | X)  
+I love John more than I love George.  
+---  
+  
+
+**Example 11.28. **
+la | djan. | cu | zmadu | la | djordj.  
+---|---|---|---|---|---  
+That-named | John |  | exceeds | that-named | George  
+le | ka |  | prami | mi  
+---|---|---|---|---  
+in-the | property of | (X | loves | me).  
+John loves me more than George loves me.  
+---  
+  
+
+The “X” used in the glosses of Example 11.27 through Example 11.28 as a place-holder cannot be represented only by ellipsis in Lojban, because ellipsis means that there must be a specific value that can fill the ellipsis, as mentioned in Section 11.2. Instead, the cmavo __ce'u__ of selma'o KOhA is employed when an explicit sumti is wanted. (The form “X” will be used in literal translations.)
+Therefore, an explicit equivalent of Example 11.27, with no ellipsis, is:
+**Example 11.29. **
+la | djan. | cu | zmadu | la | djordj.  
+---|---|---|---|---|---  
+That-named | John |  | exceeds | that-named | George  
+le | ka | mi | prami | ce'u  
+---|---|---|---|---  
+in-the | property-of | (I | love | X).  
+  
+
+and of Example 11.28 is:
+**Example 11.30. **
+la | djan. | cu | zmadu | la | djordj.  
+---|---|---|---|---|---  
+That-named | John |  | exceeds | that-named | George  
+le | ka | ce'u | prami | mi  
+---|---|---|---|---  
+in-the | property-of | (X | loves | me).  
+  
+
+This convention allows disambiguation of cases like:
+**Example 11.31. **
+le | ka | [zo'e] | dunda | le | xirma | [zo'e] | [kei]  
+---|---|---|---|---|---|---|---  
+the | property-of |  | giving | the | horse  
+  
+
+into
+**Example 11.32. **
+le | ka | ce'u | dunda | le | xirma |  | [zo'e] | [kei]  
+---|---|---|---|---|---|---|---|---  
+the | property-of | (X | is-a-giver-of | the | horse | to | someone-unspecified | )  
+the property of being a giver of the horse  
+---  
+  
+
+which is the most natural interpretation of Example 11.31, versus
+**Example 11.33. **
+le | ka | [zo'e] | dunda | le | xirma |  | ce'u | [kei]  
+---|---|---|---|---|---|---|---|---  
+the | property-of | (someone-unspecified | is-a-giver-of | the | horse | to | X | )  
+the property of being one to whom the horse is given  
+---  
+  
+
+which is also a possible interpretation.
+It is also possible to have more than one __ce'u__ in a __ka__ abstraction, which transforms it from a property abstraction into a relationship abstraction. Relationship abstractions “package up” a complex relationship for future use; such an abstraction can be translated back into a selbri by placing it in the x2 place of the selbri __bridi__ , whose place structure is:
+> _ _bridi_ _ x1 is a predicate relationship with relation x2 (abstraction) among arguments (sequence/set) x3
+The place structure of __ka__ abstraction selbri is simply:
+> _ _ka_ _ x1 is a property of (the bridi)
+* * *
+Chapter 11. Events, Qualities, Quantities, And Other Vague Words: On Lojban Abstraction  
+---  
+Prev: Section 11.3 |  Next: Section 11.5  
+---|---  
+Table of Contents
+Book Info Page

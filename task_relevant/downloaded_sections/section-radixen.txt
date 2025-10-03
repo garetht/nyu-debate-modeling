@@ -1,0 +1,116 @@
+Chapter 18. lojbau mekso: Mathematical Expressions in Lojban  
+---  
+Prev: Section 18.9 |  Next: Section 18.11  
+---|---  
+Table of Contents
+Book Info Page
+* * *
+## 18.10. Non-decimal and compound bases
+The following cmavo are discussed in this section:
+ju'u |  VUhU |  to the base  
+---|---|---  
+dau |  PA |  hex digit A = 10  
+fei |  PA |  hex digit B = 11  
+gai |  PA |  hex digit C = 12  
+jau |  PA |  hex digit D = 13  
+rei |  PA |  hex digit E = 14  
+vai |  PA |  hex digit F = 15  
+pi'e |  PA |  compound base point  
+In normal contexts, Lojban assumes that all numbers are expressed in the decimal (base 10) system. However, other bases are possible, and may be appropriate in particular circumstances.
+To specify a number in a particular base, the VUhU operator __ju'u__ is suitable:
+**Example 18.70. **
+li | panopano | ju'u | re | du | li | pano  
+---|---|---|---|---|---|---  
+The-number | 1010 | base | 2 | equals | the-number | 1 | 0.  
+  
+
+Here, the final _pa no_ is assumed to be base 10, as usual; so is the base specification. (The base may also be changed permanently by a metalinguistic specification; no standard way of doing so has as yet been worked out.)
+Lojban has digits for representing bases up to 16, because 16 is a base often used in computer applications. In English, it is customary to use the letters A-F as the base 16 digits equivalent to the numbers ten through fifteen. In Lojban, this ambiguity is avoided:
+**Example 18.71. **
+li | daufeigai | ju'u | paxa | du | li | rezevobi  
+---|---|---|---|---|---|---  
+The-number | ABC | base | 16 | equals | the-number | 2748.  
+  
+
+**Example 18.72. **
+li | jaureivai | ju'u | paxa | du | li | cimuxaze  
+---|---|---|---|---|---|---  
+The-number | DEF | base | 16 | equals | the-number | 3567.  
+  
+
+Note the pattern in the cmavo: the diphthongs __au__ , __ei__ , __ai__ are used twice in the same order. The digits for A to D use consonants different from those used in the decimal digit cmavo; E and F unfortunately overlap 2 and 4 – there was simply not enough available cmavo space to make a full differentiation possible. The cmavo are also in alphabetical order.
+The base point __pi__ is used in non-decimal bases just as in base 10:
+**Example 18.73. **
+li | vai | pi | bi | ju'u | paxa | du | li | pamu | pi | mu  
+---|---|---|---|---|---|---|---|---|---|---  
+The-number | F | . | 8 | base | 16 | equals | the-number | 15 | . | 5.  
+  
+
+Since __ju'u__ is an operator of selma'o VUhU, it is grammatical to use any operand as the left argument. Semantically, however, it is undefined to use anything but a numeral string on the left. The reason for making __ju'u__ an operator is to allow reference to a base which is not a constant.
+There are some numerical values that require a “base” that varies from digit to digit. For example, times represented in hours, minutes, and seconds have, in effect, three “digits”: the first is base 24, the second and third are base 60. To express such numbers, the compound base separator __pi'e__ is used:
+**Example 18.74. **
+ci | pi'e | rere | pi'e | vono  
+---|---|---|---|---  
+3:22:40  
+  
+
+Each digit sequence separated by instances of __pi'e__ is expressed in decimal notation, but the number as a whole is not decimal and can only be added and subtracted by special rules:
+**Example 18.75. **
+li | ci | pi'e | rere | pi'e | vono | su'i | pi'e | ci | pi'e | cici  
+---|---|---|---|---|---|---|---|---|---|---  
+The-number | 3 | : | 22 | : | 40 | plus | : | 3 | : | 33  
+du | li | ci | pi'e | rexa | pi'e | paci  
+---|---|---|---|---|---|---  
+equals | the-number | 3 | : | 26 | : | 13.  
+3:22:40 + 0:3:33 = 3:26:13  
+  
+
+Of course, only context tells you that the first part of the numbers in Example 18.74 and Example 18.75 is hours, the second minutes, and the third seconds.
+The same mechanism using __pi'e__ can be used to express numbers which have a base larger than 16. For example, base-20 Mayan mathematics might use digits from __no__ to __paso__ , each separated by __pi'e__ :
+**Example 18.76. **
+li | pa | pi'e | re | pi'e | ci | ju'u | reno | du | li | vovoci  
+---|---|---|---|---|---|---|---|---|---|---  
+the-number | 1 | ; | 2 | ; | 3 | base | 20 | equals | the-number | 443  
+  
+
+Carefully note the difference between:
+**Example 18.77. **
+pano | ju'u | reno  
+---|---|---  
+the-digit-10 | base | 20  
+  
+
+which is equal to ten, and:
+**Example 18.78. **
+pa | pi'e | no | ju'u | reno  
+---|---|---|---|---  
+1;0 | base | 20  
+  
+
+which is equal to twenty.
+Both __pi__ and __pi'e__ can be used to express large-base fractions:
+**Example 18.79. **
+li | pa | pi'e | vo | pi | ze | ju'u | reno  
+---|---|---|---|---|---|---|---  
+The-number | 1 | ; | 4 | . | 7 | base | 20  
+du | li | revo | pi | cimu  
+---|---|---|---|---  
+equals | the-number | 24 | . | 35  
+  
+
+__pi'e__ is also used where the base of each digit is vague, as in the numbering of the examples in this chapter:
+**Example 18.80. **
+dei | jufra | panopi'epapamoi  
+---|---|---  
+This-utterance | is-a-sentence-type-of | 10;11th-thing.  
+This is Sentence 10.11.  
+---  
+  
+
+* * *
+Chapter 18. lojbau mekso: Mathematical Expressions in Lojban  
+---  
+Prev: Section 18.9 |  Next: Section 18.11  
+---|---  
+Table of Contents
+Book Info Page

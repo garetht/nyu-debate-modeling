@@ -1,0 +1,153 @@
+Chapter 3. The Hills Are Alive With The Sounds Of Lojban  
+---  
+Prev: Section 3.8 |  Next: Section 3.10  
+---|---  
+Table of Contents
+Book Info Page
+* * *
+## 3.9. Syllabication And Stress
+A Lojban word has one syllable for each of its vowels, diphthongs, and syllabic consonants (referred to simply as “vowels” for the purposes of this section.) Syllabication rules determine which of the consonants separating two vowels belong to the preceding vowel and which to the following vowel. These rules are conventional only; the phonetic facts of the matter about how utterances are syllabified in any language are always very complex.
+A single consonant always belongs to the following vowel. A consonant pair is normally divided between the two vowels; however, if the pair constitute a valid initial consonant pair, they are normally both assigned to the following vowel. A consonant triple is divided between the first and second consonants. Apostrophes and commas, of course, also represent syllable breaks. Syllabic consonants usually appear alone in their syllables.
+It is permissible to vary from these rules in Lojbanized names. For example, there are no definitive rules for the syllabication of names with consonant clusters longer than three consonants. The comma is used to indicate variant syllabication or to explicitly mark normal syllabication.
+Here are some examples of Lojban syllabication:
+**Example 3.18. **
+  * pujenaicajeba
+  * pu,je,nai,ca,je,ba
+
+
+  
+
+This word has no consonant pairs and is therefore syllabified before each medial consonant.
+**Example 3.19. **
+  * ninmu
+  * nin,mu
+
+
+  
+
+This word is split at a consonant pair.
+**Example 3.20. **
+  * fitpri
+  * fit,pri
+
+
+  
+
+This word is split at a consonant triple, between the first two consonants of the triple.
+**Example 3.21. **
+  * sairgoi
+  * sair,goi
+  * sai,r,goi
+
+
+  
+
+This word contains the consonant pair _rg_ ; the _r_ may be pronounced syllabically or not.
+**Example 3.22. **
+  * klezba
+  * klez,ba
+  * kle,zba
+
+
+  
+
+This word contains the permissible initial pair _zb_ , and so may be syllabicated either between _z_ and _b_ or before _zb_.
+Stress is a relatively louder pronunciation of one syllable in a word or group of words. Since every syllable has a vowel sound (or diphthong or syllabic consonant) as its nucleus, and the stress is on the vowel sound itself, the terms “stressed syllable” and “stressed vowel” are largely interchangeable concepts.
+Most Lojban words are stressed on the next-to-the-last, or penultimate, syllable. In counting syllables, however, syllables whose vowel is _y_ or which contain a syllabic consonant (_l_ , _m_ , _n_ , or _r_) are never counted. (The Lojban term for penultimate stress is _da'amoi terbasna_.) Similarly, syllables created solely by adding a buffer vowel, such as [ɪ], are not counted.
+There are actually three levels of stress – primary, secondary, and weak. Weak stress is the lowest level, so it really means no stress at all. Weak stress is required for syllables containing _y_ , a syllabic consonant, or a buffer vowel.
+Primary stress is required on the penultimate syllable of Lojban content words (called __brivla__). Lojbanized names may be stressed on any syllable, but if a syllable other than the penultimate is stressed, the syllable (or at least its vowel) must be capitalized in writing. Lojban structural words (called __cmavo__) may be stressed on any syllable or none at all. However, primary stress may not be used in a syllable just preceding a brivla, unless a pause divides them; otherwise, the two words may run together.
+Secondary stress is the optional and non-distinctive emphasis used for other syllables besides those required to have either weak or primary stress. There are few rules governing secondary stress, which typically will follow a speaker's native language habits or preferences. Secondary stress can be used for contrast, or for emphasis of a point. Secondary stress can be emphasized at any level up to primary stress, although the speaker must not allow a false primary stress in brivla, since errors in word resolution could result.
+The following are Lojban words with stress explicitly shown:
+**Example 3.23. **
+  * dikyjvo
+  * DI,ky,jvo
+
+
+  
+
+(In a fully-buffered dialect, the pronunciation would be: ['di kə ʒɪ vo].) Note that the syllable __ky__ is not counted in determining stress. The vowel _y_ is never stressed in a normal Lojban context.
+**Example 3.24. **
+  * .armstrong.
+  * .ARM,strong.
+
+
+  
+
+This is a Lojbanized version of the name “Armstrong”. The final _g_ must be explicitly pronounced. With full buffering, the name would be pronounced:
+**Example 3.25. **
+  * [ˈʔa rɪ mɪ sɪ tɪ ro nɪ gɪʔ]
+
+
+  
+
+However, there is no need to insert a buffer in every possible place just because it is inserted in one place: partial buffering is also acceptable. In every case, however, the stress remains in the same place: on the first syllable.
+The English pronunciation of “Armstrong”, as spelled in English, is not correct by Lojban standards; the letters “ng” in English represent a velar nasal (IPA [ŋ]) which is a single consonant. In Lojban, _ng_ represents two separate consonants that must both be pronounced; you may not use [ŋ] to pronounce Lojban _ng_ , although [ŋg] is acceptable. English speakers are likely to have to pronounce the ending with a buffer, as one of the following:
+**Example 3.26. **
+  * [ˈʔarm stron gɪʔ]
+  * or
+  * [ˈʔarm stroŋ gɪʔ]
+  * or even
+  * [ˈʔarm stro nɪgʔ]
+
+
+  
+
+The normal English pronunciation of the name “Armstrong” could be Lojbanized as:
+**Example 3.27. **
+  * .ARMstron.
+
+
+  
+
+since Lojban _n_ is allowed to be pronounced as the velar nasal [ŋ].
+Here is another example showing the use of _y_ :
+**Example 3.28. **
+  * bisydja
+  * BI,sy,dja
+  * BI,syd,ja
+
+
+  
+
+This word is a compound word, or lujvo, built from the two affixes _bis_ and _dja_. When they are joined, an impermissible consonant pair results: _sd_. In accordance with the algorithm for making lujvo, explained in Section 4.11, a _y_ is inserted to separate the impermissible consonant pair; the _y_ is not counted as a syllable for purposes of stress determination.
+**Example 3.29. **
+  * da'udja
+  * da'UD,ja
+  * da'U,dja
+
+
+  
+
+These two syllabications sound the same to a Lojban listener – the association of unbuffered consonants in syllables is of no import in recognizing the word.
+**Example 3.30. **
+  * e'u bridi
+  * e'u BRI,di
+  * E'u BRI,di
+  * e'U.BRI,di
+
+
+  
+
+In Example 3.30, __e'u__ is a cmavo and __bridi__ is a brivla. Either of the first two pronunciations is permitted: no primary stress on either syllable of __e'u__ , or primary stress on the first syllable. The third pronunciation, which places primary stress on the second syllable of the cmavo, requires that – since the following word is a brivla – the two words must be separated by a pause. Consider the following two cases:
+**Example 3.31. **
+  * le re nobli prenu
+  * le re NObli PREnu
+
+
+  
+
+**Example 3.32. **
+  * le re no bliprenu
+  * le re no bliPREnu
+
+
+  
+
+If the cmavo __no__ in Example 3.32 were to be stressed, the phrase would sound exactly like the given pronunciation of Example 3.31, which is unacceptable in Lojban: a single pronunciation cannot represent both.
+* * *
+Chapter 3. The Hills Are Alive With The Sounds Of Lojban  
+---  
+Prev: Section 3.8 |  Next: Section 3.10  
+---|---  
+Table of Contents
+Book Info Page

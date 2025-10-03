@@ -1,7 +1,7 @@
 from models.anthropic_model import AnthropicModel
 from models.arbitrary_attribute_model import ArbitraryAttributeModel
 from models.deterministic_model import DeterministicModel
-from models.llm_model import LlamaModel, Llama3Model, MistralModel, StubLLModel
+from models.llm_model import LlamaModel, Llama3Model, MistralModel, StubLLModel, OpenWeightsOpenAIModel
 from models.model import Model, ModelSettings, ModelType
 from models.openai_model import OpenAIModel
 from models.random_model import RandomModel
@@ -68,12 +68,22 @@ class ModelUtils:
                 generation_params=model_settings.generation_params,
                 peft_base_model=model_settings.peft_base_model,
             )
+        elif model_type == ModelType.OPEN_WEIGHTS_OPENAI:
+            model = OpenWeightsOpenAIModel(
+                alias=model_settings.alias,
+                file_path=model_settings.model_file_path,
+                is_debater=is_debater,
+                nucleus=model_settings.nucleus,
+                probe_hyperparams=model_settings.probe_hyperparams,
+                generation_params=model_settings.generation_params,
+                peft_base_model=model_settings.peft_base_model,
+            )
         elif model_type == ModelType.STUB_LLM:
             model = StubLLModel(alias=model_settings.alias, generation_params=model_settings.generation_params)
         elif model_type == ModelType.DETERMINISTIC:
             model = DeterministicModel(alias=model_settings.alias, is_debater=is_debater)
         elif model_type == ModelType.OPENAI:
-            model = OpenAIModel(alias=model_settings.alias, is_debater=is_debater, endpoint=model_settings.model_file_path)
+            model = OpenAIModel(alias=model_settings.alias, generation_params=model_settings.generation_params, is_debater=is_debater, endpoint=model_settings.model_file_path)
         elif model_type == ModelType.ARBITRARY_ATTRIBUTE:
             model = ArbitraryAttributeModel(alias=model_settings.alias, is_debater=is_debater)
         elif model_type == ModelType.ANTHROPIC:

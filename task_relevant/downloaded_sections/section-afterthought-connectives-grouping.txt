@@ -1,0 +1,103 @@
+Chapter 14. If Wishes Were Horses: The Lojban Connective System  
+---  
+Prev: Section 14.7 |  Next: Section 14.9  
+---|---  
+Table of Contents
+Book Info Page
+* * *
+## 14.8. Grouping of afterthought connectives
+There are several ways in Lojban to render Example 14.35 using afterthought only. The simplest method is to make use of the cmavo __bo__ (of selma'o BO). This cmavo has several functions in Lojban, but is always associated with high precedence and short scope. In particular, if __bo__ is placed after an ijek, the result is a grammatically distinct kind of ijek which overrides the regular left-grouping rule. Connections marked with __bo__ are interpreted before connections not so marked. Example 14.39 is equivalent in meaning to Example 14.38:
+**Example 14.39. **
+mi | nelci | la | djan. | .ije | mi | nelci | la | martas.  
+---|---|---|---|---|---|---|---|---  
+I | like | that-named | John, | and | I | like | that-named | Martha  
+.ijabo | mi | nelci | la | meris.  
+---|---|---|---|---  
+or | I | like | that-named | Mary.  
+  
+
+The English translation feebly indicates with a comma what the Lojban marks far more clearly: the “I like Martha” and “I like Mary” sentences are joined by __.i__ __ja__ first, before the result is joined to “I like John” by __.i__ __je__.
+Eks can have __bo__ attached in exactly the same way, so that Example 14.40 is equivalent in meaning to Example 14.39:
+**Example 14.40. **
+mi nelci la djan. .e la martas. .abo la meris.
+  
+
+Forethought connectives, however, never can be suffixed with __bo__ , for every use of forethought connectives clearly indicates the intended pattern of grouping.
+What happens if __bo__ is used on both connectives, giving them the same high precedence, as in Example 14.41?
+**Example 14.41. **
+mi nelci la djan. .ebo la martas. .abo la meris.
+  
+
+Does this wind up meaning the same as Example 14.34 and Example 14.36? Not at all. A second rule relating to __bo__ is that where several __bo__ -marked connectives are used in succession, the normal Lojban left-grouping rule is replaced by a right-grouping rule. As a result, Example 14.41 in fact means the same as Example 14.39 and Example 14.40. This rule may be occasionally exploited for special effects, but is tricky to keep straight; in writing intended to be easy to understand, multiple consecutive connectives marked with __bo__ should be avoided.
+The use of __bo__ , therefore, gets tricky in complex connections of more than three sentences. Looking back at the English translations of Example 14.37 and Example 14.38, parentheses were used to clarify the grouping. These parentheses have their Lojban equivalents, two sets of them actually. __tu'e__ and __tu'u__ are used with ijeks, and __ke__ and __ke'e__ with eks and other connectives to be discussed later. (__ke__ and __ke'e__ are also used in other roles in the language, but always as grouping markers). Consider the English sentence:
+**Example 14.42. **
+I kiss you and you kiss me, if I love you and you love me.
+  
+
+where the semantics tells us that the instances of “and” are meant to have higher precedence than that of “if”. If we wish to express Example 14.42 in afterthought, we can say:
+**Example 14.43. **
+mi | cinba | do | .ije[bo] | do | cinba | mi  
+---|---|---|---|---|---|---  
+I | kiss | you | and | you | kiss | me,  
+.ijanai | mi | prami | do | .ijebo | do | prami | mi  
+---|---|---|---|---|---|---|---  
+if | I | love | you | and | you | love | me.  
+  
+
+marking two of the ijeks with __bo__ for high precedence. (The first __bo__ is not strictly necessary, because of the left-grouping rule, and is shown here in brackets.)
+But it may be clearer to use explicit parenthesis words and say:
+**Example 14.44. **
+tu'e | mi | cinba | do | .ije | do | cinba | mi | tu'u  
+---|---|---|---|---|---|---|---|---  
+( | I | kiss | you | and | you | kiss | me | )  
+.ijanai | tu'e | mi | prami | do | .ije | do | prami | mi | [tu'u]  
+---|---|---|---|---|---|---|---|---|---  
+if | ( | I | love | you | and | you | love | me | ).  
+  
+
+where the __tu'e__ … __tu'u__ pairs set off the structure. The cmavo __tu'u__ is an elidable terminator, and its second occurrence in Example 14.44 is bracketed, because all terminators may be elided at the end of a text.
+In addition, parentheses are a general solution: multiple parentheses may be nested inside one another, and additional afterthought material may be added without upsetting the existing structure. Neither of these two advantages apply to __bo__ grouping. In general, afterthought constructions trade generality for simplicity.
+Because of the left-grouping rule, the first set of __tu'e__ … __tu'u__ parentheses may actually be left off altogether, producing:
+**Example 14.45. **
+mi | cinba | do | .ije | do | cinba | mi  
+---|---|---|---|---|---|---  
+I | kiss | you | and | you | kiss | me  
+.ijanai | tu'e | mi | prami | do | .ije | do | prami | mi | [tu'u]  
+---|---|---|---|---|---|---|---|---|---  
+if | ( | I | love | you | and | you | love | me | ).  
+  
+
+What about parenthesized sumti connection? Consider
+**Example 14.46. **
+I walk to either the market and the house, or the school and the office.
+  
+
+Two pairs of parentheses, analogous to Example 14.44, would seem to be the right approach. However, it is a rule of Lojban grammar that a sumti may not begin with __ke__ , so the first set of parentheses must be omitted, producing Example 14.47, which is instead parallel to Example 14.45:
+**Example 14.47. **
+mi | dzukla | le | zarci | .e | le | zdani  
+---|---|---|---|---|---|---  
+I | walk-to | the | market | and | the | house  
+.a | ke | le | ckule | .e | le | briju | [ke'e]  
+---|---|---|---|---|---|---|---  
+or | ( | the | school | and | the | office | ).  
+  
+
+If sumti were allowed to begin with __ke__ , unavoidable ambiguities would result, so __ke__ grouping of sumti is allowed only just after a logical connective. This rule does not apply to __tu'e__ grouping of bridi, as Example 14.44 shows.
+Now we have enough facilities to handle the problem of Example 14.33: “I am German, rich, and a man – or else none of these.” The following paraphrase has the correct meaning:
+**Example 14.48. **
+[tu'e] | mi | dotco | .ijo | mi | ricfu | [tu'u]  
+---|---|---|---|---|---|---  
+( | I | am-German | if-and-only-if | I | am-rich | )  
+.ije | tu'e | mi | dotco | .ijo | mi | nanmu | [tu'u]  
+---|---|---|---|---|---|---|---  
+and | ( | I | am-German | if-and-only-if | I | am-a-man | ).  
+  
+
+The truth table, when worked out, produces T if and only if all three component sentences are true or all three are false.
+* * *
+Chapter 14. If Wishes Were Horses: The Lojban Connective System  
+---  
+Prev: Section 14.7 |  Next: Section 14.9  
+---|---  
+Table of Contents
+Book Info Page

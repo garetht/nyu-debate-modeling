@@ -1,0 +1,84 @@
+Chapter 19. Putting It All Together: Notes on the Structure of Lojban Texts  
+---  
+Prev: Section 19.8 |  Next: Section 19.10  
+---|---  
+Table of Contents
+Book Info Page
+* * *
+## 19.9. Quotations: LU, LIhU, LOhU, LEhU
+The following cmavo are discussed in this section:
+lu |  LU |  begin quotation  
+---|---|---  
+li'u |  LIhU |  end quotation  
+lo'u |  LOhU |  begin error quotation  
+le'u |  LEhU |  end error quotation  
+Grammatically, quotations are very simple in Lojban: all of them are sumti, and they all mean something like “the piece of text here quoted”:
+**Example 19.43. **
+mi | pu | cusku | lu | mi'e | .djan. | [li'u]  
+---|---|---|---|---|---|---  
+I | [past] | express | [quote] | I-am | John | [unquote]  
+I said, “I'm John”.  
+---  
+  
+
+But in fact there are four different flavors of quotation in the language, involving six cmavo of six different selma'o. This being the case, quotation deserves some elaboration.
+The simplest kind of quotation, exhibited in Example 19.43, uses the cmavo __lu__ (of selma'o LU) as the opening quotation mark, and the cmavo __li'u__ (of selma'o LIhU) as the closing quotation mark. The text between __lu__ and __li'u__ must be a valid, parseable Lojban text. If the quotation is ungrammatical, so is the surrounding expression. The cmavo __li'u__ is technically an elidable terminator, but it's almost never possible to elide it except at the end of text.
+The cmavo __lo'u__ (of selma'o LOhU) and __le'u__ (of selma'o LEhU) are used to surround a quotation that is not necessarily grammatical Lojban. However, the text must consist of morphologically correct Lojban words (as defined in Chapter 4), so that the __le'u__ can be picked out reliably. The words need not be meaningful, but they must be recognizable as cmavo, brivla, or cmene. Quotation with __lo'u__ is essential to quoting ungrammatical Lojban for teaching in the language, the equivalent of the * that is used in English to mark such errors:
+**Example 19.44. **
+lo'u | mi du do du la djan. | le'u  
+---|---|---  
+[quote] | mi du do du la djan. | [unquote]  
+na | tergerna | la | lojban.  
+---|---|---|---  
+is-not | a-grammatical-structure | in | Lojban.  
+  
+
+Example 19.44 is grammatical even though the embedded quotation is not. Similarly, __lo'u__ quotation can quote fragments of a text which themselves do not constitute grammatical utterances:
+**Example 19.45. **
+lu | le mlatu cu viska le finpe | li'u | zo'u  
+---|---|---|---  
+[quote] | le mlatu cu viska le finpe | [unquote] | :  
+lo'u | viska le | le'u | cu | selbasti  
+---|---|---|---|---  
+[quote] | viska le | [unquote] |  | is-replaced-by  
+.ei | lo'u | viska lo | le'u  
+---|---|---|---  
+[obligation!] | [quote] | viska lo | [unquote].  
+In the sentence _le mlatu viska le finpe_ , _viska le_ should be replaced by _viska lo_.  
+---  
+  
+
+Note the topic-comment formulation (Section 19.4) and the indicator applying to the selbri only (Section 19.8). Neither _viska le_ nor _viska lo_ is a valid Lojban utterance, and both require __lo'u__ quotation.
+Additionally, pro-sumti or pro-bridi in the quoting sentence can refer to words appearing in the quoted sentence when __lu__ … __li'u__ is used, but not when _lo'u ... le'u_ is used:
+**Example 19.46. **
+la | tcarlis. | cusku | lu | le | ninmu | cu | morsi | li'u  
+---|---|---|---|---|---|---|---|---  
+| Charlie | says | [quote] | the | woman |  | is-dead | [unquote].  
+.iku'i | ri | jmive  
+---|---|---  
+However, | the-last-mentioned | is-alive.  
+Charlie says “The woman is dead”, but she is alive.  
+---  
+  
+
+In Example 19.46, __ri__ is a pro-sumti which refers to the most recent previous sumti, namely _le ninmu_. Compare:
+**Example 19.47. **
+la | tcarlis. | cusku | lo'u | le | ninmu | cu | morsi | le'u  
+---|---|---|---|---|---|---|---|---  
+| Charlie | says | [quote] | le | ninmu | cu | morsi | [unquote].  
+.iku'i | ri | jmive  
+---|---|---  
+However, | the-last-mentioned | is-alive.  
+Charlie says _le ninmu cu morsi_ , but he is alive.  
+---  
+  
+
+In Example 19.47, __ri__ cannot refer to the referent of the alleged sumti _le ninmu_ , because _le ninmu cu morsi_ is a mere uninterpreted sequence of Lojban words. Instead, __ri__ ends up referring to the referent of the sumti _la tcarlis._ , and so it is Charlie who is alive.
+The metalinguistic erasers __si__ , __sa__ , and __su__ , discussed in Section 19.13, do not operate in text between __lo'u__ and __le'u__. Since the first __le'u__ terminates a __lo'u__ quotation, it is not directly possible to have a __lo'u__ quotation within another __lo'u__ quotation. However, it is possible for a __le'u__ to occur within a _lo'u ... le'u_ quotation by preceding it with the cmavo __zo__ , discussed in Section 19.10. Note that __le'u__ is not an elidable terminator; it is required.
+* * *
+Chapter 19. Putting It All Together: Notes on the Structure of Lojban Texts  
+---  
+Prev: Section 19.8 |  Next: Section 19.10  
+---|---  
+Table of Contents
+Book Info Page

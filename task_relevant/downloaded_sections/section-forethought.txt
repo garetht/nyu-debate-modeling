@@ -1,0 +1,73 @@
+Chapter 18. lojbau mekso: Mathematical Expressions in Lojban  
+---  
+Prev: Section 18.5 |  Next: Section 18.7  
+---|---  
+Table of Contents
+Book Info Page
+* * *
+## 18.6. Forethought operators (Polish notation, functions)
+The following cmavo are discussed in this section:
+boi |  BOI |  numeral/lerfu string terminator  
+---|---|---  
+va'a |  VUhU |  negation/additive inverse  
+pe'o |  PEhO |  forethought flag  
+ku'e |  KUhE |  forethought terminator  
+ma'o |  MAhO |  convert operand to operator  
+py. |  BY |  letter “p”  
+xy. |  BY |  letter “x”  
+zy. |  BY |  letter “z”  
+fy. |  BY |  letter “f”  
+The infix form explained so far is reasonable for many purposes, but it is limited and rigid. It works smoothly only where all operators have exactly two operands, and where precedences can either be assumed from context or are limited to just two levels, with some help from parentheses.
+But there are many operators which do not have two operands, or which have a variable number of operands. The preferred form of expression in such cases is the use of “forethought operators”, also known as Polish notation. In this style of writing mathematics, the operator comes first and the operands afterwards:
+**Example 18.32. **
+li | su'i | paboi | reboi | ci[boi] | du | li | xa  
+---|---|---|---|---|---|---|---  
+The-number | the-sum-of | one | two | three | equals | the-number | six.  
+sum(1,2,3) = 6  
+  
+
+Note that the normally elidable number terminator __boi__ is required after __pa__ and __re__ because otherwise the reading would be _pareci_ = 123. It is not required after __ci__ but is inserted here in brackets for the sake of symmetry. The only time __boi__ is required is, as in Example 18.32, when there are two consecutive numbers or lerfu strings.
+Forethought mekso can use any number of operands, in Example 18.32, three. How do we know how many operands there are in ambiguous circumstances? The usual Lojban solution is employed: an elidable terminator, namely __ku'e__. Here is an example:
+**Example 18.33. **
+li | py. | su'i | va'a | ny. | ku'e | su'i | zy | du  
+---|---|---|---|---|---|---|---|---  
+The-number |  “p” | plus | negative-of( |  “n” | ) | plus |  “z” | equals  
+li | xy.  
+---|---  
+the-number |  “x” | .  
+p + -n + z = x  
+  
+
+where we know that __va'a__ is a forethought operator because there is no operand preceding it.
+__va'a__ is the numerical negation operator, of selma'o VUhU. In contrast, __vu'u__ is not used for numerical negation, but only for subtraction, as it always has two or more operands. Do not confuse __va'a__ and __vu'u__ , which are operators, with __ni'u__ , which is part of a number.
+In Example 18.33, the operator __va'a__ and the terminator __ku'e__ serve in effect as parentheses. (The regular parentheses __vei__ and __ve'o__ are NOT used for this purpose.) If the __ku'e__ were omitted, the _su'i zy_ would be swallowed up by the __va'a__ forethought operator, which would then appear to have two operands, __ny__ and _su'i zy._ , where the latter is also a forethought expression.
+Forethought mekso is also useful for matching standard functional notation. How do we represent “z = f(x)”? The answer is:
+**Example 18.34. **
+li | zy | du | li | ma'o | fy.boi | xy.  
+---|---|---|---|---|---|---  
+The-number | z | equals | the-number | the-operator | f | x.  
+z = f(x)  
+  
+
+Again, no parentheses are used. The construct _ma'o fy.boi_ is the equivalent of an operator, and appears in forethought here (although it could also be used as a regular infix operator). In mathematics, letters sometimes mean functions and sometimes mean variables, with only the context to tell which. Lojban chooses to accept the variable interpretation as the default, and uses the special flag __ma'o__ to mark a lerfu string as an operator. The cmavo __xy.__ and __zy.__ are variables, but __fy.__ is an operator (a function) because __ma'o__ marks it as such. The __boi__ is required because otherwise the __xy.__ would look like part of the operator name. (The use of __ma'o__ can be generalized from lerfu strings to any mekso operand: see Section 18.21.)
+When using forethought mekso, the optional marker __pe'o__ may be placed in front of the operator. This usage can help avoid confusion by providing clearly marked __pe'o__ and __ku'e__ pairs to delimit the operand list. Example 18.32 to Example 18.34, respectively, with explicit __pe'o__ and __ku'e__ :
+**Example 18.35. **
+li pe'o su'i paboi reboi ciboi ku'e du li xa
+  
+
+**Example 18.36. **
+li py. su'i pe'o va'a ny. ku'e su'i zy du li xy.
+  
+
+**Example 18.37. **
+li zy du li pe'o ma'o fy.boi xy. ku'e
+  
+
+Note: When using forethought mekso, be sure that the operands really are operands: they cannot contain regular infix expressions unless parenthesized with __vei__ and __ve'o__. An earlier version of the complex Example 18.119 came to grief because I forgot this rule.
+* * *
+Chapter 18. lojbau mekso: Mathematical Expressions in Lojban  
+---  
+Prev: Section 18.5 |  Next: Section 18.7  
+---|---  
+Table of Contents
+Book Info Page

@@ -24,6 +24,8 @@ class DatasetType(Enum):
     QUALITY_CONSULTANCY = (8, True)
     CORRECTNESS_JUDGE_PREFERENCES = (9, True)
     EXTERNAL_HUGGINGFACE = (10, False)
+    LOJBAN = (11, True)
+    # LOJBAN_CONSULTANCY = (12, True)
 
     def __init__(self, idx: int, is_instantiable: bool):
         self.id = idx
@@ -102,6 +104,8 @@ class DataRow(BaseModel):
     correct_index: Optional[int] = None
     debate_id: Optional[str] = None
     story_title: Optional[str] = None
+    explanations : Optional[str] = None
+    ground_truth: Optional[str] = None
 
 
 class JudgePreferenceDataRow(BaseModel):

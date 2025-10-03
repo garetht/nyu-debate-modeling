@@ -1,0 +1,153 @@
+Chapter 5. “Pretty Little Girls' School”: The Structure Of Lojban selbri  
+---  
+Prev: Section 5.6 |  Next: Section 5.8  
+---|---  
+Table of Contents
+Book Info Page
+* * *
+## 5.7. Linked sumti: _be_ -_bei_ -_be'o_
+The following cmavo are discussed in this section:
+be |  BE |  linked sumti marker  
+---|---|---  
+bei |  BEI |  linked sumti separator  
+be'o |  BEhO |  linked sumti terminator  
+The question of the place structures of selbri has been glossed over so far. This chapter does not attempt to treat place structure issues in detail; they are discussed in Chapter 9. One grammatical structure related to places belongs here, however. In simple sentences such as Example 5.1, the place structure of the selbri is simply the defined place structure of the gismu __mamta__. What about more complex selbri?
+For tanru, the place structure rule is simple: the place structure of a tanru is always the place structure of its tertau. Thus, the place structure of _blanu zdani_ is that of __zdani__ : the x1 place is a house or nest, and the x2 place is its occupants.
+What about the places of __blanu__? Is there any way to get them into the act? In fact, __blanu__ has only one place, and this is merged, as it were, with the x1 place of __zdani__. It is whatever is in the x1 place that is being characterized as blue-for-a-house. But if we replace __blanu__ with __xamgu__ , we get:
+**Example 5.63. **
+ti | xamgu | zdani  
+---|---|---  
+This | is-a-good | house.  
+This is a good (for someone, by some standard) house.  
+---  
+  
+
+Since __xamgu__ has three places (x1, the good thing; x2, the person for whom it is good; and x3, the standard of goodness), Example 5.63 necessarily omits information about the last two: there is no room for them. Room can be made, however!
+**Example 5.64. **
+ti | xamgu | be | do | bei | mi | [be'o] | zdani  
+---|---|---|---|---|---|---|---  
+This | is-a-good | (for | you | by-standard | me) |  | house.  
+This is a house that is good for you by my standards.  
+---  
+  
+
+Here, the gismu __xamgu__ has been followed by the cmavo __be__ (of selma'o BE), which signals that one or more sumti follows. These sumti are not part of the overall bridi place structure, but fill the places of the brivla they are attached to, starting with x2. If there is more than one sumti, they are separated by the cmavo __bei__ (of selma'o BEI), and the list of sumti is terminated by the elidable terminator __be'o__ (of selma'o BEhO).
+Grammatically, a brivla with sumti linked to it in this fashion plays the same role in tanru as a simple brivla. To illustrate, here is a fully fleshed-out version of Example 5.19, with all places filled in:
+**Example 5.65. **
+ti | cmalu | be | le | ka | canlu  
+---|---|---|---|---|---  
+This | is-a-small | (in-dimension | the | property-of | volume  
+bei | lo'e | ckule | be'o  
+---|---|---|---  
+by-standard | the-typical | school) |   
+nixli | be | li | mu  
+---|---|---|---  
+(girl | (of-years | the-number | five  
+bei | lo | merko | be'o | bo | ckule  
+---|---|---|---|---|---  
+by-standard | some | American-thing) |  |  | school)  
+la | bryklyn.  
+---|---  
+in-that-named | Brooklyn  
+loi | pemci  
+---|---  
+with-subject | poems  
+le | mela | nu,IORK. | prenu  
+---|---|---|---  
+for-audience-the | among-that-named | New-York | persons  
+le | jecta  
+---|---  
+with-operator-the | state.  
+This is a school, small in volume compared to the typical school, pertaining to five-year-old girls (by American standards), in Brooklyn, teaching poetry to the New York community and operated by the state.  
+---  
+  
+
+Here the three places of __cmalu__ , the three of __nixli__ , and the four of __ckule__ are fully specified. Since the places of __ckule__ are the places of the bridi as a whole, it was not necessary to link the sumti which follow __ckule__. It would have been legal to do so, however:
+**Example 5.66. **
+mi | klama | be | le | zarci | bei | le | zdani | [be'o]  
+---|---|---|---|---|---|---|---|---  
+I | go | ( | to-the | market |  | from-the | house | ).  
+  
+
+means the same as
+**Example 5.67. **
+mi | klama | le | zarci | le | zdani  
+---|---|---|---|---|---  
+I | go | to-the | market | from-the | house.  
+  
+
+No matter how complex a tanru gets, the last brivla always dictates the place structure: the place structure of
+**Example 5.68. **
+| melbi | je | cmalu | nixli | bo | ckule  
+---|---|---|---|---|---|---  
+a | (pretty | and | little) | (girl |  | school)  
+a school for girls which is both beautiful and small  
+---  
+  
+
+is simply that of __ckule__. (The sole exception to this rule is discussed in Section 5.8.)
+It is possible to precede linked sumti by the place structure ordering tags __fe__ , __fi__ , __fo__ , and __fu__ (of selma'o FA, discussed further in Section 9.3), which serve to explicitly specify the x2, x3, x4, and x5 places respectively. Normally, the place following the __be__ is the x2 place and the other places follow in order. If it seems convenient to change the order, however, it can be accomplished as follows:
+**Example 5.69. **
+ti | xamgu | be | fi | mi | bei | fe | do | [be'o] | zdani  
+---|---|---|---|---|---|---|---|---|---  
+This | is-a-good | ( | by-standard | me |  | for | you | ) | house.  
+  
+
+which is equivalent in meaning to Example 5.64. Note that the order of __be__ , __bei__ , and __be'o__ does not change; only the inserted __fi__ tells us that __mi__ is the x3 place (and correspondingly, the inserted __fe__ tells us that __do__ is the x2 place). Changing the order of sumti is often done to match the order of another language, or for emphasis or rhythm.
+Of course, using FA cmavo makes it easy to specify one place while omitting a previous place:
+**Example 5.70. **
+ti | xamgu | be | fi | mi | [be'o] | zdani  
+---|---|---|---|---|---|---  
+This | is-a-good | ( | by-standard | me | ) | house.  
+This is a good house by my standards.  
+---  
+  
+
+Similarly, sumti labeled by modal or tense tags can be inserted into strings of linked sumti just as they can into bridi:
+**Example 5.71. **
+ta | blanu | be | ga'a | mi | [be'o] | zdani  
+---|---|---|---|---|---|---  
+That | is-a-blue | ( | to-observer | me | ) | house.  
+That is a blue, as I see it, house.  
+---  
+  
+
+The meaning of Example 5.71 is slightly different from:
+**Example 5.72. **
+ta | blanu | zdani | ga'a | mi  
+---|---|---|---|---  
+That | is-a-blue | house | to-observer | me.  
+That is a blue house, as I see it.  
+---  
+  
+
+See discussions in Chapter 9 of modals and in Chapter 10 of tenses for more explanations.
+The terminator __be'o__ is almost always elidable: however, if the selbri belongs to a description, then a relative clause following it will attach to the last linked sumti unless __be'o__ is used, in which case it will attach to the outer description:
+**Example 5.73. **
+le | xamgu | be | do | noi | barda | cu | zdani  
+---|---|---|---|---|---|---|---  
+The | good-thing | for | you | (who | are-large) |  | is-a-house.  
+  
+
+**Example 5.74. **
+le | xamgu | be | do | be'o | noi | barda | cu | zdani  
+---|---|---|---|---|---|---|---|---  
+The | (good-thing | for | you | ) | (which | is-large) |  | is-a-house  
+  
+
+(Relative clauses are explained in Chapter 8.)
+In other cases, however, __be'o__ cannot be elided if __ku__ has also been elided:
+**Example 5.75. **
+le | xamgu | be | le | ctuca | [ku] | be'o | zdani  
+---|---|---|---|---|---|---|---  
+the | good | (for | the | teacher) |  |  | house  
+  
+
+requires either __ku__ or __be'o__ , and since there is only one occurrence of __be__ , the __be'o__ must match it, whereas it may be confusing which occurrence of __le__ the __ku__ terminates (in fact the second one is correct).
+* * *
+Chapter 5. “Pretty Little Girls' School”: The Structure Of Lojban selbri  
+---  
+Prev: Section 5.6 |  Next: Section 5.8  
+---|---  
+Table of Contents
+Book Info Page

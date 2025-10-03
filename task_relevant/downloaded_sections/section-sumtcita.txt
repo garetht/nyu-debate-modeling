@@ -1,0 +1,165 @@
+Chapter 14. If Wishes Were Horses: The Lojban Connective System  
+---  
+Prev: Section 14.17 |  Next: Section 14.19  
+---|---  
+Table of Contents
+Book Info Page
+* * *
+## 14.18. Tenses, modals, and logical connection
+The tense and modal systems of Lojban interact with the logical connective system. No one chapter can explain all of these simultaneously, so each chapter must present its own view of the area of interaction with emphasis on its own concepts and terminology. In the examples of this chapter, the many tenses of various selma'o as well as the modals of selma'o BAI are represented by the simple time cmavo __pu__ , __ca__ , and __ba__ (of selma'o PU) representing the past, the present, and the future respectively. Preceding a selbri, these cmavo state the time when the bridi was, is, or will be true (analogous to English verb tenses); preceding a sumti, they state that the event of the main bridi is before, simultaneous with, or after the event given by the sumti (which is generally a _le nu_ abstraction; see Section 11.2).
+The two types of interaction between tenses and logical connectives are logically connected tenses and tensed logical connections. The former are fairly simple. Jeks may be used between tense cmavo to specify two connected bridi that differ only in tense:
+**Example 14.155. **
+la | .artr. | pu | nolraitru  
+---|---|---|---  
+That-named | Arthur | [past] | is-a-noblest-governor.  
+.ije | la | .artr. | ba | nolraitru  
+---|---|---|---|---  
+And | that-named | Arthur | [future] | is-a-noblest-governor.  
+Arthur was a king, and Arthur will be a king.  
+---  
+  
+
+can be reduced to:
+**Example 14.156. **
+la | .artr. | pu | je | ba | nolraitru  
+---|---|---|---|---|---  
+That-named | Arthur | [past] | and | [future] | is-a-noblest-governor.  
+Arthur was and will be king.  
+---  
+  
+
+Example 14.155 and Example 14.156 are equivalent in meaning; neither says anything about whether Arthur is king now.
+Non-logical connection with joiks is also possible between tenses:
+**Example 14.157. **
+mi | pu | bi'o | ba | vasxu  
+---|---|---|---|---  
+I | [past] | from-...-to | [future] | breathe.  
+I breathe from a past time until a future time.  
+---  
+  
+
+The full tense system makes more interesting tense intervals expressible, such as “from a medium time ago until a long time from now”.
+No forethought connections between tenses are permitted by the grammar, nor is there any way to override the default left-grouping rule; these limitations are imposed to keep the tense grammar simpler. Whatever can be said with tenses or modals can be said with subordinate bridi stating the time, place, or mode explicitly, so it is reasonable to try to remove at least some complications.
+Tensed logical connections are both more complex and more important than logical connections between tenses. Consider the English sentence:
+**Example 14.158. **
+I went to the market, and I bought food.
+  
+
+The verbatim translation of Example 14.158, namely:
+**Example 14.159. **
+mi | pu | klama | le | zarci | .ije | mi | pu | tervecnu | lo | cidja  
+---|---|---|---|---|---|---|---|---|---|---  
+I | [past] | go-to | the | market. | And | I | [past] | buy | items-of | food.  
+  
+
+fails to fully represent a feature of the English, namely that the buying came after the going. (It also fails to represent that the buying was a consequence of the going, which can be expressed by a modal that is discussed in Chapter 9.) However, the tense information – that the event of my going to the market preceded the event of my buying food – can be added to the logical connective as follows. The __.i__ __je__ is replaced by __.i__ __je__ __bo__ , and the tense cmavo __ba__ is inserted between __.i__ __je__ and __bo__ :
+**Example 14.160. **
+mi | pu | klama | le | zarci  
+---|---|---|---|---  
+I | [past] | go-to | the | market.  
+.ije | babo | mi | pu | tervecnu | lo | cidja  
+---|---|---|---|---|---|---  
+And | [later] | I | [past] | buy | items-of | food.  
+  
+
+Here the __pu__ cmavo in the two bridi-tails express the time of both actions with respect to the speaker: in the past. The __ba__ relates the two items to one another: the second item is later than the first item. The grammar does not permit omitting the __bo__ ; if it were omitted, the __ba__ and the second __pu__ would run together to form a compound tense __bapu__ applying to the second bridi-tail only.
+Adding tense or modal information to a logical connective is permitted only in the following situations:
+Between an ek (or joik) and __bo__ , as in:
+**Example 14.161. **
+la | .djan | .e | cabo | la | .alis. | klama | le | zarci  
+---|---|---|---|---|---|---|---|---  
+That-named | John | and | [simultaneous] | that-named | Alice | go-to | the | market.  
+John and Alice go to the market simultaneously.  
+---  
+  
+
+Between an ek (or joik) and __ke__ , as in:
+**Example 14.162. **
+mi | dzukla | le | zarci | .e | pu  
+---|---|---|---|---|---  
+I | walk-to | the | market | and | [earlier]  
+ke | le | zdani | .a | le | ckule | [ke'e]  
+---|---|---|---|---|---|---  
+( | the | house | or | the | school | ).  
+I walk to the market and, before that, to the house or the school.  
+---  
+  
+
+Between a gihek and __bo__ , as in:
+**Example 14.163. **
+mi | dunda | le | cukta | gi'e | babo  
+---|---|---|---|---|---  
+I | give | the | book | and | [later]  
+lebna | lo | rupnu | vau | do  
+---|---|---|---|---  
+take | some | currency-units |  | from/to-you.  
+I give you the book and then take some dollars (pounds, yen) from you.  
+---  
+  
+
+Between a gihek and __ke__ , as in:
+**Example 14.164. **
+mi | dzukla | le | zarci | gi'e | ca  
+---|---|---|---|---|---  
+I | walk-to | the | market | and | [simultaneous]  
+ke | cusku | zo'e | la | djan. | [ke'e]  
+---|---|---|---|---|---  
+( | express | something | to-that-named | John. | )  
+I walk to the market and at the same time talk to John.  
+---  
+  
+
+Between an ijek (or ijoik) and __bo__ , as in:
+**Example 14.165. **
+mi | viska | pa | nanmu | .ije | babo | mi | viska | pa | ninmu  
+---|---|---|---|---|---|---|---|---|---  
+I | see | a | man. | And | [later] | I | see | a | woman.  
+I see a man, and then I see a woman.  
+---  
+  
+
+Between an ijek (or ijoik) and __tu'e__ , as in:
+**Example 14.166. **
+mi | viska | pa | nanmu | .ije | batu'e | mi | viska | pa | ninmu | [tu'u]  
+---|---|---|---|---|---|---|---|---|---|---  
+I | see | a | man. | And | [later] | I | see | a | woman.  
+I see a man, and then I see a woman.  
+---  
+  
+
+And finally, between a jek (or joik) and __bo__ , as in:
+**Example 14.167. **
+mi | mikce | jebabo | ricfu  
+---|---|---|---  
+I | am-a-doctor | and-[later] | rich  
+I am a doctor and future rich person.  
+---  
+  
+
+As can be seen from Example 14.165 and Example 14.166, the choice between __bo__ and __ke__ (or __tu'e__) is arbitrary when there are only two things to be connected. If there were no tense information to include, of course neither would be required; it is only the rule that tense information must always be sandwiched between the logical connective and a following __bo__ , __ke__ , or __tu'e__ that requires the use of one of these grouping cmavo in Example 14.161 and Example 14.163 through Example 14.167.
+Non-logical connectives with __bo__ and __ke__ can include tense information in exactly the same way as logical connectives. Forethought connectives, however (except as noted below) are unable to do so, as are termsets or tense connectives. Mathematical operands and operators can also include tense information in their logical connectives as a result of their close parallelism with sumti and tanru components respectively:
+**Example 14.168. **
+vei | ci | .ebabo | vo | [ve'o] | tadni | cu | zvati | le | kumfa  
+---|---|---|---|---|---|---|---|---|---  
+( | 3 | and-[future] | 4 | ) | students |  | are-at | the | room.  
+Three and, later, four students were in the room.  
+---  
+  
+
+is a simple example. There is a special grammatical rule for use when a tense applies to both of the selbri in a forethought bridi-tail connection: the entire forethought construction can just be preceded by a tense. For example:
+**Example 14.169. **
+mi | pu | ge | klama | le | zarci | gi | tervecnu | lo | cidja  
+---|---|---|---|---|---|---|---|---|---  
+I | [past] | both | go-to | the | market | and | buy | some | food  
+I went to the market and bought some food.  
+---  
+  
+
+Example 14.169 is similar to Example 14.159. There is no time relationship specified between the going and the buying; both are simply set in the past.
+* * *
+Chapter 14. If Wishes Were Horses: The Lojban Connective System  
+---  
+Prev: Section 14.17 |  Next: Section 14.19  
+---|---  
+Table of Contents
+Book Info Page

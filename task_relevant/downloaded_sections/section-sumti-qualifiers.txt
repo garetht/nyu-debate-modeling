@@ -1,0 +1,143 @@
+Chapter 6. To Speak Of Many Things: The Lojban sumti  
+---  
+Prev: Section 6.9 |  Next: Section 6.11  
+---|---  
+Table of Contents
+Book Info Page
+* * *
+## 6.10. sumti qualifiers
+The following cmavo are discussed in this section:
+la'e |  LAhE |  something referred to by  
+---|---|---  
+lu'e |  LAhE |  a reference to  
+tu'a |  LAhE |  an abstraction involving  
+lu'a |  LAhE |  an individual/member/component of  
+lu'i |  LAhE |  a set formed from  
+lu'o |  LAhE |  a mass formed from  
+vu'i |  LAhE |  a sequence formed from  
+na'ebo |  NAhE+BO |  something other than  
+to'ebo |  NAhE+BO |  the opposite of  
+no'ebo |  NAhE+BO |  the neutral form of  
+je'abo |  NAhE+BO |  that which indeed is  
+lu'u |  LUhU |  elidable terminator for LAhE and NAhE+BO  
+Well, that's quite a list of cmavo. What are they all about?
+The above cmavo and compound cmavo are called the “sumti qualifiers”. All of them are either single cmavo of selma'o LAhE, or else compound cmavo involving a scalar negation cmavo of selma'o NAhE immediately followed by __bo__ of selma'o BO. Syntactically, you can prefix a sumti qualifier to any sumti and produce another simple sumti. (You may need to add the elidable terminator __lu'u__ to show where the qualified sumti ends.)
+Semantically, sumti qualifiers represent short forms of certain common special cases. Suppose you want to say “I see 'The Red Pony'”, where “The Red Pony” is the title of a book. How about:
+**Example 6.51. **
+mi | viska | lu | le | xunre | cmaxirma | li'u  
+---|---|---|---|---|---|---  
+I | see | [quote] | the | red | small-horse | [unquote].  
+  
+
+But Example 6.51 doesn't work: it says that you see a piece of text “The Red Pony”. That might be all right if you were looking at the cover of the book, where the words “The Red Pony” are presumably written. (More precisely, where the words _le xunre cmaxirma_ are written – but we may suppose the book has been translated into Lojban.)
+What you really want to say is:
+**Example 6.52. **
+mi | viska | le | selsinxa  
+---|---|---|---  
+I | see | the | thing-represented-by  
+be | lu | le | xunre | cmaxirma | li'u  
+---|---|---|---|---|---  
+| [quote] | the | red | small-horse | [unquote].  
+  
+
+The x2 place of _selsinxa_ (the x1 place of __sinxa__) is a sign or symbol, and the x1 place of _selsinxa_ (the x2 place of __sinxa__) is the thing represented by the sign. Example 6.52 allows us to use a symbol (namely the title of a book) to represent the thing it is a symbol of (namely the book itself).
+This operation turns out to be needed often enough that it's useful to be able to say:
+**Example 6.53. **
+mi | viska | la'e | lu | le | xunre | cmaxirma | li'u | [lu'u]  
+---|---|---|---|---|---|---|---|---  
+I | see | the-referent-of | [quote] | the | red | small-horse | [unquote] | -.  
+  
+
+So when __la'e__ is prefixed to a sumti referring to a symbol, it produces a sumti referring to the referent of that symbol. (In computer jargon, __la'e__ dereferences a pointer.)
+By introducing a sumti qualifier, we correct a false sentence (Example 6.51), which too closely resembles its literal English equivalent, into a true sentence (Example 6.53), without having to change it overmuch; in particular, the structure remains the same. Most of the uses of sumti qualifiers are of this general kind.
+The sumti qualifier __lu'e__ provides the converse operation: it can be prefixed to a sumti referring to some thing to produce a sumti referring to a sign or symbol for the thing. For example,
+**Example 6.54. **
+mi | pu | cusku | lu'e | le | vi | cukta  
+---|---|---|---|---|---|---  
+I | [past] | express | a-symbol-for | the | nearby | book.  
+I said the title of this book.  
+---  
+  
+
+The equivalent form not using a sumti qualifier would be:
+**Example 6.55. **
+mi | pu | cusku | le | sinxa | be | le | vi | cukta  
+---|---|---|---|---|---|---|---|---  
+I | [past] | express | the | symbol-for |  | the | nearby | book.  
+  
+
+which is equivalent to Example 6.54, but longer.
+The other sumti qualifiers follow the same rules. The cmavo __tu'a__ is used in forming abstractions, and is explained more fully in Section 11.11. The triplet __lu'a__ , __lu'i__ , and __lu'o__ convert between individuals, sets, and masses; __vu'i__ belongs to this group as well, but creates a sequence, which is similar to a set but has a definite order. (The set of John and Charles is the same as the set of Charles and John, but the sequences are different.) Here are some examples:
+**Example 6.56. **
+mi | troci | tu'a | le | vorme  
+---|---|---|---|---  
+I | try | some-abstraction-about | the | door.  
+I try (to open) the door.  
+---  
+  
+
+Example 6.56 might mean that I try to do something else involving the door; the form is deliberately vague.
+Most of the following examples make use of the cmavo __ri__ , belonging to selma'o KOhA. This cmavo means “the thing last mentioned”; it is equivalent to repeating the immediately previous sumti (but in its original context). It is explained in more detail in Section 7.6.
+**Example 6.57. **
+lo'i | ratcu | cu | barda  
+---|---|---|---  
+The-set-of | rats |  | is-large.  
+.iku'i | lu'a | ri | cmalu  
+---|---|---|---  
+But | some-members-of | it-last-mentioned | are-small.  
+The set of rats is large, but some of its members are small.  
+---  
+  
+
+**Example 6.58. **
+lo | ratcu | cu | cmalu | .iku'i | lu'i | ri | barda  
+---|---|---|---|---|---|---|---  
+Some | rats |  | are-small. | But | the-set-of | them-last-mentioned | is-large.  
+Some rats are small, but the set of rats is large.  
+---  
+  
+
+**Example 6.59. **
+mi | ce | do | girzu  
+---|---|---|---  
+I | in-a-set-with | you | are-a-set.  
+.i | lu'o | ri | gunma  
+---|---|---|---  
+| The-mass-of | it-last-mentioned | is-a-mass.  
+.i | vu'i | ri | porsi  
+| The-sequence-of | it-last-mentioned | is-a-sequence  
+The set of you and me is a set. The mass of you and me is a mass. The sequence of you and me is a sequence.  
+---  
+  
+
+(Yes, I know these examples are a bit silly. This set was introduced for completeness, and practical examples are as yet hard to come by.)
+Finally, the four sumti qualifiers formed from a cmavo of NAhE and __bo__ are all concerned with negation, which is discussed in detail in Chapter 15. Here are a few examples of negation sumti qualifiers:
+**Example 6.60. **
+mi | viska | na'ebo | le | gerku  
+---|---|---|---|---  
+I | see | something-other-than | the | dog.  
+  
+
+This compound, _na'ebo_ , is the most common of the four negation sumti qualifiers. The others usually only make sense in the context of repeating, with modifications, something already referred to:
+**Example 6.61. **
+mi | nelci | loi | glare | cidja  
+---|---|---|---|---  
+I | like | part-of-the-mass-of | hot-type-of | food.  
+.ije | do | nelci | to'ebo | ri  
+---|---|---|---|---  
+And | you | like | the-opposite-of | the-last-mentioned.  
+.ije | la | djein. | nelci | no'ebo | ra  
+---|---|---|---|---|---  
+And | that-named | Jane | likes | the-neutral-value-of | something-mentioned.  
+I like hot food, and you like cold food, and Jane likes lukewarm food.  
+---  
+  
+
+(In Example 6.61, the sumti __ra__ refers to some previously mentioned sumti other than that referred to by __ri__. We cannot use __ri__ here, because it would signify _la djein._ , that being the most recent sumti available to __ri__. See more detailed explanations in Section 7.6.)
+* * *
+Chapter 6. To Speak Of Many Things: The Lojban sumti  
+---  
+Prev: Section 6.9 |  Next: Section 6.11  
+---|---  
+Table of Contents
+Book Info Page

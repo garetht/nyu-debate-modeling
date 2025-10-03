@@ -1,0 +1,35 @@
+Chapter 16. “Who Did You Pass On The Road? Nobody”: Lojban And Logic  
+---  
+Prev: Section 16.13 |  Next: Section 16.15  
+---|---  
+Table of Contents
+Book Info Page
+* * *
+## 16.14. A few notes on variables
+A variable may have a quantifier placed in front of it even though it has already been quantified explicitly or implicitly by a previous appearance, as in:
+**Example 16.108. **
+ci | da | poi | mlatu | cu | blabi | .ije | re | da | cu | barda  
+---|---|---|---|---|---|---|---|---|---|---  
+Three | Xs | which-are | cats |  | are-white, | and | two | Xs |  | are-big.  
+  
+
+What does Example 16.108 mean? The appearance of _ci da_ quantifies __da__ as referring to three things, which are restricted by the relative clause to be cats. When _re da_ appears later, it refers to two of those three things – there is no saying which ones. Further uses of __da__ alone, if there were any, would refer once more to the three cats, so the requantification of __da__ is purely local.
+In general, the scope of a prenex that precedes a sentence extends to following sentences that are joined by ijeks (explained in Section 14.4) such as the __.ije__ in Example 16.108. Theoretically, a bare __i__ terminates the scope of the prenex. Informally, however, variables may persist for a while even after an __i__ , as if it were an __.ije__. Prenexes that precede embedded bridi such as relative clauses and abstractions extend only to the end of the clause, as explained in Section 16.8. A prenex preceding __tu'e__ … __tu'u__ long-scope brackets persists until the __tu'u__ , which may be many sentences or even paragraphs later.
+If the variables __da__ , __de__ , and __di__ (or the selbri variables __bu'a__ , __bu'e__ , and __bu'i__) are insufficient in number for handling a particular problem, the Lojban approach is to add a subscript to any of them. Each possible different combination of a subscript and a variable cmavo counts as a distinct variable in Lojban. Subscripts are explained in full in Section 19.6, but in general consist of the cmavo __xi__ (of selma'o XI) followed by a number, one or more lerfu words forming a single string, or a general mathematical expression enclosed in parentheses.
+A quantifier can be prefixed to a variable that has already been bound either in a prenex or earlier in the bridi, thus:
+**Example 16.109. **
+ci | da | poi | prenu | cu | se ralju | pa | da  
+---|---|---|---|---|---|---|---  
+Three | Xs | which | are-persons |  | are-led-by | one-of | X  
+Three people are led by one of them.  
+---  
+  
+
+The _pa da_ in Example 16.109 does not specify the number of things to which __da__ refers, as the preceding _ci da_ does. Instead, it selects one of them for use in this sumti only. The number of referents of __da__ remains three, but a single one (there is no way of knowing which one) is selected to be the leader.
+* * *
+Chapter 16. “Who Did You Pass On The Road? Nobody”: Lojban And Logic  
+---  
+Prev: Section 16.13 |  Next: Section 16.15  
+---|---  
+Table of Contents
+Book Info Page

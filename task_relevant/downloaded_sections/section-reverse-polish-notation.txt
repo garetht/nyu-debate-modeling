@@ -1,0 +1,60 @@
+Chapter 18. lojbau mekso: Mathematical Expressions in Lojban  
+---  
+Prev: Section 18.15 |  Next: Section 18.17  
+---|---  
+Table of Contents
+Book Info Page
+* * *
+## 18.16. Reverse Polish notation
+The following cmavo is discussed in this section:
+fu'a |  FUhA |  reverse Polish flag  
+---|---|---  
+So far, the Lojban notational conventions have mapped fairly familiar kinds of mathematical discourse. The use of forethought operators may have seemed odd when applied to “+”, but when applied to “f” they appear as the usual functional notation. Now comes a sharp break. Reverse Polish (RP) notation represents something completely different; even mathematicians don't use it much. (The only common uses of RP, in fact, are in some kinds of calculators and in the implementation of some programming languages.)
+In RP notation, the operator follows the operands. (Polish notation, where the operator precedes its operands, is another name for forethought mekso of the kind explained in Section 18.6.) The number of operands per operator is always fixed. No parentheses are required or permitted. In Lojban, RP notation is always explicitly marked by a __fu'a__ at the beginning of the expression; there is no terminator. Here is a simple example:
+**Example 18.110. **
+li | fu'a | reboi | ci | su'i | du | li | mu  
+---|---|---|---|---|---|---|---  
+the-number | (RP!) | two, | three, | plus | equals | the-number | five.  
+  
+
+The operands are __re__ and __ci__ ; the operator is __su'i__.
+Here is a more complex example:
+**Example 18.111. **
+li | fu'a | reboi | ci | pi'i | voboi | mu | pi'i | su'i  
+---|---|---|---|---|---|---|---|---  
+the-number | (RP!) | (two, | three, | times), | (four, | five, | times), | plus  
+du | li | rexa  
+---|---|---  
+equals | the-number | two-six  
+  
+
+Here the operands of the first __pi'i__ are __re__ and __ci__ ; the operands of the second __pi'i__ are __vo__ and __mu__ (with __boi__ inserted where needed), and the operands of the __su'i__ are _reboi ci pi'i_ , or 6, and _voboi mu pi'i_ , or 20. As you can see, it is easy to get lost in the world of reverse Polish notation; on the other hand, it is especially easy for a mechanical listener (who has a deep mental stack and doesn't get lost) to comprehend.
+The operands of an RP operator can be any legal mekso operand, including parenthesized mekso that can contain any valid syntax, whether more RP or something more conventional.
+In Lojban, RP operators are always parsed with exactly two operands. What about operators which require only one operand, or more than two operands? The null operand __tu'o__ and the null operator __ge'a__ provide a simple solution. A one-operand operator like __va'a__ always appears in a reverse Polish context as _tu'o va'a_. The __tu'o__ provides the second operand, which is semantically ignored but grammatically necessary. Likewise, the three-operand version of __gei__ appears in reverse Polish as _ge'a gei_ , where the __ge'a__ effectively merges the 2nd and 3rd operands into a single operand. Here are some examples:
+**Example 18.112. **
+li | fu'a | ciboi | muboi | vu'u  
+---|---|---|---|---  
+The-number | (RP!) | (three, | five, | minus)  
+du | li | fu'a | reboi | tu'o | va'a  
+---|---|---|---|---|---  
+equals | the-number | (RP!) | two, | null, | negative-of.  
+3 − 5 = -2  
+  
+
+**Example 18.113. **
+li | cinoki'oki'o | du  
+---|---|---  
+The-number | 30-comma-comma | equals  
+li | fu'a | biboi | ciboi | panoboi | ge'a | gei  
+---|---|---|---|---|---|---  
+the-number | (RP!) | 8, | (3, | 10, | null-op), | exponential-notation.  
+30,000,000 = 3 × 10 ^ 8  
+  
+
+* * *
+Chapter 18. lojbau mekso: Mathematical Expressions in Lojban  
+---  
+Prev: Section 18.15 |  Next: Section 18.17  
+---|---  
+Table of Contents
+Book Info Page

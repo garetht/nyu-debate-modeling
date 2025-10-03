@@ -73,6 +73,8 @@ class PromptConfig(BaseModel):
     opponent_position: str
     topic: str
     background_text: str
+    explanations: Optional[str] = None
+    ground_truth: Optional[str] = None
 
 
 class PromptParser:

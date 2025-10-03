@@ -466,7 +466,7 @@ EOF
         # 4. Waits for the specified timeout
         # 5. Checks if process is still running
         # 6. Returns appropriate exit code
-        local remote_command="$ssh_env_setup && export OUTPUT_ROOT=outputs/$original_task_name/ && mkdir -p outputs/$original_task_name/outputs/transcripts && mkdir -p $REMOTE_LOGS_DIR && {
+        local remote_command="$ssh_env_setup && export PYTHONPATH=. && export OUTPUT_ROOT=outputs/$original_task_name/ && mkdir -p outputs/$original_task_name/outputs/transcripts && mkdir -p $REMOTE_LOGS_DIR && {
             source .venv/bin/activate
             nohup $bg_command > $REMOTE_LOGS_DIR/$task_name.log 2>&1 &
             bg_pid=\$!

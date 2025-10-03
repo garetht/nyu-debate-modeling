@@ -1,0 +1,101 @@
+Chapter 14. If Wishes Were Horses: The Lojban Connective System  
+---  
+Prev: Section 14.3 |  Next: Section 14.5  
+---|---  
+Table of Contents
+Book Info Page
+* * *
+## 14.4. Logical connection of bridi
+Now we are ready to express Example 14.1 in Lojban! The kind of logical connective which is placed between two Lojban bridi to connect them logically is an ijek:
+**Example 14.3. **
+la | djan. | nanmu | .ija | la | djeimyz. | ninmu  
+---|---|---|---|---|---|---  
+That-named | John | is-a-man | or | that-named | James | is-a-woman.  
+  
+
+Here we have two separate Lojban bridi, _la djan. nanmu_ and _la djeimyz. ninmu_. These bridi are connected by __.i__ __ja__ , the ijek for the truth function A. The __i__ portion of the ijek tells us that we are dealing with separate sentences here. Similarly, we can now say:
+**Example 14.4. **
+la | djan. | nanmu | .ije | la | djeimyz. | ninmu  
+---|---|---|---|---|---|---  
+That-named | John | is-a-man | and | that-named | James | is-a-woman.  
+  
+
+**Example 14.5. **
+la | djan. | nanmu | .ijo | la | djeimyz. | ninmu  
+---|---|---|---|---|---|---  
+That-named | John | is-a-man | if-and-only-if | that-named | James | is-a-woman.  
+  
+
+**Example 14.6. **
+la | djan. | nanmu | .iju | la | djeimyz. | ninmu  
+---|---|---|---|---|---|---  
+That-named | John | is-a-man | whether-or-not | that-named | James | is-a-woman.  
+  
+
+To obtain the other truth tables listed in Section 14.2, we need to know how to negate the two bridi which represent the component sentences. We could negate them directly by inserting __na__ before the selbri, but Lojban also allows us to place the negation within the connective itself.
+To negate the first or left-hand bridi, prefix __na__ to the JA cmavo but after the __i__. To negate the second or right-hand bridi, suffix _-nai_ to the JA cmavo. In either case, the negating word is placed on the side of the connective that is closest to the bridi being negated.
+So to express the truth table FTTF, which requires O with either of the two bridi negated (not both), we can say either:
+**Example 14.7. **
+la | djan. | nanmu | .inajo | la | djeimyz. | ninmu  
+---|---|---|---|---|---|---  
+That-named | John | is-not-a-man | if-and-only-if | that-named | James | is-a-woman.  
+  
+
+**Example 14.8. **
+la | djan. | nanmu | .ijonai | la | djeimyz. | ninmu  
+---|---|---|---|---|---|---  
+That-named | John | is-a-man | if-and-only-if | that-named | James | is-not-a-woman.  
+  
+
+The meaning of both Example 14.7 and Example 14.8 is the same as that of:
+**Example 14.9. **
+John is a man or James is a woman, but not both.
+  
+
+Here is another example:
+**Example 14.10. **
+la | djan. | nanmu | .ijanai | la | djeimyz. | ninmu  
+---|---|---|---|---|---|---  
+That-named | John | is-a-man | or | that-named | James | is-not-a-woman.  
+John is a man if James is a woman.  
+---  
+  
+
+How's that again? Are those two English sentences in Example 14.10 really equivalent? In English, no. The Lojban TTFT truth function can be glossed “A if B”, but the “if” does not quite have its English sense. Example 14.10 is true so long as John is a man, even if James is not a woman; likewise, it is true just because James is not a woman, regardless of John's gender. This kind of “if-then” is technically known as a “material conditional”.
+Since James is not a woman (by our assertions in Section 14.1), the English sentence “John is a man if James is a woman” seems to be neither true nor false, since it assumes something which is not true. It turns out to be most convenient to treat this “if” as TTFT, which on investigation means that Example 14.10 is true. Example 14.11, however, is equally true:
+**Example 14.11. **
+la | djan. | ninmu | .ijanai | la | djeimyz. | ninmu  
+---|---|---|---|---|---|---  
+That-named | John | is-a-woman | if | that-named | James | is-a-woman.  
+  
+
+This can be thought of as a principle of consistency, and may be paraphrased as follows: “If a false statement is true, any statement follows from it.” All uses of English “if” must be considered very carefully when translating into Lojban to see if they really fit this Lojban mold.
+Example 14.12, which uses the TFTT truth function, is subject to the same rules: the stated gloss of TFTT as “only if” works naturally only when the right-hand bridi is false; if it is true, the left-hand bridi may be either true or false. The last gloss of Example 14.12 illustrates the use of “if ... then” as a more natural substitute for “only if”.
+**Example 14.12. **
+la | djan. | nanmu | .inaja | la | djeimyz. | ninmu  
+---|---|---|---|---|---|---  
+That-named | John | is-not-a-man | or | that-named | James | is-a-woman.  
+John is a man only if James is a woman.  
+---  
+If John is a man, then James is a woman.  
+  
+
+The following example illustrates the use of __se__ to, in effect, exchange the two sentences. The normal use of __se__ is to (in effect) transpose places of a bridi, as explained in Section 5.11.
+**Example 14.13. **
+la | djan. | nanmu | .iseju | la | djeimyz. | ninmu  
+---|---|---|---|---|---|---  
+Whether or not John is a man, James is a woman.  
+---  
+  
+
+If both __na__ and __se__ are present, which is legal but never necessary, __na__ would come before __se__.
+The full syntax of ijeks, therefore, is:
+> .i [na] [se] JA [nai] 
+where the cmavo in brackets are optional.
+* * *
+Chapter 14. If Wishes Were Horses: The Lojban Connective System  
+---  
+Prev: Section 14.3 |  Next: Section 14.5  
+---|---  
+Table of Contents
+Book Info Page

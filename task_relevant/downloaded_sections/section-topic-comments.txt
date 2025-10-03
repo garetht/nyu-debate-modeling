@@ -1,0 +1,116 @@
+Chapter 19. Putting It All Together: Notes on the Structure of Lojban Texts  
+---  
+Prev: Section 19.3 |  Next: Section 19.5  
+---|---  
+Table of Contents
+Book Info Page
+* * *
+## 19.4. Topic-comment sentences: ZOhU
+The following cmavo is discussed in this section:
+zo'u |  ZOhU |  topic/comment separator  
+---|---|---  
+The normal Lojban sentence is just a bridi, parallel to the normal English sentence which has a subject and a predicate:
+**Example 19.2. **
+mi | klama | le | zarci  
+---|---|---|---  
+I went-to the market  
+---  
+  
+
+In Chinese, the normal sentence form is different: a topic is stated, and a comment about it is made. (Japanese also has the concept of a topic, but indicates it by attaching a suffix; other languages also distinguish topics in various ways.) The topic says what the sentence is about:
+**Example 19.3. **
+  * zhe4 xiao1xi2 : wo3 zhi1dao le 
+  * this news : I know [perfective]
+  * As for this news, I knew it.
+  * I've heard this news already.
+
+
+  
+
+The colon in the first two versions of Example 19.3 separate the topic (“this news”) from the comment (“I know already”).
+Lojban uses the cmavo __zo'u__ (of selma'o ZOhU) to separate topic (a sumti) from comment (a bridi):
+**Example 19.4. **
+le | nuzba | zo'u | mi | ba'o | djuno  
+---|---|---|---|---|---  
+The | news | : | I | [perfective] | know.  
+  
+
+Example 19.4 is the literal Lojban translation of Example 19.3. Of course, the topic-comment structure can be changed to a straightforward bridi structure:
+**Example 19.5. **
+mi | ba'o | djuno | le | nuzba  
+---|---|---|---|---  
+I | [perfective] | know | the | news.  
+  
+
+Example 19.5 means the same as Example 19.4, and it is simpler. However, often the position of the topic in the place structure of the selbri within the comment is vague:
+**Example 19.6. **
+le | finpe | zo'u | citka  
+---|---|---|---  
+the | fish | : | eat  
+  
+
+Is the fish eating or being eaten? The sentence doesn't say. The Chinese equivalent of Example 19.6 is:
+**Example 19.7. **
+  * yu2: chi1
+  * fish: eat
+
+
+  
+
+which is vague in exactly the same way.
+Grammatically, it is possible to have more than one sumti before __zo'u__. This is not normally useful in topic-comment sentences, but is necessary in the other use of __zo'u__ : to separate a quantifying section from a bridi containing quantified variables. This usage belongs to a discussion of quantifier logic in Lojban (see Section 16.2), but an example would be:
+**Example 19.8. **
+ro | da | poi | prenu | ku'o  
+---|---|---|---|---  
+For-all | X | which | are-persons, |   
+su'o | de | zo'u | de | patfu | da  
+---|---|---|---|---|---  
+there-exists-a | Y | such-that | Y | is-the-father-of | X.  
+Every person has a father.  
+---  
+  
+
+The string of sumti before __zo'u__ (called the “prenex”: see Section 16.2) may contain both a topic and bound variables:
+**Example 19.9. **
+loi | patfu | ro | da | poi | prenu | ku'o  
+---|---|---|---|---|---|---  
+For-the-mass-of | fathers | for-all | X | which | are-persons, |   
+su'o | de | zo'u | de | patfu | da  
+---|---|---|---|---|---  
+there-exists-a | Y | such-that | Y | is-the-father-of | X.  
+As for fathers, every person has one.  
+---  
+  
+
+To specify a topic which affects more than one sentence, wrap the sentences in __tu'e__ … __tu'u__ brackets and place the topic and the __zo'u__ directly in front. This is the exception to the rule that a topic attaches directly to a sentence:
+**Example 19.10. **
+loi | jdini | zo'u | tu'e |  | do | ponse | .inaja | do | djica | [tu'u]  
+---|---|---|---|---|---|---|---|---|---|---  
+The-mass-of | money | : | ( | [if] | you | possess, | then | you | want | )  
+Money: if you have it, you want it.  
+---  
+  
+
+Note: In Lojban, you do not “want money”; you “want to have money” or something of the sort, as the x2 place of __djica__ demands an event. As a result, the straightforward rendering of Example 19.9 without a topic is not:
+**Example 19.11. **
+do | ponse | loi jdini | .inaja | do | djica | ri  
+---|---|---|---|---|---|---  
+You | possess | money | only-if | you | desire | its-mere-existence.  
+  
+
+where __ri__ means _loi jdini_ and is interpreted as “the mere existence of money”, but rather:
+**Example 19.12. **
+do | ponse | loi jdini | .inaja | do | djica | tu'a | ri  
+---|---|---|---|---|---|---|---  
+You | possess | money | only-if | you | desire | something-about | it.  
+  
+
+namely, the possession of money. But topic-comment sentences like Example 19.10 are inherently vague, and this difference between __ponse__ (which expects a physical object in x2) and __djica__ is ignored. See Example 19.45 for another topic/comment sentence.
+The subject of an English sentence is often the topic as well, but in Lojban the sumti in the x1 place is not necessarily the topic, especially if it is the normal (unconverted) x1 for the selbri. Thus Lojban sentences don't necessarily have a “subject” in the English sense.
+* * *
+Chapter 19. Putting It All Together: Notes on the Structure of Lojban Texts  
+---  
+Prev: Section 19.3 |  Next: Section 19.5  
+---|---  
+Table of Contents
+Book Info Page

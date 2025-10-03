@@ -1,0 +1,65 @@
+Chapter 4. The Shape Of Words To Come: Lojban Morphology  
+---  
+Prev: Section 4.13 |  Next: Section 4.15  
+---|---  
+Table of Contents
+Book Info Page
+* * *
+## 4.14. The gismu creation algorithm
+The gismu were created through the following process:
+  1. At least one word was found in each of the six source languages (Chinese, English, Hindi, Spanish, Russian, Arabic) corresponding to the proposed gismu. This word was rendered into Lojban phonetics rather liberally: consonant clusters consisting of a stop and the corresponding fricative were simplified to just the fricative (_tc_ became _c_ , _dj_ became _j_) and non-Lojban vowels were mapped onto Lojban ones. Furthermore, morphological endings were dropped. The same mapping rules were applied to all six languages for the sake of consistency.
+  2. All possible gismu forms were matched against the six source-language forms. The matches were scored as follows: 
+     1. If three or more letters were the same in the proposed gismu and the source-language word, and appeared in the same order, the score was equal to the number of letters that were the same. Intervening letters, if any, did not matter.
+     2. If exactly two letters were the same in the proposed gismu and the source-language word, and either the two letters were consecutive in both words, or were separated by a single letter in both words, the score was 2. Letters in reversed order got no score.
+     3. Otherwise, the score was 0.
+  3. The scores were divided by the length of the source-language word in its Lojbanized form, and then multiplied by a weighting value specific to each language, reflecting the proportional number of first-language and second-language speakers of the language. (Second-language speakers were reckoned at half their actual numbers.) The weights were chosen to sum to 1.00. The sum of the weighted scores was the total score for the proposed gismu form.
+  4. Any gismu forms that conflicted with existing gismu were removed. Obviously, being identical with an existing gismu constitutes a conflict. In addition, a proposed gismu that was identical to an existing gismu except for the final vowel was considered a conflict, since two such gismu would have identical 4-letter rafsi.
+More subtly: If the proposed gismu was identical to an existing gismu except for a single consonant, and the consonant was "too similar” based on the following table, then the proposed gismu was rejected.
+proposed gismu | existing gismu  
+---|---  
+_b_ | _p_ , _v_  
+_c_ | _j_ , _s_  
+_d_ |  _t_  
+_f_ | _p_ , _v_  
+_g_ | _k_ , _x_  
+_j_ | _c_ , _z_  
+_k_ | _g_ , _x_  
+_l_ |  _r_  
+_m_ |  _n_  
+_n_ |  _m_  
+_p_ | _b_ , _f_  
+_r_ |  _l_  
+_s_ | _c_ , _z_  
+_t_ |  _d_  
+_v_ | _b_ , _f_  
+_x_ | _g_ , _k_  
+_z_ | _j_ , _s_  
+See Section 4.4 for an example.
+  5. The gismu form with the highest score usually became the actual gismu. Sometimes a lower-scoring form was used to provide a better rafsi. A few gismu were changed in error as a result of transcription blunders (for example, the gismu __gismu__ should have been _gicmu_ , but it's too late to fix it now).
+The language weights used to make most of the gismu were as follows:
+Chinese | 0.36  
+---|---  
+English | 0.21  
+Hindi | 0.16  
+Spanish | 0.11  
+Russian | 0.09  
+Arabic | 0.07  
+reflecting 1985 number-of-speakers data. A few gismu were made much later using updated weights:
+Chinese | 0.347  
+---|---  
+Hindi | 0.196  
+English | 0.160  
+Spanish | 0.123  
+Russian | 0.089  
+Arabic | 0.085  
+(English and Hindi switched places due to demographic changes.)
+
+
+Note that the stressed vowel of the gismu was considered sufficiently distinctive that two or more gismu may differ only in this vowel; as an extreme example, __bradi__ , __bredi__ , __bridi__ , and __brodi__ (but fortunately not _brudi_) are all existing gismu.
+* * *
+Chapter 4. The Shape Of Words To Come: Lojban Morphology  
+---  
+Prev: Section 4.13 |  Next: Section 4.15  
+---|---  
+Table of Contents
+Book Info Page

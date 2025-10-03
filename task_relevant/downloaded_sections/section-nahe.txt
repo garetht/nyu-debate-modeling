@@ -1,0 +1,182 @@
+Chapter 15. “No” Problems: On Lojban Negation  
+---  
+Prev: Section 15.3 |  Next: Section 15.5  
+---|---  
+Table of Contents
+Book Info Page
+* * *
+## 15.4. selbri and tanru negation
+All the scalar negations illustrated in Section 15.3 are expressed in Lojban using the cmavo __na'e__ (of selma'o NAhE). The most common use of __na'e__ is as a prefix to the selbri:
+**Example 15.44. **
+mi | klama | le | zarci  
+---|---|---|---  
+I | go-to | the | market.  
+  
+
+**Example 15.45. **
+mi | na'e | klama | le | zarci  
+---|---|---|---|---  
+I | (other-than | go-to) | the | market.  
+  
+
+Comparing these two, we see that the negation operator being used in Example 15.45 is __na'e__. But what exactly does __na'e__ negate? Does the negation include only the gismu __klama__ , which is the entire selbri in this case, or does it include the _le zarci_ as well? In Lojban, the answer is unambiguously “only the gismu”. The cmavo __na'e__ always applies only to what follows it.
+Example 15.45 looks as if it were parallel to:
+**Example 15.46. **
+mi | na | klama | le | zarci  
+---|---|---|---|---  
+I | [false] | go-to | the | market.  
+  
+
+but in fact there is no real parallelism at all. A negation using __na__ denies the truth of a relationship, but a selbri negation with __na'e__ asserts that a relationship exists other than that stated, one which specifically involves the sumti identified in the statement. The grammar allotted to __na'e__ allows us to unambiguously express scalar negations in terms of scope, scale, and range within the scale. Before we explain the scalar aspects, let us show how the scope of __na'e__ is determined.
+In tanru, we may wish to negate an individual element before combining it with another to form the tanru. We in effect need a shorter-than-selbri-scope negation, for which we can use __na'e__ as well. The positive sentence
+**Example 15.47. **
+mi | cadzu | klama | le | zarci  
+---|---|---|---|---  
+I | walking-ly | go-to | the | market.  
+  
+
+can be subjected to selbri negation in several ways. Two are:
+**Example 15.48. **
+mi | na'e | cadzu | klama | le | zarci  
+---|---|---|---|---|---  
+I | (other-than | walkingly) | go-to | the | market.  
+  
+
+**Example 15.49. **
+mi | cadzu | na'e | klama | le | zarci  
+---|---|---|---|---|---  
+I | walkingly | (other-than | go-to) | the | market.  
+  
+
+These negations show the default scope of __na'e__ is close-binding on an individual brivla in a tanru. Example 15.48 says that I am going to the market, but in some kind of a non-walking manner. (As with most tanru, there are a few other possible interpretations, but we'll assume this one – see Chapter 5 for a discussion of tanru meaning).
+In neither Example 15.48 nor Example 15.49 does the __na'e__ negate the entire selbri. While both sentences contain negations that deny a particular relationship between the sumti, they also have a component which makes a positive claim about such a relationship. This is clearer in Example 15.48, which says that I am going, but in a non-walking manner. In Example 15.49, we have claimed that the relationship between me and the market in some way involves walking, but is not one of “going to” (perhaps we are walking around the market, or walking-in-place while at the market).
+The “scale”, or actually the “set”, implied in Lojban tanru negations is anything which plausibly can be substituted into the tanru. (Plausibility here is interpreted in the same way that answers to a __mo__ question must be plausible – the result must not only have the right number of places and have sumti values appropriate to the place structure, it must also be appropriate or relevant to the context.) This minimal condition allows a speaker to be intentionally vague, while still communicating meaningful information. The speaker who uses selbri negation is denying one relationship, while minimally asserting a different relationship.
+We also need a scalar negation form that has a scope longer than a single brivla. There exists such a longer-scope selbri negation form, as exemplified by (each Lojban sentence in the next several examples is given twice, with parentheses in the second copy showing the scope of the __na'e__):
+**Example 15.50. **
+mi | na'e | ke | cadzu | klama | [ke'e] | le | zarci  
+---|---|---|---|---|---|---|---  
+mi | na'e | (ke | cadzu | klama | [ke'e]) | le | zarci  
+I | other-than | ( | walkingly | go-to | ) | the | market.  
+  
+
+This negation uses the same __ke__ and __ke'e__ delimiters (the __ke'e__ is always elidable at the end of a selbri) that are used in tanru. The sentence clearly negates the entire selbri. The __ke'e__ , whether elided or not, reminds us that the negation does not include the trailing sumti. While the trailing-sumti place-structure is defined as that of the final brivla, the trailing sumti themselves are not part of the selbri and are thus not negated by __na'e__.
+Negations of just part of the selbri are also permitted:
+**Example 15.51. **
+mi | na'e | ke | sutra | cadzu | ke'e | klama | le | zarci  
+---|---|---|---|---|---|---|---|---  
+mi | na'e | (ke | sutra | cadzu | ke'e) | klama | le | zarci  
+I | other-than | ( | quickly | walkingly | ) | go-to | the | market.  
+  
+
+In Example 15.51, only the _sutra cadzu_ tanru is negated, so the speaker is indeed going to the market, but not by walking quickly.
+Negations made with __na'e__ or _na'eke_ also include within their scope any sumti attached to the brivla or tanru with __be__ or __bei__. Such attached sumti are considered part of the brivla or tanru:
+**Example 15.52. **
+mi | na'e | ke | sutra | cadzu | be | le | mi | birka  
+---|---|---|---|---|---|---|---|---  
+I | other-than | ( | quickly | walking | on | the | of-me | arms-ly  
+ke'e | klama | le | zarci  
+---|---|---|---  
+) | go-to | the | market.  
+  
+
+Note that Example 15.53 and Example 15.54 do not express the same thing:
+**Example 15.53. **
+mi | na'e | ke | sutra | cadzu | [ke'e] | lemi | birka  
+---|---|---|---|---|---|---|---  
+mi | na'e | (ke | sutra | cadzu | [ke'e]) | lemi | birka  
+I | other-than | ( | quickly | walk-on | ) | my | arms.  
+  
+
+**Example 15.54. **
+mi | na'e | ke | sutra | cadzu | be | lemi | birka | [ke'e]  
+---|---|---|---|---|---|---|---|---  
+mi | na'e | (ke | sutra | cadzu | be | lemi | birka | [ke'e])  
+I | other-than | ( | quickly | walk | on | my | arms | ).  
+  
+
+The translations show that the negation in Example 15.53 is more restricted in scope; i.e. less of the sentence is negated with respect to x1 (__mi__).
+Logical scope being an important factor in Lojban's claims to be unambiguous, let us indicate the relative precedence of __na'e__ as an operator. Grouping with __ke__ and __ke'e__ , of course, has an overt scope, which is its advantage. __na'e__ is very close binding to its brivla. Internal binding of tanru, with __bo__ , is not as tightly bound as __na'e__. __co__ , the tanru inversion operator has a scope that is longer than all other tanru constructs.
+In short, __na'e__ and _na'eke_ define a type of negation, which is shorter in scope than bridi negation, and which affects all or part of a selbri. The result of __na'e__ negation remains an assertion of some specific truth and not merely a denial of another claim.
+The similarity becomes striking when it is noticed that the rafsi _-nal-_ , representing __na'e__ when a tanru is condensed into a lujvo, forms an exact parallel to the English usage of _non-_. Turning a series of related negations into lujvo gives:
+**Example 15.55. **
+  * na'e klama becomes nalkla
+  * na'e cadzu klama becomes naldzukla
+  * na'e sutra cadzu klama becomes nalsu'adzukla
+  * nake sutra cadzu ke'e klama becomes nalsu'adzuke'ekla
+
+
+  
+
+Note: _-kem-_ is the rafsi for __ke__ , but it is omitted in the final lujvo as superfluous – __ke'e__ is its own rafsi, and its inclusion in the lujvo implies a __ke__ after the _-nal-_ , since it needs to close something; only a __ke__ immediately after the negation would make the __ke'e__ meaningful in the tanru expressed in this lujvo.
+In a lujvo, it is probably clearest to translate _-nal-_ as “non-”, to match the English combining forms, except when the __na'e__ has single word scope and English uses “un-” or “im-” to negate that single word. Translation style should determine the use of “other than”, “non-”, or another negator for __na'e__ in tanru; the translator must render the Lojban into English so it is clear in context. Let's go back to our simplest example:
+**Example 15.56. **
+mi | na'e | klama | le | zarci  
+---|---|---|---|---  
+I | other-than | (go-to) | the | market.  
+I | not | go-to | the | market.  
+  
+
+**Example 15.57. **
+mi | nalkla | le | zarci  
+---|---|---|---  
+I | am-a-non-go-er-to | the | market.  
+  
+
+Note that to compare with the English translation form using “non-”, we've translated the Lojban as if the selbri were a noun. Since Lojban __klama__ is indifferently a noun, verb, or adjective, the difference is purely a translation change, not a true change in meaning. The English difference seems significant, though, due to the strongly different English grammatical forms and the ambiguity of English negation.
+Consider the following highly problematic sentence:
+**Example 15.58. **
+lo | ca | nolraitru  
+---|---|---  
+An-actual | currently | noblest-governor  
+be | le | fasygu'e | cu | krecau  
+---|---|---|---|---  
+of | the | French-country |  | is-hair-without.  
+The current King of France is bald.  
+---  
+  
+
+The selbri __krecau__ negates with __na'e__ as:
+**Example 15.59. **
+lo | ca | nolraitru  
+---|---|---  
+An-actual | currently | noblest-governor  
+be | le | fasygu'e | cu | na'e | krecau  
+---|---|---|---|---|---  
+of | the | French-country |  | is-other-than | hair-without.  
+The current King of France is other-than-bald.  
+---  
+  
+
+or, as a lujvo:
+**Example 15.60. **
+lo | ca | nolraitru  
+---|---|---  
+An-actual | currently | noblest-governor  
+be | le | fasygu'e | cu | nalkrecau  
+---|---|---|---|---  
+of | the | French-country |  | is-non-hair-without.  
+The current King of France is a non-bald-one.  
+---  
+  
+
+Example 15.59 and Example 15.60 express the predicate negation forms using a negation word (__na'e__) or rafsi (_-nal-_); yet they make positive assertions about the current King of France; ie., that he is other-than-bald or non-bald. This follows from the close binding of __na'e__ to the brivla. The lujvo form makes this overt by absorbing the negative marker into the word.
+Since there is no current King of France, it is false to say that he is bald, or non-bald, or to make any other affirmative claim about him. Any sentence about the current King of France containing only a selbri negation is as false as the sentence without the negation. No amount of selbri negations have any effect on the truth value of the sentence, which is invariably “false”, since no affirmative statement about the current King of France can be true. On the other hand, bridi negation does produce a truth:
+**Example 15.61. **
+lo | ca | nolraitru  
+---|---|---  
+An-actual | current | noblest-governor  
+be | le | fasygu'e | cu | na | krecau  
+---|---|---|---|---|---  
+of | the | French-country |  | [false] | is-hair-without.  
+It is false that the current King of France is bald.  
+---  
+  
+
+Note: __lo__ is used in these sentences because negation relates to truth conditions. To meaningfully talk about truth conditions in sentences carrying a description, it must be clear that the description actually applies to the referent. A sentence using __le__ instead of __lo__ can be true even if there is no current king of France, as long as the speaker and the listener agree to describe something as the current king of France. (See the explanations of __le__ in Section 6.2.)
+* * *
+Chapter 15. “No” Problems: On Lojban Negation  
+---  
+Prev: Section 15.3 |  Next: Section 15.5  
+---|---  
+Table of Contents
+Book Info Page

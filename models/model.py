@@ -23,6 +23,8 @@ class ModelType(Enum):
     ANTHROPIC = 10
     LLAMA3 = 11
     REPETITIVE = 12
+    # an open source OpenAI model to be run locally
+    OPEN_WEIGHTS_OPENAI = 13
 
 
 class BestOfNConfig(BaseModel):

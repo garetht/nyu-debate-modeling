@@ -1,0 +1,107 @@
+Chapter 19. Putting It All Together: Notes on the Structure of Lojban Texts  
+---  
+Prev: Section 19.11 |  Next: Section 19.13  
+---|---  
+Table of Contents
+Book Info Page
+* * *
+## 19.12. Parenthesis and metalinguistic commentary: TO, TOI, SEI
+The following cmavo are discussed in this section:
+to |  TO |  open parenthesis  
+---|---|---  
+to'i |  TO |  open editorial parenthesis  
+toi |  TOI |  close parenthesis  
+sei |  SEI |  metalinguistic bridi marker  
+The cmavo __to__ and __toi__ are discursive (non-mathematical) parentheses, for inserting parenthetical remarks. Any text whatsoever can go within the parentheses, and it is completely invisible to its context. It can, however, refer to the context by the use of pro-sumti and pro-bridi: any that have been assigned in the context are still assigned in the parenthetical remarks, but the reverse is not true.
+**Example 19.66. **
+doi | lisas. | mi | djica | le | nu | to | doi | frank.  
+---|---|---|---|---|---|---|---|---  
+O | Lisa, | I | desire | the | event-of | ( | O | Frank,  
+ko | sisti | toi | do | viska | le | mlatu  
+---|---|---|---|---|---|---  
+[imperative] | stop! | ) | you | see | the | cat.  
+Lisa, I want you to (Frank! Stop!) see the cat.  
+---  
+  
+
+Example 19.66 implicitly redefines __do__ within the parentheses: the listener is changed by _doi frank._ When the context sentence resumes, however, the old listener, Lisa, is automatically restored.
+There is another cmavo of selma'o TO: __to'i__. The difference between __to__ and __to'i__ is the difference between parentheses and square brackets in English prose. Remarks within _to ... toi_ cmavo are implicitly by the same speaker, whereas remarks within _to'i ... toi_ are implicitly by someone else, perhaps an editor:
+**Example 19.67. **
+la frank. cusku lu mi prami do to'isa'a do du la djein. toi li'u  
+---  
+Frank expresses “I love you [you = Jane]”  
+---  
+  
+
+The __sa'a__ suffix is a discursive cmavo (of selma'o UI) meaning “editorial insertion”, and indicating that the marked word or construct (in this case, the entire bracketed remark) is not part of the quotation. It is required whenever the _to'i ... toi_ remark is physically within quotation marks, at least when speaking to literal-minded listeners; the convention may be relaxed if no actual confusion results.
+Note: The parser believes that parentheses are attached to the previous word or construct, because it treats them as syntactic equivalents of subscripts and other such so-called “free modifiers”. Semantically, however, parenthetical remarks are not necessarily attached either to what precedes them or what follows them.
+The cmavo __sei__ (of selma'o SEI) begins an embedded discursive bridi. Comments added with __sei__ are called “metalinguistic”, because they are comments about the discourse itself rather than about the subject matter of the discourse. This sense of the term “metalinguistic” is used throughout this chapter, and is not to be confused with the sense “language for expressing other languages”.
+When marked with __sei__ , a metalinguistic utterance can be embedded in another utterance as a discursive. In this way, discursives which do not have cmavo assigned in selma'o UI can be expressed:
+**Example 19.68. **
+la frank. prami sei la frank. gleki la djein.  
+---  
+Frank loves (Frank is happy) Jane.  
+---  
+  
+
+Using the happiness attitudinal, __.ui__ , would imply that the speaker was happy. Instead, the speaker attributes happiness to Frank. It would probably be safe to elide the one who is happy, and say:
+**Example 19.69. **
+la frank. prami sei gleki la djein.  
+---  
+Frank loves (he is happy) Jane.  
+---  
+  
+
+The grammar of the bridi following __sei__ has an unusual limitation: the sumti must either precede the selbri, or must be glued into the selbri with __be__ and __bei__ :
+**Example 19.70. **
+la frank. prami sei gleki be fa la suzn. la djein.  
+---  
+Frank loves (Susan is happy) Jane.  
+---  
+  
+
+This restriction allows the terminator cmavo __se'u__ to almost always be elided.
+Since a discursive utterance is working at a “higher” level of abstraction than a non-discursive utterance, a non-discursive utterance cannot refer to a discursive utterance. Specifically, the various back-counting, reciprocal, and reflexive constructs in selma'o KOhA ignore the utterances at “higher” metalinguistic levels in determining their referent. It is possible, and sometimes necessary, to refer to lower metalinguistic levels. For example, the English “he said” in a conversation is metalinguistic. For this purpose, quotations are considered to be at a lower metalinguistic level than the surrounding context (a quoted text cannot refer to the statements of the one who quotes it), whereas parenthetical remarks are considered to be at a higher level than the context.
+Lojban works differently from English in that the “he said” can be marked instead of the quotation. In Lojban, you can say:
+**Example 19.71. **
+la | djan. | cusku | lu | mi | klama | le | zarci | li'u  
+---|---|---|---|---|---|---|---|---  
+| John | expresses | [quote] | I | go-to | the | store | [unquote].  
+  
+
+which literally claims that John uttered the quoted text. If the central claim is that John made the utterance, as is likely in conversation, this style is the most sensible. However, in written text which quotes a conversation, you don't want the “he said” or “she said” to be considered part of the conversation. If unmarked, it could mess up the anaphora counting. Instead, you can use:
+**Example 19.72. **
+lu | mi | klama | le | zarci | seisa'a  
+---|---|---|---|---|---  
+[quote] | I | go-to | the | store | (  
+la | djan. | cusku | be | dei | li'u  
+---|---|---|---|---|---  
+| John | expresses |  | this-sentence | )[unquote]  
+“I go to the store”, said John.  
+---  
+  
+
+And of course other orders are possible:
+**Example 19.73. **
+lu seisa'a la djan. cusku be dei mi klama le zarci  
+---  
+John said, “I go to the store”.  
+---  
+  
+
+**Example 19.74. **
+lu mi klama seisa'a la djan cusku le zarci  
+---  
+“I go”, John said, “to the store”.  
+---  
+  
+
+Note the __sa'a__ following each __sei__ , marking the __sei__ and its attached bridi as an editorial insert, not part of the quotation. In a more relaxed style, these __sa'a__ cmavo would probably be dropped.
+The elidable terminator for __sei__ is __se'u__ (of selma'o SEhU); it is rarely needed, except to separate a selbri within the __sei__ comment from an immediately following selbri (or component) outside the comment.
+* * *
+Chapter 19. Putting It All Together: Notes on the Structure of Lojban Texts  
+---  
+Prev: Section 19.11 |  Next: Section 19.13  
+---|---  
+Table of Contents
+Book Info Page

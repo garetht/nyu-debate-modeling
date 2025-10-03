@@ -1,0 +1,83 @@
+Chapter 12. Dog House And White House: Determining lujvo Place Structures  
+---  
+Prev: Section 12.12 |  Next: Section 12.14  
+---|---  
+Table of Contents
+Book Info Page
+* * *
+## 12.13. Implicit-abstraction lujvo
+Eliding NU rafsi involves the same restrictions as eliding SE rafsi, plus additional ones. In general, NU rafsi should not be elided from the tertau, since that changes the kind of thing the lujvo is talking about from an abstraction to a concrete sumti. However, they may be elided from the seltau if no reasonable ambiguity would result.
+A major difference, however, between SE elision and NU elision is that the former is a rather sparse process, providing a few convenient shortenings. Eliding __nu__ , however, is extremely important in producing a class of lujvo called “implicit-abstraction lujvo”.
+Let us make a detailed analysis of the lujvo _nunctikezgau_ , meaning “to feed”. (If you think this lujvo is excessively longwinded, be patient.) The veljvo of _nunctikezgau_ is _nu citka kei gasnu_. The relevant place structures are:
+**Example 12.64. **
+__nu__ : n1 is an event
+__citka__ : c1 eats c2
+__gasnu__ : g1 does action/is the agent of event g2
+  
+
+In accordance with the procedure for analyzing three-part lujvo given in Section 12.8, we will first create an intermediate lujvo, __nuncti__ , whose veljvo is _nu citka [kei]_. By the rules given in Section 12.12, __nuncti__ has the place structure
+**Example 12.65. **
+> n1 is the event of c1 eating c2
+  
+
+Now we can transform the veljvo of _nunctikezgau_ into _nuncti gasnu_. The g2 place (what is brought about by the actor g1) obviously denotes the same thing as n1 (the event of eating). So we can eliminate g2 as redundant, leaving us with a tentative place structure of
+**Example 12.66. **
+> g1 is the actor in the event n1=g2 of c1 eating c2
+  
+
+But it is also possible to omit the n1 place itself! The n1 place describes the event brought about; an event in Lojban is described as a bridi, by a selbri and its sumti; the selbri is already known (it's the seltau), and the sumti are also already known (they're in the lujvo place structure). So n1 would not give us any information we didn't already know. In fact, the n1=g2 place is dependent on c1 and c2 jointly – it does not depend on either c1 or c2 by itself. Being dependent and derived from the seltau, it is omissible. So the final place structure of _nunctikezgau_ is:
+**Example 12.67. **
+> g1 is the actor in the event of c1 eating c2
+  
+
+There is one further step that can be taken. As we have already seen with __balsoi__ in Section 12.5, the interpretation of lujvo is constrained by the semantics of gismu and of their sumti places. Now, any asymmetrical lujvo with __gasnu__ as its tertau will involve an event abstraction either implicitly or explicitly, since that is how the g2 place of __gasnu__ is defined.
+Therefore, if we assume that __nu__ is the type of abstraction one would expect to be a _se gasnu_ , then the rafsi _nun_ and _kez_ in _nunctikezgau_ are only telling us what we would already have guessed – that the seltau of a __gasnu__ lujvo is an event. If we drop these rafsi out, and use instead the shorter lujvo __ctigau__ , rejecting its symmetrical interpretation (“someone who both does and eats”; “an eating doer”), we can still deduce that the seltau refers to an event.
+(You can't “do an eater”/ _gasnu lo citka_ , with the meaning of __do__ as “bring about an event”; so the seltau must refer to an event, _nu citka_. The English slang meanings of “do someone”, namely “socialize with someone” and “have sex with someone”, are not relevant to __gasnu__.)
+So we can simply use __ctigau__ with the same place structure as _nunctikezgau_ :
+**Example 12.68. **
+> agent g1 causes c1 to eat c2
+> g1 feeds c2 to c1
+  
+
+This particular kind of asymmetrical lujvo, in which the seltau serves as the selbri of an abstraction which is a place of the tertau, is called an implicit-abstraction lujvo, because one deduces the presence of an abstraction which is unexpressed (implicit).
+To give another example: the gismu __basti__ , whose place structure is
+**Example 12.69. **
+> b1 replaces b2 in circumstances b3
+  
+
+can form the lujvo __basygau__ , with the place structure:
+**Example 12.70. **
+> g1 (agent) replaces b1 with b2 in circumstances b3
+  
+
+where both __basti__ and __basygau__ are translated “replace” in English, but represent different relations: __basti__ may be used with no mention of any agent doing the replacing.
+In addition, __gasnu__ -based lujvo can be built from what we would consider nouns or adjectives in English. In Lojban, everything is a predicate, so adjectives, nouns and verbs are all treated in the same way. This is consistent with the use of similar causative affixes in other languages. For example, the gismu __litki__ , meaning “liquid”, with the place structure
+**Example 12.71. **
+> l1 is a quantity of liquid of composition l2 under conditions l3
+  
+
+can give _likygau_ , meaning “to liquefy”:
+**Example 12.72. **
+> g1 (agent) causes l1 to be a quantity of liquid of composition l2 under conditions l3.
+  
+
+While _likygau_ correctly represents “causes to be a liquid”, a different lujvo based on __galfi__ (meaning “modify”) may be more appropriate for “causes to become a liquid”. On the other hand, _fetsygau_ is potentially confusing, because it could mean “agent in the event of something becoming female” (the implicit-abstraction interpretation) or simply “female agent” (the parallel interpretation), so using implicit-abstraction lujvo is always accompanied with some risk of being misunderstood.
+Many other Lojban gismu have places for event abstractions, and therefore are good candidates for the tertau of an implicit-abstraction lujvo. For example, lujvo based on __rinka__ , with its place structure
+**Example 12.73. **
+> event r1 causes event r2 to occur
+  
+
+are closely related to those based on __gasnu__. However, __rinka__ is less generally useful than __gasnu__ , because its r1 place is another event rather than a person: _lo rinka_ is a cause, not a causer. Thus the place structure of _likyri'a_ , a lujvo analogous to _likygau_ , is
+**Example 12.74. **
+event r1 causes l1 to be a quantity of liquid of composition l2 under conditions l3
+  
+
+and would be useful in translating sentences like “The heat of the sun liquefied the block of ice.”
+Implicit-abstraction lujvo are a powerful means in the language of rendering quite verbose bridi into succinct and manageable concepts, and increasing the expressive power of the language.
+* * *
+Chapter 12. Dog House And White House: Determining lujvo Place Structures  
+---  
+Prev: Section 12.12 |  Next: Section 12.14  
+---|---  
+Table of Contents
+Book Info Page

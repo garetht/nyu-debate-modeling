@@ -1,0 +1,89 @@
+Chapter 14. If Wishes Were Horses: The Lojban Connective System  
+---  
+Prev: Section 14.6 |  Next: Section 14.8  
+---|---  
+Table of Contents
+Book Info Page
+* * *
+## 14.7. More than two propositions
+So far we have seen logical connectives used to connect exactly two sentences. How about connecting three or more? Is this possible in Lojban? The answer is yes, subject to some warnings and some restrictions.
+Of the four primitive truth functions A, E, O, and U, all but O have the same truth values no matter how their component sentences are associated in pairs. Therefore,
+**Example 14.31. **
+mi | dotco | .ije | mi | ricfu | .ije | mi | nanmu  
+---|---|---|---|---|---|---|---  
+I | am-German. | And | I | am-rich. | And | I | am-a-man.  
+  
+
+means that all three component sentences are true. Likewise,
+**Example 14.32. **
+mi | dotco | .ija | mi | ricfu | .ija | mi | nanmu  
+---|---|---|---|---|---|---|---  
+I | am-German. | Or | I | am-rich. | Or | I | am-a-man.  
+  
+
+means that one or more of the component sentences is true.
+O, however, is different. Working out the truth table for
+**Example 14.33. **
+mi | dotco | .ijo | mi | ricfu | .ijo | mi | nanmu  
+---|---|---|---|---|---|---|---  
+I | am-German. | If-and-only-if | I | am-rich. | If-and-only-if | I | am-a-man.  
+  
+
+shows that Example 14.33 does not mean that either I am all three of these things or none of them; instead, an accurate translation would be:
+> Of the three properties – German-ness, wealth, and manhood – I possess either exactly one or else all three.
+Because of the counterintuitiveness of this outcome, it is safest to avoid O with more than two sentences. Likewise, the connectives which involve negation also have unexpected truth values when used with more than two sentences.
+In fact, no combination of logical connectives can produce the “all or none” interpretation intended (but not achieved) by Example 14.33 without repeating one of the bridi. See Example 14.48.
+There is an additional difficulty with the use of more than two sentences. What is the meaning of: 
+**Example 14.34. **
+mi | nelci | la | djan. | .ije | mi | nelci | la | martas.  
+---|---|---|---|---|---|---|---|---  
+I | like | that-named | John. | And | I | like | that-named | Martha.  
+.ija | mi | nelci | la | meris.  
+---|---|---|---|---  
+Or | I | like | that-named | Mary.  
+  
+
+Does this mean:
+**Example 14.35. **
+I like John, and I like either Martha or Mary or both.
+  
+
+Or is the correct translation:
+**Example 14.36. **
+Either I like John and I like Martha, or I like Mary, or both.
+  
+
+Example 14.36 is the correct translation of Example 14.34. The reason is that Lojban logical connectives pair off from the left, like many constructs in the language. This rule, called the left-grouping rule, is easy to forget, especially when intuition pulls the other way. Forethought connectives are not subject to this problem:
+**Example 14.37. **
+ga | ge | mi | nelci | la | djan.  
+---|---|---|---|---|---  
+Either | (Both | I | like | that-named | John  
+gi | mi | nelci | la | martas.  
+---|---|---|---|---  
+and | I | like | that-named | Martha)  
+gi | mi | nelci | la | meris.  
+---|---|---|---|---  
+or | I | like | that-named | Mary.  
+  
+
+is equivalent in meaning to Example 14.34, whereas
+**Example 14.38. **
+ge | mi | nelci | la | djan.  
+---|---|---|---|---  
+Both | I | like | that-named | John  
+gi | ga | mi | nelci | la | martas.  
+---|---|---|---|---|---  
+and | (Either | I | like | that-named | Martha  
+gi | mi | nelci | la | meris.  
+---|---|---|---|---  
+or | I | like | that-named | Mary).  
+  
+
+is not equivalent to Example 14.34, but is instead a valid translation into Lojban, using forethought, of Example 14.35.
+* * *
+Chapter 14. If Wishes Were Horses: The Lojban Connective System  
+---  
+Prev: Section 14.6 |  Next: Section 14.8  
+---|---  
+Table of Contents
+Book Info Page

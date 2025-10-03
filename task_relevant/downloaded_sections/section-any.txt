@@ -1,0 +1,98 @@
+Chapter 16. “Who Did You Pass On The Road? Nobody”: Lojban And Logic  
+---  
+Prev: Section 16.7 |  Next: Section 16.9  
+---|---  
+Table of Contents
+Book Info Page
+* * *
+## 16.8. The problem of “any”
+Consider the English sentence 
+**Example 16.47. **
+Anyone who goes to the store, walks across the field.
+  
+
+Using the facilities already discussed, a plausible translation might be
+**Example 16.48. **
+ro | da | poi | klama | le | zarci | cu | cadzu | le | foldi  
+---|---|---|---|---|---|---|---|---|---  
+All | X | such-that-it | goes-to | the | store |  | walks-on | the | field.  
+Everyone who goes to the store walks across the field.  
+---  
+  
+
+But there is a subtle difference between Example 16.47 and Example 16.48. Example 16.48 tells us that, in fact, there are people who go to the store, and that they walk across the field. A sumti of the type _ro da poi klama_ requires that there are things which __klama__ : Lojban universal claims always imply the corresponding existential claims as well. Example 16.47, on the other hand, does not require that there are any people who go to the store: it simply states, conditionally, that if there is anyone who goes to the store, he or she walks across the field as well. This conditional form mirrors the true Lojban translation of Example 16.47:
+**Example 16.49. **
+ro | da | zo'u | da | go | klama | le | zarci  
+---|---|---|---|---|---|---|---  
+For-every | X | : | X | if-and-only-if | it-is-a-goer-to | the | store  
+gi | cadzu | le | foldi  
+---|---|---|---  
+| is-a-walker-on | the | field.  
+  
+
+Although Example 16.49 is a universal claim as well, its universality only implies that there are objects of some sort or another in the universe of discourse. Because the claim is conditional, nothing is implied about the existence of goers-to-the-store or of walkers-on-the-field, merely that any entity which is one is also the other.
+There is another use of “any” in English that is not universal but existential. Consider
+**Example 16.50. **
+I need any box that is bigger than this one.
+  
+
+Example 16.50 does not at all mean that I need every box bigger than this one, for indeed I do not; I require only one box. But the naive translation
+**Example 16.51. **
+mi | nitcu | da | poi | tanxe | gi'e | bramau | ti  
+---|---|---|---|---|---|---|---  
+I | need | some-X | which | is-a-box | and | is-bigger-than | this-one  
+  
+
+does not work either, because it asserts that there really is such a box, as the prenex paraphrase demonstrates:
+**Example 16.52. **
+da | poi | tanxe | gi'e | bramau | ti | zo'u | mi | nitcu | da  
+---|---|---|---|---|---|---|---|---|---  
+There-is-an-X | which | is-a-box | and | is-bigger-than | this | : | I | need | X.  
+  
+
+What to do? Well, the x2 place of __nitcu__ can be filled with an event as well as an object, and in fact Example 16.51 can also be paraphrased as:
+**Example 16.53. **
+mi | nitcu | lo | nu | mi | ponse | lo | tanxe  
+---|---|---|---|---|---|---|---  
+I | need | an | event-of | I | possess | some | box(es)  
+poi | bramau | ti  
+---|---|---  
+which-are | bigger-than | this-one.  
+  
+
+Rewritten using variables, Example 16.53 becomes
+**Example 16.54. **
+mi | nitcu | lo | nu | da | zo'u  
+---|---|---|---|---|---  
+I | need | an | event-of | there-being-an-X | such-that:  
+da | se | ponse | mi  
+---|---|---|---  
+X |  | is-possessed-by | me  
+gi'e | tanxe | gi'e | bramau | ti  
+---|---|---|---|---  
+and | is-a-box | and | is-bigger-than | this-thing.  
+  
+
+So we see that a prenex can be attached to a bridi that is within a sentence. By default, a variable always behaves as if it is bound in the prenex which (notionally) is attached to the smallest enclosing bridi, and its scope does not extend beyond that bridi. However, the variable may be placed in an outer prenex explicitly:
+**Example 16.55. **
+da | poi | tanxe | gi'e | bramau | ti | zo'u  
+---|---|---|---|---|---|---  
+There-is-an-X | which | is-a-box | and | is-bigger-than | this-one | such-that:  
+mi | nitcu | le | nu | mi | ponse | da  
+---|---|---|---|---|---|---  
+I | need | the | event-of | my | possessing | X.  
+  
+
+But what are the implications of Example 16.53 and Example 16.55? The main difference is that in Example 16.55, the __da__ is said to exist in the real world of the outer bridi; but in Example 16.53, the existence is only within the inner bridi, which is a mere event that need not necessarily come to pass. So Example 16.55 means
+**Example 16.56. **
+There's a box, bigger than this one, that I need
+  
+
+which is what Example 16.52 says, whereas Example 16.53 turns out to be an effective translation of our original Example 16.47. So uses of “any” that aren't universal end up being reflected by variables bound in the prenex of a subordinate bridi.
+* * *
+Chapter 16. “Who Did You Pass On The Road? Nobody”: Lojban And Logic  
+---  
+Prev: Section 16.7 |  Next: Section 16.9  
+---|---  
+Table of Contents
+Book Info Page

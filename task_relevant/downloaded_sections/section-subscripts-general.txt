@@ -1,0 +1,132 @@
+Chapter 19. Putting It All Together: Notes on the Structure of Lojban Texts  
+---  
+Prev: Section 19.5 |  Next: Section 19.7  
+---|---  
+Table of Contents
+Book Info Page
+* * *
+## 19.6. Subscripts: XI
+The following cmavo is discussed in this section:
+xi |  XI |  subscript  
+---|---|---  
+The cmavo __xi__ (of selma'o XI) indicates that a subscript (a number, a lerfu string, or a parenthesized mekso) follows. Subscripts can be attached to almost any construction and are placed following the construction (or its terminator word, which is generally required). They are useful either to extend the finite cmavo list to infinite length, or to make more refined distinctions than the standard cmavo list permits. The remainder of this section mentions some places where subscripts might naturally be used.
+Lojban gismu have at most five places:
+**Example 19.24. **
+mi | cu | klama |  | le | zarci |  | le | zdani |  | le | dargu |  | le | karce  
+---|---|---|---|---|---|---|---|---|---|---|---|---|---|---  
+I |  | go | to | the | market | from | the | house | via | the | road | using | the | car.  
+  
+
+Consequently, selma'o SE (which operates on a selbri to change the order of its places) and selma'o FA (which provides place number tags for individual sumti) have only enough members to handle up to five places. Conversion of Example 19.24, using __xe__ to swap the x1 and x5 places, would produce:
+**Example 19.25. **
+le | karce | cu | xe-klama |  | le | zarci  
+---|---|---|---|---|---|---  
+The | car |  | is-a-transportation-means | to | the | market  
+| le | zdani |  | le | dargu |  | mi  
+---|---|---|---|---|---|---|---  
+from | the | house | via | the | road | for | me.  
+  
+
+And reordering of the place structures might produce:
+**Example 19.26. **
+fo | le | dargu | fi | le | zdani | fa | mi  
+---|---|---|---|---|---|---|---  
+Via | the | road, | from | the | house, |  | I,  
+fe | le | zarci | fu | le | karce | cu | klama  
+---|---|---|---|---|---|---|---  
+to | the | market, | using | the | car, |  | go.  
+  
+
+Example 19.24 to Example 19.26 all mean the same thing. But consider the lujvo __nunkla__ , formed by applying the abstraction operator __nu__ to __klama__ :
+**Example 19.27. **
+la'e | di'u | cu | nunkla |  | mi  
+---|---|---|---|---|---  
+The-referent-of | the-previous-sentence |  | is-an-event-of-going | by | me  
+| le | zarci |  | le | zdani |  | le | dargu |  | le | karce  
+---|---|---|---|---|---|---|---|---|---|---|---  
+to | the | market | from | the | house | via | the | road | using | the | car.  
+  
+
+Example 19.27 shows that __nunkla__ has six places: the five places of __klama__ plus a new one (placed first) for the event itself. Performing transformations similar to that of Example 19.25 requires an additional conversion cmavo that exchanges the x1 and x6 places. The solution is to use any cmavo of SE with a subscript "6" (Section 19.6):
+**Example 19.28. **
+le | karce | cu | sexixa nunkla |  | mi  
+---|---|---|---|---|---  
+The | car |  | is-a-transportation-means-in-the-event-of-going | by | me  
+| le | zarci |  | le | zdani  
+---|---|---|---|---|---  
+to | the | market | from | the | house  
+| le | dargu | la'edi'u  
+---|---|---|---  
+via | the | road | is-an-event-which-is-referred-to-by-the-last-sentence.  
+  
+
+Likewise, a sixth place tag can be created by using any cmavo of FA with a subscript:
+**Example 19.29. **
+fu | le | dargu | fo | le | zdani | fe | mi  
+---|---|---|---|---|---|---|---  
+Via | the | road, | from | the | house, | by | me,  
+fa | la'edi'u  
+---|---  
+| is-an-event-which | is-referred-to-by-the-last-sentence,  
+fi | le | zarci | faxixa | le | karce | cu | nunkla  
+---|---|---|---|---|---|---|---  
+to | the | market, | using | the | car, |  | is-an-event-of-going.  
+  
+
+Example 19.27 to Example 19.29 also all mean the same thing, and each is derived straightforwardly from any of the others, despite the tortured nature of the English glosses. In addition, any other member of SE or FA could be substituted into _sexixa_ and _faxixa_ without change of meaning: _vexixa_ means the same thing as _sexixa_.
+Lojban provides two groups of pro-sumti, both belonging to selma'o KOhA. The ko'a-series cmavo are used to refer to explicitly specified sumti to which they have been bound using __goi__. The da-series, on the other hand, are existentially or universally quantified variables. (These concepts are explained more fully in Chapter 16.) There are ten ko'a-series cmavo and 3 da-series cmavo available.
+If more are required, any cmavo of the ko'a-series or the da-series can be subscripted:
+**Example 19.30. **
+da | xi | vo  
+---|---|---  
+X | sub | 4  
+  
+
+is the 4th bound variable of the 1st sequence of the da-series, and
+**Example 19.31. **
+ko'i | xi | paso  
+---|---|---  
+something-3 | sub | 18  
+  
+
+is the 18th free variable of the 3rd sequence of the ko'a-series. This convention allows 10 sequences of ko'a-type pro-sumti and 3 sequences of da-type pro-sumti, each with as many members as needed. Note that _daxivo_ and _dexivo_ are considered to be distinct pro-sumti, unlike the situation with _sexixa_ and _vexixa_ above. Exactly similar treatment can be given to the bu'a-series of selma'o GOhA and to the gismu pro-bridi __broda__ , __brode__ , __brodi__ , __brodo__ , and __brodu__.
+Subscripts on lerfu words are used in the standard mathematical way to extend the number of variables:
+**Example 19.32. **
+li | xy.boixipa | du | li | xy.boixire | su'i | xy.boixici  
+---|---|---|---|---|---|---  
+The-number | x-sub-1 | equals | the-number | x-sub-2 | plus | x-sub-3  
+x1 = x2 \+ x3  
+  
+
+and can be used to extend the number of pro-sumti as well, since lerfu strings outside mathematical contexts are grammatically and semantically equivalent to pro-sumti of the ko'a-series. (In Example 19.32, note the required terminator __boi__ after each __xy.__ cmavo; this terminator allows the subscript to be attached without ambiguity.)
+Names, which are similar to pro-sumti, can also be subscripted to distinguish two individuals with the same name:
+**Example 19.33. **
+la | djan. | xipa | cusku | lu | mi'enai | do | li'u | la | djan. | xire  
+---|---|---|---|---|---|---|---|---|---|---  
+| John |  1 | expresses | [quote] | I-am-not | you | [unquote] | to |  | John |  2 | .  
+  
+
+Subscripts on tenses allow talking about more than one time or place that is described by the same general cmavo. For example, _puxipa_ could refer to one point in the past, and _puxire_ a second point (earlier or later).
+You can place a subscript on the word __ja'a__ , the bridi affirmative of selma'o NA, to express so-called fuzzy truths. The usual machinery for fuzzy logic (statements whose truth value is not merely “true” or “false”, but is expressed by a number in the range 0 to 1) in Lojban is the abstractor __jei__ :
+**Example 19.34. **
+li | pimu | jei | mi | ganra  
+---|---|---|---|---  
+The-number | .5 | is-the-truth-value-of | my | being-broad.  
+  
+
+However, by convention we can attach a subscript to __ja'a__ to indicate fuzzy truth (or to __na__ if we change the amount):
+**Example 19.35. **
+mi | ja'a | xipimu | ganra  
+---|---|---|---  
+I | truly | sub-.5 | am-broad  
+  
+
+Finally, as mentioned in Section 19.2, __ni'o__ and __no'i__ cmavo with matching subscripts mark the start and the continuation of a given topic respectively. Different topics can be assigned to different subscripts.
+Other uses of subscripts will doubtless be devised in future.
+* * *
+Chapter 19. Putting It All Together: Notes on the Structure of Lojban Texts  
+---  
+Prev: Section 19.5 |  Next: Section 19.7  
+---|---  
+Table of Contents
+Book Info Page

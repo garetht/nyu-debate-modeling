@@ -1,0 +1,159 @@
+Chapter 14. If Wishes Were Horses: The Lojban Connective System  
+---  
+Prev: Section 14.15 |  Next: Section 14.17  
+---|---  
+Table of Contents
+Book Info Page
+* * *
+## 14.16. Interval connectives and forethought non-logical connection
+In addition to the non-logical connectives of selma'o JOI explained in Section 14.14 and Section 14.15, there are three other connectives which can appear in joiks: __bi'i__ , __bi'o__ , and __mi'i__ , all of selma'o BIhI. The first two cmavo are used to specify intervals: abstract objects defined by two endpoints. The cmavo __bi'i__ is correct if the endpoints are independent of order, whereas __bi'o__ or __se__ __bi'o__ are used when order matters.
+An example of __bi'i__ in sumti connection:
+**Example 14.138. **
+mi | ca | sanli  
+---|---|---  
+I | [present] | stand-on-surface  
+la | drezdn. | bi'i | la | frankfurt.  
+---|---|---|---|---  
+that-named | Dresden | [interval] | that-named | Frankfurt.  
+I am standing between Dresden and Frankfurt.  
+---  
+  
+
+In Example 14.138, it is all the same whether I am standing between Dresden and Frankfurt or between Frankfurt and Dresden, so __bi'i__ is the appropriate interval connective. The sumti _la drezdn. bi'i la frankfurt._ falls into the x2 place of __sanli__ , which is the surface I stand on; the interval specifies that surface by its limits. (Obviously, I am not standing on the whole of the interval; the x2 place of __sanli__ specifies a surface which is typically larger in extent than just the size of the stander's feet.)
+**Example 14.139. **
+mi | cadzu | ca | la | pacac.  
+---|---|---|---|---  
+I | walk | simultaneous-with |  | First-hour  
+bi'o | la | recac.  
+---|---|---  
+[ordered-interval] |  | Second-hour.  
+I walk from one o'clock to two o'clock.  
+---  
+  
+
+In Example 14.139, on the other hand, it is essential that _la pacac._ comes before _la recac._ ; otherwise we have an 11-hour (or 23-hour) interval rather than a one-hour interval. In this use of an interval, the whole interval is probably intended, or at least most of it.
+Example 14.139 is equivalent to:
+**Example 14.140. **
+mi | cadzu | ca | la | recac.  
+---|---|---|---|---  
+I | walk | simultaneous-with |  | Second-hour  
+se | bi'o | la | pacac.  
+---|---|---|---  
+[reverse] | [ordered] |  | First-hour.  
+  
+
+English cannot readily express __se__ __bi'o__ , but its meaning can be understood by reversing the two sumti.
+The third cmavo of selma'o BIhI, namely __mi'i__ , expresses an interval seen from a different viewpoint: not a pair of endpoints, but a center point and a distance. For example:
+**Example 14.141. **
+le | jbama | pu | daspo | la | .uacintyn.  
+---|---|---|---|---|---  
+The | bomb | [past] | destroys |  | Washington  
+mi'i | lo | minli | be | li | muno  
+---|---|---|---|---|---  
+[center] | what-is | measured-in-miles |  | by | 50.  
+The bomb destroyed Washington and fifty miles around.  
+---  
+  
+
+Here we have an interval whose center is Washington and whose distance, or radius, is fifty miles.
+In Example 14.138, is it possible that I am standing in Dresden (or Frankfurt) itself? Yes. The connectives of selma'o BIhI are ambiguous about whether the endpoints themselves are included in or excluded from the interval. Two auxiliary cmavo __ga'o__ and __ke'i__ (of cmavo GAhO) are used to indicate the status of the endpoints: __ga'o__ means that the endpoint is included, __ke'i__ that it is excluded:
+**Example 14.142. **
+mi | ca | sanli | la | drezdn. | ga'o  
+---|---|---|---|---|---  
+I | [present] | stand | that-named | Dresden | [inclusive]  
+bi'i | ga'o | la | frankfurt.  
+---|---|---|---  
+[interval] | [inclusive] | that-named | Frankfurt.  
+I am standing between Dresden and Frankfurt, inclusive of both.  
+---  
+  
+
+**Example 14.143. **
+mi | ca | sanli | la | drezdn. | ga'o  
+---|---|---|---|---|---  
+I | [present] | stand | that-named | Dresden | [inclusive]  
+bi'i | ke'i | la | frankfurt.  
+---|---|---|---  
+[interval] | [exclusive] | that-named | Frankfurt.  
+I am standing between Dresden (inclusive) and Frankfurt (exclusive).  
+---  
+  
+
+**Example 14.144. **
+mi | ca | sanli | la | drezdn. | ke'i  
+---|---|---|---|---|---  
+I | [present] | stand | that-named | Dresden | [exclusive]  
+bi'i | ga'o | la | frankfurt.  
+---|---|---|---  
+[interval] | [inclusive] | that-named | Frankfurt.  
+I am standing between Dresden (exclusive) and Frankfurt (inclusive).  
+---  
+  
+
+**Example 14.145. **
+mi | ca | sanli | la | drezdn. | ke'i  
+---|---|---|---|---|---  
+I | [present] | stand | that-named | Dresden | [exclusive]  
+bi'i | ke'i | la | frankfurt.  
+---|---|---|---  
+[interval] | [exclusive] | that-named | Frankfurt.  
+I am standing between Dresden and Frankfurt, exclusive of both.  
+---  
+  
+
+As these examples should make clear, the GAhO cmavo that applies to a given endpoint is the one that stands physically adjacent to it: the left-hand endpoint is referred to by the first GAhO, and the right-hand endpoint by the second GAhO. It is ungrammatical to have just one GAhO.
+(Etymologically, __ga'o__ is derived from __ganlo__ , which means “closed”, and __ke'i__ from __kalri__ , which means “open”. In mathematics, inclusive intervals are referred to as closed intervals, and exclusive intervals as open ones.)
+BIhI joiks are grammatical anywhere that other joiks are, including in tanru connection and (as ijoiks) between sentences. No meanings have been found for these uses.
+Negated intervals, marked with a _-nai_ following the BIhI cmavo, indicate an interval that includes everything but what is between the endpoints (with respect to some understood scale):
+**Example 14.146. **
+do | dicra | .e'a | mi | ca | la | daucac.  
+---|---|---|---|---|---|---  
+You | disturb | (allowed) | me | at | that-named | 10  
+bi'onai | la | gaicac.  
+---|---|---  
+not-from-...-to | that-named | 12  
+You can contact me except from 10 to 12.  
+---  
+  
+
+The complete syntax of joiks is: 
+>   * [se] JOI [nai] 
+>   * [se] BIhI [nai] 
+>   * GAhO [se] BIhI [nai] GAhO 
+> 
+
+Notice that the colloquial English translations of __bi'i__ and __bi'o__ have forethought form: “between ... and” for __bi'i__ , and “from ... to” for __bi'o__. In Lojban too, non-logical connectives can be expressed in forethought. Rather than using a separate selma'o, the forethought logical connectives are constructed from the afterthought ones by suffixing __gi__. Such a compound cmavo is not unnaturally called a “joigik”; the syntax of joigiks is any of: 
+>   * [se] JOI [nai] GI 
+>   * [se] BIhI [nai] GI 
+>   * GAhO [se] BIhI [nai] GAhO GI 
+> 
+
+Joigiks may be used to non-logically connect bridi, sumti, and bridi-tails; and also in termsets.
+Example 14.111 in forethought becomes:
+**Example 14.147. **
+joigi | la | djan. | gi | la | .alis. | bevri | le | pipno  
+---|---|---|---|---|---|---|---|---  
+[Together] | that-named | John | and | that-named | Alice | carry | the | piano.  
+  
+
+The first __gi__ is part of the joigik; the second __gi__ is the regular gik that separates the two things being connected in all forethought forms.
+Example 14.143 can be expressed in forethought as:
+**Example 14.148. **
+mi | ca | sanli | ke'i | bi'i  
+---|---|---|---|---  
+I | [present] | stand | [exclusive] | between  
+ga'o | gi | la | drezdn. | gi | la | frankfurt.  
+---|---|---|---|---|---|---  
+[inclusive] | and | that-named | Dresden | and | that-named | Frankfurt.  
+I am standing between Dresden (exclusive) and Frankfurt (inclusive).  
+---  
+  
+
+In forethought, unfortunately, the GAhOs become physically separated from the endpoints, but the same rule applies: the first GAhO refers to the first endpoint.
+* * *
+Chapter 14. If Wishes Were Horses: The Lojban Connective System  
+---  
+Prev: Section 14.15 |  Next: Section 14.17  
+---|---  
+Table of Contents
+Book Info Page

@@ -1,0 +1,1228 @@
+original_id,validator_id,prompt,sentence,choice_a,choice_b,pattern,based_on,original_key,original_explanation,validator_answer,validator_explanation,annotators_agree,notes,from_exp2
+jbo_1,36,"Consider the English sentence ""I think we need to hurry up.""
+Which of the following is a better translation of this sentence into standard Lojban?
+
+(A) mi pensi lo du'u mi'a nitcu lo ka sutryze'a
+(B) mi jinvi lo du'u mi'a nitcu lo ka sutryze'a
+
+Exactly one of the answers above is correct. Please indicate the single letter corresponding to the correct answer (A or B).
+Answer:",I think we need to hurry up.,mi pensi lo du'u mi'a nitcu lo ka sutryze'a,mi jinvi lo du'u mi'a nitcu lo ka sutryze'a,1,,B,"pensi means to ponder, while ""jinvi"" means to opine.",B,"The sense of ""think"" here is that of ""opine"". This translates to ""jinvi"" (""to opine""), not to ""pensi"" (""to think"").",1,,0
+jbo_2,92,"Consider the English sentence ""Did you drink apple tea?""
+Which of the following is a better translation of this sentence into standard Lojban?
+
+(A) do pinxe lo plise tcati ku xu
+(B) do pinxe lo tcati plise ku xu
+
+Exactly one of the answers above is correct. Please indicate the single letter corresponding to the correct answer (A or B).
+Answer:",Did you drink apple tea?,do pinxe lo plise tcati ku xu,do pinxe lo tcati plise ku xu,2,,A,"Compounds are head-final, i.e. modifier before modificand, unless inverted by ""co"". As such, ""lo tcati plise"" in B means ""the tea apple"", not ""the apple tea"".",A,"""plise tcati"" means ""apple tea"", while ""tcati plise"" means ""tea apple"".",1,,0
+jbo_3,81,"Consider the English sentence ""The picture was made to shock visitors.""
+Which of the following is a better translation of this sentence into standard Lojban?
+
+(A) lo pixra cu se finti lo ka jai spaji lo vitke
+(B) lo pixra cu se finti fi lo ka jai spaji lo vitke
+
+Exactly one of the answers above is correct. Please indicate the single letter corresponding to the correct answer (A or B).
+Answer:",The picture was made to shock visitors.,lo pixra cu se finti lo ka jai spaji lo vitke,lo pixra cu se finti fi lo ka jai spaji lo vitke,3,,B,"se finti takes the purpose as its third argument. The second argument is omitted, so the third must be marked with ""fi"", as in B.",B,"The place structure of ""finti"" is ""x1 invents/creates x2 for purpose x3 out of ideas x4"".
+
+The argument ""lo ka jai spaji lo vitke"" (""to shock the visitors"") is meant to go in the third argument place, so it needs to be preceded by the x3-place tag ""fi"".",1,,0
+jbo_4,68,"Consider the English sentence ""Put the books on the table into your bag.""
+Which of the following is a better translation of this sentence into standard Lojban?
+
+(A) ko punji lo cukta poi cpana lo jubme ku'o lo dakli pe do
+(B) ko punji lo cukta poi cpana lo jubme ku lo dakli pe do
+
+Exactly one of the answers above is correct. Please indicate the single letter corresponding to the correct answer (A or B).
+Answer:",Put the books on the table into your bag.,ko punji lo cukta poi cpana lo jubme ku'o lo dakli pe do,ko punji lo cukta poi cpana lo jubme ku lo dakli pe do,4,,A,"In B, ""ku"" closes only the argument ""lo jubme ku"", so ""lo dakli pe do"" falls within the relative clause started by ""poi"", resulting in a nonsensical meaning. The relative clause must be closed with ""ku'o"" for ""lo dakli pe do"" to count as part of the top-level sentence.",A,"The relative clause needs to be closed to prevent ""lo dakli pe do"" (""your bag"") from being absorbed into it. The relative clause terminator ""ku'o"" does this in (A). ""ku"" alone is not sufficient as it only terminates the determiner phrase ""lo jubme"" (""the table"").",1,,0
+jbo_5,54,"Consider the English sentence ""Our restaurant is popular with Mexicans, Serbs and Indians.""
+Which of the following is a better translation of this sentence into standard Lojban?
+
+(A) lo gusta pe mi'a lo mexno je serbo je xindo ta'e se vitke
+(B) lo gusta pe mi'a lo mexno .e lo serbo .e lo xindo ta'e se vitke
+
+Exactly one of the answers above is correct. Please indicate the single letter corresponding to the correct answer (A or B).
+Answer:","Our restaurant is popular with Mexicans, Serbs and Indians.",lo gusta pe mi'a lo mexno je serbo je xindo ta'e se vitke,lo gusta pe mi'a lo mexno .e lo serbo .e lo xindo ta'e se vitke,5,,B,"Connecting on predicate level with ""je"" within an argument, as in A, results in an argument that satisfies all of the predicates at once (in this case, people who are simultaneously Mexican and Serbian and Indian). The English is better translated by connecting separate arguments, as in B.",B,"The connective ""je"" (""and"") joins predicates, while the connective "".e"" (""and"") joins arguments.
+
+""lo mexno je serbo je xindo"" (A) refers to something/someone that is all of Mexican, Serbian and Indian at once.
+
+""lo mexno .e lo serbo .e lo xindo"" (B) contains three connected but separate arguments: something/someone Mexican, something/someone Serbian, and something/someone Indian.",1,,0
+jbo_6,15,"Consider the English sentence ""She gave a copy to everyone that came by.""
+Which of the following is a better translation of this sentence into standard Lojban?
+
+(A) ra dunda fi ro lamgre fe su'o fukpi
+(B) ra dunda su'o fukpi ro lamgre
+
+Exactly one of the answers above is correct. Please indicate the single letter corresponding to the correct answer (A or B).
+Answer:",She gave a copy to everyone that came by.,ra dunda fi ro lamgre fe su'o fukpi,ra dunda su'o fukpi ro lamgre,6,,A,"With the existential quantifier ""su'o"" before the universal quantifier ""ro"", B means that every passerby was given the same copy. Reversing the quantifiers, as in A, gives the intended meaning.",A,"The correct order of quantifiers here is universal followed by existential. Everyone who passed by got a copy, but not everyone got the same copy.
+
+(A) captures this correctly: ""She gave, to everyone who passed by, a copy"".
+(B) has the quantifiers in the wrong order: ""There's a copy such that she gave it to everyone who passed by.""",1,,0
+jbo_7,51,"Consider the English sentence ""The oil should cover the pan.""
+Which of the following is a better translation of this sentence into standard Lojban?
+
+(A) .ei lo grasu gacri lo palne
+(B) .ei lo grasu cu gacri lo palne
+
+Exactly one of the answers above is correct. Please indicate the single letter corresponding to the correct answer (A or B).
+Answer:",The oil should cover the pan.,.ei lo grasu gacri lo palne,.ei lo grasu cu gacri lo palne,4,,B,"lo grasu gacri parses not as an argument phrase followed by a main predicate, but always as (the beginning of) a single argument phrase. Thus, sentence A lacks a main verb. ""cu"" in B marks ""gacri"" as the main verb, which fits the English sentence.",B,"In (A), ""grasu gacri"" forms an accidental tanru. The use of ""cu"" in (B) avoids this.",1,,0
+jbo_8,74,"Consider the English sentence ""I promise you I won't eat any of the meat.""
+Which of the following is a better translation of this sentence into standard Lojban?
+
+(A) mi fi do nupre fe lo ka citka no lo rectu
+(B) mi do nupre lo ka citka no lo rectu
+
+Exactly one of the answers above is correct. Please indicate the single letter corresponding to the correct answer (A or B).
+Answer:",I promise you I won't eat any of the meat.,mi fi do nupre fe lo ka citka no lo rectu,mi do nupre lo ka citka no lo rectu,3,,A,"nupre takes the promise as its second argument and the target of the promise as its third. If the arguments are to be said out of order, they must be explicitly marked with ""fi"" and ""fe"" as in A.",A,"The place structure of ""nupre"" is ""x1 promises/threatens action x2 to x3"".
+
+""do"" (""you"") belongs in the third argument place.
+
+(B) puts ""do"" in the second argument place, which is wrong. (A) places it in the third argument place by using the place tag ""fi"".",1,,0
+jbo_9,30,"Consider the English sentence ""Do you know the price of the bread?""
+Which of the following is a better translation of this sentence into standard Lojban?
+
+(A) xu do djuno lo jdima be lo nanba
+(B) xu do djuno lo du'u ma kau jdima lo nanba
+
+Exactly one of the answers above is correct. Please indicate the single letter corresponding to the correct answer (A or B).
+Answer:",Do you know the price of the bread?,xu do djuno lo jdima be lo nanba,xu do djuno lo du'u ma kau jdima lo nanba,5,,B,"The second argument of ""djuno"" must be a proposition or a proposition-like clause containing an indirect question, as in B. In A, ""lo jdima be lo nanba"" refers literally to a number, which makes no sense here.",B,"""know the price of the bread"" is really an indirect question ""know what the price of the bread is"". In Lojban, you can never say the former to mean the latter; ""djuno"" means ""x1 knows fact x2"", so ""djuno lo jdima"" ""know the price"" would mean that ""lo jdima"" (the price) is a fact, but it's not. It's a number. You can't know a number.
+
+The correct way to form indirect questions is to use ""du'u"" and ""kau"", like in (B).",1,,0
+jbo_10,103,"Consider the English sentence ""It might rain tomorrow.""
+Which of the following is a better translation of this sentence into standard Lojban?
+
+(A) carvi jai cumki fa lo bavlamdei
+(B) jai cumki carvi fa lo bavlamdei
+
+Exactly one of the answers above is correct. Please indicate the single letter corresponding to the correct answer (A or B).
+Answer:",It might rain tomorrow.,carvi jai cumki fa lo bavlamdei,jai cumki carvi fa lo bavlamdei,2,,A,"In B, the modificand (tertau) of the main predicate is ""carvi"". As the arguments to a compound predicate (tanru) always belong to the modificand, it reads as a heavily metaphorical sentence unrelated to the English: ""In a possible way, tomorrow (the day) will fall to the ground as rain does"". Sentence A is vague but idiomatic: the modificand of the main predicate is ""jai cumki"", where ""jai"" indicates that the surface subject is raised out of the underlying subject, and the entire sentence can be translated as ""Tomorrow is a possibility regarding rain"".",A,"""It might rain"" expresses the possibility that it will rain. The tanru ""jai cumki carvi"" (""possible-rain"") has the place structure of ""carvi"", so (B) claims that it will rain.
+
+To only claim the possibility, ""cumki"" (""possible"") has to be the main predicate.",1,,0
+jbo_11,48,"Consider the English sentence ""I'm satisfied with how hot it is.""
+Which of the following is a better translation of this sentence into standard Lojban?
+
+(A) mansa fa mi lo nu ma kau ni glare
+(B) mansa mi fa lo nu ma kai ni glare
+
+Exactly one of the answers above is correct. Please indicate the single letter corresponding to the correct answer (A or B).
+Answer:",I'm satisfied with how hot it is.,mansa fa mi lo nu ma kau ni glare,mansa mi fa lo nu ma kai ni glare,3,,B,"mansa means to satisfy, not to be satisfied. Thus, the subject marker ""fa"" belongs not on ""mi"", as in A, but on ""lo nu ma kau ni glare"", as in B.",B,"The place structure of ""mansa"" is ""x1 satisfies evaluator x2"".
+
+In (A), ""mi"" (""I/me"") is in the first argument place, which is incorrect.",1,,0
+jbo_12,114,"Consider the English sentence ""The tomato took a day to turn red.""
+Which of the following is a better translation of this sentence into standard Lojban?
+
+(A) djedi li pa fa lo nu lo tamca co'a xunre
+(B) djedi li pa fa lo nu lo tamca cu xunre carna
+
+Exactly one of the answers above is correct. Please indicate the single letter corresponding to the correct answer (A or B).
+Answer:",The tomato took a day to turn red.,djedi li pa fa lo nu lo tamca co'a xunre,djedi li pa fa lo nu lo tamca cu xunre carna,1,,A,"carna means to rotate. State changes can be expressed with ""co'a"" for example.",A,[Agreed with presented explanation],1,,1
+jbo_13,100,"Consider the English sentence ""A likely cause is that many of the workers left.""
+Which of the following is a better translation of this sentence into standard Lojban?
+
+(A) lakne rinka fa lo nu so'i lo gunka cu cliva
+(B) lo nu rinka fa lo nu so'i lo gunka cu cliva cu lakne
+
+Exactly one of the answers above is correct. Please indicate the single letter corresponding to the correct answer (A or B).
+Answer:",A likely cause is that many of the workers left.,lakne rinka fa lo nu so'i lo gunka cu cliva,lo nu rinka fa lo nu so'i lo gunka cu cliva cu lakne,5,,B,"A modifier (seltau) in a compound predicate (tanru) cannot subordinate the modificand (tertau), so sentence A, where ""rinka"" is the tertau, is asserting that the workers leaving *is* the cause, not just that it may be. Sentence B correctly has ""lakne"" as the main predicate.",B,"The English sentence seems to imply that the workers leaving has already happened and is not merely a hypothetical event.
+
+(A) says that the event of the workers leaving is a ""lakne rinka"" (""likely-cause""), but the last component in a tanru (two predicates in a row) determines the place structure. ""lakne rinka"" is a type of ""rinka"", so it still claims that ""x1 causes x2"", whether prefixed by ""lakne"" (""likely"") or not. The adjective ""likely"" functions as an alienans adjective here, which cannot be expressed as a seltau (left component of a tanru) in Lojban.
+
+(B) Expands the ""likely"" out explicitly: ""The workers leaving being the cause is likely"".",1,,0
+jbo_14,70,"Consider the English sentence ""We all sang together.""
+Which of the following is a better translation of this sentence into standard Lojban?
+
+(A) mi'a kansi'u lo ka sanga
+(B) ro mi'a kansi'u lo ka sanga
+
+Exactly one of the answers above is correct. Please indicate the single letter corresponding to the correct answer (A or B).
+Answer:",We all sang together.,mi'a kansi'u lo ka sanga,ro mi'a kansi'u lo ka sanga,5,,A,"As outer quantifiers, with few exceptions, have singular, distributive meaning, sentence B, with ""ro"", is nonsensical: ""For each person among us, this person sang with each other"". Sentence A, without ""ro"", allows for the collective reading required by the predicate. The emphasis that ""all"" gives in the English sentence could be translated by an inner quantifier, ""lo ro mi'a"", or by a plural outer quantifier, ""ru'oi mi'a"".",A,"The ""ro"" in (B) quantifies over every referent among ""mi'a"" (""us"") and says that each one sings together. Since ""singing together"" cannot be satisfied by single individuals, the sentence is wrong.",1,,0
+jbo_15,83,"Consider the English sentence ""He needs two kilograms of flour.""
+Which of the following is a better translation of this sentence into standard Lojban?
+
+(A) ra nitcu tu'a re ki'ogra be lo grupu'o
+(B) ra nitcu tu'a su'o grupu'o poi ki'ogra li re
+
+Exactly one of the answers above is correct. Please indicate the single letter corresponding to the correct answer (A or B).
+Answer:",He needs two kilograms of flour.,ra nitcu tu'a re ki'ogra be lo grupu'o,ra nitcu tu'a su'o grupu'o poi ki'ogra li re,1,,B,"ki'ogra means ""x_1 weighs x_2 kilograms"". While ""be"", which curries arguments into a predicate, can be translated as ""of"" in many instances, this doesn't work for units of measure: ""re ki'ogra be lo grupu'o"" in A translates to the nonsensical ""two things that weigh flour kilograms"". Sentence B has the correct meaning: ""some flour that weighs two kilograms"".",B,"""su'o grupu'o poi ki'ogra li re"" means ""some flour that measures 2 in kilograms"", which is the correct way to phrase such things in Lojban.
+
+What (A) attempts with ""re ki'ogra"" means ""two things that each measure some kg"" (and then puts ""lo grupu'o"" (""flour"") in the second argument place that normally expects a number (see (B)). ",1,,0
+jbo_16,62,"Consider the English sentence ""They punished but then forgave you for stealing the books.""
+Which of the following is a better translation of this sentence into standard Lojban?
+
+(A) ra do sfasa gi'e ba bo fraxu ku'i vau lo ka zerle'a lo cukta
+(B) ra do sfasa gi'e ba bo fraxu ku'i lo ka zerle'a lo cukta
+
+Exactly one of the answers above is correct. Please indicate the single letter corresponding to the correct answer (A or B).
+Answer:",They punished but then forgave you for stealing the books.,ra do sfasa gi'e ba bo fraxu ku'i vau lo ka zerle'a lo cukta,ra do sfasa gi'e ba bo fraxu ku'i lo ka zerle'a lo cukta,4,,A,"Connectives of the ""gi'V"" series result in three verb phrases (a.k.a. bridi tails): one each for the two connected predicates, and an outer one whose arguments apply to both predicates. In B, ""lo ka zerle'a lo cukta"" is an argument of ""fraxu"" but not of ""sfasa"", which is not wrong per se, as it leaves the argument of ""fraxu"" to context. In A, the ""vau"" closes the inner verb phrase, such that ""lo ka zerle'a lo cukta"" falls into the outer one and applies to both verbs, which better reflects the intended meaning.",A,"In order for ""lo ka zerle'a lo cukta"" (""stealing the books"") to be a shared argument of both bridi-tails, the terminator ""vau"" has to be inserted before it.",1,,0
+jbo_17,64,"Consider the English sentence ""It's Sunday, so the stores are closed and we have to be quiet.""
+Which of the following is a better translation of this sentence into standard Lojban?
+
+(A) zeldei .i ja'e bo lo zarci na .akti .i je ma'a lo ka smaji cu bilga
+(B) zeldei .i ja'e bo tu'e lo zarci na .akti .i je ma'a lo ka smaji cu bilga
+
+Exactly one of the answers above is correct. Please indicate the single letter corresponding to the correct answer (A or B).
+Answer:","It's Sunday, so the stores are closed and we have to be quiet.",zeldei .i ja'e bo lo zarci na .akti .i je ma'a lo ka smaji cu bilga,zeldei .i ja'e bo tu'e lo zarci na .akti .i je ma'a lo ka smaji cu bilga,4,,B,"Connectives with ""bo"" are tight-grouping, so in A, only the first two sentences are connected by ""ja'e"", and that pair of sentences is then connected to the third by ""je"". In B, instead of ""bo"", ""tu'e"" is used, which opens a group of sentences that lasts until a corresponding ""tu'u"". In this way, both the second and third sentences are said to be results of the first, which is more in line with the English sentence.",B,"The grouping in (A) is incorrect, since "".i ja'e bo"" groups more tightly than "".i je"".",1,"One answer had been missing a word, this has now been fixed and annotators now agree that B is the correct answer. original_explanation is not completely correct as to the reason, validator_explanation is.",0
+jbo_18,85,"Consider the English sentence ""I've been to Russia but not to China.""
+Which of the following is a better translation of this sentence into standard Lojban?
+
+(A) mi lo ruskygu'e .e nai lo jungygu'e pu'i klama
+(B) mi lo ruskygu'e na .e lo jungygu'e pu'i klama
+
+Exactly one of the answers above is correct. Please indicate the single letter corresponding to the correct answer (A or B).
+Answer:",I've been to Russia but not to China.,mi lo ruskygu'e .e nai lo jungygu'e pu'i klama,mi lo ruskygu'e na .e lo jungygu'e pu'i klama,7,,A,"When using afterthought connectives such as "".e"", ""na"" before the connective negates the first branch while ""nai"" after the connective negates the second branch. As such, B means the opposite of the English, while A is correct.",A,""".e nai"" means ""and not"" (negating the right conjunct), while ""na .e"" means ""not, and"" (negating the left conjunct).
+
+The English sentence negates China, the second conjunct, therefore (A) is correct, and (B) means ""I've not been to Russia but to China.""",1,,0
+jbo_19,32,"Consider the English sentence ""The problem is with the rope and not the wheel.""
+Which of the following is a better translation of this sentence into standard Lojban?
+
+(A) nabmi fa tu'a lo skori .e nai lo xislu
+(B) nabmi fa ge tu'a lo skori gi nai tu'a lo xislu
+
+Exactly one of the answers above is correct. Please indicate the single letter corresponding to the correct answer (A or B).
+Answer:",The problem is with the rope and not the wheel.,nabmi fa tu'a lo skori .e nai lo xislu,nabmi fa ge tu'a lo skori gi nai tu'a lo xislu,5,,B,"A ""tu'a"" phrase refers to an abstraction (such as an event), and connectives and quantifiers within the phrase are interpreted as if they were in a subsentence describing that event. Thus, sentence A does not compare two events that might or might not be problems, but rather declares one thing as a problem, namely that the rope and not the wheel is doing something clear from context. On the other hand, sentence B connects two separate ""tu'a"" phrases, which results in a meaning faithful to the English sentence.",B,"(A) says that ""[something involving [the rope and not the wheel]] is a problem"", which has the wrong scope.
+
+Both ""lo skori"" (""the rope"") and ""lo xislu"" (""the wheel"") need to be under their own ""tu'a"": ""[something involving the rope] is a problem but [something involving the wheel] is not a problem"".
+
+Only (B) does this.",1,,0
+jbo_20,21,"Consider the English sentence ""I've forgotten something important.""
+Which of the following is a better translation of this sentence into standard Lojban?
+
+(A) mi su'o vajni ba'o morji
+(B) mi ba'o morji su'o vajni
+
+Exactly one of the answers above is correct. Please indicate the single letter corresponding to the correct answer (A or B).
+Answer:",I've forgotten something important.,mi su'o vajni ba'o morji,mi ba'o morji su'o vajni,6,,A,"Quantifiers and similar operators in a sentence interact with each other, with operators on the left scoping over operators to the right of them. With the aspect marker ""ba'o"" before the quantifier ""su'o"", sentence B translates as ""I no longer remember anything important"". Sentence A, meaning ""There is something important that I no longer remember"", matches the English.",A,"This is a question of the relative scope of the quantifier ""su'o"" (""some"") and the aspect ""ba'o"", which I will translate as ""no longer"" to make the difference between (A) and (B) easier to understand.
+
+(A) places ""su'o vajni"" (""something important"") before the aspect (""no longer"") to yield ""There is something important such that I no longer remember it"".
+
+(B) reverses the order, yielding ""It is no longer the case that I remember something (anything) important"".
+
+Therefore, (B) fails to capture the intended meaning.",1,,0
+jbo_21,33,"Consider the English sentence ""Please water the largest elm and the oak.""
+Which of the following is a better translation of this sentence into standard Lojban?
+
+(A) .e'o do dunda lo'e djacu lo bardyrai be lo .ulmu ku .e lo cindu
+(B) .e'o do dunda lo'e djacu lo bardyrai be lo .ulmu be'o .e lo cindu
+
+Exactly one of the answers above is correct. Please indicate the single letter corresponding to the correct answer (A or B).
+Answer:",Please water the largest elm and the oak.,.e'o do dunda lo'e djacu lo bardyrai be lo .ulmu ku .e lo cindu,.e'o do dunda lo'e djacu lo bardyrai be lo .ulmu be'o .e lo cindu,4,,B,"In A, the argument phrases connected by "".e"" are ""lo .ulmu ku"" and ""lo cindu"", inside the ""be"" phrase of the predicate ""bardyrai"". Thus, ""lo bardyrai be lo .ulmu ku .e lo cindu"" has the nonsensical meaning of ""that which is (simultaneously) the largest elm and the largest oak"". In B, ""be'o"" terminates the ""be"" phrase, so "".e"" connects ""lo bardyrai be lo .ulmu be'o"" and ""lo cindu"", giving the meaning ""the largest elm, as well as the oak"", as intended.",B,"""lo bardyrai be lo .ulmu ku .e lo cindu"" (A) means ""the biggest of [the elms and the oaks]"", but the intended meaning is ""[the biggest of the elms] and [the oaks].
+
+To get this grouping, the terminator ""be'o"" is necessary, as in (B).",1,,0
+jbo_22,72,"Consider the English sentence ""I am convinced of only one thing, namely that I love you.""
+Which of the following is a better translation of this sentence into standard Lojban?
+
+(A) mi birti pa da noi du'u mi do prami
+(B) mi birti pa da poi du'u mi do prami
+
+Exactly one of the answers above is correct. Please indicate the single letter corresponding to the correct answer (A or B).
+Answer:","I am convinced of only one thing, namely that I love you.",mi birti pa da noi du'u mi do prami,mi birti pa da poi du'u mi do prami,7,,A,"Though ""poi"" is said to introduce restrictive relative clauses, and ""noi"" incidental ones, these terms can be counterintuitive when describing how relative clauses interact with quantifiers. Here, ""poi"" has the effect of adding a conjunction in the scope of the quantifier ""pa"": ""there is one thing that: [I am convinced of it, and it is the proposition 'I love you']"". ""noi"", on the other hand, can be thought of as putting a conjunction on the entire sentence: ""there is one thing that I am convinced of, and everything that I am convinced of is the proposition 'I love you'"". Sentence A, not B, is faithful to the English.",A,"In standard singular logic Lojban, ""mi birti pa da"" means ""I am certain of exactly one thing"". When followed by a restrictive relative clause (""poi""), e.g. ""pa da poi du'u mi do prami"", it becomes ""I am certain of exactly one thing that is the fact that I love you"". This allows for other things the speaker is certain of.
+On the other hand, when ""pa da"" is followed by a non-restrictive relative clause (""noi""), e.g. ""pa da noi du'u mi do prami"", the meaning changes to ""I am certain of exactly one thing (and what I'm certain of is the fact that I love you."" ",1,,0
+jbo_23,102,"Consider the English sentence ""The tourist intended to go west but instead went north.""
+Which of the following is a better translation of this sentence into standard Lojban?
+
+(A) lo stuvi'e cu .aidji lo ka klama lo stici vau gi'e se ba'i klama lo berti vau ku'i
+(B) lo stuvi'e cu .aidji lo ka klama lo stici kei gi'e se ba'i klama lo berti vau ku'i
+
+Exactly one of the answers above is correct. Please indicate the single letter corresponding to the correct answer (A or B).
+Answer:",The tourist intended to go west but instead went north.,lo stuvi'e cu .aidji lo ka klama lo stici vau gi'e se ba'i klama lo berti vau ku'i,lo stuvi'e cu .aidji lo ka klama lo stici kei gi'e se ba'i klama lo berti vau ku'i,4,,B,"In A, the verb phrases connected by ""gi'e"" are within the subsentence started by ""ka"". This is because the first ""vau"" terminates only the first verb phrase of the subsentence, not the subsentence itself. The result is a nonsensical meaning: ""The tourist wanted to do the following: go west, but instead go north"". In B, the ""gi'e"" is on the top level, instead of within the subsentence, since the subsentence is closed by ""kei"" beforehand, which gives the intended meaning.",B,"In order for ""gi'e"" (""and"") to attach to "".aidji"" (""intends""), the subclause started by ""lo ka"" has to be closed.
+
+The terminator ""vau"" is not sufficient here.
+
+Instead, the terminator ""kei"", which is the terminator of ""ka"", is what's needed here.",1,,0
+jbo_24,46,"Consider the English sentence ""You should put the empty bottle in the bin and the full bottle on the table.""
+Which of the following is a better translation of this sentence into standard Lojban?
+
+(A) .ei do punji ge lo kunti botpi lo fesybaktu gi lo culno botpi lo jubme
+(B) .ei do punji lo kunti botpi fi lo fesybaktu .e lo culno botpi fi lo jubme
+
+Exactly one of the answers above is correct. Please indicate the single letter corresponding to the correct answer (A or B).
+Answer:",You should put the empty bottle in the bin and the full bottle on the table.,.ei do punji ge lo kunti botpi lo fesybaktu gi lo culno botpi lo jubme,.ei do punji lo kunti botpi fi lo fesybaktu .e lo culno botpi fi lo jubme,7,,A,"The connective "".e"" in B applies only to the two argument phrases, ""lo fesybaktu"" and ""lo culno botpi"", and the resulting phrase is marked with ""fi"" as filling the third place of ""punji"". This does not match the structure or meaning of the English sentence. In B, the connective ""ge ... gi ..."" is used to properly connect the two pairs of terms as in the English.",A,"(A) uses a so-called ""gek termset"" ([ge ...] [gi ...]). This pattern has no afterthought equivalent. Yet (B) tries to achieve this using the afterthought connective "".e"", but this word can only connect sumti (arguments), so it doesn't work.",1,,0
+jbo_25,43,"Consider the English sentence ""I didn't go outside, the reason being that it was raining.""
+Which of the following is a better translation of this sentence into standard Lojban?
+
+(A) mi na klama lo bartu ki'u lo nu carvi
+(B) mi na klama lo bartu .i ki'u bo carvi
+
+Exactly one of the answers above is correct. Please indicate the single letter corresponding to the correct answer (A or B).
+Answer:","I didn't go outside, the reason being that it was raining.",mi na klama lo bartu ki'u lo nu carvi,mi na klama lo bartu .i ki'u bo carvi,6,,B,"In A, the negator ""na"" scopes over the adverbial after it, ""ki'u lo nu carvi"", resulting in an incorrect meaning: ""It is not because it was raining that I went outside"". In B, ""ki'u"" is used as a sentence connective, which takes it out of the scope of ""na"", resulting in the intended meaning.",B,"The negation in (A) has scope over the preposition ""ki'u"" (""because""), yielding ""It is not the case that: it raining is the reason for my going outside"", which is completely wrong.
+
+By using "".i ki'u bo"" as in (B), the ""because"" retains its scope over the entire sentence including the negation.",1,,0
+jbo_26,115,"Consider the English sentence ""The Hajj happens once a year in Mecca.""
+Which of the following is a better translation of this sentence into standard Lojban?
+
+(A) la .xadj. cu fasnu pa roi ro nanca bu'u la .makax.
+(B) la .xadj. cu fasnu pa roi ro nanca ne'i la .makax.
+
+Exactly one of the answers above is correct. Please indicate the single letter corresponding to the correct answer (A or B).
+Answer:",The Hajj happens once a year in Mecca.,la .xadj. cu fasnu pa roi ro nanca bu'u la .makax.,la .xadj. cu fasnu pa roi ro nanca ne'i la .makax.,1,,A,"The preposition ""ne'i"" is used specifically for things inside an enclosed space. Geographical location is expressed using the more general ""bu'u"", as in A.",A,[Agreed with presented explanation],1,,1
+jbo_27,8,"Consider the English sentence ""The lake is full of people. I was swimming there yesterday.""
+Which of the following is a better translation of this sentence into standard Lojban?
+
+(A) lo lalxu ca culno lo'e remna .i mi ri limna ca lo prulamdei
+(B) lo lalxu ca culno lo'e remna .i mi ru limna ca lo prulamdei
+
+Exactly one of the answers above is correct. Please indicate the single letter corresponding to the correct answer (A or B).
+Answer:",The lake is full of people. I was swimming there yesterday.,lo lalxu ca culno lo'e remna .i mi ri limna ca lo prulamdei,lo lalxu ca culno lo'e remna .i mi ru limna ca lo prulamdei,7,,B,"The pronoun ""ri"" refers to the last-started completed argument (skipping over certain pronouns if present). In A, ""ri"" refers not to the intended ""lo lalxu"", but to ""lo'e remna"". ""ru"", used in B, refers to an earlier argument (one that couldn't be pointed to by ""ri""), resulting in the intended meaning.",B,"The pronoun ""ri"" refers to the most recently uttered argument phrase. In (A), the antecedent is ""lo'e remna"" (""people""), so the second half of (A) means ""I was swimming in people yesterday"".
+
+(B) uses the pronoun ""ru"" instead, which refers to a recent argument phrase (it's left vague which one, but it's not the most recent one), allowing the latter half of (B) to mean ""I was swimming in it (= the lake) yesterday"".",1,,0
+jbo_28,76,"Consider the English sentence ""Try to cut the melon.""
+Which of the following is a better translation of this sentence into standard Lojban?
+
+(A) ko troci co katna lo guzme
+(B) ko katna troci lo guzme
+
+Exactly one of the answers above is correct. Please indicate the single letter corresponding to the correct answer (A or B).
+Answer:",Try to cut the melon.,ko troci co katna lo guzme,ko katna troci lo guzme,7,,A,"Though the predicates ""katna troci"" and ""troci co katna"" mean the same per se, using ""co"" changes not only the order of modifier and modificand, but also the behaviour of arguments in the verb phrase. Without ""co"", they are understood as arguments of the modificand, ""troci"", while with it, they are arguments of the modifier, ""katna"". So, without ""co"", A could be rewritten as ""ko katna be lo guzme be'o troci"". The second argument of ""troci"" is always an action, not a concrete object, so B is nonsensical, while A is a vague but idiomatic translation of the English.",A,"""The final component in a tanru (multiple predicates in a row) determines the place structure.
+
+""katna troci"" (""cut-try"") has the place structure of ""troci"": x1 tries to do x2
+Therefore, it is incorrect to follow it with ""lo guzme"" (""the melon""), because that puts it in the second argument place of ""troci"".
+
+(A) uses ""co"" to reverse the order of the tanru, which allows ""lo guzme"" to end up in the correct argument place.",1,,0
+jbo_29,61,"Consider the English sentence ""Do you enjoy riding a bike?""
+Which of the following is a better translation of this sentence into standard Lojban?
+
+(A) xu lo ka sazri lo'e relxima ku do pluka
+(B) xu lo ka sazri lo'e relxima kei do pluka
+
+Exactly one of the answers above is correct. Please indicate the single letter corresponding to the correct answer (A or B).
+Answer:",Do you enjoy riding a bike?,xu lo ka sazri lo'e relxima ku do pluka,xu lo ka sazri lo'e relxima kei do pluka,4,,B,"In A, ""ku"" closes only the argument phrase, ""lo'e relxima ku"", not the abstraction started by ""ka"". This results in ""do"" being interpreted as the third argument of ""sazri"", and ""pluka"" as the modificand of the predicate formed by the abstraction. The sentence is then left without a main predicate. A could be translated as: ""Is it the enjoyable thing related to riding a bike for the purpose of you?"". In B, the abstraction is closed properly, so that both ""do"" and ""pluka"" fall into the outermost sentence, giving the intended meaning.",B,"The intended structure is ""Is [to operate a bike] [to you] [pleasant]?""
+
+To close the subordinate clause ""to operate a bike"", the terminator ""kei"" must be used. ""ku"" alone only terminates the determiner phrase ""lo'e relxima"" (""bikes"").",1,,0
+jbo_30,116,"Consider the English sentence ""Let's watch the sunset.""
+Which of the following is a better translation of this sentence into standard Lojban?
+
+(A) .e'u mi'o zgana lo solnuncanci
+(B) .e'u mi'a zgana lo solnuncanci
+
+Exactly one of the answers above is correct. Please indicate the single letter corresponding to the correct answer (A or B).
+Answer:",Let's watch the sunset.,.e'u mi'o zgana lo solnuncanci,.e'u mi'a zgana lo solnuncanci,1,,A,"mi'o is the inclusive ""we"", while ""mi'a"" is the exclusive ""we"". Although English is said to lack clusivity, ""let's"" in this sentence almost certainly has an inclusive meaning, so ""mi'o"", as in A, is the better translation.",A,[Agreed with presented explanation],1,,1
+jbo_31,67,"Consider the English sentence ""Only the red ones are sweet.""
+Which of the following is a better translation of this sentence into standard Lojban?
+
+(A) lo xunre po'o ku titla
+(B) lo xunre ku po'o titla
+
+Exactly one of the answers above is correct. Please indicate the single letter corresponding to the correct answer (A or B).
+Answer:",Only the red ones are sweet.,lo xunre po'o ku titla,lo xunre ku po'o titla,6,,B,"In A, ""po'o"" attaches to the verb ""xunre"" inside of the argument phrase. This can be translated as ""those which are only red (as opposed to having additional attributes)"", or more idiomatically, ""the wholly red ones"". In B, ""po'o"" attaches to the whole argument phrase, ""lo xunre ku"", giving the intended meaning: ""only the red ones (and no others)"".",B,"""po'o"" (""only"") modifies the word or structure to its left.
+
+""lo xunre po'o"" means ""that which is only red"".
+
+""lo xunre ku po'o"" means ""only that which is red"".",1,,0
+jbo_32,109,"Consider the English sentence ""The children were too lazy to do what they were imagining.""
+Which of the following is a better translation of this sentence into standard Lojban?
+
+(A) lo verba cu lazni lo ka gasnu lo xanri be ri
+(B) lo verba cu lazni lo ka gasnu lo se xanri be ri
+
+Exactly one of the answers above is correct. Please indicate the single letter corresponding to the correct answer (A or B).
+Answer:",The children were too lazy to do what they were imagining.,lo verba cu lazni lo ka gasnu lo xanri be ri,lo verba cu lazni lo ka gasnu lo se xanri be ri,3,,A,"xanri means to be imagined, not to imagine, so A and not B matches the English.",A,"The place structure of ""xanri"" is ""x1 is imagined by x2"".
+
+""lo xanri be ri"" means ""that which is imagined by them"", while ""lo se xanri be ri"" means ""that which imagines them"". ",1,,0
+jbo_33,40,"Consider the English sentence ""All of the children of the many cooks later became cooks themselves.""
+Which of the following is a better translation of this sentence into standard Lojban?
+
+(A) ro lo panzi be ro lo so'i jukpa se jibri ba co'a se jibri lo ka jukpa ku vau si'a
+(B) ro lo so'i jukpa se jibri zo'u ro panzi be ri ba co'a se jibri lo ka jukpa ku vau si'a
+
+Exactly one of the answers above is correct. Please indicate the single letter corresponding to the correct answer (A or B).
+Answer:",All of the children of the many cooks later became cooks themselves.,ro lo panzi be ro lo so'i jukpa se jibri ba co'a se jibri lo ka jukpa ku vau si'a,ro lo so'i jukpa se jibri zo'u ro panzi be ri ba co'a se jibri lo ka jukpa ku vau si'a,6,,B,"In A, the quantified argument phrase ""ro lo so'i jukpa"" is incorporated into the predicate ""panzi be ro lo so'i jukpa"", which results in the implausible meaning, ""for each person who is a child of all of the many cooks (at once)"". In B, ""ro lo so'i jukpa"" is placed in the prenex, such that it scopes over the other quantifier, giving the intended meaning: ""for each of the many cooks, all of this particular cook's children"".",B,"In (A), ""ro lo panzi be ro lo so'i jukpa"" means ""each of those who are children of every cook"", i.e. it claims that these children are (each) the child of every cook.
+
+Therefore, it is necessary to first quantify over all the cooks, and then over their children, as (B) does: For each X among the many cooks, every Y who is a child of X becomes a cook.",1,,0
+jbo_34,75,"Consider the English sentence ""Alice is sitting on the riverbank.""
+Which of the following is a better translation of this sentence into standard Lojban?
+
+(A) la .alis. cu zutse lo korbi be lo rirxe
+(B) la .alis. cu zutse lo rirxe be lo korbi
+
+Exactly one of the answers above is correct. Please indicate the single letter corresponding to the correct answer (A or B).
+Answer:",Alice is sitting on the riverbank.,la .alis. cu zutse lo korbi be lo rirxe,la .alis. cu zutse lo rirxe be lo korbi,7,,A,"The particle ""be"" curries the argument after it into the predicate before it. ""lo korbi be lo rirxe"" means ""the edge of the river"", while ""lo rirxe be lo korbi"" means ""the river on the edge"".",A,"""lo korbi be lo rirxe"" means ""the edge of the river"", while ""lo rirxe be lo korbi"" means ""the river in the edge"".",1,,0
+jbo_35,112,"Consider the English sentence ""Only you count your clothes after washing them.""
+Which of the following is a better translation of this sentence into standard Lojban?
+
+(A) steci do fa lo ka ce'u lo taxfu pe ce'u ba gi lumci gi kancu
+(B) steci do fa lo ka ce'u goi ko'a lo taxfu pe ko'a ba gi lumci gi kancu
+
+Exactly one of the answers above is correct. Please indicate the single letter corresponding to the correct answer (A or B).
+Answer:",Only you count your clothes after washing them.,steci do fa lo ka ce'u lo taxfu pe ce'u ba gi lumci gi kancu,steci do fa lo ka ce'u goi ko'a lo taxfu pe ko'a ba gi lumci gi kancu,7,,B,"The lambda pronoun ""ce'u"" creates a new variable every time it is used. To use the same variable again, it must be assigned to another pronoun, as in B with ""ce'u goi ko'a"". A, where the repeated ""ce'u"" results in a second variable, is nonsensical because ""steci"" expects a unary predicate in its first place.",B,"In a ka-clause, every occurence of ""ce'u"" is a new lambda variable. 
+
+To refer to the same variable, one can bind ""ce'u"" to an assignable pronoun like ""ko'a"" and then every subsequent ""ko'a"" refers to the same variable. This is what (B) does.
+
+(A) uses multiple ""ce'u"", thereby creating a ka-clause with multiple different lambda variables.",1,,0
+jbo_36,16,"Consider the English sentence ""How many words do you know in Malay?""
+Which of the following is a better translation of this sentence into standard Lojban?
+
+(A) slabu do fa xo valsi be fi lo meljo
+(B) slabu do fa xo valsi be lo meljo
+
+Exactly one of the answers above is correct. Please indicate the single letter corresponding to the correct answer (A or B).
+Answer:",How many words do you know in Malay?,slabu do fa xo valsi be fi lo meljo,slabu do fa xo valsi be lo meljo,3,,A,"The second place of ""valsi"" takes the meaning of the word, not the language, which goes in the third place. B would mean, ""how many words for Malay things do you know?"". In A, ""lo meljo"" is marked with ""fi"", which puts it in the third place of ""valsi"" as intended.",A,"The place structure of ""valsi"" is ""x1 is a word meaning x2 in language x3"". 
+
+""lo meljo"" (""that which is Malaysian"") needs to be in the third argument slot. The place marker ""fi"" marks an argument as going into the third slot. ""xo valsi be fi lo meljo"" = ""how many words in [a] Malaysian [language]""
+
+This marker is missing in (B), instead placing ""lo meljo"" in the second argument place, yielding ""how many words meaning something Malaysian"".",1,,0
+jbo_37,10,"Consider the English sentence ""The teacher's dog is dead.""
+Which of the following is a better translation of this sentence into standard Lojban?
+
+(A) lo ctuca pe lo gerku cu morsi
+(B) lo gerku pe lo ctuca cu morsi
+
+Exactly one of the answers above is correct. Please indicate the single letter corresponding to the correct answer (A or B).
+Answer:",The teacher's dog is dead.,lo ctuca pe lo gerku cu morsi,lo gerku pe lo ctuca cu morsi,7,,B,"The possessor always follows ""pe"". ""lo ctuca pe lo gerku"" means ""the teacher of the dog"", while ""lo gerku pe lo ctuca"" matches the English ""the teacher's dog"".",B,"""lo ctuca pe lo gerku"" means ""The teacher of the dog"", while ""lo gerku pe lo ctuca"" means ""the dog of the teacher"".",1,,0
+jbo_38,60,"Consider the English sentence ""The chair is close to the table, and the lamp to the wall.""
+Which of the following is a better translation of this sentence into standard Lojban?
+
+(A) zvajbi ge fa lo stizu lo jubme gi fa lo gustci lo bitmu
+(B) zvajbi fa ge lo stizu lo jubme gi lo gustci lo bitmu
+
+Exactly one of the answers above is correct. Please indicate the single letter corresponding to the correct answer (A or B).
+Answer:","The chair is close to the table, and the lamp to the wall.",zvajbi ge fa lo stizu lo jubme gi fa lo gustci lo bitmu,zvajbi fa ge lo stizu lo jubme gi lo gustci lo bitmu,7,,A,"Phrases like ""ge lo stizu lo jubme gi lo gustci lo bitmu"", sometimes known as termsets, can't be case-marked. The ""fa"" in B opens an empty term and doesn't affect the following arguments, which then fall into the second and third places of ""zvajbi"", not the first and second as intended. This makes no sense because ""zvajbi"" takes only two arguments. In A, ""fa"" is repeated in both branches which gives the intended meaning.",A,"The place marker ""fa"" has to be inside the gek-termset, so after ""ge"", not before it. ""fa"" cannot tag an entire gek-termset.",1,,0
+jbo_39,117,"Consider the English sentence ""It was quiet until the birds started to sing.""
+Which of the following is a better translation of this sentence into standard Lojban?
+
+(A) smaji co'u ku co'a lo nu lo cipni cu cmoni
+(B) smaji co'u lo nu lo cipni co'a cmoni
+
+Exactly one of the answers above is correct. Please indicate the single letter corresponding to the correct answer (A or B).
+Answer:",It was quiet until the birds started to sing.,smaji co'u ku co'a lo nu lo cipni cu cmoni,smaji co'u lo nu lo cipni co'a cmoni,1,,B,"co'u means ""stop"" or ""no longer"" as an adverb and ""until"" as a preposition. B is a faithful translation of the English sentence, while A has an entirely different meaning: ""It stopped being the case that it starts to be quiet when the birds sing"".",B,[Agreed with presented explanation],1,"Annotator 2 had made a typo in original version, fixed in this version",1
+jbo_40,82,"Consider the English sentence ""Please pee in the toilet, not on the floor.""
+Which of the following is a better translation of this sentence into standard Lojban?
+
+(A) .e'o lo pinca be do cu farlu ge lo nenri be lo vimstizu gi nai lo loldi
+(B) .e'o do vikmi lo pinca ne'i lo vimstizu pe'e je nai re'o lo loldi
+
+Exactly one of the answers above is correct. Please indicate the single letter corresponding to the correct answer (A or B).
+Answer:","Please pee in the toilet, not on the floor.",.e'o lo pinca be do cu farlu ge lo nenri be lo vimstizu gi nai lo loldi,.e'o do vikmi lo pinca ne'i lo vimstizu pe'e je nai re'o lo loldi,7,,A,"Verbs like ""pee"", where prepositions and adverbs refer to only part of the whole event, have no direct equivalent in Lojban. In B, the speaker asks the listener to pee while being inside the toilet fixture. A, while not an exact translation, conveys the meaning of the English sentence better.",A,"(A) asks that the pee fall inside the the toilet but not on the floor.
+
+(B) asks that the EVENT of peeing be located inside the toilet and not on the ground.
+
+(Note: This sentence is famously difficult to translate into Lojban in a succinct way without sacrificing precision. Sentence (A) solves the problem by rephrasing the situation and technically does not talk about ""peeing"" at all. (B) on the other hand APPEARS to translate all the necessary bits, but ends up meaning the wrong thing.)",1,,0
+jbo_41,94,"Consider the English sentence ""Bye Patrick, I hope you get better.""
+Which of the following is a better translation of this sentence into standard Lojban?
+
+(A) co'o la .patrik. .a'o do kanryze'a
+(B) co'o la .patrik. do kanryze'a .a'o
+
+Exactly one of the answers above is correct. Please indicate the single letter corresponding to the correct answer (A or B).
+Answer:","Bye Patrick, I hope you get better.",co'o la .patrik. .a'o do kanryze'a,co'o la .patrik. do kanryze'a .a'o,4,,B,"Free modifiers such as "".a'o"" attach to the word or phrase before them. In A, "".a'o"" attaches to the name "".patrik."", which isn't well defined -- it could be interpreted as part of the name, or as ""the one who hopefully is Patrick"". In B, "".a'o"" is attached correctly to ""kanryze'a"": ""hopefully get better"".",B,"Attitudinals like "".a'o"" (""I hope"") modify the word or structure to their left.
+
+In (A), it attaches directly to "".patrik."" (depending on who you ask, this either results in calling the person ""Hopefully Patrick"" or expressing hopefulness that you're greeting someone called Patrick, but either way, the intended meaning is not achieved)
+
+In (B), it attaches to the main verb ""kanryze'a"" (""to get more healthy""), which means that getting more healthy is what the speaker hopes for.",1,,0
+jbo_42,37,"Consider the English sentence ""When it snows, I want to dance.""
+Which of the following is a better translation of this sentence into standard Lojban?
+
+(A) ca lo nu snimycarvi kei mi dansu djica
+(B) ca lo nu snimycarvi kei mi djica dansu
+
+Exactly one of the answers above is correct. Please indicate the single letter corresponding to the correct answer (A or B).
+Answer:","When it snows, I want to dance.",ca lo nu snimycarvi kei mi dansu djica,ca lo nu snimycarvi kei mi djica dansu,2,10,A,"Compound predicates are head-final unless inverted using ""co"". ""djica dansu"" can mean ""dance in a wanting way"", while ""dansu djica"" usually means ""want to dance"".",A,"""dansu djica"" is a tanru meaning ""dance-desire"", while ""djica dansu"" means ""desire-dance"". The former is a kind of desire, the latter a kind of dance. Since the claim is that the speaker WANTS to dance, and not necessarily does dance, whenever it snows, the correct tanru is ""dansu djica"".",1,,0
+jbo_43,66,"Consider the English sentence ""Soon after reaching the coast, he jumped into the water.""
+Which of the following is a better translation of this sentence into standard Lojban?
+
+(A) ra ba zi lo nu ra darca lo xaskoi cu plipe lo djacu
+(B) ra ki lo nu ra darca lo xaskoi cu ba zi plipe lo djacu
+
+Exactly one of the answers above is correct. Please indicate the single letter corresponding to the correct answer (A or B).
+Answer:","Soon after reaching the coast, he jumped into the water.",ra ba zi lo nu ra darca lo xaskoi cu plipe lo djacu,ra ki lo nu ra darca lo xaskoi cu ba zi plipe lo djacu,7,,B,"When used as a preposition, ""ba zi"" takes the length of time as an argument, not the point from which the time is reckoned. This point can be given using ""ki"", as in B.",B,"When used as a preposition, ""zi"" (""soon"") should be followed by an argument that expresses the temporal distance to the main event.
+
+However, in (A), it is followed by the event ""he reached the coast"".
+
+In order to specify the reference point of various tense words, the word ""ki"" should be used, as in (B). The event ""he reached the coast"" is taken as the reference point, from which the ""zi"" (""soon"") is evaluated.",1,,0
+jbo_44,118,"Consider the English sentence ""At the funeral, I could do nothing but cry.""
+Which of the following is a better translation of this sentence into standard Lojban?
+
+(A) ca lo mronunsla mi lo ka klaku ku po'o kakne
+(B) ca lo mronunsla mi lo ka krixa ku po'o kakne
+
+Exactly one of the answers above is correct. Please indicate the single letter corresponding to the correct answer (A or B).
+Answer:","At the funeral, I could do nothing but cry.",ca lo mronunsla mi lo ka klaku ku po'o kakne,ca lo mronunsla mi lo ka krixa ku po'o kakne,1,,A,"klaku, as in A, means to cry tears, while ""krixa"" means to yell.",A,[Agreed with presented explanation],1,,1
+jbo_45,119,"Consider the English sentence ""What we talked about is very important to both of us.""
+Which of the following is a better translation of this sentence into standard Lojban?
+
+(A) lo se tavla be mi'o cu vajni sai ro mi'o
+(B) lo se casnu be mi'o cu vajni sai ro mi'o
+
+Exactly one of the answers above is correct. Please indicate the single letter corresponding to the correct answer (A or B).
+Answer:",What we talked about is very important to both of us.,lo se tavla be mi'o cu vajni sai ro mi'o,lo se casnu be mi'o cu vajni sai ro mi'o,1,,B,"tavla takes the listener as its second argument, while ""casnu"" takes the topic, so only ""lo se casnu be mi'o"", as in B, can mean ""what we talked about"".",B,[Agreed with presented explanation],1,,1
+jbo_46,28,"Consider the English sentence ""Three of the seven cats are black.""
+Which of the following is a better translation of this sentence into standard Lojban?
+
+(A) ci lo ze mlatu cu xekri
+(B) ci loi ze mlatu cu xekri
+
+Exactly one of the answers above is correct. Please indicate the single letter corresponding to the correct answer (A or B).
+Answer:",Three of the seven cats are black.,ci lo ze mlatu cu xekri,ci loi ze mlatu cu xekri,7,,A,"lo refers to individuals, while ""loi"" refers to groups of individuals. Thus, ""ci loi ze mlatu"" in B means ""three of the groups of seven cats"", while A matches the English sentence.",A,"We want to quantify over individual cats, not groups of cats, so ""loi"" is the wrong article. (B) would mean that there are multiple groups of seven cats each, and three of those groups are black.",1,,0
+jbo_47,120,"Consider the English sentence ""I repeat, we're closer to the end than to the beginning.""
+Which of the following is a better translation of this sentence into standard Lojban?
+
+(A) zmadu ke'o fa lo fanmo lo krasi lo ka mi'o zvajbi
+(B) zmadu ke'u fa lo fanmo lo krasi lo ka mi'o zvajbi
+
+Exactly one of the answers above is correct. Please indicate the single letter corresponding to the correct answer (A or B).
+Answer:","I repeat, we're closer to the end than to the beginning.",zmadu ke'o fa lo fanmo lo krasi lo ka mi'o zvajbi,zmadu ke'u fa lo fanmo lo krasi lo ka mi'o zvajbi,1,,B,"ke'o, as in A, is a vocative meaning ""please repeat yourself"", while ""ke'u"", as in B, is a free modifier meaning ""I repeat"".",B,[Agreed with presented explanation],1,,1
+jbo_48,20,"Consider the English sentence ""Hi, I'm new.""
+Which of the following is a better translation of this sentence into standard Lojban?
+
+(A) mi cnino coi
+(B) coi mi cnino
+
+Exactly one of the answers above is correct. Please indicate the single letter corresponding to the correct answer (A or B).
+Answer:","Hi, I'm new.",mi cnino coi,coi mi cnino,4,,A,"Vocatives like ""coi"" take a following argument, such as ""mi"", to specify who the speaker is talking to. So, B translates as ""Hi, me. It is new."", while A, where ""coi"" has no argument after it, matches the English. Another way to ensure that ""mi"" is an argument of the main predicate instead of the vocative would be to close the latter with the terminator ""do'u"": ""coi do'u mi cnino"".",A,"When a word follows ""coi"" (""hello""), it specifies the addressee of the greeting.
+
+In (B), ""coi mi"" means ""Hello, me""; the speaker greets themselves, and the predicate ""cnino"" (""new"") is left without any arguments: ""Hello, me. [something] is new.""
+
+By placing ""coi"" at the end of the sentence as in (A), this mistake is avoided: ""I'm new, hi.""",1,,0
+jbo_49,105,"Consider the English sentence ""What are you looking for? My two blue shirts.""
+Which of the following is a better translation of this sentence into standard Lojban?
+
+(A) do ma zvasisku .i lo re mi blanu creka
+(B) do ma zvasisku .i lo mi re blanu creka
+
+Exactly one of the answers above is correct. Please indicate the single letter corresponding to the correct answer (A or B).
+Answer:",What are you looking for? My two blue shirts.,do ma zvasisku .i lo re mi blanu creka,do ma zvasisku .i lo mi re blanu creka,7,,B,"An argument can occur directly inside another argument headed by an article such as ""lo"" in two positions: directly after the article, in which case it is a possessor (equivalent to ""pe"" plus the inner argument placed after the predicate), or after the inner quantifier, in which it takes the place of the predicate that would usually be there (equivalent to ""me"" plus the inner argument). As such, B is a translation of the English, while the second sentence of A has the unrelated meaning, ""the two of us are blue shirts"".",B,"The possessive has to precede the inner quantifier like in (B).
+
+""lo re mi blanu creka"" falls apart into ""[lo re mi] [blanu creka]"" (""the two of me are blue shirts"").",1,,0
+jbo_50,38,"Consider the English sentence ""Did they force you to eat?""
+Which of the following is a better translation of this sentence into standard Lojban?
+
+(A) xu ra bapli lo nu do citka
+(B) xu ra do bapli lo ka citka
+
+Exactly one of the answers above is correct. Please indicate the single letter corresponding to the correct answer (A or B).
+Answer:",Did they force you to eat?,xu ra bapli lo nu do citka,xu ra do bapli lo ka citka,3,,A,"The verb ""bapli"" takes two arguments (the one doing the forcing, and the forced event), not three. Only A makes sense according to this standard definition.",A,"The place structure of ""bapli"" is ""x1 forces x2 to take place.""
+
+(B) uses an incorrect three-place place structure, which is not how ""bapli"" is defined.",1,,0
+jbo_51,6,"Consider the English sentence ""This chair is easy to fold.""
+Which of the following is a better translation of this sentence into standard Lojban?
+
+(A) ti noi stizu cu se frili lo ka polje
+(B) frili fa lo ka polje ti noi stizu
+
+Exactly one of the answers above is correct. Please indicate the single letter corresponding to the correct answer (A or B).
+Answer:",This chair is easy to fold.,ti noi stizu cu se frili lo ka polje,frili fa lo ka polje ti noi stizu,7,,B,"frili takes an agent as its second argument, and ""polje"" takes an agent as its first argument, as in B. Lojban has no direct equivalent of the English middle voice; A would mean something like ""This chair finds it easy to fold things"".",B,"(A) means ""This chair finds it easy to fold something.""
+
+(B) means ""Folding this chair is easy"".",1,,0
+jbo_52,22,"Consider the English sentence ""The windows vary in transparency automatically.""
+Which of the following is a better translation of this sentence into standard Lojban?
+
+(A) lo canko cu zmiku lo ka cenba lo ka guskli
+(B) lo canko cu cenba lo ka guskli poi zmiku
+
+Exactly one of the answers above is correct. Please indicate the single letter corresponding to the correct answer (A or B).
+Answer:",The windows vary in transparency automatically.,lo canko cu zmiku lo ka cenba lo ka guskli,lo canko cu cenba lo ka guskli poi zmiku,7,,A,"Many meanings expressed as adverbs in English are expressed as main verbs in Lojban. A is a correct translation of the English: ""The windows are automatic in varying their transparency"". In B, the relative clause ""poi zmiku"" is part of the argument phrase, ""lo ka guskli poi zmiku"", meaning ""the transparency that is automatic"". Standard Lojban has no sentence-level relative clauses.",A,"Adverbs like ""automatically"" often have to be turned into verbs in Lojban, such as in (A), where ""zmiku"" is the main verb (""x1 automatically satisfies property x2"") and we get ""The window automatically varies in transparency.""
+
+(B) instead attaches ""zmiku"" to ""lo ka guskli"" (""the property of being transparent"") using a restrictive relative clause, which means something like ""the property of being transparent that is automatic"", but this is the wrong approach.",1,,0
+jbo_53,49,"Consider the English sentence ""Helen enjoys running through the woods.""
+Which of the following is a better translation of this sentence into standard Lojban?
+
+(A) la .xelen. cu pluka lo ka bajra pa'o lo rictu'a
+(B) pluka la .xelen. fa lo ka bajra pa'o lo rictu'a
+
+Exactly one of the answers above is correct. Please indicate the single letter corresponding to the correct answer (A or B).
+Answer:",Helen enjoys running through the woods.,la .xelen. cu pluka lo ka bajra pa'o lo rictu'a,pluka la .xelen. fa lo ka bajra pa'o lo rictu'a,3,,B,"pluka means to please, so A is nonsense (""Helen pleases running through the woods""), while B fits the English sentence.",B,"The place structure of ""pluka"" is ""x1 is pleasant to x2"".
+
+In (A), ""la .xelen."" (""Helen"") is in the first argument place, which is incorrect.",1,,0
+jbo_54,121,"Consider the English sentence ""Who started the fire?""
+Which of the following is a better translation of this sentence into standard Lojban?
+
+(A) ma cfagau lo fagri
+(B) ma cfari lo fagri
+
+Exactly one of the answers above is correct. Please indicate the single letter corresponding to the correct answer (A or B).
+Answer:",Who started the fire?,ma cfagau lo fagri,ma cfari lo fagri,1,,A,"cfari takes only one argument, so B is nonsensical. The causative meaning of ""start"" can be expressed by adding the causative suffix ""-gau"" as in A.",A,[Agreed with presented explanation],1,,1
+jbo_55,122,"Consider the English sentence ""Mark likes tea more than Jane does.""
+Which of the following is a better translation of this sentence into standard Lojban?
+
+(A) la .mark. cu zmanei lo'e tcati la .djein.
+(B) la .mark. cu nelmau la .djein. lo'e tcati
+
+Exactly one of the answers above is correct. Please indicate the single letter corresponding to the correct answer (A or B).
+Answer:",Mark likes tea more than Jane does.,la .mark. cu zmanei lo'e tcati la .djein.,la .mark. cu nelmau la .djein. lo'e tcati,1,,B,"zmanei compares how much a person likes two things, and ""nelmau"" compares how much two people like a thing. B is a correct translation of the English, while A has the unrelated meaning, ""Mark prefers tea to Jane"".",B,[Agreed with presented explanation],1,,1
+jbo_56,57,"Consider the English sentence ""At least 100 students gathered in front of the building.""
+Which of the following is a better translation of this sentence into standard Lojban?
+
+(A) lo ka su'o 100 mei gi'e tadni cu kancusu'oi lo ka jmaji lo crane be lo dinju
+(B) su'o 100 tadni cu jmaji lo crane be lo dinju
+
+Exactly one of the answers above is correct. Please indicate the single letter corresponding to the correct answer (A or B).
+Answer:",At least 100 students gathered in front of the building.,lo ka su'o 100 mei gi'e tadni cu kancusu'oi lo ka jmaji lo crane be lo dinju,su'o 100 tadni cu jmaji lo crane be lo dinju,5,,A,"Standard Lojban quantifiers are singular and distributive, so B has the unintended meaning of ""at least 100 students individually (e.g. out of their flesh and bones) gathered in front of the building"". The intended plural meaning can be expressed with the unofficial plural quantifier ""su'oi"" or, as in A, with the equivalent predicate ""kancusu'oi"".",A,"In standard Lojban, where ""su'o"" is a singular quantifier, (B) is wrong. In dialects where ""su'o"" is equivalent to the plural quantifier ""su'oi"", (B) would be the much preferred answer due its more efficient and intuitive structure.
+
+In versions of Lojban without plural quantification, helper predicates like ""kancusu'oi"" can be used to express the equivalent of plural predication, but this is rarely seen in practice.",1,,0
+jbo_57,7,"Consider the English sentence ""I know that you want one of these dishes, but I don't know which one.""
+Which of the following is a better translation of this sentence into standard Lojban?
+
+(A) mi djuno lo du'u do kaidji tu'a su'o lo me ti sanmi .i ku'i na djuno lo du'u ma kau me ri gi'e jai se kaidji do
+(B) mi djuno lo du'u su'o lo me ti sanmi do jai se kaidji .i ku'i na djuno lo du'u ma kau me ri gi'e jai se kaidji do
+
+Exactly one of the answers above is correct. Please indicate the single letter corresponding to the correct answer (A or B).
+Answer:","I know that you want one of these dishes, but I don't know which one.",mi djuno lo du'u do kaidji tu'a su'o lo me ti sanmi .i ku'i na djuno lo du'u ma kau me ri gi'e jai se kaidji do,mi djuno lo du'u su'o lo me ti sanmi do jai se kaidji .i ku'i na djuno lo du'u ma kau me ri gi'e jai se kaidji do,5,,B,"A ""tu'a"" phrase refers to an abstraction (such as a property), and connectives and quantifiers within the phrase are interpreted as if they were in a subsentence describing that property. ""jai"" works similarly to ""tu'a"", but the argument that it raises out of the underlying abstraction is treated as a direct argument to the predicate marked with ""jai"" in terms of how connectives and quantifiers apply to it. As implied by the second sentence, the listener wants a specific dish, not any old dish, which is better expressed with the quantifier ""su'o"" scoping over the property that is the second argument of ""kaidji"", as done using ""jai"" in B.",B,"The English sentence has a de dicto reading and a de re reading, which correspond to (A) and (B) respectively. Given the latter half of the English sentence, it is clear that a de re reading is intended: the speaker believes that the listener wants to eat a specific dish, and not just any one of the dishes, but doesn't know which one the listener desires.",1,,0
+jbo_58,17,"Consider the English sentence ""We decorated the room with ribbons and banners.""
+Which of the following is a better translation of this sentence into standard Lojban?
+
+(A) mi'a seljadnygau lo kumfa lo'e dasri jo'u lo'e lanci
+(B) mi'a jadni lo kumfa se pi'o lo'e dasri jo'u lo'e lanci
+
+Exactly one of the answers above is correct. Please indicate the single letter corresponding to the correct answer (A or B).
+Answer:",We decorated the room with ribbons and banners.,mi'a seljadnygau lo kumfa lo'e dasri jo'u lo'e lanci,mi'a jadni lo kumfa se pi'o lo'e dasri jo'u lo'e lanci,1,,A,"jadni means to be a decoration (on something); the causative meaning of ""decorate"" can be translated with ""seljadnygau"" as in A.",A,"The word ""jadni"" means ""x1 adorns x2"" in a non-agentive sense, as in ""x1 is a decoration of x2"".
+
+The English sentence requires an agentive sense of ""decorate"", which is what ""seljadnygau"" is in (A).
+(B) is completely wrong: ""We are decorations of the room, using ribbons and banners"".",1,,0
+jbo_59,52,"Consider the English sentence ""This is a bottle without a lid.""
+Which of the following is a better translation of this sentence into standard Lojban?
+
+(A) ti botpi fo zi'o
+(B) ti botpi fo zi'o .e no da
+
+Exactly one of the answers above is correct. Please indicate the single letter corresponding to the correct answer (A or B).
+Answer:",This is a bottle without a lid.,ti botpi fo zi'o,ti botpi fo zi'o .e no da,7,,B,"Removing an argument place with ""zi'o"" does not automatically assert that the original predicate doesn't apply; it makes an implicature at best. To say that only the lower-arity predicate applies, the original one must be explicitly negated, such as with ""no da"" in B.",B,"The classic ""a bottle without a lid is not a bottle in Lojban"". The place structure of ""botpi"" is ""x1 is a bottle for x2, made of material x3 with lid x4"".
+
+By placing the argument ""no da"" (""nothing""), which is equivalent to ""na ku su'o da"" (""not anything""), the entire relationship is negated, meaning the claim is that the thing is not a bottle, which is too strong a claim.
+
+The pronoun ""zi'o"" can be used to remove places from the place structure. The place structure of ""botpi fo zi'o"" is then ""x1 is a bottle for x2, made of material x3"", where the old ""lid"" place is no longer present. This new predicate can be used to state positively that the object under discussion is a bottle (without stating whether it has a lid or not), and combined with the "".e no da"" (""and nothing""), the existence of a corresponding lid is negated.
+
+Therefore, the unusual (B) is correct.",1,,0
+jbo_60,2,"Consider the English sentence ""He fears loudness but is bored by silence.""
+Which of the following is a better translation of this sentence into standard Lojban?
+
+(A) ra terpa lo'e nu cladu ku gi'e ku'i se tolzdi lo'e nu smaji
+(B) ra terpa lo'e nu cladu gi'e ku'i se tolzdi lo'e nu smaji
+
+Exactly one of the answers above is correct. Please indicate the single letter corresponding to the correct answer (A or B).
+Answer:",He fears loudness but is bored by silence.,ra terpa lo'e nu cladu ku gi'e ku'i se tolzdi lo'e nu smaji,ra terpa lo'e nu cladu gi'e ku'i se tolzdi lo'e nu smaji,4,,A,"In B, the event abstraction beginning with ""nu cladu"" is not explicitly terminated and expands to include the rest of the sentence, resulting in an unwanted meaning: ""He fears the following: someone unspecified is loud and is bored by silence"". In A, the containing argument phrase is terminated with ""ku"", giving the intended meaning.",A,"(B) means ""He fears [[when something is loud] and [bored by silence]]"" because the subclause opened by the first ""nu"" is not closed, which can be achieved via ""ku"" as in (A) or more commonly via ""kei"". Then the structure changes into ""He [fears when something is loud] and [is bored by silence]"", which correctly captures the English sentence.",1,,0
+jbo_61,111,"Consider the English sentence ""This paint doesn't match the wall, and neither is the wall dirty.""
+Which of the following is a better translation of this sentence into standard Lojban?
+
+(A) na ku zo'u ti noi cinta cu mapti lo bitmu .i je lo bitmu cu toljinsa
+(B) na ku zo'u ti noi cinta cu mapti lo bitmu .i ja lo bitmu cu toljinsa
+
+Exactly one of the answers above is correct. Please indicate the single letter corresponding to the correct answer (A or B).
+Answer:","This paint doesn't match the wall, and neither is the wall dirty.",na ku zo'u ti noi cinta cu mapti lo bitmu .i je lo bitmu cu toljinsa,na ku zo'u ti noi cinta cu mapti lo bitmu .i ja lo bitmu cu toljinsa,7,,B,"The ""na ku zo'u"" prenex negates the following connected sentences as a whole, not each branch separately, so to translate the English sentence, the inner connective must be ""ja"" (or), as in B. A, by De Morgan's law, can be translated as ""the paint doesn't match the wall, or the wall isn't dirty"".",B,"This is an application of De Morgan's laws: ""not A and not B"" is the same as ""not (A or B)"".
+
+(A) incorrectly translates the English sentence using "".i je"" ""(""and""), yielding ""not (A and B)"", which is not equivalent to the English sentence.
+
+(B) uses "".i ja"" (""or""), which gives the right meaning.",1,,0
+jbo_62,29,"Consider the English sentence ""The tree is across the fence.""
+Which of the following is a better translation of this sentence into standard Lojban?
+
+(A) lo tricu cu zvati lo ragve be lo garbi'u
+(B) lo tricu cu zvati ze'o lo garbi'u
+
+Exactly one of the answers above is correct. Please indicate the single letter corresponding to the correct answer (A or B).
+Answer:",The tree is across the fence.,lo tricu cu zvati lo ragve be lo garbi'u,lo tricu cu zvati ze'o lo garbi'u,7,,A,"zvati takes the location of the subject as an argument, as in A. Prepositional phrases, like ""ze'o lo garbi'u"" in B, are not arguments, even though they behave similarly by virtue of being terms. B is understandable but not strictly correct.",A,"Both sentences work, but (A) is simpler because it doesn't involve an unnecessary spatial tense ""ze'o"", which is the tense version of the predicate ""ragve"".
+
+An even simpler way would be ""lo tricu cu ragve lo garbi'u"". The use of ""zvati"" is redundant.",1,,0
+jbo_63,123,"Consider the English sentence ""As you saw, a snake bit me.""
+Which of the following is a better translation of this sentence into standard Lojban?
+
+(A) za'a do su'o since mi batci
+(B) ga'a do su'o since mi batci
+
+Exactly one of the answers above is correct. Please indicate the single letter corresponding to the correct answer (A or B).
+Answer:","As you saw, a snake bit me.",za'a do su'o since mi batci,ga'a do su'o since mi batci,1,,B,"za'a in A is a free modifier that takes no argument; it always means that the speaker observed the event. The arguments of ""batci"" in A are also in the wrong places because of this. ""ga'a do"", as in B, is a proper translation of ""as you saw"" using the preposition ""ga'a"".",B,[Agreed with presented explanation],1,,1
+jbo_64,104,"Consider the English sentence ""Everybody here is sick.""
+Which of the following is a better translation of this sentence into standard Lojban?
+
+(A) ro da pe bu'u ti bilma
+(B) ro da bu'u ti bilma
+
+Exactly one of the answers above is correct. Please indicate the single letter corresponding to the correct answer (A or B).
+Answer:",Everybody here is sick.,ro da pe bu'u ti bilma,ro da bu'u ti bilma,6,,A,"B, depending on context, could mean either that everyone is here and sick, or that everyone is sick when they are here. This is because the quantifier ""ro"" scopes over the prepositional phrase ""bu'u ti"", which is a separate term here. (The former could be specified using a tense marker such as ""ca"", the latter by rewording the sentence to reify the two events of being here and being sick.) In A, ""bu'u ti"" is made to restrict the quantified variable using ""pe"", giving the intended meaning. The English ""everybody here"" has essentially the same structure as ""ro da pe bu'u ti"" except that there is no overt relativiser.",A,"This is a claim about ""everybody [who is] here"", which is exactly what ""ro da pe bu'u ti"" expresses.
+
+(B) on the other hand claims that ""everybody is sick here"", i.e. ""For every X, X is such that X is sick and the event of X being sick is located here."" This is not the correct meaning.",1,,0
+jbo_65,101,"Consider the English sentence ""The chairs are wet now because we didn't take them in before it started to rain.""
+Which of the following is a better translation of this sentence into standard Lojban?
+
+(A) lo stizu ca cilmo .i ki'u tu'e mi'a ru na nergau .i pu bo co'a carvi
+(B) lo stizu ca cilmo .i ki'u tu'e co'a carvi .i pu bo mi'a ru na nergau
+
+Exactly one of the answers above is correct. Please indicate the single letter corresponding to the correct answer (A or B).
+Answer:",The chairs are wet now because we didn't take them in before it started to rain.,lo stizu ca cilmo .i ki'u tu'e mi'a ru na nergau .i pu bo co'a carvi,lo stizu ca cilmo .i ki'u tu'e co'a carvi .i pu bo mi'a ru na nergau,7,,B,"The behaviour of prepositions as sentence connectives is inconsistent between non-tense prepositions (class BAI) and tense prepositions (other classes, e.g. PU). With the former, the first sentence is taken as the sentence in which the preposition appears, and the second as the preposition's overt argument, while with the latter, the roles are reversed. With this in mind, B can be reworded as ""lo stizu cu cilmo be ca ku ki'u lo nu pu lo nu co'a carvi kei mi'a ru na nergau"", which matches the English sentence.",B,"""mi'a ru na nergau .i pu bo co'a carvi"" means ""We didn't take them inside. Before that, it started to rain.""
+
+""co'a carvi .i pu bo mi'a ru na nergau"" means ""It started to rain. Before that, we didn't take them inside.""",1,,0
+jbo_66,14,"Consider the English sentence ""The one I drank was too bitter.""
+Which of the following is a better translation of this sentence into standard Lojban?
+
+(A) lo se pinxe be mi cu kurkydu'e
+(B) lo se pinxe pe mi kurkydu'e
+
+Exactly one of the answers above is correct. Please indicate the single letter corresponding to the correct answer (A or B).
+Answer:",The one I drank was too bitter.,lo se pinxe be mi cu kurkydu'e,lo se pinxe pe mi kurkydu'e,7,,A,"be curries an argument into a predicate (by default, into its second place), while ""pe"" only states that the argument after it is related in some way to the head argument. So, ""lo se pinxe be mi"" in A translates ""the one I drank"" faithfully, while ""lo se pinxe pe mi"" could also refer to e.g. something that I made but others drank.",A,"""lo se pinxe be mi"" means ""that which I drank"", while ""lo se pinxe pe mi"" means ""my beverage"", which could in some contexts refer to something that someone else drank. Only (A) explicitly states that the speaker drank the beverage and is therefore a better translation.",1,,0
+jbo_67,95,"Consider the English sentence ""One plus two times three is seven.""
+Which of the following is a better translation of this sentence into standard Lojban?
+
+(A) li pa su'i re pi'i ci du li ze
+(B) li pa su'i vei re pi'i ci du li ze
+
+Exactly one of the answers above is correct. Please indicate the single letter corresponding to the correct answer (A or B).
+Answer:",One plus two times three is seven.,li pa su'i re pi'i ci du li ze,li pa su'i vei re pi'i ci du li ze,4,,B,"Lojban does not use the standard grouping rules of mathematical notation. Officially, sequences of operators without explicit grouping, such as in A, are ambiguous; in practice, they are left-grouping like many other constructs in the language, so A would be understood as ""(1 + 2) * 3 = 7"". B, with the explicit left bracket ""vei"", matches the expected ""1 + (2 * 3) = 7"".",B,"By default, there is no such thing as operator precedence in Lojban. Instead, mathematical expressions are evaluated from left to right (left grouping), and where a different precedence is intended, brackets or the word ""bo"" can be used.
+
+(A) means ""(1 + 2) * 3 = 7"", which is wrong.
+
+(B) means ""1 + (2 * 3) = 7"", which is correct.",1,,0
+jbo_68,91,"Consider the English sentence ""Walter is to Xenia what Yannick is to Zorro.""
+Which of the following is a better translation of this sentence into standard Lojban?
+
+(A) la .ualter. la .kseni'as. cu ckini lo te ckini be la .zoros. bei la .ianik.
+(B) la .ualter. la .kseni'as. cu ckini lo te ckini be la .ianik. bei la .zoros.
+
+Exactly one of the answers above is correct. Please indicate the single letter corresponding to the correct answer (A or B).
+Answer:",Walter is to Xenia what Yannick is to Zorro.,la .ualter. la .kseni'as. cu ckini lo te ckini be la .zoros. bei la .ianik.,la .ualter. la .kseni'as. cu ckini lo te ckini be la .ianik. bei la .zoros.,2,,A,"In standard Lojban, ""te"" swaps the predicate's first and third argument places, as in A. The behaviour shown in B of only fronting the third place is non-standard.",A,"The place structure of ""ckini"" is ""x1 is related to x2 by relation x3"".
+The prefix ""te"" swaps the first and third argument slots, but the second argument place remains in the same place. 
+To get the right meaning, ""la .ianik."" (""Yannick"") needs to end up in in the original x1 place, which is now the x3 place, so ""lo te ckini be la .zoros. bei la .ianik."" is the correct order.",1,,0
+jbo_69,44,"Consider the English sentence ""You don't seem to be very healthy.""
+Which of the following is a better translation of this sentence into standard Lojban?
+
+(A) do na simlu lo ka kanro mutce
+(B) do simlu lo ka na'e kanro
+
+Exactly one of the answers above is correct. Please indicate the single letter corresponding to the correct answer (A or B).
+Answer:",You don't seem to be very healthy.,do na simlu lo ka kanro mutce,do simlu lo ka na'e kanro,7,,B,"The idiom of negating an outer sentence to express negation of a subsentence is rarer in Lojban than in English (being restricted basically to verbs of liking and wanting, and some speakers see even those cases as incorrect). B, with the negation directly in the subsentence, is a correct translation.",B,"This sentence is an example of Neg-raising, which is a phenomenon that is common in English but which does not exist in Lojban (although many Lojbanists make this mistake by following their L1 intuition). In Lojban, the negation is always interpreted where it appears. Since the intended meaning is ""You seem to be not very healthy"", the negation must appear in the subordinate clause as in (B). (A) means ""It is not the case that: you seem very healthy"".",1,,0
+jbo_70,79,"Consider the English sentence ""Do you want them to sing that song again?""
+Which of the following is a better translation of this sentence into standard Lojban?
+
+(A) .au pei ra za'u re'u sanga lo me ru .elsa
+(B) .au pei ra za'u roi sanga lo me ru .elsa
+
+Exactly one of the answers above is correct. Please indicate the single letter corresponding to the correct answer (A or B).
+Answer:",Do you want them to sing that song again?,.au pei ra za'u re'u sanga lo me ru .elsa,.au pei ra za'u roi sanga lo me ru .elsa,7,,A,"re'u, as in A, refers to a single instance of the event: ""for the more-than-first time"", which could be translated as ""again"". ""roi"", as in B, refers to all instances together: ""more than once"".",A,"""za'u re'u"" means ""again"", while ""za'u roi"" means ""more than once"".",1,,0
+jbo_71,124,"Consider the English sentence ""They could still smell the nail polish.""
+Which of the following is a better translation of this sentence into standard Lojban?
+
+(A) ra pu za'o sumne lo jgalu spali
+(B) ra pu za'o sumne lo jgalu jadni
+
+Exactly one of the answers above is correct. Please indicate the single letter corresponding to the correct answer (A or B).
+Answer:",They could still smell the nail polish.,ra pu za'o sumne lo jgalu spali,ra pu za'o sumne lo jgalu jadni,1,,B,"To date, there is no single Lojban word for ""polish"" in the sense of ""nail polish"". ""lo jgalu spali"", as in A, means a person who polishes nails, or polishes using nails. ""jadni"" in B is acceptable, though imprecise.",B,[Agreed with presented explanation],1,,1
+jbo_72,69,"Consider the English sentence ""Are there many people who live in Greece and work in Bulgaria?""
+Which of the following is a better translation of this sentence into standard Lojban?
+
+(A) xu so'i mei fa lo xabju be lo xelso ku je jibgu'a be bu'u lo bolgaro
+(B) xu so'i mei fa lo xabju be lo xelso je jibgu'a be bu'u lo bolgaro
+
+Exactly one of the answers above is correct. Please indicate the single letter corresponding to the correct answer (A or B).
+Answer:",Are there many people who live in Greece and work in Bulgaria?,xu so'i mei fa lo xabju be lo xelso ku je jibgu'a be bu'u lo bolgaro,xu so'i mei fa lo xabju be lo xelso je jibgu'a be bu'u lo bolgaro,4,,A,"In A, ""je"" connects the two predicates ""xabju be lo xelso ku"" and ""jibgu'a be bu'u lo bolgaro"", as in the English sentence. In B, the terminator ""ku"" is missing, so ""je"" attaches to the predicate within the innermost argument, ""xelso"": ""xabju be lo [xelso je jibgu'a be lo bolgaro]"", which is nonsense (""living in Greeks who live in Bulgaria"").",A,"We want to connect ""living in Greece"" and ""work in Bulgaria"". 
+
+In (A), this is done as ""[xabju be lo xelso ku] je [jibgu'a be bu'u lo bolgaro]"".
+
+In (B), the missing ""ku"" causes the structure to turn into ""xabju be lo [xelso] je [jibgu'a be bu'u lo bolgaro]]"", which means ""living in that which is [Greece and working in Bulgaria]"", i.e. living inside a worker.",1,,0
+jbo_74,1,"Consider the English sentence ""Your nephew writes so cutely.""
+Which of the following is a better translation of this sentence into standard Lojban?
+
+(A) iumle sai fa lo nu lo se famti be do cu ciska
+(B) iumle sai fa lo nu lo famti be do cu ciska
+
+Exactly one of the answers above is correct. Please indicate the single letter corresponding to the correct answer (A or B).
+Answer:",Your nephew writes so cutely.,iumle sai fa lo nu lo se famti be do cu ciska,iumle sai fa lo nu lo famti be do cu ciska,3,,A,"Lojban uses a single word, ""famti"", for the aunt/uncle - nephew/niece relation. The first place is the aunt/uncle and the second place is the nephew/niece, as in A.",A,"""lo famti be do"" means ""your uncle/aunt"", while ""lo se famti be do"" means ""one who has you as an uncle/aunt"", i.e. ""your nephew/niece"".",1,,0
+jbo_75,19,"Consider the English sentence ""The Board decided to dismiss the proposal.""
+Which of the following is a better translation of this sentence into standard Lojban?
+
+(A) lo tanbo cu zu'ejdi lo ka fitytoltu'i lo se stidi
+(B) la tanbo cu zu'ejdi lo ka fitytoltu'i lo se stidi
+
+Exactly one of the answers above is correct. Please indicate the single letter corresponding to the correct answer (A or B).
+Answer:",The Board decided to dismiss the proposal.,lo tanbo cu zu'ejdi lo ka fitytoltu'i lo se stidi,la tanbo cu zu'ejdi lo ka fitytoltu'i lo se stidi,5,,B,"lo tanbo in A refers to a tough, flat object, not to a group of people. ""la tanbo"" in B uses ""tanbo"" as a name, and it is much more common to use names metaphorically than other words.",B,"As ""The Board"" isn't a literal wooden board, ""lo tanbo"" (""the board/plank"") cannot be used to refer to it. Instead, the name article ""la"" has to be used as in (B).
+
+(""la tanbo"" is sometimes used jokingly to mean ""The Board"", but a better translation would be ""lo kamni"" (""the committee"").)",1,"Annotator 2 had made a typo in original version, fixed in this version",0
+jbo_76,31,"Consider the English sentence ""The trumpet is tired, could you make her some coffee?""
+Which of the following is a better translation of this sentence into standard Lojban?
+
+(A) tatpi fa lo zgipli be lo tabra .i .e'o do su'o ckafi se va'u ra jukpa
+(B) tatpi fa lo se zgipli be lo tabra .i .e'o do su'o ckafi se va'u ra jukpa
+
+Exactly one of the answers above is correct. Please indicate the single letter corresponding to the correct answer (A or B).
+Answer:","The trumpet is tired, could you make her some coffee?",tatpi fa lo zgipli be lo tabra .i .e'o do su'o ckafi se va'u ra jukpa,tatpi fa lo se zgipli be lo tabra .i .e'o do su'o ckafi se va'u ra jukpa,3,,A,"zgipli means to play (an instrument), not to be played. ""lo se zgipli be lo tabra"" in B has the nonsensical meaning, ""the instrument that is being played by the trumpet"", while A matches the English sentence.",A,"""lo zgipli be lo tabra"" is ""the player of the trumpet"".
+
+""lo se zgipli be lo tabra"" is ""the instrument played BY the trumpet"" (played by the instrument itself).",1,,0
+jbo_77,50,"Consider the English sentence ""The cook's name is Robert.""
+Which of the following is a better translation of this sentence into standard Lojban?
+
+(A) cmene lo jukpa fa la .robert.
+(B) cmene lo jukpa fa zo .robert.
+
+Exactly one of the answers above is correct. Please indicate the single letter corresponding to the correct answer (A or B).
+Answer:",The cook's name is Robert.,cmene lo jukpa fa la .robert.,cmene lo jukpa fa zo .robert.,5,,B,"When talking about a name as opposed to who or what it represents, it should be quoted with ""zo"" as in B. ""la .robert."" refers to the person, not the name.",B,"""la .robert."" is someone called ""Robert"". ""zo .robert."" is the word ""robert"".
+
+The cook's name is the word ""robert"", therefore ""zo .robert"" should be used.
+(A) claims that the cook's name is NAMED ""Robert"", but it does not say what the cook's name IS.",1,,0
+jbo_78,78,"Consider the English sentence ""Are you twins?""
+Which of the following is a better translation of this sentence into standard Lojban?
+
+(A) xu lo re do tarbykansi'u
+(B) xu lo re do tarbykansa
+
+Exactly one of the answers above is correct. Please indicate the single letter corresponding to the correct answer (A or B).
+Answer:",Are you twins?,xu lo re do tarbykansi'u,xu lo re do tarbykansa,1,,A,"tarbykansa has two arguments: ""x1 is a twin of x2""; ""tarbykansi'u"" has one: ""x1 are twins"". A is a faithful translation, while B weakly implies that they would be triplets with someone else left unmentioned.",A,"The place structure of ""tarbykansi'u"" is ""x1 (plural) are twins (of each other)"".
+
+The place structure of ""tarbykansa"" is ""x1 is a twin of x2"".
+
+Thus, (B) would mean ""Are the two of you twins of someone?"", which is not the intended meaning.",1,,0
+jbo_79,3,"Consider the English sentence ""I didn't give anything to anyone.""
+Which of the following is a better translation of this sentence into standard Lojban?
+
+(A) mi no da no de pu dunda
+(B) mi no da su'o de pu dunda
+
+Exactly one of the answers above is correct. Please indicate the single letter corresponding to the correct answer (A or B).
+Answer:",I didn't give anything to anyone.,mi no da no de pu dunda,mi no da su'o de pu dunda,6,,B,"Multiple negations are always treated literally. A could be translated as, ""I gave everything to someone"".",B,"The English sentence contains three relevant bits: negation and two existential quantifiers ""some"". Both (A) and (B) contract the negation and the first ""some"" into the quantifier ""no"", which is a valid step (""not anything"" is the same as ""nothing""). However, (A) turns the second ""some"" into ""no"" as well, which changes the meaning of the sentence into ""I gave nothing to nobody"", which is equivalent to ""There isn't anything that I didn't give to anybody"", meaning ""Everything is such that I gave it to at least one person"".
+(B) uses the correct quantifiers.",1,,0
+jbo_80,23,"Consider the English sentence ""Do you have some wine glasses?""
+Which of the following is a better translation of this sentence into standard Lojban?
+
+(A) xu do ralte su'o kabri vanju
+(B) xu do ralte su'o vanju kabri
+
+Exactly one of the answers above is correct. Please indicate the single letter corresponding to the correct answer (A or B).
+Answer:",Do you have some wine glasses?,xu do ralte su'o kabri vanju,xu do ralte su'o vanju kabri,2,2,B,"Compounds are head-final, i.e. modifier before modificand, unless inverted by ""co"". As such, ""su'o kabri vanju"" in A means ""some glass wines"", not ""some wine glasses"".",B,"""kabri vanju"" means ""glass wine"", while ""vanju kabri"" means ""wine glass"".",1,,0
+jbo_81,110,"Consider the English sentence ""The copper wire is one metre long.""
+Which of the following is a better translation of this sentence into standard Lojban?
+
+(A) lo tunka skori cu mitre li pa
+(B) lo skori tunka cu mitre li pa
+
+Exactly one of the answers above is correct. Please indicate the single letter corresponding to the correct answer (A or B).
+Answer:",The copper wire is one metre long.,lo tunka skori cu mitre li pa,lo skori tunka cu mitre li pa,2,2,A,"Compounds are head-final, i.e. modifier before modificand, unless inverted by ""co"". As such, ""lo tunka skori"" in A means ""the copper wire"", while ""lo skori tunka"" in B could refer to e.g. copper not yet made into a wire.",A,"""tunka skori"" means ""copper wire"", while ""skori tunka"" means ""wire copper"".",1,,0
+jbo_82,59,"Consider the English sentence ""Have you worked at a store?""
+Which of the following is a better translation of this sentence into standard Lojban?
+
+(A) xu do pu'i jibgu'a zarci
+(B) xu do pu'i zarci jibgu'a
+
+Exactly one of the answers above is correct. Please indicate the single letter corresponding to the correct answer (A or B).
+Answer:",Have you worked at a store?,xu do pu'i jibgu'a zarci,xu do pu'i zarci jibgu'a,2,2,B,"Compounds are head-final, i.e. modifier before modificand, unless inverted by ""co"". As such, ""jibgu'a zarci"" in A means ""be a working store"", not ""work at a store"".",B,"The tanru ""jibgu'a zarci"" means ""work-market"", while the tanru ""zarci jibgu'a"" means ""market-work"". Since the question is about a kind of work, and not a kind of market, the latter tanru is the correct one.",1,,0
+jbo_83,4,"Consider the English sentence ""The waiter came from the left door.""
+Which of the following is a better translation of this sentence into standard Lojban?
+
+(A) lo djabei cu klama fi lo zunle vorme
+(B) lo djabei cu klama lo zunle vorme
+
+Exactly one of the answers above is correct. Please indicate the single letter corresponding to the correct answer (A or B).
+Answer:",The waiter came from the left door.,lo djabei cu klama fi lo zunle vorme,lo djabei cu klama lo zunle vorme,3,3,A,"klama takes the origin as its third argument. The second argument is omitted, so the third must be marked with ""fi"", as in A.",A,"The place structure of ""klama"" is ""x1 goes to x2 from x3 via x4 using x5"".
+
+(B) puts ""lo zunle vorme"" (""the left door"") into the second argument slot, the destination, yielding ""The waiter goes/comes to the left door"".
+
+(A) uses the place tag ""fi"" to correctly place the argument in the third argument slot, indicating that ""the left door"" is the origin.",1,,0
+jbo_84,34,"Consider the English sentence ""The child is talking about dogs.""
+Which of the following is a better translation of this sentence into standard Lojban?
+
+(A) lo verba cu tavla lo'e gerku
+(B) lo verba cu tavla fi lo'e gerku
+
+Exactly one of the answers above is correct. Please indicate the single letter corresponding to the correct answer (A or B).
+Answer:",The child is talking about dogs.,lo verba cu tavla lo'e gerku,lo verba cu tavla fi lo'e gerku,3,3,B,"tavla takes the topic as its third argument. The second argument is omitted, so the third must be marked with ""fi"", as in B.",B,"The place structure of ""tavla"" is ""x1 talks to x2 about x3 in language x4"".
+
+To place ""lo'e gerku"" (""dogs"") in the third argument place, the place tag ""fi"" must be used like in (B), otherwise you get (A) ""The child is talking to dogs"".",1,,0
+jbo_85,113,"Consider the English sentence ""Some tomatoes fell from the table.""
+Which of the following is a better translation of this sentence into standard Lojban?
+
+(A) su'o tamca cu farlu fi lo jubme
+(B) su'o tamca cu farlu lo jubme
+
+Exactly one of the answers above is correct. Please indicate the single letter corresponding to the correct answer (A or B).
+Answer:",Some tomatoes fell from the table.,su'o tamca cu farlu fi lo jubme,su'o tamca cu farlu lo jubme,3,3,A,"farlu takes the origin as its third argument. The second argument is omitted, so the third must be marked with ""fi"", as in A.",A,"The place structure of ""farlu"" is ""x1 falls to x2 from x3"".
+
+""lo jubme"" (""the table"") belongs in the third argument place. The place marker ""fi"" marks an argument as going into the third argument place, as in (A).
+
+In (B), ""lo jubme"" is in the second argument place, yielding ""Some tomatoes fell onto the table.""",1,,0
+jbo_86,63,"Consider the English sentence ""She got the ball with a red spot from the basement.""
+Which of the following is a better translation of this sentence into standard Lojban?
+
+(A) ra cpacu lo bolci poi barna fa su'o xunre ku lo lolnitku'a
+(B) ra cpacu lo bolci poi barna fa su'o xunre ku'o lo lolnitku'a
+
+Exactly one of the answers above is correct. Please indicate the single letter corresponding to the correct answer (A or B).
+Answer:",She got the ball with a red spot from the basement.,ra cpacu lo bolci poi barna fa su'o xunre ku lo lolnitku'a,ra cpacu lo bolci poi barna fa su'o xunre ku'o lo lolnitku'a,4,4,B,"In A, ""ku"" closes only the argument ""su'o xunre ku"", so ""lo lolnitku'a"" falls within the relative clause started by ""poi"", resulting in a nonsensical meaning. The relative clause must be closed with ""ku'o"" for ""lo lolnitku'a"" to count as part of the top-level sentence.",B,"The relative clause needs to be closed to prevent ""lo lolnitku'a"" (""the basement"") from being absorbed into it. The relative clause terminator ""ku'o"" does this in (B). ""ku"" alone is not sufficient as it only terminates the determiner phrase ""su'o xunre"" (""something red"").",1,,0
+jbo_87,41,"Consider the English sentence ""I'll label the three-paragraph story as ""too short"".""
+Which of the following is a better translation of this sentence into standard Lojban?
+
+(A) .ai mi seltcitygau lo lisri poi se pagbu ci jufmei ku'o zo tordydu'e
+(B) .ai mi seltcitygau lo lisri poi se pagbu ci jufmei ku zo tordydu'e
+
+Exactly one of the answers above is correct. Please indicate the single letter corresponding to the correct answer (A or B).
+Answer:","I'll label the three-paragraph story as ""too short"".",.ai mi seltcitygau lo lisri poi se pagbu ci jufmei ku'o zo tordydu'e,.ai mi seltcitygau lo lisri poi se pagbu ci jufmei ku zo tordydu'e,4,4,A,"In B, ""ku"" closes only the argument ""ci jufmei ku"", so ""zo tordydu'e"" falls within the relative clause started by ""poi"", resulting in a nonsensical meaning. The relative clause must be closed with ""ku'o"" for ""zo tordydu'e"" to count as part of the top-level sentence.",A,"In order for ""zo tordydu'e"" (""too short"") to be outside of the relative clause ""poi se pagbu ci jufmei"" (""which has three paragraphs""), the relative clause has to be terminated with ""ku'o"". The terminator ""ku"" is not enough to close the relative clause, because it only terminates the phrase ""ci jufmei"".",1,,0
+jbo_88,71,"Consider the English sentence ""You're taller than the cupboard with the apples.""
+Which of the following is a better translation of this sentence into standard Lojban?
+
+(A) do zmadu lo kajnyta'e poi se nenri lo plise ku lo ka rajycla
+(B) do zmadu lo kajnyta'e poi se nenri lo plise ku'o lo ka rajycla
+
+Exactly one of the answers above is correct. Please indicate the single letter corresponding to the correct answer (A or B).
+Answer:",You're taller than the cupboard with the apples.,do zmadu lo kajnyta'e poi se nenri lo plise ku lo ka rajycla,do zmadu lo kajnyta'e poi se nenri lo plise ku'o lo ka rajycla,4,4,B,"In A, ""ku"" closes only the argument ""lo plise ku"", so ""lo ka rajycla"" falls within the relative clause started by ""poi"", resulting in a nonsensical meaning. The relative clause must be closed with ""ku'o"" for ""lo ka rajycla"" to count as part of the top-level sentence.",B,"The relative clause needs to be closed to prevent ""lo ka rajycla"" (""tallness"") from being absorbed into it. The relative clause terminator ""ku'o"" does this in (B). ""ku"" alone is not sufficient as it only terminates the determiner phrase ""lo plise"" (""the apple"").",1,,0
+jbo_89,98,"Consider the English sentence ""The cat waited on the fence and then on the roof.""
+Which of the following is a better translation of this sentence into standard Lojban?
+
+(A) lo mlatu re'o lo garbi'u .e ba bo lo drudi cu denpa
+(B) lo mlatu re'o lo garbi'u je ba bo drudi cu denpa
+
+Exactly one of the answers above is correct. Please indicate the single letter corresponding to the correct answer (A or B).
+Answer:",The cat waited on the fence and then on the roof.,lo mlatu re'o lo garbi'u .e ba bo lo drudi cu denpa,lo mlatu re'o lo garbi'u je ba bo drudi cu denpa,5,5,A,"Connecting on predicate level with ""je"" within an argument, as in B, results in an argument that satisfies all of the predicates at once (in this case, something that is first a fence and subsequently a roof). The English is better translated by connecting separate arguments, as in A.",A,"The connective ""je"" (""and"") joins predicates, while the connective "".e"" (""and"") joins arguments.
+
+""lo garbi'u .e ba bo lo drudi"" (A) means ""the fence and then the roof"", i.e. it talks about two separate things.
+
+""lo garbi'u je ba bo drudi"" (B) means ""that which [is a fence and then is a roof]"", i.e. it talks about a single thing which is first a fence and then a roof.",1,,0
+jbo_90,65,"Consider the English sentence ""This bed is made of wood and plastic.""
+Which of the following is a better translation of this sentence into standard Lojban?
+
+(A) lo me ti ckana lo'e mudri je slasi cu marji
+(B) lo me ti ckana lo'e mudri .e lo'e slasi cu marji
+
+Exactly one of the answers above is correct. Please indicate the single letter corresponding to the correct answer (A or B).
+Answer:",This bed is made of wood and plastic.,lo me ti ckana lo'e mudri je slasi cu marji,lo me ti ckana lo'e mudri .e lo'e slasi cu marji,5,5,B,"Connecting on predicate level with ""je"" within an argument, as in A, results in an argument that satisfies all of the predicates at once (in this case, something that is simultaneously wood and plastic). The English is better translated by connecting separate arguments, as in B.",B,"The connective ""je"" (""and"") joins predicates, while the connective "".e"" (""and"") joins arguments.
+
+""lo'e mudri je slasi"" (A) refers to something that is wood and plastic at once.
+
+""lo'e mudri .e lo'e slasi"" (B) refers separately to wood and to plastic.",1,,0
+jbo_91,35,"Consider the English sentence ""I dislike both salt and pepper.""
+Which of the following is a better translation of this sentence into standard Lojban?
+
+(A) mi lo'e silna .e lo'e pelpeli cu to'e nelci
+(B) mi lo'e silna je pelpeli cu to'e nelci
+
+Exactly one of the answers above is correct. Please indicate the single letter corresponding to the correct answer (A or B).
+Answer:",I dislike both salt and pepper.,mi lo'e silna .e lo'e pelpeli cu to'e nelci,mi lo'e silna je pelpeli cu to'e nelci,5,5,A,"Connecting on predicate level with ""je"" within an argument, as in B, results in an argument that satisfies all of the predicates at once (in this case, something that is simultaneously salt and pepper). The English is better translated by connecting separate arguments, as in A.",A,"""lo'e silna .e lo'e pelpeli"" means ""that which is salt, and that which is pepper"".
+
+""lo'e silna je pelpeli"" means ""that which is (both) salt and pepper"", which is nonsense.",1,,0
+jbo_92,90,"Consider the English sentence ""The teacher put a pencil on every desk.""
+Which of the following is a better translation of this sentence into standard Lojban?
+
+(A) lo ctuca cu punji fe su'o pinsi fi ro ci'ajbu
+(B) lo ctuca cu punji fi ro ci'ajbu fe su'o pinsi
+
+Exactly one of the answers above is correct. Please indicate the single letter corresponding to the correct answer (A or B).
+Answer:",The teacher put a pencil on every desk.,lo ctuca cu punji fe su'o pinsi fi ro ci'ajbu,lo ctuca cu punji fi ro ci'ajbu fe su'o pinsi,6,6,B,"With the existential quantifier ""su'o"" before the universal quantifier ""ro"", A means that the same pencil was put on every desk. Reversing the quantifiers, as in B, gives the intended meaning.",B,"To get the desired meaning, the universal quantifier ""ro"" has to precede the existential quantifier ""su'o"".
+
+Otherwise you get the meaning in (A): ""There is a pencil that the teacher put on every desk"".",1,,0
+jbo_93,13,"Consider the English sentence ""Has anybody visited every country?""
+Which of the following is a better translation of this sentence into standard Lojban?
+
+(A) xu su'o da ro gugde pu'i stuvi'e
+(B) xu ro gugde su'o da pu'i se stuvi'e
+
+Exactly one of the answers above is correct. Please indicate the single letter corresponding to the correct answer (A or B).
+Answer:",Has anybody visited every country?,xu su'o da ro gugde pu'i stuvi'e,xu ro gugde su'o da pu'i se stuvi'e,6,6,A,"With the universal quantifier ""ro"" before the existential quantifier ""su'o"", B means ""has every country been visited by at least one person?"". Reversing the quantifiers, as in A, gives the intended meaning.",A,"The English sentence contains an existential quantifier followed by a universal quantifier. The relative order of the quantifiers must be retained in the Lojban or else the meaning changes.
+
+(A) keeps the quantifiers in the right order: ""su'o"" is the existential, ""ro"" the universal quantifier.
+(B) swaps them around, yielding ""Has every country been visited by someone?""",1,,0
+jbo_94,53,"Consider the English sentence ""Every human has at least one embarrassing secret.""
+Which of the following is a better translation of this sentence into standard Lojban?
+
+(A) mipri su'o jai se ckeji fa ro remna
+(B) ro remna cu mipri su'o jai se ckeji
+
+Exactly one of the answers above is correct. Please indicate the single letter corresponding to the correct answer (A or B).
+Answer:",Every human has at least one embarrassing secret.,mipri su'o jai se ckeji fa ro remna,ro remna cu mipri su'o jai se ckeji,6,6,B,"With the existential quantifier ""su'o"" before the universal quantifier ""ro"", A means that the same secret is held by everybody. Reversing the quantifiers, as in B, gives the intended meaning.",B,"The quantifiers have to be in the order universal>existential. (A) swaps them around, thereby reversing the meaning to ""There is at least one embarrassing secret that every person is conceiling.""
+
+(B) correctly places the quantifier ""ro"" (""every"") before the quantifier ""su'o"" (""some).",1,,0
+jbo_95,107,"Consider the English sentence ""The wolves howled through the night.""
+Which of the following is a better translation of this sentence into standard Lojban?
+
+(A) lo labno cu cmoni ze'u lo nicte
+(B) lo labno cmoni ze'u lo nicte
+
+Exactly one of the answers above is correct. Please indicate the single letter corresponding to the correct answer (A or B).
+Answer:",The wolves howled through the night.,lo labno cu cmoni ze'u lo nicte,lo labno cmoni ze'u lo nicte,4,7,A,"lo labno cmoni parses not as an argument phrase followed by a main predicate, but always as (the beginning of) a single argument phrase. Thus, sentence B lacks a main verb. ""cu"" in A marks ""cmoni"" as the main verb, which fits the English sentence.",A,"In (B), ""labno cmoni"" forms an accidental tanru (two adjacent predicates).
+
+To prevent this, ""cu"" must be inserted before the main predicate ""cmoni"".",1,,0
+jbo_96,27,"Consider the English sentence ""The book has 361 pages.""
+Which of the following is a better translation of this sentence into standard Lojban?
+
+(A) lo cukta se pagbu 361 papri
+(B) lo cukta cu se pagbu 361 papri
+
+Exactly one of the answers above is correct. Please indicate the single letter corresponding to the correct answer (A or B).
+Answer:",The book has 361 pages.,lo cukta se pagbu 361 papri,lo cukta cu se pagbu 361 papri,4,7,B,"lo cukta se pagbu parses not as an argument phrase followed by a main predicate, but always as (the beginning of) a single argument phrase. Thus, sentence A lacks a main verb. ""cu"" in B marks ""se pagbu"" as the main predicate, which fits the English sentence.",B,"(A) is missing a ""cu"" to separate the two predicates ""cukta"" and ""se pagbu"" and prevent them from forming a tanru.",1,,0
+jbo_97,97,"Consider the English sentence ""Are your legs healthy now?""
+Which of the following is a better translation of this sentence into standard Lojban?
+
+(A) xu lo tuple be do cu kanro di'a
+(B) xu lo tuple be do kanro di'a
+
+Exactly one of the answers above is correct. Please indicate the single letter corresponding to the correct answer (A or B).
+Answer:",Are your legs healthy now?,xu lo tuple be do cu kanro di'a,xu lo tuple be do kanro di'a,4,7,A,"lo tuple be do kanro parses not as an argument phrase followed by a main predicate, but always as (the beginning of) a single argument phrase. Thus, sentence B lacks a main verb. ""cu"" in A marks ""kanro"" as the main verb, which fits the English sentence.",A,"In (B), ""tuple be do"" and ""kanro"" form an accidental tanru. To avoid this, ""cu"" should be inserted before the main verb ""kanro"", like in (A).",1,,0
+jbo_98,45,"Consider the English sentence ""Have you asked the seller for a discount?""
+Which of the following is a better translation of this sentence into standard Lojban?
+
+(A) xu do lo vecnu cu cpedu lo ka jdimyjdikygau
+(B) xu do fi lo vecnu cu cpedu fe lo ka jdimyjdikygau
+
+Exactly one of the answers above is correct. Please indicate the single letter corresponding to the correct answer (A or B).
+Answer:",Have you asked the seller for a discount?,xu do lo vecnu cu cpedu lo ka jdimyjdikygau,xu do fi lo vecnu cu cpedu fe lo ka jdimyjdikygau,3,8,B,"cpedu takes the thing asked for as its second argument and the person being asked as its third. If the arguments are to be said out of order, they must be explicitly marked with ""fi"" and ""fe"" as in B.",B,"The place structure of ""cpedu"" is ""x1 asks for x2 from x3"".
+
+""lo vecnu"" (""the seller"") belongs in the x3 place, and this is achieved using the place tag ""fi"" in (B). In (A), it ends up in the second argument place.",1,,0
+jbo_99,5,"Consider the English sentence ""I'm curious how hot it will be tomorrow.""
+Which of the following is a better translation of this sentence into standard Lojban?
+
+(A) mi kucli lo du'u ma kau ni glare ca lo bavlamdei
+(B) mi kucli lo ni glare ca lo bavlamdei
+
+Exactly one of the answers above is correct. Please indicate the single letter corresponding to the correct answer (A or B).
+Answer:",I'm curious how hot it will be tomorrow.,mi kucli lo du'u ma kau ni glare ca lo bavlamdei,mi kucli lo ni glare ca lo bavlamdei,5,9,A,"The second argument of ""kucli"", when talking about an unknown variable, must be a proposition-like clause containing an indirect question, as in A. In B, ""lo ni glare ca lo bavlamdei"" refers literally to a number, which makes no sense here.",A,"This sentence requires the use of an indirect question when translated into Lojban. The way to do that is to place ""ma kau"" (""indirect what"") in the appropriate argument place within a ""du'u"" clause.
+
+(A) does this correctly: ""I'm curious [what is the extent to which [it] is hot tomorrow]""
+
+(B) could be considered a type error, because ""kucli"" (""to be curious"") expects an indirect question (a ""du'u"" clause containing a ""kau"" somewhere) in its second argument place. You cannot form indirect questions without ""kau"".",1,,0
+jbo_100,96,"Consider the English sentence ""Can ants think?""
+Which of the following is a better translation of this sentence into standard Lojban?
+
+(A) xu kakne pensi fa lo'e manti
+(B) xu pensi kakne fa lo'e manti
+
+Exactly one of the answers above is correct. Please indicate the single letter corresponding to the correct answer (A or B).
+Answer:",Can ants think?,xu kakne pensi fa lo'e manti,xu pensi kakne fa lo'e manti,2,10,B,"In A, the modificand (tertau) of the main predicate is ""pensi"". As the arguments to a compound predicate (tanru) always belong to the modificand, its meaning does not match the English: ""Do ants think in a capable way?"". Sentence B is correct: the modificand of the main predicate is ""kakne"".",B,"The tanru ""kakne pensi"" means ""able-think"", while the tanru ""pensi kakne"" means ""think-can"". The English sentence asks whether ants have the ability to think, and not whether ants can think about ability, so (B) is correct.",1,,0
+jbo_101,26,"Consider the English sentence ""You're faster than the others.""
+Which of the following is a better translation of this sentence into standard Lojban?
+
+(A) do sutra zmadu lo drata
+(B) do zmadu sutra lo drata
+
+Exactly one of the answers above is correct. Please indicate the single letter corresponding to the correct answer (A or B).
+Answer:",You're faster than the others.,do sutra zmadu lo drata,do zmadu sutra lo drata,2,10,A,"In B, the modificand (tertau) of the main predicate is ""sutra"". As the arguments to a compound predicate (tanru) always belong to the modificand, its meaning is unrelated to the English: ""You are faster at the other things"". Sentence A is correct: the modificand of the main predicate is ""zmadu"".",A,"The final component in a tanru (multiple predicates in a row) determines the place structure.
+
+""sutra zmadu"" (""fast-exceed"") has the place structure of ""zmadu"": x1 exceeds x2 in property x3 by amount x4.
+
+""zmadu sutra"" (""exceed-fast"") has the place structure of ""sutra"": x1 is fast at doing x2.
+
+Both sentences attempt to place ""lo drata"" (""the others"") in the second argument. Semantically, this only works when ""zmadu"" is the main verb as in (A).",1,,0
+jbo_102,73,"Consider the English sentence ""The police made us undress.""
+Which of the following is a better translation of this sentence into standard Lojban?
+
+(A) lo pulji cu zbasu lo nu mi'a co'u dasni su'o da
+(B) lo pulji cu gasnu lo nu mi'a co'u dasni su'o da
+
+Exactly one of the answers above is correct. Please indicate the single letter corresponding to the correct answer (A or B).
+Answer:",The police made us undress.,lo pulji cu zbasu lo nu mi'a co'u dasni su'o da,lo pulji cu gasnu lo nu mi'a co'u dasni su'o da,1,12,B,"zbasu means to put something together; ""gasnu"" means to cause something to happen.",B,"""to make something happen"" is expressed by the word ""gasnu"" (""x1 beings about x2""). ""zbasu"" on the other hand means ""x1 makes/builds x2 out of x3"".",1,,0
+jbo_103,39,"Consider the English sentence ""I drank a litre of water.""
+Which of the following is a better translation of this sentence into standard Lojban?
+
+(A) mi pinxe su'o djacu poi litce li pa
+(B) mi pinxe pa litce be lo'e djacu
+
+Exactly one of the answers above is correct. Please indicate the single letter corresponding to the correct answer (A or B).
+Answer:",I drank a litre of water.,mi pinxe su'o djacu poi litce li pa,mi pinxe pa litce be lo'e djacu,1,15,A,"litce means ""x_1 is x_2 litres in volume"". While ""be"", which curries arguments into a predicate, can be translated as ""of"" in many instances, this doesn't work for units of measure: ""pa litce be lo'e djacu"" in B translates to the nonsensical ""one thing that is water litres"". Sentence A has the correct meaning: ""some water that is one litre"".",A,"""su'o djacu poi litce li pa"" is the correct way to phrase ""a litre of water"" in Lojban. It means ""an amount of water that measures 1 in litres"".
+
+(B) uses the place structure of ""litce"" incorrectly (which is ""x1 is x2 litres in volume""), placing ""lo'e djacu"" (""water"") in the x2 place that expects a number.",1,,0
+jbo_104,18,"Consider the English sentence ""Did you give a painting to your mother and take some soap from her?""
+Which of the following is a better translation of this sentence into standard Lojban?
+
+(A) xu do dunda su'o pixra gi'e lebna su'o zbabu lo mamta be do
+(B) xu do dunda su'o pixra gi'e lebna su'o zbabu vau lo mamta be do
+
+Exactly one of the answers above is correct. Please indicate the single letter corresponding to the correct answer (A or B).
+Answer:",Did you give a painting to your mother and take some soap from her?,xu do dunda su'o pixra gi'e lebna su'o zbabu lo mamta be do,xu do dunda su'o pixra gi'e lebna su'o zbabu vau lo mamta be do,4,16,B,"Connectives of the ""gi'V"" series result in three verb phrases (a.k.a. bridi tails): one each for the two connected predicates, and an outer one whose arguments apply to both predicates. In A, ""lo mamta be do"" is an argument of ""lebna"" but not of ""dunda"", which is not wrong per se, as it leaves the argument of ""dunda"" to context. In B, the ""vau"" closes the inner verb phrase, such that ""lo mamta be do"" falls into the outer one and applies to both verbs, which better reflects the intended meaning.",B,"In order for the argument ""lo mamta be do"" (""your mother"") to be shared by both bridi-tails, the terminator ""vau"" has to be inserted before it. Otherwise, it only belongs to the second bridi-tail, which would yield ""Did you give a painting [to someone] and take some soap from your mother?""",1,,0
+jbo_105,25,"Consider the English sentence ""The door is easy, but the window isn't.""
+Which of the following is a better translation of this sentence into standard Lojban?
+
+(A) frili fa ge tu'a lo vorme gi nai ku'i tu'a lo canko
+(B) frili fa tu'a lo vorme .e nai lo canko ku ku'i
+
+Exactly one of the answers above is correct. Please indicate the single letter corresponding to the correct answer (A or B).
+Answer:","The door is easy, but the window isn't.",frili fa ge tu'a lo vorme gi nai ku'i tu'a lo canko,frili fa tu'a lo vorme .e nai lo canko ku ku'i,5,19,A,"A ""tu'a"" phrase refers to an abstraction (such as a property), and connectives and quantifiers within the phrase are interpreted as if they were in a subsentence describing that property. Thus, sentence B does not compare two actions that might or might not be easy, but rather declares one thing as easy, namely doing something clear from context to the door and not the window. On the other hand, sentence A connects two separate ""tu'a"" phrases, which results in a meaning faithful to the English sentence.",A,"""tu'a"" is used when a concrete noun is used in place of a subclause. ""The door is easy"" means ""Opening the door is easy"", but instead of expressing this explicitly as ""frili fa lo ka kargau lo vorme"", you can say ""frili fa tu'a lo vorme"" (""[something involving] the door is easy"").
+
+In the present example, there is a door and a window under discussion, but we don't want to claim that ""it is easy [to open the door and not the window]"". Instead, we want to claim ""[something involving] the door is easy, but [something involving] the window is not easy"". This requires two ""tu'a"".
+
+(B) combines both the door and the window under a single ""tu'a"", which means ""It is easy [to open the door and not the window].
+
+(A) separates the door and the window under separate ""tu'a"", giving ""[Something involving] the door is easy, but [something involving] the window is not easy.""",1,,0
+jbo_106,58,"Consider the English sentence ""Do you have pet rats again?""
+Which of the following is a better translation of this sentence into standard Lojban?
+
+(A) xu do su'o ratcu di'a kurji
+(B) xu do di'a kurji su'o ratcu
+
+Exactly one of the answers above is correct. Please indicate the single letter corresponding to the correct answer (A or B).
+Answer:",Do you have pet rats again?,xu do su'o ratcu di'a kurji,xu do di'a kurji su'o ratcu,6,20,B,"Quantifiers and similar operators in a sentence interact with each other, with operators on the left scoping over operators to the right of them. With the aspect marker ""di'a"" before the quantifier ""su'o"", sentence A translates as ""Are there some rats that you care for again (after having cared for those same rats before)?"". Sentence B, meaning ""Is it again the case that you care for some rats?"", matches the English.",B,"Here, the relative order of the existential quantifier ""su'o"" and the resumptive aspect ""di'a"" is the decisive factor.
+
+By putting ""su'o"" first, like in (A), we get ""Does there exist a rat such that you are taking care of it again?"".
+
+The other order, like in (B), gives the right meaning: ""Is it the case again that there exists a rat such that you take care of it?"".",1,,0
+jbo_107,89,"Consider the English sentence ""The beetles haven't yet matured, the reason being that I haven't separated them from each other.""
+Which of the following is a better translation of this sentence into standard Lojban?
+
+(A) lo cakcinki nu'o makcu .i ki'u bo ri nu'o gau mi sepsi'u
+(B) lo cakcinki nu'o makcu ki'u lo nu ri nu'o gau mi sepsi'u
+
+Exactly one of the answers above is correct. Please indicate the single letter corresponding to the correct answer (A or B).
+Answer:","The beetles haven't yet matured, the reason being that I haven't separated them from each other.",lo cakcinki nu'o makcu .i ki'u bo ri nu'o gau mi sepsi'u,lo cakcinki nu'o makcu ki'u lo nu ri nu'o gau mi sepsi'u,6,25,A,"In B, the aspect marker ""nu'o"" scopes over the adverbial after it, ""ki'u lo nu ri nu'o gau mi sepsi'u"", resulting in an incorrect meaning: ""It is not yet so that because I haven't separated the beetles from each other, they have matured"". In A, ""ki'u"" is used as a sentence connective, which takes it out of the scope of ""nu'o"", resulting in the intended meaning.",A,"(A) and (B) differ in the relative scope of the tense ""nu'o"" (""haven't yet"") and the preposition ""ki'u"" (""because"").
+
+To get the intended meaning, ""ki'u"" has to scope over ""nu'o"". This can be achieved by placing ""ki'u"" to the left of ""nu'o"", or by starting a new sentence with "".i ki'u bo"", which is what (A) does.
+
+(B) has the wrong scope: ""It's not yet the case that me not having separated the beetles is the reason why the beetles are mature.""",1,,0
+jbo_108,80,"Consider the English sentence ""I chose to do what was easiest for me.""
+Which of the following is a better translation of this sentence into standard Lojban?
+
+(A) mi zu'ejdi lo ka zukte lo se frilyrai be fi mi
+(B) mi zu'ejdi lo ka zukte lo frilyrai be fi mi
+
+Exactly one of the answers above is correct. Please indicate the single letter corresponding to the correct answer (A or B).
+Answer:",I chose to do what was easiest for me.,mi zu'ejdi lo ka zukte lo se frilyrai be fi mi,mi zu'ejdi lo ka zukte lo frilyrai be fi mi,3,32,B,"frilyrai takes the easiest action in the first place, not the second, so B and not A matches the English.",B,"""lo frilyrai"" means ""that which is easiest"", while ""lo se frilyrai"" means ""that out of which [something] is the easiest"".",1,,0
+jbo_109,106,"Consider the English sentence ""It's common to fight with one's parents.""
+Which of the following is a better translation of this sentence into standard Lojban?
+
+(A) zilfadni fa lo ka ce'u damba lo rirni be ri
+(B) zilfadni fa lo ka ce'u damba lo rirni be ce'u
+
+Exactly one of the answers above is correct. Please indicate the single letter corresponding to the correct answer (A or B).
+Answer:",It's common to fight with one's parents.,zilfadni fa lo ka ce'u damba lo rirni be ri,zilfadni fa lo ka ce'u damba lo rirni be ce'u,7,35,A,"The lambda pronoun ""ce'u"" creates a new variable every time it is used. To use the same variable again, it must be assigned to another pronoun, such as the automatically assigned ""ri"" used in A. B, where the repeated ""ce'u"" results in a second variable, is nonsensical because ""zilfadni"" expects a unary predicate in its first place.",A,"The predicate ""zilfadni"" (""common"") takes a property as its first argument, in other words, a ka-clause with exactly one ""ce'u"". 
+
+In a property clause (""ka""), every occurence of ""ce'u"" stands for a new lambda variable instead of referring to the same variable.
+
+""to fight with one's parents"" expresses a reflexive predicate: X fights with the parents of X. The second X can't be another ""ce'u"", but it can be a pronoun that refers back to the first ""ce'u"". ""ri"" is this pronoun.",1,,0
+jbo_110,24,"Consider the English sentence ""The clown's nose is red.""
+Which of the following is a better translation of this sentence into standard Lojban?
+
+(A) lo .ekcala be lo nazbi cu xunre
+(B) lo nazbi be lo .ekcala cu xunre
+
+Exactly one of the answers above is correct. Please indicate the single letter corresponding to the correct answer (A or B).
+Answer:",The clown's nose is red.,lo .ekcala be lo nazbi cu xunre,lo nazbi be lo .ekcala cu xunre,7,34,B,"The particle ""be"" curries the argument after it into the predicate before it. ""lo nazbi be lo .ekcala"" means ""the nose of the clown"", while ""lo .ekcala be lo nazbi"" is nonsensical because "".ekcala"" takes only one argument.",B,"""lo .ekcala be lo nazbi"" is ill-formed because it places ""lo nazbi"" (""the nose"") into the second argument place of "".ekcala"" (""clown""), which doesn't exist (it would mean ""that which clowns the nose"" or so).
+
+This is backwards from the correct phrase ""lo nazbi be lo .ekcala"", which means ""the nose of the clown"".",1,,0
+jbo_111,125,"Consider the English sentence ""You became happy as soon as they finished cooking.""
+Which of the following is a better translation of this sentence into standard Lojban?
+
+(A) do gleki co'a lo nu ra mo'u jukpa
+(B) do gleki co'a ku mo'u lo nu ra jukpa
+
+Exactly one of the answers above is correct. Please indicate the single letter corresponding to the correct answer (A or B).
+Answer:",You became happy as soon as they finished cooking.,do gleki co'a lo nu ra mo'u jukpa,do gleki co'a ku mo'u lo nu ra jukpa,1,39,A,"co'a means ""start"" or ""become"" as an adverb and ""as soon as"" as a preposition. A is a faithful translation of the English sentence, while B has an entirely different meaning: ""It started to be the case that your happiness ends when they cook"".",A,[Agreed with presented explanation],1,,1
+jbo_112,108,"Consider the English sentence ""Through the night, the mosquitoes tried to get inside.""
+Which of the following is a better translation of this sentence into standard Lojban?
+
+(A) ze'a lo nicte lo ckuliki cu troci nerkla
+(B) ze'a lo nicte lo ckuliki cu nerkla troci
+
+Exactly one of the answers above is correct. Please indicate the single letter corresponding to the correct answer (A or B).
+Answer:","Through the night, the mosquitoes tried to get inside.",ze'a lo nicte lo ckuliki cu troci nerkla,ze'a lo nicte lo ckuliki cu nerkla troci,2,10,B,"Compound predicates are head-final unless inverted using ""co"". ""troci nerkla"" can mean ""enter with effort"", while ""nerkla troci"" usually means ""try to enter"".",B,"The tanru ""troci nerkla"" means ""try-enter"" and describes a kind of entering that has something to do with trying, while the tanru ""nerkla troci"" means ""enter-try"" and describes a kind of trying that has to do with entering. The mosquitoes are trying something (namely to get inside), but the speaker is not claiming that they actually do go inside. Therefore, (B) is correct.",1,,0
+jbo_113,12,"Consider the English sentence ""Prisoners, you may now sleep.""
+Which of the following is a better translation of this sentence into standard Lojban?
+
+(A) doi pinfu do ca sipna .e'a
+(B) doi pinfu .e'a do ca sipna
+
+Exactly one of the answers above is correct. Please indicate the single letter corresponding to the correct answer (A or B).
+Answer:","Prisoners, you may now sleep.",doi pinfu do ca sipna .e'a,doi pinfu .e'a do ca sipna,4,41,A,"Free modifiers such as "".e'a"" attach to the word or phrase before them. In B, "".e'a"" attaches to ""pinfu"" in the vocative phrase, which could be interpreted as, ""hey, those who I permit to be prisoners"". In A, "".e'a"" is attached correctly to ""sipna"": ""sleep, I permit"".",A,"Attitudinals such as "".e'a"" attach to the word on their left. Their placement has a big impact on the meaning of a sentence. The word "".e'a"" expresses permission, and what is permitted is the word that it is attached to.
+
+In (A), "".e'a"" is attached to ""sipna"" (""sleep""), meaning to sleep is what is permitted.
+In (B), "".e'a"" is attached to ""pinfu"" (""prisoner""), which is part of a vocative phrase, so it awkwardly becomes something like ""I hereby address this to those who I permit to be prisoners: you are now asleep"".",1,,0
+jbo_114,11,"Consider the English sentence ""One of the couples is from Morocco.""
+Which of the following is a better translation of this sentence into standard Lojban?
+
+(A) pa lo spenysi'u cu se krasi lo morkygu'e
+(B) pa loi spenysi'u cu se krasi lo morkygu'e
+
+Exactly one of the answers above is correct. Please indicate the single letter corresponding to the correct answer (A or B).
+Answer:",One of the couples is from Morocco.,pa lo spenysi'u cu se krasi lo morkygu'e,pa loi spenysi'u cu se krasi lo morkygu'e,7,46,B,"lo refers to individuals, while ""loi"" refers to groups of individuals. Thus, ""pa lo spenysi'u"" in A means ""one of the spouses"", while B matches the English sentence.",B,"The English sentence quantifies over couples, not members of couples. Therefore, the singularizing determiner ""loi"" should be used as in (B): ""pa loi spenysi'u"" = one of [the groups of [people who are married to each other]].
+
+(A) quantifies over individual people who are part of couples and says that one of those people is from Morocco.",1,,0
+jbo_115,86,"Consider the English sentence ""Around noon, the squirrel started to dig.""
+Which of the following is a better translation of this sentence into standard Lojban?
+
+(A) ki lo dormidju zi co'a kakpa fa lo ricyratcu
+(B) zi lo dormidju co'a kakpa fa lo ricyratcu
+
+Exactly one of the answers above is correct. Please indicate the single letter corresponding to the correct answer (A or B).
+Answer:","Around noon, the squirrel started to dig.",ki lo dormidju zi co'a kakpa fa lo ricyratcu,zi lo dormidju co'a kakpa fa lo ricyratcu,7,43,A,"When used as a preposition, ""zi"" takes the length of time as an argument, not the point from which the time is reckoned. This point can be given using ""ki"", as in A.",A,"When used as a preposition, ""zi"" (""soon"") should be followed by an argument that expresses the temporal distance to the main event, and not a point in time like ""noon"".
+
+In order to specify the reference point of ""zi"" (i.e. to specify what the main event is temporally close to) the word ""ki"" should be used, as in (A). ""ki dormidju"" sets noon as the reference point and says that the main event takes place in temporal vicinity to it (either before or after it).",1,,0
+jbo_116,84,"Consider the English sentence ""Please, this is important!""
+Which of the following is a better translation of this sentence into standard Lojban?
+
+(A) pe'u ti vajni
+(B) ti vajni pe'u
+
+Exactly one of the answers above is correct. Please indicate the single letter corresponding to the correct answer (A or B).
+Answer:","Please, this is important!",pe'u ti vajni,ti vajni pe'u,4,48,B,"Vocatives like ""pe'u"" take a following argument, such as ""mi"", to specify who the speaker is talking to. So, A translates as ""Please, this! It is important."", while B, where ""pe'u"" has no argument after it, matches the English. Another way to ensure that ""mi"" is an argument of the main predicate instead of the vocative would be to close the latter with the terminator ""do'u"": ""pe'u do'u ti vajni"".",B,"When a word follows ""pe'u"" (""please""), it specifies the addressee.
+
+In (A), ""pe'u ti"" means ""Please, this""; the speaker asks the things they are pointing at for a favor, and the predicate ""vajni"" (""important"") is left without any arguments: ""Please, O this. [something] is important.""
+
+By placing ""pe'u"" at the end of the sentence as in (B), this mistake is avoided: ""This is important. Please.""",1,,0
+jbo_117,99,"Consider the English sentence ""Eleven divided by five is two and one-fifth.""
+Which of the following is a better translation of this sentence into standard Lojban?
+
+(A) li pa pa fe'i mu du li re su'i vei pa fe'i mu
+(B) li pa pa fe'i mu du li re su'i pa fe'i mu
+
+Exactly one of the answers above is correct. Please indicate the single letter corresponding to the correct answer (A or B).
+Answer:",Eleven divided by five is two and one-fifth.,li pa pa fe'i mu du li re su'i vei pa fe'i mu,li pa pa fe'i mu du li re su'i pa fe'i mu,4,67,A,"Lojban does not use the standard grouping rules of mathematical notation. Officially, sequences of operators without explicit grouping, such as in A, are ambiguous; in practice, they are left-grouping like many other constructs in the language, so B would be understood as ""11 / 5 = (2 + 1) / 5"". A, with the explicit left bracket ""vei"", matches the expected ""11 / 5 = 2 + (1 / 5)"".",A,"By default, there is no such thing as operator precedence in Lojban. Instead, mathematical expressions are evaluated from left to right (left grouping), and where a different precedence is intended, brackets or the word ""bo"" can be used.
+
+The part after the equal sign in (A) means ""2 + (1 / 5)"", which is equivalent to ""two and one-fifth"".
+
+The part after the equal sign in (B) means ""(2 + 1) / 5"", which is ""three fifths"" and not the intended meaning.",1,,0
+jbo_118,93,"Consider the English sentence ""She wants the door to be on the east side.""
+Which of the following is a better translation of this sentence into standard Lojban?
+
+(A) ra djica lo vorme lo ka lo stuna mlana cu stuzi
+(B) ra djica lo nu lo vorme lo stuna mlana cu se stuzi
+
+Exactly one of the answers above is correct. Please indicate the single letter corresponding to the correct answer (A or B).
+Answer:",She wants the door to be on the east side.,ra djica lo vorme lo ka lo stuna mlana cu stuzi,ra djica lo nu lo vorme lo stuna mlana cu se stuzi,3,50,B,"The verb ""djica"" means to want an event to happen (for a purpose). Only B makes sense according to this standard definition. Sentence A, with the event split into an object followed by a property, would make sense if the verb were "".aunde"".",B,"The definition of ""djica"" is ""x1 wants x2 to happen"", but (A) uses it as if it were defined as ""x1 wants x2 to be/do x3"", which is not the correct definition.",1,,0
+jbo_119,87,"Consider the English sentence ""The ""pot"" in the second sentence should be a ""cup"".""
+Which of the following is a better translation of this sentence into standard Lojban?
+
+(A) .ei zo patxu pe lo re moi co jufra cu se basti zo kabri
+(B) .ei lo patxu pe lo re moi co jufra cu se basti lo kabri
+
+Exactly one of the answers above is correct. Please indicate the single letter corresponding to the correct answer (A or B).
+Answer:","The ""pot"" in the second sentence should be a ""cup"".",.ei zo patxu pe lo re moi co jufra cu se basti zo kabri,.ei lo patxu pe lo re moi co jufra cu se basti lo kabri,5,77,A,"When talking about a word as opposed to who or what it represents, it should be quoted with ""zo"" as in A. ""lo kabri"" in B refers to a cup, not the word ""cup"".",A,"The use-mention distinction is always made explicit in Lojban.
+
+""lo kabri"" is ""a cup"", while ""zo kabri"" is the word ""cup"".
+
+The English sentence talks about replacing one word for another, therefore both words should be preceded by ""zo"", the quotation particle, and not ""lo"", which would refer to actual pots and cups.",1,,0
+jbo_120,55,"Consider the English sentence ""I'm not sure how heavy the couch is.""
+Which of the following is a better translation of this sentence into standard Lojban?
+
+(A) mi na'e birti lo junta be lo sfofa
+(B) mi na'e birti lo du'u ma kau junta lo sfofa
+
+Exactly one of the answers above is correct. Please indicate the single letter corresponding to the correct answer (A or B).
+Answer:",I'm not sure how heavy the couch is.,mi na'e birti lo junta be lo sfofa,mi na'e birti lo du'u ma kau junta lo sfofa,5,9,B,"The second argument of ""birti"", when talking about a variable, must be a proposition-like clause containing an indirect question, as in B. In A, ""lo junta be lo sfofa"" refers literally to a number, which makes no sense here.",B,"""how heavy the couch is"" requires an indirect question when translated into Lojban. Indirect questions are formed using ""du'u"" and ""kau"", as in (B).
+
+(A) incorrectly places ""lo junta"" (""the weight"") in the second argument place of ""birti"" (""x1 is certain that x2 is the case""), but the word requires a ""du'u"".",1,,0
+jbo_121,9,"Consider the English sentence ""Nobody is perfect.""
+Which of the following is a better translation of this sentence into standard Lojban?
+
+(A) no prenu cu prane
+(B) no prenu na prane
+
+Exactly one of the answers above is correct. Please indicate the single letter corresponding to the correct answer (A or B).
+Answer:",Nobody is perfect.,no prenu cu prane,no prenu na prane,6,79,A,"Multiple negations are always treated literally. A could be translated as, ""Everybody is perfect"".",A,"The ""na"" in (B) negates the predicate, so it means ""No person isn't perfect"" (= ""Every person is perfect"").",1,,0
+jbo_122,88,"Consider the English sentence ""The carpet gets wet fast but dries slowly.""
+Which of the following is a better translation of this sentence into standard Lojban?
+
+(A) lo lolbu'u cu sutra lo ka co'a cilmo vau gi'e ku'i masno lo ka co'a sudga
+(B) lo lolbu'u cu sutra lo ka co'a cilmo ku gi'e ku'i masno lo ka co'a sudga
+
+Exactly one of the answers above is correct. Please indicate the single letter corresponding to the correct answer (A or B).
+Answer:",The carpet gets wet fast but dries slowly.,lo lolbu'u cu sutra lo ka co'a cilmo vau gi'e ku'i masno lo ka co'a sudga,lo lolbu'u cu sutra lo ka co'a cilmo ku gi'e ku'i masno lo ka co'a sudga,4,60,B,"In A, the property abstraction beginning with ""ka co'a cilmo"" is not explicitly terminated and expands to include the rest of the sentence, resulting in an unwanted meaning: ""The carpet does the following quickly: get wet but slowly dry"". In B, the containing argument phrase is terminated with ""ku"", giving the intended meaning.",B,"The intended structure is ""The carpet [is fast at getting wet] and [slow at getting dry].""
+
+For ""gi'e"" (""and"") to connect the the two bracketed constituents, the first one needs to be terminated properly. ""vau"" is not sufficient to escape the ""lo ka co'a cilmo"" subclause, but ""ku"" is.",1,,0
+jbo_123,77,"Consider the English sentence ""Beginners are welcome too.""
+Which of the following is a better translation of this sentence into standard Lojban?
+
+(A) lo'e se cnino ku ji'a zanvi'e
+(B) lo'e se cnino ji'a ku zanvi'e
+
+Exactly one of the answers above is correct. Please indicate the single letter corresponding to the correct answer (A or B).
+Answer:",Beginners are welcome too.,lo'e se cnino ku ji'a zanvi'e,lo'e se cnino ji'a ku zanvi'e,6,31,A,"In B, ""ji'a"" attaches to the verb ""cnino"" inside of the argument phrase. This can be translated as ""those who are also beginners (in addition to other attributes)"". In A, ""ji'a"" attaches to the whole argument phrase, ""lo xunre ku"", giving the intended meaning: ""those who are beginners, also (in addition to other people)"".",A,"""ji'a"" (""also"") modifies the word or structure to its left.
+
+""lo'e se cnino ji'a"" means ""those who are [also new]"".
+
+""lo'e se cnino ku ji'a"" means ""[those who are new], too"".",1,,0
+jbo_124,47,"Consider the English sentence ""Those who mainly hope usually fail.""
+Which of the following is a better translation of this sentence into standard Lojban?
+
+(A) lo'e pacna ku ra'u fliba ta'e
+(B) lo'e pacna ra'u ku fliba ta'e
+
+Exactly one of the answers above is correct. Please indicate the single letter corresponding to the correct answer (A or B).
+Answer:",Those who mainly hope usually fail.,lo'e pacna ku ra'u fliba ta'e,lo'e pacna ra'u ku fliba ta'e,6,31,B,"In A, ""ra'u"" attaches to the whole argument phrase, ""lo'e pacna ku"". This can be translated as ""mainly those who hope (and, less prominently, some other people)"". In B, ""ra'u"" attaches to the verb ""pacna"" inside the argument phrase, giving the intended meaning: ""those who mainly hope (and, less prominently, do some other things)"".",B,"The position of ""ra'u"" (""mainly"") makes a big difference here.
+
+(A): ""Mainly those who hope, usually fail.""
+(B): ""Those who mainly hope, usually fail.""",1,,0
+jbo_125,56,"Consider the English sentence ""We all care for each other.""
+Which of the following is a better translation of this sentence into standard Lojban?
+
+(A) lo ro mi'o kurjysi'u
+(B) lo mi'o ro kurjysi'u
+
+Exactly one of the answers above is correct. Please indicate the single letter corresponding to the correct answer (A or B).
+Answer:",We all care for each other.,lo ro mi'o kurjysi'u,lo mi'o ro kurjysi'u,7,49,A,"An argument can occur directly inside another argument headed by an article such as ""lo"" in two positions: directly after the article, in which case it is a possessor (equivalent to ""pe"" plus the inner argument placed after the predicate), or after the inner quantifier, in which it takes the place of the predicate that would usually be there (equivalent to ""me"" plus the inner argument). As such, A is a translation of the English, while B consists of a single argument without a predicate, meaning ""all of those caring for each other who are related to us"".",A,"""lo ro mi'o"" in (A) means ""we all"".
+
+""lo mi'o"" in (B) is ungrammatical, and ""ro"" forms a phrase with ""kurjysi'u"" (""ro kurjysi'u"" = ""every person who cares for each other"" [sic]).",1,,0

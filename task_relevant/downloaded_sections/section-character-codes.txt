@@ -1,0 +1,37 @@
+Chapter 17. As Easy As A-B-C? The Lojban Letteral System And Its Uses  
+---  
+Prev: Section 17.12 |  Next: Section 17.14  
+---|---  
+Table of Contents
+Book Info Page
+* * *
+## 17.13. Computerized character codes
+Since the first application of computers to non-numerical information, character sets have existed, mapping numbers (called “character codes”) into selected lerfu, digits, and punctuation marks (collectively called “characters”). Historically, these character sets have only covered the English alphabet and a few selected punctuation marks. International efforts have now created Unicode, a unified character set that can represent essentially all the characters in essentially all the world's writing systems. Lojban can take advantage of these encoding schemes by using the cmavo __se'e__ (of selma'o BY). This cmavo is conventionally followed by digit cmavo of selma'o PA representing the character code, and the whole string indicates a single character in some computerized character set:
+**Example 17.45. **
+me'o | se'e | cixa | cu | lerfu | la | .asycy'i'is.  
+---|---|---|---|---|---|---  
+The-expression | [code] | 36 |  | is-a-letteral-in-set |  | ASCII  
+loi | merko | rupnu  
+---|---|---  
+for-the-mass-of | American | currency-units.  
+The character code 36 in ASCII represents American dollars.  
+---  
+“$” represents American dollars.  
+  
+
+Understanding Example 17.45 depends on knowing the value in the ASCII character set (one of the simplest and oldest) of the “$” character. Therefore, the __se'e__ convention is only intelligible to those who know the underlying character set. For precisely specifying a particular character, however, it has the advantages of unambiguity and (relative) cultural neutrality, and therefore Lojban provides a means for those with access to descriptions of such character sets to take advantage of them.
+As another example, the Unicode character set (also known as ISO 10646) represents the international symbol of peace, an inverted trident in a circle, using the base-16 value 262E. In a suitable context, a Lojbanist may say:
+**Example 17.46. **
+me'o | se'e | rexarerei | sinxa | le | ka | panpi  
+---|---|---|---|---|---|---  
+the-expression | [code] | 262E | is-a-sign-of | the | quality-of | being-at-peace  
+  
+
+When a __se'e__ string appears in running discourse, some metalinguistic convention must specify whether the number is base 10 or some other base, and which character set is in use.
+* * *
+Chapter 17. As Easy As A-B-C? The Lojban Letteral System And Its Uses  
+---  
+Prev: Section 17.12 |  Next: Section 17.14  
+---|---  
+Table of Contents
+Book Info Page

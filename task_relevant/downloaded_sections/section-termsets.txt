@@ -1,0 +1,78 @@
+Chapter 14. If Wishes Were Horses: The Lojban Connective System  
+---  
+Prev: Section 14.10 |  Next: Section 14.12  
+---|---  
+Table of Contents
+Book Info Page
+* * *
+## 14.11. Termset logical connection
+So far we have seen sentences that differ in all components, and require bridi connection; sentences that differ in one sumti only, and permit sumti connection; and sentences that differ in the selbri and possibly one or more sumti, and permit bridi-tail connection. Termset logical connectives are employed for sentences that differ in more than one sumti but not in the selbri, such as:
+**Example 14.71. **
+I go to the market from the office and to the house from the school.
+  
+
+The Lojban version of Example 14.71 requires two termsets joined by a logical connective. A “term” is either a sumti or a sumti preceded by a tense or modal tag such as __pu__ or __bai__. Afterthought termsets are formed by linking terms together by inserting the cmavo __ce'e__ (of selma'o CEhE) between each of them. Furthermore, the logical connective (which is a jek) must be prefixed by the cmavo __pe'e__ (of selma'o PEhE). (We could refer to the combination of __pe'e__ and a jek as a “pehejek”, I suppose.)
+**Example 14.72. **
+mi | klama | le | zarci | ce'e | le | briju  
+---|---|---|---|---|---|---  
+I | go | to-the | market | [plus] | from-the | office  
+pe'e | je | le | zdani | ce'e | le | ckule  
+---|---|---|---|---|---|---  
+[joint] | and | to-the | house | [plus] | from-the | school.  
+  
+
+The literal translation uses “[plus]” to indicate the termset connective, and “[joint]” to indicate the position of the logical connective joint. As usual, there is an equivalent bridi-connection form:
+**Example 14.73. **
+mi | klama | le | zarci | le | briju  
+---|---|---|---|---|---  
+I | go | to-the | market | from-the | office,  
+.ije | mi | klama | le | zdani | le | ckule  
+---|---|---|---|---|---|---  
+and | I | go | to-the | house | from-the | school.  
+  
+
+which illustrates that the two bridi differ in the x2 and x3 places only.
+What happens if the two joined sets of terms are of unequal length? Expanding to bridi connection will always make clear which term goes in which place of which bridi. It can happen that a sumti may fall in the x2 place of one bridi and the x3 place of another:
+**Example 14.74. **
+mi | pe'e | ja | do | ce'e | le | zarci | cu | klama | le | briju  
+---|---|---|---|---|---|---|---|---|---|---  
+I | [joint] | or | you | [plus] | to-the | market |  | go | to/from-the | office.  
+  
+
+can be clearly understood by expansion to:
+**Example 14.75. **
+mi | klama | le | briju | .ija | do | le | zarci | cu | klama  
+---|---|---|---|---|---|---|---|---|---  
+I | go | to-the | office, | or | you | to-the | market |  | go  
+le | briju  
+---|---  
+from-the | office.  
+  
+
+So _le briju_ is your origin but my destination, and thus falls in the x2 and x3 places of __klama__ simultaneously! This is legal because even though there is only one selbri, __klama__ , there are two distinct bridi expressed here. In addition, __mi__ in Example 14.74 is serving as a termset containing only one term. An analogous paradox applies to compound bridi with tail-terms and unequal numbers of sumti within the connected bridi-tails:
+**Example 14.76. **
+mi |  | klama | le | zarci | gi'e | dzukla | vau | le | briju  
+---|---|---|---|---|---|---|---|---|---  
+I | ( | go | to-the | market | and | walk | ) | to/from-the | office.  
+  
+
+means that I go to the market from the office, and I walk to the office; _le briju_ is the x3 place of __klama__ and the x2 place of __dzukla__.
+Forethought termsets also exist, and use __nu'i__ of selma'o NUhI to signal the beginning and __nu'u__ of selma'o NUhU (an elidable terminator) to signal the end. Nothing is inserted between the individual terms: they simply sit side-by-side. To make a logical connection in a forethought termset, use a gek, with the gek just after the __nu'i__ , and an extra __nu'u__ just before the gik:
+**Example 14.77. **
+mi | klama | nu'i | ge | le | zarci | le | briju  
+---|---|---|---|---|---|---|---  
+I | go | [start-termset] | both | to-the | market | from-the | office  
+nu'u | gi | le | zdani | le | ckule | [nu'u]  
+---|---|---|---|---|---|---  
+[joint] | and | to-the | house | from-the | school | [end-termset].  
+  
+
+Note that even though two termsets are being connected, only one __nu'i__ is used.
+The grammatical uses of termsets that do not contain logical connectives are explained in Section 9.8, Section 10.25, and Section 16.7.
+* * *
+Chapter 14. If Wishes Were Horses: The Lojban Connective System  
+---  
+Prev: Section 14.10 |  Next: Section 14.12  
+---|---  
+Table of Contents
+Book Info Page

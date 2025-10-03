@@ -1,0 +1,112 @@
+Chapter 10. Imaginary Journeys: The Lojban Space/Time Tense System  
+---  
+Prev: Section 10.15 |  Next: Section 10.17  
+---|---  
+Table of Contents
+Book Info Page
+* * *
+## 10.16. Tense relations between sentences
+The sumti tcita method, explained in Section 10.12, of asserting a tense relationship between two events suffers from asymmetry. Specifically,
+**Example 10.109. **
+le | verba | cu | cadzu | le | bisli  
+---|---|---|---|---|---  
+The | child |  | walks-on | the | ice  
+zu'a | le | nu | le | nanmu | cu | batci | le | gerku  
+---|---|---|---|---|---|---|---|---  
+[left] | the | event-of | the | man |  | bites | the | dog.  
+The child walks on the ice to the left of where the man bites the dog.  
+---  
+  
+
+which specifies an imaginary journey leftward from the man biting the dog to the child walking on the ice, claims only that the child walks on the ice. By the nature of _le nu_ , the man's biting the dog is merely referred to without being claimed. If it seems desirable to claim both, each event can be expressed as a main sentence bridi, with a special form of __i__ connecting them:
+**Example 10.110. **
+le | nanmu | cu | batci | le | gerku  
+---|---|---|---|---|---  
+The | man |  | bites | the | dog.  
+.izu'abo | le | verba | cu | cadzu | le | bisli  
+---|---|---|---|---|---|---  
+[Left] | the | child |  | walks-on | the | ice.  
+The man bites the dog. To the left, the child walks on the ice.  
+---  
+  
+
+_.izu'abo_ is a compound cmavo: the __i__ separates the sentences and the __zu'a__ is the tense. The __bo__ is required to prevent the __zu'a__ from gobbling up the following sumti, namely _le verba_.
+Note that the bridi in Example 10.110 appear in the reverse order from their appearance in Example 10.109. With _.izu'abo_ (and all other afterthought tense connectives) the sentence specifying the origin of the journey comes first. This is a natural order for sentences, but requires some care when converting between this form and the sumti tcita form.
+Example 10.110 means the same thing as:
+**Example 10.111. **
+le | nanmu | cu | batci | le | gerku | .i | zu'a | la'edi'u  
+---|---|---|---|---|---|---|---|---  
+The | man |  | bites | the | dog. |  | [Left] | the-referent-of-the-last-sentence  
+le | verba | cu | cadzu | le | bisli  
+---|---|---|---|---|---  
+the | child |  | walks-on | the | ice.  
+The man bites the dog. Left of what I just mentioned, the child walks on the ice.  
+---  
+  
+
+If the __bo__ is omitted in Example 10.110, the meaning changes:
+**Example 10.112. **
+le | nanmu | cu | batci | le | gerku  
+---|---|---|---|---|---  
+The | man |  | bites | the | dog.  
+.i | zu'a | le | verba | cu |  | cadzu | le | bisli  
+---|---|---|---|---|---|---|---|---  
+| [Left] | the | child |  | [something] | walks-on | the | ice.  
+The man bites the dog. To the left of the child, something walks on the ice.  
+---  
+  
+
+Here the first place of the second sentence is unspecified, because __zu'a__ has absorbed the sumti _le verba_.
+Do not confuse either Example 10.110 or Example 10.112 with the following:
+**Example 10.113. **
+le | nanmu | cu | batci | le | gerku  
+---|---|---|---|---|---  
+The | man |  | bites | the | dog.  
+.i | zu'aku | le | verba | cu | cadzu | le | bisli  
+---|---|---|---|---|---|---|---  
+| [Left] | the | child |  | walks-on | the | ice.  
+The man bites the dog. Left of me, the child walks on the ice.  
+---  
+  
+
+In Example 10.113, the origin point is the speaker, as is usual with _zu'aku_. Example 10.110 makes the origin point of the tense the event described by the first sentence.
+Two sentences may also be connected in forethought by a tense relationship. Just like afterthought tense connection, forethought tense connection claims both sentences, and in addition claims that the time or space relationship specified by the tense holds between the events the two sentences describe.
+The origin sentence is placed first, preceded by a tense plus __gi__. Another __gi__ is used to separate the sentences:
+**Example 10.114. **
+pugi | mi | klama | le | zarci | gi | mi | klama | le | zdani  
+---|---|---|---|---|---|---|---|---|---  
+[past] | I | go-to | the | market | [,] | I | go-to | the | house.  
+Before I go to the market, I go to the house.  
+---  
+  
+
+A parallel construction can be used to express a tense relationship between sumti: 
+**Example 10.115. **
+mi | klama | pugi | le | zarci | gi | le | zdani  
+---|---|---|---|---|---|---|---  
+I | go-to | [past] | the | market | [,] | the | house.  
+  
+
+Because English does not have any direct way of expressing a tense-like relationship between nouns, Example 10.115 cannot be expressed in English without paraphrasing it either into Example 10.114 or else into “I go to the house before the market”, which is ambiguous – is the market going?
+Finally, a third forethought construction expresses a tense relationship between bridi-tails rather than whole bridi. (The construct known as a “bridi-tail” is explained fully in Section 14.9; roughly speaking, it is a selbri, possibly with following sumti.) Example 10.116 is equivalent in meaning to Example 10.114 and Example 10.115:
+**Example 10.116. **
+mi | pugi | klama | le | zarci | gi | klama | le | zdani  
+---|---|---|---|---|---|---|---|---  
+I | [past] | go-to | the | market | [,] | go-to | the | house.  
+I, before going to the market, go to the house.  
+---  
+  
+
+In both Example 10.115 and Example 10.116, the underlying sentences _mi klama le zarci_ and _mi klama le zdani_ are not claimed; only the relationship in time between them is claimed.
+Both the forethought and the afterthought forms are appropriate with PU, ZI, FAhA, VA, and ZAhO tenses. In all cases, the equivalent forms are (where X and Y stand for sentences, and TENSE for a tense cmavo):
+subordinate |  X TENSE le nu Y  
+---|---  
+afterthought coordinate |  Y .i+TENSE+bo X  
+forethought coordinate |  TENSE+gi X gi Y  
+* * *
+Chapter 10. Imaginary Journeys: The Lojban Space/Time Tense System  
+---  
+Prev: Section 10.15 |  Next: Section 10.17  
+---|---  
+Table of Contents
+Book Info Page

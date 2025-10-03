@@ -1,0 +1,182 @@
+Chapter 18. lojbau mekso: Mathematical Expressions in Lojban  
+---  
+Prev: Section 18.10 |  Next: Section 18.12  
+---|---  
+Table of Contents
+Book Info Page
+* * *
+## 18.11. Special mekso selbri
+The following cmavo are discussed in this section:
+mei |  MOI |  cardinal selbri  
+---|---|---  
+moi |  MOI |  ordinal selbri  
+si'e |  MOI |  portion selbri  
+cu'o |  MOI |  probability selbri  
+va'e |  MOI |  scale selbri  
+me |  ME |  make sumti into selbri  
+me'u |  MEhU |  terminator for ME  
+Lojban possesses a special category of selbri which are based on mekso. The simplest kind of such selbri are made by suffixing a member of selma'o MOI to a number. There are five members of MOI, each of which serves to create number-based selbri with specific place structures.
+The cmavo __mei__ creates cardinal selbri. The basic place structure is:
+> x1 is a mass formed from the set x2 of n members, one or more of which is/are x3
+A cardinal selbri interrelates a set with a given number of members, the mass formed from that set, and the individuals which make the set up. The mass argument is placed first as a matter of convenience, not logical necessity.
+Some examples:
+**Example 18.81. **
+lei | mi | ratcu | cu | cimei  
+---|---|---|---|---  
+Those-I-describe-as-the-mass-of | my | rats |  | are-a-threesome.  
+My rats are three.  
+---  
+I have three rats.  
+  
+
+Here, the mass of my rats is said to have three components; that is, I have three rats.
+Another example, with one element this time:
+**Example 18.82. **
+mi | poi | pamei | cu | cusku | dei  
+---|---|---|---|---|---  
+I | who | am-an-individual |  | express | this-sentence.  
+  
+
+In Example 18.82, __mi__ refers to a mass, “the mass consisting of me”. Personal pronouns are vague between masses, sets, and individuals.
+However, when the number expressed before _-mei_ is an objective indefinite number of the kind explained in Section 18.8, a slightly different place structure is required: 
+> x1 is a mass formed from a set x2 of n members, one or more of which is/are x3, measured relative to the set x4.
+An example:
+**Example 18.83. **
+lei | ratcu | poi | zvati | le | panka  
+---|---|---|---|---|---  
+The-mass-of | rats | which | are-in | the | park  
+cu | so'umei | lo'i | ratcu  
+---|---|---|---  
+| are-a-fewsome-with-respect-to | the-set-of | rats.  
+The rats in the park are a small number of all the rats there are.  
+---  
+  
+
+In Example 18.83, the x2 and x3 places are vacant, and the x4 place is filled by _lo'i ratcu_ , which (because no quantifiers are explicitly given) means “the whole of the set of all those things which are rats”, or simply “the set of all rats.”
+**Example 18.84. **
+le'i | ratcu | poi | zvati | le | panka | cu | se | so'imei  
+---|---|---|---|---|---|---|---|---  
+The-set-of | rats | which-are | in | the | park |  | is-a | manysome.  
+There are many rats in the park.  
+---  
+  
+
+In Example 18.84, the conversion cmavo __se__ swaps the x1 and the x2 places, so that the new x1 is the set. The x4 set is unspecified, so the implication is that the rats are “many” with respect to some unspecified comparison set.
+More explanations about the interrelationship of sets, masses, and individuals can be found in Section 6.3.
+The cmavo __moi__ creates ordinal selbri. The place structure is:
+> x1 is the (n)th member of set x2 when ordered by rule x3
+Some examples:
+**Example 18.85. **
+ti | pamoi | le'i | mi | ratcu  
+---|---|---|---|---  
+This-one | is-the-first-of | the | associated-with-me | rats.  
+This is my first rat.  
+---  
+  
+
+**Example 18.86. **
+ta | romoi | le'i | mi | ratcu  
+---|---|---|---|---  
+That | is-the-allth-of | the | associated-with-me | rats.  
+That is my last rat.  
+---  
+  
+
+**Example 18.87. **
+mi | raumoi | le | velskina | porsi  
+---|---|---|---|---  
+I | am-enough-th-in | the | movie-audience | sequence  
+I am enough-th in the movie line.  
+---  
+  
+
+Example 18.87 means, in the appropriate context, that my position in line is sufficiently far to the front that I will get a seat for the movie.
+The cmavo __si'e__ creates portion selbri. The place structure is:
+> x1 is an (n)th portion of mass x2
+Some examples:
+**Example 18.88. **
+levi | sanmi | cu | fi'ucisi'e | lei | mi | djedi | cidja  
+---|---|---|---|---|---|---|---  
+This-here | meal |  | is-a-slash-three-portion-of |  | my | day | food.  
+This meal is one-third of my daily food.  
+---  
+  
+
+The cmavo __cu'o__ creates probability selbri. The place structure is:
+> event x1 has probability (n) of occurring under conditions x2
+The number must be between 0 and 1 inclusive. For example:
+**Example 18.89. **
+le | nu | lo | sicni | cu | sedja'o | cu | pimucu'o  
+---|---|---|---|---|---|---|---  
+The | event | of-a | coin |  | being-a-head-displayer |  | has-probability-.5.  
+  
+
+The cmavo __va'e__ creates a scale selbri. The place structure is:
+> x1 is at scale position (n) on the scale x2
+If the scale is granular rather than continuous, a form like _cifi'uxa_ (3/6) may be used; in this case, 3/6 is not the same as 1/2, because the third position on a scale of six positions is not the same as the first position on a scale of two positions. Here is an example:
+**Example 18.90. **
+levi | rozgu | cu | sofi'upanova'e | xunre  
+---|---|---|---|---  
+This-here | rose |  | is-8/10-scale | red.  
+This rose is 8 out of 10 on the scale of redness.  
+---  
+This rose is very red.  
+  
+
+When the quantifier preceding any MOI cmavo includes the subjective numbers __rau__ , __du'e__ , or __mo'a__ (enough, too many, too few) then an additional place is added for “by standard”. For example:
+**Example 18.91. **
+lei | ratcu | poi | zvati | le  
+---|---|---|---|---  
+The-mass-of | rats | which-are | in | the  
+panka | cu | du'emei | fo | mi  
+---|---|---|---|---  
+park |  | are-too-many | by-standard | me.  
+There are too many rats in the park for me.  
+---  
+  
+
+The extra place (which for _-mei_ is the x4 place labeled by __fo__) is provided rather than using a BAI tag such as __ma'i__ because a specification of the standard for judgment is essential to the meaning of subjective words like “enough”.
+This place is not normally explicit when using one of the subjective numbers directly as a number. Therefore, _du'e ratcu_ means “too many rats” without specifying any standard.
+It is also grammatical to substitute a lerfu string for a number:
+**Example 18.92. **
+ta | ny.moi | le'i | mi | ratcu  
+---|---|---|---|---  
+That | is-nth-of | the-set-of | associated-with-me | rats.  
+That is my nth rat.  
+---  
+  
+
+More complex mekso cannot be placed directly in front of MOI, due to the resulting grammatical ambiguities. Instead, a somewhat artificial form of expression is required.
+The cmavo __me__ (of selma'o ME) has the function of making a sumti into a selbri. A whole __me__ construction can have a member of MOI added to the end to create a complex mekso selbri:
+**Example 18.93. **
+ta | me | li | ny. | su'i | pa | me'u | moi  
+---|---|---|---|---|---|---|---  
+That | is | the-number | n | plus | one |  | -th-of  
+le'i | mi | ratcu  
+---|---|---  
+the-set-of | associated-with-me | rats.  
+That is my (n+1)-th rat.  
+---  
+  
+
+Here the mekso _ny. su'i pa_ is made into a sumti (with __li__) and then changed into a mekso selbri with __me__ and _me'u moi_. The elidable terminator __me'u__ is required here in order to keep the __pa__ and the __moi__ separate; otherwise, the parser will combine them into the compound __pamoi__ and reject the sentence as ungrammatical.
+It is perfectly possible to use non-numerical sumti after __me__ and before a member of MOI, producing strange results indeed:
+**Example 18.94. **
+le | nu | mi | nolraitru | cu | me  
+---|---|---|---|---|---  
+The | event-of | me | being-a-nobly-superlative-ruler |  |   
+le'e | snime | bolci | be | vi | la | xel. | cu'o  
+---|---|---|---|---|---|---|---  
+has-the-stereotypical | snow | type-of-ball |  | at |  | Hell | probability.  
+I have a snowball's chance in Hell of being king.  
+---  
+  
+
+Note: the elidable terminator __boi__ is not used between a number and a member of MOI. As a result, the __me'u__ in Example 18.93 could also be replaced by a __boi__ , which would serve the same function of preventing the __pa__ and __moi__ from joining into a compound.
+* * *
+Chapter 18. lojbau mekso: Mathematical Expressions in Lojban  
+---  
+Prev: Section 18.10 |  Next: Section 18.12  
+---|---  
+Table of Contents
+Book Info Page

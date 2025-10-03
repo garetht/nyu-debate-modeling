@@ -1,0 +1,32 @@
+The Complete Lojban Language  
+---  
+Prev: Section 17.20 |  Next: Section 18.2  
+---|---  
+Table of Contents
+Book Info Page
+* * *
+# Chapter 18. lojbau mekso: Mathematical Expressions in Lojban
+## 18.1. Introductory
+lojbau mekso (“Lojbanic mathematical-expression”) is the part of the Lojban language that is tailored for expressing statements of a mathematical character, or for adding numerical information to non-mathematical statements. Its formal design goals include:
+  1. representing all the different forms of expression used by mathematicians in their normal modes of writing, so that a reader can unambiguously read off mathematical text as written with minimal effort and expect a listener to understand it;
+  2. providing a vocabulary of commonly used mathematical terms which can readily be expanded to include newly coined words using the full resources of Lojban;
+  3. permitting the formulation, both in writing and in speech, of unambiguous mathematical text;
+  4. encompassing all forms of quantified expression found in natural languages, as well as encouraging greater precision in ordinary language situations than natural languages allow.
+
+
+Goal 1 requires that mekso not be constrained to a single notation such as Polish notation or reverse Polish notation, but make provision for all forms, with the most commonly used forms the most easily used.
+Goal 2 requires the provision of several conversion mechanisms, so that the boundary between mekso and full Lojban can be crossed from either side at many points.
+Goal 3 is the most subtle. Written mathematical expression is culturally unambiguous, in the sense that mathematicians in all parts of the world understand the same written texts to have the same meanings. However, international mathematical notation does not prescribe unique forms. For example, the expression
+**Example 18.1. **
+3 x + 2 y
+  
+
+contains omitted multiplication operators, but there are other possible interpretations for the strings 3x and 2y than as mathematical multiplication. Therefore, the Lojban verbal (spoken and written) form of Example 18.1 must not omit the multiplication operators.
+The remainder of this chapter explains (in as much detail as is currently possible) the mekso system. This chapter is by intention complete as regards mekso components, but only suggestive about uses of those components – as of now, there has been no really comprehensive use made of mekso facilities, and many matters must await the test of usage to be fully clarified.
+* * *
+The Complete Lojban Language  
+---  
+Prev: Section 17.20 |  Next: Section 18.2  
+---|---  
+Table of Contents
+Book Info Page

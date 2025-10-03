@@ -1,0 +1,146 @@
+Chapter 14. If Wishes Were Horses: The Lojban Connective System  
+---  
+Prev: Section 14.14 |  Next: Section 14.16  
+---|---  
+Table of Contents
+Book Info Page
+* * *
+## 14.15. More about non-logical connectives
+The final three JOI cmavo, __jo'e__ , __ku'a__ , and __pi'u__ , are probably only useful when talking explicitly about sets. They represent three standard set operators usually called “union”, “intersection”, and “cross product” (also known as “Cartesian product”). The union of two sets is a set containing all the members that are in either set; the intersection of two sets is a set containing all the members that are in both sets. The cross product of two sets is the set of all possible ordered pairs, where each ordered pair contains a single element from the first set followed by a single element from the second. This may seem very abstract; hopefully, the following examples will help:
+**Example 14.125. **
+lo'i | ricfu | ku | jo'e | lo'i | dotco | cu | barda  
+---|---|---|---|---|---|---|---  
+The-set-of | rich-things |  | union | the-set-of | German-things |  | is-large.  
+  
+
+**Example 14.126. **
+lo'i | ricfu | ku | ku'a | lo'i | dotco | cu | cmalu  
+---|---|---|---|---|---|---|---  
+The-set-of | rich-things |  | intersection | the-set-of | German-things |  | is-small.  
+  
+
+There is a parallelism between logic and set theory that makes Example 14.125 and Example 14.126 equivalent respectively to:
+**Example 14.127. **
+lo'i | ricfu | ja | dotco | cu | barda  
+---|---|---|---|---|---  
+The-set-of | (rich-things | or | German-things) |  | is-large.  
+  
+
+and
+**Example 14.128. **
+lo'i | ricfu | je | dotco | cu | cmalu  
+---|---|---|---|---|---  
+The-set-of | (rich-things | and | German-things) |  | is-small.  
+  
+
+The following example uses _se remei_ , which is a set (not a mass) of two elements:
+**Example 14.129. **
+la | djeimyz. | ce[bo] | la | djordj. | pi'u  
+---|---|---|---|---|---  
+That-named | James | and-set | that-named | George | cross-product  
+la | meris. | cebo | la | martas. | cu | prami | se | remei  
+---|---|---|---|---|---|---|---|---  
+that-named | Mary | and-set | that-named | Martha |  | are-lover |  | type-of-pairs.  
+  
+
+means that each of the pairs James/Mary, George/Mary, James/Martha, and George/Martha love each other. Therefore it is similar in meaning to Example 14.121; however, that example speaks only of the men loving the women, not vice versa.
+Joiks may be combined with __bo__ or with __ke__ in the same way as eks and jeks; this allows grouping of non-logical connections between sumti and tanru units, in complete parallelism with logical connections:
+**Example 14.130. **
+mi | joibo | do | ce | la | djan. | joibo | la | djein.  
+---|---|---|---|---|---|---|---|---  
+(I | massed-with | you) | and | (that-named | John | massed-with | that-named | Jane)  
+cu | gunma | se | remei  
+---|---|---|---  
+| are-a-mass |  | type-of-two-set  
+  
+
+asserts that there is a set of two items each of which is a mass.
+Non-logical connection is permitted at the joint of a termset; this is useful for associating more than one sumti or tagged sumti with each side of the non-logical connection. The place structure of __casnu__ is:
+> _ _casnu_ _ the mass x1 discusses/talks about x2
+so the x1 place must be occupied by a mass (for reasons not explained here); however, different components of the mass may discuss in different languages. To associate each participant with his or her language, we can say:
+**Example 14.131. **
+mi | ce'e | bau | la | lojban. | pe'e | joi  
+---|---|---|---|---|---|---  
+(I | [plus] | in-language | that-named | Lojban | [joint] | massed-with  
+do | ce'e | bau | la | gliban. | nu'u | casnu  
+---|---|---|---|---|---|---  
+you | [plus] | in-language | that-named | English | ) | discuss.  
+  
+
+Like all non-logical connectives, the usage shown in Example 14.131 cannot be mechanically converted into a non-logical connective placed at another location in the bridi. The forethought equivalent of Example 14.131 is:
+**Example 14.132. **
+nu'i joigi mi bau la lojban gi do bau la gliban. nu'u casnu
+  
+
+Non-logical forethought termsets are also useful when the things to be non-logically connected are sumti preceded with tense or modal (BAI) tags:
+**Example 14.133. **
+la | djan. | fa'u | la | frank. | cusku  
+---|---|---|---|---|---  
+That-named | John | respectively-with | that-named | Frank | express  
+nu'i | bau | la | lojban.  
+---|---|---|---  
+[start-termset] | in-language | that-named | Lojban  
+nu'u | fa'u | bai  
+---|---|---  
+[joint] | respectively-with | under-compulsion-by  
+tu'a | la | djordj. | [nu'u]  
+---|---|---|---  
+something-about | that-named | George. |   
+John and Frank speak in Lojban and under George's compulsion, respectively.  
+---  
+  
+
+Example 14.133 associates speaking in Lojban with John, and speaking under George's compulsion with Frank. We do not know what language Frank uses, or whether John speaks under anyone's compulsion.
+Joiks may be prefixed with __i__ to produce ijoiks, which serve to non-logically connect sentences. The ijoik __.i__ __ce'o__ indicates that the event of the second bridi follows that of the first bridi in some way other than a time relationship (which is handled with a tense):
+**Example 14.134. **
+mi | ba | gasnu | la'e | di'e | .i  
+---|---|---|---|---|---  
+I | [future] | do | the-referent-of | the-following: |   
+tu'e | kanji | lo | ni | cteki | .ice'o | lumci | le | karce  
+---|---|---|---|---|---|---|---|---  
+( | Compute | the | quantity-of | taxes. | And-then | wash | the | car.  
+.ice'o | dzukansa | le | gerku | tu'u  
+---|---|---|---|---  
+And-then | walkingly-accompany | the | dog. | )  
+List of things to do: Figure taxes. Wash car. Walk dog.  
+---  
+  
+
+Example 14.134 represents a list of things to be done in priority order. The order is important, hence the need for a sequence connective, but does not necessarily represent a time order (the dog may end up getting walked first). Note the use of __tu'e__ and __tu'u__ as general brackets around the whole list. This is related to, but distinct from, their use in Section 14.8, because there is no logical connective between the introductory phrase _mi ba gasnu la'edi'e_ and the rest. The brackets effectively show how large an utterance the word __di'e__ , which means “the following utterance”, refers to.
+Similarly, __.i__ __joi__ is used to connect sentences that represent the components of a joint event such as a joint cause: the Lojban equivalent of “Fran hit her head and fell out of the boat, so that she drowned” would join the events “Fran hit her head” and “Fran fell out of the boat” with __.i__ __joi__.
+The following __nai__ , if present, does not negate either of the things to be connected, but instead specifies that some other connection (logical or non-logical) is applicable: it is a scalar negation:
+**Example 14.135. **
+mi | jo'u | nai | do | cu | remei  
+---|---|---|---|---|---  
+I | in-common-with | [not!] | you |  | are-a-twosome  
+  
+
+The result of _mi jo'u do_ would be two individuals, not a mass, therefore __jo'u__ is not applicable; __joi__ would be the correct connective.
+There is no joik question cmavo as such; however, joiks and ijoiks may be uttered in isolation in response to a logical connective question, as in the following exchange:
+**Example 14.136. **
+do | djica | tu'a | loi | ckafi  
+---|---|---|---|---  
+You | desire | something-about | a-mass-of | coffee  
+ji | loi | tcati  
+---|---|---  
+[what-connective?] | a-mass-of | tea?  
+Do you want coffee or tea?  
+---  
+  
+
+**Example 14.137. **
+joi  
+---  
+Mixed-mass-and.  
+Both as a mass (i.e, mixed together).  
+---  
+  
+
+Ugh. (Or in Lojban: __.a'u__ __nai__ __sai__ __ro'o__.)
+* * *
+Chapter 14. If Wishes Were Horses: The Lojban Connective System  
+---  
+Prev: Section 14.14 |  Next: Section 14.16  
+---|---  
+Table of Contents
+Book Info Page
