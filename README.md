@@ -1,6 +1,10 @@
-#  NYU Debate Modeling Project
+# The Limits of Debate as a Scalable Oversight Strategy 
 
-Note: Given the current state of this project, this README will just give an overview of the code structure. It is not an introduction to the overall effort.
+We investigate the limits of debate as a scalable oversight strategy by extending Arnesen's paper on [Training Language Models to Win Debates with Self-Play Improves Judge Accuracy](https://arxiv.org/abs/2409.16636). Debate is a scalable oversight strategy where two models argue for opposing sides of a question: one of them is assigned to defend the correct answer, and the other is assigned to defend an incorrect answer. The debaters are able to see each other's arguments when conducting the debate. Based on the transcripts of the debate, a judge model decides which debater has presented the stronger argument for its side. Arnesen's paper finds that, in the context where superhuman debater models are simulated through privileged access to information, there is a "small but significant positive relationship between the ability of the model to win a debate and the usefulness of that model's debate transcripts in discovering true answers."
+
+In this project, we look at reproducing Arnesen's results, and look at extending the results to a wider variety of models. In particular, we look at using the same SFT and DPO method described in Arnesen's paper to train GPT 4.1 as the judge model, and we explore reinforcement fine-tuning of o4-mini as a debater model. We are also currently exploring using the GradientAI Llama3-8B-Instruct model with an extended context length that they use as a judge. Finally, we have also run experiments with 4.1 nano.
+
+We also explore different contexts for the debaters and judge. In Arnesen's paper, the [QuALITY dataset](https://arxiv.org/abs/2112.08608) of stories is used to generate questions in a hidden information task, where debaters have access to the stories while the judge does not. In this project, we have formulated a new dataset based on Lojban, a constructed logical language, using questions developed from the [FindTheFlaws] dataset(https://arxiv.org/abs/2503.22989), while retaining the hidden information character of the task. In this task, the debaters are asked questions about translations of Lojban sentences, and are provided with background material from the Lojban language reference.
 
 ## MARS-Specific Instructions
 
