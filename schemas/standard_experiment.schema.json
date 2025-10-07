@@ -1,0 +1,339 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Experiment Configuration",
+  "description": "Schema for the experiment configuration file (standard_experiment.yaml)",
+  "type": "object",
+  "patternProperties": {
+    "^[a-zA-Z0-9_ -]+$": {
+      "$ref": "#/definitions/ExperimentConfig"
+    }
+  },
+  "definitions": {
+    "ExperimentConfig": {
+      "type": "object",
+      "properties": {
+        "batch_size": {
+          "type": "integer",
+          "description": "Number of rounds to be processed simultaneously"
+        },
+        "num_speeches": {
+          "type": "integer",
+          "description": "Number of speeches that each debater will give per round"
+        },
+        "flip": {
+          "type": "boolean",
+          "description": "Whether each debater will debate each side of the debate"
+        },
+        "alternate": {
+          "type": "boolean"
+        },
+        "prompt_config": {
+          "$ref": "#/definitions/PromptLoadingConfig",
+          "description": "Specifies which set of prompts to use -- if not specified, the defaults will be used"
+        },
+        "agents": {
+          "$ref": "#/definitions/AgentsConfig",
+          "description": "The configuration for the debaters and judges that will be participating in the debate round"
+        },
+        "dataset": {
+          "$ref": "#/definitions/DatasetConfig",
+          "description": "Configuration for the dataset to be used"
+        },
+        "annotations_classifier_file_path": {
+          "type": ["string", "null"]
+        },
+        "enable_self_debate": {
+          "type": "boolean",
+          "description": "Whether self-play is allowed or just cross-play"
+        },
+        "previous_run": {
+          "$ref": "#/definitions/PreviousRunConfig",
+          "description": "Config that lets you reuse information from previous runs"
+        },
+        "tournament": {
+          "$ref": "#/definitions/TournamentConfig",
+          "description": "A configuration that lets you specify the type of tournament you want to run. Not needed if you're using a round robin"
+        },
+        "speech_structure": {
+          "description": "This references the specific speech ordering you want to use. Defaults to default_debate. A preset that determines the Speech Format Type of the debaters and the judge, the default prompt name, the number of participants, and whether the position order should be flipped.",
+          "type": "string",
+          "enum": ["default_debate", "default_consultancy", "open_debate"]
+        },
+        "multi_round_branching": {
+          "type": "string",
+          "enum": ["none", "full", "half"]
+        },
+        "convert_to_double_consultancy": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "batch_size",
+        "num_speeches",
+        "agents",
+        "dataset"
+      ]
+    },
+    "PromptLoadingConfig": {
+      "type": "object",
+      "properties": {
+        "file_path": {
+          "type": "string",
+          "description": "Path to prompts file"
+        },
+        "default_prompt_name": {
+          "type": "string",
+          "description": "Name of the specific set of prompts to use"
+        },
+        "is_memorized": {
+          "type": "boolean"
+        },
+        "use_hardcoded_topics": {
+          "type": "boolean",
+          "description": "Whether one wants to hard code the topics to debate"
+        },
+        "hardcoded_topic_config": {
+          "type": "object",
+          "description": "The specific config that's used if use_hardcoded_topics is True",
+          "properties": {
+            "topic": {
+              "type": "string"
+            },
+            "positions": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    },
+    "AgentsConfig": {
+      "type": "object",
+      "properties": {
+        "debaters": {
+          "type": "array",
+          "description": "The configuration for the debaters. You must specify at least 1. If only 1 is specified, the model will debate itself. If more than 2 are specified, then a round robin will be performed.",
+          "items": {
+            "$ref": "#/definitions/AgentConfig"
+          }
+        },
+        "judge": {
+          "$ref": "#/definitions/AgentConfig"
+        }
+      },
+      "required": ["debaters", "judge"]
+    },
+    "AgentConfig": {
+      "type": "object",
+      "properties": {
+        "model_settings": {
+          "$ref": "#/definitions/ModelSettings",
+          "description": "Specifies the configuration to be used for the model this debater will use"
+        },
+        "scratchpad": {
+          "type": "object",
+          "properties": {
+            "use_scratchpad": {
+              "type": "boolean",
+              "description": "Whether the debater gets access to a scratchpad (default to false)"
+            },
+            "scratchpad_word_limit": {
+              "type": ["integer", "null"],
+              "description": "Number of words that the debater can use a scratchpad for (0 or None disables scratchpad usage)"
+            },
+            "scratchpad_public": {
+              "type": "boolean",
+              "description": "Whether the scratchpad generations are exposed to the other participants"
+            }
+          }
+        },
+        "best_of_n": {
+          "type": "object",
+          "properties": {
+            "n": {
+              "type": "integer",
+              "description": "The number of samples to draw"
+            },
+            "opponent_n": {
+              "type": "integer",
+              "description": "The number of opponent samples to test against"
+            },
+            "maxmin": {
+              "type": "boolean",
+              "description": "Whether to select the speech with the best minimum score or the best average score"
+            },
+            "recompute": {
+              "type": "boolean",
+              "description": "Whether to rejudge each speech to see which is the best"
+            }
+          }
+        }
+      },
+      "required": ["model_settings"]
+    },
+    "ModelSettings": {
+      "type": "object",
+      "properties": {
+        "model_type": {
+          "type": "string",
+          "description": "The type of model that is to be used. See the README for a comprehensive list of options"
+        },
+        "model_file_path": {
+          "type": ["string", "null"],
+          "description": "The path to the model weights. Not needed if the model doesn't have weights"
+        },
+        "alias": {
+          "type": "string",
+          "description": "A name to identify the model. If this name is duplicated, then stats for those debaters will be aggregated"
+        },
+        "require_quote_validation": {
+          "type": "boolean",
+          "description": "Whether quotes generated with quote tags should be validated (defaults to True)"
+        },
+        "generation_params": {
+          "type": "object",
+          "description": "Optional configuration that controls the LLM generations",
+          "properties": {
+            "max_new_tokens": {
+              "type": "integer",
+              "description": "Max to generate in each speech, defaults to 300"
+            },
+            "temperature": {
+              "type": "number",
+              "description": "Temperature for generation, defaults to 0.5"
+            },
+            "top_p": {
+              "type": "number",
+              "description": "Top p for generation, defaults to 1.0"
+            },
+            "repetition_penalty": {
+              "type": "number",
+              "description": "Penalty for repetition, defaults to 1.2 (but is disabled based on the use_generation_penalties flag)"
+            },
+            "do_sample": {
+              "type": "boolean",
+              "description": "Whether to sample from the model (True) or do greedy decoding (False)"
+            },
+            "use_generation_penalties": {
+              "type": "boolean",
+              "description": "Whether to disable the repetition_penalty and exponential length penalty (False) or enable them (True)"
+            }
+          }
+        },
+        "peft_base_model": {
+          "type": ["string", "null"],
+          "description": "The path to the base model. Optional (even if one is using a peft model) but speeds up inference"
+        },
+        "is_human": {
+          "type": "boolean",
+          "description": "Whether the model being used should be converted into a human debate model (which uses the real transcripts)"
+        },
+        "offline_file_path": {
+          "type": ["string", "null"],
+          "description": "Either the timestamp of the offline debate run (if the transcript is in the default output folder) or the full path to all the offline debates (Only needed if one is recreating a previously-run debate)"
+        },
+        "nucleus": {
+          "type": "boolean",
+          "description": "The decoding strategy (True -> nucleus sampling [default], False -> beam search)"
+        },
+        "override_prompt": {
+          "type": ["string", "null"],
+          "description": "The name of the prompt to use for this debater only"
+        }
+      },
+      "required": ["model_type", "alias"]
+    },
+    "DatasetConfig": {
+      "type": "object",
+      "properties": {
+        "dataset_type": {
+          "type": "string",
+          "description": "The name of the dataset"
+        },
+        "split_type": {
+          "type": "string",
+          "description": "The split of the data to actually use",
+          "enum": ["train", "val", "test"]
+        },
+        "flip_sides": {
+          "type": "boolean"
+        },
+        "full_dataset_file_path": {
+          "type": ["string", "null"],
+          "description": "Path to a file that stores the entire dataset. Not needed if the dataset is pre-split or if defaults are used"
+        },
+        "train_file_path": {
+          "type": ["string", "null"],
+          "description": "Path to a file that stores the training dataset. Not needed if the dataset is not pre-split or if defaults are used"
+        },
+        "val_file_path": {
+          "type": ["string", "null"],
+          "description": "Path to a file that stores the validation dataset. Not needed if the dataset is not pre-split or if defaults are used"
+        },
+        "test_file_path": {
+          "type": ["string", "null"],
+          "description": "Path to a file that stores the test dataset. Not needed if the dataset is not pre-split or if defaults are used"
+        },
+        "supplemental_file_paths": {
+          "type": ["object", "null"],
+          "description": "Set of additional kwargs that are specific to individual dataset"
+        },
+        "shuffle_deterministically": {
+          "type": "boolean",
+          "description": "Whether the order of the rounds should be shuffled (False) or fixed (defaults False)"
+        }
+      },
+      "required": ["dataset_type", "split_type"]
+    },
+    "PreviousRunConfig": {
+      "type": "object",
+      "properties": {
+        "file_path": {
+          "type": ["string", "array"],
+          "description": "Path to the previous run you want to use",
+          "items": {
+            "type": "string"
+          }
+        },
+        "replicate_topics": {
+          "type": "boolean",
+          "description": "Whether you want to use the same questions as the previous run (useful for making performance comparisons)"
+        },
+        "merge_results": {
+          "type": "boolean",
+          "description": "Whether you want to merge the results of the previous run in the final results csv and graphs"
+        }
+      }
+    },
+    "TournamentConfig": {
+      "type": "object",
+      "properties": {
+        "tournament_type": {
+          "type": "string",
+          "description": "The type of tournament to run. Options include round_robin (default), capped round robin, replication, and self_play_only",
+          "enum": ["round_robin", "self_play_only", "custom", "capped_round_robin", "replication"]
+        },
+        "custom_matchups": {
+          "type": "array",
+          "description": "For the custom tournament type specifically, these are the aliases that you want to debate against each other",
+          "items": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "minItems": 2,
+            "maxItems": 2
+          }
+        },
+        "replication_file_paths": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}
