@@ -48,6 +48,14 @@ def create_debater_eval_config():
     )
 
 
+GPT_4_TURBO_MODEL_CONFIG = get_model(
+    model="openai/gpt-4-turbo-2024-04-09",
+    config=GenerateConfig(
+        max_connections=10
+    )
+)
+
+
 GPT_4_1_MODEL_CONFIG = get_model(
     model="openai/gpt-4.1-2025-04-14",
     config=GenerateConfig(
@@ -73,8 +81,14 @@ GPT_4_1_NANO_FINETUNED_MODEL_CONFIG = get_model(
 
 JUDGE_EVAL_CONFIG = dict(
     model=[
+<<<<<<< Updated upstream
         GPT_4_1_MODEL_CONFIG,
         GPT_4_1_NANO_FINETUNED_MODEL_CONFIG
+=======
+        # GPT_4_TURBO_MODEL_CONFIG
+        # GPT_4_1_MODEL_CONFIG,
+        GPT_4_1_NANO_MODEL_CONFIG,
+>>>>>>> Stashed changes
         # GPT_4_1_NANO_FINETUNED_MODEL_CONFIG
         # create_local_llama_model(max_connections=4)
     ]
