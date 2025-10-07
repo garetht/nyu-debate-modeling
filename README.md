@@ -62,6 +62,11 @@ This allows s
 ./cli.sh monitor -- nvidia-smi
 ```
 
+## Sanity Check Baselines
+
+We generate an additional series of sanity check baselines on top of what Arnesen has provided.
+
+
 ## Run Orchestration
 
 We have a tool that allows debate experiments in `standard_experiments.yml` to be run declaratively across our fleet of instances. To do this, create a new configuration file in `run_orchestrator/runs`. The schema for such a configuration file is given by `run_orchestrator/experiment_orchestrator.schema.json`. The output data is saved into a namespaced folder in `outputs` based on the `name` in the configuration (not the filename!). For example, a configuration named `debater-trained` will save its outputs into `outputs/debater-trained`. This allows parallel processes across different instances to save their outputs into the same directory across machines, which makes it possible for us to merge them using the `merge-data` subcommand. 
