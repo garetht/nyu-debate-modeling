@@ -81,14 +81,11 @@ GPT_4_1_NANO_FINETUNED_MODEL_CONFIG = get_model(
 
 JUDGE_EVAL_CONFIG = dict(
     model=[
-<<<<<<< Updated upstream
         GPT_4_1_MODEL_CONFIG,
         GPT_4_1_NANO_FINETUNED_MODEL_CONFIG
-=======
         # GPT_4_TURBO_MODEL_CONFIG
         # GPT_4_1_MODEL_CONFIG,
         GPT_4_1_NANO_MODEL_CONFIG,
->>>>>>> Stashed changes
         # GPT_4_1_NANO_FINETUNED_MODEL_CONFIG
         # create_local_llama_model(max_connections=4)
     ]

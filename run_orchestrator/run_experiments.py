@@ -37,6 +37,7 @@ def run_experiments(config_name):
         name = config['name']
         num_iters = config['num_iters']
         count = config['count']
+        # starting_index = config['starting_index']
 
         for i in range(count):
             command = [
@@ -53,6 +54,7 @@ def run_experiments(config_name):
                 f'--configuration={name}',
                 f'--num_iters={num_iters}',
                 # f'--starting_index={(i + count * index) * 157}',
+                # f'--starting_index={starting_index}',
             ]
 
             print(f"Running command: {' '.join(command)}")
