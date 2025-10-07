@@ -8,6 +8,8 @@ from data.dataset import DatasetConfig, SplitType, DatasetType
 from debate import SpeechFormatStructure, AgentConfig, MultiRoundBranchingSetting
 from experiments.experiment_loader import ExperimentConfig, AgentsConfig, TournamentType
 from models import ModelSettings, GenerationParams, ModelType
+from prompts import PromptConfig, PromptLoadingConfig
+
 
 class NoAliasDumper(yaml.SafeDumper):
     def ignore_aliases(self, data):
@@ -65,6 +67,7 @@ VALID_JUDGES = {
 class TaskTypeParams:
     generation_params: GenerationParams
     dataset_params: DatasetConfig
+    prompt_config: PromptLoadingConfig
 
 def enum_representer(dumper, data):
     return dumper.represent_str(data.name.lower())
@@ -78,6 +81,9 @@ TASK_TYPE_PARAMS = {
         dataset_params=DatasetConfig(
             dataset_type="lojban",
             split_type="test",
+        ),
+        prompt_config=PromptLoadingConfig(
+            file_path="/home/ubuntu/mars-arnesen-gh/garethtan/prompts/configs/lojban_prompts.yaml"
         )
     ),
     "quality": TaskTypeParams(
@@ -87,7 +93,8 @@ TASK_TYPE_PARAMS = {
         dataset_params=DatasetConfig(
             dataset_type="quality",
             split_type="val",
-        )
+        ),
+        prompt_config=PromptLoadingConfig()
     )
 }
 
@@ -128,7 +135,11 @@ def run_config_generator(args):
     configurations = {}
     for (debater, judge, (task_type_name, task_type_params)) in debater_judge_task_types:
         name = f"{debater.alias}_{judge.alias}_{task_type_name}"
-        debater.generation_params=task_type_params.generation_params
+        debater = debater.model_copy(
+            update={'generation_params': task_type_params.generation_params}
+        )
+        # debater.generation_params=task_type_params.generation_params
+        print(task_type_params.generation_params)
 
         configurations[name] = ExperimentConfig(
             batch_size=1,
@@ -137,6 +148,7 @@ def run_config_generator(args):
             enable_self_debate=True,
             speech_structure=SpeechFormatStructure.DEFAULT_DEBATE,
             alternate=False,
+            prompt_config=task_type_params.prompt_config,
             agents=AgentsConfig(
                 debaters=[
                     AgentConfig(
