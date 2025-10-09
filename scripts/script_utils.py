@@ -1,4 +1,4 @@
-from dotenv import load_dotenv
+#from dotenv import load_dotenv
 from pydantic import BaseModel
 
 from enum import Enum
@@ -36,7 +36,7 @@ class ScriptUtils:
     @classmethod
     def setup_script(cls):
         sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
-        load_dotenv()
+        #load_dotenv()
 
     @classmethod
     def get_args(cls):

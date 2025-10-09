@@ -7,7 +7,7 @@ import utils.constants as constants
 from peft import LoraConfig, PeftConfig, PeftModel, PeftType, PromptTuningInit, PromptTuningConfig, TaskType
 from pydantic import BaseModel, ConfigDict, model_validator, field_validator
 from transformers import AutoModelForCausalLM, AutoTokenizer
-from trl import AutoModelForCausalLMWithValueHead
+#from trl import AutoModelForCausalLMWithValueHead
 import torch
 import yaml
 
@@ -204,7 +204,7 @@ class TrainUtils:
         is_local: bool = False,
         requires_value_head: bool = False,
         load_as_peft_model: bool = False,
-    ) -> AutoModelForCausalLM:
+    ):
         """
         Loads a model using the specified configuration.
 
@@ -217,6 +217,12 @@ class TrainUtils:
         Returns:
             model: a model loaded from huggingface
         """
+        from trl import AutoModelForCausalLMWithValueHead
+        try:
+            import flash_attn  # type: ignore
+            attn_impl = "flash_attention_2"
+        except Exception:
+            attn_impl = "sdpa"  # safe default without flash_attn
 
         if not is_local:
             peft_config = TrainUtils.get_peft_config(config=config)

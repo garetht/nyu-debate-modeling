@@ -78,7 +78,7 @@ Test - Open:
     speech_structure: 
         - open_debate
 Train - Llama3 - Open Debater:
-    model_name: /vast/spa9663/models/base_models/llama3-8b-262k
+    model_name: /home/ubuntu/mars-arnesen-gh/leonidtsyplenkov/downloaded-models/gradientai/Llama-3-8B-Instruct-262k
     target: judge
     max_length: 32986
     requires_token: True
@@ -98,8 +98,8 @@ Train - Llama3 - Open Debater:
             use_minimal_output_format: True
     logging_and_saving_config:
         logging_steps: 10
-        output_dir: /vast/spa9663/models/trained_models/llama-3-open-debater
-        merge_output_dir: /vast/spa9663/models/trained_models/llama-3-open-debater
+        output_dir: /home/ubuntu/mars-arnesen-gh/leonidtsyplenkov/trained_models/llama-3-mega-judge-08-10
+        merge_output_dir: /home/ubuntu/mars-arnesen-gh/leonidtsyplenkov/models/trained_models/llama-3-mega-merged-judge-08-10
     dataset:
         - dataset_type: quality
           split_type: train

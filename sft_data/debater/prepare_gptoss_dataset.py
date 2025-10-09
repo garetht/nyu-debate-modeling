@@ -145,7 +145,7 @@ def main():
     ap.add_argument("--output_csv", required=True, help="Where to write CSV with instruction,output")
     ap.add_argument("--max_length", type=int, default=120000,
                     help="Token cap for (prompt + assistant-start boundary). "
-                         "GPT-OSS context can be much larger; up to 128k is feasible.")
+                         "GPT-OSS context can be large; up to 128k is feasible.")
     args = ap.parse_args()
 
     rows = convert_file(args.input_jsonl, args.output_csv, args.max_length)

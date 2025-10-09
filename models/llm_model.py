@@ -1,10 +1,11 @@
 from __future__ import annotations
 
 from models.model import GenerationParams, Model, ModelInput, ModelResponse, ProbeHyperparams, SpeechStructure
-from models.openai_model import OpenAIModel
+#from models.openai_model import OpenAIModel
 from prompts import RoleType
 from utils import logger_utils, string_utils, timer
 import utils.constants as constants
+from transformers.utils import is_flash_attn_2_available
 
 from peft import PeftModel
 from pydantic import BaseModel
@@ -182,11 +183,15 @@ class LLModel(Model):
     ) -> tuple[AutoTokenizer, AutoModelForCausalLM]:
         local_rank = int(os.environ.get("LOCAL_RANK", "0"))
         device_map = {"": local_rank}
+
+        attn_impl = "flash_attention_2" if is_flash_attn_2_available() else "sdpa"
+
         model = AutoModelForCausalLM.from_pretrained(
             pretrained_model_name_or_path=peft_base_model or file_path,
             device_map=device_map,
             trust_remote_code=True,
-            use_flash_attention_2=True,
+            #use_flash_attention_2=True,
+            attn_implementation=attn_impl,
             use_cache=use_cache,
             token=os.getenv("META_ACCESS_TOKEN") if requires_token else None,
             quantization_config=LLModel.get_bnb_config() if quantize else None,
@@ -677,8 +682,8 @@ class LLMType(Enum):
             return MistralModel
         elif self == LLMType.STUB_LLM:
             return StubLLModel
-        elif self == LLMType.OPENAI:
-            return OpenAIModel
+        #elif self == LLMType.OPENAI:
+        #    return OpenAIModel
         elif self == LLMType.LLAMA3:
             return Llama3Model
         else:
