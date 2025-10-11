@@ -37,8 +37,12 @@ def run_experiments(config_name):
         name = config['name']
         num_iters = config['num_iters']
         count = config['count']
-        # starting_index = config['starting_index']
 
+        configuration_filepath = "experiments/configs/standard_experiment.yaml"
+        if config_group.get("configuration_filepath", None) is not None:
+            configuration_filepath = config_group["configuration_filepath"]
+
+        # starting_index = config['starting_index']
         for i in range(count):
             command = [
                 './cli.sh',
@@ -51,11 +55,13 @@ def run_experiments(config_name):
                 '--',
                 'python',
                 './scripts/run_debate.py',
+                f'--configuration_filepath={configuration_filepath}',
                 f'--configuration={name}',
                 f'--num_iters={num_iters}',
                 # f'--starting_index={(i + count * index) * 157}',
-                # f'--starting_index={starting_index}',
             ]
+            if config.get("starting_index", None) is not None:
+                command.append(f'--starting_index={config["starting_index"]}')
 
             print(f"Running command: {' '.join(command)}")
             
