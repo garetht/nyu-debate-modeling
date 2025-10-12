@@ -8,6 +8,8 @@ import logging
 import os
 import sys
 
+from scripts.script_config import ScriptConfig
+
 
 class DebateRoundScriptConfig(BaseModel):
     experiment_name: str
@@ -45,6 +47,7 @@ class ScriptUtils:
         parser.add_argument("--num_iters", type=int, default=1_000)
         parser.add_argument("--starting_index", type=int, default=0)
         parser.add_argument("--log_level", type=str, default="INFO")
+        parser.add_argument("--configuration_filepath", type=str, default=None)
         parser.add_argument("--configuration", type=str, default="")
         parser.add_argument("--test", action="store_true", default=False)  # needed for local testing (optional otherwise)
         parser.add_argument("--load_only", action="store_true", default=False)
@@ -56,7 +59,7 @@ class ScriptUtils:
         parser.add_argument("--transcripts_dir", type=str, default=None)
         args = parser.parse_args()
         ScriptUtils.set_log_level(args)
-        return args
+        return ScriptConfig(**vars(args))
 
     @classmethod
     def set_log_level(cls, args) -> None:
@@ -78,19 +81,21 @@ class ScriptUtils:
         os.environ["LOG_LEVEL"] = str(specified)
 
     @classmethod
-    def get_debate_round_script_config(cls, args) -> DebateRoundScriptConfig:
+    def get_debate_round_script_config(cls, args: ScriptConfig) -> DebateRoundScriptConfig:
         root = os.environ["SRC_ROOT"]
         output_root = os.environ["OUTPUT_ROOT"] if "OUTPUT_ROOT" in os.environ else root
         transcript_path = f"{output_root}outputs/transcripts"
         graphs_path = f"{output_root}outputs/graphs"
         stats_path = f"{output_root}outputs/stats"
         full_record_path = f"{output_root}outputs/runs"
-        if args.test:
-            experiment_name = args.configuration
+        if args.configuration_filepath is not None:
+            experiment_file_path = f"{root}{args.configuration_filepath}"
+        elif args.test:
             experiment_file_path = f"{root}experiments/configs/test_experiment.yaml"
         else:
-            experiment_name = args.configuration
             experiment_file_path = f"{root}experiments/configs/standard_experiment.yaml"
+
+        experiment_name = args.configuration
         return DebateRoundScriptConfig(
             experiment_name=experiment_name,
             experiment_file_path=experiment_file_path,
