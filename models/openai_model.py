@@ -170,7 +170,7 @@ class OpenAIModel(Model):
         return self.client.chat.completions.create(
             model=self.endpoint,
             messages=messages,
-            reasoning_effort="low" if "o4" in self.endpoint else NOT_GIVEN,
+            # reasoning_effort="low" if "o4" in self.endpoint else NOT_GIVEN,
             max_completion_tokens=max_new_tokens,
             logprobs=(speech_structure != SpeechStructure.OPEN_ENDED),
             top_logprobs=5 if (speech_structure != SpeechStructure.OPEN_ENDED) else None,

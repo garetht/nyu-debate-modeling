@@ -48,10 +48,12 @@ TASK_TYPE_PARAMS = {
         eval_dataset_params=DatasetConfig(
             dataset_type="lojban",
             split_type="test",
+            shuffle_deterministically=True
         ),
         data_generation_dataset_params=DatasetConfig(
             dataset_type="lojban",
             split_type="train",
+            shuffle_deterministically=True
         ),
         prompt_config=PromptLoadingConfig(
             file_path="/home/ubuntu/mars-arnesen-gh/garethtan/prompts/configs/lojban_prompts.yaml"
@@ -64,11 +66,13 @@ TASK_TYPE_PARAMS = {
         eval_dataset_params=DatasetConfig(
             dataset_type="quality",
             split_type="val",
+            shuffle_deterministically=True
         ),
         data_generation_dataset_params=DatasetConfig(
             dataset_type="quality",
             split_type="train",
-            flip_sides=False
+            flip_sides=False,
+            shuffle_deterministically=True
         ),
         prompt_config=PromptLoadingConfig()
     )

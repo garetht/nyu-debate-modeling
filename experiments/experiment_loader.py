@@ -340,6 +340,7 @@ class ExperimentLoader:
                 correct_index = None
                 speeches = []
             else:
+                logger.info("Getting dataset example {} for split {}".format(i + start_idx, split_type))
                 example = (
                     dataset.get_example(idx=i + start_idx, split=split_type)
                     if not offline_model_helpers
