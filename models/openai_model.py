@@ -17,6 +17,10 @@ import random
 import re
 
 
+class EmptyModelOutputError(RuntimeError):
+    """Raised when the OpenAI API returns a completion with zero tokens."""
+
+
 class OpenAIModel(Model):
     MAX_PARALLEL_REQUESTS = 16
     DEFAULT_MODEL_ENDPOINT = "gpt-4-0125-preview"
@@ -138,7 +142,17 @@ class OpenAIModel(Model):
             self.logger.warn(e)
             return ModelResponse(failed=True)
 
+        completion_tokens = None
+        if hasattr(completion, "usage") and completion.usage is not None:
+            completion_tokens = getattr(completion.usage, "completion_tokens", None)
+
         message = completion.choices[0].message.content
+        message_is_empty = not message or (isinstance(message, str) and not message.strip())
+
+        if completion_tokens == 0 or message_is_empty:
+            raise EmptyModelOutputError(
+                f"Model `{self.endpoint}` returned zero tokens for alias `{self.alias}`."
+            )
 
         if speech_structure == SpeechStructure.DECISION:
             a_odds, b_odds = process_logprobs(completion)
@@ -170,7 +184,7 @@ class OpenAIModel(Model):
         return self.client.chat.completions.create(
             model=self.endpoint,
             messages=messages,
-            # reasoning_effort="low" if "o4" in self.endpoint else NOT_GIVEN,
+            reasoning_effort="low" if "o4" in self.endpoint else NOT_GIVEN,
             max_completion_tokens=max_new_tokens,
             logprobs=(speech_structure != SpeechStructure.OPEN_ENDED),
             top_logprobs=5 if (speech_structure != SpeechStructure.OPEN_ENDED) else None,

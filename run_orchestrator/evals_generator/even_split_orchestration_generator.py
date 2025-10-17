@@ -1,6 +1,5 @@
 import argparse
 import dataclasses
-from collections.abc import Mapping
 from itertools import accumulate
 
 import yaml
@@ -19,6 +18,7 @@ class ConfigArgs:
     filename: str
     output_directory: str = "run_orchestrator/runs/"
     ip_address: str = "0.0.0.0"
+    exclude_generated_debates: bool = False
 
 class NoAliasDumper(yaml.SafeDumper):
     def ignore_aliases(self, data):
@@ -29,9 +29,9 @@ def enum_representer(dumper, data):
 
 def generate_splits(args: ConfigArgs):
     splits = distribute_iterations(args.total_iterations, args.splits)
-    return {
-        "configurations": [
-            {
+    configurations = []
+    for s in splits:
+        config = {
                 "instance_ip": args.ip_address,
                 "home_dir": "/home/ubuntu/mars-arnesen-gareth",
                 "configuration_filepath": "run_orchestrator/evals_generator/generated_configs/mars_experiments.yaml",
@@ -44,8 +44,14 @@ def generate_splits(args: ConfigArgs):
                     }
 
             }
-            for s in splits
-        ]
+
+        if args.exclude_generated_debates:
+            config["extant_debates_directory"] = f"outputs/{args.configuration_name}/outputs/transcripts"
+
+        configurations.append(config)
+
+    return {
+        "configurations": configurations,
     }
 
 
@@ -108,9 +114,21 @@ def parse_args() -> ConfigArgs:
         type=str,
         help="The IP address to use for each instance"
     )
+    parser.add_argument(
+        "--exclude_generated_debates",
+        type=bool,
+        help="Whether to exclude generated debates from the results"
+    )
     args = parser.parse_args()
 
-    return ConfigArgs(filename=args.filename, configuration_name=args.configuration_name, total_iterations=args.total_iterations, splits=args.splits, ip_address=args.ip_address)
+    return ConfigArgs(
+        filename=args.filename,
+        configuration_name=args.configuration_name,
+        total_iterations=args.total_iterations,
+        splits=args.splits,
+        ip_address=args.ip_address,
+        exclude_generated_debates=args.exclude_generated_debates
+    )
 
 
 if __name__ == "__main__":

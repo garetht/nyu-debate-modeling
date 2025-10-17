@@ -28,6 +28,7 @@ class JudgeTrainingRound(enum.Enum):
 @dataclasses.dataclass
 class DebaterModelConfiguration:
     training_round: DebaterTrainingRound
+    is_reasoning: bool
     settings: ModelSettings
 
 
@@ -40,6 +41,7 @@ class JudgeModelConfiguration:
 ALL_VALID_DEBATERS: dict[str, DebaterModelConfiguration] = {
     "llama-3-262k": DebaterModelConfiguration(
         training_round=DebaterTrainingRound.UNTRAINED,
+        is_reasoning=False,
         settings=ModelSettings(
             model_type=ModelType.LLAMA3,
             alias="",
@@ -49,6 +51,7 @@ ALL_VALID_DEBATERS: dict[str, DebaterModelConfiguration] = {
     ),
     "llama-3-262k-2025-07-31": DebaterModelConfiguration(
         training_round=DebaterTrainingRound.SFT_ONLY,
+        is_reasoning=False,
         settings=ModelSettings(
             model_type=ModelType.LLAMA3,
             alias="",
@@ -57,6 +60,7 @@ ALL_VALID_DEBATERS: dict[str, DebaterModelConfiguration] = {
     ),
     "llama-3-262k-41-judge": DebaterModelConfiguration(
         training_round=DebaterTrainingRound.ROUND_TWO_DPO,
+        is_reasoning=False,
         settings=ModelSettings(
             model_type=ModelType.LLAMA3,
             alias="",
@@ -65,6 +69,7 @@ ALL_VALID_DEBATERS: dict[str, DebaterModelConfiguration] = {
     ),
     "o4-mini-rft-2025-09-15": DebaterModelConfiguration(
         training_round=DebaterTrainingRound.RFT,
+        is_reasoning=True,
         settings=ModelSettings(
             model_type=ModelType.OPENAI,
             alias="",

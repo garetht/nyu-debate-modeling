@@ -18,6 +18,7 @@ class DebateRoundScriptConfig(BaseModel):
     graphs_path_prefix: str
     stats_path_prefix: str
     full_record_path_prefix: str
+    extant_debates_directory: Optional[str] = None
 
 
 class ModelRunScriptConfig(BaseModel):
@@ -57,6 +58,7 @@ class ScriptUtils:
         parser.add_argument("--force_save_results", action="store_true", default=False)
         parser.add_argument("--force_save_transcripts", action="store_true", default=False)
         parser.add_argument("--transcripts_dir", type=str, default=None)
+        parser.add_argument("--extant_debates_directory", type=str, default=None)
         args = parser.parse_args()
         ScriptUtils.set_log_level(args)
         return ScriptConfig(**vars(args))
@@ -103,6 +105,7 @@ class ScriptUtils:
             graphs_path_prefix=graphs_path,
             stats_path_prefix=stats_path,
             full_record_path_prefix=full_record_path,
+            extant_debates_directory=args.extant_debates_directory,
         )
 
     @classmethod

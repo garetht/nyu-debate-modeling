@@ -8,7 +8,7 @@ import glob
 from graph_generator import graph_results
 from datetime import datetime
 
-def run_experiments(config_name):
+def run_experiments(config_name, dry_run=False):
     yaml_path = f"run_orchestrator/runs/{config_name}.yaml"
     schema_path = f"run_orchestrator/experiment_orchestrator.schema.json"
 
@@ -58,18 +58,21 @@ def run_experiments(config_name):
                 f'--configuration_filepath={configuration_filepath}',
                 f'--configuration={name}',
                 f'--num_iters={num_iters}',
-                # f'--starting_index={(i + count * index) * 157}',
             ]
             if config.get("starting_index", None) is not None:
                 command.append(f'--starting_index={config["starting_index"]}')
 
+            if config_group.get("extant_debates_directory", None) is not None:
+                command.append(f'--extant_debates_directory={config_group["extant_debates_directory"]}')
+
             print(f"Running command: {' '.join(command)}")
-            
-            with subprocess.Popen(command, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True, bufsize=1) as process:
-                for line in process.stdout:
-                    print(line, end='')
-                for line in process.stderr:
-                    print(line, end='')
+
+            if not dry_run:
+                with subprocess.Popen(command, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True, bufsize=1) as process:
+                    for line in process.stdout:
+                        print(line, end='')
+                    for line in process.stderr:
+                        print(line, end='')
 
 def download_results(config_name):
     yaml_path = f"run_orchestrator/runs/{config_name}.yaml"
@@ -187,7 +190,13 @@ def main():
             print("Usage: python run_orchestrator/run_experiments.py start <config_name>")
             sys.exit(1)
         config_name = sys.argv[2]
-        run_experiments(config_name)
+        run_experiments(config_name, dry_run=False)
+    elif subcommand == 'dry-run':
+        if len(sys.argv) < 3:
+            print("Usage: python run_orchestrator/run_experiments.py dry-run <config_name>")
+            sys.exit(1)
+        config_name = sys.argv[2]
+        run_experiments(config_name, dry_run=True)
     elif subcommand == 'merge-data':
         stats_dir = "outputs/stats"
         if len(sys.argv) > 2:
@@ -201,7 +210,7 @@ def main():
         graph_results(file_path)
     else:
         print(f"Unknown subcommand: {subcommand}")
-        print("Usage: python run_orchestrator/run_experiments.py <start|merge-data|graph> [args]")
+        print("Usage: python run_orchestrator/run_experiments.py <start|dry-run|merge-data|graph> [args]")
         sys.exit(1)
 
 if __name__ == "__main__":

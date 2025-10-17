@@ -2724,3 +2724,127 @@ Iterative - ConsultancyFullTrainOneTurnIterTwo - 83:
           full_dataset_file_path: /vast/spa9663/outputs/transcripts/2024-09-04_05:53:06.602017
         - dataset_type: judge_preferences
           full_dataset_file_path: /vast/spa9663/outputs/transcripts/2024-09-05_07:04:33.478265
+llama-trained-for-gpt-4-turbo-round-one:
+    model_name: /home/ubuntu/mars-arnesen-gh/leonidtsyplenkov/models/trained_models/llama-3-mega-merged-no-judge-speeches-31.07
+    target: debater
+    llm_type: llama3
+    opening_speeches_only: True
+    training_hyperparameters:
+        num_train_epochs: 1
+        per_device_train_batch_size: 1
+        gradient_accumulation_steps: 32
+        optim: paged_adamw_32bit
+        learning_rate: 10e-5
+        max_grad_norm: 0.3
+        warmup_ratio: 0.03
+        lr_scheduler_type: constant
+        peft_type: lora
+        lora_rank: 128
+        kl_penalty: 0.5
+        steps: 1
+        target_module: all
+        supplemental:
+            epoch_size: 1024
+            save_steps: 16
+            reward_type: prob
+            loss_type: bon
+            multiplier: 7
+    logging_and_saving_config:
+        logging_steps: 1
+        output_dir: /home/ubuntu/mars-arnesen-gh/models/trained_models/llama-trained-for-gpt-4-turbo-round-one
+    dataset:
+        dataset_type: judge_preferences
+        full_dataset_file_path: /home/ubuntu/mars-arnesen-gh/garethtan/outputs/data-generation--llama-3-262k-2025-07-31-debater_sft-only--gpt-4-turbo-2024-04-09-judge_untrained--quality/outputs/transcripts/2025-10-
+llama-trained-for-gpt-41-round-one:
+    model_name: /home/ubuntu/mars-arnesen-gh/leonidtsyplenkov/models/trained_models/llama-3-mega-merged-no-judge-speeches-31.07
+    target: debater
+    llm_type: llama3
+    opening_speeches_only: True
+    training_hyperparameters:
+        num_train_epochs: 1
+        per_device_train_batch_size: 1
+        gradient_accumulation_steps: 32
+        optim: paged_adamw_32bit
+        learning_rate: 10e-5
+        max_grad_norm: 0.3
+        warmup_ratio: 0.03
+        lr_scheduler_type: constant
+        peft_type: lora
+        lora_rank: 128
+        kl_penalty: 0.5
+        steps: 1
+        target_module: all
+        supplemental:
+            epoch_size: 1024
+            save_steps: 16
+            reward_type: prob
+            loss_type: bon
+            multiplier: 7
+    logging_and_saving_config:
+        logging_steps: 1
+        output_dir: /home/ubuntu/mars-arnesen-gh/models/trained_models/llama-trained-for-gpt-41-round-one
+    dataset:
+        dataset_type: judge_preferences
+        full_dataset_file_path: /home/ubuntu/mars-arnesen-gh/garethtan/outputs/data-generation--llama-3-262k-2025-07-31-debater_sft-only--gpt-4-turbo-2024-04-09-judge_untrained--quality/outputs/transcripts/2025-10-
+llama-trained-for-llama-judge-not-finetuned:
+    model_name: /home/ubuntu/mars-arnesen-gh/leonidtsyplenkov/models/trained_models/llama-3-mega-merged-no-judge-speeches-31.07
+    target: debater
+    llm_type: llama3
+    opening_speeches_only: True
+    training_hyperparameters:
+        num_train_epochs: 1
+        per_device_train_batch_size: 1
+        gradient_accumulation_steps: 32
+        optim: paged_adamw_32bit
+        learning_rate: 10e-5
+        max_grad_norm: 0.3
+        warmup_ratio: 0.03
+        lr_scheduler_type: constant
+        peft_type: lora
+        lora_rank: 128
+        kl_penalty: 0.5
+        steps: 1
+        target_module: all
+        supplemental:
+            epoch_size: 1024
+            save_steps: 16
+            reward_type: prob
+            loss_type: bon
+            multiplier: 7
+    logging_and_saving_config:
+        logging_steps: 1
+        output_dir: /home/ubuntu/mars-arnesen-gh/models/trained_models/llama-trained-for-llama-judge-not-finetuned
+    dataset:
+        dataset_type: judge_preferences
+        full_dataset_file_path: /home/ubuntu/mars-arnesen-gh/garethtan/outputs/data-generation--llama-3-262k-2025-07-31-debater_sft-only--llama-3-262k-judge_untrained--quality/outputs/transcripts/2025-10-
+llama-trained-for-llama-judge-finetuned:
+    model_name: /home/ubuntu/mars-arnesen-gh/leonidtsyplenkov/models/trained_models/llama-3-mega-merged-no-judge-speeches-31.07
+    target: debater
+    llm_type: llama3
+    opening_speeches_only: True
+    training_hyperparameters:
+        num_train_epochs: 1
+        per_device_train_batch_size: 1
+        gradient_accumulation_steps: 32
+        optim: paged_adamw_32bit
+        learning_rate: 10e-5
+        max_grad_norm: 0.3
+        warmup_ratio: 0.03
+        lr_scheduler_type: constant
+        peft_type: lora
+        lora_rank: 128
+        kl_penalty: 0.5
+        steps: 1
+        target_module: all
+        supplemental:
+            epoch_size: 1024
+            save_steps: 16
+            reward_type: prob
+            loss_type: bon
+            multiplier: 7
+    logging_and_saving_config:
+        logging_steps: 1
+        output_dir: /home/ubuntu/mars-arnesen-gh/models/trained_models/llama-trained-for-llama-judge-finetuned
+    dataset:
+        dataset_type: judge_preferences
+        full_dataset_file_path: /home/ubuntu/mars-arnesen-gh/garethtan/outputs/data-generation--llama-3-262k-2025-07-31-debater_sft-only--llama-3-262k-2025-10-08-judge_sft-only--quality/outputs/transcripts/2025-10-

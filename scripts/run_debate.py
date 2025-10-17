@@ -5,8 +5,6 @@ ScriptUtils.setup_script()
 from experiments import ExperimentLoader, ResultsCollector
 from utils import logger_utils
 
-from tqdm import tqdm
-
 from datetime import datetime
 
 args = ScriptUtils.get_args()
@@ -19,7 +17,11 @@ should_save_results = (not args.local) or args.force_save_results
 print(config)
 
 debate_rounds, experiment = ExperimentLoader.generate_debate_rounds(
-    experiment_file_path=config.experiment_file_path, name=config.experiment_name, count=args.num_iters, starting_index=args.starting_index
+    experiment_file_path=config.experiment_file_path,
+    name=config.experiment_name,
+    count=args.num_iters,
+    starting_index=args.starting_index,
+    extant_debates_directory=args.extant_debates_directory,
 )
 
 results_collector = ResultsCollector(

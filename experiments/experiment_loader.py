@@ -207,6 +207,7 @@ class ExperimentLoader:
         start_idx: int,
         model_cache: Optional[dict[str, Model]] = None,
         offline_model_helper_cache: Optional[dict[str, OfflineModelHelper]] = None,
+        extant_debate_identifier_extractor: ExtantDebateIdentifiersExtractor | None = None,
     ) -> tuple[list[DebateRound], dict[str, Model], dict[str, OfflineModelHelper]]:
         """
         Creates a set of debate round for the specific debaters listed in debater_idxs.
@@ -324,6 +325,12 @@ class ExperimentLoader:
         logger.info(f"Running experiment {experiment}")
         logger.info(f"Creating {count} rounds between {first_alias} and {second_alias}")
 
+        extant_debate_identifiers = set(extant_debate_identifier_extractor.process_files().keys()) if extant_debate_identifier_extractor is not None else set()
+        if extant_debate_identifier_extractor is not None:
+            logger.info(f"Extant debates found in directory {extant_debate_identifier_extractor.directory}: {len(extant_debate_identifiers)} ({', '.join(list(extant_debate_identifiers)[:5])}")
+        else:
+            logger.info("No extant debates directory was provided. Not excluding any debates.")
+
         # create debate rounds
         rounds = []
         for round_idx in range(count):
@@ -340,12 +347,12 @@ class ExperimentLoader:
                 correct_index = None
                 speeches = []
             else:
-                logger.info("Getting dataset example {} for split {}".format(i + start_idx, split_type))
                 example = (
                     dataset.get_example(idx=i + start_idx, split=split_type)
                     if not offline_model_helpers
                     else offline_model_helpers[0].get_example(idx=i, split_type=split_type)
                 )
+
                 topic = example.question
                 position = example.positions[0]
                 opponent_position = example.positions[1]
@@ -354,6 +361,14 @@ class ExperimentLoader:
                 correct_index = example.correct_index
                 speeches = example.speeches
             debate_identifier = f"{title}_{topic}"
+
+            if debate_identifier in extant_debate_identifiers:
+                logger.info("Debate #{} {} already exists in extant debate transcripts folder, skipping".format(
+                    i + start_idx,
+                    debate_identifier))
+                continue
+            else:
+                logger.info("Getting dataset example {} for split {} ({})".format(i + start_idx, split_type, debate_identifier))
 
             config_a = PromptConfig(
                 name=constants.DEFAULT_DEBATER_A_NAME,
@@ -699,6 +714,8 @@ class ExperimentLoader:
         if experiment.batch_size == 1:
             return rounds, model_cache, offline_model_helper_cache
 
+        logger.info(f"Generated simple (non-batched) rounds: {len(rounds)}")
+
         # batches the debate rounds for efficient generation
         batched_rounds = []
         current_normal_batch = []
@@ -842,7 +859,11 @@ class ExperimentLoader:
 
     @classmethod
     def generate_debate_rounds(
-        cls, experiment_file_path: str, name: str, count: int = 1, starting_index: Optional[int] = None
+        cls, experiment_file_path: str,
+            name: str,
+            count: int = 1,
+            starting_index: Optional[int] = None,
+            extant_debates_directory: Optional[str] = None,
     ) -> tuple[list[DebateRound], ExperimentConfig]:
         """
         Generates a list of debate rounds with the given configuration
@@ -869,6 +890,11 @@ class ExperimentLoader:
         all_rounds = []
         model_cache = {}
         offline_model_helper_cache = {}
+
+        extant_debates_extractor = None
+        if extant_debates_directory is not None:
+            extant_debates_extractor = ExtantDebateIdentifiersExtractor(extant_debates_directory)
+
         for combination, (start_idx, count_to_use) in ExperimentLoader.get_debater_combinations(
             experiment=experiment, count=count, dataset=dataset
         ):
@@ -883,6 +909,7 @@ class ExperimentLoader:
                 start_idx=start_idx if starting_index is None else starting_index,
                 model_cache=model_cache,
                 offline_model_helper_cache=offline_model_helper_cache,
+                extant_debate_identifier_extractor=extant_debates_extractor
             )
             all_rounds.extend(rounds)
 

@@ -9,6 +9,7 @@ class ScriptConfig:
     starting_index: int = 0
     log_level: str = "INFO"
     configuration_filepath: Optional[str] = None
+    extant_debates_directory: Optional[str] = None
     configuration: str = ""
     test: bool = False
     load_only: bool = False
