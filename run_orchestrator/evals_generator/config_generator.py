@@ -99,7 +99,7 @@ def generate_data_generation_configurations(debaters: dict[str, DebaterModelConf
 
     configurations: dict[str, ExperimentConfig] = {}
     for ((debater_name, debater), (judge_name, judge), (task_type_name, task_type_params)) in debater_judge_task_types:
-        name = ConfigurationName.serialize_from_inputs(ConfigurationType.DATA_GENERATION, debater_name, judge_name, task_type_name)
+        name = ConfigurationName.serialize_from_inputs(ConfigurationType.DATA_GENERATION, debater, judge, task_type_name)
         debater = debater.settings.model_copy(
             update={'generation_params': task_type_params.generation_params}
         )
@@ -137,7 +137,7 @@ def generate_eval_configurations(debaters: dict[str, DebaterModelConfiguration],
 
     configurations: dict[str, ExperimentConfig] = {}
     for ((debater_name, debater), (judge_name, judge), (task_type_name, task_type_params)) in debater_judge_task_types:
-        name = ConfigurationName.serialize_from_inputs(ConfigurationType.EVAL, debater_name, judge_name, task_type_name)
+        name = ConfigurationName.serialize_from_inputs(ConfigurationType.EVAL, debater, judge, task_type_name)
 
         if debater.is_reasoning:
             task_type_params.generation_params.max_new_tokens = 1500
