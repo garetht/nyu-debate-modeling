@@ -1,6 +1,7 @@
 from debate import DebateRoundSummary, QuestionMetadata
 from experiments.annotator import Annotator
-from experiments.experiment_loader import ExperimentConfig, ExperimentLoader
+from experiment_models import ExperimentConfig
+from experiments.experiment_loader import ExperimentLoader
 from experiments.quotes_collector import QuotesCollector
 from utils import InputType, input_utils, logger_utils
 import utils.constants as constants

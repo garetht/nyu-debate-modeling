@@ -1,5 +1,6 @@
 from debate import DebateRoundSummary
-from experiments.experiment_loader import ExperimentConfig, ExperimentLoader
+from experiment_models import ExperimentConfig
+from experiments.experiment_loader import ExperimentLoader
 from utils import logger_utils, quote_utils
 import utils.constants as constants
 

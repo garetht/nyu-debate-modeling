@@ -6,11 +6,12 @@ from itertools import product
 
 import yaml
 
-from data.dataset import DatasetConfig, SplitType, DatasetType
+from data.dataset import SplitType, DatasetType
 from debate import SpeechFormatStructure, AgentConfig, MultiRoundBranchingSetting
-from experiments.experiment_loader import ExperimentConfig, AgentsConfig, TournamentType
-from models import ModelSettings, GenerationParams, ModelType
-from prompts import PromptLoadingConfig
+from experiment_models import ExperimentConfig, AgentsConfig, TournamentType
+from models import ModelSettings, ModelType
+from run_orchestrator.evals_generator.config_spec import ConfigurationType, TASK_TYPE_PARAMS
+from run_orchestrator.evals_generator.configuration_name import ConfigurationName
 from run_orchestrator.evals_generator.model_definitions import ALL_VALID_DEBATERS, ALL_VALID_JUDGES, \
     DebaterModelConfiguration, \
     DebaterTrainingRound, JudgeModelConfiguration
@@ -26,57 +27,8 @@ class NoAliasDumper(yaml.SafeDumper):
     def ignore_aliases(self, data):
         return True
 
-
-@dataclasses.dataclass
-class TaskTypeParams:
-    generation_params: GenerationParams
-    eval_dataset_params: DatasetConfig
-    data_generation_dataset_params: DatasetConfig
-    prompt_config: PromptLoadingConfig
-
-
 def enum_representer(dumper, data):
     return dumper.represent_str(data.name.lower())
-
-
-TASK_TYPE_PARAMS = {
-    "lojban": TaskTypeParams(
-        generation_params=GenerationParams(
-            temperature=0.5,
-            max_new_tokens=2000
-        ),
-        eval_dataset_params=DatasetConfig(
-            dataset_type="lojban",
-            split_type="test",
-            shuffle_deterministically=True
-        ),
-        data_generation_dataset_params=DatasetConfig(
-            dataset_type="lojban",
-            split_type="train",
-            shuffle_deterministically=True
-        ),
-        prompt_config=PromptLoadingConfig(
-            file_path="/home/ubuntu/mars-arnesen-gh/garethtan/prompts/configs/lojban_prompts.yaml"
-        )
-    ),
-    "quality": TaskTypeParams(
-        generation_params=GenerationParams(
-            temperature=0.5
-        ),
-        eval_dataset_params=DatasetConfig(
-            dataset_type="quality",
-            split_type="val",
-            shuffle_deterministically=True
-        ),
-        data_generation_dataset_params=DatasetConfig(
-            dataset_type="quality",
-            split_type="train",
-            flip_sides=False,
-            shuffle_deterministically=True
-        ),
-        prompt_config=PromptLoadingConfig()
-    )
-}
 
 
 def process_debaters_and_judges() -> tuple[dict[str, DebaterModelConfiguration], dict[str, JudgeModelConfiguration]]:
@@ -124,14 +76,9 @@ def run_config_generator(args: ConfigArgs):
     write_configurations_to_disk(args, ChainMap(eval_configurations, data_generation_configs))
 
 
-def generate_config_name(
-        config_type: str,
-        debater: DebaterModelConfiguration,
-        judge: JudgeModelConfiguration,
-        task_type_name: str,
-) -> str:
-    """Generates a configuration name."""
-    return f"{config_type}--{debater.settings.alias}_{debater.training_round.display_name}--{judge.settings.alias}_{judge.training_round.display_name}--{task_type_name}"
+def parse_config_name(raw_name: str) -> ConfigurationName:
+    """Parse a serialized configuration name back into its structured representation."""
+    return ConfigurationName.deserialize(raw_name)
 
 
 def generate_data_generation_configurations(debaters: dict[str, DebaterModelConfiguration],
@@ -139,16 +86,20 @@ def generate_data_generation_configurations(debaters: dict[str, DebaterModelConf
     # all configurations are based on Quality
     # data generation configurations are only generated for
     # SFT only models and round one DPO trained models
+    eligible_debaters = [
+        (name, d)
+        for name, d in debaters.items()
+        if d.training_round in {DebaterTrainingRound.SFT_ONLY, DebaterTrainingRound.ROUND_ONE_DPO}
+    ]
     debater_judge_task_types = product(
-        [d for d in debaters.values() if
-         d.training_round in {DebaterTrainingRound.SFT_ONLY, DebaterTrainingRound.ROUND_ONE_DPO}],
-        judges.values(),
+        eligible_debaters,
+        judges.items(),
         [("quality", TASK_TYPE_PARAMS["quality"])]
     )
 
     configurations: dict[str, ExperimentConfig] = {}
-    for (debater, judge, (task_type_name, task_type_params)) in debater_judge_task_types:
-        name = generate_config_name("data-generation", debater, judge, task_type_name)
+    for ((debater_name, debater), (judge_name, judge), (task_type_name, task_type_params)) in debater_judge_task_types:
+        name = ConfigurationName.serialize_from_inputs(ConfigurationType.DATA_GENERATION, debater_name, judge_name, task_type_name)
         debater = debater.settings.model_copy(
             update={'generation_params': task_type_params.generation_params}
         )
@@ -182,11 +133,11 @@ def build_agent_config(debater: ModelSettings, judge: ModelSettings) -> AgentsCo
 def generate_eval_configurations(debaters: dict[str, DebaterModelConfiguration],
                                  judges: dict[str, JudgeModelConfiguration]) -> dict[
     str, ExperimentConfig]:
-    debater_judge_task_types = product(debaters.values(), judges.values(), TASK_TYPE_PARAMS.items())
+    debater_judge_task_types = product(debaters.items(), judges.items(), TASK_TYPE_PARAMS.items())
 
     configurations: dict[str, ExperimentConfig] = {}
-    for (debater, judge, (task_type_name, task_type_params)) in debater_judge_task_types:
-        name = generate_config_name("eval", debater, judge, task_type_name)
+    for ((debater_name, debater), (judge_name, judge), (task_type_name, task_type_params)) in debater_judge_task_types:
+        name = ConfigurationName.serialize_from_inputs(ConfigurationType.EVAL, debater_name, judge_name, task_type_name)
 
         if debater.is_reasoning:
             task_type_params.generation_params.max_new_tokens = 1500
@@ -223,6 +174,31 @@ def write_configurations_to_disk(args: ConfigArgs, configurations: Mapping[str, 
 
     with open(args.output, 'w') as f:
         yaml.dump(write_config, f, default_flow_style=False, sort_keys=True, Dumper=NoAliasDumper)
+
+
+def _normalize_judge_config(
+        judge: JudgeModelConfiguration | str,
+) -> tuple[str, str]:
+    if isinstance(judge, str):
+        try:
+            config = ALL_VALID_JUDGES[judge]
+        except KeyError as exc:
+            raise ValueError(f"Unknown judge '{judge}'.") from exc
+        alias = ConfigurationName._build_judge_alias(judge)
+        training_display = config.training_round.display_name
+        return alias, training_display
+    if not isinstance(judge, JudgeModelConfiguration):
+        raise TypeError("Judge must be provided as a configuration key or JudgeModelConfiguration.")
+    alias = judge.settings.alias
+    if not alias:
+        raise ValueError("Judge alias must be set when passing a JudgeModelConfiguration.")
+    return alias, judge.training_round.display_name
+
+
+def _normalize_task_type(task_type_name: str) -> str:
+    if task_type_name not in TASK_TYPE_PARAMS:
+        raise ValueError(f"Unknown task type '{task_type_name}'.")
+    return task_type_name
 
 
 def parse_args() -> ConfigArgs:

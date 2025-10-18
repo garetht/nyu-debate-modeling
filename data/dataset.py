@@ -114,11 +114,10 @@ class JudgePreferenceDataRow(BaseModel):
     rejected: str
     preference: float = 1.0
 
-
 @dataclass
 class JudgingProbeDataRow:
-    internal_representation: torch.tensor
-    target: torch.tensor
+    internal_representation: torch.Tensor
+    target: torch.Tensor
 
 
 class RawDataset(ABC):
