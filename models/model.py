@@ -25,6 +25,7 @@ class ModelType(Enum):
     REPETITIVE = 12
     # an open source OpenAI model to be run locally
     OPEN_WEIGHTS_OPENAI = 13
+    MOCK = 14
 
 
 class BestOfNConfig(BaseModel):
