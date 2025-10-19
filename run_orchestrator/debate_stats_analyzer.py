@@ -12,7 +12,7 @@ import os
 import sys
 from pathlib import Path
 from typing import Dict, List, Tuple
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 import matplotlib.pyplot as plt
 import numpy as np
 
@@ -154,20 +154,58 @@ def analyze_debate_file(file_path: Path) -> Tuple[DebateStats, List[str]]:
     return stats, errors
 
 
-def analyze_directory(directory_path: str) -> None:
-    """Analyze all JSON files in a directory"""
+@dataclass
+class DirectoryAnalysisResult:
+    """Aggregated statistics and metadata for a directory scan."""
+
+    directory: Path
+    json_files: List[Path] = field(default_factory=list)
+    overall_stats: DebateStats = field(default_factory=DebateStats)
+    errors: List[str] = field(default_factory=list)
+
+
+def collect_directory_analysis(directory_path: Path | str) -> DirectoryAnalysisResult:
+    """Collect debate statistics for all JSON transcripts in a directory."""
     dir_path = Path(directory_path)
 
     if not dir_path.exists():
-        print(f"Error: Directory '{directory_path}' does not exist.")
-        return
+        raise FileNotFoundError(f"Directory '{directory_path}' does not exist.")
 
     if not dir_path.is_dir():
-        print(f"Error: '{directory_path}' is not a directory.")
+        raise NotADirectoryError(f"'{directory_path}' is not a directory.")
+
+    json_files = sorted(dir_path.glob("*.json"))
+    result = DirectoryAnalysisResult(directory=dir_path, json_files=json_files)
+
+    if not json_files:
+        return result
+
+    for file_path in json_files:
+        file_stats, errors = analyze_debate_file(file_path)
+        result.overall_stats.total_debates += file_stats.total_debates
+        result.overall_stats.debater_a_wins += file_stats.debater_a_wins
+        result.overall_stats.debater_b_wins += file_stats.debater_b_wins
+        result.overall_stats.judge_correct += file_stats.judge_correct
+        result.overall_stats.first_debater_correct += file_stats.first_debater_correct
+        result.overall_stats.debater_a_probs.extend(file_stats.debater_a_probs)
+        result.overall_stats.debater_b_probs.extend(file_stats.debater_b_probs)
+        result.errors.extend(errors)
+
+    return result
+
+
+def analyze_directory(directory_path: str) -> None:
+    """Analyze all JSON files in a directory"""
+    try:
+        result = collect_directory_analysis(directory_path)
+    except FileNotFoundError as exc:
+        print(f"Error: {exc}")
+        return
+    except NotADirectoryError as exc:
+        print(f"Error: {exc}")
         return
 
-    # Find all JSON files
-    json_files = list(dir_path.glob("*.json"))
+    json_files = result.json_files
 
     if not json_files:
         print(f"No JSON files found in '{directory_path}'.")
@@ -176,25 +214,8 @@ def analyze_directory(directory_path: str) -> None:
     print(f"Found {len(json_files)} JSON files. Analyzing...")
     print("-" * 50)
 
-    # Initialize overall statistics
-    overall_stats = DebateStats()
-    all_errors = []
-
-    # Process each file
-    for file_path in json_files:
-        file_stats, errors = analyze_debate_file(file_path)
-
-        # Add to overall statistics
-        overall_stats.total_debates += file_stats.total_debates
-        overall_stats.debater_a_wins += file_stats.debater_a_wins
-        overall_stats.debater_b_wins += file_stats.debater_b_wins
-        overall_stats.judge_correct += file_stats.judge_correct
-        overall_stats.first_debater_correct += file_stats.first_debater_correct
-        overall_stats.debater_a_probs.extend(file_stats.debater_a_probs)
-        overall_stats.debater_b_probs.extend(file_stats.debater_b_probs)
-
-        # Collect errors
-        all_errors.extend(errors)
+    overall_stats = result.overall_stats
+    all_errors = result.errors.copy()
 
         # # Print per-file statistics
         # if file_stats.total_debates > 0:
