@@ -5,6 +5,7 @@ import pytest
 from models.mock_model import MockModel
 from models.model import ModelInput, SpeechStructure
 from prompts import RoleType
+from utils import constants
 
 
 def make_input(content: str) -> list[list[ModelInput]]:
@@ -65,10 +66,25 @@ def test_predict_raises_for_conflicting_batch_and_num_sequences():
         model.predict(inputs, num_return_sequences=2)
 
 
-def test_predict_raises_for_decision_speech_structure():
+def test_predict_returns_decision_response_for_decision_speech_structure() -> None:
     model = MockModel(alias="mock")
-    with pytest.raises(ValueError):
-        model.predict(make_input("hello"), speech_structure=SpeechStructure.DECISION)
+    message_content: str = (
+        "Debater_B establishes point one. Debater_B strengthens with point two. "
+        "Debater_B closes stronger than Debater_A."
+    )
+    responses = model.predict(
+        make_input(message_content),
+        speech_structure=SpeechStructure.DECISION,
+        num_return_sequences=2,
+    )
+
+    assert len(responses) == 2
+    for response in responses:
+        assert response.decision == constants.DEFAULT_DEBATER_B_NAME
+        assert response.probabilistic_decision is not None
+        assert response.probabilistic_decision[constants.DEFAULT_DEBATER_A_NAME] == pytest.approx(1.0 / 3.0, rel=1e-6)
+        assert response.probabilistic_decision[constants.DEFAULT_DEBATER_B_NAME] == pytest.approx(2.0 / 3.0, rel=1e-6)
+        assert response.prompt == message_content
 
 
 def test_predict_handles_empty_inputs():
