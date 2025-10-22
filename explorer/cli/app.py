@@ -3,10 +3,10 @@
 
 from __future__ import annotations
 
+import asyncio
 from collections import defaultdict
 from datetime import datetime
 from pathlib import Path
-from threading import Thread
 from typing import Any, Optional, Sequence
 
 from rich.text import Text
@@ -26,6 +26,8 @@ from explorer.display import (
     render_identifier_summary_lines,
 )
 from explorer.explorer_models import (
+    DATA_GENERATION_CONFIG_TYPE,
+    EVAL_CONFIG_TYPE,
     GROUP_MODE_SEQUENCE,
     GroupMode,
     IdentifierStatsEntry,
@@ -37,7 +39,6 @@ from run_orchestrator.debate_stats_analyzer import (
     DirectoryAnalysisResult,
     collect_directory_analysis,
 )
-from run_orchestrator.evals_generator.config_spec import ConfigurationType
 from run_orchestrator.evals_generator.configuration_name import ConfigurationName
 from run_orchestrator.evals_generator.model_definitions import (
     ALL_VALID_DEBATERS,
@@ -95,9 +96,9 @@ class OutputsExplorerApp(App):
         super().__init__()
         self.group_mode: GroupMode = GroupMode.ALL
         self.repository_root = Path(__file__).resolve().parent.parent
-        self._stats_thread: Optional[Thread] = None
+        self._stats_task: Optional[asyncio.Task[None]] = None
         self._identifier_cache: dict[Path, tuple[dict[str, int], Optional[str]]] = {}
-        self._identifier_threads: dict[Path, Thread] = {}
+        self._identifier_tasks: dict[Path, asyncio.Task[None]] = {}
 
     def compose(self) -> ComposeResult:
         """Compose the widgets for the application."""
@@ -175,12 +176,14 @@ class OutputsExplorerApp(App):
 
             transcripts_dir = item / "outputs" / "transcripts"
             count, histogram, latest = collect_transcript_stats(transcripts_dir)
+            directory_size = calculate_directory_size_bytes(item)
 
             entries.append(
                 OutputEntry(
                     configuration=item.name,
-                    config_type=config.config_type,
+                    config_type=config.config_type.value,  # Convert to literal string
                     transcripts_directory=transcripts_dir,
+                    directory_size_bytes=directory_size,
                     task_label=format_task(config.task_type_name),
                     debater_key=config.debater_key,
                     debater_training=debater_cfg.training_round.display_name,
@@ -287,7 +290,10 @@ class OutputsExplorerApp(App):
         summary = Text()
         summary.append(f"Task: {entry.task_label}", style="yellow")
         summary.append(" | ", style="dim")
-        summary.append(f"Type: {entry.config_type.name}", style="white")
+        summary.append(
+            f"Type: {entry.config_type.replace('-', ' ').replace('_', ' ').title()}",
+            style="white",
+        )
         summary.append(" | ", style="dim")
         summary.append(
             f"Debater: {format_debater(entry.debater_key, entry.debater_training)}",
@@ -309,6 +315,8 @@ class OutputsExplorerApp(App):
                 f"Latest: {format_latest(entry.latest_transcript)}",
                 style="bright_yellow",
             )
+        summary.append(" | ", style="dim")
+        summary.append(f"Size: {format_directory_size(entry.directory_size_bytes)}", style="bright_blue")
 
         leaf_node = parent.add(summary)
         leaf_node.data = entry
@@ -321,7 +329,7 @@ class OutputsExplorerApp(App):
         for line in lines:
             hist_label.add_leaf(Text(line, style="dim", no_wrap=True))
 
-        if entry.config_type == ConfigurationType.DATA_GENERATION:
+        if entry.config_type == DATA_GENERATION_CONFIG_TYPE:
             identifier_node = leaf_node.add(Text("Debate identifier stats", style="italic"))
             identifier_node.data = IdentifierStatsEntry(entry.transcripts_directory)
             identifier_node.allow_expand = True
@@ -335,7 +343,7 @@ class OutputsExplorerApp(App):
         """Run the appropriate statistics when a configuration or stats node expands."""
         entry = getattr(event.node, "data", None)
         if isinstance(entry, OutputEntry):
-            if entry.config_type == ConfigurationType.EVAL:
+            if entry.config_type == EVAL_CONFIG_TYPE:
                 self._trigger_evaluation_stats(entry)
         elif isinstance(entry, IdentifierStatsEntry):
             self._trigger_identifier_analysis(event.node, entry)
@@ -343,34 +351,27 @@ class OutputsExplorerApp(App):
     def _trigger_evaluation_stats(self, entry: OutputEntry) -> None:
         """Kick off statistics analysis for a configuration entry."""
         stats_display = self.query_one("#stats-output", Static)
-        if self._stats_thread and self._stats_thread.is_alive():
+        if self._stats_task and not self._stats_task.done():
             stats_display.update(Text("Debate statistics analysis already running...", style="yellow"))
             return
 
         display_path = format_directory_for_display(entry.transcripts_directory, self.repository_root)
         stats_display.update(Text(f"Running debate statistics analysis for {display_path}...", style="yellow"))
-        self._stats_thread = Thread(target=self._run_evaluation_stats, args=(entry,), daemon=True)
-        self._stats_thread.start()
+        self._stats_task = asyncio.create_task(self._run_evaluation_stats(entry))
 
-    def _run_evaluation_stats(self, entry: OutputEntry) -> None:
-        """Execute the stats analysis in a background thread."""
+    async def _run_evaluation_stats(self, entry: OutputEntry) -> None:
+        """Execute the stats analysis asynchronously."""
+        stats_display = self.query_one("#stats-output", Static)
         try:
-            result = collect_directory_analysis(entry.transcripts_directory)
-            self.call_from_thread(self._display_stats_result, entry, result)
+            result = await asyncio.to_thread(collect_directory_analysis, entry.transcripts_directory)
         except (FileNotFoundError, NotADirectoryError) as exc:
-            self.call_from_thread(self._display_stats_error, str(exc))
+            stats_display.update(Text(f"Error running stats: {exc}", style="red"))
         except Exception as exc:  # noqa: BLE001
-            self.call_from_thread(self._display_stats_error, f"Unexpected error: {exc}")
-
-    def _display_stats_result(self, entry: OutputEntry, result: DirectoryAnalysisResult) -> None:
-        """Render the statistics outcome inside the UI."""
-        stats_display = self.query_one("#stats-output", Static)
-        stats_display.update(self._format_stats_result(entry.config_type, result))
-
-    def _display_stats_error(self, message: str) -> None:
-        """Display analysis errors."""
-        stats_display = self.query_one("#stats-output", Static)
-        stats_display.update(Text(f"Error running stats: {message}", style="red"))
+            stats_display.update(Text(f"Unexpected error: {exc}", style="red"))
+        else:
+            stats_display.update(self._format_stats_result(result))
+        finally:
+            self._stats_task = None
 
     def _trigger_identifier_analysis(
         self,
@@ -385,22 +386,26 @@ class OutputsExplorerApp(App):
             self._populate_identifier_node(node, counts, warning)
             return
 
-        existing_thread = self._identifier_threads.get(directory)
-        if existing_thread and existing_thread.is_alive():
+        existing_task = self._identifier_tasks.get(directory)
+        if existing_task and not existing_task.done():
             return
 
         node.remove_children()
         node.add(Text("Loading debate identifier statistics...", style="yellow"))
 
-        def worker() -> None:
-            counts, warning = collect_identifier_stats(directory)
-            self._identifier_cache[directory] = (counts, warning)
-            self._identifier_threads.pop(directory, None)
-            self.call_from_thread(self._populate_identifier_node, node, counts, warning)
+        task = asyncio.create_task(self._run_identifier_analysis(node, directory))
+        self._identifier_tasks[directory] = task
 
-        thread = Thread(target=worker, daemon=True)
-        self._identifier_threads[directory] = thread
-        thread.start()
+    async def _run_identifier_analysis(self, node: Tree.Node, directory: Path) -> None:
+        """Asynchronously collect and render identifier statistics."""
+        try:
+            counts, warning = await asyncio.to_thread(collect_identifier_stats, directory)
+        except Exception as exc:  # noqa: BLE001
+            counts = {}
+            warning = f"Error loading debate identifier statistics: {exc}"
+        self._identifier_cache[directory] = (counts, warning)
+        self._identifier_tasks.pop(directory, None)
+        self._populate_identifier_node(node, counts, warning)
 
     def _populate_identifier_node(
         self,
@@ -413,7 +418,7 @@ class OutputsExplorerApp(App):
         for line in render_identifier_summary_lines(counts, warning):
             node.add(line)
 
-    def _format_stats_result(self, config_type: ConfigurationType, result: DirectoryAnalysisResult) -> Text:
+    def _format_stats_result(self, result: DirectoryAnalysisResult) -> Text:
         """Create a rich text summary for the stats results."""
         text = Text()
         text.append("Debate Stats\n", style="bold underline")
@@ -426,7 +431,7 @@ class OutputsExplorerApp(App):
             return text
 
         if stats.total_debates == 0:
-            text.append("No valid debates found to analyze.\n", style="yellow")
+            text.append("No valid debates found to analyze.", style="yellow")
         else:
             percentages = stats.get_percentages()
             text.append(f"Total debates analyzed: {stats.total_debates}\n")
@@ -442,31 +447,6 @@ class OutputsExplorerApp(App):
             text.append(
                 f"First debater accuracy: {stats.first_debater_correct}/{stats.total_debates} ({percentages['first_debater_accuracy']:.1f}%)\n"
             )
-
-        if config_type == ConfigurationType.EVAL:
-            text.append("\nEmpty debate summary:\n", style="bold underline")
-            total_transcripts = result.total_transcripts
-            empty_transcripts = result.empty_transcripts
-            if total_transcripts == 0:
-                text.append("No transcripts found for this configuration.\n", style="yellow")
-            else:
-                empty_rate = (empty_transcripts / total_transcripts) * 100
-                text.append(
-                    f"Empty debates: {empty_transcripts}/{total_transcripts} ({empty_rate:.1f}%)\n"
-                )
-                if result.transcripts_by_day:
-                    text.append("By day:\n", style="bold")
-                    for day_key in sorted(result.transcripts_by_day.keys(), reverse=True):
-                        day_total = result.transcripts_by_day[day_key]
-                        day_empty = result.empty_transcripts_by_day.get(day_key, 0)
-                        day_rate = (day_empty / day_total) * 100
-                        text.append(
-                            f"{day_key}: {day_empty}/{day_total} ({day_rate:.1f}%)\n",
-                            style="dim",
-                        )
-                        examples = result.empty_transcript_examples.get(day_key, [])
-                        for example in examples:
-                            text.append(f"    - {example}\n", style="dim")
 
         if result.errors:
             text.append("\nErrors encountered:\n", style="bold red")
@@ -585,3 +565,31 @@ def _deserialize_configuration(directory_name: str) -> Optional[ConfigurationNam
         return ConfigurationName.deserialize(directory_name)
     except Exception:  # noqa: BLE001
         return None
+
+
+def calculate_directory_size_bytes(directory: Path) -> int:
+    """Return the total size of all files within a directory in bytes."""
+    total_size = 0
+    try:
+        for path in directory.rglob("*"):
+            try:
+                if path.is_file():
+                    total_size += path.stat().st_size
+            except OSError:
+                continue
+    except OSError:
+        return 0
+    return total_size
+
+
+def format_directory_size(size_bytes: int) -> str:
+    """Convert a byte count into a human-readable string."""
+    if size_bytes < 0:
+        return "Unknown"
+    units = ["B", "KB", "MB", "GB", "TB", "PB"]
+    value = float(size_bytes)
+    for unit in units:
+        if value < 1024 or unit == units[-1]:
+            return f"{value:.2f} {unit}"
+        value /= 1024
+    return f"{value:.2f} PB"

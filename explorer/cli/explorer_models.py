@@ -55,6 +55,7 @@ class OutputEntry:
     configuration: str
     config_type: ConfigTypeLiteral
     transcripts_directory: Path
+    directory_size_bytes: int
     task_label: str
     debater_key: str
     debater_training: str
