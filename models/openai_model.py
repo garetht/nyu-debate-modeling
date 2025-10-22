@@ -39,6 +39,7 @@ class OpenAIModel(Model):
         self.endpoint = endpoint if endpoint else OpenAIModel.DEFAULT_MODEL_ENDPOINT
         self.logger = logger_utils.get_default_logger(__name__)
         self.generation_params = kwargs["generation_params"] if "generation_params" in kwargs else {}
+        self._empty_output_streak: int = 0
 
     def __configure(self):
         openai.organization = os.getenv("OPENAI_ORGANIZATION")
@@ -150,9 +151,21 @@ class OpenAIModel(Model):
         message_is_empty = not message or (isinstance(message, str) and not message.strip())
 
         if completion_tokens == 0 or message_is_empty:
-            raise EmptyModelOutputError(
-                f"Model `{self.endpoint}` returned zero tokens for alias `{self.alias}`."
+            self._empty_output_streak += 1
+            if self._empty_output_streak > 12:
+                raise EmptyModelOutputError(
+                    f"Model `{self.endpoint}` returned zero tokens for alias `{self.alias}` "
+                    f"{self._empty_output_streak} times in a row."
+                )
+            self.logger.warn(
+                "Model `%s` returned zero tokens for alias `%s`. Consecutive empty responses: %d",
+                self.endpoint,
+                self.alias,
+                self._empty_output_streak,
             )
+            return ModelResponse(failed=True)
+
+        self._empty_output_streak = 0
 
         if speech_structure == SpeechStructure.DECISION:
             a_odds, b_odds = process_logprobs(completion)

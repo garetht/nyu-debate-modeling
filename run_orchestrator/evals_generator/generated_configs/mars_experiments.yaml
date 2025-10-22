@@ -6,7 +6,7 @@ data-generation--llama-3-262k-2025-07-31-debater_sft-only--gpt-4-turbo-2024-04-0
         alias: llama-3-262k-2025-07-31-debater
         generation_params:
           do_sample: true
-          max_new_tokens: 1500
+          max_new_tokens: 300
           repetition_penalty: 1.2
           temperature: 0.5
           top_p: 1.0
@@ -89,7 +89,7 @@ data-generation--llama-3-262k-2025-07-31-debater_sft-only--gpt-41-2025-04-14-jud
         alias: llama-3-262k-2025-07-31-debater
         generation_params:
           do_sample: true
-          max_new_tokens: 1500
+          max_new_tokens: 300
           repetition_penalty: 1.2
           temperature: 0.5
           top_p: 1.0
@@ -172,7 +172,7 @@ data-generation--llama-3-262k-2025-07-31-debater_sft-only--gpt-41-2025-07-31-jud
         alias: llama-3-262k-2025-07-31-debater
         generation_params:
           do_sample: true
-          max_new_tokens: 1500
+          max_new_tokens: 300
           repetition_penalty: 1.2
           temperature: 0.5
           top_p: 1.0
@@ -255,7 +255,7 @@ data-generation--llama-3-262k-2025-07-31-debater_sft-only--llama-3-262k-2025-10-
         alias: llama-3-262k-2025-07-31-debater
         generation_params:
           do_sample: true
-          max_new_tokens: 1500
+          max_new_tokens: 300
           repetition_penalty: 1.2
           temperature: 0.5
           top_p: 1.0
@@ -338,13 +338,843 @@ data-generation--llama-3-262k-2025-07-31-debater_sft-only--llama-3-262k-judge_un
         alias: llama-3-262k-2025-07-31-debater
         generation_params:
           do_sample: true
-          max_new_tokens: 1500
+          max_new_tokens: 300
           repetition_penalty: 1.2
           temperature: 0.5
           top_p: 1.0
           use_generation_penalties: false
         is_human: false
         model_file_path: /home/ubuntu/mars-arnesen-gh/leonidtsyplenkov/models/trained_models/llama-3-mega-merged-no-judge-speeches-31.07
+        model_type: llama3
+        nucleus: true
+        offline_file_path: null
+        override_prompt: null
+        peft_base_model: null
+        probe_hyperparams: null
+        require_quote_validation: true
+        served: false
+      scratchpad:
+        scratchpad_public: false
+        scratchpad_word_limit: null
+        use_scratchpad: false
+    judge:
+      best_of_n: null
+      model_settings:
+        alias: llama-3-262k-judge
+        generation_params:
+          do_sample: true
+          max_new_tokens: 300
+          repetition_penalty: 1.2
+          temperature: 0.5
+          top_p: 1.0
+          use_generation_penalties: false
+        is_human: false
+        model_file_path: /home/ubuntu/mars-arnesen-gh/garethtan/downloaded-models/gradientai/Llama-3-8B-Instruct-262k
+        model_type: llama3
+        nucleus: true
+        offline_file_path: null
+        override_prompt: null
+        peft_base_model: null
+        probe_hyperparams: null
+        require_quote_validation: true
+        served: false
+      scratchpad:
+        scratchpad_public: false
+        scratchpad_word_limit: null
+        use_scratchpad: false
+  alternate: false
+  annotations_classifier_file_path: null
+  batch_size: 1
+  convert_to_double_consultancy: false
+  dataset:
+    combine_train_and_val: false
+    dataset_type: quality
+    flip_sides: false
+    full_dataset_file_path: null
+    shuffle_deterministically: true
+    split_type: train
+    supplemental_file_paths: {}
+    test_file_path: null
+    train_file_path: null
+    val_file_path: null
+  enable_self_debate: true
+  flip: true
+  multi_round_branching: half
+  num_speeches: 2
+  previous_run: null
+  prompt_config:
+    default_prompt_name: Debate Prompt
+    file_path: null
+    hardcoded_topic_config: null
+    is_memorized: false
+    use_hardcoded_topics: false
+  speech_structure: default_debate
+  tournament:
+    custom_matchups: null
+    replication_file_paths: []
+    tournament_type: round_robin
+data-generation--llama-3-262k-4-turbo-judge-debater_round-one-dpo--gpt-4-turbo-2024-04-09-judge_untrained--quality:
+  agents:
+    debaters:
+    - best_of_n: null
+      model_settings:
+        alias: llama-3-262k-4-turbo-judge-debater
+        generation_params:
+          do_sample: true
+          max_new_tokens: 300
+          repetition_penalty: 1.2
+          temperature: 0.5
+          top_p: 1.0
+          use_generation_penalties: false
+        is_human: false
+        model_file_path: /home/ubuntu/mars-arnesen-gh/garethtan/models/trained_models/llama-trained-for-gpt-4-turbo-round-one
+        model_type: llama3
+        nucleus: true
+        offline_file_path: null
+        override_prompt: null
+        peft_base_model: null
+        probe_hyperparams: null
+        require_quote_validation: true
+        served: false
+      scratchpad:
+        scratchpad_public: false
+        scratchpad_word_limit: null
+        use_scratchpad: false
+    judge:
+      best_of_n: null
+      model_settings:
+        alias: gpt-4-turbo-2024-04-09-judge
+        generation_params:
+          do_sample: true
+          max_new_tokens: 300
+          repetition_penalty: 1.2
+          temperature: 0.5
+          top_p: 1.0
+          use_generation_penalties: false
+        is_human: false
+        model_file_path: gpt-4-turbo-2024-04-09
+        model_type: openai
+        nucleus: true
+        offline_file_path: null
+        override_prompt: null
+        peft_base_model: null
+        probe_hyperparams: null
+        require_quote_validation: true
+        served: false
+      scratchpad:
+        scratchpad_public: false
+        scratchpad_word_limit: null
+        use_scratchpad: false
+  alternate: false
+  annotations_classifier_file_path: null
+  batch_size: 1
+  convert_to_double_consultancy: false
+  dataset:
+    combine_train_and_val: false
+    dataset_type: quality
+    flip_sides: false
+    full_dataset_file_path: null
+    shuffle_deterministically: true
+    split_type: train
+    supplemental_file_paths: {}
+    test_file_path: null
+    train_file_path: null
+    val_file_path: null
+  enable_self_debate: true
+  flip: true
+  multi_round_branching: half
+  num_speeches: 2
+  previous_run: null
+  prompt_config:
+    default_prompt_name: Debate Prompt
+    file_path: null
+    hardcoded_topic_config: null
+    is_memorized: false
+    use_hardcoded_topics: false
+  speech_structure: default_debate
+  tournament:
+    custom_matchups: null
+    replication_file_paths: []
+    tournament_type: round_robin
+data-generation--llama-3-262k-4-turbo-judge-debater_round-one-dpo--gpt-41-2025-04-14-judge_untrained--quality:
+  agents:
+    debaters:
+    - best_of_n: null
+      model_settings:
+        alias: llama-3-262k-4-turbo-judge-debater
+        generation_params:
+          do_sample: true
+          max_new_tokens: 300
+          repetition_penalty: 1.2
+          temperature: 0.5
+          top_p: 1.0
+          use_generation_penalties: false
+        is_human: false
+        model_file_path: /home/ubuntu/mars-arnesen-gh/garethtan/models/trained_models/llama-trained-for-gpt-4-turbo-round-one
+        model_type: llama3
+        nucleus: true
+        offline_file_path: null
+        override_prompt: null
+        peft_base_model: null
+        probe_hyperparams: null
+        require_quote_validation: true
+        served: false
+      scratchpad:
+        scratchpad_public: false
+        scratchpad_word_limit: null
+        use_scratchpad: false
+    judge:
+      best_of_n: null
+      model_settings:
+        alias: gpt-41-2025-04-14-judge
+        generation_params:
+          do_sample: true
+          max_new_tokens: 300
+          repetition_penalty: 1.2
+          temperature: 0.5
+          top_p: 1.0
+          use_generation_penalties: false
+        is_human: false
+        model_file_path: gpt-4.1-2025-04-14
+        model_type: openai
+        nucleus: true
+        offline_file_path: null
+        override_prompt: null
+        peft_base_model: null
+        probe_hyperparams: null
+        require_quote_validation: true
+        served: false
+      scratchpad:
+        scratchpad_public: false
+        scratchpad_word_limit: null
+        use_scratchpad: false
+  alternate: false
+  annotations_classifier_file_path: null
+  batch_size: 1
+  convert_to_double_consultancy: false
+  dataset:
+    combine_train_and_val: false
+    dataset_type: quality
+    flip_sides: false
+    full_dataset_file_path: null
+    shuffle_deterministically: true
+    split_type: train
+    supplemental_file_paths: {}
+    test_file_path: null
+    train_file_path: null
+    val_file_path: null
+  enable_self_debate: true
+  flip: true
+  multi_round_branching: half
+  num_speeches: 2
+  previous_run: null
+  prompt_config:
+    default_prompt_name: Debate Prompt
+    file_path: null
+    hardcoded_topic_config: null
+    is_memorized: false
+    use_hardcoded_topics: false
+  speech_structure: default_debate
+  tournament:
+    custom_matchups: null
+    replication_file_paths: []
+    tournament_type: round_robin
+data-generation--llama-3-262k-4-turbo-judge-debater_round-one-dpo--gpt-41-2025-07-31-judge_sft-only--quality:
+  agents:
+    debaters:
+    - best_of_n: null
+      model_settings:
+        alias: llama-3-262k-4-turbo-judge-debater
+        generation_params:
+          do_sample: true
+          max_new_tokens: 300
+          repetition_penalty: 1.2
+          temperature: 0.5
+          top_p: 1.0
+          use_generation_penalties: false
+        is_human: false
+        model_file_path: /home/ubuntu/mars-arnesen-gh/garethtan/models/trained_models/llama-trained-for-gpt-4-turbo-round-one
+        model_type: llama3
+        nucleus: true
+        offline_file_path: null
+        override_prompt: null
+        peft_base_model: null
+        probe_hyperparams: null
+        require_quote_validation: true
+        served: false
+      scratchpad:
+        scratchpad_public: false
+        scratchpad_word_limit: null
+        use_scratchpad: false
+    judge:
+      best_of_n: null
+      model_settings:
+        alias: gpt-41-2025-07-31-judge
+        generation_params:
+          do_sample: true
+          max_new_tokens: 300
+          repetition_penalty: 1.2
+          temperature: 0.5
+          top_p: 1.0
+          use_generation_penalties: false
+        is_human: false
+        model_file_path: ft:gpt-4.1-2025-04-14:modulo-research-ltd:michael-and-khan-data-judge-31-07:BzYGc8SU
+        model_type: openai
+        nucleus: true
+        offline_file_path: null
+        override_prompt: null
+        peft_base_model: null
+        probe_hyperparams: null
+        require_quote_validation: true
+        served: false
+      scratchpad:
+        scratchpad_public: false
+        scratchpad_word_limit: null
+        use_scratchpad: false
+  alternate: false
+  annotations_classifier_file_path: null
+  batch_size: 1
+  convert_to_double_consultancy: false
+  dataset:
+    combine_train_and_val: false
+    dataset_type: quality
+    flip_sides: false
+    full_dataset_file_path: null
+    shuffle_deterministically: true
+    split_type: train
+    supplemental_file_paths: {}
+    test_file_path: null
+    train_file_path: null
+    val_file_path: null
+  enable_self_debate: true
+  flip: true
+  multi_round_branching: half
+  num_speeches: 2
+  previous_run: null
+  prompt_config:
+    default_prompt_name: Debate Prompt
+    file_path: null
+    hardcoded_topic_config: null
+    is_memorized: false
+    use_hardcoded_topics: false
+  speech_structure: default_debate
+  tournament:
+    custom_matchups: null
+    replication_file_paths: []
+    tournament_type: round_robin
+data-generation--llama-3-262k-4-turbo-judge-debater_round-one-dpo--llama-3-262k-2025-10-08-judge_sft-only--quality:
+  agents:
+    debaters:
+    - best_of_n: null
+      model_settings:
+        alias: llama-3-262k-4-turbo-judge-debater
+        generation_params:
+          do_sample: true
+          max_new_tokens: 300
+          repetition_penalty: 1.2
+          temperature: 0.5
+          top_p: 1.0
+          use_generation_penalties: false
+        is_human: false
+        model_file_path: /home/ubuntu/mars-arnesen-gh/garethtan/models/trained_models/llama-trained-for-gpt-4-turbo-round-one
+        model_type: llama3
+        nucleus: true
+        offline_file_path: null
+        override_prompt: null
+        peft_base_model: null
+        probe_hyperparams: null
+        require_quote_validation: true
+        served: false
+      scratchpad:
+        scratchpad_public: false
+        scratchpad_word_limit: null
+        use_scratchpad: false
+    judge:
+      best_of_n: null
+      model_settings:
+        alias: llama-3-262k-2025-10-08-judge
+        generation_params:
+          do_sample: true
+          max_new_tokens: 300
+          repetition_penalty: 1.2
+          temperature: 0.5
+          top_p: 1.0
+          use_generation_penalties: false
+        is_human: false
+        model_file_path: /home/ubuntu/mars-arnesen-gh/leonidtsyplenkov/models/trained_models/llama-3-mega-merged-judge-08-10
+        model_type: llama3
+        nucleus: true
+        offline_file_path: null
+        override_prompt: null
+        peft_base_model: null
+        probe_hyperparams: null
+        require_quote_validation: true
+        served: false
+      scratchpad:
+        scratchpad_public: false
+        scratchpad_word_limit: null
+        use_scratchpad: false
+  alternate: false
+  annotations_classifier_file_path: null
+  batch_size: 1
+  convert_to_double_consultancy: false
+  dataset:
+    combine_train_and_val: false
+    dataset_type: quality
+    flip_sides: false
+    full_dataset_file_path: null
+    shuffle_deterministically: true
+    split_type: train
+    supplemental_file_paths: {}
+    test_file_path: null
+    train_file_path: null
+    val_file_path: null
+  enable_self_debate: true
+  flip: true
+  multi_round_branching: half
+  num_speeches: 2
+  previous_run: null
+  prompt_config:
+    default_prompt_name: Debate Prompt
+    file_path: null
+    hardcoded_topic_config: null
+    is_memorized: false
+    use_hardcoded_topics: false
+  speech_structure: default_debate
+  tournament:
+    custom_matchups: null
+    replication_file_paths: []
+    tournament_type: round_robin
+data-generation--llama-3-262k-4-turbo-judge-debater_round-one-dpo--llama-3-262k-judge_untrained--quality:
+  agents:
+    debaters:
+    - best_of_n: null
+      model_settings:
+        alias: llama-3-262k-4-turbo-judge-debater
+        generation_params:
+          do_sample: true
+          max_new_tokens: 300
+          repetition_penalty: 1.2
+          temperature: 0.5
+          top_p: 1.0
+          use_generation_penalties: false
+        is_human: false
+        model_file_path: /home/ubuntu/mars-arnesen-gh/garethtan/models/trained_models/llama-trained-for-gpt-4-turbo-round-one
+        model_type: llama3
+        nucleus: true
+        offline_file_path: null
+        override_prompt: null
+        peft_base_model: null
+        probe_hyperparams: null
+        require_quote_validation: true
+        served: false
+      scratchpad:
+        scratchpad_public: false
+        scratchpad_word_limit: null
+        use_scratchpad: false
+    judge:
+      best_of_n: null
+      model_settings:
+        alias: llama-3-262k-judge
+        generation_params:
+          do_sample: true
+          max_new_tokens: 300
+          repetition_penalty: 1.2
+          temperature: 0.5
+          top_p: 1.0
+          use_generation_penalties: false
+        is_human: false
+        model_file_path: /home/ubuntu/mars-arnesen-gh/garethtan/downloaded-models/gradientai/Llama-3-8B-Instruct-262k
+        model_type: llama3
+        nucleus: true
+        offline_file_path: null
+        override_prompt: null
+        peft_base_model: null
+        probe_hyperparams: null
+        require_quote_validation: true
+        served: false
+      scratchpad:
+        scratchpad_public: false
+        scratchpad_word_limit: null
+        use_scratchpad: false
+  alternate: false
+  annotations_classifier_file_path: null
+  batch_size: 1
+  convert_to_double_consultancy: false
+  dataset:
+    combine_train_and_val: false
+    dataset_type: quality
+    flip_sides: false
+    full_dataset_file_path: null
+    shuffle_deterministically: true
+    split_type: train
+    supplemental_file_paths: {}
+    test_file_path: null
+    train_file_path: null
+    val_file_path: null
+  enable_self_debate: true
+  flip: true
+  multi_round_branching: half
+  num_speeches: 2
+  previous_run: null
+  prompt_config:
+    default_prompt_name: Debate Prompt
+    file_path: null
+    hardcoded_topic_config: null
+    is_memorized: false
+    use_hardcoded_topics: false
+  speech_structure: default_debate
+  tournament:
+    custom_matchups: null
+    replication_file_paths: []
+    tournament_type: round_robin
+data-generation--llama-3-262k-llama-sft-judge-debater_round-one-dpo--gpt-4-turbo-2024-04-09-judge_untrained--quality:
+  agents:
+    debaters:
+    - best_of_n: null
+      model_settings:
+        alias: llama-3-262k-llama-sft-judge-debater
+        generation_params:
+          do_sample: true
+          max_new_tokens: 300
+          repetition_penalty: 1.2
+          temperature: 0.5
+          top_p: 1.0
+          use_generation_penalties: false
+        is_human: false
+        model_file_path: /home/ubuntu/mars-arnesen-gh/garethtan/models/trained_models/llama-trained-for-llama-judge-finetuned-round-one
+        model_type: llama3
+        nucleus: true
+        offline_file_path: null
+        override_prompt: null
+        peft_base_model: null
+        probe_hyperparams: null
+        require_quote_validation: true
+        served: false
+      scratchpad:
+        scratchpad_public: false
+        scratchpad_word_limit: null
+        use_scratchpad: false
+    judge:
+      best_of_n: null
+      model_settings:
+        alias: gpt-4-turbo-2024-04-09-judge
+        generation_params:
+          do_sample: true
+          max_new_tokens: 300
+          repetition_penalty: 1.2
+          temperature: 0.5
+          top_p: 1.0
+          use_generation_penalties: false
+        is_human: false
+        model_file_path: gpt-4-turbo-2024-04-09
+        model_type: openai
+        nucleus: true
+        offline_file_path: null
+        override_prompt: null
+        peft_base_model: null
+        probe_hyperparams: null
+        require_quote_validation: true
+        served: false
+      scratchpad:
+        scratchpad_public: false
+        scratchpad_word_limit: null
+        use_scratchpad: false
+  alternate: false
+  annotations_classifier_file_path: null
+  batch_size: 1
+  convert_to_double_consultancy: false
+  dataset:
+    combine_train_and_val: false
+    dataset_type: quality
+    flip_sides: false
+    full_dataset_file_path: null
+    shuffle_deterministically: true
+    split_type: train
+    supplemental_file_paths: {}
+    test_file_path: null
+    train_file_path: null
+    val_file_path: null
+  enable_self_debate: true
+  flip: true
+  multi_round_branching: half
+  num_speeches: 2
+  previous_run: null
+  prompt_config:
+    default_prompt_name: Debate Prompt
+    file_path: null
+    hardcoded_topic_config: null
+    is_memorized: false
+    use_hardcoded_topics: false
+  speech_structure: default_debate
+  tournament:
+    custom_matchups: null
+    replication_file_paths: []
+    tournament_type: round_robin
+data-generation--llama-3-262k-llama-sft-judge-debater_round-one-dpo--gpt-41-2025-04-14-judge_untrained--quality:
+  agents:
+    debaters:
+    - best_of_n: null
+      model_settings:
+        alias: llama-3-262k-llama-sft-judge-debater
+        generation_params:
+          do_sample: true
+          max_new_tokens: 300
+          repetition_penalty: 1.2
+          temperature: 0.5
+          top_p: 1.0
+          use_generation_penalties: false
+        is_human: false
+        model_file_path: /home/ubuntu/mars-arnesen-gh/garethtan/models/trained_models/llama-trained-for-llama-judge-finetuned-round-one
+        model_type: llama3
+        nucleus: true
+        offline_file_path: null
+        override_prompt: null
+        peft_base_model: null
+        probe_hyperparams: null
+        require_quote_validation: true
+        served: false
+      scratchpad:
+        scratchpad_public: false
+        scratchpad_word_limit: null
+        use_scratchpad: false
+    judge:
+      best_of_n: null
+      model_settings:
+        alias: gpt-41-2025-04-14-judge
+        generation_params:
+          do_sample: true
+          max_new_tokens: 300
+          repetition_penalty: 1.2
+          temperature: 0.5
+          top_p: 1.0
+          use_generation_penalties: false
+        is_human: false
+        model_file_path: gpt-4.1-2025-04-14
+        model_type: openai
+        nucleus: true
+        offline_file_path: null
+        override_prompt: null
+        peft_base_model: null
+        probe_hyperparams: null
+        require_quote_validation: true
+        served: false
+      scratchpad:
+        scratchpad_public: false
+        scratchpad_word_limit: null
+        use_scratchpad: false
+  alternate: false
+  annotations_classifier_file_path: null
+  batch_size: 1
+  convert_to_double_consultancy: false
+  dataset:
+    combine_train_and_val: false
+    dataset_type: quality
+    flip_sides: false
+    full_dataset_file_path: null
+    shuffle_deterministically: true
+    split_type: train
+    supplemental_file_paths: {}
+    test_file_path: null
+    train_file_path: null
+    val_file_path: null
+  enable_self_debate: true
+  flip: true
+  multi_round_branching: half
+  num_speeches: 2
+  previous_run: null
+  prompt_config:
+    default_prompt_name: Debate Prompt
+    file_path: null
+    hardcoded_topic_config: null
+    is_memorized: false
+    use_hardcoded_topics: false
+  speech_structure: default_debate
+  tournament:
+    custom_matchups: null
+    replication_file_paths: []
+    tournament_type: round_robin
+data-generation--llama-3-262k-llama-sft-judge-debater_round-one-dpo--gpt-41-2025-07-31-judge_sft-only--quality:
+  agents:
+    debaters:
+    - best_of_n: null
+      model_settings:
+        alias: llama-3-262k-llama-sft-judge-debater
+        generation_params:
+          do_sample: true
+          max_new_tokens: 300
+          repetition_penalty: 1.2
+          temperature: 0.5
+          top_p: 1.0
+          use_generation_penalties: false
+        is_human: false
+        model_file_path: /home/ubuntu/mars-arnesen-gh/garethtan/models/trained_models/llama-trained-for-llama-judge-finetuned-round-one
+        model_type: llama3
+        nucleus: true
+        offline_file_path: null
+        override_prompt: null
+        peft_base_model: null
+        probe_hyperparams: null
+        require_quote_validation: true
+        served: false
+      scratchpad:
+        scratchpad_public: false
+        scratchpad_word_limit: null
+        use_scratchpad: false
+    judge:
+      best_of_n: null
+      model_settings:
+        alias: gpt-41-2025-07-31-judge
+        generation_params:
+          do_sample: true
+          max_new_tokens: 300
+          repetition_penalty: 1.2
+          temperature: 0.5
+          top_p: 1.0
+          use_generation_penalties: false
+        is_human: false
+        model_file_path: ft:gpt-4.1-2025-04-14:modulo-research-ltd:michael-and-khan-data-judge-31-07:BzYGc8SU
+        model_type: openai
+        nucleus: true
+        offline_file_path: null
+        override_prompt: null
+        peft_base_model: null
+        probe_hyperparams: null
+        require_quote_validation: true
+        served: false
+      scratchpad:
+        scratchpad_public: false
+        scratchpad_word_limit: null
+        use_scratchpad: false
+  alternate: false
+  annotations_classifier_file_path: null
+  batch_size: 1
+  convert_to_double_consultancy: false
+  dataset:
+    combine_train_and_val: false
+    dataset_type: quality
+    flip_sides: false
+    full_dataset_file_path: null
+    shuffle_deterministically: true
+    split_type: train
+    supplemental_file_paths: {}
+    test_file_path: null
+    train_file_path: null
+    val_file_path: null
+  enable_self_debate: true
+  flip: true
+  multi_round_branching: half
+  num_speeches: 2
+  previous_run: null
+  prompt_config:
+    default_prompt_name: Debate Prompt
+    file_path: null
+    hardcoded_topic_config: null
+    is_memorized: false
+    use_hardcoded_topics: false
+  speech_structure: default_debate
+  tournament:
+    custom_matchups: null
+    replication_file_paths: []
+    tournament_type: round_robin
+data-generation--llama-3-262k-llama-sft-judge-debater_round-one-dpo--llama-3-262k-2025-10-08-judge_sft-only--quality:
+  agents:
+    debaters:
+    - best_of_n: null
+      model_settings:
+        alias: llama-3-262k-llama-sft-judge-debater
+        generation_params:
+          do_sample: true
+          max_new_tokens: 300
+          repetition_penalty: 1.2
+          temperature: 0.5
+          top_p: 1.0
+          use_generation_penalties: false
+        is_human: false
+        model_file_path: /home/ubuntu/mars-arnesen-gh/garethtan/models/trained_models/llama-trained-for-llama-judge-finetuned-round-one
+        model_type: llama3
+        nucleus: true
+        offline_file_path: null
+        override_prompt: null
+        peft_base_model: null
+        probe_hyperparams: null
+        require_quote_validation: true
+        served: false
+      scratchpad:
+        scratchpad_public: false
+        scratchpad_word_limit: null
+        use_scratchpad: false
+    judge:
+      best_of_n: null
+      model_settings:
+        alias: llama-3-262k-2025-10-08-judge
+        generation_params:
+          do_sample: true
+          max_new_tokens: 300
+          repetition_penalty: 1.2
+          temperature: 0.5
+          top_p: 1.0
+          use_generation_penalties: false
+        is_human: false
+        model_file_path: /home/ubuntu/mars-arnesen-gh/leonidtsyplenkov/models/trained_models/llama-3-mega-merged-judge-08-10
+        model_type: llama3
+        nucleus: true
+        offline_file_path: null
+        override_prompt: null
+        peft_base_model: null
+        probe_hyperparams: null
+        require_quote_validation: true
+        served: false
+      scratchpad:
+        scratchpad_public: false
+        scratchpad_word_limit: null
+        use_scratchpad: false
+  alternate: false
+  annotations_classifier_file_path: null
+  batch_size: 1
+  convert_to_double_consultancy: false
+  dataset:
+    combine_train_and_val: false
+    dataset_type: quality
+    flip_sides: false
+    full_dataset_file_path: null
+    shuffle_deterministically: true
+    split_type: train
+    supplemental_file_paths: {}
+    test_file_path: null
+    train_file_path: null
+    val_file_path: null
+  enable_self_debate: true
+  flip: true
+  multi_round_branching: half
+  num_speeches: 2
+  previous_run: null
+  prompt_config:
+    default_prompt_name: Debate Prompt
+    file_path: null
+    hardcoded_topic_config: null
+    is_memorized: false
+    use_hardcoded_topics: false
+  speech_structure: default_debate
+  tournament:
+    custom_matchups: null
+    replication_file_paths: []
+    tournament_type: round_robin
+data-generation--llama-3-262k-llama-sft-judge-debater_round-one-dpo--llama-3-262k-judge_untrained--quality:
+  agents:
+    debaters:
+    - best_of_n: null
+      model_settings:
+        alias: llama-3-262k-llama-sft-judge-debater
+        generation_params:
+          do_sample: true
+          max_new_tokens: 300
+          repetition_penalty: 1.2
+          temperature: 0.5
+          top_p: 1.0
+          use_generation_penalties: false
+        is_human: false
+        model_file_path: /home/ubuntu/mars-arnesen-gh/garethtan/models/trained_models/llama-trained-for-llama-judge-finetuned-round-one
         model_type: llama3
         nucleus: true
         offline_file_path: null
@@ -421,7 +1251,7 @@ eval--llama-3-262k-2025-07-31-debater_sft-only--gpt-4-turbo-2024-04-09-judge_unt
         alias: llama-3-262k-2025-07-31-debater
         generation_params:
           do_sample: true
-          max_new_tokens: 1500
+          max_new_tokens: 2000
           repetition_penalty: 1.2
           temperature: 0.5
           top_p: 1.0
@@ -504,7 +1334,7 @@ eval--llama-3-262k-2025-07-31-debater_sft-only--gpt-4-turbo-2024-04-09-judge_unt
         alias: llama-3-262k-2025-07-31-debater
         generation_params:
           do_sample: true
-          max_new_tokens: 1500
+          max_new_tokens: 300
           repetition_penalty: 1.2
           temperature: 0.5
           top_p: 1.0
@@ -587,7 +1417,7 @@ eval--llama-3-262k-2025-07-31-debater_sft-only--gpt-41-2025-04-14-judge_untraine
         alias: llama-3-262k-2025-07-31-debater
         generation_params:
           do_sample: true
-          max_new_tokens: 1500
+          max_new_tokens: 2000
           repetition_penalty: 1.2
           temperature: 0.5
           top_p: 1.0
@@ -670,7 +1500,7 @@ eval--llama-3-262k-2025-07-31-debater_sft-only--gpt-41-2025-04-14-judge_untraine
         alias: llama-3-262k-2025-07-31-debater
         generation_params:
           do_sample: true
-          max_new_tokens: 1500
+          max_new_tokens: 300
           repetition_penalty: 1.2
           temperature: 0.5
           top_p: 1.0
@@ -753,7 +1583,7 @@ eval--llama-3-262k-2025-07-31-debater_sft-only--gpt-41-2025-07-31-judge_sft-only
         alias: llama-3-262k-2025-07-31-debater
         generation_params:
           do_sample: true
-          max_new_tokens: 1500
+          max_new_tokens: 2000
           repetition_penalty: 1.2
           temperature: 0.5
           top_p: 1.0
@@ -836,7 +1666,7 @@ eval--llama-3-262k-2025-07-31-debater_sft-only--gpt-41-2025-07-31-judge_sft-only
         alias: llama-3-262k-2025-07-31-debater
         generation_params:
           do_sample: true
-          max_new_tokens: 1500
+          max_new_tokens: 300
           repetition_penalty: 1.2
           temperature: 0.5
           top_p: 1.0
@@ -919,7 +1749,7 @@ eval--llama-3-262k-2025-07-31-debater_sft-only--llama-3-262k-2025-10-08-judge_sf
         alias: llama-3-262k-2025-07-31-debater
         generation_params:
           do_sample: true
-          max_new_tokens: 1500
+          max_new_tokens: 2000
           repetition_penalty: 1.2
           temperature: 0.5
           top_p: 1.0
@@ -1002,7 +1832,7 @@ eval--llama-3-262k-2025-07-31-debater_sft-only--llama-3-262k-2025-10-08-judge_sf
         alias: llama-3-262k-2025-07-31-debater
         generation_params:
           do_sample: true
-          max_new_tokens: 1500
+          max_new_tokens: 300
           repetition_penalty: 1.2
           temperature: 0.5
           top_p: 1.0
@@ -1085,7 +1915,7 @@ eval--llama-3-262k-2025-07-31-debater_sft-only--llama-3-262k-judge_untrained--lo
         alias: llama-3-262k-2025-07-31-debater
         generation_params:
           do_sample: true
-          max_new_tokens: 1500
+          max_new_tokens: 2000
           repetition_penalty: 1.2
           temperature: 0.5
           top_p: 1.0
@@ -1168,7 +1998,7 @@ eval--llama-3-262k-2025-07-31-debater_sft-only--llama-3-262k-judge_untrained--qu
         alias: llama-3-262k-2025-07-31-debater
         generation_params:
           do_sample: true
-          max_new_tokens: 1500
+          max_new_tokens: 300
           repetition_penalty: 1.2
           temperature: 0.5
           top_p: 1.0
@@ -1243,15 +2073,845 @@ eval--llama-3-262k-2025-07-31-debater_sft-only--llama-3-262k-judge_untrained--qu
     custom_matchups: null
     replication_file_paths: []
     tournament_type: round_robin
-eval--llama-3-262k-41-judge-debater_round-two-dpo--gpt-4-turbo-2024-04-09-judge_untrained--lojban:
+eval--llama-3-262k-4-turbo-judge-debater_round-one-dpo--gpt-4-turbo-2024-04-09-judge_untrained--lojban:
   agents:
     debaters:
     - best_of_n: null
       model_settings:
-        alias: llama-3-262k-41-judge-debater
+        alias: llama-3-262k-4-turbo-judge-debater
         generation_params:
           do_sample: true
-          max_new_tokens: 1500
+          max_new_tokens: 2000
+          repetition_penalty: 1.2
+          temperature: 0.5
+          top_p: 1.0
+          use_generation_penalties: false
+        is_human: false
+        model_file_path: /home/ubuntu/mars-arnesen-gh/garethtan/models/trained_models/llama-trained-for-gpt-4-turbo-round-one
+        model_type: llama3
+        nucleus: true
+        offline_file_path: null
+        override_prompt: null
+        peft_base_model: null
+        probe_hyperparams: null
+        require_quote_validation: true
+        served: false
+      scratchpad:
+        scratchpad_public: false
+        scratchpad_word_limit: null
+        use_scratchpad: false
+    judge:
+      best_of_n: null
+      model_settings:
+        alias: gpt-4-turbo-2024-04-09-judge
+        generation_params:
+          do_sample: true
+          max_new_tokens: 300
+          repetition_penalty: 1.2
+          temperature: 0.5
+          top_p: 1.0
+          use_generation_penalties: false
+        is_human: false
+        model_file_path: gpt-4-turbo-2024-04-09
+        model_type: openai
+        nucleus: true
+        offline_file_path: null
+        override_prompt: null
+        peft_base_model: null
+        probe_hyperparams: null
+        require_quote_validation: true
+        served: false
+      scratchpad:
+        scratchpad_public: false
+        scratchpad_word_limit: null
+        use_scratchpad: false
+  alternate: false
+  annotations_classifier_file_path: null
+  batch_size: 1
+  convert_to_double_consultancy: false
+  dataset:
+    combine_train_and_val: false
+    dataset_type: lojban
+    flip_sides: false
+    full_dataset_file_path: null
+    shuffle_deterministically: true
+    split_type: test
+    supplemental_file_paths: {}
+    test_file_path: null
+    train_file_path: null
+    val_file_path: null
+  enable_self_debate: true
+  flip: false
+  multi_round_branching: none
+  num_speeches: 2
+  previous_run: null
+  prompt_config:
+    default_prompt_name: Debate Prompt
+    file_path: /home/ubuntu/mars-arnesen-gh/garethtan/prompts/configs/lojban_prompts.yaml
+    hardcoded_topic_config: null
+    is_memorized: false
+    use_hardcoded_topics: false
+  speech_structure: default_debate
+  tournament:
+    custom_matchups: null
+    replication_file_paths: []
+    tournament_type: round_robin
+eval--llama-3-262k-4-turbo-judge-debater_round-one-dpo--gpt-4-turbo-2024-04-09-judge_untrained--quality:
+  agents:
+    debaters:
+    - best_of_n: null
+      model_settings:
+        alias: llama-3-262k-4-turbo-judge-debater
+        generation_params:
+          do_sample: true
+          max_new_tokens: 300
+          repetition_penalty: 1.2
+          temperature: 0.5
+          top_p: 1.0
+          use_generation_penalties: false
+        is_human: false
+        model_file_path: /home/ubuntu/mars-arnesen-gh/garethtan/models/trained_models/llama-trained-for-gpt-4-turbo-round-one
+        model_type: llama3
+        nucleus: true
+        offline_file_path: null
+        override_prompt: null
+        peft_base_model: null
+        probe_hyperparams: null
+        require_quote_validation: true
+        served: false
+      scratchpad:
+        scratchpad_public: false
+        scratchpad_word_limit: null
+        use_scratchpad: false
+    judge:
+      best_of_n: null
+      model_settings:
+        alias: gpt-4-turbo-2024-04-09-judge
+        generation_params:
+          do_sample: true
+          max_new_tokens: 300
+          repetition_penalty: 1.2
+          temperature: 0.5
+          top_p: 1.0
+          use_generation_penalties: false
+        is_human: false
+        model_file_path: gpt-4-turbo-2024-04-09
+        model_type: openai
+        nucleus: true
+        offline_file_path: null
+        override_prompt: null
+        peft_base_model: null
+        probe_hyperparams: null
+        require_quote_validation: true
+        served: false
+      scratchpad:
+        scratchpad_public: false
+        scratchpad_word_limit: null
+        use_scratchpad: false
+  alternate: false
+  annotations_classifier_file_path: null
+  batch_size: 1
+  convert_to_double_consultancy: false
+  dataset:
+    combine_train_and_val: false
+    dataset_type: quality
+    flip_sides: false
+    full_dataset_file_path: null
+    shuffle_deterministically: true
+    split_type: val
+    supplemental_file_paths: {}
+    test_file_path: null
+    train_file_path: null
+    val_file_path: null
+  enable_self_debate: true
+  flip: false
+  multi_round_branching: none
+  num_speeches: 2
+  previous_run: null
+  prompt_config:
+    default_prompt_name: Debate Prompt
+    file_path: null
+    hardcoded_topic_config: null
+    is_memorized: false
+    use_hardcoded_topics: false
+  speech_structure: default_debate
+  tournament:
+    custom_matchups: null
+    replication_file_paths: []
+    tournament_type: round_robin
+eval--llama-3-262k-4-turbo-judge-debater_round-one-dpo--gpt-41-2025-04-14-judge_untrained--lojban:
+  agents:
+    debaters:
+    - best_of_n: null
+      model_settings:
+        alias: llama-3-262k-4-turbo-judge-debater
+        generation_params:
+          do_sample: true
+          max_new_tokens: 2000
+          repetition_penalty: 1.2
+          temperature: 0.5
+          top_p: 1.0
+          use_generation_penalties: false
+        is_human: false
+        model_file_path: /home/ubuntu/mars-arnesen-gh/garethtan/models/trained_models/llama-trained-for-gpt-4-turbo-round-one
+        model_type: llama3
+        nucleus: true
+        offline_file_path: null
+        override_prompt: null
+        peft_base_model: null
+        probe_hyperparams: null
+        require_quote_validation: true
+        served: false
+      scratchpad:
+        scratchpad_public: false
+        scratchpad_word_limit: null
+        use_scratchpad: false
+    judge:
+      best_of_n: null
+      model_settings:
+        alias: gpt-41-2025-04-14-judge
+        generation_params:
+          do_sample: true
+          max_new_tokens: 300
+          repetition_penalty: 1.2
+          temperature: 0.5
+          top_p: 1.0
+          use_generation_penalties: false
+        is_human: false
+        model_file_path: gpt-4.1-2025-04-14
+        model_type: openai
+        nucleus: true
+        offline_file_path: null
+        override_prompt: null
+        peft_base_model: null
+        probe_hyperparams: null
+        require_quote_validation: true
+        served: false
+      scratchpad:
+        scratchpad_public: false
+        scratchpad_word_limit: null
+        use_scratchpad: false
+  alternate: false
+  annotations_classifier_file_path: null
+  batch_size: 1
+  convert_to_double_consultancy: false
+  dataset:
+    combine_train_and_val: false
+    dataset_type: lojban
+    flip_sides: false
+    full_dataset_file_path: null
+    shuffle_deterministically: true
+    split_type: test
+    supplemental_file_paths: {}
+    test_file_path: null
+    train_file_path: null
+    val_file_path: null
+  enable_self_debate: true
+  flip: false
+  multi_round_branching: none
+  num_speeches: 2
+  previous_run: null
+  prompt_config:
+    default_prompt_name: Debate Prompt
+    file_path: /home/ubuntu/mars-arnesen-gh/garethtan/prompts/configs/lojban_prompts.yaml
+    hardcoded_topic_config: null
+    is_memorized: false
+    use_hardcoded_topics: false
+  speech_structure: default_debate
+  tournament:
+    custom_matchups: null
+    replication_file_paths: []
+    tournament_type: round_robin
+eval--llama-3-262k-4-turbo-judge-debater_round-one-dpo--gpt-41-2025-04-14-judge_untrained--quality:
+  agents:
+    debaters:
+    - best_of_n: null
+      model_settings:
+        alias: llama-3-262k-4-turbo-judge-debater
+        generation_params:
+          do_sample: true
+          max_new_tokens: 300
+          repetition_penalty: 1.2
+          temperature: 0.5
+          top_p: 1.0
+          use_generation_penalties: false
+        is_human: false
+        model_file_path: /home/ubuntu/mars-arnesen-gh/garethtan/models/trained_models/llama-trained-for-gpt-4-turbo-round-one
+        model_type: llama3
+        nucleus: true
+        offline_file_path: null
+        override_prompt: null
+        peft_base_model: null
+        probe_hyperparams: null
+        require_quote_validation: true
+        served: false
+      scratchpad:
+        scratchpad_public: false
+        scratchpad_word_limit: null
+        use_scratchpad: false
+    judge:
+      best_of_n: null
+      model_settings:
+        alias: gpt-41-2025-04-14-judge
+        generation_params:
+          do_sample: true
+          max_new_tokens: 300
+          repetition_penalty: 1.2
+          temperature: 0.5
+          top_p: 1.0
+          use_generation_penalties: false
+        is_human: false
+        model_file_path: gpt-4.1-2025-04-14
+        model_type: openai
+        nucleus: true
+        offline_file_path: null
+        override_prompt: null
+        peft_base_model: null
+        probe_hyperparams: null
+        require_quote_validation: true
+        served: false
+      scratchpad:
+        scratchpad_public: false
+        scratchpad_word_limit: null
+        use_scratchpad: false
+  alternate: false
+  annotations_classifier_file_path: null
+  batch_size: 1
+  convert_to_double_consultancy: false
+  dataset:
+    combine_train_and_val: false
+    dataset_type: quality
+    flip_sides: false
+    full_dataset_file_path: null
+    shuffle_deterministically: true
+    split_type: val
+    supplemental_file_paths: {}
+    test_file_path: null
+    train_file_path: null
+    val_file_path: null
+  enable_self_debate: true
+  flip: false
+  multi_round_branching: none
+  num_speeches: 2
+  previous_run: null
+  prompt_config:
+    default_prompt_name: Debate Prompt
+    file_path: null
+    hardcoded_topic_config: null
+    is_memorized: false
+    use_hardcoded_topics: false
+  speech_structure: default_debate
+  tournament:
+    custom_matchups: null
+    replication_file_paths: []
+    tournament_type: round_robin
+eval--llama-3-262k-4-turbo-judge-debater_round-one-dpo--gpt-41-2025-07-31-judge_sft-only--lojban:
+  agents:
+    debaters:
+    - best_of_n: null
+      model_settings:
+        alias: llama-3-262k-4-turbo-judge-debater
+        generation_params:
+          do_sample: true
+          max_new_tokens: 2000
+          repetition_penalty: 1.2
+          temperature: 0.5
+          top_p: 1.0
+          use_generation_penalties: false
+        is_human: false
+        model_file_path: /home/ubuntu/mars-arnesen-gh/garethtan/models/trained_models/llama-trained-for-gpt-4-turbo-round-one
+        model_type: llama3
+        nucleus: true
+        offline_file_path: null
+        override_prompt: null
+        peft_base_model: null
+        probe_hyperparams: null
+        require_quote_validation: true
+        served: false
+      scratchpad:
+        scratchpad_public: false
+        scratchpad_word_limit: null
+        use_scratchpad: false
+    judge:
+      best_of_n: null
+      model_settings:
+        alias: gpt-41-2025-07-31-judge
+        generation_params:
+          do_sample: true
+          max_new_tokens: 300
+          repetition_penalty: 1.2
+          temperature: 0.5
+          top_p: 1.0
+          use_generation_penalties: false
+        is_human: false
+        model_file_path: ft:gpt-4.1-2025-04-14:modulo-research-ltd:michael-and-khan-data-judge-31-07:BzYGc8SU
+        model_type: openai
+        nucleus: true
+        offline_file_path: null
+        override_prompt: null
+        peft_base_model: null
+        probe_hyperparams: null
+        require_quote_validation: true
+        served: false
+      scratchpad:
+        scratchpad_public: false
+        scratchpad_word_limit: null
+        use_scratchpad: false
+  alternate: false
+  annotations_classifier_file_path: null
+  batch_size: 1
+  convert_to_double_consultancy: false
+  dataset:
+    combine_train_and_val: false
+    dataset_type: lojban
+    flip_sides: false
+    full_dataset_file_path: null
+    shuffle_deterministically: true
+    split_type: test
+    supplemental_file_paths: {}
+    test_file_path: null
+    train_file_path: null
+    val_file_path: null
+  enable_self_debate: true
+  flip: false
+  multi_round_branching: none
+  num_speeches: 2
+  previous_run: null
+  prompt_config:
+    default_prompt_name: Debate Prompt
+    file_path: /home/ubuntu/mars-arnesen-gh/garethtan/prompts/configs/lojban_prompts.yaml
+    hardcoded_topic_config: null
+    is_memorized: false
+    use_hardcoded_topics: false
+  speech_structure: default_debate
+  tournament:
+    custom_matchups: null
+    replication_file_paths: []
+    tournament_type: round_robin
+eval--llama-3-262k-4-turbo-judge-debater_round-one-dpo--gpt-41-2025-07-31-judge_sft-only--quality:
+  agents:
+    debaters:
+    - best_of_n: null
+      model_settings:
+        alias: llama-3-262k-4-turbo-judge-debater
+        generation_params:
+          do_sample: true
+          max_new_tokens: 300
+          repetition_penalty: 1.2
+          temperature: 0.5
+          top_p: 1.0
+          use_generation_penalties: false
+        is_human: false
+        model_file_path: /home/ubuntu/mars-arnesen-gh/garethtan/models/trained_models/llama-trained-for-gpt-4-turbo-round-one
+        model_type: llama3
+        nucleus: true
+        offline_file_path: null
+        override_prompt: null
+        peft_base_model: null
+        probe_hyperparams: null
+        require_quote_validation: true
+        served: false
+      scratchpad:
+        scratchpad_public: false
+        scratchpad_word_limit: null
+        use_scratchpad: false
+    judge:
+      best_of_n: null
+      model_settings:
+        alias: gpt-41-2025-07-31-judge
+        generation_params:
+          do_sample: true
+          max_new_tokens: 300
+          repetition_penalty: 1.2
+          temperature: 0.5
+          top_p: 1.0
+          use_generation_penalties: false
+        is_human: false
+        model_file_path: ft:gpt-4.1-2025-04-14:modulo-research-ltd:michael-and-khan-data-judge-31-07:BzYGc8SU
+        model_type: openai
+        nucleus: true
+        offline_file_path: null
+        override_prompt: null
+        peft_base_model: null
+        probe_hyperparams: null
+        require_quote_validation: true
+        served: false
+      scratchpad:
+        scratchpad_public: false
+        scratchpad_word_limit: null
+        use_scratchpad: false
+  alternate: false
+  annotations_classifier_file_path: null
+  batch_size: 1
+  convert_to_double_consultancy: false
+  dataset:
+    combine_train_and_val: false
+    dataset_type: quality
+    flip_sides: false
+    full_dataset_file_path: null
+    shuffle_deterministically: true
+    split_type: val
+    supplemental_file_paths: {}
+    test_file_path: null
+    train_file_path: null
+    val_file_path: null
+  enable_self_debate: true
+  flip: false
+  multi_round_branching: none
+  num_speeches: 2
+  previous_run: null
+  prompt_config:
+    default_prompt_name: Debate Prompt
+    file_path: null
+    hardcoded_topic_config: null
+    is_memorized: false
+    use_hardcoded_topics: false
+  speech_structure: default_debate
+  tournament:
+    custom_matchups: null
+    replication_file_paths: []
+    tournament_type: round_robin
+eval--llama-3-262k-4-turbo-judge-debater_round-one-dpo--llama-3-262k-2025-10-08-judge_sft-only--lojban:
+  agents:
+    debaters:
+    - best_of_n: null
+      model_settings:
+        alias: llama-3-262k-4-turbo-judge-debater
+        generation_params:
+          do_sample: true
+          max_new_tokens: 2000
+          repetition_penalty: 1.2
+          temperature: 0.5
+          top_p: 1.0
+          use_generation_penalties: false
+        is_human: false
+        model_file_path: /home/ubuntu/mars-arnesen-gh/garethtan/models/trained_models/llama-trained-for-gpt-4-turbo-round-one
+        model_type: llama3
+        nucleus: true
+        offline_file_path: null
+        override_prompt: null
+        peft_base_model: null
+        probe_hyperparams: null
+        require_quote_validation: true
+        served: false
+      scratchpad:
+        scratchpad_public: false
+        scratchpad_word_limit: null
+        use_scratchpad: false
+    judge:
+      best_of_n: null
+      model_settings:
+        alias: llama-3-262k-2025-10-08-judge
+        generation_params:
+          do_sample: true
+          max_new_tokens: 300
+          repetition_penalty: 1.2
+          temperature: 0.5
+          top_p: 1.0
+          use_generation_penalties: false
+        is_human: false
+        model_file_path: /home/ubuntu/mars-arnesen-gh/leonidtsyplenkov/models/trained_models/llama-3-mega-merged-judge-08-10
+        model_type: llama3
+        nucleus: true
+        offline_file_path: null
+        override_prompt: null
+        peft_base_model: null
+        probe_hyperparams: null
+        require_quote_validation: true
+        served: false
+      scratchpad:
+        scratchpad_public: false
+        scratchpad_word_limit: null
+        use_scratchpad: false
+  alternate: false
+  annotations_classifier_file_path: null
+  batch_size: 1
+  convert_to_double_consultancy: false
+  dataset:
+    combine_train_and_val: false
+    dataset_type: lojban
+    flip_sides: false
+    full_dataset_file_path: null
+    shuffle_deterministically: true
+    split_type: test
+    supplemental_file_paths: {}
+    test_file_path: null
+    train_file_path: null
+    val_file_path: null
+  enable_self_debate: true
+  flip: false
+  multi_round_branching: none
+  num_speeches: 2
+  previous_run: null
+  prompt_config:
+    default_prompt_name: Debate Prompt
+    file_path: /home/ubuntu/mars-arnesen-gh/garethtan/prompts/configs/lojban_prompts.yaml
+    hardcoded_topic_config: null
+    is_memorized: false
+    use_hardcoded_topics: false
+  speech_structure: default_debate
+  tournament:
+    custom_matchups: null
+    replication_file_paths: []
+    tournament_type: round_robin
+eval--llama-3-262k-4-turbo-judge-debater_round-one-dpo--llama-3-262k-2025-10-08-judge_sft-only--quality:
+  agents:
+    debaters:
+    - best_of_n: null
+      model_settings:
+        alias: llama-3-262k-4-turbo-judge-debater
+        generation_params:
+          do_sample: true
+          max_new_tokens: 300
+          repetition_penalty: 1.2
+          temperature: 0.5
+          top_p: 1.0
+          use_generation_penalties: false
+        is_human: false
+        model_file_path: /home/ubuntu/mars-arnesen-gh/garethtan/models/trained_models/llama-trained-for-gpt-4-turbo-round-one
+        model_type: llama3
+        nucleus: true
+        offline_file_path: null
+        override_prompt: null
+        peft_base_model: null
+        probe_hyperparams: null
+        require_quote_validation: true
+        served: false
+      scratchpad:
+        scratchpad_public: false
+        scratchpad_word_limit: null
+        use_scratchpad: false
+    judge:
+      best_of_n: null
+      model_settings:
+        alias: llama-3-262k-2025-10-08-judge
+        generation_params:
+          do_sample: true
+          max_new_tokens: 300
+          repetition_penalty: 1.2
+          temperature: 0.5
+          top_p: 1.0
+          use_generation_penalties: false
+        is_human: false
+        model_file_path: /home/ubuntu/mars-arnesen-gh/leonidtsyplenkov/models/trained_models/llama-3-mega-merged-judge-08-10
+        model_type: llama3
+        nucleus: true
+        offline_file_path: null
+        override_prompt: null
+        peft_base_model: null
+        probe_hyperparams: null
+        require_quote_validation: true
+        served: false
+      scratchpad:
+        scratchpad_public: false
+        scratchpad_word_limit: null
+        use_scratchpad: false
+  alternate: false
+  annotations_classifier_file_path: null
+  batch_size: 1
+  convert_to_double_consultancy: false
+  dataset:
+    combine_train_and_val: false
+    dataset_type: quality
+    flip_sides: false
+    full_dataset_file_path: null
+    shuffle_deterministically: true
+    split_type: val
+    supplemental_file_paths: {}
+    test_file_path: null
+    train_file_path: null
+    val_file_path: null
+  enable_self_debate: true
+  flip: false
+  multi_round_branching: none
+  num_speeches: 2
+  previous_run: null
+  prompt_config:
+    default_prompt_name: Debate Prompt
+    file_path: null
+    hardcoded_topic_config: null
+    is_memorized: false
+    use_hardcoded_topics: false
+  speech_structure: default_debate
+  tournament:
+    custom_matchups: null
+    replication_file_paths: []
+    tournament_type: round_robin
+eval--llama-3-262k-4-turbo-judge-debater_round-one-dpo--llama-3-262k-judge_untrained--lojban:
+  agents:
+    debaters:
+    - best_of_n: null
+      model_settings:
+        alias: llama-3-262k-4-turbo-judge-debater
+        generation_params:
+          do_sample: true
+          max_new_tokens: 2000
+          repetition_penalty: 1.2
+          temperature: 0.5
+          top_p: 1.0
+          use_generation_penalties: false
+        is_human: false
+        model_file_path: /home/ubuntu/mars-arnesen-gh/garethtan/models/trained_models/llama-trained-for-gpt-4-turbo-round-one
+        model_type: llama3
+        nucleus: true
+        offline_file_path: null
+        override_prompt: null
+        peft_base_model: null
+        probe_hyperparams: null
+        require_quote_validation: true
+        served: false
+      scratchpad:
+        scratchpad_public: false
+        scratchpad_word_limit: null
+        use_scratchpad: false
+    judge:
+      best_of_n: null
+      model_settings:
+        alias: llama-3-262k-judge
+        generation_params:
+          do_sample: true
+          max_new_tokens: 300
+          repetition_penalty: 1.2
+          temperature: 0.5
+          top_p: 1.0
+          use_generation_penalties: false
+        is_human: false
+        model_file_path: /home/ubuntu/mars-arnesen-gh/garethtan/downloaded-models/gradientai/Llama-3-8B-Instruct-262k
+        model_type: llama3
+        nucleus: true
+        offline_file_path: null
+        override_prompt: null
+        peft_base_model: null
+        probe_hyperparams: null
+        require_quote_validation: true
+        served: false
+      scratchpad:
+        scratchpad_public: false
+        scratchpad_word_limit: null
+        use_scratchpad: false
+  alternate: false
+  annotations_classifier_file_path: null
+  batch_size: 1
+  convert_to_double_consultancy: false
+  dataset:
+    combine_train_and_val: false
+    dataset_type: lojban
+    flip_sides: false
+    full_dataset_file_path: null
+    shuffle_deterministically: true
+    split_type: test
+    supplemental_file_paths: {}
+    test_file_path: null
+    train_file_path: null
+    val_file_path: null
+  enable_self_debate: true
+  flip: false
+  multi_round_branching: none
+  num_speeches: 2
+  previous_run: null
+  prompt_config:
+    default_prompt_name: Debate Prompt
+    file_path: /home/ubuntu/mars-arnesen-gh/garethtan/prompts/configs/lojban_prompts.yaml
+    hardcoded_topic_config: null
+    is_memorized: false
+    use_hardcoded_topics: false
+  speech_structure: default_debate
+  tournament:
+    custom_matchups: null
+    replication_file_paths: []
+    tournament_type: round_robin
+eval--llama-3-262k-4-turbo-judge-debater_round-one-dpo--llama-3-262k-judge_untrained--quality:
+  agents:
+    debaters:
+    - best_of_n: null
+      model_settings:
+        alias: llama-3-262k-4-turbo-judge-debater
+        generation_params:
+          do_sample: true
+          max_new_tokens: 300
+          repetition_penalty: 1.2
+          temperature: 0.5
+          top_p: 1.0
+          use_generation_penalties: false
+        is_human: false
+        model_file_path: /home/ubuntu/mars-arnesen-gh/garethtan/models/trained_models/llama-trained-for-gpt-4-turbo-round-one
+        model_type: llama3
+        nucleus: true
+        offline_file_path: null
+        override_prompt: null
+        peft_base_model: null
+        probe_hyperparams: null
+        require_quote_validation: true
+        served: false
+      scratchpad:
+        scratchpad_public: false
+        scratchpad_word_limit: null
+        use_scratchpad: false
+    judge:
+      best_of_n: null
+      model_settings:
+        alias: llama-3-262k-judge
+        generation_params:
+          do_sample: true
+          max_new_tokens: 300
+          repetition_penalty: 1.2
+          temperature: 0.5
+          top_p: 1.0
+          use_generation_penalties: false
+        is_human: false
+        model_file_path: /home/ubuntu/mars-arnesen-gh/garethtan/downloaded-models/gradientai/Llama-3-8B-Instruct-262k
+        model_type: llama3
+        nucleus: true
+        offline_file_path: null
+        override_prompt: null
+        peft_base_model: null
+        probe_hyperparams: null
+        require_quote_validation: true
+        served: false
+      scratchpad:
+        scratchpad_public: false
+        scratchpad_word_limit: null
+        use_scratchpad: false
+  alternate: false
+  annotations_classifier_file_path: null
+  batch_size: 1
+  convert_to_double_consultancy: false
+  dataset:
+    combine_train_and_val: false
+    dataset_type: quality
+    flip_sides: false
+    full_dataset_file_path: null
+    shuffle_deterministically: true
+    split_type: val
+    supplemental_file_paths: {}
+    test_file_path: null
+    train_file_path: null
+    val_file_path: null
+  enable_self_debate: true
+  flip: false
+  multi_round_branching: none
+  num_speeches: 2
+  previous_run: null
+  prompt_config:
+    default_prompt_name: Debate Prompt
+    file_path: null
+    hardcoded_topic_config: null
+    is_memorized: false
+    use_hardcoded_topics: false
+  speech_structure: default_debate
+  tournament:
+    custom_matchups: null
+    replication_file_paths: []
+    tournament_type: round_robin
+eval--llama-3-262k-41-sfted-judge-debater_round-two-dpo--gpt-4-turbo-2024-04-09-judge_untrained--lojban:
+  agents:
+    debaters:
+    - best_of_n: null
+      model_settings:
+        alias: llama-3-262k-41-sfted-judge-debater
+        generation_params:
+          do_sample: true
+          max_new_tokens: 2000
           repetition_penalty: 1.2
           temperature: 0.5
           top_p: 1.0
@@ -1326,15 +2986,15 @@ eval--llama-3-262k-41-judge-debater_round-two-dpo--gpt-4-turbo-2024-04-09-judge_
     custom_matchups: null
     replication_file_paths: []
     tournament_type: round_robin
-eval--llama-3-262k-41-judge-debater_round-two-dpo--gpt-4-turbo-2024-04-09-judge_untrained--quality:
+eval--llama-3-262k-41-sfted-judge-debater_round-two-dpo--gpt-4-turbo-2024-04-09-judge_untrained--quality:
   agents:
     debaters:
     - best_of_n: null
       model_settings:
-        alias: llama-3-262k-41-judge-debater
+        alias: llama-3-262k-41-sfted-judge-debater
         generation_params:
           do_sample: true
-          max_new_tokens: 1500
+          max_new_tokens: 300
           repetition_penalty: 1.2
           temperature: 0.5
           top_p: 1.0
@@ -1409,15 +3069,15 @@ eval--llama-3-262k-41-judge-debater_round-two-dpo--gpt-4-turbo-2024-04-09-judge_
     custom_matchups: null
     replication_file_paths: []
     tournament_type: round_robin
-eval--llama-3-262k-41-judge-debater_round-two-dpo--gpt-41-2025-04-14-judge_untrained--lojban:
+eval--llama-3-262k-41-sfted-judge-debater_round-two-dpo--gpt-41-2025-04-14-judge_untrained--lojban:
   agents:
     debaters:
     - best_of_n: null
       model_settings:
-        alias: llama-3-262k-41-judge-debater
+        alias: llama-3-262k-41-sfted-judge-debater
         generation_params:
           do_sample: true
-          max_new_tokens: 1500
+          max_new_tokens: 2000
           repetition_penalty: 1.2
           temperature: 0.5
           top_p: 1.0
@@ -1492,15 +3152,15 @@ eval--llama-3-262k-41-judge-debater_round-two-dpo--gpt-41-2025-04-14-judge_untra
     custom_matchups: null
     replication_file_paths: []
     tournament_type: round_robin
-eval--llama-3-262k-41-judge-debater_round-two-dpo--gpt-41-2025-04-14-judge_untrained--quality:
+eval--llama-3-262k-41-sfted-judge-debater_round-two-dpo--gpt-41-2025-04-14-judge_untrained--quality:
   agents:
     debaters:
     - best_of_n: null
       model_settings:
-        alias: llama-3-262k-41-judge-debater
+        alias: llama-3-262k-41-sfted-judge-debater
         generation_params:
           do_sample: true
-          max_new_tokens: 1500
+          max_new_tokens: 300
           repetition_penalty: 1.2
           temperature: 0.5
           top_p: 1.0
@@ -1575,15 +3235,15 @@ eval--llama-3-262k-41-judge-debater_round-two-dpo--gpt-41-2025-04-14-judge_untra
     custom_matchups: null
     replication_file_paths: []
     tournament_type: round_robin
-eval--llama-3-262k-41-judge-debater_round-two-dpo--gpt-41-2025-07-31-judge_sft-only--lojban:
+eval--llama-3-262k-41-sfted-judge-debater_round-two-dpo--gpt-41-2025-07-31-judge_sft-only--lojban:
   agents:
     debaters:
     - best_of_n: null
       model_settings:
-        alias: llama-3-262k-41-judge-debater
+        alias: llama-3-262k-41-sfted-judge-debater
         generation_params:
           do_sample: true
-          max_new_tokens: 1500
+          max_new_tokens: 2000
           repetition_penalty: 1.2
           temperature: 0.5
           top_p: 1.0
@@ -1658,15 +3318,15 @@ eval--llama-3-262k-41-judge-debater_round-two-dpo--gpt-41-2025-07-31-judge_sft-o
     custom_matchups: null
     replication_file_paths: []
     tournament_type: round_robin
-eval--llama-3-262k-41-judge-debater_round-two-dpo--gpt-41-2025-07-31-judge_sft-only--quality:
+eval--llama-3-262k-41-sfted-judge-debater_round-two-dpo--gpt-41-2025-07-31-judge_sft-only--quality:
   agents:
     debaters:
     - best_of_n: null
       model_settings:
-        alias: llama-3-262k-41-judge-debater
+        alias: llama-3-262k-41-sfted-judge-debater
         generation_params:
           do_sample: true
-          max_new_tokens: 1500
+          max_new_tokens: 300
           repetition_penalty: 1.2
           temperature: 0.5
           top_p: 1.0
@@ -1741,15 +3401,15 @@ eval--llama-3-262k-41-judge-debater_round-two-dpo--gpt-41-2025-07-31-judge_sft-o
     custom_matchups: null
     replication_file_paths: []
     tournament_type: round_robin
-eval--llama-3-262k-41-judge-debater_round-two-dpo--llama-3-262k-2025-10-08-judge_sft-only--lojban:
+eval--llama-3-262k-41-sfted-judge-debater_round-two-dpo--llama-3-262k-2025-10-08-judge_sft-only--lojban:
   agents:
     debaters:
     - best_of_n: null
       model_settings:
-        alias: llama-3-262k-41-judge-debater
+        alias: llama-3-262k-41-sfted-judge-debater
         generation_params:
           do_sample: true
-          max_new_tokens: 1500
+          max_new_tokens: 2000
           repetition_penalty: 1.2
           temperature: 0.5
           top_p: 1.0
@@ -1824,15 +3484,15 @@ eval--llama-3-262k-41-judge-debater_round-two-dpo--llama-3-262k-2025-10-08-judge
     custom_matchups: null
     replication_file_paths: []
     tournament_type: round_robin
-eval--llama-3-262k-41-judge-debater_round-two-dpo--llama-3-262k-2025-10-08-judge_sft-only--quality:
+eval--llama-3-262k-41-sfted-judge-debater_round-two-dpo--llama-3-262k-2025-10-08-judge_sft-only--quality:
   agents:
     debaters:
     - best_of_n: null
       model_settings:
-        alias: llama-3-262k-41-judge-debater
+        alias: llama-3-262k-41-sfted-judge-debater
         generation_params:
           do_sample: true
-          max_new_tokens: 1500
+          max_new_tokens: 300
           repetition_penalty: 1.2
           temperature: 0.5
           top_p: 1.0
@@ -1907,15 +3567,15 @@ eval--llama-3-262k-41-judge-debater_round-two-dpo--llama-3-262k-2025-10-08-judge
     custom_matchups: null
     replication_file_paths: []
     tournament_type: round_robin
-eval--llama-3-262k-41-judge-debater_round-two-dpo--llama-3-262k-judge_untrained--lojban:
+eval--llama-3-262k-41-sfted-judge-debater_round-two-dpo--llama-3-262k-judge_untrained--lojban:
   agents:
     debaters:
     - best_of_n: null
       model_settings:
-        alias: llama-3-262k-41-judge-debater
+        alias: llama-3-262k-41-sfted-judge-debater
         generation_params:
           do_sample: true
-          max_new_tokens: 1500
+          max_new_tokens: 2000
           repetition_penalty: 1.2
           temperature: 0.5
           top_p: 1.0
@@ -1990,15 +3650,15 @@ eval--llama-3-262k-41-judge-debater_round-two-dpo--llama-3-262k-judge_untrained-
     custom_matchups: null
     replication_file_paths: []
     tournament_type: round_robin
-eval--llama-3-262k-41-judge-debater_round-two-dpo--llama-3-262k-judge_untrained--quality:
+eval--llama-3-262k-41-sfted-judge-debater_round-two-dpo--llama-3-262k-judge_untrained--quality:
   agents:
     debaters:
     - best_of_n: null
       model_settings:
-        alias: llama-3-262k-41-judge-debater
+        alias: llama-3-262k-41-sfted-judge-debater
         generation_params:
           do_sample: true
-          max_new_tokens: 1500
+          max_new_tokens: 300
           repetition_penalty: 1.2
           temperature: 0.5
           top_p: 1.0
@@ -2081,7 +3741,7 @@ eval--llama-3-262k-debater_untrained--gpt-4-turbo-2024-04-09-judge_untrained--lo
         alias: llama-3-262k-debater
         generation_params:
           do_sample: true
-          max_new_tokens: 1500
+          max_new_tokens: 2000
           repetition_penalty: 1.2
           temperature: 0.5
           top_p: 1.0
@@ -2164,7 +3824,7 @@ eval--llama-3-262k-debater_untrained--gpt-4-turbo-2024-04-09-judge_untrained--qu
         alias: llama-3-262k-debater
         generation_params:
           do_sample: true
-          max_new_tokens: 1500
+          max_new_tokens: 300
           repetition_penalty: 1.2
           temperature: 0.5
           top_p: 1.0
@@ -2247,7 +3907,7 @@ eval--llama-3-262k-debater_untrained--gpt-41-2025-04-14-judge_untrained--lojban:
         alias: llama-3-262k-debater
         generation_params:
           do_sample: true
-          max_new_tokens: 1500
+          max_new_tokens: 2000
           repetition_penalty: 1.2
           temperature: 0.5
           top_p: 1.0
@@ -2330,7 +3990,7 @@ eval--llama-3-262k-debater_untrained--gpt-41-2025-04-14-judge_untrained--quality
         alias: llama-3-262k-debater
         generation_params:
           do_sample: true
-          max_new_tokens: 1500
+          max_new_tokens: 300
           repetition_penalty: 1.2
           temperature: 0.5
           top_p: 1.0
@@ -2413,7 +4073,7 @@ eval--llama-3-262k-debater_untrained--gpt-41-2025-07-31-judge_sft-only--lojban:
         alias: llama-3-262k-debater
         generation_params:
           do_sample: true
-          max_new_tokens: 1500
+          max_new_tokens: 2000
           repetition_penalty: 1.2
           temperature: 0.5
           top_p: 1.0
@@ -2496,7 +4156,7 @@ eval--llama-3-262k-debater_untrained--gpt-41-2025-07-31-judge_sft-only--quality:
         alias: llama-3-262k-debater
         generation_params:
           do_sample: true
-          max_new_tokens: 1500
+          max_new_tokens: 300
           repetition_penalty: 1.2
           temperature: 0.5
           top_p: 1.0
@@ -2579,7 +4239,7 @@ eval--llama-3-262k-debater_untrained--llama-3-262k-2025-10-08-judge_sft-only--lo
         alias: llama-3-262k-debater
         generation_params:
           do_sample: true
-          max_new_tokens: 1500
+          max_new_tokens: 2000
           repetition_penalty: 1.2
           temperature: 0.5
           top_p: 1.0
@@ -2662,7 +4322,7 @@ eval--llama-3-262k-debater_untrained--llama-3-262k-2025-10-08-judge_sft-only--qu
         alias: llama-3-262k-debater
         generation_params:
           do_sample: true
-          max_new_tokens: 1500
+          max_new_tokens: 300
           repetition_penalty: 1.2
           temperature: 0.5
           top_p: 1.0
@@ -2745,7 +4405,7 @@ eval--llama-3-262k-debater_untrained--llama-3-262k-judge_untrained--lojban:
         alias: llama-3-262k-debater
         generation_params:
           do_sample: true
-          max_new_tokens: 1500
+          max_new_tokens: 2000
           repetition_penalty: 1.2
           temperature: 0.5
           top_p: 1.0
@@ -2828,13 +4488,843 @@ eval--llama-3-262k-debater_untrained--llama-3-262k-judge_untrained--quality:
         alias: llama-3-262k-debater
         generation_params:
           do_sample: true
-          max_new_tokens: 1500
+          max_new_tokens: 300
           repetition_penalty: 1.2
           temperature: 0.5
           top_p: 1.0
           use_generation_penalties: false
         is_human: false
         model_file_path: /home/ubuntu/mars-arnesen-gh/garethtan/downloaded-models/gradientai/Llama-3-8B-Instruct-262k
+        model_type: llama3
+        nucleus: true
+        offline_file_path: null
+        override_prompt: null
+        peft_base_model: null
+        probe_hyperparams: null
+        require_quote_validation: true
+        served: false
+      scratchpad:
+        scratchpad_public: false
+        scratchpad_word_limit: null
+        use_scratchpad: false
+    judge:
+      best_of_n: null
+      model_settings:
+        alias: llama-3-262k-judge
+        generation_params:
+          do_sample: true
+          max_new_tokens: 300
+          repetition_penalty: 1.2
+          temperature: 0.5
+          top_p: 1.0
+          use_generation_penalties: false
+        is_human: false
+        model_file_path: /home/ubuntu/mars-arnesen-gh/garethtan/downloaded-models/gradientai/Llama-3-8B-Instruct-262k
+        model_type: llama3
+        nucleus: true
+        offline_file_path: null
+        override_prompt: null
+        peft_base_model: null
+        probe_hyperparams: null
+        require_quote_validation: true
+        served: false
+      scratchpad:
+        scratchpad_public: false
+        scratchpad_word_limit: null
+        use_scratchpad: false
+  alternate: false
+  annotations_classifier_file_path: null
+  batch_size: 1
+  convert_to_double_consultancy: false
+  dataset:
+    combine_train_and_val: false
+    dataset_type: quality
+    flip_sides: false
+    full_dataset_file_path: null
+    shuffle_deterministically: true
+    split_type: val
+    supplemental_file_paths: {}
+    test_file_path: null
+    train_file_path: null
+    val_file_path: null
+  enable_self_debate: true
+  flip: false
+  multi_round_branching: none
+  num_speeches: 2
+  previous_run: null
+  prompt_config:
+    default_prompt_name: Debate Prompt
+    file_path: null
+    hardcoded_topic_config: null
+    is_memorized: false
+    use_hardcoded_topics: false
+  speech_structure: default_debate
+  tournament:
+    custom_matchups: null
+    replication_file_paths: []
+    tournament_type: round_robin
+eval--llama-3-262k-llama-sft-judge-debater_round-one-dpo--gpt-4-turbo-2024-04-09-judge_untrained--lojban:
+  agents:
+    debaters:
+    - best_of_n: null
+      model_settings:
+        alias: llama-3-262k-llama-sft-judge-debater
+        generation_params:
+          do_sample: true
+          max_new_tokens: 2000
+          repetition_penalty: 1.2
+          temperature: 0.5
+          top_p: 1.0
+          use_generation_penalties: false
+        is_human: false
+        model_file_path: /home/ubuntu/mars-arnesen-gh/garethtan/models/trained_models/llama-trained-for-llama-judge-finetuned-round-one
+        model_type: llama3
+        nucleus: true
+        offline_file_path: null
+        override_prompt: null
+        peft_base_model: null
+        probe_hyperparams: null
+        require_quote_validation: true
+        served: false
+      scratchpad:
+        scratchpad_public: false
+        scratchpad_word_limit: null
+        use_scratchpad: false
+    judge:
+      best_of_n: null
+      model_settings:
+        alias: gpt-4-turbo-2024-04-09-judge
+        generation_params:
+          do_sample: true
+          max_new_tokens: 300
+          repetition_penalty: 1.2
+          temperature: 0.5
+          top_p: 1.0
+          use_generation_penalties: false
+        is_human: false
+        model_file_path: gpt-4-turbo-2024-04-09
+        model_type: openai
+        nucleus: true
+        offline_file_path: null
+        override_prompt: null
+        peft_base_model: null
+        probe_hyperparams: null
+        require_quote_validation: true
+        served: false
+      scratchpad:
+        scratchpad_public: false
+        scratchpad_word_limit: null
+        use_scratchpad: false
+  alternate: false
+  annotations_classifier_file_path: null
+  batch_size: 1
+  convert_to_double_consultancy: false
+  dataset:
+    combine_train_and_val: false
+    dataset_type: lojban
+    flip_sides: false
+    full_dataset_file_path: null
+    shuffle_deterministically: true
+    split_type: test
+    supplemental_file_paths: {}
+    test_file_path: null
+    train_file_path: null
+    val_file_path: null
+  enable_self_debate: true
+  flip: false
+  multi_round_branching: none
+  num_speeches: 2
+  previous_run: null
+  prompt_config:
+    default_prompt_name: Debate Prompt
+    file_path: /home/ubuntu/mars-arnesen-gh/garethtan/prompts/configs/lojban_prompts.yaml
+    hardcoded_topic_config: null
+    is_memorized: false
+    use_hardcoded_topics: false
+  speech_structure: default_debate
+  tournament:
+    custom_matchups: null
+    replication_file_paths: []
+    tournament_type: round_robin
+eval--llama-3-262k-llama-sft-judge-debater_round-one-dpo--gpt-4-turbo-2024-04-09-judge_untrained--quality:
+  agents:
+    debaters:
+    - best_of_n: null
+      model_settings:
+        alias: llama-3-262k-llama-sft-judge-debater
+        generation_params:
+          do_sample: true
+          max_new_tokens: 300
+          repetition_penalty: 1.2
+          temperature: 0.5
+          top_p: 1.0
+          use_generation_penalties: false
+        is_human: false
+        model_file_path: /home/ubuntu/mars-arnesen-gh/garethtan/models/trained_models/llama-trained-for-llama-judge-finetuned-round-one
+        model_type: llama3
+        nucleus: true
+        offline_file_path: null
+        override_prompt: null
+        peft_base_model: null
+        probe_hyperparams: null
+        require_quote_validation: true
+        served: false
+      scratchpad:
+        scratchpad_public: false
+        scratchpad_word_limit: null
+        use_scratchpad: false
+    judge:
+      best_of_n: null
+      model_settings:
+        alias: gpt-4-turbo-2024-04-09-judge
+        generation_params:
+          do_sample: true
+          max_new_tokens: 300
+          repetition_penalty: 1.2
+          temperature: 0.5
+          top_p: 1.0
+          use_generation_penalties: false
+        is_human: false
+        model_file_path: gpt-4-turbo-2024-04-09
+        model_type: openai
+        nucleus: true
+        offline_file_path: null
+        override_prompt: null
+        peft_base_model: null
+        probe_hyperparams: null
+        require_quote_validation: true
+        served: false
+      scratchpad:
+        scratchpad_public: false
+        scratchpad_word_limit: null
+        use_scratchpad: false
+  alternate: false
+  annotations_classifier_file_path: null
+  batch_size: 1
+  convert_to_double_consultancy: false
+  dataset:
+    combine_train_and_val: false
+    dataset_type: quality
+    flip_sides: false
+    full_dataset_file_path: null
+    shuffle_deterministically: true
+    split_type: val
+    supplemental_file_paths: {}
+    test_file_path: null
+    train_file_path: null
+    val_file_path: null
+  enable_self_debate: true
+  flip: false
+  multi_round_branching: none
+  num_speeches: 2
+  previous_run: null
+  prompt_config:
+    default_prompt_name: Debate Prompt
+    file_path: null
+    hardcoded_topic_config: null
+    is_memorized: false
+    use_hardcoded_topics: false
+  speech_structure: default_debate
+  tournament:
+    custom_matchups: null
+    replication_file_paths: []
+    tournament_type: round_robin
+eval--llama-3-262k-llama-sft-judge-debater_round-one-dpo--gpt-41-2025-04-14-judge_untrained--lojban:
+  agents:
+    debaters:
+    - best_of_n: null
+      model_settings:
+        alias: llama-3-262k-llama-sft-judge-debater
+        generation_params:
+          do_sample: true
+          max_new_tokens: 2000
+          repetition_penalty: 1.2
+          temperature: 0.5
+          top_p: 1.0
+          use_generation_penalties: false
+        is_human: false
+        model_file_path: /home/ubuntu/mars-arnesen-gh/garethtan/models/trained_models/llama-trained-for-llama-judge-finetuned-round-one
+        model_type: llama3
+        nucleus: true
+        offline_file_path: null
+        override_prompt: null
+        peft_base_model: null
+        probe_hyperparams: null
+        require_quote_validation: true
+        served: false
+      scratchpad:
+        scratchpad_public: false
+        scratchpad_word_limit: null
+        use_scratchpad: false
+    judge:
+      best_of_n: null
+      model_settings:
+        alias: gpt-41-2025-04-14-judge
+        generation_params:
+          do_sample: true
+          max_new_tokens: 300
+          repetition_penalty: 1.2
+          temperature: 0.5
+          top_p: 1.0
+          use_generation_penalties: false
+        is_human: false
+        model_file_path: gpt-4.1-2025-04-14
+        model_type: openai
+        nucleus: true
+        offline_file_path: null
+        override_prompt: null
+        peft_base_model: null
+        probe_hyperparams: null
+        require_quote_validation: true
+        served: false
+      scratchpad:
+        scratchpad_public: false
+        scratchpad_word_limit: null
+        use_scratchpad: false
+  alternate: false
+  annotations_classifier_file_path: null
+  batch_size: 1
+  convert_to_double_consultancy: false
+  dataset:
+    combine_train_and_val: false
+    dataset_type: lojban
+    flip_sides: false
+    full_dataset_file_path: null
+    shuffle_deterministically: true
+    split_type: test
+    supplemental_file_paths: {}
+    test_file_path: null
+    train_file_path: null
+    val_file_path: null
+  enable_self_debate: true
+  flip: false
+  multi_round_branching: none
+  num_speeches: 2
+  previous_run: null
+  prompt_config:
+    default_prompt_name: Debate Prompt
+    file_path: /home/ubuntu/mars-arnesen-gh/garethtan/prompts/configs/lojban_prompts.yaml
+    hardcoded_topic_config: null
+    is_memorized: false
+    use_hardcoded_topics: false
+  speech_structure: default_debate
+  tournament:
+    custom_matchups: null
+    replication_file_paths: []
+    tournament_type: round_robin
+eval--llama-3-262k-llama-sft-judge-debater_round-one-dpo--gpt-41-2025-04-14-judge_untrained--quality:
+  agents:
+    debaters:
+    - best_of_n: null
+      model_settings:
+        alias: llama-3-262k-llama-sft-judge-debater
+        generation_params:
+          do_sample: true
+          max_new_tokens: 300
+          repetition_penalty: 1.2
+          temperature: 0.5
+          top_p: 1.0
+          use_generation_penalties: false
+        is_human: false
+        model_file_path: /home/ubuntu/mars-arnesen-gh/garethtan/models/trained_models/llama-trained-for-llama-judge-finetuned-round-one
+        model_type: llama3
+        nucleus: true
+        offline_file_path: null
+        override_prompt: null
+        peft_base_model: null
+        probe_hyperparams: null
+        require_quote_validation: true
+        served: false
+      scratchpad:
+        scratchpad_public: false
+        scratchpad_word_limit: null
+        use_scratchpad: false
+    judge:
+      best_of_n: null
+      model_settings:
+        alias: gpt-41-2025-04-14-judge
+        generation_params:
+          do_sample: true
+          max_new_tokens: 300
+          repetition_penalty: 1.2
+          temperature: 0.5
+          top_p: 1.0
+          use_generation_penalties: false
+        is_human: false
+        model_file_path: gpt-4.1-2025-04-14
+        model_type: openai
+        nucleus: true
+        offline_file_path: null
+        override_prompt: null
+        peft_base_model: null
+        probe_hyperparams: null
+        require_quote_validation: true
+        served: false
+      scratchpad:
+        scratchpad_public: false
+        scratchpad_word_limit: null
+        use_scratchpad: false
+  alternate: false
+  annotations_classifier_file_path: null
+  batch_size: 1
+  convert_to_double_consultancy: false
+  dataset:
+    combine_train_and_val: false
+    dataset_type: quality
+    flip_sides: false
+    full_dataset_file_path: null
+    shuffle_deterministically: true
+    split_type: val
+    supplemental_file_paths: {}
+    test_file_path: null
+    train_file_path: null
+    val_file_path: null
+  enable_self_debate: true
+  flip: false
+  multi_round_branching: none
+  num_speeches: 2
+  previous_run: null
+  prompt_config:
+    default_prompt_name: Debate Prompt
+    file_path: null
+    hardcoded_topic_config: null
+    is_memorized: false
+    use_hardcoded_topics: false
+  speech_structure: default_debate
+  tournament:
+    custom_matchups: null
+    replication_file_paths: []
+    tournament_type: round_robin
+eval--llama-3-262k-llama-sft-judge-debater_round-one-dpo--gpt-41-2025-07-31-judge_sft-only--lojban:
+  agents:
+    debaters:
+    - best_of_n: null
+      model_settings:
+        alias: llama-3-262k-llama-sft-judge-debater
+        generation_params:
+          do_sample: true
+          max_new_tokens: 2000
+          repetition_penalty: 1.2
+          temperature: 0.5
+          top_p: 1.0
+          use_generation_penalties: false
+        is_human: false
+        model_file_path: /home/ubuntu/mars-arnesen-gh/garethtan/models/trained_models/llama-trained-for-llama-judge-finetuned-round-one
+        model_type: llama3
+        nucleus: true
+        offline_file_path: null
+        override_prompt: null
+        peft_base_model: null
+        probe_hyperparams: null
+        require_quote_validation: true
+        served: false
+      scratchpad:
+        scratchpad_public: false
+        scratchpad_word_limit: null
+        use_scratchpad: false
+    judge:
+      best_of_n: null
+      model_settings:
+        alias: gpt-41-2025-07-31-judge
+        generation_params:
+          do_sample: true
+          max_new_tokens: 300
+          repetition_penalty: 1.2
+          temperature: 0.5
+          top_p: 1.0
+          use_generation_penalties: false
+        is_human: false
+        model_file_path: ft:gpt-4.1-2025-04-14:modulo-research-ltd:michael-and-khan-data-judge-31-07:BzYGc8SU
+        model_type: openai
+        nucleus: true
+        offline_file_path: null
+        override_prompt: null
+        peft_base_model: null
+        probe_hyperparams: null
+        require_quote_validation: true
+        served: false
+      scratchpad:
+        scratchpad_public: false
+        scratchpad_word_limit: null
+        use_scratchpad: false
+  alternate: false
+  annotations_classifier_file_path: null
+  batch_size: 1
+  convert_to_double_consultancy: false
+  dataset:
+    combine_train_and_val: false
+    dataset_type: lojban
+    flip_sides: false
+    full_dataset_file_path: null
+    shuffle_deterministically: true
+    split_type: test
+    supplemental_file_paths: {}
+    test_file_path: null
+    train_file_path: null
+    val_file_path: null
+  enable_self_debate: true
+  flip: false
+  multi_round_branching: none
+  num_speeches: 2
+  previous_run: null
+  prompt_config:
+    default_prompt_name: Debate Prompt
+    file_path: /home/ubuntu/mars-arnesen-gh/garethtan/prompts/configs/lojban_prompts.yaml
+    hardcoded_topic_config: null
+    is_memorized: false
+    use_hardcoded_topics: false
+  speech_structure: default_debate
+  tournament:
+    custom_matchups: null
+    replication_file_paths: []
+    tournament_type: round_robin
+eval--llama-3-262k-llama-sft-judge-debater_round-one-dpo--gpt-41-2025-07-31-judge_sft-only--quality:
+  agents:
+    debaters:
+    - best_of_n: null
+      model_settings:
+        alias: llama-3-262k-llama-sft-judge-debater
+        generation_params:
+          do_sample: true
+          max_new_tokens: 300
+          repetition_penalty: 1.2
+          temperature: 0.5
+          top_p: 1.0
+          use_generation_penalties: false
+        is_human: false
+        model_file_path: /home/ubuntu/mars-arnesen-gh/garethtan/models/trained_models/llama-trained-for-llama-judge-finetuned-round-one
+        model_type: llama3
+        nucleus: true
+        offline_file_path: null
+        override_prompt: null
+        peft_base_model: null
+        probe_hyperparams: null
+        require_quote_validation: true
+        served: false
+      scratchpad:
+        scratchpad_public: false
+        scratchpad_word_limit: null
+        use_scratchpad: false
+    judge:
+      best_of_n: null
+      model_settings:
+        alias: gpt-41-2025-07-31-judge
+        generation_params:
+          do_sample: true
+          max_new_tokens: 300
+          repetition_penalty: 1.2
+          temperature: 0.5
+          top_p: 1.0
+          use_generation_penalties: false
+        is_human: false
+        model_file_path: ft:gpt-4.1-2025-04-14:modulo-research-ltd:michael-and-khan-data-judge-31-07:BzYGc8SU
+        model_type: openai
+        nucleus: true
+        offline_file_path: null
+        override_prompt: null
+        peft_base_model: null
+        probe_hyperparams: null
+        require_quote_validation: true
+        served: false
+      scratchpad:
+        scratchpad_public: false
+        scratchpad_word_limit: null
+        use_scratchpad: false
+  alternate: false
+  annotations_classifier_file_path: null
+  batch_size: 1
+  convert_to_double_consultancy: false
+  dataset:
+    combine_train_and_val: false
+    dataset_type: quality
+    flip_sides: false
+    full_dataset_file_path: null
+    shuffle_deterministically: true
+    split_type: val
+    supplemental_file_paths: {}
+    test_file_path: null
+    train_file_path: null
+    val_file_path: null
+  enable_self_debate: true
+  flip: false
+  multi_round_branching: none
+  num_speeches: 2
+  previous_run: null
+  prompt_config:
+    default_prompt_name: Debate Prompt
+    file_path: null
+    hardcoded_topic_config: null
+    is_memorized: false
+    use_hardcoded_topics: false
+  speech_structure: default_debate
+  tournament:
+    custom_matchups: null
+    replication_file_paths: []
+    tournament_type: round_robin
+eval--llama-3-262k-llama-sft-judge-debater_round-one-dpo--llama-3-262k-2025-10-08-judge_sft-only--lojban:
+  agents:
+    debaters:
+    - best_of_n: null
+      model_settings:
+        alias: llama-3-262k-llama-sft-judge-debater
+        generation_params:
+          do_sample: true
+          max_new_tokens: 2000
+          repetition_penalty: 1.2
+          temperature: 0.5
+          top_p: 1.0
+          use_generation_penalties: false
+        is_human: false
+        model_file_path: /home/ubuntu/mars-arnesen-gh/garethtan/models/trained_models/llama-trained-for-llama-judge-finetuned-round-one
+        model_type: llama3
+        nucleus: true
+        offline_file_path: null
+        override_prompt: null
+        peft_base_model: null
+        probe_hyperparams: null
+        require_quote_validation: true
+        served: false
+      scratchpad:
+        scratchpad_public: false
+        scratchpad_word_limit: null
+        use_scratchpad: false
+    judge:
+      best_of_n: null
+      model_settings:
+        alias: llama-3-262k-2025-10-08-judge
+        generation_params:
+          do_sample: true
+          max_new_tokens: 300
+          repetition_penalty: 1.2
+          temperature: 0.5
+          top_p: 1.0
+          use_generation_penalties: false
+        is_human: false
+        model_file_path: /home/ubuntu/mars-arnesen-gh/leonidtsyplenkov/models/trained_models/llama-3-mega-merged-judge-08-10
+        model_type: llama3
+        nucleus: true
+        offline_file_path: null
+        override_prompt: null
+        peft_base_model: null
+        probe_hyperparams: null
+        require_quote_validation: true
+        served: false
+      scratchpad:
+        scratchpad_public: false
+        scratchpad_word_limit: null
+        use_scratchpad: false
+  alternate: false
+  annotations_classifier_file_path: null
+  batch_size: 1
+  convert_to_double_consultancy: false
+  dataset:
+    combine_train_and_val: false
+    dataset_type: lojban
+    flip_sides: false
+    full_dataset_file_path: null
+    shuffle_deterministically: true
+    split_type: test
+    supplemental_file_paths: {}
+    test_file_path: null
+    train_file_path: null
+    val_file_path: null
+  enable_self_debate: true
+  flip: false
+  multi_round_branching: none
+  num_speeches: 2
+  previous_run: null
+  prompt_config:
+    default_prompt_name: Debate Prompt
+    file_path: /home/ubuntu/mars-arnesen-gh/garethtan/prompts/configs/lojban_prompts.yaml
+    hardcoded_topic_config: null
+    is_memorized: false
+    use_hardcoded_topics: false
+  speech_structure: default_debate
+  tournament:
+    custom_matchups: null
+    replication_file_paths: []
+    tournament_type: round_robin
+eval--llama-3-262k-llama-sft-judge-debater_round-one-dpo--llama-3-262k-2025-10-08-judge_sft-only--quality:
+  agents:
+    debaters:
+    - best_of_n: null
+      model_settings:
+        alias: llama-3-262k-llama-sft-judge-debater
+        generation_params:
+          do_sample: true
+          max_new_tokens: 300
+          repetition_penalty: 1.2
+          temperature: 0.5
+          top_p: 1.0
+          use_generation_penalties: false
+        is_human: false
+        model_file_path: /home/ubuntu/mars-arnesen-gh/garethtan/models/trained_models/llama-trained-for-llama-judge-finetuned-round-one
+        model_type: llama3
+        nucleus: true
+        offline_file_path: null
+        override_prompt: null
+        peft_base_model: null
+        probe_hyperparams: null
+        require_quote_validation: true
+        served: false
+      scratchpad:
+        scratchpad_public: false
+        scratchpad_word_limit: null
+        use_scratchpad: false
+    judge:
+      best_of_n: null
+      model_settings:
+        alias: llama-3-262k-2025-10-08-judge
+        generation_params:
+          do_sample: true
+          max_new_tokens: 300
+          repetition_penalty: 1.2
+          temperature: 0.5
+          top_p: 1.0
+          use_generation_penalties: false
+        is_human: false
+        model_file_path: /home/ubuntu/mars-arnesen-gh/leonidtsyplenkov/models/trained_models/llama-3-mega-merged-judge-08-10
+        model_type: llama3
+        nucleus: true
+        offline_file_path: null
+        override_prompt: null
+        peft_base_model: null
+        probe_hyperparams: null
+        require_quote_validation: true
+        served: false
+      scratchpad:
+        scratchpad_public: false
+        scratchpad_word_limit: null
+        use_scratchpad: false
+  alternate: false
+  annotations_classifier_file_path: null
+  batch_size: 1
+  convert_to_double_consultancy: false
+  dataset:
+    combine_train_and_val: false
+    dataset_type: quality
+    flip_sides: false
+    full_dataset_file_path: null
+    shuffle_deterministically: true
+    split_type: val
+    supplemental_file_paths: {}
+    test_file_path: null
+    train_file_path: null
+    val_file_path: null
+  enable_self_debate: true
+  flip: false
+  multi_round_branching: none
+  num_speeches: 2
+  previous_run: null
+  prompt_config:
+    default_prompt_name: Debate Prompt
+    file_path: null
+    hardcoded_topic_config: null
+    is_memorized: false
+    use_hardcoded_topics: false
+  speech_structure: default_debate
+  tournament:
+    custom_matchups: null
+    replication_file_paths: []
+    tournament_type: round_robin
+eval--llama-3-262k-llama-sft-judge-debater_round-one-dpo--llama-3-262k-judge_untrained--lojban:
+  agents:
+    debaters:
+    - best_of_n: null
+      model_settings:
+        alias: llama-3-262k-llama-sft-judge-debater
+        generation_params:
+          do_sample: true
+          max_new_tokens: 2000
+          repetition_penalty: 1.2
+          temperature: 0.5
+          top_p: 1.0
+          use_generation_penalties: false
+        is_human: false
+        model_file_path: /home/ubuntu/mars-arnesen-gh/garethtan/models/trained_models/llama-trained-for-llama-judge-finetuned-round-one
+        model_type: llama3
+        nucleus: true
+        offline_file_path: null
+        override_prompt: null
+        peft_base_model: null
+        probe_hyperparams: null
+        require_quote_validation: true
+        served: false
+      scratchpad:
+        scratchpad_public: false
+        scratchpad_word_limit: null
+        use_scratchpad: false
+    judge:
+      best_of_n: null
+      model_settings:
+        alias: llama-3-262k-judge
+        generation_params:
+          do_sample: true
+          max_new_tokens: 300
+          repetition_penalty: 1.2
+          temperature: 0.5
+          top_p: 1.0
+          use_generation_penalties: false
+        is_human: false
+        model_file_path: /home/ubuntu/mars-arnesen-gh/garethtan/downloaded-models/gradientai/Llama-3-8B-Instruct-262k
+        model_type: llama3
+        nucleus: true
+        offline_file_path: null
+        override_prompt: null
+        peft_base_model: null
+        probe_hyperparams: null
+        require_quote_validation: true
+        served: false
+      scratchpad:
+        scratchpad_public: false
+        scratchpad_word_limit: null
+        use_scratchpad: false
+  alternate: false
+  annotations_classifier_file_path: null
+  batch_size: 1
+  convert_to_double_consultancy: false
+  dataset:
+    combine_train_and_val: false
+    dataset_type: lojban
+    flip_sides: false
+    full_dataset_file_path: null
+    shuffle_deterministically: true
+    split_type: test
+    supplemental_file_paths: {}
+    test_file_path: null
+    train_file_path: null
+    val_file_path: null
+  enable_self_debate: true
+  flip: false
+  multi_round_branching: none
+  num_speeches: 2
+  previous_run: null
+  prompt_config:
+    default_prompt_name: Debate Prompt
+    file_path: /home/ubuntu/mars-arnesen-gh/garethtan/prompts/configs/lojban_prompts.yaml
+    hardcoded_topic_config: null
+    is_memorized: false
+    use_hardcoded_topics: false
+  speech_structure: default_debate
+  tournament:
+    custom_matchups: null
+    replication_file_paths: []
+    tournament_type: round_robin
+eval--llama-3-262k-llama-sft-judge-debater_round-one-dpo--llama-3-262k-judge_untrained--quality:
+  agents:
+    debaters:
+    - best_of_n: null
+      model_settings:
+        alias: llama-3-262k-llama-sft-judge-debater
+        generation_params:
+          do_sample: true
+          max_new_tokens: 300
+          repetition_penalty: 1.2
+          temperature: 0.5
+          top_p: 1.0
+          use_generation_penalties: false
+        is_human: false
+        model_file_path: /home/ubuntu/mars-arnesen-gh/garethtan/models/trained_models/llama-trained-for-llama-judge-finetuned-round-one
         model_type: llama3
         nucleus: true
         offline_file_path: null

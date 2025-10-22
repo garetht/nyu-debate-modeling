@@ -11848,3 +11848,22 @@ val - experiment open consultancy - 464.0:
     shuffle_deterministically: True
   tournament:
     tournament_type: self_play_only
+double-mock:
+  batch_size: 1
+  num_speeches: 2
+  flip: False
+  enable_self_debate: True
+  speech_structure: default_debate
+  alternate: False
+  agents:
+    debaters:
+      - model_settings:
+          model_type: mock
+          alias: mock-debater
+    judge:
+      model_settings:
+        model_type: mock
+        alias: mock-judge
+  dataset:
+    dataset_type: quality
+    split_type: val

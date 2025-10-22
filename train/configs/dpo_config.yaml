@@ -2785,7 +2785,7 @@ llama-trained-for-gpt-41-round-one:
         output_dir: /home/ubuntu/mars-arnesen-gh/models/trained_models/llama-trained-for-gpt-41-round-one
     dataset:
         dataset_type: judge_preferences
-        full_dataset_file_path: /home/ubuntu/mars-arnesen-gh/garethtan/outputs/data-generation--llama-3-262k-2025-07-31-debater_sft-only--gpt-4-turbo-2024-04-09-judge_untrained--quality/outputs/transcripts/2025-10-
+        full_dataset_file_path: /home/ubuntu/mars-arnesen-gh/garethtan/outputs/data-generation--llama-3-262k-2025-07-31-debater_sft-only--gpt-41-2025-04-14-judge_untrained--quality/outputs/transcripts/2025-10-
 llama-trained-for-llama-judge-not-finetuned:
     model_name: /home/ubuntu/mars-arnesen-gh/leonidtsyplenkov/models/trained_models/llama-3-mega-merged-no-judge-speeches-31.07
     target: debater
@@ -2837,7 +2837,7 @@ llama-trained-for-llama-judge-finetuned:
         steps: 1
         target_module: all
         supplemental:
-            epoch_size: 1024
+            epoch_size: 512
             save_steps: 16
             reward_type: prob
             loss_type: bon

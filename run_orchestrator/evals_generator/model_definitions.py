@@ -58,13 +58,31 @@ ALL_VALID_DEBATERS: dict[str, DebaterModelConfiguration] = {
             model_file_path="/home/ubuntu/mars-arnesen-gh/leonidtsyplenkov/models/trained_models/llama-3-mega-merged-no-judge-speeches-31.07"
         )
     ),
-    "llama-3-262k-41-judge": DebaterModelConfiguration(
+    "llama-3-262k-41-sfted-judge": DebaterModelConfiguration(
         training_round=DebaterTrainingRound.ROUND_TWO_DPO,
         is_reasoning=False,
         settings=ModelSettings(
             model_type=ModelType.LLAMA3,
             alias="",
             model_file_path="/home/ubuntu/mars-arnesen-gh/garethtan/models/trained_models/llama-3-DPO-811-FullTrainDebateRoundTwo-full-trained"
+        )
+    ),
+    "llama-3-262k-llama-sft-judge": DebaterModelConfiguration(
+        training_round=DebaterTrainingRound.ROUND_ONE_DPO,
+        is_reasoning=False,
+        settings=ModelSettings(
+            model_type=ModelType.LLAMA3,
+            alias="",
+            model_file_path="/home/ubuntu/mars-arnesen-gh/garethtan/models/trained_models/llama-trained-for-llama-judge-finetuned-round-one"
+        )
+    ),
+    "llama-3-262k-4-turbo-judge": DebaterModelConfiguration(
+        training_round=DebaterTrainingRound.ROUND_ONE_DPO,
+        is_reasoning=False,
+        settings=ModelSettings(
+            model_type=ModelType.LLAMA3,
+            alias="",
+            model_file_path="/home/ubuntu/mars-arnesen-gh/garethtan/models/trained_models/llama-trained-for-gpt-4-turbo-round-one"
         )
     ),
     "o4-mini-rft-2025-09-15": DebaterModelConfiguration(

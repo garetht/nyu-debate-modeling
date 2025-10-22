@@ -140,7 +140,12 @@ def generate_eval_configurations(debaters: dict[str, DebaterModelConfiguration],
         name = ConfigurationName.serialize_from_inputs(ConfigurationType.EVAL, debater, judge, task_type_name)
 
         if debater.is_reasoning:
-            task_type_params.generation_params.max_new_tokens = 1500
+            task_type_params = dataclasses.replace(
+                task_type_params,
+                generation_params=task_type_params.generation_params.model_copy(
+                    update={"max_new_tokens": 1500}
+                )
+            )
 
         debater = debater.settings.model_copy(
             update={'generation_params': task_type_params.generation_params}

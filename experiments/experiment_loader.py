@@ -11,6 +11,7 @@ from debate import (
     SpeechFormatStructure,
 )
 from data import DatasetConfig, DatasetType, loader_utils, RawDataLoader, RawDataset, SplitType
+from experiment_models.extant_debates_extractor import ExtantDebateIdentifiersExtractor
 from models import Model, ModelSettings, ModelType, ModelUtils, OfflineModelHelper, ServedModel
 from prompts import Prompt, PromptConfig, PromptLoadingConfig, PromptParser
 from utils import InputType, input_utils, logger_utils

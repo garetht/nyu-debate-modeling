@@ -3,6 +3,7 @@ from models.arbitrary_attribute_model import ArbitraryAttributeModel
 from models.deterministic_model import DeterministicModel
 from models.llm_model import LlamaModel, Llama3Model, MistralModel, StubLLModel, OpenWeightsOpenAIModel
 from models.model import Model, ModelSettings, ModelType
+from models.mock_model import MockModel
 from models.openai_model import OpenAIModel
 from models.random_model import RandomModel
 from models.repetitive_model import RepetitiveModel
@@ -96,6 +97,8 @@ class ModelUtils:
             model = None  # offline models aren't directly instantiated
         elif model_type == ModelType.HUMAN:
             model = None  # offline models aren't directly instantiated
+        elif model_type == ModelType.MOCK:
+            model = MockModel(alias=model_settings.alias, is_debater=is_debater)
         else:
             raise Exception(f"Model {model_type} not found")
 

@@ -4,7 +4,6 @@ import utils.constants as constants
 from pydantic import BaseModel
 from sentence_transformers import SentenceTransformer
 import numpy as np
-import spacy
 import torch.nn as nn
 import torch
 
@@ -77,6 +76,8 @@ class Annotator:
         Params:
             model_path: Path to the pickled classifier model
         """
+        import spacy
+
         self.base = SentenceTransformer("all-MiniLM-L6-v2")
         self.linear = torch.load(model_path or Annotator.DEFAULT_MODEL_PATH)
         self.nlp = spacy.load("en_core_web_sm")

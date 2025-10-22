@@ -1,10 +1,7 @@
 from __future__ import annotations
 
-from concurrent.futures import Future
-from dataclasses import dataclass
-from threading import Lock, Thread
-from types import SimpleNamespace
-from typing import Any, Dict, Iterable, List, Optional
+from dataclasses import dataclass, field
+from typing import Dict, Iterable, List, Optional
 
 import io
 import json
@@ -13,23 +10,25 @@ import time
 import uuid
 
 import openai
+from openai.types import Batch
+from openai.types.chat import ChatCompletion
 
 from models.model import SpeechStructure
 
 
-@dataclass(frozen=True)
+@dataclass
 class PendingBatchRequest:
-    """Container for a single pending batch request entry."""
-
     custom_id: str
     messages: List[Dict[str, str]]
     max_new_tokens: int
     speech_structure: SpeechStructure
-    future: Future[SimpleNamespace]
+    result: Optional[ChatCompletion] = None
+    error: Optional[Exception] = None
+    created_at: float = field(default_factory=time.monotonic)
 
 
 class OpenAIBatchRunner:
-    """Collects chat completions and executes them through the OpenAI Batch API."""
+    """Collects chat completions and executes them through the OpenAI Batch API synchronously."""
 
     def __init__(
         self,
@@ -38,18 +37,19 @@ class OpenAIBatchRunner:
         endpoint: str,
         logger: logging.Logger,
         batch_size: int = 8,
-        flush_interval_seconds: float = 0.25,
         poll_interval_seconds: float = 1.0,
+        queue_timeout_seconds: float = 0.25,
+        sleep_interval_seconds: float = 0.01,
     ) -> None:
         self._client = client
         self._endpoint = endpoint
         self._logger = logger
         self._batch_size = batch_size
-        self._flush_interval_seconds = flush_interval_seconds
         self._poll_interval_seconds = poll_interval_seconds
-        self._lock = Lock()
-        self._pending: List[PendingBatchRequest] = []
-        self._flush_thread: Optional[Thread] = None
+        self._queue_timeout_seconds = queue_timeout_seconds
+        self._sleep_interval_seconds = sleep_interval_seconds
+        self._buffer: List[PendingBatchRequest] = []
+        self._buffer_created_at: Optional[float] = None
 
     def execute(
         self,
@@ -57,45 +57,51 @@ class OpenAIBatchRunner:
         messages: List[Dict[str, str]],
         max_new_tokens: int,
         speech_structure: SpeechStructure,
-    ) -> SimpleNamespace:
-        future: Future[SimpleNamespace] = Future()
+    ) -> ChatCompletion:
         request = PendingBatchRequest(
             custom_id=f"debate-{uuid.uuid4().hex}",
             messages=messages,
             max_new_tokens=max_new_tokens,
             speech_structure=speech_structure,
-            future=future,
         )
-        batch = self._enqueue_request(request)
-        if batch:
-            self._launch_batch(batch)
-        return future.result()
+        self._enqueue(request)
+        self._wait_for_completion(request)
+        if request.error:
+            raise request.error
+        if request.result is None:
+            raise RuntimeError("Request completed without a result.")
+        return request.result
 
-    def _enqueue_request(self, request: PendingBatchRequest) -> Optional[List[PendingBatchRequest]]:
-        with self._lock:
-            self._pending.append(request)
-            if len(self._pending) >= self._batch_size:
-                return self._drain_pending()
-            if self._flush_thread is None:
-                self._flush_thread = Thread(target=self._delayed_flush, daemon=True)
-                self._flush_thread.start()
-        return None
+    def _enqueue(self, request: PendingBatchRequest) -> None:
+        self._buffer.append(request)
+        if self._buffer_created_at is None:
+            self._buffer_created_at = request.created_at
+        self._flush_if_ready()
 
-    def _delayed_flush(self) -> None:
-        time.sleep(self._flush_interval_seconds)
-        batch = self._drain_pending()
-        if batch:
-            self._launch_batch(batch)
+    def _wait_for_completion(self, request: PendingBatchRequest) -> None:
+        while request.result is None and request.error is None:
+            if request in self._buffer:
+                if time.monotonic() - (self._buffer_created_at or request.created_at) >= self._queue_timeout_seconds:
+                    self._flush_buffer()
+                else:
+                    time.sleep(self._sleep_interval_seconds)
+            else:
+                time.sleep(self._sleep_interval_seconds)
 
-    def _drain_pending(self) -> Optional[List[PendingBatchRequest]]:
-        with self._lock:
-            if not self._pending:
-                self._flush_thread = None
-                return None
-            pending = list(self._pending)
-            self._pending.clear()
-            self._flush_thread = None
-            return pending
+    def _flush_if_ready(self) -> None:
+        if len(self._buffer) >= self._batch_size:
+            self._flush_buffer()
+        elif self._buffer_created_at is not None:
+            if time.monotonic() - self._buffer_created_at >= self._queue_timeout_seconds:
+                self._flush_buffer()
+
+    def _flush_buffer(self) -> None:
+        if not self._buffer:
+            return
+        requests = list(self._buffer)
+        self._buffer.clear()
+        self._buffer_created_at = None
+        self._launch_batch(requests)
 
     def _launch_batch(self, requests: List[PendingBatchRequest]) -> None:
         self._logger.debug("Launching OpenAI batch with %s requests.", len(requests))
@@ -119,19 +125,14 @@ class OpenAIBatchRunner:
         for request in requests:
             response = responses_by_id.get(request.custom_id)
             if response is None:
-                self._fail_request(
-                    request,
-                    RuntimeError(f"No response found for custom_id={request.custom_id} in batch {batch_job.id}"),
-                )
+                self._record_failure(request, RuntimeError(f"No response found for custom_id={request.custom_id}"))
                 continue
             if "error" in response:
-                self._fail_request(request, RuntimeError(str(response["error"])))
+                self._record_failure(request, RuntimeError(str(response["error"])))
                 continue
-            chat_completion = self._to_namespace(response["body"])
-            request.future.set_result(chat_completion)
-        self._logger.debug(
-            "Finished OpenAI batch %s with %s successful responses.", batch_job.id, len(responses_by_id)
-        )
+            chat_completion = ChatCompletion.model_validate(response["body"])
+            request.result = chat_completion
+        self._logger.debug("Finished OpenAI batch %s with %s responses.", batch_job.id, len(responses_by_id))
 
     def _render_requests(self, requests: Iterable[PendingBatchRequest]) -> bytes:
         rendered_lines = []
@@ -149,20 +150,19 @@ class OpenAIBatchRunner:
             )
         return ("\n".join(rendered_lines)).encode("utf-8")
 
-    def _build_request_body(self, request: PendingBatchRequest) -> Dict[str, Any]:
-        body: Dict[str, Any] = {
+    def _build_request_body(self, request: PendingBatchRequest) -> Dict[str, object]:
+        body: Dict[str, object] = {
             "model": self._endpoint,
             "messages": request.messages,
             "max_completion_tokens": request.max_new_tokens,
             "logprobs": request.speech_structure != SpeechStructure.OPEN_ENDED,
             "top_logprobs": 5 if request.speech_structure != SpeechStructure.OPEN_ENDED else None,
         }
-        reasoning_effort: Optional[str] = "low" if "o4" in self._endpoint else None
-        if reasoning_effort:
-            body["reasoning_effort"] = reasoning_effort
+        if "o4" in self._endpoint:
+            body["reasoning_effort"] = "low"
         return {key: value for key, value in body.items() if value is not None}
 
-    def _poll_batch(self, batch_id: str) -> Any:
+    def _poll_batch(self, batch_id: str) -> Batch:
         batch_job = self._client.batches.retrieve(batch_id)
         while getattr(batch_job, "status", "") in {"validating", "in_progress", "queued"}:
             time.sleep(self._poll_interval_seconds)
@@ -171,8 +171,9 @@ class OpenAIBatchRunner:
             raise RuntimeError(f"OpenAI batch {batch_id} failed with status={getattr(batch_job, 'status', 'unknown')}")
         return batch_job
 
-    def _parse_output_lines(self, content: str) -> Dict[str, Dict[str, Any]]:
-        responses: Dict[str, Dict[str, Any]] = {}
+    @staticmethod
+    def _parse_output_lines(content: str) -> Dict[str, Dict[str, object]]:
+        responses: Dict[str, Dict[str, object]] = {}
         for line in content.splitlines():
             if not line.strip():
                 continue
@@ -182,15 +183,8 @@ class OpenAIBatchRunner:
 
     def _fail_requests(self, requests: Iterable[PendingBatchRequest], error: Exception) -> None:
         for request in requests:
-            self._fail_request(request, error)
+            self._record_failure(request, error)
 
     @staticmethod
-    def _fail_request(request: PendingBatchRequest, error: Exception) -> None:
-        request.future.set_exception(error)
-
-    def _to_namespace(self, value: Any) -> Any:
-        if isinstance(value, dict):
-            return SimpleNamespace(**{key: self._to_namespace(item) for key, item in value.items()})
-        if isinstance(value, list):
-            return [self._to_namespace(item) for item in value]
-        return value
+    def _record_failure(request: PendingBatchRequest, error: Exception) -> None:
+        request.error = error

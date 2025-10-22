@@ -59,13 +59,18 @@ class FakeBatches:
         for line in lines:
             request = json.loads(line)
             body = {
+                "id": f"chatcmpl-{uuid.uuid4().hex}",
+                "object": "chat.completion",
+                "created": 0,
+                "model": "gpt-4-0125-preview",
                 "choices": [
                     {
-                        "message": {"content": "Hello world"},
-                        "logprobs": {"content": []},
+                        "index": 0,
+                        "message": {"role": "assistant", "content": "Hello world"},
+                        "finish_reason": "stop",
                     }
                 ],
-                "usage": {"completion_tokens": 1},
+                "usage": {"completion_tokens": 1, "prompt_tokens": 1, "total_tokens": 2},
             }
             payload = {
                 "custom_id": request["custom_id"],
@@ -93,8 +98,9 @@ def test_single_request_batch_execution() -> None:
         endpoint="gpt-4-0125-preview",
         logger=logger,
         batch_size=1,
-        flush_interval_seconds=0.0,
         poll_interval_seconds=0.0,
+        queue_timeout_seconds=0.0,
+        sleep_interval_seconds=0.0,
     )
 
     response = runner.execute(
@@ -142,8 +148,9 @@ def test_failed_batch_request_sets_exception() -> None:
         endpoint="gpt-4-0125-preview",
         logger=logger,
         batch_size=1,
-        flush_interval_seconds=0.0,
         poll_interval_seconds=0.0,
+        queue_timeout_seconds=0.0,
+        sleep_interval_seconds=0.0,
     )
 
     with pytest.raises(RuntimeError):
