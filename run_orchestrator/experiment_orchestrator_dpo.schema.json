@@ -1,0 +1,48 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Experiment Orchestrator DPO Configuration Schema",
+  "type": "object",
+  "properties": {
+    "configurations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "instance_ip": {
+            "type": "string",
+            "format": "ipv4"
+          },
+          "home_dir": {
+            "type": "string"
+          },
+          "configuration_filepath": {
+            "type": "string"
+          },
+          "extant_debates_directory": {
+            "type": "string"
+          },
+          "configurations": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "num_iters": {
+                "type": "integer"
+              },
+              "count": {
+                "type": "integer"
+              },
+              "starting_index": {
+                "type": "integer"
+              }
+            },
+            "required": ["name"]
+          }
+        },
+        "required": ["instance_ip", "configurations"]
+      }
+    }
+  },
+  "required": ["configurations"]
+}

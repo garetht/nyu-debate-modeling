@@ -34,6 +34,7 @@ dependencies = [
     "filelock==3.18.0",
     "fonttools==4.58.5",
     "frozenlist==1.7.0",
+    "fastapi==0.115.6",
     "fsspec==2025.3.0",
     "fuzzysearch==0.8.0",
     "gitdb==4.0.12",
@@ -132,6 +133,7 @@ dependencies = [
     "wrapt==1.17.2",
     "xxhash==3.5.0",
     "yarl==1.20.1",
+    "uvicorn>=0.38.0",
 ]
 [dependency-groups]
 # the docker image will handle the installation of torch

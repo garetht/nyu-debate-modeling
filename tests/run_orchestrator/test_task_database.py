@@ -7,7 +7,7 @@ from typing import cast
 
 from pytest import MonkeyPatch
 
-from run_orchestrator.task_database import TaskDatabase
+from run_orchestrator.recorder.task_database import TaskDatabase
 
 
 def _run_timestamp() -> str:

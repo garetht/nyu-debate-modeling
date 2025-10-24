@@ -73,6 +73,16 @@ We have a tool that allows debate experiments in `standard_experiments.yml` to b
 
 To start the command-line tool, run `python run_orchestrator/run_experiments.py`, which allows running the configuration files with `start`, retrieving the results with `download`, merge data collected on multiple instances with `merge-data`, and plot an unsatisfying graph using `graph`.
 
+### Task Database API
+
+We expose the recorded runs via a FastAPI service in `explorer/web/server.py`. Launch it with:
+
+```bash
+uvicorn explorer.web.server:app --reload
+```
+
+By default the server reads `run_orchestrator/recorder/tasks.sqlite3`. Override this location by exporting `TASK_DATABASE_PATH=/path/to/tasks.sqlite3` before starting the service.
+
 # Arnesen's Original Readme
 
 ## Setup
