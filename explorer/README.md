@@ -27,7 +27,7 @@ Press `Ctrl+C` to stop both processes; the script will clean up the FastAPI serv
 
 ## Generate the OpenAPI schema and TypeScript client
 
-The backend exposes an OpenAPI schema that can be exported together with a typed REST client for the frontend via `explorer/web/explorer_backend/generate_schema.py`. The script performs two steps:
+The backend exposes an OpenAPI schema that can be exported together with a typed REST client for the frontend via `explorer/explorer_backend/scripts/generate_schema.py`. The script performs two steps:
 
 1. Instantiate the FastAPI application defined in `explorer/web/explorer_backend/server.py` and write its OpenAPI schema to `schemas/explorer_web_server.schema.json` (created automatically if missing).
 2. Run `npx --yes openapi-typescript-codegen` against that schema to produce a fetch-based TypeScript client under `explorer/web/explorer-frontend/src/clients/explorer`. The script first probes the generator (`npx … --help`) so you get an immediate error if the CLI is unavailable.
@@ -35,7 +35,7 @@ The backend exposes an OpenAPI schema that can be exported together with a typed
 Run the default workflow from the repository root:
 
 ```bash
-python explorer/web/explorer_backend/generate_schema.py
+python explorer/explorer_backend/scripts/generate_schema.py
 ```
 
 The command prints the schema path and client directory after a successful run. You can customise the destinations or the generator invocation:
@@ -48,7 +48,7 @@ The command prints the schema path and client directory after a successful run. 
 For example, to emit the schema next to the backend and generate a node-style client without reinstalling the generator each run:
 
 ```bash
-python explorer/web/explorer_backend/generate_schema.py \
+python explorer/explorer_backend/scripts/generate_schema.py \
   --schema-output explorer/web/schema.json \
   --client-output-dir explorer/web/explorer-frontend/src/clients/explorer-node \
   --generator-command openapi-typescript-codegen \
