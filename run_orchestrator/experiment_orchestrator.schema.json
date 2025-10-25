@@ -1,36 +1,110 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "title": "Experiment Orchestrator Configuration Schema",
-  "type": "object",
-  "properties": {
-    "configurations": {
-      "type": "array",
-      "items": {
-        "type": "object",
-        "properties": {
-          "instance_ip": {
-            "type": "string",
-            "format": "ipv4"
-          },
-          "configurations": {
-            "type": "object",
-            "properties": {
-              "name": {
-                "type": "string"
-              },
-              "num_iters": {
-                "type": "integer"
-              },
-              "count": {
-                "type": "integer"
-              }
-            },
-            "required": ["name", "num_iters", "count"]
-          }
+  "$defs": {
+    "StandardConfigurationDetailsModel": {
+      "additionalProperties": false,
+      "description": "Configuration details required for standard debate runs.",
+      "properties": {
+        "name": {
+          "title": "Name",
+          "type": "string"
         },
-        "required": ["instance_ip", "configurations"]
-      }
+        "num_iters": {
+          "exclusiveMinimum": 0,
+          "title": "Num Iters",
+          "type": "integer"
+        },
+        "count": {
+          "exclusiveMinimum": 0,
+          "title": "Count",
+          "type": "integer"
+        },
+        "starting_index": {
+          "anyOf": [
+            {
+              "minimum": 0,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Starting Index"
+        }
+      },
+      "required": [
+        "name",
+        "num_iters",
+        "count"
+      ],
+      "title": "StandardConfigurationDetailsModel",
+      "type": "object"
+    },
+    "StandardExperimentConfigurationGroupModel": {
+      "additionalProperties": false,
+      "description": "Experiment configuration group used when running the standard start command.",
+      "properties": {
+        "instance_ip": {
+          "format": "ipv4",
+          "title": "Instance Ip",
+          "type": "string"
+        },
+        "configuration_filepath": {
+          "default": "experiments/configs/standard_experiment.yaml",
+          "title": "Configuration Filepath",
+          "type": "string"
+        },
+        "extant_debates_directory": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Extant Debates Directory"
+        },
+        "home_dir": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Home Dir"
+        },
+        "configurations": {
+          "$ref": "#/$defs/StandardConfigurationDetailsModel"
+        }
+      },
+      "required": [
+        "instance_ip",
+        "configurations"
+      ],
+      "title": "StandardExperimentConfigurationGroupModel",
+      "type": "object"
     }
   },
-  "required": ["configurations"]
+  "additionalProperties": false,
+  "description": "Root model describing the structure of the standard experiment YAML file.",
+  "properties": {
+    "configurations": {
+      "items": {
+        "$ref": "#/$defs/StandardExperimentConfigurationGroupModel"
+      },
+      "title": "Configurations",
+      "type": "array"
+    }
+  },
+  "required": [
+    "configurations"
+  ],
+  "title": "Experiment Orchestrator Configuration Schema",
+  "type": "object",
+  "$schema": "http://json-schema.org/draft-07/schema#"
 }

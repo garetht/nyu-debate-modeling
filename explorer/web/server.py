@@ -7,6 +7,7 @@ from pathlib import Path
 from typing import Any, Dict, Final, List, Optional
 
 from fastapi import Depends, FastAPI, HTTPException
+from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 
 from run_orchestrator.recorder.task_database import TaskDatabase
@@ -57,6 +58,20 @@ def get_database() -> TaskDatabase:
 
 
 app = FastAPI(title="Run Orchestrator Task Database API", version="1.0.0")
+
+FRONTEND_ORIGINS: List[str] = [
+    "http://127.0.0.1:5173",
+    "http://localhost:5173",
+    "http://0.0.0.0:5173",
+]
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=FRONTEND_ORIGINS,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 
 def _build_logs_command(ip_address: str, resolved_task_name: str) -> str:

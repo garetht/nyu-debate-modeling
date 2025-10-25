@@ -69,7 +69,17 @@ We generate an additional series of sanity check baselines on top of what Arnese
 
 ## Run Orchestration
 
-We have a tool that allows debate experiments in `standard_experiments.yml` to be run declaratively across our fleet of instances. To do this, create a new configuration file in `run_orchestrator/runs`. The schema for such a configuration file is given by `run_orchestrator/experiment_orchestrator.schema.json`. The output data is saved into a namespaced folder in `outputs` based on the `name` in the configuration (not the filename!). For example, a configuration named `debater-trained` will save its outputs into `outputs/debater-trained`. This allows parallel processes across different instances to save their outputs into the same directory across machines, which makes it possible for us to merge them using the `merge-data` subcommand. 
+We have a tool that allows debate experiments in `standard_experiments.yml` to be run declaratively across our fleet of instances. To do this, create a new configuration file in `run_orchestrator/runs`. The schema for such a configuration file is located at `run_orchestrator/experiment_orchestrator.schema.json`. The output data is saved into a namespaced folder in `outputs` based on the `name` in the configuration (not the filename!). For example, a configuration named `debater-trained` will save its outputs into `outputs/debater-trained`. This allows parallel processes across different instances to save their outputs into the same directory across machines, which makes it possible for us to merge them using the `merge-data` subcommand. 
+
+For the DPO workflow, create configuration files in `run_orchestrator/runs_dpo` and reference the schema at `run_orchestrator/experiment_orchestrator_dpo.schema.json`.
+
+Both schema files are generated automatically from the FastAPI configuration models. Whenever the models change, regenerate the artifacts with:
+
+```bash
+PATH="/Users/garethtan/Library/CloudStorage/Dropbox/Programs/research/nyu-debate-modeling/.venv/bin:$PATH" PYTHONPATH=. python scripts/export_openapi_schemas.py
+```
+
+This command writes the updated schemas plus an accompanying OpenAPI document to `run_orchestrator/experiment_orchestrator.openapi.json`.
 
 To start the command-line tool, run `python run_orchestrator/run_experiments.py`, which allows running the configuration files with `start`, retrieving the results with `download`, merge data collected on multiple instances with `merge-data`, and plot an unsatisfying graph using `graph`.
 

@@ -1,0 +1,381 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Experiment Orchestrator Configuration API",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/configurations/start": {
+      "post": {
+        "summary": "Validate a standard experiment configuration",
+        "description": "Echo the provided standard configuration so FastAPI can surface its schema.",
+        "operationId": "validate_standard_configuration_configurations_start_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/StandardExperimentConfigurationModel-Input"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardExperimentConfigurationModel-Output"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/configurations/start-dpo": {
+      "post": {
+        "summary": "Validate a start-dpo experiment configuration",
+        "description": "Echo the provided DPO configuration so FastAPI can surface its schema.",
+        "operationId": "validate_dpo_configuration_configurations_start_dpo_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DPOExperimentConfigurationModel-Input"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DPOExperimentConfigurationModel-Output"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "DPOConfigurationDetailsModel": {
+        "properties": {
+          "name": {
+            "type": "string",
+            "title": "Name"
+          },
+          "num_iters": {
+            "type": "integer",
+            "exclusiveMinimum": 0.0,
+            "title": "Num Iters",
+            "default": 1
+          },
+          "count": {
+            "type": "integer",
+            "exclusiveMinimum": 0.0,
+            "title": "Count",
+            "default": 1
+          },
+          "starting_index": {
+            "anyOf": [
+              {
+                "type": "integer",
+                "minimum": 0.0
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Starting Index"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "name"
+        ],
+        "title": "DPOConfigurationDetailsModel",
+        "description": "Configuration details where iteration parameters are optional for DPO runs."
+      },
+      "DPOExperimentConfigurationGroupModel": {
+        "properties": {
+          "instance_ip": {
+            "type": "string",
+            "format": "ipv4",
+            "title": "Instance Ip"
+          },
+          "configuration_filepath": {
+            "type": "string",
+            "title": "Configuration Filepath",
+            "default": "experiments/configs/standard_experiment.yaml"
+          },
+          "extant_debates_directory": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Extant Debates Directory"
+          },
+          "home_dir": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Home Dir"
+          },
+          "configurations": {
+            "$ref": "#/components/schemas/DPOConfigurationDetailsModel"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "instance_ip",
+          "configurations"
+        ],
+        "title": "DPOExperimentConfigurationGroupModel",
+        "description": "Experiment configuration group used when running the start-dpo command."
+      },
+      "DPOExperimentConfigurationModel-Input": {
+        "properties": {
+          "configurations": {
+            "items": {
+              "$ref": "#/components/schemas/DPOExperimentConfigurationGroupModel"
+            },
+            "type": "array",
+            "title": "Configurations"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "configurations"
+        ],
+        "title": "Experiment Orchestrator DPO Configuration Schema",
+        "description": "Root model describing the structure of the start-dpo experiment YAML file."
+      },
+      "DPOExperimentConfigurationModel-Output": {
+        "properties": {
+          "configurations": {
+            "items": {
+              "$ref": "#/components/schemas/DPOExperimentConfigurationGroupModel"
+            },
+            "type": "array",
+            "title": "Configurations"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "configurations"
+        ],
+        "title": "Experiment Orchestrator DPO Configuration Schema",
+        "description": "Root model describing the structure of the start-dpo experiment YAML file."
+      },
+      "HTTPValidationError": {
+        "properties": {
+          "detail": {
+            "items": {
+              "$ref": "#/components/schemas/ValidationError"
+            },
+            "type": "array",
+            "title": "Detail"
+          }
+        },
+        "type": "object",
+        "title": "HTTPValidationError"
+      },
+      "StandardConfigurationDetailsModel": {
+        "properties": {
+          "name": {
+            "type": "string",
+            "title": "Name"
+          },
+          "num_iters": {
+            "type": "integer",
+            "exclusiveMinimum": 0.0,
+            "title": "Num Iters"
+          },
+          "count": {
+            "type": "integer",
+            "exclusiveMinimum": 0.0,
+            "title": "Count"
+          },
+          "starting_index": {
+            "anyOf": [
+              {
+                "type": "integer",
+                "minimum": 0.0
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Starting Index"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "name",
+          "num_iters",
+          "count"
+        ],
+        "title": "StandardConfigurationDetailsModel",
+        "description": "Configuration details required for standard debate runs."
+      },
+      "StandardExperimentConfigurationGroupModel": {
+        "properties": {
+          "instance_ip": {
+            "type": "string",
+            "format": "ipv4",
+            "title": "Instance Ip"
+          },
+          "configuration_filepath": {
+            "type": "string",
+            "title": "Configuration Filepath",
+            "default": "experiments/configs/standard_experiment.yaml"
+          },
+          "extant_debates_directory": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Extant Debates Directory"
+          },
+          "home_dir": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Home Dir"
+          },
+          "configurations": {
+            "$ref": "#/components/schemas/StandardConfigurationDetailsModel"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "instance_ip",
+          "configurations"
+        ],
+        "title": "StandardExperimentConfigurationGroupModel",
+        "description": "Experiment configuration group used when running the standard start command."
+      },
+      "StandardExperimentConfigurationModel-Input": {
+        "properties": {
+          "configurations": {
+            "items": {
+              "$ref": "#/components/schemas/StandardExperimentConfigurationGroupModel"
+            },
+            "type": "array",
+            "title": "Configurations"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "configurations"
+        ],
+        "title": "Experiment Orchestrator Configuration Schema",
+        "description": "Root model describing the structure of the standard experiment YAML file."
+      },
+      "StandardExperimentConfigurationModel-Output": {
+        "properties": {
+          "configurations": {
+            "items": {
+              "$ref": "#/components/schemas/StandardExperimentConfigurationGroupModel"
+            },
+            "type": "array",
+            "title": "Configurations"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "configurations"
+        ],
+        "title": "Experiment Orchestrator Configuration Schema",
+        "description": "Root model describing the structure of the standard experiment YAML file."
+      },
+      "ValidationError": {
+        "properties": {
+          "loc": {
+            "items": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "integer"
+                }
+              ]
+            },
+            "type": "array",
+            "title": "Location"
+          },
+          "msg": {
+            "type": "string",
+            "title": "Message"
+          },
+          "type": {
+            "type": "string",
+            "title": "Error Type"
+          }
+        },
+        "type": "object",
+        "required": [
+          "loc",
+          "msg",
+          "type"
+        ],
+        "title": "ValidationError"
+      }
+    }
+  }
+}

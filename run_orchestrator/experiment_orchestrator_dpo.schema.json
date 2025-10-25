@@ -1,48 +1,110 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "title": "Experiment Orchestrator DPO Configuration Schema",
-  "type": "object",
-  "properties": {
-    "configurations": {
-      "type": "array",
-      "items": {
-        "type": "object",
-        "properties": {
-          "instance_ip": {
-            "type": "string",
-            "format": "ipv4"
-          },
-          "home_dir": {
-            "type": "string"
-          },
-          "configuration_filepath": {
-            "type": "string"
-          },
-          "extant_debates_directory": {
-            "type": "string"
-          },
-          "configurations": {
-            "type": "object",
-            "properties": {
-              "name": {
-                "type": "string"
-              },
-              "num_iters": {
-                "type": "integer"
-              },
-              "count": {
-                "type": "integer"
-              },
-              "starting_index": {
-                "type": "integer"
-              }
-            },
-            "required": ["name"]
-          }
+  "$defs": {
+    "DPOConfigurationDetailsModel": {
+      "additionalProperties": false,
+      "description": "Configuration details where iteration parameters are optional for DPO runs.",
+      "properties": {
+        "name": {
+          "title": "Name",
+          "type": "string"
         },
-        "required": ["instance_ip", "configurations"]
-      }
+        "num_iters": {
+          "default": 1,
+          "exclusiveMinimum": 0,
+          "title": "Num Iters",
+          "type": "integer"
+        },
+        "count": {
+          "default": 1,
+          "exclusiveMinimum": 0,
+          "title": "Count",
+          "type": "integer"
+        },
+        "starting_index": {
+          "anyOf": [
+            {
+              "minimum": 0,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Starting Index"
+        }
+      },
+      "required": [
+        "name"
+      ],
+      "title": "DPOConfigurationDetailsModel",
+      "type": "object"
+    },
+    "DPOExperimentConfigurationGroupModel": {
+      "additionalProperties": false,
+      "description": "Experiment configuration group used when running the start-dpo command.",
+      "properties": {
+        "instance_ip": {
+          "format": "ipv4",
+          "title": "Instance Ip",
+          "type": "string"
+        },
+        "configuration_filepath": {
+          "default": "experiments/configs/standard_experiment.yaml",
+          "title": "Configuration Filepath",
+          "type": "string"
+        },
+        "extant_debates_directory": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Extant Debates Directory"
+        },
+        "home_dir": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Home Dir"
+        },
+        "configurations": {
+          "$ref": "#/$defs/DPOConfigurationDetailsModel"
+        }
+      },
+      "required": [
+        "instance_ip",
+        "configurations"
+      ],
+      "title": "DPOExperimentConfigurationGroupModel",
+      "type": "object"
     }
   },
-  "required": ["configurations"]
+  "additionalProperties": false,
+  "description": "Root model describing the structure of the start-dpo experiment YAML file.",
+  "properties": {
+    "configurations": {
+      "items": {
+        "$ref": "#/$defs/DPOExperimentConfigurationGroupModel"
+      },
+      "title": "Configurations",
+      "type": "array"
+    }
+  },
+  "required": [
+    "configurations"
+  ],
+  "title": "Experiment Orchestrator DPO Configuration Schema",
+  "type": "object",
+  "$schema": "http://json-schema.org/draft-07/schema#"
 }
