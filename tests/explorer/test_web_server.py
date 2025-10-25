@@ -6,7 +6,7 @@ from typing import Any, Dict, List
 import pytest
 from fastapi.testclient import TestClient
 
-from explorer.web import server
+from explorer.explorer_backend import server
 from run_orchestrator.recorder.task_database import TaskDatabase
 
 

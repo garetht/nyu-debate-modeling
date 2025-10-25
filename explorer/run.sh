@@ -2,7 +2,7 @@
 set -euo pipefail
 
 REPO_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
-FRONTEND_DIR="${REPO_ROOT}/explorer/web/explorer-frontend"
+FRONTEND_DIR="${REPO_ROOT}/explorer/explorer-frontend"
 
 if [[ -n "${PYTHONPATH:-}" ]]; then
   export PYTHONPATH="${REPO_ROOT}:${PYTHONPATH}"
@@ -29,7 +29,7 @@ trap handle_signal INT TERM
 
 (
   cd "${REPO_ROOT}"
-  python -m explorer.web.explorer_backend.server
+  python -m explorer.explorer_backend.server
 ) &
 SERVER_PID=$!
 

@@ -88,7 +88,7 @@ To start the command-line tool, run `python run_orchestrator/run_experiments.py`
 We expose the recorded runs via a FastAPI service in `explorer/web/explorer_backend/server.py`. Launch it with:
 
 ```bash
-uvicorn explorer.web.explorer_backend.server:app --reload
+uvicorn explorer.explorer_backend.server:app --reload
 ```
 
 By default the server reads `run_orchestrator/recorder/tasks.sqlite3`. Override this location by exporting `TASK_DATABASE_PATH=/path/to/tasks.sqlite3` before starting the service.
