@@ -12,3 +12,10 @@ body {
 #app {
   min-height: 100vh;
 }
+
+.log-stream-container {
+  max-height: 19em;
+  overflow-y: auto;
+  white-space: pre-wrap;
+  line-height: 1.25;
+}

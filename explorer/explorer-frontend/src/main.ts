@@ -22,6 +22,249 @@ const configureApiBase = (): void => {
   OpenAPI.BASE = envBase && envBase.trim().length > 0 ? envBase : 'http://127.0.0.1:8067';
 };
 
+const LOG_TAIL_LINE_COUNT = 150;
+
+type LogElements = {
+  wrapper: HTMLElement;
+  status: HTMLElement;
+  content: HTMLElement;
+};
+
+type StreamContext = {
+  socket: WebSocket;
+  button: HTMLButtonElement;
+  elements: LogElements;
+  closedByClient: boolean;
+  runId: number;
+  container: HTMLElement;
+};
+
+const activeLogStreams = new Map<number, StreamContext>();
+
+const normaliseBaseUrl = (base: string | undefined): string => {
+  if (!base || base.trim().length === 0) {
+    return 'http://127.0.0.1:8067';
+  }
+  return base.replace(/\/+$/u, '');
+};
+
+const toWebSocketBase = (base: string): string => {
+  if (base.startsWith('https://')) {
+    return `wss://${base.slice('https://'.length)}`;
+  }
+  if (base.startsWith('http://')) {
+    return `ws://${base.slice('http://'.length)}`;
+  }
+  if (base.startsWith('wss://') || base.startsWith('ws://')) {
+    return base;
+  }
+  return `ws://${base}`;
+};
+
+const buildLogStreamUrl = (subtaskId: number): string => {
+  const httpBase = normaliseBaseUrl(OpenAPI.BASE);
+  const wsBase = toWebSocketBase(httpBase);
+  return `${wsBase}/subtasks/${subtaskId}/logs?last_lines=${LOG_TAIL_LINE_COUNT}`;
+};
+
+const findLogElements = (root: ParentNode, subtaskId: number): LogElements | null => {
+  const wrapper = root.querySelector<HTMLElement>(`[data-log-wrapper="${subtaskId}"]`);
+  const status = root.querySelector<HTMLElement>(`[data-log-status="${subtaskId}"]`);
+  const content = root.querySelector<HTMLElement>(`[data-log-content="${subtaskId}"]`);
+  if (!wrapper || !status || !content) {
+    return null;
+  }
+  return { wrapper, status, content };
+};
+
+const appendLogLine = (element: HTMLElement, line: string): void => {
+  const existing = element.textContent ?? '';
+  element.textContent = existing.length > 0 ? `${existing}\n${line}` : line;
+  element.scrollTop = element.scrollHeight;
+};
+
+const isRunStreaming = (runId: number): boolean =>
+  Array.from(activeLogStreams.values()).some((context) => context.runId === runId);
+
+const updateRunStreamButton = (runId: number, container: HTMLElement): void => {
+  const button = container.querySelector<HTMLButtonElement>(`[data-action="stream-all"]`);
+  if (!button) {
+    return;
+  }
+  const anyActive = isRunStreaming(runId);
+  button.textContent = anyActive ? 'Stop All Log Streams' : 'Start All Log Streams';
+  button.dataset.streaming = anyActive ? 'true' : 'false';
+  button.disabled = false;
+};
+
+const stopLogStream = (subtaskId: number): void => {
+  const context = activeLogStreams.get(subtaskId);
+  if (!context) {
+    return;
+  }
+  context.closedByClient = true;
+  context.button.disabled = true;
+  context.elements.status.textContent = 'Stopping stream…';
+  try {
+    context.socket.close(1000, 'Client requested stop');
+  } catch {
+    context.button.disabled = false;
+    context.button.dataset.streaming = 'false';
+    context.button.textContent = 'Start Log Stream';
+    context.elements.status.textContent = 'Stream stopped.';
+  }
+};
+
+const startLogStream = (
+  subtaskId: number,
+  runId: number,
+  button: HTMLButtonElement,
+  root: HTMLElement,
+): void => {
+  const elements = findLogElements(root, subtaskId);
+  if (!elements) {
+    return;
+  }
+
+  elements.wrapper.classList.remove('hidden');
+  elements.status.textContent = 'Connecting…';
+  elements.content.textContent = '';
+  button.disabled = true;
+  button.dataset.streaming = 'pending';
+  button.textContent = 'Connecting…';
+
+  const socket = new WebSocket(buildLogStreamUrl(subtaskId));
+  const context: StreamContext = {
+    socket,
+    button,
+    elements,
+    closedByClient: false,
+    runId,
+    container: root,
+  };
+
+  activeLogStreams.set(subtaskId, context);
+  updateRunStreamButton(runId, root);
+
+  socket.addEventListener('open', () => {
+    context.button.disabled = false;
+    context.button.dataset.streaming = 'true';
+    context.button.textContent = 'Stop Log Stream';
+    context.elements.status.textContent = `Streaming last ${LOG_TAIL_LINE_COUNT} lines…`;
+    updateRunStreamButton(context.runId, context.container);
+  });
+
+  socket.addEventListener('message', (event: MessageEvent) => {
+    const data = typeof event.data === 'string' ? event.data : '';
+    if (data.length > 0) {
+      appendLogLine(context.elements.content, data);
+    }
+  });
+
+  socket.addEventListener('error', () => {
+    context.elements.status.textContent = 'Error streaming logs.';
+  });
+
+  socket.addEventListener('close', (event: CloseEvent) => {
+    activeLogStreams.delete(subtaskId);
+    updateRunStreamButton(context.runId, context.container);
+    context.button.disabled = false;
+    context.button.dataset.streaming = 'false';
+    context.button.textContent = 'Start Log Stream';
+    context.elements.status.textContent = context.closedByClient
+      ? 'Stream stopped.'
+      : `Connection closed (code ${event.code}).`;
+  });
+};
+
+const attachLogStreamHandlers = (root: ParentNode): void => {
+  const buttons = root.querySelectorAll<HTMLButtonElement>('[data-action="stream-logs"]');
+  buttons.forEach((button) => {
+    if (button.dataset.logHandlerAttached === 'true') {
+      return;
+    }
+    button.dataset.logHandlerAttached = 'true';
+    button.addEventListener('click', () => {
+      const idAttr = button.dataset.subtaskId;
+      const runIdAttr = button.dataset.runId;
+      if (!idAttr) {
+        return;
+      }
+      const subtaskId = Number.parseInt(idAttr, 10);
+      const runId = runIdAttr ? Number.parseInt(runIdAttr, 10) : Number.NaN;
+      if (Number.isNaN(subtaskId)) {
+        return;
+      }
+      const runElement = button.closest<HTMLElement>('[data-run-container="true"]');
+      if (!runElement || Number.isNaN(runId)) {
+        return;
+      }
+      if (activeLogStreams.has(subtaskId)) {
+        stopLogStream(subtaskId);
+      } else {
+        startLogStream(subtaskId, runId, button, runElement);
+      }
+    });
+  });
+
+  const runButtons = root.querySelectorAll<HTMLButtonElement>('[data-action="stream-all"]');
+  runButtons.forEach((button) => {
+    if (button.dataset.logHandlerAttached === 'true') {
+      return;
+    }
+    button.dataset.logHandlerAttached = 'true';
+    button.addEventListener('click', () => {
+      const runIdAttr = button.dataset.runId;
+      if (!runIdAttr) {
+        return;
+      }
+      const runId = Number.parseInt(runIdAttr, 10);
+      if (Number.isNaN(runId)) {
+        return;
+      }
+      const runElement = button.closest<HTMLElement>('[data-run-container="true"]');
+      if (!runElement) {
+        return;
+      }
+      if (isRunStreaming(runId)) {
+        button.disabled = true;
+        button.textContent = 'Stopping all streams…';
+        const activeIds = Array.from(activeLogStreams.entries())
+          .filter(([, context]) => context.runId === runId)
+          .map(([id]) => id);
+        activeIds.forEach((id) => {
+          stopLogStream(id);
+        });
+      } else {
+        button.disabled = true;
+        button.textContent = 'Starting log streams…';
+        const subtaskButtons = runElement.querySelectorAll<HTMLButtonElement>(
+          `[data-action="stream-logs"][data-run-id="${runId}"]`,
+        );
+        subtaskButtons.forEach((subtaskButton) => {
+          const subtaskIdAttr = subtaskButton.dataset.subtaskId;
+          if (!subtaskIdAttr) {
+            return;
+          }
+          const subtaskId = Number.parseInt(subtaskIdAttr, 10);
+          if (Number.isNaN(subtaskId) || activeLogStreams.has(subtaskId)) {
+            return;
+          }
+          startLogStream(subtaskId, runId, subtaskButton, runElement);
+        });
+        updateRunStreamButton(runId, runElement);
+      }
+    });
+  });
+};
+
+const stopAllLogStreams = (): void => {
+  const ids = Array.from(activeLogStreams.keys());
+  ids.forEach((subtaskId) => {
+    stopLogStream(subtaskId);
+  });
+};
+
 const escapeHtml = (value: string): string =>
   value.replace(/[&<>"']/g, (character: string): string => {
     switch (character) {
@@ -55,7 +298,7 @@ const formatDateTime = (value: string): string => {
   }
 };
 
-const renderSubtask = (subtask: RunWithSubtasksResponse['subtasks'][number]): string => {
+const renderSubtask = (subtask: RunWithSubtasksResponse['subtasks'][number], runId: number): string => {
   const configuration = JSON.stringify(subtask.configuration ?? {}, null, 2);
   return `
     <li class="rounded-xl border border-slate-800/80 bg-slate-900/60 p-5 shadow-sm shadow-slate-950/20 transition hover:border-sky-500/60 hover:shadow-sky-500/20">
@@ -115,6 +358,33 @@ const renderSubtask = (subtask: RunWithSubtasksResponse['subtasks'][number]): st
           configuration,
         )}</pre>
       </details>
+      <div class="mt-6 space-y-3">
+        <div class="flex flex-wrap items-center justify-between gap-3">
+          <button
+            type="button"
+            class="inline-flex items-center gap-2 rounded-lg border border-sky-600/60 bg-sky-600/10 px-4 py-2 text-sm font-medium text-sky-200 transition hover:border-sky-400 hover:bg-sky-500/20"
+            data-action="stream-logs"
+            data-subtask-id="${escapeHtml(String(subtask.id))}"
+            data-run-id="${escapeHtml(String(runId))}"
+          >
+            Start Log Stream
+          </button>
+          <span class="text-xs text-slate-400">Streams the latest ${LOG_TAIL_LINE_COUNT} lines in real time.</span>
+        </div>
+        <div
+          class="hidden space-y-3 rounded-xl border border-sky-800/40 bg-slate-950/70 p-4 shadow-inner shadow-sky-900/40"
+          data-log-wrapper="${escapeHtml(String(subtask.id))}"
+        >
+          <div class="flex flex-wrap items-center justify-between gap-2 text-xs text-slate-400">
+            <span data-log-status="${escapeHtml(String(subtask.id))}">Stream not started.</span>
+            <span class="font-mono text-[11px] text-slate-500">last ${LOG_TAIL_LINE_COUNT} lines</span>
+          </div>
+          <pre
+            class="log-stream-container rounded-lg border border-slate-800/80 bg-slate-950/80 p-3 text-xs text-slate-200"
+            data-log-content="${escapeHtml(String(subtask.id))}"
+          ></pre>
+        </div>
+      </div>
     </li>
   `;
 };
@@ -123,12 +393,16 @@ const renderRun = (run: RunWithSubtasksResponse): string => {
   const subtasksMarkup =
     run.subtasks.length > 0
       ? `<ul class="mt-6 space-y-4">${run.subtasks
-          .map((subtask) => renderSubtask(subtask))
+          .map((subtask) => renderSubtask(subtask, run.id))
           .join('')}</ul>`
       : `<p class="mt-6 rounded-xl border border-dashed border-slate-800/70 bg-slate-900/40 px-4 py-6 text-sm text-slate-400">No subtasks recorded for this run yet.</p>`;
 
   return `
-    <article class="rounded-3xl border border-slate-800/80 bg-slate-900/40 p-8 shadow-lg shadow-slate-950/20 backdrop-blur transition hover:border-sky-500/60 hover:shadow-sky-500/20">
+    <article
+      class="rounded-3xl border border-slate-800/80 bg-slate-900/40 p-8 shadow-lg shadow-slate-950/20 backdrop-blur transition hover:border-sky-500/60 hover:shadow-sky-500/20"
+      data-run-id="${escapeHtml(String(run.id))}"
+      data-run-container="true"
+    >
       <div class="flex flex-wrap items-baseline justify-between gap-x-8 gap-y-4 border-b border-slate-800/60 pb-6">
         <div>
           <p class="text-xs font-semibold uppercase tracking-[0.35em] text-sky-400">Run #${escapeHtml(
@@ -142,6 +416,14 @@ const renderRun = (run: RunWithSubtasksResponse): string => {
           )}</p>
         </div>
         <div class="flex flex-col items-end gap-2 text-right text-xs text-slate-400">
+          <button
+            type="button"
+            class="inline-flex items-center gap-2 self-end rounded-lg border border-sky-600/60 bg-sky-600/10 px-4 py-2 text-sm font-medium text-sky-200 transition hover:border-sky-400 hover:bg-sky-500/20"
+            data-action="stream-all"
+            data-run-id="${escapeHtml(String(run.id))}"
+          >
+            Start All Log Streams
+          </button>
           <div class="flex max-w-xs flex-wrap justify-end gap-2 rounded-lg bg-slate-950/80 px-3 py-2 text-right">
             <span class="text-slate-500">YAML</span>
             <span class="font-mono text-[11px] text-slate-200 break-all">${escapeHtml(run.yaml_path)}</span>
@@ -242,6 +524,7 @@ const bootstrap = async (): Promise<void> => {
   }
 
   const setState = (state: LoadingState): void => {
+    stopAllLogStreams();
     renderState(runsContainer, state);
 
     if (state.status === 'error') {
@@ -249,6 +532,11 @@ const bootstrap = async (): Promise<void> => {
       retryButton?.addEventListener('click', () => {
         void loadRuns();
       });
+      return;
+    }
+
+    if (state.status === 'ready') {
+      attachLogStreamHandlers(runsContainer);
     }
   };
 
