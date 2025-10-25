@@ -1,6 +1,8 @@
 from __future__ import annotations
 
 import os
+import sqlite3
+from dataclasses import dataclass
 from pathlib import Path
 from typing import Dict, Final, List
 
@@ -51,17 +53,20 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-DEFAULT_SSH_HOST: Final[str] = "192.222.57.237"
 DEFAULT_SSH_USERNAME: Final[str] = "ubuntu"
 DEFAULT_SSH_IDENTITY: Final[Path] = Path("~/.ssh/lambda-labs.pem")
-DEFAULT_REMOTE_LOG_DIR: Final[Path] = Path("/home/ubuntu/mars-arnesen-gh/garethtan/logs")
 DEFAULT_LAST_LINES: Final[int] = 200
 DEFAULT_KEEPALIVE_SECONDS: Final[int] = 30
 
 
-def get_ssh_client() -> SSHFileClient:
-    """Construct a new SSH file client using environment overrides when available."""
-    host: str = os.environ.get("EXPLORER_SSH_HOST", DEFAULT_SSH_HOST)
+@dataclass(frozen=True)
+class SubtaskLogLocation:
+    ip_address: str
+    log_path: str
+
+
+def _create_ssh_client(host: str) -> SSHFileClient:
+    """Construct a new SSH file client for the provided host."""
     username: str = os.environ.get("EXPLORER_SSH_USERNAME", DEFAULT_SSH_USERNAME)
     identity_str: str = os.environ.get("EXPLORER_SSH_IDENTITY", str(DEFAULT_SSH_IDENTITY))
     identity_path: str = str(Path(identity_str).expanduser())
@@ -73,12 +78,6 @@ def get_ssh_client() -> SSHFileClient:
         private_key_path=identity_path,
     )
     return SSHFileClient(config=config, keepalive_interval=DEFAULT_KEEPALIVE_SECONDS)
-
-
-def get_remote_log_dir() -> Path:
-    """Return the base directory that stores remote log files."""
-    remote_dir = Path(os.environ.get("EXPLORER_REMOTE_LOG_DIR", str(DEFAULT_REMOTE_LOG_DIR)))
-    return remote_dir
 
 
 class FastAPIWebSocketSender(WebSocketSender):
@@ -182,7 +181,7 @@ def list_subtasks(
 async def stream_subtask_logs(
     websocket: WebSocket,
     subtask_id: str,
-    ssh_client: SSHFileClient = Depends(get_ssh_client),
+    database: TaskDatabase = Depends(get_database),
 ) -> None:
     """Stream the most recent log lines for a subtask over a WebSocket connection."""
     await websocket.accept()
@@ -194,22 +193,23 @@ async def stream_subtask_logs(
         return
 
     try:
-        remote_path = _build_remote_log_path(subtask_id)
+        log_location = _fetch_subtask_log_location(subtask_id, database=database)
     except ValueError as error:
         await websocket.send_text(str(error))
         await websocket.close(code=1003)
         return
 
     sender = FastAPIWebSocketSender(websocket)
+    ssh_client = _create_ssh_client(host=log_location.ip_address)
     try:
-        await ssh_client.stream_last_lines(sender, remote_path, last_lines)
+        await ssh_client.stream_last_lines(sender, log_location.log_path, last_lines)
     except WebSocketDisconnect:
         return
     except SSHStreamingError as error:
         await websocket.send_text(f"Streaming error: {error}")
         await websocket.close(code=1011)
-    except Exception:
-        await websocket.close(code=1011)
+    except Exception as e:
+        await websocket.close(code=1011, reason=e.__class__.__name__)
         raise
 
 
@@ -226,13 +226,34 @@ def _parse_last_lines(raw_value: str | None) -> int:
     return value
 
 
-def _build_remote_log_path(subtask_id: str) -> str:
-    """Translate a subtask identifier into its corresponding remote log path."""
-    safe_name = Path(subtask_id).name
-    if not safe_name:
-        raise ValueError("subtask_id must not be empty.")
-    log_dir = get_remote_log_dir()
-    return str(log_dir / f"{safe_name}.log")
+def _fetch_subtask_log_location(subtask_id: str, database: TaskDatabase) -> SubtaskLogLocation:
+    """Retrieve connection metadata for the given subtask identifier."""
+    try:
+        subtask_key = int(subtask_id)
+    except ValueError as error:
+        raise ValueError("subtask_id must be an integer.") from error
+
+    with database._connect() as connection:
+        connection.row_factory = sqlite3.Row
+        row = connection.execute(
+            """
+            SELECT ip_address, log_path
+            FROM run_subtasks
+            WHERE id = ?;
+            """,
+            (subtask_key,),
+        ).fetchone()
+
+    if row is None:
+        raise ValueError(f"Subtask {subtask_key} was not found.")
+
+    ip_address = str(row["ip_address"])
+    log_path = str(row["log_path"])
+    if not ip_address:
+        raise ValueError("Subtask is missing an ip_address.")
+    if not log_path:
+        raise ValueError("Subtask is missing a log_path.")
+    return SubtaskLogLocation(ip_address=ip_address, log_path=log_path)
 
 
 if __name__ == "__main__":
