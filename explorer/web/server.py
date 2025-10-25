@@ -4,7 +4,7 @@ import json
 import os
 import sqlite3
 from pathlib import Path
-from typing import Any, Dict, List, Optional
+from typing import Any, Dict, Final, List, Optional
 
 from fastapi import Depends, FastAPI, HTTPException
 from pydantic import BaseModel
@@ -12,6 +12,7 @@ from pydantic import BaseModel
 from run_orchestrator.recorder.task_database import TaskDatabase
 
 DEFAULT_DATABASE_PATH = Path("run_orchestrator/recorder/tasks.sqlite3")
+SERVER_PORT: Final[int] = 8067
 
 
 class RunTaskResponse(BaseModel):
@@ -204,6 +205,12 @@ def list_run_subtasks(run_id: int, database: TaskDatabase = Depends(get_database
     if run is None:
         raise HTTPException(status_code=404, detail=f"Run with id {run_id} not found.")
     return _fetch_subtasks(database, run_id=run_id)
+
+
+if __name__ == "__main__":
+    import uvicorn
+
+    uvicorn.run(app, host="127.0.0.1", port=SERVER_PORT)
 
 
 @app.get("/subtasks", response_model=List[RunSubtaskResponse])
