@@ -3,7 +3,7 @@
 
 from __future__ import annotations
 
-from explorer.app import OutputsExplorerApp
+from explorer.cli.app import OutputsExplorerApp
 
 __all__ = ["OutputsExplorerApp", "main"]
 

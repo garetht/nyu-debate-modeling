@@ -29,7 +29,7 @@ trap handle_signal INT TERM
 
 (
   cd "${REPO_ROOT}"
-  python -m explorer.web.server
+  python -m explorer.web.explorer_backend.server
 ) &
 SERVER_PID=$!
 
