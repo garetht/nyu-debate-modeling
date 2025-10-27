@@ -20,7 +20,16 @@ WORKDIR /app
 COPY pyproject.toml uv.lock ./
 RUN uv sync --no-group cuda
 
-COPY . .
+COPY explorer /app/explorer
+COPY run_orchestrator /app/run_orchestrator
+COPY models /app/models
+COPY schemas /app/schemas
+COPY utils /app/utils
+COPY data /app/data
+COPY prompts /app/prompts
+COPY scripts /app/scripts
+COPY tests /app/tests
+COPY train /app/train
 
 ENV PATH="/app/.venv/bin:$PATH" \
     SRC_ROOT=/app/ \

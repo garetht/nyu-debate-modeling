@@ -17,7 +17,7 @@ services:
       context: ./explorer-frontend
       dockerfile: Dockerfile
       args:
-        VITE_EXPLORER_API_BASE: http://backend:8067
+        VITE_EXPLORER_API_BASE: http://localhost:8067
     depends_on:
       - backend
     ports:
