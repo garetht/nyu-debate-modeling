@@ -10,7 +10,14 @@ from explorer.explorer_backend.models.outputs import (
     OutputsListResponse,
     TranscriptFileResponse,
 )
-from explorer.explorer_backend.models.runs import RunDetailResponse, RunSubtaskResponse, RunTaskResponse, RunWithSubtasksResponse
+from explorer.explorer_backend.models.runs import (
+    RunDetailResponse,
+    RunSubtaskConfigurationName,
+    RunSubtaskModelInfo,
+    RunSubtaskResponse,
+    RunTaskResponse,
+    RunWithSubtasksResponse,
+)
 
 __all__ = [
     "DailyDebateStatsResponse",
@@ -21,6 +28,8 @@ __all__ = [
     "OutputSummaryResponse",
     "OutputsListResponse",
     "RunDetailResponse",
+    "RunSubtaskConfigurationName",
+    "RunSubtaskModelInfo",
     "RunSubtaskResponse",
     "RunTaskResponse",
     "RunWithSubtasksResponse",

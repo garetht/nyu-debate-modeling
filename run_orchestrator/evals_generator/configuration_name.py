@@ -18,8 +18,8 @@ class ConfigurationName:
     _JUDGE_ALIAS_SUFFIX = "-judge"
 
     def serialize(self) -> str:
-        debater_config = self._get_debater_config()
-        judge_config = self._get_judge_config()
+        debater_config = self.debater_config
+        judge_config = self.judge_config
 
         debater_segment = self._serialize_model_segment(
             self._build_debater_alias(self.debater_key),
@@ -59,11 +59,11 @@ class ConfigurationName:
 
     @classmethod
     def serialize_from_inputs(
-        cls,
-        config_type: ConfigurationType,
-        debater: DebaterModelConfiguration,
-        judge: JudgeModelConfiguration,
-        task_type_name: str,
+            cls,
+            config_type: ConfigurationType,
+            debater: DebaterModelConfiguration,
+            judge: JudgeModelConfiguration,
+            task_type_name: str,
     ) -> str:
         if not isinstance(config_type, ConfigurationType):
             raise TypeError("config_type must be provided as a ConfigurationType.")
@@ -82,12 +82,12 @@ class ConfigurationName:
 
     @classmethod
     def _create(
-        cls,
-        *,
-        config_type: ConfigurationType,
-        debater_key: str,
-        judge_key: str,
-        task_type_name: str,
+            cls,
+            *,
+            config_type: ConfigurationType,
+            debater_key: str,
+            judge_key: str,
+            task_type_name: str,
     ) -> "ConfigurationName":
         instance = object.__new__(cls)
         object.__setattr__(instance, "config_type", config_type)
@@ -96,13 +96,15 @@ class ConfigurationName:
         object.__setattr__(instance, "task_type_name", task_type_name)
         return instance
 
-    def _get_debater_config(self) -> DebaterModelConfiguration:
+    @property
+    def debater_config(self) -> DebaterModelConfiguration:
         try:
             return ALL_VALID_DEBATERS[self.debater_key]
         except KeyError as exc:
             raise ValueError(f"Unknown debater '{self.debater_key}'.") from exc
 
-    def _get_judge_config(self) -> JudgeModelConfiguration:
+    @property
+    def judge_config(self) -> JudgeModelConfiguration:
         try:
             return ALL_VALID_JUDGES[self.judge_key]
         except KeyError as exc:
@@ -195,7 +197,7 @@ class ConfigurationName:
 
     @classmethod
     def _normalize_debater_input(
-        cls, debater: DebaterModelConfiguration
+            cls, debater: DebaterModelConfiguration
     ) -> tuple[str, str]:
         if not isinstance(debater, DebaterModelConfiguration):
             raise TypeError("Debater must be provided as a DebaterModelConfiguration.")
@@ -206,7 +208,7 @@ class ConfigurationName:
 
     @classmethod
     def _normalize_judge_input(
-        cls, judge: JudgeModelConfiguration
+            cls, judge: JudgeModelConfiguration
     ) -> tuple[str, str]:
         if not isinstance(judge, JudgeModelConfiguration):
             raise TypeError("Judge must be provided as a JudgeModelConfiguration.")

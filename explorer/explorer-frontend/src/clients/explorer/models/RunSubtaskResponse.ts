@@ -2,7 +2,9 @@
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
+import type { RunSubtaskConfigurationName } from './RunSubtaskConfigurationName';
 export type RunSubtaskResponse = {
+    base_task_configuration?: RunSubtaskConfigurationName;
     base_task_name: string;
     command: string;
     configuration: Record<string, any>;
@@ -14,4 +16,3 @@ export type RunSubtaskResponse = {
     resolved_task_name: string;
     run_task_id: number;
 };
-

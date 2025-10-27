@@ -8,7 +8,7 @@ import React, {
 import { createRoot } from 'react-dom/client';
 
 import './style.css';
-import type { RunWithSubtasksResponse } from './clients/explorer';
+import type { RunSubtaskModelInfo, RunWithSubtasksResponse } from './clients/explorer';
 import { DefaultService, OpenAPI } from './clients/explorer';
 
 type LoadingState =
@@ -447,6 +447,25 @@ const SubtaskCard: React.FC<SubtaskCardProps> = ({
     () => JSON.stringify(subtask.configuration ?? {}, null, 2),
     [subtask.configuration],
   );
+  const baseTaskConfiguration = subtask.base_task_configuration;
+  const baseTaskBadges = useMemo<Array<{ label: string; value: string }>>(() => {
+    if (!baseTaskConfiguration) {
+      return [];
+    }
+    return [
+      { label: 'Config Type', value: baseTaskConfiguration.config_type },
+      { label: 'Task Type', value: baseTaskConfiguration.task_type_name },
+    ];
+  }, [baseTaskConfiguration]);
+  const baseTaskModels = useMemo<Array<{ role: 'Debater' | 'Judge'; info: RunSubtaskModelInfo }>>(() => {
+    if (!baseTaskConfiguration) {
+      return [];
+    }
+    return [
+      { role: 'Debater', info: baseTaskConfiguration.debater },
+      { role: 'Judge', info: baseTaskConfiguration.judge },
+    ];
+  }, [baseTaskConfiguration]);
 
   const showLogPanel =
     streamState.status !== 'idle' || streamState.lines.length > 0 || Boolean(streamState.errorMessage);
@@ -459,6 +478,55 @@ const SubtaskCard: React.FC<SubtaskCardProps> = ({
             {subtask.base_task_name}
           </p>
           <h3 className="text-lg font-semibold text-slate-100">{subtask.resolved_task_name}</h3>
+          {baseTaskConfiguration ? (
+            <div className="mt-3 space-y-3 text-[11px] text-slate-300">
+              {baseTaskBadges.length > 0 ? (
+                <div className="flex flex-wrap gap-2">
+                  {baseTaskBadges.map((detail) => (
+                    <span
+                      key={detail.label}
+                      className="inline-flex items-center gap-2 rounded-full bg-slate-950/70 px-3 py-1"
+                    >
+                      <span className="text-slate-500">{detail.label}</span>
+                      <span className="font-mono text-slate-200">{detail.value}</span>
+                    </span>
+                  ))}
+                </div>
+              ) : null}
+              <div className="grid gap-3 md:grid-cols-2">
+                {baseTaskModels.map(({ role, info }) => (
+                  <div
+                    key={role}
+                    className="rounded-lg border border-slate-800/70 bg-slate-950/60 p-3 shadow-inner shadow-slate-950/30"
+                  >
+                    <p className="text-[10px] font-semibold uppercase tracking-[0.3em] text-sky-300">
+                      {role}
+                    </p>
+                    <dl className="mt-2 space-y-1 text-[11px] text-slate-300">
+                      <div className="flex items-center justify-between gap-2">
+                        <dt className="text-slate-500">Key</dt>
+                        <dd className="font-mono text-slate-200">{info.key}</dd>
+                      </div>
+                      <div className="flex items-center justify-between gap-2">
+                        <dt className="text-slate-500">Training</dt>
+                        <dd className="font-mono text-slate-200">{info.training_round}</dd>
+                      </div>
+                      <div className="flex items-center justify-between gap-2">
+                        <dt className="text-slate-500">Model Type</dt>
+                        <dd className="font-mono text-slate-200">{info.model_type}</dd>
+                      </div>
+                      <div className="flex items-center justify-between gap-2">
+                        <dt className="text-slate-500">Model Path</dt>
+                        <dd className="max-w-[180px] truncate font-mono text-slate-200" title={info.model_file_path ?? ''}>
+                          {info.model_file_path ?? '—'}
+                        </dd>
+                      </div>
+                    </dl>
+                  </div>
+                ))}
+              </div>
+            </div>
+          ) : null}
         </div>
         <div className="text-right text-xs text-slate-400">
           <p className="font-mono text-slate-300">Subtask #{subtask.id}</p>

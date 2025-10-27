@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from typing import Any, Dict, List
+from typing import Any, Dict, List, Optional
 
 from pydantic import BaseModel
 
@@ -10,6 +10,20 @@ class RunTaskResponse(BaseModel):
     run_name: str
     yaml_path: str
     created_at: str
+
+
+class RunSubtaskModelInfo(BaseModel):
+    key: str
+    training_round: str
+    model_type: str
+    model_file_path: Optional[str]
+
+
+class RunSubtaskConfigurationName(BaseModel):
+    config_type: str
+    task_type_name: str
+    debater: RunSubtaskModelInfo
+    judge: RunSubtaskModelInfo
 
 
 class RunSubtaskResponse(BaseModel):
@@ -23,6 +37,7 @@ class RunSubtaskResponse(BaseModel):
     configuration: Dict[str, Any]
     created_at: str
     logs_command: str
+    base_task_configuration: Optional[RunSubtaskConfigurationName] = None
 
 
 class RunWithSubtasksResponse(RunTaskResponse):
@@ -39,4 +54,6 @@ __all__ = [
     "RunSubtaskResponse",
     "RunWithSubtasksResponse",
     "RunDetailResponse",
+    "RunSubtaskConfigurationName",
+    "RunSubtaskModelInfo",
 ]

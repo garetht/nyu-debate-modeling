@@ -4,15 +4,18 @@ import json
 import sqlite3
 from typing import Any, Dict, List
 
-from explorer.errors.runs import RunNotFoundError
-from run_orchestrator.recorder.task_database import TaskDatabase
-
 from explorer.explorer_backend.models import (
     RunDetailResponse,
+    RunSubtaskConfigurationName,
+    RunSubtaskModelInfo,
     RunSubtaskResponse,
     RunTaskResponse,
     RunWithSubtasksResponse,
 )
+from explorer.errors.runs import RunNotFoundError
+from models.model import ModelType
+from run_orchestrator.evals_generator.configuration_name import ConfigurationName
+from run_orchestrator.recorder.task_database import TaskDatabase
 
 
 def _build_logs_command(ip_address: str, resolved_task_name: str) -> str:
@@ -37,6 +40,12 @@ def _row_to_run_task(row: sqlite3.Row) -> RunTaskResponse:
     )
 
 
+def _model_type_to_string(model_type: str | ModelType) -> str:
+    if isinstance(model_type, ModelType):
+        return model_type.name.lower()
+    return str(model_type)
+
+
 def _row_to_subtask(row: sqlite3.Row) -> RunSubtaskResponse:
     raw_configuration: Any = row["configuration_json"]
     configuration: Dict[str, Any]
@@ -47,10 +56,36 @@ def _row_to_subtask(row: sqlite3.Row) -> RunSubtaskResponse:
             configuration = {"raw": raw_configuration}
     else:
         configuration = {"raw": raw_configuration}
+    raw_base_task_name_value: Any = row["base_task_name"]
+    base_task_name: str = str(raw_base_task_name_value)
+    base_task_configuration: RunSubtaskConfigurationName | None = None
+    try:
+        configuration_name: ConfigurationName = ConfigurationName.deserialize(base_task_name)
+    except ValueError:
+        base_task_configuration = None
+    else:
+        debater_config = configuration_name.debater_config
+        judge_config = configuration_name.judge_config
+        base_task_configuration = RunSubtaskConfigurationName(
+            config_type=str(configuration_name.config_type.value),
+            task_type_name=configuration_name.task_type_name,
+            debater=RunSubtaskModelInfo(
+                key=configuration_name.debater_key,
+                training_round=debater_config.training_round.display_name,
+                model_type=_model_type_to_string(debater_config.settings.model_type),
+                model_file_path=debater_config.settings.model_file_path,
+            ),
+            judge=RunSubtaskModelInfo(
+                key=configuration_name.judge_key,
+                training_round=judge_config.training_round.display_name,
+                model_type=_model_type_to_string(judge_config.settings.model_type),
+                model_file_path=judge_config.settings.model_file_path,
+            ),
+        )
     return RunSubtaskResponse(
         id=int(row["id"]),
         run_task_id=int(row["run_task_id"]),
-        base_task_name=str(row["base_task_name"]),
+        base_task_name=base_task_name,
         resolved_task_name=str(row["resolved_task_name"]),
         ip_address=str(row["ip_address"]),
         command=str(row["command"]),
@@ -61,6 +96,7 @@ def _row_to_subtask(row: sqlite3.Row) -> RunSubtaskResponse:
             ip_address=str(row["ip_address"]),
             resolved_task_name=str(row["resolved_task_name"]),
         ),
+        base_task_configuration=base_task_configuration,
     )
 
 

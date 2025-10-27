@@ -9,6 +9,8 @@ export type { OpenAPIConfig } from './core/OpenAPI';
 
 export type { HTTPValidationError } from './models/HTTPValidationError';
 export type { RunDetailResponse } from './models/RunDetailResponse';
+export type { RunSubtaskConfigurationName } from './models/RunSubtaskConfigurationName';
+export type { RunSubtaskModelInfo } from './models/RunSubtaskModelInfo';
 export type { RunSubtaskResponse } from './models/RunSubtaskResponse';
 export type { RunTaskResponse } from './models/RunTaskResponse';
 export type { RunWithSubtasksResponse } from './models/RunWithSubtasksResponse';
