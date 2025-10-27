@@ -1,10 +1,13 @@
 from __future__ import annotations
 
-from .client import SSHClientConfig, SSHFileClient, SSHStreamingError, WebSocketSender
+from explorer.errors.ssh import ExplorerSSHStreamingError
+
+from .client import ExplorerSSHProcessLookupResult, SSHClientConfig, SSHFileClient, WebSocketSender
 
 __all__ = [
+    "ExplorerSSHProcessLookupResult",
     "SSHClientConfig",
     "SSHFileClient",
-    "SSHStreamingError",
+    "ExplorerSSHStreamingError",
     "WebSocketSender",
 ]

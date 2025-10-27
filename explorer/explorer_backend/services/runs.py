@@ -4,6 +4,7 @@ import json
 import sqlite3
 from typing import Any, Dict, List
 
+from explorer.errors.runs import RunNotFoundError
 from run_orchestrator.recorder.task_database import TaskDatabase
 
 from explorer.explorer_backend.models import (
@@ -12,14 +13,6 @@ from explorer.explorer_backend.models import (
     RunTaskResponse,
     RunWithSubtasksResponse,
 )
-
-
-class RunNotFoundError(Exception):
-    """Raised when a requested run does not exist in the task database."""
-
-    def __init__(self, run_id: int) -> None:
-        self.run_id: int = run_id
-        super().__init__(f"Run with id {run_id} not found.")
 
 
 def _build_logs_command(ip_address: str, resolved_task_name: str) -> str:

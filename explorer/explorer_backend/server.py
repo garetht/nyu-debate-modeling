@@ -10,6 +10,15 @@ from fastapi import Depends, FastAPI, HTTPException, WebSocket, WebSocketDisconn
 from fastapi.middleware.cors import CORSMiddleware
 from run_orchestrator.recorder.task_database import TaskDatabase
 
+from explorer.errors import (
+    InvalidGroupModeError,
+    OutputNotFoundError,
+    OutputStatsUnavailableError,
+    OutputsDirectoryMissingError,
+    RunNotFoundError,
+    ExplorerSSHStreamingError,
+)
+
 from explorer.explorer_backend.models import (
     OutputDetailResponse,
     OutputStatsResponse,
@@ -19,11 +28,6 @@ from explorer.explorer_backend.models import (
     RunWithSubtasksResponse,
 )
 from explorer.explorer_backend.services import (
-    InvalidGroupModeError,
-    OutputNotFoundError,
-    OutputStatsUnavailableError,
-    OutputsDirectoryMissingError,
-    RunNotFoundError,
     get_database,
     get_run_detail,
     get_output_detail as fetch_output_detail,
@@ -33,7 +37,12 @@ from explorer.explorer_backend.services import (
     list_runs_with_subtasks,
     list_subtasks as fetch_subtasks,
 )
-from explorer.explorer_backend.ssh import SSHClientConfig, SSHFileClient, SSHStreamingError, WebSocketSender
+from explorer.explorer_backend.ssh import (
+    SSHClientConfig,
+    ExplorerSSHStreamingError,
+    SSHFileClient,
+    WebSocketSender,
+)
 
 SERVER_PORT: Final[int] = 8067
 
@@ -205,7 +214,7 @@ async def stream_subtask_logs(
         await ssh_client.stream_last_lines(sender, log_location.log_path, last_lines)
     except WebSocketDisconnect:
         return
-    except SSHStreamingError as error:
+    except ExplorerSSHStreamingError as error:
         await websocket.send_text(f"Streaming error: {error}")
         await websocket.close(code=1011)
     except Exception as e:

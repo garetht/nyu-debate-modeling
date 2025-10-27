@@ -6,8 +6,14 @@ import threading
 import time
 from dataclasses import dataclass
 from pathlib import Path
-from typing import Literal, Mapping, Protocol, runtime_checkable
+from typing import Literal, Mapping, Protocol, Sequence, runtime_checkable
 
+from explorer.errors.ssh import (
+    ExplorerSSHProcessAmbiguousError,
+    ExplorerSSHProcessError,
+    ExplorerSSHProcessNotFoundError,
+    ExplorerSSHStreamingError,
+)
 from fabric import Connection
 import paramiko
 
@@ -60,8 +66,14 @@ class SSHClientConfig:
         raise paramiko.SSHException(f"Unsupported or unreadable private key format: {expanded_path}")
 
 
-class SSHStreamingError(RuntimeError):
-    """Raised when live SSH streaming encounters an unrecoverable error."""
+@dataclass(frozen=True)
+class ExplorerSSHProcessLookupResult:
+    """Structured result detailing the outcome of a bulk process lookup."""
+
+    search_term: str
+    success: bool
+    pid: int | None = None
+    error: str | None = None
 
 
 @runtime_checkable
@@ -106,6 +118,81 @@ class SSHFileClient:
         output = self._run_command(command)
         return self._split_lines(output)
 
+    def find_process_id(self, search_term: str) -> int:
+        """
+        Search for a process whose command line contains `search_term` and return its PID.
+
+        Raises:
+            ExplorerSSHProcessNotFoundError: If no matching process is found.
+            ExplorerSSHProcessAmbiguousError: If multiple processes match `search_term`.
+            ExplorerSSHProcessError: If the process listing output cannot be parsed.
+        """
+        ps_command: str = "ps aux"
+        output: str = self._run_command(ps_command)
+        lines: list[str] = self._split_lines(output)
+        process_lines: list[str] = lines[1:] if len(lines) > 1 else []
+        return self._lookup_pid_from_lines(search_term, process_lines)
+
+    def find_process_ids(self, search_terms: Sequence[str]) -> list[ExplorerSSHProcessLookupResult]:
+        """
+        Bulk lookup of process identifiers for multiple `search_terms`.
+
+        Returns a list containing the lookup outcome for each search term, including
+        success status, PID (if located), and any error message encountered.
+        """
+        if not search_terms:
+            return []
+
+        ps_command: str = "ps aux"
+        output: str = self._run_command(ps_command)
+        lines: list[str] = self._split_lines(output)
+        process_lines: list[str] = lines[1:] if len(lines) > 1 else []
+
+        results: list[ExplorerSSHProcessLookupResult] = []
+        for term in search_terms:
+            try:
+                pid = self._lookup_pid_from_lines(term, process_lines)
+            except ExplorerSSHProcessError as error:
+                results.append(
+                    ExplorerSSHProcessLookupResult(
+                        search_term=term,
+                        success=False,
+                        pid=None,
+                        error=str(error),
+                    )
+                )
+            else:
+                results.append(
+                    ExplorerSSHProcessLookupResult(
+                        search_term=term,
+                        success=True,
+                        pid=pid,
+                        error=None,
+                    )
+                )
+        return results
+
+    def _lookup_pid_from_lines(self, search_term: str, process_lines: Sequence[str]) -> int:
+        matches: list[str] = [line for line in process_lines if search_term in line]
+
+        if not matches:
+            raise ExplorerSSHProcessNotFoundError(f"No process found matching {search_term!r}.")
+        if len(matches) > 1:
+            raise ExplorerSSHProcessAmbiguousError(
+                f"Multiple processes found matching {search_term!r}: {len(matches)} matches."
+            )
+
+        match_line: str = matches[0]
+        columns: list[str] = match_line.split(maxsplit=10)
+        if len(columns) < 2:
+            raise ExplorerSSHProcessError(f"Unable to parse process information for match: {match_line!r}")
+
+        pid_str: str = columns[1]
+        try:
+            return int(pid_str)
+        except ValueError as exc:
+            raise ExplorerSSHProcessError(f"Failed to parse PID from line: {match_line!r}") from exc
+
     async def stream_last_lines(
         self,
         websocket: WebSocketSender,
@@ -129,7 +216,7 @@ class SSHFileClient:
         transport = connection.client.get_transport()
         if transport is None:
             connection.close()
-            raise SSHStreamingError("Failed to acquire SSH transport.")
+            raise ExplorerSSHStreamingError("Failed to acquire SSH transport.")
 
         session = transport.open_session()
         session.exec_command(command)
@@ -180,7 +267,7 @@ class SSHFileClient:
                 if item_type == "line":
                     await websocket.send_text(str(payload))
                 elif item_type == "error":
-                    raise SSHStreamingError("Error while streaming file over SSH.") from payload
+                    raise ExplorerSSHStreamingError("Error while streaming file over SSH.") from payload
                 elif item_type == "done":
                     break
         except asyncio.CancelledError:

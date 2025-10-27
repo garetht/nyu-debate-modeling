@@ -6,10 +6,11 @@ import sys
 from pathlib import Path
 from typing import Optional
 
+from explorer.errors import ExplorerSSHStreamingError
 from explorer.explorer_backend.ssh import (
     SSHClientConfig,
+    ExplorerSSHStreamingError,
     SSHFileClient,
-    SSHStreamingError,
     WebSocketSender,
 )
 
@@ -99,7 +100,7 @@ async def _run_stream_mode(client: SSHFileClient, remote_path: str, line_count: 
     websocket = ConsoleWebSocket()
     try:
         await client.stream_last_lines(websocket, remote_path, line_count)
-    except SSHStreamingError as exc:
+    except ExplorerSSHStreamingError as exc:
         print(f"Streaming error: {exc}", file=sys.stderr)
         await websocket.close(code=1011)
 
