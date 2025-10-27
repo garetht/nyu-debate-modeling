@@ -70,9 +70,11 @@ class SSHClientConfig:
 class ExplorerSSHProcessLookupResult:
     """Structured result detailing the outcome of a bulk process lookup."""
 
-    search_term: str
+    original_command: str
     success: bool
+    remote_command: str | None = None
     pid: int | None = None
+    ps_line: str | None = None
     error: str | None = None
 
 
@@ -130,49 +132,73 @@ class SSHFileClient:
         ps_command: str = "ps aux"
         output: str = self._run_command(ps_command)
         lines: list[str] = self._split_lines(output)
-        process_lines: list[str] = lines[1:] if len(lines) > 1 else []
-        return self._lookup_pid_from_lines(search_term, process_lines)
+        process_lines: Sequence[str] = lines[1:] if len(lines) > 1 else []
+        match_line = self._match_process_line(search_term, process_lines)
+        return self._extract_pid_from_line(match_line)
 
-    def find_process_ids(self, search_terms: Sequence[str]) -> list[ExplorerSSHProcessLookupResult]:
+    def find_process_ids(self, commands: Sequence[str]) -> list[ExplorerSSHProcessLookupResult]:
         """
-        Bulk lookup of process identifiers for multiple `search_terms`.
+        Bulk lookup of process identifiers for multiple commands recorded in `run_subtasks`.
 
-        Returns a list containing the lookup outcome for each search term, including
-        success status, PID (if located), and any error message encountered.
+        Each command is parsed to extract the remote process invocation (portion after the first
+        `' -- '` token). The resulting lookup includes the raw `ps aux` line so the UI can display
+        the command currently running on the remote host.
         """
-        if not search_terms:
+        if not commands:
             return []
 
         ps_command: str = "ps aux"
         output: str = self._run_command(ps_command)
         lines: list[str] = self._split_lines(output)
-        process_lines: list[str] = lines[1:] if len(lines) > 1 else []
+        process_lines: Sequence[str] = lines[1:] if len(lines) > 1 else []
 
         results: list[ExplorerSSHProcessLookupResult] = []
-        for term in search_terms:
+        for command in commands:
+            remote_command = self._extract_remote_command(command)
+            if remote_command is None or remote_command.strip() == "":
+                results.append(
+                    ExplorerSSHProcessLookupResult(
+                        original_command=command,
+                        success=False,
+                        remote_command=remote_command,
+                        error="Command does not contain a remote execution segment after ' -- '.",
+                    )
+                )
+                continue
+
             try:
-                pid = self._lookup_pid_from_lines(term, process_lines)
+                match_line = self._match_process_line(remote_command, process_lines)
+                pid = self._extract_pid_from_line(match_line)
             except ExplorerSSHProcessError as error:
                 results.append(
                     ExplorerSSHProcessLookupResult(
-                        search_term=term,
+                        original_command=command,
                         success=False,
+                        remote_command=remote_command,
                         pid=None,
+                        ps_line=None,
                         error=str(error),
                     )
                 )
             else:
                 results.append(
                     ExplorerSSHProcessLookupResult(
-                        search_term=term,
+                        original_command=command,
                         success=True,
+                        remote_command=remote_command,
                         pid=pid,
+                        ps_line=match_line,
                         error=None,
                     )
                 )
         return results
+    @staticmethod
+    def _extract_remote_command(command: str) -> str | None:
+        if " -- " not in command:
+            return None
+        return command.split(" -- ", 1)[1].strip()
 
-    def _lookup_pid_from_lines(self, search_term: str, process_lines: Sequence[str]) -> int:
+    def _match_process_line(self, search_term: str, process_lines: Sequence[str]) -> str:
         matches: list[str] = [line for line in process_lines if search_term in line]
 
         if not matches:
@@ -181,8 +207,10 @@ class SSHFileClient:
             raise ExplorerSSHProcessAmbiguousError(
                 f"Multiple processes found matching {search_term!r}: {len(matches)} matches."
             )
+        return matches[0]
 
-        match_line: str = matches[0]
+    @staticmethod
+    def _extract_pid_from_line(match_line: str) -> int:
         columns: list[str] = match_line.split(maxsplit=10)
         if len(columns) < 2:
             raise ExplorerSSHProcessError(f"Unable to parse process information for match: {match_line!r}")

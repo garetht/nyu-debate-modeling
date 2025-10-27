@@ -68,17 +68,38 @@ def test_find_process_ids_mixed_results() -> None:
     )
     client = _build_client_with_ps_output(ps_output)
 
-    results = client.find_process_ids(["my_process", "missing", "other_process"])
+    commands = [
+        "launcher-script -- python my_process",
+        "launcher-script -- missing",
+        "launcher-script -- python other_process",
+    ]
+    results = client.find_process_ids(commands)
 
     assert results == [
-        ExplorerSSHProcessLookupResult(search_term="my_process", success=True, pid=12345, error=None),
         ExplorerSSHProcessLookupResult(
-            search_term="missing",
+            original_command="launcher-script -- python my_process",
+            success=True,
+            remote_command="python my_process",
+            pid=12345,
+            ps_line="tester   12345  0.0  0.1  12345  6789 ?        S    12:00   0:00 python my_process",
+            error=None,
+        ),
+        ExplorerSSHProcessLookupResult(
+            original_command="launcher-script -- missing",
             success=False,
+            remote_command="missing",
             pid=None,
+            ps_line=None,
             error="No process found matching 'missing'.",
         ),
-        ExplorerSSHProcessLookupResult(search_term="other_process", success=True, pid=67890, error=None),
+        ExplorerSSHProcessLookupResult(
+            original_command="launcher-script -- python other_process",
+            success=True,
+            remote_command="python other_process",
+            pid=67890,
+            ps_line="tester   67890  0.0  0.1  12345  6789 ?        S    12:01   0:00 python other_process",
+            error=None,
+        ),
     ]
 
 
@@ -92,9 +113,9 @@ def test_find_process_ids_handles_ambiguous_match() -> None:
     )
     client = _build_client_with_ps_output(ps_output)
 
-    result = client.find_process_ids(["dup_process"])[0]
+    result = client.find_process_ids(["launcher -- python dup_process"])[0]
 
-    assert result.search_term == "dup_process"
+    assert result.remote_command == "python dup_process"
     assert result.success is False
     assert result.pid is None
     assert "Multiple processes found" in str(result.error)
@@ -106,3 +127,65 @@ def test_find_process_ids_empty_input() -> None:
     )
 
     assert client.find_process_ids([]) == []
+
+
+def test_find_process_ids_missing_separator() -> None:
+    client = _build_client_with_ps_output(
+        "\n".join(["USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND"])
+    )
+
+    results = client.find_process_ids(["no-remote-command"])
+
+    assert results == [
+        ExplorerSSHProcessLookupResult(
+            original_command="no-remote-command",
+            success=False,
+            remote_command=None,
+            pid=None,
+            ps_line=None,
+            error="Command does not contain a remote execution segment after ' -- '.",
+        )
+    ]
+
+
+def test_find_process_ids_empty_remote_segment() -> None:
+    client = _build_client_with_ps_output(
+        "\n".join(["USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND"])
+    )
+
+    result = client.find_process_ids(["launcher --    "])[0]
+
+    assert result.success is False
+    assert result.remote_command == ""
+    assert result.error == "Command does not contain a remote execution segment after ' -- '."
+
+
+def test_find_process_ids_unparsable_ps_row() -> None:
+    ps_output = "\n".join(
+        [
+            "USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND",
+            "invalid-line-without-columns",
+        ]
+    )
+    client = _build_client_with_ps_output(ps_output)
+
+    result = client.find_process_ids(["launcher -- invalid-line-without-columns"])[0]
+
+    assert result.success is False
+    assert result.ps_line is None
+    assert "Unable to parse process information" in str(result.error)
+
+
+def test_find_process_ids_non_integer_pid_error() -> None:
+    ps_output = "\n".join(
+        [
+            "USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND",
+            "tester   not-a-number  0.0  0.1  12345  6789 ?        S    12:00   0:00 python bad_pid",
+        ]
+    )
+    client = _build_client_with_ps_output(ps_output)
+
+    result = client.find_process_ids(["launcher -- python bad_pid"])[0]
+
+    assert result.success is False
+    assert result.error == "Failed to parse PID from line: 'tester   not-a-number  0.0  0.1  12345  6789 ?        S    12:00   0:00 python bad_pid'"
