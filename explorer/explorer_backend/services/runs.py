@@ -2,10 +2,11 @@ from __future__ import annotations
 
 import json
 import sqlite3
-from typing import Any, Dict, List
+from typing import Any, Callable, Dict, List
 
 from explorer.explorer_backend.models import (
     RunDetailResponse,
+    RunProcessResponse,
     RunSubtaskConfigurationName,
     RunSubtaskModelInfo,
     RunSubtaskResponse,
@@ -13,6 +14,7 @@ from explorer.explorer_backend.models import (
     RunWithSubtasksResponse,
 )
 from explorer.errors.runs import RunNotFoundError
+from explorer.explorer_backend.ssh import SSHFileClient
 from models.model import ModelType
 from run_orchestrator.evals_generator.configuration_name import ConfigurationName
 from run_orchestrator.recorder.task_database import TaskDatabase
@@ -197,10 +199,120 @@ def list_subtasks(run_id: int | None, database: TaskDatabase) -> List[RunSubtask
     return _fetch_subtasks(database, run_id=run_id)
 
 
+def list_run_processes(
+    run_id: int,
+    database: TaskDatabase,
+    ssh_client_factory: Callable[[str], SSHFileClient],
+) -> List[RunProcessResponse]:
+    """Return the set of remote processes associated with a run's recorded subtasks."""
+    run = _fetch_run(database, run_id)
+    if run is None:
+        raise RunNotFoundError(run_id)
+
+    subtasks = _fetch_subtasks(database, run_id=run_id)
+    results: List[RunProcessResponse] = []
+    subtasks_by_ip: Dict[str, List[RunSubtaskResponse]] = {}
+
+    for subtask in subtasks:
+        ip_address = subtask.ip_address.strip()
+        if ip_address == "":
+            results.append(
+                RunProcessResponse(
+                    subtask_id=subtask.id,
+                    ip_address=subtask.ip_address,
+                    command=subtask.command,
+                    remote_command=None,
+                    pid=None,
+                    ps_line=None,
+                    success=False,
+                    error="Subtask is missing an ip_address.",
+                )
+            )
+            continue
+        subtasks_by_ip.setdefault(ip_address, []).append(subtask)
+
+    for ip_address, ip_subtasks in subtasks_by_ip.items():
+        try:
+            client = ssh_client_factory(ip_address)
+        except Exception as exc:
+            error_message = str(exc)
+            for subtask in ip_subtasks:
+                results.append(
+                    RunProcessResponse(
+                        subtask_id=subtask.id,
+                        ip_address=subtask.ip_address,
+                        command=subtask.command,
+                        remote_command=None,
+                        pid=None,
+                        ps_line=None,
+                        success=False,
+                        error=f"Failed to create SSH client: {error_message}",
+                    )
+                )
+            continue
+
+        try:
+            lookup_results = client.find_process_ids([subtask.command for subtask in ip_subtasks])
+        except Exception as exc:
+            error_message = str(exc)
+            for subtask in ip_subtasks:
+                results.append(
+                    RunProcessResponse(
+                        subtask_id=subtask.id,
+                        ip_address=subtask.ip_address,
+                        command=subtask.command,
+                        remote_command=None,
+                        pid=None,
+                        ps_line=None,
+                        success=False,
+                        error=f"SSH lookup failed: {error_message}",
+                    )
+                )
+            continue
+
+        if len(lookup_results) != len(ip_subtasks):
+            error_message = "SSH lookup returned an unexpected number of results."
+            for subtask in ip_subtasks:
+                results.append(
+                    RunProcessResponse(
+                        subtask_id=subtask.id,
+                        ip_address=subtask.ip_address,
+                        command=subtask.command,
+                        remote_command=None,
+                        pid=None,
+                        ps_line=None,
+                        success=False,
+                        error=error_message,
+                    )
+                )
+            continue
+
+        for subtask, lookup in zip(ip_subtasks, lookup_results):
+            remote_command: str | None = lookup.remote_command
+            pid: int | None = lookup.pid
+            ps_line: str | None = lookup.ps_line
+            success: bool = lookup.success
+            error: str | None = lookup.error
+            results.append(
+                RunProcessResponse(
+                    subtask_id=subtask.id,
+                    ip_address=subtask.ip_address,
+                    command=subtask.command,
+                    remote_command=remote_command,
+                    pid=pid,
+                    ps_line=ps_line,
+                    success=success,
+                    error=error,
+                )
+            )
+    return results
+
+
 __all__ = [
     "RunNotFoundError",
     "get_run_detail",
     "list_run_subtasks",
     "list_runs_with_subtasks",
     "list_subtasks",
+    "list_run_processes",
 ]

@@ -1,6 +1,119 @@
 {
   "components": {
     "schemas": {
+      "DailyDebateStatsResponse": {
+        "description": "Debate statistics for a specific day.",
+        "properties": {
+          "day": {
+            "title": "Day",
+            "type": "string"
+          },
+          "debater_a_win_rate": {
+            "title": "Debater A Win Rate",
+            "type": "number"
+          },
+          "debater_a_wins": {
+            "title": "Debater A Wins",
+            "type": "integer"
+          },
+          "debater_b_win_rate": {
+            "title": "Debater B Win Rate",
+            "type": "number"
+          },
+          "debater_b_wins": {
+            "title": "Debater B Wins",
+            "type": "integer"
+          },
+          "first_debater_accuracy": {
+            "title": "First Debater Accuracy",
+            "type": "number"
+          },
+          "first_debater_correct": {
+            "title": "First Debater Correct",
+            "type": "integer"
+          },
+          "judge_accuracy": {
+            "title": "Judge Accuracy",
+            "type": "number"
+          },
+          "judge_correct": {
+            "title": "Judge Correct",
+            "type": "integer"
+          },
+          "total_debates": {
+            "title": "Total Debates",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "total_debates",
+          "debater_a_wins",
+          "debater_b_wins",
+          "judge_correct",
+          "first_debater_correct",
+          "debater_a_win_rate",
+          "debater_b_win_rate",
+          "judge_accuracy",
+          "first_debater_accuracy",
+          "day"
+        ],
+        "title": "DailyDebateStatsResponse",
+        "type": "object"
+      },
+      "DebateStatsSummary": {
+        "description": "Aggregated statistics for debate outcomes.",
+        "properties": {
+          "debater_a_win_rate": {
+            "title": "Debater A Win Rate",
+            "type": "number"
+          },
+          "debater_a_wins": {
+            "title": "Debater A Wins",
+            "type": "integer"
+          },
+          "debater_b_win_rate": {
+            "title": "Debater B Win Rate",
+            "type": "number"
+          },
+          "debater_b_wins": {
+            "title": "Debater B Wins",
+            "type": "integer"
+          },
+          "first_debater_accuracy": {
+            "title": "First Debater Accuracy",
+            "type": "number"
+          },
+          "first_debater_correct": {
+            "title": "First Debater Correct",
+            "type": "integer"
+          },
+          "judge_accuracy": {
+            "title": "Judge Accuracy",
+            "type": "number"
+          },
+          "judge_correct": {
+            "title": "Judge Correct",
+            "type": "integer"
+          },
+          "total_debates": {
+            "title": "Total Debates",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "total_debates",
+          "debater_a_wins",
+          "debater_b_wins",
+          "judge_correct",
+          "first_debater_correct",
+          "debater_a_win_rate",
+          "debater_b_win_rate",
+          "judge_accuracy",
+          "first_debater_accuracy"
+        ],
+        "title": "DebateStatsSummary",
+        "type": "object"
+      },
       "HTTPValidationError": {
         "properties": {
           "detail": {
@@ -12,6 +125,303 @@
           }
         },
         "title": "HTTPValidationError",
+        "type": "object"
+      },
+      "OutputDetailResponse": {
+        "description": "Detailed view of a specific output configuration and its transcripts.",
+        "properties": {
+          "config_type": {
+            "enum": [
+              "eval",
+              "data-generation"
+            ],
+            "title": "Config Type",
+            "type": "string"
+          },
+          "configuration": {
+            "title": "Configuration",
+            "type": "string"
+          },
+          "debater_key": {
+            "title": "Debater Key",
+            "type": "string"
+          },
+          "debater_training": {
+            "title": "Debater Training",
+            "type": "string"
+          },
+          "directory_size_bytes": {
+            "title": "Directory Size Bytes",
+            "type": "integer"
+          },
+          "judge_key": {
+            "title": "Judge Key",
+            "type": "string"
+          },
+          "judge_training": {
+            "title": "Judge Training",
+            "type": "string"
+          },
+          "latest_transcript": {
+            "anyOf": [
+              {
+                "format": "date-time",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Latest Transcript"
+          },
+          "page": {
+            "title": "Page",
+            "type": "integer"
+          },
+          "page_size": {
+            "title": "Page Size",
+            "type": "integer"
+          },
+          "task_label": {
+            "title": "Task Label",
+            "type": "string"
+          },
+          "total_pages": {
+            "title": "Total Pages",
+            "type": "integer"
+          },
+          "total_transcripts": {
+            "title": "Total Transcripts",
+            "type": "integer"
+          },
+          "transcript_count": {
+            "title": "Transcript Count",
+            "type": "integer"
+          },
+          "transcripts": {
+            "items": {
+              "$ref": "#/components/schemas/TranscriptFileResponse"
+            },
+            "title": "Transcripts",
+            "type": "array"
+          },
+          "transcripts_by_day": {
+            "additionalProperties": {
+              "type": "integer"
+            },
+            "title": "Transcripts By Day",
+            "type": "object"
+          },
+          "transcripts_directory": {
+            "title": "Transcripts Directory",
+            "type": "string"
+          }
+        },
+        "required": [
+          "configuration",
+          "config_type",
+          "task_label",
+          "debater_key",
+          "debater_training",
+          "judge_key",
+          "judge_training",
+          "transcript_count",
+          "transcripts_by_day",
+          "latest_transcript",
+          "directory_size_bytes",
+          "transcripts_directory",
+          "page",
+          "page_size",
+          "total_transcripts",
+          "total_pages",
+          "transcripts"
+        ],
+        "title": "OutputDetailResponse",
+        "type": "object"
+      },
+      "OutputGroupResponse": {
+        "description": "Grouped outputs for a chosen grouping strategy.",
+        "properties": {
+          "entries": {
+            "items": {
+              "$ref": "#/components/schemas/OutputSummaryResponse"
+            },
+            "title": "Entries",
+            "type": "array"
+          },
+          "label": {
+            "title": "Label",
+            "type": "string"
+          }
+        },
+        "required": [
+          "label",
+          "entries"
+        ],
+        "title": "OutputGroupResponse",
+        "type": "object"
+      },
+      "OutputStatsResponse": {
+        "description": "Statistics summary for a configuration's transcripts.",
+        "properties": {
+          "configuration": {
+            "title": "Configuration",
+            "type": "string"
+          },
+          "errors": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Errors",
+            "type": "array"
+          },
+          "json_file_count": {
+            "title": "Json File Count",
+            "type": "integer"
+          },
+          "overall_stats": {
+            "$ref": "#/components/schemas/DebateStatsSummary"
+          },
+          "per_day": {
+            "items": {
+              "$ref": "#/components/schemas/DailyDebateStatsResponse"
+            },
+            "title": "Per Day",
+            "type": "array"
+          },
+          "transcripts_directory": {
+            "title": "Transcripts Directory",
+            "type": "string"
+          }
+        },
+        "required": [
+          "configuration",
+          "transcripts_directory",
+          "json_file_count",
+          "overall_stats",
+          "per_day",
+          "errors"
+        ],
+        "title": "OutputStatsResponse",
+        "type": "object"
+      },
+      "OutputSummaryResponse": {
+        "description": "Summary information about a single output configuration.",
+        "properties": {
+          "config_type": {
+            "enum": [
+              "eval",
+              "data-generation"
+            ],
+            "title": "Config Type",
+            "type": "string"
+          },
+          "configuration": {
+            "title": "Configuration",
+            "type": "string"
+          },
+          "debater_key": {
+            "title": "Debater Key",
+            "type": "string"
+          },
+          "debater_training": {
+            "title": "Debater Training",
+            "type": "string"
+          },
+          "directory_size_bytes": {
+            "title": "Directory Size Bytes",
+            "type": "integer"
+          },
+          "judge_key": {
+            "title": "Judge Key",
+            "type": "string"
+          },
+          "judge_training": {
+            "title": "Judge Training",
+            "type": "string"
+          },
+          "latest_transcript": {
+            "anyOf": [
+              {
+                "format": "date-time",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Latest Transcript"
+          },
+          "task_label": {
+            "title": "Task Label",
+            "type": "string"
+          },
+          "transcript_count": {
+            "title": "Transcript Count",
+            "type": "integer"
+          },
+          "transcripts_by_day": {
+            "additionalProperties": {
+              "type": "integer"
+            },
+            "title": "Transcripts By Day",
+            "type": "object"
+          },
+          "transcripts_directory": {
+            "title": "Transcripts Directory",
+            "type": "string"
+          }
+        },
+        "required": [
+          "configuration",
+          "config_type",
+          "task_label",
+          "debater_key",
+          "debater_training",
+          "judge_key",
+          "judge_training",
+          "transcript_count",
+          "transcripts_by_day",
+          "latest_transcript",
+          "directory_size_bytes",
+          "transcripts_directory"
+        ],
+        "title": "OutputSummaryResponse",
+        "type": "object"
+      },
+      "OutputsListResponse": {
+        "description": "Response payload for listing available outputs.",
+        "properties": {
+          "entries": {
+            "items": {
+              "$ref": "#/components/schemas/OutputSummaryResponse"
+            },
+            "title": "Entries",
+            "type": "array"
+          },
+          "group_mode": {
+            "title": "Group Mode",
+            "type": "string"
+          },
+          "groups": {
+            "items": {
+              "$ref": "#/components/schemas/OutputGroupResponse"
+            },
+            "title": "Groups",
+            "type": "array"
+          },
+          "outputs_directory": {
+            "title": "Outputs Directory",
+            "type": "string"
+          }
+        },
+        "required": [
+          "outputs_directory",
+          "group_mode",
+          "entries",
+          "groups"
+        ],
+        "title": "OutputsListResponse",
         "type": "object"
       },
       "RunDetailResponse": {
@@ -34,8 +444,155 @@
         "title": "RunDetailResponse",
         "type": "object"
       },
+      "RunProcessResponse": {
+        "properties": {
+          "command": {
+            "title": "Command",
+            "type": "string"
+          },
+          "error": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Error"
+          },
+          "ip_address": {
+            "title": "Ip Address",
+            "type": "string"
+          },
+          "pid": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Pid"
+          },
+          "ps_line": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Ps Line"
+          },
+          "remote_command": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Remote Command"
+          },
+          "subtask_id": {
+            "title": "Subtask Id",
+            "type": "integer"
+          },
+          "success": {
+            "title": "Success",
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "subtask_id",
+          "ip_address",
+          "command",
+          "remote_command",
+          "pid",
+          "ps_line",
+          "success",
+          "error"
+        ],
+        "title": "RunProcessResponse",
+        "type": "object"
+      },
+      "RunSubtaskConfigurationName": {
+        "properties": {
+          "config_type": {
+            "title": "Config Type",
+            "type": "string"
+          },
+          "debater": {
+            "$ref": "#/components/schemas/RunSubtaskModelInfo"
+          },
+          "judge": {
+            "$ref": "#/components/schemas/RunSubtaskModelInfo"
+          },
+          "task_type_name": {
+            "title": "Task Type Name",
+            "type": "string"
+          }
+        },
+        "required": [
+          "config_type",
+          "task_type_name",
+          "debater",
+          "judge"
+        ],
+        "title": "RunSubtaskConfigurationName",
+        "type": "object"
+      },
+      "RunSubtaskModelInfo": {
+        "properties": {
+          "key": {
+            "title": "Key",
+            "type": "string"
+          },
+          "model_file_path": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Model File Path"
+          },
+          "model_type": {
+            "title": "Model Type",
+            "type": "string"
+          },
+          "training_round": {
+            "title": "Training Round",
+            "type": "string"
+          }
+        },
+        "required": [
+          "key",
+          "training_round",
+          "model_type",
+          "model_file_path"
+        ],
+        "title": "RunSubtaskModelInfo",
+        "type": "object"
+      },
       "RunSubtaskResponse": {
         "properties": {
+          "base_task_configuration": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/RunSubtaskConfigurationName"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
           "base_task_name": {
             "title": "Base Task Name",
             "type": "string"
@@ -156,6 +713,43 @@
         "title": "RunWithSubtasksResponse",
         "type": "object"
       },
+      "TranscriptFileResponse": {
+        "description": "Metadata for a transcript file.",
+        "properties": {
+          "modified_at": {
+            "anyOf": [
+              {
+                "format": "date-time",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Modified At"
+          },
+          "name": {
+            "title": "Name",
+            "type": "string"
+          },
+          "relative_path": {
+            "title": "Relative Path",
+            "type": "string"
+          },
+          "size_bytes": {
+            "title": "Size Bytes",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "name",
+          "relative_path",
+          "size_bytes",
+          "modified_at"
+        ],
+        "title": "TranscriptFileResponse",
+        "type": "object"
+      },
       "ValidationError": {
         "properties": {
           "loc": {
@@ -197,6 +791,153 @@
   },
   "openapi": "3.1.0",
   "paths": {
+    "/api/outputs": {
+      "get": {
+        "description": "List available output configurations with optional grouping.",
+        "operationId": "list_outputs_api_outputs_get",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "group_mode",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Group Mode"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OutputsListResponse"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "List Outputs"
+      }
+    },
+    "/api/outputs/{configuration}": {
+      "get": {
+        "description": "Return detailed information and transcripts for a configuration.",
+        "operationId": "get_output_configuration_api_outputs__configuration__get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "configuration",
+            "required": true,
+            "schema": {
+              "title": "Configuration",
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "schema": {
+              "default": 1,
+              "title": "Page",
+              "type": "integer"
+            }
+          },
+          {
+            "in": "query",
+            "name": "page_size",
+            "required": false,
+            "schema": {
+              "default": 100,
+              "title": "Page Size",
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OutputDetailResponse"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Get Output Configuration"
+      }
+    },
+    "/api/outputs/{configuration}/stats": {
+      "get": {
+        "description": "Return debate statistics for an evaluation configuration.",
+        "operationId": "get_output_configuration_stats_api_outputs__configuration__stats_get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "configuration",
+            "required": true,
+            "schema": {
+              "title": "Configuration",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OutputStatsResponse"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Get Output Configuration Stats"
+      }
+    },
     "/health": {
       "get": {
         "description": "Simple health endpoint to confirm the API is responsive.",
@@ -281,6 +1022,50 @@
           }
         },
         "summary": "Get Run"
+      }
+    },
+    "/runs/{run_id}/processes": {
+      "get": {
+        "description": "Return remote process metadata for each subtask associated with a run.",
+        "operationId": "list_run_processes_runs__run_id__processes_get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "run_id",
+            "required": true,
+            "schema": {
+              "title": "Run Id",
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/RunProcessResponse"
+                  },
+                  "title": "Response List Run Processes Runs  Run Id  Processes Get",
+                  "type": "array"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "List Run Processes"
       }
     },
     "/runs/{run_id}/subtasks": {

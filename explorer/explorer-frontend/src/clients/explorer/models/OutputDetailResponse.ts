@@ -7,7 +7,7 @@ import type { TranscriptFileResponse } from './TranscriptFileResponse';
  * Detailed view of a specific output configuration and its transcripts.
  */
 export type OutputDetailResponse = {
-    config_type: OutputDetailResponse.config_type;
+    config_type: 'eval' | 'data-generation';
     configuration: string;
     debater_key: string;
     debater_training: string;
@@ -25,10 +25,4 @@ export type OutputDetailResponse = {
     transcripts_by_day: Record<string, number>;
     transcripts_directory: string;
 };
-export namespace OutputDetailResponse {
-    export enum config_type {
-        EVAL = 'eval',
-        DATA_GENERATION = 'data-generation',
-    }
-}
 

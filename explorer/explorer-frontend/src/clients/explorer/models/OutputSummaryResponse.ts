@@ -6,7 +6,7 @@
  * Summary information about a single output configuration.
  */
 export type OutputSummaryResponse = {
-    config_type: OutputSummaryResponse.config_type;
+    config_type: 'eval' | 'data-generation';
     configuration: string;
     debater_key: string;
     debater_training: string;
@@ -19,10 +19,4 @@ export type OutputSummaryResponse = {
     transcripts_by_day: Record<string, number>;
     transcripts_directory: string;
 };
-export namespace OutputSummaryResponse {
-    export enum config_type {
-        EVAL = 'eval',
-        DATA_GENERATION = 'data-generation',
-    }
-}
 

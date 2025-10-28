@@ -24,6 +24,7 @@ from explorer.explorer_backend.models import (
     OutputStatsResponse,
     OutputsListResponse,
     RunDetailResponse,
+    RunProcessResponse,
     RunSubtaskResponse,
     RunWithSubtasksResponse,
 )
@@ -34,6 +35,7 @@ from explorer.explorer_backend.services import (
     get_output_stats as fetch_output_stats,
     list_outputs as fetch_outputs,
     list_run_subtasks as fetch_run_subtasks,
+    list_run_processes as fetch_run_processes,
     list_runs_with_subtasks,
     list_subtasks as fetch_subtasks,
 )
@@ -171,6 +173,17 @@ def list_run_subtasks(
     """Return subtasks for a specific run."""
     try:
         return fetch_run_subtasks(run_id=run_id, database=database)
+    except RunNotFoundError as error:
+        raise HTTPException(status_code=404, detail=str(error)) from error
+
+
+@app.get("/runs/{run_id}/processes", response_model=List[RunProcessResponse])
+def list_run_processes(
+    run_id: int, database: TaskDatabase = Depends(get_database)
+) -> List[RunProcessResponse]:
+    """Return remote process metadata for each subtask associated with a run."""
+    try:
+        return fetch_run_processes(run_id=run_id, database=database, ssh_client_factory=_create_ssh_client)
     except RunNotFoundError as error:
         raise HTTPException(status_code=404, detail=str(error)) from error
 

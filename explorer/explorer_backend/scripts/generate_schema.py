@@ -13,7 +13,7 @@ from fastapi import FastAPI
 from explorer.explorer_backend.server import app
 
 DEFAULT_SCHEMA_OUTPUT_PATH = Path("schemas/explorer_web_server.schema.json")
-DEFAULT_CLIENT_OUTPUT_DIR = Path("explorer/web/explorer-frontend/src/clients/explorer")
+DEFAULT_CLIENT_OUTPUT_DIR = Path("explorer/explorer-frontend/src/clients/explorer")
 DEFAULT_GENERATOR_COMMAND: Sequence[str] = (
     "npx",
     "--yes",
@@ -85,6 +85,7 @@ def generate_typescript_client(
     _ensure_generator_available(command)
     output_dir.mkdir(parents=True, exist_ok=True)
     full_command = list(command) + [
+        "--useUnionTypes",
         "--input",
         str(schema_path),
         "--output",

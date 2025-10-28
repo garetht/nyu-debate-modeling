@@ -16,6 +16,7 @@ from explorer.explorer_backend.services.database import (
 from explorer.explorer_backend.services.runs import (
     get_run_detail,
     list_run_subtasks,
+    list_run_processes,
     list_runs_with_subtasks,
     list_subtasks,
 )
@@ -37,6 +38,7 @@ __all__ = [
     "get_output_detail",
     "get_output_stats",
     "list_run_subtasks",
+    "list_run_processes",
     "list_outputs",
     "list_runs_with_subtasks",
     "list_subtasks",

@@ -11,6 +11,7 @@ services:
       - "8067:8067"
     volumes:
       - ${HOME}/.ssh/lambda-labs.pem:/root/.ssh/lambda-labs.pem:ro
+      - ../run_orchestrator:/app/run_orchestrator:ro
 
   frontend:
     build:

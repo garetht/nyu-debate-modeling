@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+from dataclasses import dataclass
 from pathlib import Path
 from typing import Any, Dict, List
 
@@ -163,3 +164,53 @@ def test_subtask_base_task_configuration_is_structured(
     assert subtasks_response.status_code == 200
     filtered_subtask = subtasks_response.json()[0]
     assert filtered_subtask["base_task_configuration"] == base_task_configuration
+
+
+@dataclass
+class _StubLookupResult:
+    original_command: str
+    success: bool
+    remote_command: str | None
+    pid: int | None
+    ps_line: str | None
+    error: str | None
+
+
+class _StubSSHClient:
+    def __init__(self, host: str) -> None:
+        self.host = host
+
+    def find_process_ids(self, commands: List[str]) -> List[_StubLookupResult]:
+        return [
+            _StubLookupResult(
+                original_command=command,
+                success=True,
+                remote_command=command.split(" -- ", 1)[1] if " -- " in command else command,
+                pid=4321,
+                ps_line=f"stubuser 4321  0.0  0.1  1234  5678 ?        S    12:00   0:00 {command}",
+                error=None,
+            )
+            for command in commands
+        ]
+
+
+def test_list_run_processes_returns_ps_data(
+    api_client: TestClient,
+    temporary_database: TaskDatabase,
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    run_response = api_client.get("/runs")
+    run_response.raise_for_status()
+    run_id = run_response.json()[0]["id"]
+
+    monkeypatch.setattr(server, "_create_ssh_client", lambda host: _StubSSHClient(host))
+
+    response = api_client.get(f"/runs/{run_id}/processes")
+    assert response.status_code == 200
+
+    payload: List[Dict[str, Any]] = response.json()
+    assert len(payload) == 1
+    process_entry = payload[0]
+    assert process_entry["pid"] == 4321
+    assert "ps_line" in process_entry and "stubuser 4321" in process_entry["ps_line"]
+    assert process_entry["success"] is True

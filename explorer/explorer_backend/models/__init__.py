@@ -15,6 +15,7 @@ from explorer.explorer_backend.models.runs import (
     RunSubtaskConfigurationName,
     RunSubtaskModelInfo,
     RunSubtaskResponse,
+    RunProcessResponse,
     RunTaskResponse,
     RunWithSubtasksResponse,
 )
@@ -31,6 +32,7 @@ __all__ = [
     "RunSubtaskConfigurationName",
     "RunSubtaskModelInfo",
     "RunSubtaskResponse",
+    "RunProcessResponse",
     "RunTaskResponse",
     "RunWithSubtasksResponse",
     "TranscriptFileResponse",

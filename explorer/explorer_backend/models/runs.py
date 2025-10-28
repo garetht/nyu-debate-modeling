@@ -40,6 +40,17 @@ class RunSubtaskResponse(BaseModel):
     base_task_configuration: Optional[RunSubtaskConfigurationName] = None
 
 
+class RunProcessResponse(BaseModel):
+    subtask_id: int
+    ip_address: str
+    command: str
+    remote_command: Optional[str]
+    pid: Optional[int]
+    ps_line: Optional[str]
+    success: bool
+    error: Optional[str]
+
+
 class RunWithSubtasksResponse(RunTaskResponse):
     subtasks: List[RunSubtaskResponse]
 
@@ -56,4 +67,5 @@ __all__ = [
     "RunDetailResponse",
     "RunSubtaskConfigurationName",
     "RunSubtaskModelInfo",
+    "RunProcessResponse",
 ]

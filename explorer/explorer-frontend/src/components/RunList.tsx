@@ -1,6 +1,10 @@
-import React from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 
-import type { RunWithSubtasksResponse } from '../clients/explorer';
+import type {
+  RunProcessResponse,
+  RunWithSubtasksResponse,
+} from '../clients/explorer';
+import { DefaultService } from '../clients/explorer';
 import { useRunLogControls } from '../hooks/useRunLogControls';
 import { formatDateTime } from '../utils/date';
 import { SubtaskCard } from './SubtaskCard';
@@ -21,6 +25,11 @@ interface RunCardProps {
   run: RunWithSubtasksResponse;
 }
 
+type ProcessesState =
+  | { status: 'idle' | 'loading'; processes: [] }
+  | { status: 'error'; processes: []; message: string }
+  | { status: 'ready'; processes: RunProcessResponse[] };
+
 const RunCard: React.FC<RunCardProps> = ({ run }) => {
   const {
     registerControl,
@@ -29,6 +38,63 @@ const RunCard: React.FC<RunCardProps> = ({ run }) => {
     toggleLabel,
     toggleDisabled,
   } = useRunLogControls(run.subtasks.length);
+  const [processState, setProcessState] = useState<ProcessesState>({
+    status: 'idle',
+    processes: [],
+  });
+
+  useEffect(() => {
+    let isActive = true;
+
+    const loadProcesses = async () => {
+      setProcessState({ status: 'loading', processes: [] });
+      try {
+        const processes =
+          await DefaultService.listRunProcessesRunsRunIdProcessesGet(run.id);
+        if (!isActive) {
+          return;
+        }
+        setProcessState({ status: 'ready', processes });
+      } catch (error) {
+        if (!isActive) {
+          return;
+        }
+        const message =
+          error instanceof Error
+            ? error.message
+            : 'Unable to fetch process metadata.';
+        setProcessState({ status: 'error', processes: [], message });
+      }
+    };
+
+    void loadProcesses();
+
+    return () => {
+      isActive = false;
+    };
+  }, [run.id]);
+
+  const processLookup = useMemo(() => {
+    if (processState.status !== 'ready') {
+      return new Map<number, RunProcessResponse[]>();
+    }
+    return processState.processes.reduce<Map<number, RunProcessResponse[]>>(
+      (accumulator, process) => {
+        const existing = accumulator.get(process.subtask_id);
+        if (existing) {
+          existing.push(process);
+          return accumulator;
+        }
+        accumulator.set(process.subtask_id, [process]);
+        return accumulator;
+      },
+      new Map<number, RunProcessResponse[]>(),
+    );
+  }, [processState]);
+
+  const processesStatus = processState.status;
+  const processesError =
+    processState.status === 'error' ? processState.message : undefined;
 
   return (
     <article className="py-8 first:pt-0">
@@ -66,6 +132,9 @@ const RunCard: React.FC<RunCardProps> = ({ run }) => {
           {run.subtasks.map((subtask) => (
             <SubtaskCard
               key={subtask.id}
+              processes={processLookup.get(subtask.id) ?? []}
+              processesStatus={processesStatus}
+              processesError={processesError}
               subtask={subtask}
               registerControl={registerControl}
               onStatusChange={handleStatusChange}
@@ -82,4 +151,3 @@ const RunCard: React.FC<RunCardProps> = ({ run }) => {
     </article>
   );
 };
-
