@@ -2,13 +2,88 @@
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
+import type { OutputDetailResponse } from '../models/OutputDetailResponse';
+import type { OutputsListResponse } from '../models/OutputsListResponse';
+import type { OutputStatsResponse } from '../models/OutputStatsResponse';
 import type { RunDetailResponse } from '../models/RunDetailResponse';
+import type { RunProcessResponse } from '../models/RunProcessResponse';
 import type { RunSubtaskResponse } from '../models/RunSubtaskResponse';
 import type { RunWithSubtasksResponse } from '../models/RunWithSubtasksResponse';
 import type { CancelablePromise } from '../core/CancelablePromise';
 import { OpenAPI } from '../core/OpenAPI';
 import { request as __request } from '../core/request';
 export class DefaultService {
+    /**
+     * List Outputs
+     * List available output configurations with optional grouping.
+     * @param groupMode
+     * @returns OutputsListResponse Successful Response
+     * @throws ApiError
+     */
+    public static listOutputsApiOutputsGet(
+        groupMode?: (string | null),
+    ): CancelablePromise<OutputsListResponse> {
+        return __request(OpenAPI, {
+            method: 'GET',
+            url: '/api/outputs',
+            query: {
+                'group_mode': groupMode,
+            },
+            errors: {
+                422: `Validation Error`,
+            },
+        });
+    }
+    /**
+     * Get Output Configuration
+     * Return detailed information and transcripts for a configuration.
+     * @param configuration
+     * @param page
+     * @param pageSize
+     * @returns OutputDetailResponse Successful Response
+     * @throws ApiError
+     */
+    public static getOutputConfigurationApiOutputsConfigurationGet(
+        configuration: string,
+        page: number = 1,
+        pageSize: number = 100,
+    ): CancelablePromise<OutputDetailResponse> {
+        return __request(OpenAPI, {
+            method: 'GET',
+            url: '/api/outputs/{configuration}',
+            path: {
+                'configuration': configuration,
+            },
+            query: {
+                'page': page,
+                'page_size': pageSize,
+            },
+            errors: {
+                422: `Validation Error`,
+            },
+        });
+    }
+    /**
+     * Get Output Configuration Stats
+     * Return debate statistics for an evaluation configuration.
+     * @param configuration
+     * @returns OutputStatsResponse Successful Response
+     * @throws ApiError
+     */
+    public static getOutputConfigurationStatsApiOutputsConfigurationStatsGet(
+        configuration: string,
+    ): CancelablePromise<OutputStatsResponse> {
+        return __request(OpenAPI, {
+            method: 'GET',
+            url: '/api/outputs/{configuration}/stats',
+            path: {
+                'configuration': configuration,
+            },
+            errors: {
+                422: `Validation Error`,
+            },
+        });
+    }
     /**
      * Health Check
      * Simple health endpoint to confirm the API is responsive.
@@ -46,6 +121,27 @@ export class DefaultService {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/runs/{run_id}',
+            path: {
+                'run_id': runId,
+            },
+            errors: {
+                422: `Validation Error`,
+            },
+        });
+    }
+    /**
+     * List Run Processes
+     * Return remote process metadata for each subtask associated with a run.
+     * @param runId
+     * @returns RunProcessResponse Successful Response
+     * @throws ApiError
+     */
+    public static listRunProcessesRunsRunIdProcessesGet(
+        runId: number,
+    ): CancelablePromise<Array<RunProcessResponse>> {
+        return __request(OpenAPI, {
+            method: 'GET',
+            url: '/runs/{run_id}/processes',
             path: {
                 'run_id': runId,
             },

@@ -4,7 +4,7 @@
 /* eslint-disable */
 export type RunSubtaskModelInfo = {
     key: string;
-    model_file_path?: string | null;
+    model_file_path: (string | null);
     model_type: string;
     training_round: string;
 };

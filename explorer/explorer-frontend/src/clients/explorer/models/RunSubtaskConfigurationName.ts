@@ -9,3 +9,4 @@ export type RunSubtaskConfigurationName = {
     judge: RunSubtaskModelInfo;
     task_type_name: string;
 };
+
