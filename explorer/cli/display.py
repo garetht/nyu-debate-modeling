@@ -9,7 +9,6 @@ from typing import Final, Optional
 
 from rich.text import Text
 
-
 MAX_BAR_WIDTH: Final[int] = 40
 BAR_CHARACTER: Final[str] = "█"
 SECTION_TITLE: Final[str] = "Transcripts per Day"

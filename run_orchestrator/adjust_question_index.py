@@ -4,7 +4,7 @@ import json
 from dataclasses import dataclass
 from pathlib import Path
 
-from run_orchestrator.transcript_model import Metadatum, Transcript
+from run_orchestrator.analysis.transcript_model import Metadatum, Transcript
 
 
 def renumber_question_indices(transcripts: list[Transcript]) -> list[Transcript]:

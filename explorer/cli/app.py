@@ -14,7 +14,7 @@ from textual.app import App, ComposeResult
 from textual.events import Key
 from textual.widgets import Footer, Header, Static, Tree
 
-from explorer.display import (
+from explorer.cli.display import (
     format_debater,
     format_directory_for_display,
     format_judge,
@@ -25,7 +25,7 @@ from explorer.display import (
     render_histogram,
     render_identifier_summary_lines,
 )
-from explorer.explorer_models import (
+from explorer.cli.explorer_models import (
     DATA_GENERATION_CONFIG_TYPE,
     EVAL_CONFIG_TYPE,
     GROUP_MODE_SEQUENCE,
@@ -34,7 +34,7 @@ from explorer.explorer_models import (
     OutputEntry,
 )
 from experiment_models.extant_debates_extractor import ExtantDebateIdentifiersExtractor
-from run_orchestrator.debate_stats_analyzer import (
+from run_orchestrator.analysis.debate_stats_analyzer import (
     DebateStats,
     DirectoryAnalysisResult,
     collect_directory_analysis,
@@ -157,7 +157,7 @@ class OutputsExplorerApp(App):
 
     def _collect_entries(self) -> tuple[Sequence[OutputEntry], Optional[str]]:
         """Gather the output metadata and any empty-state message."""
-        outputs_dir = Path(__file__).resolve().parent.parent / "outputs"
+        outputs_dir = Path(__file__).resolve().parent.parent.parent / "outputs"
         if not outputs_dir.exists():
             return [], f"No outputs directory found at {outputs_dir}"
 

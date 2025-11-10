@@ -1,10 +1,7 @@
 import json
 from dataclasses import dataclass
 from pathlib import Path, PosixPath
-
-from dataclasses import dataclass
-from typing import Any, List, Optional, TypeVar, Callable, Type, cast
-
+from typing import Any, Callable, Iterator, List, Optional, Type, TypeVar, cast
 
 T = TypeVar("T")
 
@@ -212,22 +209,25 @@ def transcript_to_dict(x: Transcript) -> Any:
 
 
 
-def read_transcripts_from_folder(folder_path: Path) -> list[Transcript]:
-    """Recursively reads all JSON files in a directory and returns a list of Transcript objects."""
+def iter_transcripts_from_folder(folder_path: Path) -> Iterator[Transcript]:
+    """Recursively reads JSON files in a directory and yields Transcript objects one by one."""
     if not folder_path.is_dir():
         print(f"Error: '{folder_path}' is not a directory.")
-        return []
+        return
 
-    transcripts = []
     for file_path in folder_path.rglob('*.json'):
         try:
             with open(file_path, 'r', encoding='utf-8') as file:
                 data = json.load(file)
-                transcripts.append(Transcript.from_dict(data, file_path))
+            yield Transcript.from_dict(data, file_path)
         except json.JSONDecodeError:
             print(f"Warning: Could not decode JSON from {file_path}. File will be skipped.")
-        except (KeyError, AssertionError, TypeError) as e:
-            print(f"Warning: Data structure validation failed for {file_path}. File will be skipped. Error: {type(e).__name__}: {e}")
-        except Exception as e:
-            print(f"Warning: An unexpected error occurred while reading {file_path}. File will be skipped. Error: {type(e).__name__}: {e}")
-    return transcripts
+        except (KeyError, AssertionError, TypeError) as error:
+            print(f"Warning: Data structure validation failed for {file_path}. File will be skipped. Error: {type(error).__name__}: {error}")
+        except Exception as error:
+            print(f"Warning: An unexpected error occurred while reading {file_path}. File will be skipped. Error: {type(error).__name__}: {error}")
+
+
+def read_transcripts_from_folder(folder_path: Path) -> list[Transcript]:
+    """Recursively reads all JSON files in a directory and returns a list of Transcript objects."""
+    return list(iter_transcripts_from_folder(folder_path))

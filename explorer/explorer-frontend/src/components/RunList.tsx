@@ -44,6 +44,11 @@ const RunCard: React.FC<RunCardProps> = ({ run }) => {
   });
 
   useEffect(() => {
+    if (run.is_hidden) {
+      setProcessState({ status: 'idle', processes: [] });
+      return;
+    }
+
     let isActive = true;
 
     const loadProcesses = async () => {
@@ -72,7 +77,7 @@ const RunCard: React.FC<RunCardProps> = ({ run }) => {
     return () => {
       isActive = false;
     };
-  }, [run.id]);
+  }, [run.id, run.is_hidden]);
 
   const processLookup = useMemo(() => {
     if (processState.status !== 'ready') {
@@ -96,6 +101,36 @@ const RunCard: React.FC<RunCardProps> = ({ run }) => {
   const processesError =
     processState.status === 'error' ? processState.message : undefined;
 
+  const subrunErrorCounts = useMemo(() => {
+    if (run.is_hidden) {
+      return { withErrors: 0, withoutErrors: 0 };
+    }
+    return run.subtasks.reduce(
+      (accumulator, subtask) => {
+        const processes = processLookup.get(subtask.id) ?? [];
+        const hasError = processes.some(
+          (process) => !process.success || Boolean(process.error),
+        );
+        if (hasError) {
+          accumulator.withErrors += 1;
+        } else {
+          accumulator.withoutErrors += 1;
+        }
+        return accumulator;
+      },
+      { withErrors: 0, withoutErrors: 0 },
+    );
+  }, [processLookup, run.is_hidden, run.subtasks]);
+
+  const subrunsWithErrorsLabel =
+    processesStatus === 'ready'
+      ? String(subrunErrorCounts.withErrors)
+      : '—';
+  const subrunsWithoutErrorsLabel =
+    processesStatus === 'ready'
+      ? String(subrunErrorCounts.withoutErrors)
+      : '—';
+
   return (
     <article className="py-8 first:pt-0">
       <div className="flex flex-wrap items-baseline justify-between gap-x-8 gap-y-4">
@@ -105,29 +140,58 @@ const RunCard: React.FC<RunCardProps> = ({ run }) => {
           </p>
           <h2 className="mt-2 text-2xl font-semibold text-slate-50">{run.run_name}</h2>
           <p className="mt-2 text-sm text-slate-400">Started {formatDateTime(run.created_at)}</p>
+          {run.is_hidden ? (
+            <p className="mt-2 text-sm font-medium text-amber-300">
+              This run was hidden by an administrator. Subtasks are not available.
+            </p>
+          ) : null}
         </div>
         <div className="flex flex-col items-end gap-2 text-right text-xs text-slate-400">
-          <button
-            type="button"
-            onClick={toggleAllStreams}
-            disabled={toggleDisabled}
-            className="inline-flex items-center gap-2 self-end rounded-lg border border-sky-600/60 bg-sky-600/10 px-4 py-2 text-sm font-medium text-sky-200 transition hover:border-sky-400 hover:bg-sky-500/20 disabled:cursor-not-allowed disabled:opacity-50"
-          >
-            {toggleLabel}
-          </button>
+          {run.is_hidden ? null : (
+            <button
+              type="button"
+              onClick={toggleAllStreams}
+              disabled={toggleDisabled}
+              className="inline-flex items-center gap-2 self-end rounded-lg border border-sky-600/60 bg-sky-600/10 px-4 py-2 text-sm font-medium text-sky-200 transition hover:border-sky-400 hover:bg-sky-500/20 disabled:cursor-not-allowed disabled:opacity-50"
+            >
+              {toggleLabel}
+            </button>
+          )}
           <div className="flex max-w-xs flex-wrap justify-end gap-2 rounded-lg bg-slate-950/80 px-3 py-2 text-right">
             <span className="text-slate-500">YAML</span>
             <span className="break-all font-mono text-[11px] text-slate-200">{run.yaml_path}</span>
           </div>
-          <span className="inline-flex items-center gap-2 rounded-full bg-slate-950/80 px-3 py-1 text-[11px] text-slate-200">
-            Subtasks
-            <span className="rounded-full bg-sky-500/20 px-2 py-0.5 font-mono text-sky-300">
-              {run.subtasks.length}
-            </span>
-          </span>
+          {run.is_hidden ? null : (
+            <div className="flex flex-col items-end gap-1">
+              <span className="inline-flex items-center gap-2 rounded-full bg-slate-950/80 px-3 py-1 text-[11px] text-slate-200">
+                Subtasks
+                <span className="rounded-full bg-sky-500/20 px-2 py-0.5 font-mono text-sky-300">
+                  {run.subtasks.length}
+                </span>
+              </span>
+              <span className="inline-flex items-center gap-2 rounded-full border border-rose-500/30 bg-rose-500/20 px-3 py-1 text-[11px] text-rose-200">
+                Subruns with errors
+                <span className="rounded-full bg-rose-500/40 px-2 py-0.5 font-mono text-rose-100">
+                  {subrunsWithErrorsLabel}
+                </span>
+              </span>
+              <span className="inline-flex items-center gap-2 rounded-full border border-emerald-500/30 bg-emerald-500/20 px-3 py-1 text-[11px] text-emerald-200">
+                Subruns without errors
+                <span className="rounded-full bg-emerald-500/40 px-2 py-0.5 font-mono text-emerald-100">
+                  {subrunsWithoutErrorsLabel}
+                </span>
+              </span>
+            </div>
+          )}
         </div>
       </div>
-      {run.subtasks.length > 0 ? (
+      {run.is_hidden ? (
+        <div className="mt-6 border-l border-slate-800/60 pl-4 md:pl-6">
+          <p className="rounded-xl border border-dashed border-amber-500/60 bg-amber-500/10 px-4 py-6 text-sm text-amber-200">
+            This run is hidden. Subtask details have been intentionally removed.
+          </p>
+        </div>
+      ) : run.subtasks.length > 0 ? (
         <ul className="mt-6 space-y-4 border-l border-slate-800/60 pl-4 md:pl-6">
           {run.subtasks.map((subtask) => (
             <SubtaskCard

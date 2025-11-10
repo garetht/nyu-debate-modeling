@@ -10,6 +10,7 @@ class RunTaskResponse(BaseModel):
     run_name: str
     yaml_path: str
     created_at: str
+    is_hidden: bool
 
 
 class RunSubtaskModelInfo(BaseModel):

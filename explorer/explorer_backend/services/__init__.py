@@ -19,6 +19,7 @@ from explorer.explorer_backend.services.runs import (
     list_run_processes,
     list_runs_with_subtasks,
     list_subtasks,
+    hide_run,
 )
 from explorer.explorer_backend.services.outputs import (
     get_output_detail,
@@ -37,6 +38,7 @@ __all__ = [
     "get_run_detail",
     "get_output_detail",
     "get_output_stats",
+    "hide_run",
     "list_run_subtasks",
     "list_run_processes",
     "list_outputs",

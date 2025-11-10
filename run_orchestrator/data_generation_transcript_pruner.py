@@ -3,7 +3,7 @@ from collections import Counter, defaultdict
 from pathlib import Path
 from typing import Dict, Iterable, List
 
-from run_orchestrator.debate_emptiness_analyzer import infer_configuration_type
+from run_orchestrator.analysis.debate_emptiness_analyzer import infer_configuration_type
 from run_orchestrator.evals_generator.config_spec import ConfigurationType
 from run_orchestrator.data_generation_transcript_model import (
     DataGenerationTranscript,

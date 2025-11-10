@@ -8,7 +8,7 @@ from typing import Any, List, TypeVar, Callable, Type, cast, Optional
 import matplotlib.pyplot as plt
 import numpy as np
 
-from run_orchestrator.transcript_model import Transcript, read_transcripts_from_folder
+from run_orchestrator.analysis.transcript_model import Transcript, read_transcripts_from_folder
 
 
 def print_text_summary(debate_counts: defaultdict):

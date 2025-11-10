@@ -214,3 +214,29 @@ def test_list_run_processes_returns_ps_data(
     assert process_entry["pid"] == 4321
     assert "ps_line" in process_entry and "stubuser 4321" in process_entry["ps_line"]
     assert process_entry["success"] is True
+
+
+def test_hide_run_marks_run_hidden(api_client: TestClient, temporary_database: TaskDatabase) -> None:
+    runs_response = api_client.get("/runs")
+    runs_response.raise_for_status()
+    runs_payload: List[Dict[str, Any]] = runs_response.json()
+    run_entry: Dict[str, Any] = runs_payload[0]
+    run_id: int = int(run_entry["id"])
+    assert run_entry["is_hidden"] is False
+
+    hide_response = api_client.post(f"/runs/{run_id}/hide")
+    assert hide_response.status_code == 200
+    hide_payload: Dict[str, Any] = hide_response.json()
+    assert hide_payload["id"] == run_id
+    assert hide_payload["is_hidden"] is True
+
+    refreshed_runs = api_client.get("/runs")
+    refreshed_runs.raise_for_status()
+    refreshed_payload: List[Dict[str, Any]] = refreshed_runs.json()
+    refreshed_entry: Dict[str, Any] = next(run for run in refreshed_payload if run["id"] == run_id)
+    assert refreshed_entry["is_hidden"] is True
+
+
+def test_hide_run_returns_404_for_missing_run(api_client: TestClient) -> None:
+    response = api_client.post("/runs/99999/hide")
+    assert response.status_code == 404

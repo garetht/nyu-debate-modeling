@@ -135,4 +135,4 @@ if __name__ == "__main__":
     config = parse_args()
     run_config_generator(config)
     print("Configuration generated!")
-    print(f"python run_orchestrator/run_experiments.py start {config.filename}")
+    print(f"PYTHONPATH=. uv run python run_orchestrator/run_experiments.py start {config.filename}")

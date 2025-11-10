@@ -13,16 +13,18 @@ from explorer.errors.outputs import (
     OutputStatsUnavailableError,
     OutputsDirectoryMissingError,
 )
-from run_orchestrator.debate_stats_analyzer import (
+from run_orchestrator.analysis.debate_stats_analyzer import (
     DebateStats,
-    analyze_debate_file,
+    analyze_debate_statistics,
     collect_directory_analysis,
+    load_json_file,
 )
 from run_orchestrator.evals_generator.configuration_name import ConfigurationName
 from run_orchestrator.evals_generator.model_definitions import (
     ALL_VALID_DEBATERS,
     ALL_VALID_JUDGES,
 )
+from run_orchestrator.analysis.transcript_model import Transcript
 
 from explorer.explorer_backend.models import (
     DailyDebateStatsResponse,
@@ -337,7 +339,14 @@ def _compute_stats_by_day(transcripts_directory: Path) -> Dict[str, DebateStats]
         day = _parse_transcript_day(path.name)
         if day is None:
             continue
-        file_stats, _ = analyze_debate_file(path)
+        data = load_json_file(path)
+        if not data:
+            continue
+        try:
+            transcript = Transcript.from_dict(data, path)
+        except (AssertionError, KeyError, TypeError, ValueError):
+            continue
+        file_stats = analyze_debate_statistics([transcript])
         if file_stats.total_debates == 0:
             continue
         bucket = stats_by_day.setdefault(day, DebateStats())

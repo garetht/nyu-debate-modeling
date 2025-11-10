@@ -26,11 +26,13 @@ from explorer.explorer_backend.models import (
     RunDetailResponse,
     RunProcessResponse,
     RunSubtaskResponse,
+    RunTaskResponse,
     RunWithSubtasksResponse,
 )
 from explorer.explorer_backend.services import (
     get_database,
     get_run_detail,
+    hide_run as mark_run_hidden,
     get_output_detail as fetch_output_detail,
     get_output_stats as fetch_output_stats,
     list_outputs as fetch_outputs,
@@ -162,6 +164,15 @@ def get_run(run_id: int, database: TaskDatabase = Depends(get_database)) -> RunD
     """Return a single run and its associated subtasks."""
     try:
         return get_run_detail(run_id=run_id, database=database)
+    except RunNotFoundError as error:
+        raise HTTPException(status_code=404, detail=str(error)) from error
+
+
+@app.post("/runs/{run_id}/hide", response_model=RunTaskResponse)
+def hide_run(run_id: int, database: TaskDatabase = Depends(get_database)) -> RunTaskResponse:
+    """Mark a run as hidden."""
+    try:
+        return mark_run_hidden(run_id=run_id, database=database)
     except RunNotFoundError as error:
         raise HTTPException(status_code=404, detail=str(error)) from error
 

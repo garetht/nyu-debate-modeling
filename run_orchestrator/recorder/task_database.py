@@ -24,10 +24,12 @@ class TaskDatabase:
                     id INTEGER PRIMARY KEY AUTOINCREMENT,
                     run_name TEXT NOT NULL,
                     yaml_path TEXT NOT NULL,
-                    created_at TEXT NOT NULL
+                    created_at TEXT NOT NULL,
+                    is_hidden INTEGER NOT NULL
                 );
                 """
             )
+
             connection.execute(
                 """
                 CREATE TABLE IF NOT EXISTS run_subtasks (
@@ -48,17 +50,30 @@ class TaskDatabase:
     def _connect(self) -> sqlite3.Connection:
         return sqlite3.connect(self._db_path)
 
-    def register_run(self, run_name: str, yaml_path: Path) -> int:
+    def register_run(self, run_name: str, yaml_path: Path, *, is_hidden: bool = False) -> int:
         timestamp = self._timestamp()
+        hidden_flag = 1 if is_hidden else 0
         with self._connect() as connection:
             cursor = connection.execute(
                 """
-                INSERT INTO run_tasks (run_name, yaml_path, created_at)
-                VALUES (?, ?, ?);
+                INSERT INTO run_tasks (run_name, yaml_path, created_at, is_hidden)
+                VALUES (?, ?, ?, ?);
                 """,
-                (run_name, str(yaml_path), timestamp),
+                (run_name, str(yaml_path), timestamp, hidden_flag),
             )
             return int(cursor.lastrowid)
+
+    def set_run_hidden(self, run_task_id: int, *, is_hidden: bool) -> None:
+        hidden_flag = 1 if is_hidden else 0
+        with self._connect() as connection:
+            connection.execute(
+                """
+                UPDATE run_tasks
+                SET is_hidden = ?
+                WHERE id = ?;
+                """,
+                (hidden_flag, run_task_id),
+            )
 
     def record_subtask(
         self,

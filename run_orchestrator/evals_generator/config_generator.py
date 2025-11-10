@@ -143,7 +143,7 @@ def generate_eval_configurations(debaters: dict[str, DebaterModelConfiguration],
             task_type_params = dataclasses.replace(
                 task_type_params,
                 generation_params=task_type_params.generation_params.model_copy(
-                    update={"max_new_tokens": 1500}
+                    update={"max_new_tokens": 3000}
                 )
             )
 

@@ -39,6 +39,7 @@ def _row_to_run_task(row: sqlite3.Row) -> RunTaskResponse:
         run_name=str(row["run_name"]),
         yaml_path=str(row["yaml_path"]),
         created_at=str(row["created_at"]),
+        is_hidden=bool(row["is_hidden"]),
     )
 
 
@@ -107,7 +108,7 @@ def _fetch_run(database: TaskDatabase, run_id: int) -> RunTaskResponse | None:
         connection.row_factory = sqlite3.Row
         row = connection.execute(
             """
-            SELECT id, run_name, yaml_path, created_at
+            SELECT id, run_name, yaml_path, is_hidden, created_at
             FROM run_tasks
             WHERE id = ?;
             """,
@@ -123,7 +124,7 @@ def _fetch_runs(database: TaskDatabase) -> List[RunTaskResponse]:
         connection.row_factory = sqlite3.Row
         rows = connection.execute(
             """
-            SELECT id, run_name, yaml_path, created_at
+            SELECT id, run_name, yaml_path, is_hidden, created_at
             FROM run_tasks
             ORDER BY created_at DESC;
             """
@@ -186,6 +187,7 @@ def list_runs_with_subtasks(database: TaskDatabase) -> List[RunWithSubtasksRespo
                 run_name=run.run_name,
                 yaml_path=run.yaml_path,
                 created_at=run.created_at,
+                is_hidden=run.is_hidden,
                 subtasks=subtasks,
             )
         )
@@ -308,6 +310,19 @@ def list_run_processes(
     return results
 
 
+def hide_run(run_id: int, database: TaskDatabase) -> RunTaskResponse:
+    """Mark a run as hidden and return the updated run payload."""
+    run: RunTaskResponse | None = _fetch_run(database, run_id)
+    if run is None:
+        raise RunNotFoundError(run_id)
+
+    database.set_run_hidden(run_id, is_hidden=True)
+    updated_run: RunTaskResponse | None = _fetch_run(database, run_id)
+    if updated_run is None:
+        raise RunNotFoundError(run_id)
+    return updated_run
+
+
 __all__ = [
     "RunNotFoundError",
     "get_run_detail",
@@ -315,4 +330,5 @@ __all__ = [
     "list_runs_with_subtasks",
     "list_subtasks",
     "list_run_processes",
+    "hide_run",
 ]
