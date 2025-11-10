@@ -84,7 +84,7 @@ def test_serialize_from_inputs_requires_alias(sample_configs):
         ConfigurationName.serialize_from_inputs(ConfigurationType.EVAL, debater_without_alias, judge_cfg, "quality")
 
 
-def test_deserialize_rejects_unknown_debater_alias(sample_configs):
+def test_deserialize_rejects_unknown_debater_alias(sample_configs) -> None:
     judge_name, judge_cfg = sample_configs[1]
     judge_segment = f"{judge_cfg.settings.alias}_{judge_cfg.training_round.display_name}"
     malformed = f"eval--unknown-debater_untrained--{judge_segment}--quality"
@@ -93,10 +93,88 @@ def test_deserialize_rejects_unknown_debater_alias(sample_configs):
         ConfigurationName.deserialize(malformed)
 
 
-def test_deserialize_rejects_mismatched_training(sample_configs):
+def test_deserialize_rejects_mismatched_training(sample_configs) -> None:
     (debater_key, debater_cfg), (_, judge_cfg) = sample_configs
     debater_alias = f"{debater_key}-debater"
     serialized = f"eval--{debater_alias}_fake-training--{judge_cfg.settings.alias}_{judge_cfg.training_round.display_name}--quality"
 
     with pytest.raises(ValueError, match="Training round 'fake-training' does not match debater"):
         ConfigurationName.deserialize(serialized)
+
+
+def test_deserialize_rejects_unknown_judge_alias(sample_configs) -> None:
+    (_, debater_cfg), (_, judge_cfg) = sample_configs
+    debater_segment = f"{debater_cfg.settings.alias}_{debater_cfg.training_round.display_name}"
+    malformed = f"eval--{debater_segment}--unknown-judge_untrained--quality"
+
+    with pytest.raises(ValueError, match="Unknown judge alias"):
+        ConfigurationName.deserialize(malformed)
+
+
+def test_deserialize_rejects_mismatched_judge_training(sample_configs) -> None:
+    (_, debater_cfg), (_, judge_cfg) = sample_configs
+    debater_segment = f"{debater_cfg.settings.alias}_{debater_cfg.training_round.display_name}"
+    invalid_judge_segment = f"{judge_cfg.settings.alias}_fake-training"
+    malformed = f"eval--{debater_segment}--{invalid_judge_segment}--quality"
+
+    with pytest.raises(ValueError, match="Training round 'fake-training' does not match judge"):
+        ConfigurationName.deserialize(malformed)
+
+
+def test_deserialize_rejects_unknown_config_type(sample_configs) -> None:
+    (_, debater_cfg), (_, judge_cfg) = sample_configs
+    debater_segment = f"{debater_cfg.settings.alias}_{debater_cfg.training_round.display_name}"
+    judge_segment = f"{judge_cfg.settings.alias}_{judge_cfg.training_round.display_name}"
+    malformed = f"invalid--{debater_segment}--{judge_segment}--quality"
+
+    with pytest.raises(ValueError, match="Unknown configuration type 'invalid'"):
+        ConfigurationName.deserialize(malformed)
+
+
+def test_deserialize_rejects_malformed_model_segment(sample_configs) -> None:
+    (_, debater_cfg), (_, judge_cfg) = sample_configs
+    malformed_debater_segment = f"{debater_cfg.settings.alias}{debater_cfg.training_round.display_name}"
+    judge_segment = f"{judge_cfg.settings.alias}_{judge_cfg.training_round.display_name}"
+    malformed = f"eval--{malformed_debater_segment}--{judge_segment}--quality"
+
+    with pytest.raises(ValueError, match="Model segment"):
+        ConfigurationName.deserialize(malformed)
+
+
+def test_serialize_outputs_expected_structure(sample_configs) -> None:
+    (debater_key, _), (judge_key, _) = sample_configs
+    name = ConfigurationName._create(
+        config_type=ConfigurationType.DATA_GENERATION,
+        debater_key=debater_key,
+        judge_key=judge_key,
+        task_type_name="quality",
+    )
+
+    expected = "--".join(
+        [
+            ConfigurationType.DATA_GENERATION.value,
+            ConfigurationName._serialize_model_segment(
+                ConfigurationName._build_debater_alias(debater_key),
+                ALL_VALID_DEBATERS[debater_key].training_round.display_name,
+            ),
+            ConfigurationName._serialize_model_segment(
+                ConfigurationName._build_judge_alias(judge_key),
+                ALL_VALID_JUDGES[judge_key].training_round.display_name,
+            ),
+            "quality",
+        ]
+    )
+
+    assert name.serialize() == expected
+
+
+def test_serialize_from_inputs_rejects_unknown_task_type(sample_configs) -> None:
+    (_, debater_cfg), (_, judge_cfg) = sample_configs
+
+    with pytest.raises(ValueError, match="Unknown task type 'invalid-task'"):
+        ConfigurationName.serialize_from_inputs(
+            ConfigurationType.EVAL,
+            debater_cfg,
+            judge_cfg,
+            "invalid-task",
+        )

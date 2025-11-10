@@ -55,12 +55,12 @@ def analyze_debate_emptiness(transcripts: Iterable[Transcript]) -> DebateEmptine
                 elif speech.speaker == "Debater_B":
                     debater_b_empties.append(transcript.file_path)
 
-    unique_empty_files = tuple(sorted({*debater_a_empties, *debater_b_empties}, key=str))
+    unique_empty_files_paths = sorted({*debater_a_empties, *debater_b_empties}, key=str)
     return DebateEmptinessAnalysis(
-        empty_speech_counts=counter,
-        debater_a_empty_files=tuple(debater_a_empties),
-        debater_b_empty_files=tuple(debater_b_empties),
-        unique_empty_files=unique_empty_files,
+        empty_speech_counts=dict(counter),
+        debater_a_empty_files=[str(path) for path in debater_a_empties],
+        debater_b_empty_files=[str(path) for path in debater_b_empties],
+        unique_empty_files=[str(path) for path in unique_empty_files_paths],
         total_debates=total_debates,
     )
 

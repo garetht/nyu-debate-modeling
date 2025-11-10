@@ -14,11 +14,11 @@ from explorer.errors.outputs import (
     OutputsDirectoryMissingError,
 )
 from run_orchestrator.analysis.debate_stats_analyzer import (
-    DebateStats,
     analyze_debate_statistics,
     collect_directory_analysis,
     load_json_file,
 )
+from run_orchestrator.analysis.analysis_models.debate_stats import DebateStats
 from run_orchestrator.evals_generator.configuration_name import ConfigurationName
 from run_orchestrator.evals_generator.model_definitions import (
     ALL_VALID_DEBATERS,

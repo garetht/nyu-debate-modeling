@@ -3,8 +3,10 @@ from collections import Counter
 from pathlib import Path
 from typing import Iterable
 
-from run_orchestrator.analysis.analysis_models.debate_distribution import DebateDistributionArgs, DebateIdentifierCount, \
-    TitleCount, DebateDistributionAnalysis
+from run_orchestrator.analysis.analysis_models.debate_distribution import (
+    DebateDistributionArgs,
+    DebateDistributionAnalysis,
+)
 from run_orchestrator.analysis.transcript_model import Transcript, iter_transcripts_from_folder
 
 
@@ -43,23 +45,13 @@ def analyze_debate_distribution(transcripts: Iterable[Transcript]) -> DebateDist
         identifier_counter.update([identifier])
         title_counter.update([title])
 
-    identifier_counts_list: list[DebateIdentifierCount] = []
-    for identifier, count in sorted(identifier_counter.items()):
-        title, topic = _split_identifier(identifier)
-        identifier_counts_list.append(
-            DebateIdentifierCount(
-                identifier=identifier,
-                title=title,
-                topic=topic,
-                count=count,
-            )
-        )
-
-    identifier_counts = tuple(identifier_counts_list)
-    title_counts = tuple(
-        TitleCount(title=title, count=count)
-        for title, count in sorted(title_counter.items())
-    )
+    identifier_counts = {
+        identifier: count
+        for identifier, count in sorted(identifier_counter.items())
+    }
+    title_counts = {
+        title: count for title, count in sorted(title_counter.items())
+    }
 
     return DebateDistributionAnalysis(
         identifier_counts=identifier_counts,

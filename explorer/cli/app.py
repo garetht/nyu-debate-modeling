@@ -35,10 +35,10 @@ from explorer.cli.explorer_models import (
 )
 from experiment_models.extant_debates_extractor import ExtantDebateIdentifiersExtractor
 from run_orchestrator.analysis.debate_stats_analyzer import (
-    DebateStats,
     DirectoryAnalysisResult,
     collect_directory_analysis,
 )
+from run_orchestrator.analysis.analysis_models.debate_stats import DebateStats
 from run_orchestrator.evals_generator.configuration_name import ConfigurationName
 from run_orchestrator.evals_generator.model_definitions import (
     ALL_VALID_DEBATERS,

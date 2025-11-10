@@ -1,6 +1,5 @@
 from __future__ import annotations
 
-from collections import Counter
 from pathlib import Path, PosixPath
 from typing import Sequence
 
@@ -35,7 +34,7 @@ def build_transcript(
 
 
 @pytest.mark.parametrize(
-    "transcripts, expected_counter, debater_a_files, debater_b_files, unique_files",
+    "transcripts, expected_counts, debater_a_files, debater_b_files, unique_files",
     [
         (
             [
@@ -56,10 +55,10 @@ def build_transcript(
                     ),
                 ),
             ],
-            Counter({"debate1": 1, "debate2": 1}),
-            (PosixPath("/tmp/debate1.json"),),
-            (PosixPath("/tmp/debate2.json"),),
-            (PosixPath("/tmp/debate1.json"), PosixPath("/tmp/debate2.json")),
+            {"debate1": 1, "debate2": 1},
+            ["/tmp/debate1.json"],
+            ["/tmp/debate2.json"],
+            ["/tmp/debate1.json", "/tmp/debate2.json"],
         ),
         (
             [
@@ -72,23 +71,23 @@ def build_transcript(
                     ),
                 ),
             ],
-            Counter({"debate3": 2}),
-            (PosixPath("/tmp/debate3.json"),),
-            (PosixPath("/tmp/debate3.json"),),
-            (PosixPath("/tmp/debate3.json"),),
+            {"debate3": 2},
+            ["/tmp/debate3.json"],
+            ["/tmp/debate3.json"],
+            ["/tmp/debate3.json"],
         ),
     ],
 )
 def test_analyze_debate_emptiness_collects_expected_results(
     transcripts: Sequence[Transcript],
-    expected_counter: Counter[str],
-    debater_a_files: tuple[PosixPath, ...],
-    debater_b_files: tuple[PosixPath, ...],
-    unique_files: tuple[PosixPath, ...],
+    expected_counts: dict[str, int],
+    debater_a_files: list[str],
+    debater_b_files: list[str],
+    unique_files: list[str],
 ) -> None:
     analysis = analyze_debate_emptiness(transcripts)
 
-    assert analysis.empty_speech_counts == expected_counter
+    assert analysis.empty_speech_counts == expected_counts
     assert analysis.debater_a_empty_files == debater_a_files
     assert analysis.debater_b_empty_files == debater_b_files
     assert analysis.unique_empty_files == unique_files
@@ -110,10 +109,10 @@ def test_analyze_debate_emptiness_handles_absence_of_empty_speeches() -> None:
 
     analysis = analyze_debate_emptiness(transcripts)
 
-    assert analysis.empty_speech_counts == Counter()
-    assert analysis.debater_a_empty_files == ()
-    assert analysis.debater_b_empty_files == ()
-    assert analysis.unique_empty_files == ()
+    assert analysis.empty_speech_counts == {}
+    assert analysis.debater_a_empty_files == []
+    assert analysis.debater_b_empty_files == []
+    assert analysis.unique_empty_files == []
     assert analysis.total_debates == 1
     assert analysis.total_unique_empty_debates == 0
 

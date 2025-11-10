@@ -9,15 +9,15 @@ It also generates histograms of probabilistic decisions for both debaters.
 
 import argparse
 import json
-import math
 import sys
 from dataclasses import dataclass, field
 from pathlib import Path
-from typing import Any, Dict, Iterable, List, Literal, Optional, Sequence, cast
+from typing import Any, Dict, Iterable, List, Literal, Sequence, cast
 
 import matplotlib.pyplot as plt
 import numpy as np
 
+from run_orchestrator.analysis.analysis_models.debate_stats import DebateStats
 from run_orchestrator.analysis.transcript_model import Transcript
 
 OutputFormat = Literal["stdout", "yaml", "json"]
@@ -29,65 +29,6 @@ class DebateStatsAnalyzerArgs:
 
     directory_path: str
     output_format: OutputFormat
-
-
-@dataclass
-class DebateStats:
-    """Container for debate statistics"""
-    total_debates: int = 0
-    debater_a_wins: int = 0
-    debater_b_wins: int = 0
-    judge_correct: int = 0
-    first_debater_correct: int = 0
-    debater_a_probs: List[float] = field(default_factory=list)
-    debater_b_probs: List[float] = field(default_factory=list)
-
-    def add_debate(self, debater_a_win: bool, debater_b_win: bool,
-                   judge_correct: bool, first_debater_correct: bool,
-                   debater_a_prob: Optional[float] = None, debater_b_prob: Optional[float] = None) -> None:
-        """Add results from a single debate"""
-        self.total_debates += 1
-        if debater_a_win:
-            self.debater_a_wins += 1
-        elif debater_b_win:
-            self.debater_b_wins += 1
-
-        if judge_correct:
-            self.judge_correct += 1
-        if first_debater_correct:
-            self.first_debater_correct += 1
-
-        # Store probabilistic decisions
-        if debater_a_prob is not None:
-            self.debater_a_probs.append(debater_a_prob)
-        if debater_b_prob is not None:
-            self.debater_b_probs.append(debater_b_prob)
-
-    def get_percentages(self) -> Dict[str, float]:
-        """Calculate percentage statistics"""
-        if self.total_debates == 0:
-            return {
-                "debater_a_win_rate": 0.0,
-                "debater_b_win_rate": 0.0,
-                "judge_accuracy": 0.0,
-                "first_debater_accuracy": 0.0
-            }
-
-        return {
-            "debater_a_win_rate": (self.debater_a_wins / self.total_debates) * 100,
-            "debater_b_win_rate": (self.debater_b_wins / self.total_debates) * 100,
-            "judge_accuracy": (self.judge_correct / self.total_debates) * 100,
-            "first_debater_accuracy": (self.first_debater_correct / self.total_debates) * 100
-        }
-
-    def get_judge_accuracy_standard_error(self) -> float:
-        """Return the standard error of the judge accuracy percentage."""
-        if self.total_debates == 0:
-            return 0.0
-
-        success_rate: float = self.judge_correct / self.total_debates
-        variance: float = (success_rate * (1.0 - success_rate)) / self.total_debates
-        return math.sqrt(variance) * 100.0
 
 
 def analyze_debate_statistics(transcripts: Iterable[Transcript]) -> DebateStats:

@@ -1,6 +1,5 @@
 from __future__ import annotations
 
-from collections import Counter
 from dataclasses import dataclass
 from enum import Enum
 from pathlib import Path
@@ -9,18 +8,14 @@ from typing import Any, Callable, Dict, List, Sequence, Set, cast
 import pyarrow.parquet as pq
 import pytest
 
-from run_orchestrator.analysis.analysis_models.debate_distribution import (
-    DebateDistributionAnalysis,
-    DebateIdentifierCount,
-    TitleCount,
-)
+from run_orchestrator.analysis.analysis_models.debate_distribution import DebateDistributionAnalysis
 from run_orchestrator.analysis.analysis_models.analysis_result import AnalysisResult
 from run_orchestrator.analysis.analysis_models.debate_emptiness import DebateEmptinessAnalysis
 from run_orchestrator.analysis.analysis_models.debate_lengths import DebateLengthAnalysis
 from run_orchestrator.analysis.analysis_models.debate_uniqueness import DebateUniquenessAnalysis
 from run_orchestrator.analysis.analysis_models.full_debate_analysis import FullDebateAnalysis
 from run_orchestrator.analysis.serializers.dataclass_parquet import dataclasses_to_table, write_dataclasses_to_parquet
-from run_orchestrator.analysis.debate_stats_analyzer import DebateStats
+from run_orchestrator.analysis.analysis_models.debate_stats import DebateStats
 
 
 class Color(Enum):
@@ -74,21 +69,24 @@ def test_dataclasses_to_table_rejects_empty_iterable() -> None:
 AnalysisReconstructor = Callable[[Dict[str, Any]], AnalysisResult]
 
 
+def _rehydrate_counts(raw: Any) -> Dict[str, int]:
+    if raw is None:
+        return {}
+    if isinstance(raw, dict):
+        return {cast(str, key): int(cast(int, value)) for key, value in raw.items()}
+    entries = cast(List[Dict[str, Any]], raw)
+    reconstructed: Dict[str, int] = {}
+    for entry in entries:
+        key: str = cast(str, entry["key"])
+        value_key: str = "count" if "count" in entry else "value"
+        count: int = cast(int, entry[value_key])
+        reconstructed[key] = count
+    return reconstructed
+
+
 def _rehydrate_debate_distribution(row: Dict[str, Any]) -> DebateDistributionAnalysis:
-    identifier_counts_raw = cast(List[Dict[str, Any]], row["identifier_counts"])
-    identifier_counts = tuple(
-        DebateIdentifierCount(
-            identifier=cast(str, item["identifier"]),
-            title=cast(str, item["title"]),
-            topic=cast(str, item["topic"]),
-            count=cast(int, item["count"]),
-        )
-        for item in identifier_counts_raw
-    )
-    title_counts_raw = cast(List[Dict[str, Any]], row["title_counts"])
-    title_counts = tuple(
-        TitleCount(title=cast(str, item["title"]), count=cast(int, item["count"])) for item in title_counts_raw
-    )
+    identifier_counts = _rehydrate_counts(row["identifier_counts"])
+    title_counts = _rehydrate_counts(row["title_counts"])
     return DebateDistributionAnalysis(
         identifier_counts=identifier_counts,
         title_counts=title_counts,
@@ -98,18 +96,18 @@ def _rehydrate_debate_distribution(row: Dict[str, Any]) -> DebateDistributionAna
 
 def _rehydrate_debate_lengths(row: Dict[str, Any]) -> DebateLengthAnalysis:
     return DebateLengthAnalysis(
-        debater_a_lengths=tuple(cast(List[int], row["debater_a_lengths"])),
-        debater_b_lengths=tuple(cast(List[int], row["debater_b_lengths"])),
+        debater_a_lengths=list(cast(List[int], row["debater_a_lengths"])),
+        debater_b_lengths=list(cast(List[int], row["debater_b_lengths"])),
         transcript_count=cast(int, row["transcript_count"]),
     )
 
 
 def _rehydrate_debate_emptiness(row: Dict[str, Any]) -> DebateEmptinessAnalysis:
-    debater_a_files = tuple(Path(path) for path in cast(List[str], row["debater_a_empty_files"]))
-    debater_b_files = tuple(Path(path) for path in cast(List[str], row["debater_b_empty_files"]))
-    unique_files = tuple(Path(path) for path in cast(List[str], row["unique_empty_files"]))
+    debater_a_files = list(cast(List[str], row["debater_a_empty_files"]))
+    debater_b_files = list(cast(List[str], row["debater_b_empty_files"]))
+    unique_files = list(cast(List[str], row["unique_empty_files"]))
     return DebateEmptinessAnalysis(
-        empty_speech_counts=Counter(cast(Dict[str, int], row["empty_speech_counts"])),
+        empty_speech_counts=_rehydrate_counts(row["empty_speech_counts"]),
         debater_a_empty_files=debater_a_files,
         debater_b_empty_files=debater_b_files,
         unique_empty_files=unique_files,
@@ -118,9 +116,9 @@ def _rehydrate_debate_emptiness(row: Dict[str, Any]) -> DebateEmptinessAnalysis:
 
 
 def _rehydrate_debate_uniqueness(row: Dict[str, Any]) -> DebateUniquenessAnalysis:
-    duplicate_paths = tuple(Path(path) for path in cast(List[str], row["duplicate_file_paths"]))
+    duplicate_paths = [Path(path) for path in cast(List[str], row["duplicate_file_paths"])]
     return DebateUniquenessAnalysis(
-        unique_identifiers=tuple(cast(List[str], row["unique_identifiers"])),
+        unique_identifiers=list(cast(List[str], row["unique_identifiers"])),
         duplicate_file_paths=duplicate_paths,
         total_transcripts=cast(int, row["total_transcripts"]),
     )
@@ -149,40 +147,40 @@ def _rehydrate_full_debate_analysis(row: Dict[str, Any]) -> FullDebateAnalysis:
 
 def _sample_debate_distribution() -> DebateDistributionAnalysis:
     return DebateDistributionAnalysis(
-        identifier_counts=(
-            DebateIdentifierCount(identifier="debate-1", title="Title 1", topic="Topic A", count=3),
-            DebateIdentifierCount(identifier="debate-2", title="Title 2", topic="Topic B", count=5),
-        ),
-        title_counts=(
-            TitleCount(title="Title 1", count=3),
-            TitleCount(title="Title 2", count=5),
-        ),
+        identifier_counts={
+            "debate-1": 3,
+            "debate-2": 5,
+        },
+        title_counts={
+            "Title 1": 3,
+            "Title 2": 5,
+        },
         transcript_count=8,
     )
 
 
 def _sample_debate_lengths() -> DebateLengthAnalysis:
     return DebateLengthAnalysis(
-        debater_a_lengths=(120, 130, 110),
-        debater_b_lengths=(115, 125, 118),
+        debater_a_lengths=[120, 130, 110],
+        debater_b_lengths=[115, 125, 118],
         transcript_count=3,
     )
 
 
 def _sample_debate_emptiness() -> DebateEmptinessAnalysis:
     return DebateEmptinessAnalysis(
-        empty_speech_counts=Counter({"Debater_A": 2, "Debater_B": 1}),
-        debater_a_empty_files=(Path("/tmp/debate_a1.json"), Path("/tmp/debate_a2.json")),
-        debater_b_empty_files=(Path("/tmp/debate_b1.json"),),
-        unique_empty_files=(Path("/tmp/debate_a1.json"), Path("/tmp/debate_b1.json")),
+        empty_speech_counts={"Debater_A": 2, "Debater_B": 1},
+        debater_a_empty_files=["/tmp/debate_a1.json", "/tmp/debate_a2.json"],
+        debater_b_empty_files=["/tmp/debate_b1.json"],
+        unique_empty_files=["/tmp/debate_a1.json", "/tmp/debate_b1.json"],
         total_debates=4,
     )
 
 
 def _sample_debate_uniqueness() -> DebateUniquenessAnalysis:
     return DebateUniquenessAnalysis(
-        unique_identifiers=("debate-unique-1", "debate-unique-2"),
-        duplicate_file_paths=(Path("/tmp/dup1.json"), Path("/tmp/dup2.json")),
+        unique_identifiers=["debate-unique-1", "debate-unique-2"],
+        duplicate_file_paths=[Path("/tmp/dup1.json"), Path("/tmp/dup2.json")],
         total_transcripts=6,
     )
 

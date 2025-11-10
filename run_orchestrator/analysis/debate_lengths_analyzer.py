@@ -57,9 +57,9 @@ def analyze_debate_lengths(transcripts: Iterable[Transcript]) -> DebateLengthAna
                 debater_b_lengths.append(len(speech.supplemental.response_tokens))
 
     return DebateLengthAnalysis(
-        debater_a_lengths=tuple(debater_a_lengths),
-        debater_b_lengths=tuple(debater_b_lengths),
-        transcript_count=transcript_count
+        debater_a_lengths=debater_a_lengths,
+        debater_b_lengths=debater_b_lengths,
+        transcript_count=transcript_count,
     )
 
 

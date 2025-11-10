@@ -11,9 +11,9 @@ from run_orchestrator.analysis.debate_lengths_analyzer import (
     analyze_debate_lengths,
 )
 from run_orchestrator.analysis.debate_stats_analyzer import (
-    DebateStats,
     analyze_debate_statistics,
 )
+from run_orchestrator.analysis.analysis_models.debate_stats import DebateStats
 from run_orchestrator.analysis.analysis_models.full_debate_analysis import FullDebateAnalysis
 from run_orchestrator.analysis.transcript_model import Transcript
 

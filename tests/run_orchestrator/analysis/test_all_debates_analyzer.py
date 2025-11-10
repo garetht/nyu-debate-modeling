@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import sys
 import types
-from collections import Counter
+from dataclasses import dataclass
 from pathlib import Path
 from typing import Dict, Iterable, Iterator, List, Sequence
 
@@ -25,7 +25,7 @@ from run_orchestrator.analysis.all_debates_analyzer import (
     analyze_configuration_directory,
     iter_valid_configuration_directories,
 )
-from run_orchestrator.analysis.debate_stats_analyzer import DebateStats
+from run_orchestrator.analysis.analysis_models.debate_stats import DebateStats
 from run_orchestrator.analysis.analysis_models.debate_distribution import (
     DebateDistributionAnalysis,
 )
@@ -33,29 +33,35 @@ from run_orchestrator.analysis.analysis_models.debate_emptiness import DebateEmp
 from run_orchestrator.analysis.analysis_models.debate_lengths import DebateLengthAnalysis
 from run_orchestrator.analysis.analysis_models.full_debate_analysis import FullDebateAnalysis
 from run_orchestrator.analysis.transcript_model import Metadata, Speech, Transcript
+from run_orchestrator.evals_generator.config_spec import ConfigurationType
 
 
 def _build_stub_analysis() -> FullDebateAnalysis:
     return FullDebateAnalysis(
         emptiness=DebateEmptinessAnalysis(
-            empty_speech_counts=Counter(),
-            debater_a_empty_files=(),
-            debater_b_empty_files=(),
-            unique_empty_files=(),
+            empty_speech_counts={},
+            debater_a_empty_files=[],
+            debater_b_empty_files=[],
+            unique_empty_files=[],
             total_debates=0,
         ),
         lengths=DebateLengthAnalysis(
-            debater_a_lengths=(),
-            debater_b_lengths=(),
+            debater_a_lengths=[],
+            debater_b_lengths=[],
             transcript_count=0,
         ),
         distribution=DebateDistributionAnalysis(
-            identifier_counts=(),
-            title_counts=(),
+            identifier_counts={},
+            title_counts={},
             transcript_count=0,
         ),
         stats=DebateStats(),
     )
+
+
+@dataclass(frozen=True)
+class _FakeConfigurationName:
+    config_type: ConfigurationType
 
 
 def test_iter_valid_configuration_directories_filters_invalid(
@@ -64,6 +70,8 @@ def test_iter_valid_configuration_directories_filters_invalid(
 ) -> None:
     valid_directory: Path = tmp_path / "valid_config"
     valid_directory.mkdir()
+    non_eval_directory: Path = tmp_path / "non_eval_config"
+    non_eval_directory.mkdir()
     invalid_directory: Path = tmp_path / "invalid_config"
     invalid_directory.mkdir()
     extraneous_file: Path = tmp_path / "artifact.txt"
@@ -71,10 +79,12 @@ def test_iter_valid_configuration_directories_filters_invalid(
 
     called_names: List[str] = []
 
-    def fake_deserialize(name: str) -> str:
+    def fake_deserialize(name: str) -> _FakeConfigurationName:
         called_names.append(name)
-        if name.startswith("valid"):
-            return name
+        if name == "valid_config":
+            return _FakeConfigurationName(ConfigurationType.EVAL)
+        if name == "non_eval_config":
+            return _FakeConfigurationName(ConfigurationType.DATA_GENERATION)
         raise ValueError("invalid configuration name")
 
     monkeypatch.setattr(
@@ -86,6 +96,7 @@ def test_iter_valid_configuration_directories_filters_invalid(
 
     assert directories == [valid_directory]
     assert "valid_config" in called_names
+    assert "non_eval_config" in called_names
     assert "invalid_config" in called_names
 
 
@@ -163,9 +174,9 @@ def test_analyze_all_debates_processes_valid_directories(
     write_calls: Dict[Path, FullDebateAnalysis] = {}
     received_descriptions: List[str] = []
 
-    def fake_deserialize(name: str) -> str:
+    def fake_deserialize(name: str) -> _FakeConfigurationName:
         if name in {"config_a", "config_b"}:
-            return name
+            return _FakeConfigurationName(ConfigurationType.EVAL)
         raise ValueError("invalid")
 
     class FakeTqdm:
@@ -207,7 +218,7 @@ def test_analyze_all_debates_processes_valid_directories(
         fake_analyze_directory,
     )
     monkeypatch.setattr(
-        "run_orchestrator.analysis.all_debates_analyzer.write_dataclasses_to_parquet",
+        "run_orchestrator.analysis.all_debates_analyzer.pydantic_to_parquet",
         fake_write_parquet,
     )
 
@@ -218,3 +229,38 @@ def test_analyze_all_debates_processes_valid_directories(
     assert write_calls == {expected_destination: stub_analysis}
     assert analyses == {valid_directory: stub_analysis}
     assert any(description.startswith("Analyzing config") for description in received_descriptions)
+
+
+def test_analyze_all_debates_returns_empty_when_no_valid_directories(
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    (tmp_path / "candidate_a").mkdir()
+    (tmp_path / "candidate_b").mkdir()
+
+    write_calls: List[Path] = []
+
+    def fake_deserialize(name: str) -> _FakeConfigurationName:
+        raise ValueError(f"{name} is invalid")
+
+    def fake_write_parquet(
+        result: FullDebateAnalysis,
+        destination: Path,
+        *,
+        compression: str | None = "snappy",
+    ) -> None:
+        write_calls.append(destination)
+
+    monkeypatch.setattr(
+        "run_orchestrator.analysis.all_debates_analyzer.ConfigurationName.deserialize",
+        fake_deserialize,
+    )
+    monkeypatch.setattr(
+        "run_orchestrator.analysis.all_debates_analyzer.pydantic_to_parquet",
+        fake_write_parquet,
+    )
+
+    analyses: Dict[Path, FullDebateAnalysis] = analyze_all_debates(tmp_path)
+
+    assert analyses == {}
+    assert write_calls == []

@@ -1,5 +1,7 @@
-from typing import Protocol
+from pydantic import BaseModel, ConfigDict
 
 
-class AnalysisResult(Protocol):
-    pass
+class AnalysisResult(BaseModel):
+    """Base class for analysis results enforcing immutability."""
+
+    model_config = ConfigDict(frozen=True)

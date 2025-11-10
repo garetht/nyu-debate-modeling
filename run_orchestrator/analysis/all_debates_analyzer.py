@@ -7,9 +7,7 @@ from typing import Dict, List
 
 from run_orchestrator.analysis.debate_full_analyzer import full_debate_analysis
 from run_orchestrator.analysis.analysis_models.full_debate_analysis import FullDebateAnalysis
-from run_orchestrator.analysis.serializers.dataclass_parquet import (
-    write_dataclasses_to_parquet,
-)
+from run_orchestrator.analysis.serializers import pydantic_to_parquet
 from run_orchestrator.analysis.transcript_model import (
     Transcript,
     iter_transcripts_from_folder,
@@ -109,7 +107,8 @@ def analyze_all_debates(outputs_root: Path) -> Dict[Path, FullDebateAnalysis]:
             continue
 
         destination: Path = configuration_directory / PARQUET_FILENAME
-        write_dataclasses_to_parquet(analysis, destination)
+        print(analysis.lengths)
+        pydantic_to_parquet(analysis, destination)
         analyses_by_directory[configuration_directory] = analysis
 
     progress_bar.close()
@@ -120,7 +119,6 @@ def analyze_all_debates(outputs_root: Path) -> Dict[Path, FullDebateAnalysis]:
 
 def main(outputs_directory: Path | None = None) -> None:
     """Entry point for running the analyzer directly."""
-
     resolved_outputs_directory: Path = (
         outputs_directory if outputs_directory is not None else Path("outputs")
     )

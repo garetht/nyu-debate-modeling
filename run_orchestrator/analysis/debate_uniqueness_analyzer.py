@@ -62,9 +62,9 @@ def analyze_debate_uniqueness(transcripts: Iterable[Transcript]) -> DebateUnique
             unique_identifiers_in_order.append(identifier)
 
     return DebateUniquenessAnalysis(
-        unique_identifiers=tuple(unique_identifiers_in_order),
-        duplicate_file_paths=tuple(duplicate_file_paths),
-        total_transcripts=total_transcripts
+        unique_identifiers=unique_identifiers_in_order,
+        duplicate_file_paths=duplicate_file_paths,
+        total_transcripts=total_transcripts,
     )
 
 

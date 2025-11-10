@@ -28,20 +28,15 @@ def test_analyze_debate_distribution_handles_identifiers_without_underscore() ->
 
     analysis = analyze_debate_distribution(transcripts)
 
-    identifier_map = {identifier_count.identifier: identifier_count for identifier_count in analysis.identifier_counts}
-    assert identifier_map["Alpha_topic_one"].title == "Alpha"
-    assert identifier_map["Alpha_topic_one"].topic == "topic_one"
+    assert analysis.identifier_counts == {
+        "Alpha_topic_one": 1,
+        "Alpha_topic_two": 1,
+        "NoUnderscore": 1,
+        "multi_part_topic": 1,
+    }
 
-    assert identifier_map["Alpha_topic_two"].title == "Alpha"
-    assert identifier_map["Alpha_topic_two"].topic == "topic_two"
-
-    assert identifier_map["NoUnderscore"].title == "NoUnderscore"
-    assert identifier_map["NoUnderscore"].topic == ""
-
-    assert identifier_map["multi_part_topic"].title == "multi"
-    assert identifier_map["multi_part_topic"].topic == "part_topic"
-
-    title_map = {title_count.title: title_count.count for title_count in analysis.title_counts}
-    assert title_map["Alpha"] == 2
-    assert title_map["NoUnderscore"] == 1
-    assert title_map["multi"] == 1
+    assert analysis.title_counts == {
+        "Alpha": 2,
+        "NoUnderscore": 1,
+        "multi": 1,
+    }
