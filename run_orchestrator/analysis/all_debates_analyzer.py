@@ -14,6 +14,7 @@ from run_orchestrator.analysis.transcript_model import (
     Transcript,
     iter_transcripts_from_folder,
 )
+from run_orchestrator.evals_generator.config_spec import ConfigurationType
 from run_orchestrator.evals_generator.configuration_name import ConfigurationName
 from tqdm.auto import tqdm
 
@@ -30,9 +31,14 @@ def iter_valid_configuration_directories(outputs_root: Path) -> Iterator[Path]:
             continue
 
         try:
-            ConfigurationName.deserialize(candidate_path.name)
+            configuration = ConfigurationName.deserialize(candidate_path.name)
+
+            if configuration.config_type != ConfigurationType.EVAL:
+                continue
+
         except ValueError:
             continue
+
 
         yield candidate_path
 
