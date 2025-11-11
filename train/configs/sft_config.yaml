@@ -77,7 +77,7 @@ Test - Open:
           flip_sides: True
     speech_structure: 
         - open_debate
-Train - Llama3 - Open Debater:
+Train - Llama3 - Judge:
     model_name: /vast/spa9663/models/base_models/llama3-8b-262k
     target: judge
     max_length: 32986
@@ -85,7 +85,7 @@ Train - Llama3 - Open Debater:
     opening_speeches_only: False
     llm_type: llama3
     training_hyperparameters:
-        num_train_epochs: 1
+        num_train_epochs: 3
         per_device_train_batch_size: 2
         gradient_accumulation_steps: 8
         optim: adamw_hf
@@ -98,8 +98,8 @@ Train - Llama3 - Open Debater:
             use_minimal_output_format: True
     logging_and_saving_config:
         logging_steps: 10
-        output_dir: /vast/spa9663/models/trained_models/llama-3-open-debater
-        merge_output_dir: /vast/spa9663/models/trained_models/llama-3-open-debater
+        output_dir: /vast/spa9663/models/trained_models/llama-3-judge
+        merge_output_dir: /vast/spa9663/models/trained_models/llama-3-judge
     dataset:
         - dataset_type: quality
           split_type: train
