@@ -31,6 +31,7 @@ from run_orchestrator.analysis.analysis_models.debate_distribution import (
 )
 from run_orchestrator.analysis.analysis_models.debate_emptiness import DebateEmptinessAnalysis
 from run_orchestrator.analysis.analysis_models.debate_lengths import DebateLengthAnalysis
+from run_orchestrator.analysis.analysis_models.evaluation_configuration import EvaluationConfiguration
 from run_orchestrator.analysis.analysis_models.full_debate_analysis import FullDebateAnalysis
 from run_orchestrator.analysis.transcript_model import Metadata, Speech, Transcript
 from run_orchestrator.evals_generator.config_spec import ConfigurationType
@@ -56,6 +57,24 @@ def _build_stub_analysis() -> FullDebateAnalysis:
             transcript_count=0,
         ),
         stats=DebateStats(),
+        configuration=_build_stub_evaluation_configuration(),
+    )
+
+
+def _build_stub_evaluation_configuration() -> EvaluationConfiguration:
+    return EvaluationConfiguration(
+        config_type="eval",
+        task_type="task",
+        debater_name="debater",
+        debater_training_round="round",
+        debater_is_reasoning=True,
+        debater_model_type="model-x",
+        debater_max_new_tokens=1000,
+        judge_name="judge",
+        judge_training_round="round",
+        judge_is_reasoning=False,
+        judge_model_type="model-y",
+        judge_max_new_tokens=512,
     )
 
 
@@ -92,9 +111,9 @@ def test_iter_valid_configuration_directories_filters_invalid(
         fake_deserialize,
     )
 
-    directories: List[Path] = list(iter_valid_configuration_directories(tmp_path))
+    directories: List[tuple[_FakeConfigurationName, Path]] = list(iter_valid_configuration_directories(tmp_path))
 
-    assert directories == [valid_directory]
+    assert directories == [(_FakeConfigurationName(ConfigurationType.EVAL), valid_directory)]
     assert "valid_config" in called_names
     assert "non_eval_config" in called_names
     assert "invalid_config" in called_names
@@ -131,7 +150,11 @@ def test_analyze_configuration_directory_invokes_full_analysis(
         assert folder == transcripts_directory
         return iter(transcripts)
 
-    def fake_full_debate_analysis(transcripts_iterable: Iterable[Transcript]) -> FullDebateAnalysis:
+    def fake_full_debate_analysis(
+        configuration: _FakeConfigurationName,
+        transcripts_iterable: Iterable[Transcript],
+    ) -> FullDebateAnalysis:
+        assert configuration == _FakeConfigurationName(ConfigurationType.EVAL)
         consumed_transcripts.extend(list(transcripts_iterable))
         return _build_stub_analysis()
 
@@ -144,7 +167,9 @@ def test_analyze_configuration_directory_invokes_full_analysis(
         fake_full_debate_analysis,
     )
 
-    analysis: FullDebateAnalysis = analyze_configuration_directory(configuration_directory)
+    configuration: _FakeConfigurationName = _FakeConfigurationName(ConfigurationType.EVAL)
+
+    analysis: FullDebateAnalysis = analyze_configuration_directory(configuration, configuration_directory)
 
     assert consumed_transcripts == transcripts
     assert isinstance(analysis, FullDebateAnalysis)
@@ -155,7 +180,7 @@ def test_analyze_configuration_directory_missing_transcripts(tmp_path: Path) -> 
     configuration_directory.mkdir()
 
     with pytest.raises(FileNotFoundError):
-        analyze_configuration_directory(configuration_directory)
+        analyze_configuration_directory(_FakeConfigurationName(ConfigurationType.EVAL), configuration_directory)
 
 
 def test_analyze_all_debates_processes_valid_directories(
@@ -196,8 +221,8 @@ def test_analyze_all_debates_processes_valid_directories(
         def close(self) -> None:
             self.closed = True
 
-    def fake_analyze_directory(directory: Path) -> FullDebateAnalysis:
-        if directory == valid_directory:
+    def fake_analyze_directory(configuration: _FakeConfigurationName, directory: Path) -> FullDebateAnalysis:
+        if directory == valid_directory and configuration == _FakeConfigurationName(ConfigurationType.EVAL):
             analyzed_directories.append(directory)
             return stub_analysis
         raise FileNotFoundError("missing transcripts")

@@ -18,6 +18,7 @@ from run_orchestrator.analysis.analysis_models.debate_distribution import Debate
 from run_orchestrator.analysis.analysis_models.debate_emptiness import DebateEmptinessAnalysis
 from run_orchestrator.analysis.analysis_models.debate_lengths import DebateLengthAnalysis
 from run_orchestrator.analysis.analysis_models.debate_stats import DebateStats
+from run_orchestrator.analysis.analysis_models.evaluation_configuration import EvaluationConfiguration
 from run_orchestrator.analysis.analysis_models.full_debate_analysis import FullDebateAnalysis
 
 
@@ -158,6 +159,7 @@ def test_pydantic_to_parquet_preserves_nested_models(tmp_path: Path) -> None:
         lengths=lengths,
         distribution=distribution,
         stats=stats,
+        configuration=_sample_evaluation_configuration(),
     )
 
     pydantic_to_parquet([analysis], output_path)
@@ -168,3 +170,19 @@ def test_pydantic_to_parquet_preserves_nested_models(tmp_path: Path) -> None:
     assert written_distribution["identifier_counts"] == [("Alpha_topic", 2)]
     assert written_distribution["title_counts"] == [("Alpha", 2)]
     assert written_distribution["transcript_count"] == 2
+def _sample_evaluation_configuration() -> EvaluationConfiguration:
+    return EvaluationConfiguration(
+        config_type="eval",
+        task_type="task",
+        debater_name="debater",
+        debater_training_round="round",
+        debater_is_reasoning=True,
+        debater_model_type="model-a",
+        debater_max_new_tokens=1500,
+        judge_name="judge",
+        judge_training_round="round",
+        judge_is_reasoning=False,
+        judge_model_type="model-b",
+        judge_max_new_tokens=900,
+    )
+

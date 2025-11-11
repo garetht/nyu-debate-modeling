@@ -3,6 +3,8 @@ from __future__ import annotations
 from pathlib import PosixPath
 from typing import Iterable, Iterator, Sequence, TypeAlias
 
+import pytest
+
 from run_orchestrator.analysis.debate_distribution_analyzer import analyze_debate_distribution
 from run_orchestrator.analysis.debate_emptiness_analyzer import analyze_debate_emptiness
 from run_orchestrator.analysis.debate_lengths_analyzer import analyze_debate_lengths
@@ -10,6 +12,7 @@ from run_orchestrator.analysis.debate_stats_analyzer import analyze_debate_stati
 from run_orchestrator.analysis.debate_full_analyzer import (
     full_debate_analysis,
 )
+from run_orchestrator.analysis.analysis_models.evaluation_configuration import EvaluationConfiguration
 from run_orchestrator.analysis.analysis_models.full_debate_analysis import FullDebateAnalysis
 from run_orchestrator.analysis.transcript_model import Metadata, ProbabilisticDecision, Speech, Supplemental, Transcript
 
@@ -89,28 +92,65 @@ def make_example_transcripts() -> list[Transcript]:
     ]
 
 
-def test_full_debate_analysis_matches_component_results() -> None:
+def _build_stub_configuration() -> EvaluationConfiguration:
+    return EvaluationConfiguration(
+        config_type="eval",
+        task_type="task",
+        debater_name="debater",
+        debater_training_round="round",
+        debater_is_reasoning=True,
+        debater_model_type="model-a",
+        debater_max_new_tokens=1000,
+        judge_name="judge",
+        judge_training_round="round",
+        judge_is_reasoning=False,
+        judge_model_type="model-b",
+        judge_max_new_tokens=512,
+    )
+
+
+class _StubConfigurationName:
+    """Stub object mimicking ConfigurationName for testing purposes."""
+
+
+def test_full_debate_analysis_matches_component_results(
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
     transcripts = make_example_transcripts()
+
+    stub_configuration = _StubConfigurationName()
 
     expected_analysis = FullDebateAnalysis(
         emptiness=analyze_debate_emptiness(transcripts),
         lengths=analyze_debate_lengths(transcripts),
         distribution=analyze_debate_distribution(transcripts),
         stats=analyze_debate_statistics(transcripts),
+        configuration=_build_stub_configuration(),
     )
 
-    analysis = full_debate_analysis(iter(transcripts))
+    monkeypatch.setattr(
+        "run_orchestrator.analysis.debate_full_analyzer.EvaluationConfiguration.from_configuration_name",
+        lambda _: _build_stub_configuration(),
+    )
+
+    analysis = full_debate_analysis(
+        configuration=stub_configuration,
+        transcripts=iter(transcripts),
+    )
 
     assert analysis == expected_analysis
 
 
-def test_full_debate_analysis_only_consumes_input_once() -> None:
+def test_full_debate_analysis_only_consumes_input_once(
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
     transcripts = make_example_transcripts()
     expected_analysis = FullDebateAnalysis(
         emptiness=analyze_debate_emptiness(transcripts),
         lengths=analyze_debate_lengths(transcripts),
         distribution=analyze_debate_distribution(transcripts),
         stats=analyze_debate_statistics(transcripts),
+        configuration=_build_stub_configuration(),
     )
 
     consumption_log: list[str] = []
@@ -123,7 +163,17 @@ def test_full_debate_analysis_only_consumes_input_once() -> None:
 
         return iterator()
 
-    analysis = full_debate_analysis(generator())
+    stub_configuration = _StubConfigurationName()
+
+    monkeypatch.setattr(
+        "run_orchestrator.analysis.debate_full_analyzer.EvaluationConfiguration.from_configuration_name",
+        lambda _: _build_stub_configuration(),
+    )
+
+    analysis = full_debate_analysis(
+        configuration=stub_configuration,
+        transcripts=generator(),
+    )
 
     assert analysis == expected_analysis
     assert consumption_log == [

@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 import logging
-from collections.abc import Iterator
+from collections.abc import Iterable, Iterator
 from pathlib import Path
 from typing import Dict, List
 
@@ -21,7 +21,7 @@ PARQUET_FILENAME: str = "full_debate_analysis.parquet"
 LOGGER = logging.getLogger(__name__)
 
 
-def iter_valid_configuration_directories(outputs_root: Path) -> Iterator[Path]:
+def iter_valid_configuration_directories(outputs_root: Path) -> Iterator[tuple[ConfigurationName, Path]]:
     """Yield configuration directories whose names deserialize successfully."""
 
     for candidate_path in sorted(outputs_root.iterdir()):
@@ -29,19 +29,20 @@ def iter_valid_configuration_directories(outputs_root: Path) -> Iterator[Path]:
             continue
 
         try:
-            configuration = ConfigurationName.deserialize(candidate_path.name)
-
-            if configuration.config_type != ConfigurationType.EVAL:
-                continue
-
+            configuration: ConfigurationName = ConfigurationName.deserialize(candidate_path.name)
         except ValueError:
             continue
 
+        if configuration.config_type != ConfigurationType.EVAL:
+            continue
 
-        yield candidate_path
+        yield configuration, candidate_path
 
 
-def analyze_configuration_directory(configuration_directory: Path) -> FullDebateAnalysis:
+def analyze_configuration_directory(
+    configuration: ConfigurationName,
+    configuration_directory: Path,
+) -> FullDebateAnalysis:
     """Run the full debate analysis for a single configuration directory."""
 
     transcripts_directory: Path = configuration_directory / "outputs" / "transcripts"
@@ -53,7 +54,10 @@ def analyze_configuration_directory(configuration_directory: Path) -> FullDebate
     transcripts_iterator: Iterator[Transcript] = iter_transcripts_from_folder(
         transcripts_directory
     )
-    analysis: FullDebateAnalysis = full_debate_analysis(transcripts_iterator)
+    analysis: FullDebateAnalysis = full_debate_analysis(
+        configuration=configuration,
+        transcripts=transcripts_iterator,
+    )
 
     return analysis
 
@@ -63,7 +67,7 @@ def analyze_all_debates(outputs_root: Path) -> Dict[Path, FullDebateAnalysis]:
 
     analyses_by_directory: Dict[Path, FullDebateAnalysis] = {}
 
-    valid_directories: List[Path] = list(
+    valid_directories: List[tuple[ConfigurationName, Path]] = list(
         iter_valid_configuration_directories(outputs_root)
     )
     total_directories: int = len(valid_directories)
@@ -76,13 +80,13 @@ def analyze_all_debates(outputs_root: Path) -> Dict[Path, FullDebateAnalysis]:
     if total_directories == 0:
         return analyses_by_directory
 
-    progress_bar = tqdm(
+    progress_bar: Iterable[tuple[ConfigurationName, Path]] = tqdm(
         valid_directories,
         desc="Analyzing configurations",
         unit="config",
     )
 
-    for index, configuration_directory in enumerate(progress_bar, start=1):
+    for index, (configuration, configuration_directory) in enumerate(progress_bar, start=1):
         progress_bar.set_description(
             f"Analyzing {configuration_directory.name}"
         )
@@ -97,7 +101,8 @@ def analyze_all_debates(outputs_root: Path) -> Dict[Path, FullDebateAnalysis]:
 
         try:
             analysis: FullDebateAnalysis = analyze_configuration_directory(
-                configuration_directory
+                configuration,
+                configuration_directory,
             )
         except FileNotFoundError:
             LOGGER.warning(
@@ -107,7 +112,6 @@ def analyze_all_debates(outputs_root: Path) -> Dict[Path, FullDebateAnalysis]:
             continue
 
         destination: Path = configuration_directory / PARQUET_FILENAME
-        print(analysis.lengths)
         pydantic_to_parquet(analysis, destination)
         analyses_by_directory[configuration_directory] = analysis
 

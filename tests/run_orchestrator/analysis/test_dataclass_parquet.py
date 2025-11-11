@@ -13,6 +13,7 @@ from run_orchestrator.analysis.analysis_models.analysis_result import AnalysisRe
 from run_orchestrator.analysis.analysis_models.debate_emptiness import DebateEmptinessAnalysis
 from run_orchestrator.analysis.analysis_models.debate_lengths import DebateLengthAnalysis
 from run_orchestrator.analysis.analysis_models.debate_uniqueness import DebateUniquenessAnalysis
+from run_orchestrator.analysis.analysis_models.evaluation_configuration import EvaluationConfiguration
 from run_orchestrator.analysis.analysis_models.full_debate_analysis import FullDebateAnalysis
 from run_orchestrator.analysis.serializers.dataclass_parquet import dataclasses_to_table, write_dataclasses_to_parquet
 from run_orchestrator.analysis.analysis_models.debate_stats import DebateStats
@@ -136,12 +137,17 @@ def _rehydrate_debate_stats(row: Dict[str, Any]) -> DebateStats:
     )
 
 
+def _rehydrate_evaluation_configuration(row: Dict[str, Any]) -> EvaluationConfiguration:
+    return EvaluationConfiguration(**row)
+
+
 def _rehydrate_full_debate_analysis(row: Dict[str, Any]) -> FullDebateAnalysis:
     return FullDebateAnalysis(
         emptiness=_rehydrate_debate_emptiness(cast(Dict[str, Any], row["emptiness"])),
         lengths=_rehydrate_debate_lengths(cast(Dict[str, Any], row["lengths"])),
         distribution=_rehydrate_debate_distribution(cast(Dict[str, Any], row["distribution"])),
         stats=_rehydrate_debate_stats(cast(Dict[str, Any], row["stats"])),
+        configuration=_rehydrate_evaluation_configuration(cast(Dict[str, Any], row["configuration"])),
     )
 
 
@@ -197,12 +203,30 @@ def _sample_debate_stats() -> DebateStats:
     )
 
 
+def _sample_evaluation_configuration() -> EvaluationConfiguration:
+    return EvaluationConfiguration(
+        config_type="eval",
+        task_type="task",
+        debater_name="debater",
+        debater_training_round="round",
+        debater_is_reasoning=True,
+        debater_model_type="model-a",
+        debater_max_new_tokens=1024,
+        judge_name="judge",
+        judge_training_round="round",
+        judge_is_reasoning=False,
+        judge_model_type="model-b",
+        judge_max_new_tokens=768,
+    )
+
+
 def _sample_full_debate_analysis() -> FullDebateAnalysis:
     return FullDebateAnalysis(
         emptiness=_sample_debate_emptiness(),
         lengths=_sample_debate_lengths(),
         distribution=_sample_debate_distribution(),
         stats=_sample_debate_stats(),
+        configuration=_sample_evaluation_configuration(),
     )
 
 
