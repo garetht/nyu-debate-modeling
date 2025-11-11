@@ -14,7 +14,6 @@ class EvaluationConfiguration(AnalysisResult):
     debater_max_new_tokens: int
     judge_name: str
     judge_training_round: str
-    judge_is_reasoning: bool
     judge_model_type: str
     judge_max_new_tokens: int
 
@@ -26,12 +25,11 @@ class EvaluationConfiguration(AnalysisResult):
             task_type=name.task_type_name,
             debater_name=name.debater_key,
             debater_training_round=str(name.debater_config.training_round),
-            debater_is_reasoning=name.debater_config.settings.is_reasoning,
-            debater_max_new_tokens=name.debater_config.settings.max_new_tokens,
+            debater_is_reasoning=name.debater_config.is_reasoning,
+            debater_max_new_tokens=name.debater_config.settings.generation_params.max_new_tokens,
             debater_model_type=name.debater_config.settings.model_type,
             judge_name=name.judge_key,
             judge_training_round=str(name.judge_config.training_round),
-            judge_is_reasoning=name.judge_config.settings.is_reasoning,
-            judge_max_new_tokens=name.judge_config.settings.max_new_tokens,
+            judge_max_new_tokens=name.judge_config.settings.generation_params.max_new_tokens,
             judge_model_type=name.judge_config.settings.model_type,
         )

@@ -151,11 +151,12 @@ def test_analyze_configuration_directory_invokes_full_analysis(
         return iter(transcripts)
 
     def fake_full_debate_analysis(
+        *,
         configuration: _FakeConfigurationName,
-        transcripts_iterable: Iterable[Transcript],
+        transcripts: Iterable[Transcript],
     ) -> FullDebateAnalysis:
         assert configuration == _FakeConfigurationName(ConfigurationType.EVAL)
-        consumed_transcripts.extend(list(transcripts_iterable))
+        consumed_transcripts.extend(list(transcripts))
         return _build_stub_analysis()
 
     monkeypatch.setattr(
