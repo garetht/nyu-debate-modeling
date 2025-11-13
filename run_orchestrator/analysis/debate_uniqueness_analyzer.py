@@ -104,6 +104,7 @@ def main() -> None:
         f"With --count {args.minimum_total_count}, planning to keep {num_to_keep} and delete {num_to_delete} transcripts."
     )
 
+    print(files_to_actually_delete)
     if args.delete_duplicates:
         print(
             f"\n--delete flag is set. Deleting {num_to_delete} non-unique transcript files."

@@ -9,6 +9,8 @@ class DebateDistributionArgs(BaseModel):
     model_config = ConfigDict(frozen=True)
 
     folder_path: Path
+    keep_per_debate: int | None = None
+    delete: bool = False
 
 
 class DebateDistributionAnalysis(AnalysisResult):
