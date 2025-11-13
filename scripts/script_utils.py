@@ -42,7 +42,7 @@ class ScriptUtils:
         load_dotenv()
 
     @classmethod
-    def get_args(cls):
+    def get_args(cls) -> ScriptConfig:
         parser = argparse.ArgumentParser()
         parser.add_argument("--local", action="store_true", default=False)
         parser.add_argument("--num_iters", type=int, default=1_000)
@@ -59,12 +59,19 @@ class ScriptUtils:
         parser.add_argument("--force_save_transcripts", action="store_true", default=False)
         parser.add_argument("--transcripts_dir", type=str, default=None)
         parser.add_argument("--extant_debates_directory", type=str, default=None)
-        args = parser.parse_args()
+        parser.add_argument(
+            "--specified-debate-identifiers",
+            nargs="+",
+            type=str,
+            default=None,
+            dest="specified_debate_identifiers",
+        )
+        args: argparse.Namespace = parser.parse_args()
         ScriptUtils.set_log_level(args)
         return ScriptConfig(**vars(args))
 
     @classmethod
-    def set_log_level(cls, args) -> None:
+    def set_log_level(cls, args: argparse.Namespace) -> None:
         os.environ["LOG_LEVEL"] = str(logging.INFO)
 
         requested = args.log_level.lower()

@@ -1,5 +1,5 @@
 from dataclasses import dataclass
-from typing import Optional
+from typing import List, Optional
 
 
 @dataclass
@@ -19,3 +19,4 @@ class ScriptConfig:
     force_save_results: bool = False
     force_save_transcripts: bool = False
     transcripts_dir: Optional[str] = None
+    specified_debate_identifiers: Optional[List[str]] = None

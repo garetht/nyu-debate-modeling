@@ -66,6 +66,7 @@ def _build_stub_evaluation_configuration() -> EvaluationConfiguration:
         raw_name="eval-config",
         config_type="eval",
         task_type="task",
+        debater_base_model="",
         debater_name="debater",
         debater_training_round="round",
         debater_is_reasoning=True,
@@ -73,7 +74,7 @@ def _build_stub_evaluation_configuration() -> EvaluationConfiguration:
         debater_max_new_tokens=1000,
         judge_name="judge",
         judge_training_round="round",
-        judge_is_reasoning=False,
+        judge_base_model="",
         judge_model_type="model-y",
         judge_max_new_tokens=512,
     )

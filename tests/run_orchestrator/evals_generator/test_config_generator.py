@@ -5,6 +5,7 @@ from models import ModelSettings, ModelType
 from run_orchestrator.evals_generator.config_spec import ConfigurationType
 from run_orchestrator.evals_generator.configuration_name import ConfigurationName
 from run_orchestrator.evals_generator.model_definitions import (
+    BaseModelType,
     DebaterModelConfiguration,
     DebaterTrainingRound,
     JudgeModelConfiguration,
@@ -14,6 +15,7 @@ from run_orchestrator.evals_generator.model_definitions import (
 # Literal copy of the valid model definitions to keep the test resilient to future changes.
 VALID_DEBATERS: dict[str, DebaterModelConfiguration] = {
     "llama-3-262k": DebaterModelConfiguration(
+        base_model=BaseModelType.LLAMA_3_262K,
         training_round=DebaterTrainingRound.UNTRAINED,
         is_reasoning=False,
         settings=ModelSettings(
@@ -24,6 +26,7 @@ VALID_DEBATERS: dict[str, DebaterModelConfiguration] = {
         ),
     ),
     "llama-3-262k-2025-07-31": DebaterModelConfiguration(
+        base_model=BaseModelType.LLAMA_3_262K,
         training_round=DebaterTrainingRound.SFT_ONLY,
         is_reasoning=False,
         settings=ModelSettings(
@@ -33,6 +36,7 @@ VALID_DEBATERS: dict[str, DebaterModelConfiguration] = {
         ),
     ),
     "llama-3-262k-41-judge": DebaterModelConfiguration(
+        base_model=BaseModelType.LLAMA_3_262K,
         training_round=DebaterTrainingRound.ROUND_TWO_DPO,
         is_reasoning=False,
         settings=ModelSettings(
@@ -42,6 +46,7 @@ VALID_DEBATERS: dict[str, DebaterModelConfiguration] = {
         ),
     ),
     "o4-mini-rft-2025-09-15": DebaterModelConfiguration(
+        base_model=BaseModelType.O4_MINI,
         training_round=DebaterTrainingRound.RFT,
         is_reasoning=True,
         settings=ModelSettings(
@@ -55,6 +60,7 @@ VALID_DEBATERS: dict[str, DebaterModelConfiguration] = {
 
 VALID_JUDGES: dict[str, JudgeModelConfiguration] = {
     "gpt-4-turbo-2024-04-09": JudgeModelConfiguration(
+        base_model=BaseModelType.GPT_4_TURBO,
         training_round=JudgeTrainingRound.UNTRAINED,
         settings=ModelSettings(
             model_type=ModelType.OPENAI,
@@ -63,6 +69,7 @@ VALID_JUDGES: dict[str, JudgeModelConfiguration] = {
         ),
     ),
     "gpt-41-2025-07-31": JudgeModelConfiguration(
+        base_model=BaseModelType.GPT_41,
         training_round=JudgeTrainingRound.SFT_ONLY,
         settings=ModelSettings(
             model_type=ModelType.OPENAI,
@@ -71,6 +78,7 @@ VALID_JUDGES: dict[str, JudgeModelConfiguration] = {
         ),
     ),
     "gpt-41-2025-04-14": JudgeModelConfiguration(
+        base_model=BaseModelType.GPT_41,
         training_round=JudgeTrainingRound.UNTRAINED,
         settings=ModelSettings(
             model_type=ModelType.OPENAI,
@@ -79,6 +87,7 @@ VALID_JUDGES: dict[str, JudgeModelConfiguration] = {
         ),
     ),
     "llama-3-262k": JudgeModelConfiguration(
+        base_model=BaseModelType.LLAMA_3_262K,
         training_round=JudgeTrainingRound.UNTRAINED,
         settings=ModelSettings(
             model_type=ModelType.LLAMA3,
@@ -88,6 +97,7 @@ VALID_JUDGES: dict[str, JudgeModelConfiguration] = {
         ),
     ),
     "llama-3-262k-2025-10-08": JudgeModelConfiguration(
+        base_model=BaseModelType.LLAMA_3_262K,
         training_round=JudgeTrainingRound.SFT_ONLY,
         settings=ModelSettings(
             model_type=ModelType.LLAMA3,
@@ -149,6 +159,7 @@ DATA_GENERATION_LOJBAN_CASES = [
 def processed_model_configs() -> tuple[dict[str, DebaterModelConfiguration], dict[str, JudgeModelConfiguration]]:
     debaters = {
         name: DebaterModelConfiguration(
+            base_model=config.base_model,
             training_round=config.training_round,
             is_reasoning=config.is_reasoning,
             settings=config.settings.model_copy(update={"alias": f"{name}-debater"}),
@@ -157,6 +168,7 @@ def processed_model_configs() -> tuple[dict[str, DebaterModelConfiguration], dic
     }
     judges = {
         name: JudgeModelConfiguration(
+            base_model=config.base_model,
             training_round=config.training_round,
             settings=config.settings.model_copy(update={"alias": f"{name}-judge"}),
         )
@@ -181,15 +193,16 @@ def test_generate_config_name_data_generation_lojban(processed_model_configs, de
 
 def test_generate_config_name_reflects_overridden_aliases():
     debater = DebaterModelConfiguration(
+        base_model=BaseModelType.LLAMA_3_262K,
         training_round=DebaterTrainingRound.SFT_ONLY,
         is_reasoning=False,
         settings=ModelSettings(model_type=ModelType.LLAMA3, alias="custom-debater-alias"),
     )
     judge = JudgeModelConfiguration(
+        base_model=BaseModelType.GPT_41,
         training_round=JudgeTrainingRound.SFT_ONLY,
         settings=ModelSettings(model_type=ModelType.OPENAI, alias="custom-judge-alias"),
     )
 
     expected = "eval--custom-debater-alias_sft-only--custom-judge-alias_sft-only--quality"
     assert ConfigurationName.serialize_from_inputs(ConfigurationType.EVAL, debater, judge, "quality") == expected
-

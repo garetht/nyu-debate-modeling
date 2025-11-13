@@ -8,6 +8,7 @@ class ConfigurationDetails:
     num_iters: int
     count: int
     starting_index: Optional[int] = None
+    specified_debate_identifiers: Optional[List[str]] = None
 
 
 @dataclass(frozen=True)

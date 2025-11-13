@@ -119,7 +119,6 @@ def _get_pyarrow_schema_with_computed_fields(
         pydantic_class.model_fields.items(),
         pydantic_class.model_computed_fields.items(),
     ):
-        print(name, field_info)
         is_computed = isinstance(field_info, ComputedFieldInfo)
 
         if not is_computed and field_info.exclude and settings.exclude_fields:

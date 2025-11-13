@@ -13,6 +13,7 @@ from run_orchestrator.evals_generator.model_definitions import (
 def _clone_debater_with_alias(name: str, alias: str) -> DebaterModelConfiguration:
     base = ALL_VALID_DEBATERS[name]
     return DebaterModelConfiguration(
+        base_model=base.base_model,
         training_round=base.training_round,
         is_reasoning=base.is_reasoning,
         settings=base.settings.model_copy(update={"alias": alias}),
@@ -22,6 +23,7 @@ def _clone_debater_with_alias(name: str, alias: str) -> DebaterModelConfiguratio
 def _clone_judge_with_alias(name: str, alias: str) -> JudgeModelConfiguration:
     base = ALL_VALID_JUDGES[name]
     return JudgeModelConfiguration(
+        base_model=base.base_model,
         training_round=base.training_round,
         settings=base.settings.model_copy(update={"alias": alias}),
     )
@@ -75,6 +77,7 @@ def test_serialize_from_inputs_requires_alias(sample_configs):
     (debater_key, _), (_, judge_cfg) = sample_configs
     base_debater = ALL_VALID_DEBATERS[debater_key]
     debater_without_alias = DebaterModelConfiguration(
+        base_model=base_debater.base_model,
         training_round=base_debater.training_round,
         is_reasoning=base_debater.is_reasoning,
         settings=base_debater.settings.model_copy(update={"alias": ""}),

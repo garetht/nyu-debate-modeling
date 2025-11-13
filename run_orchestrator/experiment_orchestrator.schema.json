@@ -30,6 +30,21 @@
           ],
           "default": null,
           "title": "Starting Index"
+        },
+        "specified_debate_identifiers": {
+          "anyOf": [
+            {
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Specified Debate Identifiers"
         }
       },
       "required": [

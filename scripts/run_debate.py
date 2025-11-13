@@ -22,6 +22,7 @@ debate_rounds, experiment = ExperimentLoader.generate_debate_rounds(
     count=args.num_iters,
     starting_index=args.starting_index,
     extant_debates_directory=args.extant_debates_directory,
+    specified_debate_identifiers=args.specified_debate_identifiers,
 )
 
 results_collector = ResultsCollector(

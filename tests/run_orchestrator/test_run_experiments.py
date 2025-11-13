@@ -65,6 +65,7 @@ def test_run_experiments_executes_commands_with_expected_arguments(
                     "num_iters": 5,
                     "count": 2,
                     "starting_index": 3,
+                    "specified_debate_identifiers": ["debate-1", "debate-2"],
                 },
             }
         ]
@@ -138,6 +139,9 @@ def test_run_experiments_executes_commands_with_expected_arguments(
         "--num_iters=5",
         "--starting_index=3",
         "--extant_debates_directory=/tmp/debates",
+        "--specified-debate-identifiers",
+        "debate-1",
+        "debate-2",
     )
     assert tuple(recorded_commands[0]) == expected_command
     assert len(captured_validate_calls) == 1
@@ -161,6 +165,7 @@ def test_run_experiments_executes_commands_with_expected_arguments(
     assert first_call_kwargs["log_path"] == generated_metadata[0][1]
     assert first_call_kwargs["configuration"]["iteration"] == 1
     assert first_call_kwargs["configuration"]["configuration"]["name"] == "Test Config"
+    assert first_call_kwargs["configuration"]["configuration"]["specified_debate_identifiers"] == ["debate-1", "debate-2"]
 
     second_call_kwargs = database_instance.record_subtask.call_args_list[1].kwargs
     assert second_call_kwargs["run_task_id"] == run_identifier
@@ -171,6 +176,7 @@ def test_run_experiments_executes_commands_with_expected_arguments(
     assert second_call_kwargs["log_path"] == generated_metadata[1][1]
     assert second_call_kwargs["configuration"]["iteration"] == 2
     assert second_call_kwargs["configuration"]["configuration"]["name"] == "Test Config"
+    assert second_call_kwargs["configuration"]["configuration"]["specified_debate_identifiers"] == ["debate-1", "debate-2"]
 
 
 def test_run_iterative_dpo_experiments_executes_commands_with_expected_arguments(

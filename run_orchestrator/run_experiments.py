@@ -45,6 +45,7 @@ def _build_subtask_configuration(
             "num_iters": configuration.num_iters,
             "count": configuration.count,
             "starting_index": configuration.starting_index,
+            "specified_debate_identifiers": configuration.specified_debate_identifiers,
         },
         "iteration": iteration_index,
     }
@@ -79,6 +80,10 @@ def _build_debate_command(
 
     if config_group.extant_debates_directory is not None:
         command.append(f"--extant_debates_directory={config_group.extant_debates_directory}")
+
+    if configuration.specified_debate_identifiers:
+        command.append("--specified-debate-identifiers")
+        command.extend(configuration.specified_debate_identifiers)
 
     return command
 
@@ -209,6 +214,16 @@ def _parse_configuration_details(
 ) -> ConfigurationDetails:
     name = cast(str, raw_config["name"])
     starting_index = cast(Optional[int], raw_config.get("starting_index"))
+    raw_specified_debate_identifiers = raw_config.get("specified_debate_identifiers")
+    specified_debate_identifiers: Optional[List[str]]
+    if raw_specified_debate_identifiers is None:
+        specified_debate_identifiers = None
+    elif isinstance(raw_specified_debate_identifiers, Sequence) and not isinstance(raw_specified_debate_identifiers, (str, bytes)):
+        specified_debate_identifiers = [
+            cast(str, identifier) for identifier in raw_specified_debate_identifiers
+        ]
+    else:
+        raise TypeError("specified_debate_identifiers must be a sequence of strings if provided.")
     if allow_missing_iter_params:
         num_iters_value = cast(Optional[int], raw_config.get("num_iters"))
         if num_iters_value is None:
@@ -225,6 +240,7 @@ def _parse_configuration_details(
         num_iters=num_iters_value,
         count=count_value,
         starting_index=starting_index,
+        specified_debate_identifiers=specified_debate_identifiers,
     )
 
 

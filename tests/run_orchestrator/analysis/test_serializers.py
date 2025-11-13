@@ -139,9 +139,10 @@ def _sample_evaluation_configuration() -> EvaluationConfiguration:
         debater_is_reasoning=True,
         debater_model_type="model-a",
         debater_max_new_tokens=1500,
+        debater_base_model="",
+        judge_base_model="",
         judge_name="judge",
         judge_training_round="round",
-        judge_is_reasoning=False,
         judge_model_type="model-b",
         judge_max_new_tokens=900,
     )
