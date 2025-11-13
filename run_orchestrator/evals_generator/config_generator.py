@@ -39,6 +39,7 @@ def process_debaters_and_judges() -> tuple[dict[str, DebaterModelConfiguration],
                 f"Alias for debater {name} was set. It should be the empty string. It is set automatically.")
 
         processed_debaters[name] = DebaterModelConfiguration(
+            base_model=debater.base_model,
             training_round=debater.training_round,
             is_reasoning=debater.is_reasoning,
             settings=ModelSettings(
@@ -55,6 +56,7 @@ def process_debaters_and_judges() -> tuple[dict[str, DebaterModelConfiguration],
             raise Exception(f"Alias for judge {name} was set. It should be the empty string. It is set automatically.")
 
         processed_judges[name] = JudgeModelConfiguration(
+            base_model=judge.base_model,
             training_round=judge.training_round,
             settings=ModelSettings(
                 model_type=judge.settings.model_type,

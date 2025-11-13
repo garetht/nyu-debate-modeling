@@ -1,7 +1,7 @@
 import math
 from typing import Dict
 
-from pydantic import BaseModel, ConfigDict, Field
+from pydantic import BaseModel, ConfigDict, Field, computed_field
 
 
 class DebateStats(BaseModel):
@@ -61,11 +61,43 @@ class DebateStats(BaseModel):
             "first_debater_accuracy": (self.first_debater_correct / self.total_debates) * 100
         }
 
-    def get_judge_accuracy_standard_error(self) -> float:
-        """Return the standard error of the judge accuracy percentage."""
+    @computed_field
+    def judge_accuracy(self) -> float:
+        """Return the judge accuracy as the ratio of correct judgments."""
+        if self.total_debates == 0:
+            return 0.0
+        return self.judge_correct / self.total_debates
+
+    @computed_field
+    def judge_standard_error(self) -> float:
+        """Return the standard error of the judge accuracy."""
         if self.total_debates == 0:
             return 0.0
 
         success_rate: float = self.judge_correct / self.total_debates
         variance: float = (success_rate * (1.0 - success_rate)) / self.total_debates
-        return math.sqrt(variance) * 100.0
+        return math.sqrt(variance)
+
+    @computed_field
+    def debater_a_win_skew(self) -> float:
+        """Return the skew of the first debater win rate."""
+        if self.total_debates == 0:
+            return 0.0
+
+        return self.debater_a_wins / self.total_debates
+
+    @computed_field
+    def debater_a_divergence_from_uniform(self) -> int:
+        """Return the divergence of the first debater win rate from uniform."""
+        if self.total_debates == 0:
+            return 0
+
+        return self.debater_a_wins - (self.total_debates // 2)
+
+    @computed_field
+    def debater_b_divergence_from_uniform(self) -> int:
+        """Return the skew of the second debater win rate."""
+        if self.total_debates == 0:
+            return 0
+
+        return self.debater_b_wins - (self.total_debates // 2)

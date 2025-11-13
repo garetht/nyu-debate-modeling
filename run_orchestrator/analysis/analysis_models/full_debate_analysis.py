@@ -4,7 +4,6 @@ from run_orchestrator.analysis.analysis_models.debate_emptiness import DebateEmp
 from run_orchestrator.analysis.analysis_models.debate_lengths import DebateLengthAnalysis
 from run_orchestrator.analysis.analysis_models.debate_stats import DebateStats
 from run_orchestrator.analysis.analysis_models.evaluation_configuration import EvaluationConfiguration
-from run_orchestrator.analysis.analysis_models.evaluation_configuration import EvaluationConfiguration
 
 
 class FullDebateAnalysis(AnalysisResult):
@@ -12,5 +11,4 @@ class FullDebateAnalysis(AnalysisResult):
     lengths: DebateLengthAnalysis
     distribution: DebateDistributionAnalysis
     stats: DebateStats
-    configuration: EvaluationConfiguration
     configuration: EvaluationConfiguration

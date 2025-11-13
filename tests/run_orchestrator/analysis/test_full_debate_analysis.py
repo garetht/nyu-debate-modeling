@@ -94,6 +94,7 @@ def make_example_transcripts() -> list[Transcript]:
 
 def _build_stub_configuration() -> EvaluationConfiguration:
     return EvaluationConfiguration(
+        raw_name="stub-configuration",
         config_type="eval",
         task_type="task",
         debater_name="debater",

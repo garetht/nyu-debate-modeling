@@ -63,6 +63,7 @@ def _build_stub_analysis() -> FullDebateAnalysis:
 
 def _build_stub_evaluation_configuration() -> EvaluationConfiguration:
     return EvaluationConfiguration(
+        raw_name="eval-config",
         config_type="eval",
         task_type="task",
         debater_name="debater",
@@ -197,7 +198,7 @@ def test_analyze_all_debates_processes_valid_directories(
 
     stub_analysis: FullDebateAnalysis = _build_stub_analysis()
     analyzed_directories: List[Path] = []
-    write_calls: Dict[Path, FullDebateAnalysis] = {}
+    write_calls: List[tuple[Path, List[FullDebateAnalysis]]] = []
     received_descriptions: List[str] = []
 
     def fake_deserialize(name: str) -> _FakeConfigurationName:
@@ -228,8 +229,13 @@ def test_analyze_all_debates_processes_valid_directories(
             return stub_analysis
         raise FileNotFoundError("missing transcripts")
 
-    def fake_write_parquet(result: FullDebateAnalysis, destination: Path, *, compression: str | None = "snappy") -> None:
-        write_calls[destination] = result
+    def fake_write_parquet(
+        result: Iterable[FullDebateAnalysis],
+        destination: Path,
+        *,
+        compression: str | None = "snappy",
+    ) -> None:
+        write_calls.append((destination, list(result)))
 
     monkeypatch.setattr(
         "run_orchestrator.analysis.all_debates_analyzer.ConfigurationName.deserialize",
@@ -251,8 +257,8 @@ def test_analyze_all_debates_processes_valid_directories(
     analyses: Dict[Path, FullDebateAnalysis] = analyze_all_debates(tmp_path)
 
     assert analyzed_directories == [valid_directory]
-    expected_destination: Path = valid_directory / PARQUET_FILENAME
-    assert write_calls == {expected_destination: stub_analysis}
+    expected_destination: Path = tmp_path / PARQUET_FILENAME
+    assert write_calls == [(expected_destination, [stub_analysis])]
     assert analyses == {valid_directory: stub_analysis}
     assert any(description.startswith("Analyzing config") for description in received_descriptions)
 

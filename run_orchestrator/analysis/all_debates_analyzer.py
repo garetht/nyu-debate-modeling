@@ -66,6 +66,7 @@ def analyze_all_debates(outputs_root: Path) -> Dict[Path, FullDebateAnalysis]:
     """Analyze all debate outputs and persist the results as Parquet files."""
 
     analyses_by_directory: Dict[Path, FullDebateAnalysis] = {}
+    aggregated_analyses: List[FullDebateAnalysis] = []
 
     valid_directories: List[tuple[ConfigurationName, Path]] = list(
         iter_valid_configuration_directories(outputs_root)
@@ -111,11 +112,13 @@ def analyze_all_debates(outputs_root: Path) -> Dict[Path, FullDebateAnalysis]:
             )
             continue
 
-        destination: Path = configuration_directory / PARQUET_FILENAME
-        pydantic_to_parquet(analysis, destination)
         analyses_by_directory[configuration_directory] = analysis
+        aggregated_analyses.append(analysis)
 
     progress_bar.close()
+    if aggregated_analyses:
+        combined_destination: Path = outputs_root / PARQUET_FILENAME
+        pydantic_to_parquet(aggregated_analyses, combined_destination)
     LOGGER.info("Completed analysis for %d configuration directories.", total_directories)
 
     return analyses_by_directory

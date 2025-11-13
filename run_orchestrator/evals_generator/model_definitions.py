@@ -25,8 +25,17 @@ class JudgeTrainingRound(enum.Enum):
         return self.name.lower().replace("_", "-")
 
 
+class BaseModelType(enum.Enum):
+    LLLAMA_3_PLAIN = 0
+    LLAMA_3_262K = 1
+    O4_MINI = 2
+    GPT_4_TURBO = 3
+    GPT_41 = 4
+
+
 @dataclasses.dataclass
 class DebaterModelConfiguration:
+    base_model: BaseModelType
     training_round: DebaterTrainingRound
     is_reasoning: bool
     settings: ModelSettings
@@ -34,12 +43,14 @@ class DebaterModelConfiguration:
 
 @dataclasses.dataclass
 class JudgeModelConfiguration:
+    base_model: BaseModelType
     training_round: JudgeTrainingRound
     settings: ModelSettings
 
 
 ALL_VALID_JUDGES = {
     "gpt-4-turbo-2024-04-09": JudgeModelConfiguration(
+        base_model=BaseModelType.GPT_4_TURBO,
         training_round=JudgeTrainingRound.UNTRAINED,
         settings=ModelSettings(
             model_type=ModelType.OPENAI,
@@ -48,6 +59,7 @@ ALL_VALID_JUDGES = {
         )
     ),
     "gpt-41-2025-07-31": JudgeModelConfiguration(
+        base_model=BaseModelType.GPT_41,
         training_round=JudgeTrainingRound.SFT_ONLY,
         settings=ModelSettings(
             model_type=ModelType.OPENAI,
@@ -56,6 +68,7 @@ ALL_VALID_JUDGES = {
         )
     ),
     "gpt-41-2025-04-14": JudgeModelConfiguration(
+        base_model=BaseModelType.GPT_41,
         training_round=JudgeTrainingRound.UNTRAINED,
         settings=ModelSettings(
             model_type=ModelType.OPENAI,
@@ -64,6 +77,7 @@ ALL_VALID_JUDGES = {
         )
     ),
     "llama-3-262k": JudgeModelConfiguration(
+        base_model=BaseModelType.LLAMA_3_262K,
         training_round=JudgeTrainingRound.UNTRAINED,
         settings=ModelSettings(
             model_type=ModelType.LLAMA3,
@@ -72,6 +86,7 @@ ALL_VALID_JUDGES = {
         )
     ),
     "llama-3-262k-2025-10-08": JudgeModelConfiguration(
+        base_model=BaseModelType.LLAMA_3_262K,
         training_round=JudgeTrainingRound.SFT_ONLY,
         settings=ModelSettings(
             model_type=ModelType.LLAMA3,
@@ -82,6 +97,7 @@ ALL_VALID_JUDGES = {
 }
 ALL_VALID_DEBATERS: dict[str, DebaterModelConfiguration] = {
     "llama-3-262k": DebaterModelConfiguration(
+        base_model=BaseModelType.LLAMA_3_262K,
         training_round=DebaterTrainingRound.UNTRAINED,
         is_reasoning=False,
         settings=ModelSettings(
@@ -92,6 +108,7 @@ ALL_VALID_DEBATERS: dict[str, DebaterModelConfiguration] = {
         )
     ),
     "llama-3-262k-2025-07-31": DebaterModelConfiguration(
+        base_model=BaseModelType.LLAMA_3_262K,
         training_round=DebaterTrainingRound.SFT_ONLY,
         is_reasoning=False,
         settings=ModelSettings(
@@ -101,6 +118,7 @@ ALL_VALID_DEBATERS: dict[str, DebaterModelConfiguration] = {
         )
     ),
     "llama-3-262k-41-sfted-judge": DebaterModelConfiguration(
+        base_model=BaseModelType.LLAMA_3_262K,
         training_round=DebaterTrainingRound.ROUND_TWO_DPO,
         is_reasoning=False,
         settings=ModelSettings(
@@ -110,6 +128,7 @@ ALL_VALID_DEBATERS: dict[str, DebaterModelConfiguration] = {
         )
     ),
     "llama-3-262k-4-turbo-judge": DebaterModelConfiguration(
+        base_model=BaseModelType.LLAMA_3_262K,
         training_round=DebaterTrainingRound.ROUND_ONE_DPO,
         is_reasoning=False,
         settings=ModelSettings(
@@ -119,6 +138,7 @@ ALL_VALID_DEBATERS: dict[str, DebaterModelConfiguration] = {
         )
     ),
     "llama-3-262k-41-judge": DebaterModelConfiguration(
+            base_model=BaseModelType.LLAMA_3_262K,
             training_round=DebaterTrainingRound.ROUND_ONE_DPO,
             is_reasoning=False,
             settings=ModelSettings(
@@ -128,6 +148,7 @@ ALL_VALID_DEBATERS: dict[str, DebaterModelConfiguration] = {
             )
     ),
     "llama-3-262k-llama-not-sfted-judge": DebaterModelConfiguration(
+            base_model=BaseModelType.LLAMA_3_262K,
         training_round=DebaterTrainingRound.ROUND_ONE_DPO,
         is_reasoning=False,
         settings=ModelSettings(
@@ -137,6 +158,7 @@ ALL_VALID_DEBATERS: dict[str, DebaterModelConfiguration] = {
         )
     ),
     "llama-3-262k-llama-sft-judge": DebaterModelConfiguration(
+            base_model=BaseModelType.LLAMA_3_262K,
         training_round=DebaterTrainingRound.ROUND_ONE_DPO,
         is_reasoning=False,
         settings=ModelSettings(
@@ -146,6 +168,7 @@ ALL_VALID_DEBATERS: dict[str, DebaterModelConfiguration] = {
         )
     ),
     "llama-3-262k-4-turbo-judge-round-2": DebaterModelConfiguration(
+        base_model=BaseModelType.LLAMA_3_262K,
         training_round=DebaterTrainingRound.ROUND_TWO_DPO,
         is_reasoning=False,
         settings=ModelSettings(
@@ -155,6 +178,7 @@ ALL_VALID_DEBATERS: dict[str, DebaterModelConfiguration] = {
         )
     ),
     "llama-3-262k-41-judge-round-2": DebaterModelConfiguration(
+            base_model=BaseModelType.LLAMA_3_262K,
             training_round=DebaterTrainingRound.ROUND_TWO_DPO,
             is_reasoning=False,
             settings=ModelSettings(
@@ -164,6 +188,7 @@ ALL_VALID_DEBATERS: dict[str, DebaterModelConfiguration] = {
             )
     ),
     "llama-3-262k-llama-not-sfted-judge-round-2": DebaterModelConfiguration(
+        base_model=BaseModelType.LLAMA_3_262K,
         training_round=DebaterTrainingRound.ROUND_TWO_DPO,
         is_reasoning=False,
         settings=ModelSettings(
@@ -173,6 +198,7 @@ ALL_VALID_DEBATERS: dict[str, DebaterModelConfiguration] = {
         )
     ),
     "llama-3-262k-llama-sft-judge-round-2": DebaterModelConfiguration(
+        base_model=BaseModelType.LLAMA_3_262K,
         training_round=DebaterTrainingRound.ROUND_TWO_DPO,
         is_reasoning=False,
         settings=ModelSettings(
@@ -181,7 +207,18 @@ ALL_VALID_DEBATERS: dict[str, DebaterModelConfiguration] = {
             model_file_path="/home/ubuntu/mars-arnesen-gh/garethtan/models/trained_models/llama-trained-for-llama-judge-finetuned-round-two"
         )
     ),
+    "llama-3-262k-41-sft-judge-round-2": DebaterModelConfiguration(
+        base_model=BaseModelType.LLAMA_3_262K,
+        training_round=DebaterTrainingRound.ROUND_TWO_DPO,
+        is_reasoning=False,
+        settings=ModelSettings(
+            model_type=ModelType.LLAMA3,
+            alias="",
+            model_file_path="/home/ubuntu/mars-arnesen-gh/garethtan/models/trained_models/llama-3-DPO-811-FullTrainDebateRoundTwo-full-trained"
+        )
+    ),
     "o4-mini-rft-2025-09-15": DebaterModelConfiguration(
+        base_model=BaseModelType.O4_MINI,
         training_round=DebaterTrainingRound.RFT,
         is_reasoning=True,
         settings=ModelSettings(

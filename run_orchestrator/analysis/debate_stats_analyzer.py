@@ -320,7 +320,7 @@ def build_output_payload(result: DirectoryAnalysisResult) -> Dict[str, Any]:
             "judge_correct": overall_stats.judge_correct,
             "first_debater_correct": overall_stats.first_debater_correct,
             "percentages": overall_stats.get_percentages(),
-            "judge_accuracy_standard_error": overall_stats.get_judge_accuracy_standard_error(),
+            "judge_accuracy_standard_error": overall_stats.judge_standard_error,
         },
         "probabilities": {
             "debater_a": summarize_probabilities(overall_stats.debater_a_probs),
@@ -363,7 +363,7 @@ def print_stdout_summary(result: DirectoryAnalysisResult) -> None:
 
     if overall_stats.total_debates > 0:
         percentages = overall_stats.get_percentages()
-        judge_accuracy_standard_error: float = overall_stats.get_judge_accuracy_standard_error()
+        judge_accuracy_standard_error: float = overall_stats.judge_standard_error
         print(f"Total debates analyzed: {overall_stats.total_debates}")
         print(f"Total files processed: {len(json_files)}")
         print()
