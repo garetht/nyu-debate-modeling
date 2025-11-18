@@ -6,15 +6,15 @@ from simple_baseline.solvers.forgiving_multiple_choice import forgiving_multiple
 from simple_baseline.tasks.templates import MULTIPLE_CHOICE_TEMPLATE
 
 
-@task
-def quality_debater_simple_baseline() -> Task:
-    return Task(
-        dataset=debater_quality_dataset,
-        solver=[
-            forgiving_multiple_choice(template=MULTIPLE_CHOICE_TEMPLATE)
-        ],
-        scorer=choice()
-    )
+#@task
+#def quality_debater_simple_baseline() -> Task:
+#    return Task(
+#        dataset=debater_quality_dataset,
+#        solver=[
+#            forgiving_multiple_choice(template=MULTIPLE_CHOICE_TEMPLATE)
+#        ],
+#        scorer=choice()
+#    )
 
 
 @task
