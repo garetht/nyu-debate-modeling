@@ -1,0 +1,57 @@
+  0%|                                                                                                                                | 0/222 [00:00<?, ?it/s]The attention layers in this model are transitioning from computing the RoPE embeddings internally through `position_ids` (2D tensor with the indexes of the tokens), to using externally computed `position_embeddings` (Tuple of tensors, containing cos and sin). In v4.46 `position_ids` will be removed and `position_embeddings` will be mandatory.
+  5%|█████▎                                                                                                                 | 10/222 [02:21<51:27, 14.56s/it]2025-07-11 14:03:23,593 - utils.logger_utils - WARNING - {'loss': 1.2733, 'grad_norm': 0.2265625, 'learning_rate': 0.0002, 'epoch': 0.09009009009009009}
+  9%|██████████▋                                                                                                            | 20/222 [04:44<48:32, 14.42s/it]2025-07-11 14:05:45,970 - utils.logger_utils - WARNING - {'loss': 1.2359, 'grad_norm': 0.275390625, 'learning_rate': 0.0002, 'epoch': 0.18018018018018017}
+{'loss': 1.2733, 'grad_norm': 0.2265625, 'learning_rate': 0.0002, 'epoch': 0.09}
+ 14%|████████████████                                                                                                       | 30/222 [06:58<43:56, 13.73s/it]2025-07-11 14:07:59,970 - utils.logger_utils - WARNING - {'loss': 1.3034, 'grad_norm': 0.318359375, 'learning_rate': 0.0002, 'epoch': 0.2702702702702703}
+{'loss': 1.2359, 'grad_norm': 0.275390625, 'learning_rate': 0.0002, 'epoch': 0.18}
+ 18%|█████████████████████▍                                                                                                 | 40/222 [09:03<38:59, 12.85s/it]2025-07-11 14:10:05,679 - utils.logger_utils - WARNING - {'loss': 1.2868, 'grad_norm': 0.2890625, 'learning_rate': 0.0002, 'epoch': 0.36036036036036034}
+{'loss': 1.3034, 'grad_norm': 0.318359375, 'learning_rate': 0.0002, 'epoch': 0.27}
+ 23%|██████████████████████████▊                                                                                            | 50/222 [11:13<36:23, 12.70s/it]2025-07-11 14:12:15,137 - utils.logger_utils - WARNING - {'loss': 1.1481, 'grad_norm': 0.318359375, 'learning_rate': 0.0002, 'epoch': 0.45045045045045046}
+{'loss': 1.2868, 'grad_norm': 0.2890625, 'learning_rate': 0.0002, 'epoch': 0.36}
+ 27%|████████████████████████████████▏                                                                                      | 60/222 [13:18<36:52, 13.66s/it]2025-07-11 14:14:20,849 - utils.logger_utils - WARNING - {'loss': 1.1488, 'grad_norm': 0.259765625, 'learning_rate': 0.0002, 'epoch': 0.5405405405405406}
+{'loss': 1.1481, 'grad_norm': 0.318359375, 'learning_rate': 0.0002, 'epoch': 0.45}
+ 32%|█████████████████████████████████████▌                                                                                 | 70/222 [15:37<35:34, 14.04s/it]2025-07-11 14:16:39,403 - utils.logger_utils - WARNING - {'loss': 1.2323, 'grad_norm': 0.2119140625, 'learning_rate': 0.0002, 'epoch': 0.6306306306306306}
+{'loss': 1.1488, 'grad_norm': 0.259765625, 'learning_rate': 0.0002, 'epoch': 0.54}
+ 36%|██████████████████████████████████████████▉                                                                            | 80/222 [17:40<28:57, 12.24s/it]2025-07-11 14:18:42,369 - utils.logger_utils - WARNING - {'loss': 1.2596, 'grad_norm': 0.2294921875, 'learning_rate': 0.0002, 'epoch': 0.7207207207207207}
+{'loss': 1.2323, 'grad_norm': 0.2119140625, 'learning_rate': 0.0002, 'epoch': 0.63}
+ 41%|████████████████████████████████████████████████▏                                                                      | 90/222 [19:46<27:36, 12.55s/it]2025-07-11 14:20:48,046 - utils.logger_utils - WARNING - {'loss': 1.2378, 'grad_norm': 0.2734375, 'learning_rate': 0.0002, 'epoch': 0.8108108108108109}
+{'loss': 1.2596, 'grad_norm': 0.2294921875, 'learning_rate': 0.0002, 'epoch': 0.72}
+ 45%|█████████████████████████████████████████████████████▏                                                                | 100/222 [22:03<30:21, 14.93s/it]2025-07-11 14:23:05,664 - utils.logger_utils - WARNING - {'loss': 1.1936, 'grad_norm': 0.2734375, 'learning_rate': 0.0002, 'epoch': 0.9009009009009009}
+{'loss': 1.2378, 'grad_norm': 0.2734375, 'learning_rate': 0.0002, 'epoch': 0.81}
+ 50%|██████████████████████████████████████████████████████████▍                                                           | 110/222 [24:19<26:01, 13.94s/it]2025-07-11 14:25:21,115 - utils.logger_utils - WARNING - {'loss': 1.1688, 'grad_norm': 0.265625, 'learning_rate': 0.0002, 'epoch': 0.990990990990991}
+{'loss': 1.1936, 'grad_norm': 0.2734375, 'learning_rate': 0.0002, 'epoch': 0.9}
+ 54%|███████████████████████████████████████████████████████████████▊                                                      | 120/222 [26:25<20:49, 12.25s/it]2025-07-11 14:27:27,034 - utils.logger_utils - WARNING - {'loss': 1.2448, 'grad_norm': 0.294921875, 'learning_rate': 0.0002, 'epoch': 1.0810810810810811}
+{'loss': 1.1688, 'grad_norm': 0.265625, 'learning_rate': 0.0002, 'epoch': 0.99}
+ 59%|█████████████████████████████████████████████████████████████████████                                                 | 130/222 [28:34<20:49, 13.59s/it]2025-07-11 14:29:36,071 - utils.logger_utils - WARNING - {'loss': 1.0338, 'grad_norm': 0.265625, 'learning_rate': 0.0002, 'epoch': 1.1711711711711712}
+{'loss': 1.2448, 'grad_norm': 0.294921875, 'learning_rate': 0.0002, 'epoch': 1.08}
+ 63%|██████████████████████████████████████████████████████████████████████████▍                                           | 140/222 [30:58<20:13, 14.80s/it]2025-07-11 14:32:00,821 - utils.logger_utils - WARNING - {'loss': 1.2212, 'grad_norm': 0.2392578125, 'learning_rate': 0.0002, 'epoch': 1.2612612612612613}
+{'loss': 1.0338, 'grad_norm': 0.265625, 'learning_rate': 0.0002, 'epoch': 1.17}
+ 68%|███████████████████████████████████████████████████████████████████████████████▋                                      | 150/222 [33:07<15:54, 13.26s/it]2025-07-11 14:34:09,558 - utils.logger_utils - WARNING - {'loss': 1.1838, 'grad_norm': 0.32421875, 'learning_rate': 0.0002, 'epoch': 1.3513513513513513}
+{'loss': 1.2212, 'grad_norm': 0.2392578125, 'learning_rate': 0.0002, 'epoch': 1.26}
+ 72%|█████████████████████████████████████████████████████████████████████████████████████                                 | 160/222 [35:20<13:59, 13.55s/it]2025-07-11 14:36:22,546 - utils.logger_utils - WARNING - {'loss': 1.1861, 'grad_norm': 0.333984375, 'learning_rate': 0.0002, 'epoch': 1.4414414414414414}
+{'loss': 1.1838, 'grad_norm': 0.32421875, 'learning_rate': 0.0002, 'epoch': 1.35}
+ 76%|█████████████████████████████████████████████████████████████████████████████████████████▎                            | 168/222 [37:08<12:12, 13.57s/it]Traceback (most recent call last):
+{'loss': 1.1861, 'grad_norm': 0.333984375, 'learning_rate': 0.0002, 'epoch': 1.44}
+  File "/lambda/nfs/mars-arnesen-gh/./scripts/run_sft.py", line 15, in <module>
+    trainer.train()
+  File "/lambda/nfs/mars-arnesen-gh/.venv/lib/python3.11/site-packages/trl/trainer/sft_trainer.py", line 450, in train
+    output = super().train(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lambda/nfs/mars-arnesen-gh/.venv/lib/python3.11/site-packages/transformers/trainer.py", line 2052, in train
+    return inner_training_loop(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/lambda/nfs/mars-arnesen-gh/.venv/lib/python3.11/site-packages/transformers/trainer.py", line 2388, in _inner_training_loop
+    tr_loss_step = self.training_step(model, inputs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/lambda/nfs/mars-arnesen-gh/.venv/lib/python3.11/site-packages/transformers/trainer.py", line 3518, in training_step
+    self.accelerator.backward(loss, **kwargs)
+  File "/lambda/nfs/mars-arnesen-gh/.venv/lib/python3.11/site-packages/accelerate/accelerator.py", line 2553, in backward
+    loss.backward(**kwargs)
+  File "/lambda/nfs/mars-arnesen-gh/.venv/lib/python3.11/site-packages/torch/_tensor.py", line 648, in backward
+    torch.autograd.backward(
+  File "/lambda/nfs/mars-arnesen-gh/.venv/lib/python3.11/site-packages/torch/autograd/__init__.py", line 353, in backward
+    _engine_run_backward(
+  File "/lambda/nfs/mars-arnesen-gh/.venv/lib/python3.11/site-packages/torch/autograd/graph.py", line 824, in _engine_run_backward
+    return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt

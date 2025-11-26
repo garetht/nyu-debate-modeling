@@ -1,0 +1,43 @@
+Test:
+    model_name: stub_model
+    target: debater
+    llm_type: stub_llm
+    training_hyperparameters:
+        num_train_epochs: 2
+        per_device_train_batch_size: 8
+        gradient_accumulation_steps: 8
+        optim: paged_adamw_32bit
+        learning_rate: 2e-6
+        max_grad_norm: 0.3
+        warmup_ratio: 0.03
+        lr_scheduler_type: constant
+        peft_type: lora
+        steps: 100
+    logging_and_saving_config:
+        logging_steps: 1
+        output_dir: /fake/file/path
+    dataset:
+        dataset_type: quality
+        split_type: train
+Train - Experiment:
+    model_name: /vast/spa9663/models/trained_models/llama-3-mega-merged
+    target: debater
+    llm_type: llama3
+    opening_speeches_only: True
+    training_hyperparameters:
+        num_train_epochs: 4
+        per_device_train_batch_size: 64
+        gradient_accumulation_steps: 64
+        optim: paged_adamw_32bit
+        learning_rate: 3e-5
+        max_grad_norm: 0.3
+        warmup_ratio: 0.03
+        lr_scheduler_type: constant
+        peft_type: lora
+        steps: 30
+    logging_and_saving_config:
+        logging_steps: 1
+        output_dir: /vast/spa9663/models/trained_models/llama-3-PPO-604-overfit
+    dataset:
+        dataset_type: quality
+        split_type: train

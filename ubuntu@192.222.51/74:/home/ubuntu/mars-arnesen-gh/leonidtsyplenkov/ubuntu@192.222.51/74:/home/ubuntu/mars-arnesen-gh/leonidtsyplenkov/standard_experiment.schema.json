@@ -1,0 +1,225 @@
+
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Experiment Configuration",
+  "description": "Schema for the experiment configuration file (standard_experiment.yaml)",
+  "type": "object",
+  "patternProperties": {
+    "^[a-zA-Z0-9_ -]+$": {
+      "$ref": "#/definitions/ExperimentConfig"
+    }
+  },
+  "definitions": {
+    "ExperimentConfig": {
+      "type": "object",
+      "properties": {
+        "batch_size": {
+          "type": "integer"
+        },
+        "num_speeches": {
+          "type": "integer"
+        },
+        "flip": {
+          "type": "boolean"
+        },
+        "alternate": {
+          "type": "boolean"
+        },
+        "prompt_config": {
+          "$ref": "#/definitions/PromptLoadingConfig"
+        },
+        "agents": {
+          "$ref": "#/definitions/AgentsConfig"
+        },
+        "dataset": {
+          "$ref": "#/definitions/DatasetConfig"
+        },
+        "annotations_classifier_file_path": {
+          "type": ["string", "null"]
+        },
+        "enable_self_debate": {
+          "type": "boolean"
+        },
+        "previous_run": {
+          "$ref": "#/definitions/PreviousRunConfig"
+        },
+        "tournament": {
+          "$ref": "#/definitions/TournamentConfig"
+        },
+        "speech_structure": {
+          "type": "string",
+          "enum": ["default_debate", "default_consultancy", "open_debate"]
+        },
+        "multi_round_branching": {
+          "type": "string",
+          "enum": ["none", "full", "half"]
+        },
+        "convert_to_double_consultancy": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "batch_size",
+        "num_speeches",
+        "agents",
+        "dataset"
+      ]
+    },
+    "PromptLoadingConfig": {
+      "type": "object",
+      "properties": {
+        "file_path": {
+          "type": "string"
+        },
+        "default_prompt_name": {
+          "type": "string"
+        },
+        "is_memorized": {
+          "type": "boolean"
+        },
+        "use_hardcoded_topics": {
+          "type": "boolean"
+        },
+        "hardcoded_topic_config": {
+          "type": "object",
+          "properties": {
+            "topic": {
+              "type": "string"
+            },
+            "positions": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    },
+    "AgentsConfig": {
+      "type": "object",
+      "properties": {
+        "debaters": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/AgentConfig"
+          }
+        },
+        "judge": {
+          "$ref": "#/definitions/AgentConfig"
+        }
+      },
+      "required": ["debaters", "judge"]
+    },
+    "AgentConfig": {
+      "type": "object",
+      "properties": {
+        "model_settings": {
+          "$ref": "#/definitions/ModelSettings"
+        },
+        "scratchpad": {
+          "type": "object"
+        },
+        "best_of_n": {
+          "type": "object"
+        }
+      },
+      "required": ["model_settings"]
+    },
+    "ModelSettings": {
+      "type": "object",
+      "properties": {
+        "model_type": {
+          "type": "string"
+        },
+        "model_file_path": {
+          "type": ["string", "null"]
+        },
+        "alias": {
+          "type": "string"
+        },
+        "require_quote_validation": {
+          "type": "boolean"
+        },
+        "generation_params": {
+          "type": "object"
+        },
+        "peft_base_model": {
+          "type": ["string", "null"]
+        },
+        "is_human": {
+            "type": "boolean"
+        },
+        "offline_file_path": {
+            "type": ["string", "null"]
+        },
+        "nucleus": {
+            "type": "boolean"
+        },
+        "override_prompt": {
+            "type": ["string", "null"]
+        }
+      },
+      "required": ["model_type", "alias"]
+    },
+    "DatasetConfig": {
+      "type": "object",
+      "properties": {
+        "dataset_type": {
+          "type": "string"
+        },
+        "split_type": {
+          "type": "string",
+          "enum": ["train", "val", "test"]
+        },
+        "flip_sides": {
+          "type": "boolean"
+        }
+      },
+      "required": ["dataset_type", "split_type"]
+    },
+    "PreviousRunConfig": {
+      "type": "object",
+      "properties": {
+        "file_path": {
+          "type": ["string", "array"],
+          "items": {
+            "type": "string"
+          }
+        },
+        "replicate_topics": {
+          "type": "boolean"
+        },
+        "merge_results": {
+          "type": "boolean"
+        }
+      }
+    },
+    "TournamentConfig": {
+      "type": "object",
+      "properties": {
+        "tournament_type": {
+          "type": "string",
+          "enum": ["round_robin", "self_play_only", "custom", "capped_round_robin", "replication"]
+        },
+        "custom_matchups": {
+          "type": "array",
+          "items": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "minItems": 2,
+            "maxItems": 2
+          }
+        },
+        "replication_file_paths": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

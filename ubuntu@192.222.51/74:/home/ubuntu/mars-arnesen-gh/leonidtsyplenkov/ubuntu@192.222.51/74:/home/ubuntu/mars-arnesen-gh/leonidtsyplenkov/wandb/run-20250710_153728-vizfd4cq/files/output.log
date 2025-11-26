@@ -1,0 +1,20 @@
+  0%|                                                                                                                                  | 0/1 [00:00<?, ?it/s]The attention layers in this model are transitioning from computing the RoPE embeddings internally through `position_ids` (2D tensor with the indexes of the tokens), to using externally computed `position_embeddings` (Tuple of tensors, containing cos and sin). In v4.46 `position_ids` will be removed and `position_embeddings` will be mandatory.
+Starting from v4.46, the `logits` model output will have the same type as the model (except at train time, where it will always be FP32)
+/lambda/nfs/mars-arnesen-gh/.venv/lib/python3.11/site-packages/torch/utils/checkpoint.py:86: UserWarning: None of the inputs have requires_grad=True. Gradients will be None
+  warnings.warn(
+2025-07-10 15:37:33,471 - train.impl.smoothed_dpo_trainer - INFO - Overall Loss: 0.6918036341667175	DPO Loss: 0.6931471824645996	SFT Loss: 0.4244304597377777
+Could not estimate the number of tokens of the input, floating-point operations will not be computed
+2025-07-10 15:37:39,946 - train.impl.smoothed_dpo_trainer - INFO - Overall Loss: 0.6931207776069641	DPO Loss: 0.6931471824645996	SFT Loss: 0.6878568530082703
+2025-07-10 15:37:43,585 - train.impl.smoothed_dpo_trainer - INFO - Overall Loss: 0.6923841834068298	DPO Loss: 0.6931471824645996	SFT Loss: 0.5405407547950745
+2025-07-10 15:37:50,917 - train.impl.smoothed_dpo_trainer - INFO - Overall Loss: 0.6929621696472168	DPO Loss: 0.6931471824645996	SFT Loss: 0.6561443209648132
+2025-07-10 15:37:54,443 - train.impl.smoothed_dpo_trainer - INFO - Overall Loss: 0.692290723323822	DPO Loss: 0.6931471824645996	SFT Loss: 0.5218545198440552
+2025-07-10 15:37:56,296 - train.impl.smoothed_dpo_trainer - INFO - Overall Loss: 0.6916306614875793	DPO Loss: 0.6931471824645996	SFT Loss: 0.38984254002571106
+2025-07-10 15:37:58,380 - train.impl.smoothed_dpo_trainer - INFO - Overall Loss: 0.6938135623931885	DPO Loss: 0.6931471824645996	SFT Loss: 0.8264220952987671
+2025-07-10 15:38:00,606 - train.impl.smoothed_dpo_trainer - INFO - Overall Loss: 0.6934290528297424	DPO Loss: 0.6931471824645996	SFT Loss: 0.7495153546333313
+2025-07-10 15:38:03,536 - train.impl.smoothed_dpo_trainer - INFO - Overall Loss: 0.6927747130393982	DPO Loss: 0.6931471824645996	SFT Loss: 0.6186431050300598
+2025-07-10 15:38:07,442 - train.impl.smoothed_dpo_trainer - INFO - Overall Loss: 0.6921206116676331	DPO Loss: 0.6931471824645996	SFT Loss: 0.48783037066459656
+100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 1/1 [00:39<00:00, 39.73s/it]2025-07-10 15:38:10,363 - utils.logger_utils - WARNING - {'loss': 0.2164, 'grad_norm': 0.0016455313889309764, 'learning_rate': 0.0001, 'rewards/chosen': 0.0, 'rewards/rejected': 0.0, 'rewards/accuracies': 0.0, 'rewards/margins': 0.0, 'logps/rejected': -0.6387112736701965, 'logps/chosen': -0.5903080701828003, 'logits/rejected': -0.9734783172607422, 'logits/chosen': -0.9727008938789368, 'epoch': 1.0}
+100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 1/1 [00:39<00:00, 39.73s/it]2025-07-10 15:38:12,987 - utils.logger_utils - WARNING - {'train_runtime': 44.1833, 'train_samples_per_second': 0.226, 'train_steps_per_second': 0.023, 'train_loss': 0.2164478302001953, 'epoch': 1.0}
+{'loss': 0.2164, 'grad_norm': 0.0016455313889309764, 'learning_rate': 0.0001, 'rewards/chosen': 0.0, 'rewards/rejected': 0.0, 'rewards/accuracies': 0.0, 'rewards/margins': 0.0, 'logps/rejected': -0.6387112736701965, 'logps/chosen': -0.5903080701828003, 'logits/rejected': -0.9734783172607422, 'logits/chosen': -0.9727008938789368, 'epoch': 1.0}
+100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 1/1 [00:42<00:00, 42.36s/it]
+{'train_runtime': 44.1833, 'train_samples_per_second': 0.226, 'train_steps_per_second': 0.023, 'train_loss': 0.2164478302001953, 'epoch': 1.0}
